@@ -40,28 +40,7 @@ const staggerItem = {
   visible: { opacity: 1, y: 0 },
 };
 
-// Floating animation component
-const FloatingElement = ({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) => (
-  <motion.div
-    animate={{
-      y: [0, -10, 0],
-    }}
-    transition={{
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay,
-    }}
-  >
-    {children}
-  </motion.div>
-);
+// Floating animation component - removed unused component
 
 // Sound simulation function
 const playSound = (frequency: number, duration: number) => {
@@ -176,7 +155,9 @@ export default function Home() {
     const generateBackgroundParticles = () => {
       // Reduce particles on mobile for better performance
       const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-      const particleCount = isMobile ? 3 : 5;
+      const isLowEnd =
+        typeof window !== "undefined" && navigator.hardwareConcurrency <= 4;
+      const particleCount = isMobile || isLowEnd ? 2 : 4;
 
       const newParticles = Array.from({ length: particleCount }, (_, i) => ({
         id: i,
@@ -2515,11 +2496,11 @@ export default function Home() {
                       <code className="text-xs text-green-300 font-mono">
                         {"{"}
                         <br />
-                        &nbsp;&nbsp;"company": "TechCorp",
+                        &nbsp;&nbsp;&quot;company&quot;: &quot;TechCorp&quot;,
                         <br />
-                        &nbsp;&nbsp;"email": "contact@...",
+                        &nbsp;&nbsp;&quot;email&quot;: &quot;contact@...&quot;,
                         <br />
-                        &nbsp;&nbsp;"leadScore": 85
+                        &nbsp;&nbsp;&quot;leadScore&quot;: 85
                         <br />
                         {"}"}
                       </code>
