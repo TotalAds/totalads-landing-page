@@ -77,14 +77,14 @@ const playSound = (frequency: number, duration: number) => {
 const testimonials = [
   {
     quote:
-      "LeadSnipper's API is incredibly reliable and fast. We integrated it in under an hour and it's been extracting perfect data ever since.",
+      "LeadSnipper is incredibly reliable and fast. We integrated it in under an hour and it's been delivering perfect company profiles ever since.",
     author: "Sarah Chen",
     role: "Lead Developer, TechCorp",
     rating: 5,
   },
   {
     quote:
-      "The AI-powered extraction is phenomenal. We're getting 95% accuracy on contact data extraction across thousands of websites daily.",
+      "The intelligence is phenomenal. We're getting 95% accuracy on verified contacts and company context across thousands of websites daily.",
     author: "Michael Rodriguez",
     role: "CTO, DataFlow Solutions",
     rating: 5,
@@ -348,24 +348,22 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          LeadSnipper API - AI-Powered Lead Intelligence for Developers
-        </title>
+        <title>LeadSnipper – Sales Intelligence that Fills Your Pipeline</title>
         <meta
           name="description"
-          content="Developer-friendly API for extracting business intelligence from websites. Build powerful lead generation tools with AI-powered data extraction. 50 free API calls to get started."
+          content="Turn any website into a complete company profile with verified contacts, social presence, tech stack, ICP fit score and next-best actions. Book more meetings — not do manual research."
         />
         <meta
           name="keywords"
-          content="lead intelligence API, business data extraction, developer API, lead generation tools, AI data scraping, contact extraction API"
+          content="sales intelligence, lead enrichment, ICP scoring, revenue operations, B2B prospecting, lead qualification, go-to-market"
         />
         <meta
           property="og:title"
-          content="LeadSnipper API - AI-Powered Lead Intelligence for Developers"
+          content="LeadSnipper – Sales Intelligence that Fills Your Pipeline"
         />
         <meta
           property="og:description"
-          content="Developer-friendly API for extracting business intelligence from websites. Build powerful lead generation tools with AI-powered data extraction."
+          content="Turn any website into a complete company profile with verified contacts, ICP scoring and actionable insights."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -414,7 +412,7 @@ export default function Home() {
                   LeadSnipper
                 </span>
                 <div className="text-xs text-gray-300 font-medium">
-                  AI-Powered Lead Intelligence
+                  Revenue-Focused Sales Intelligence
                 </div>
               </div>
             </motion.div>
@@ -1009,7 +1007,7 @@ export default function Home() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
                   >
-                    Extract 12+ comprehensive data points
+                    Get 12+ data points in one profile
                   </motion.span>
                   <motion.span
                     initial={{ opacity: 0 }}
@@ -1033,7 +1031,7 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 1.8 }}
                   >
                     {" "}
-                    and revenue data from any website using our{" "}
+                    and an ICP fit score — powered by our{" "}
                   </motion.span>
                   <motion.span
                     className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-bold"
@@ -1041,7 +1039,7 @@ export default function Home() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 2.0 }}
                   >
-                    AI-powered API
+                    Sales Intelligence Engine
                   </motion.span>
                   <motion.span
                     className="block mt-2 text-gray-400 text-sm md:text-base"
@@ -1195,7 +1193,7 @@ export default function Home() {
                         >
                           <Play className="w-6 h-6" />
                         </motion.div>
-                        📚 VIEW API DOCS
+                        📚 VIEW DOCS
                       </span>
                     </Button>
                   </motion.div>
@@ -1223,7 +1221,7 @@ export default function Home() {
                       <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       <span className="text-gray-400 text-sm ml-2">
-                        API Demo
+                        Live Preview
                       </span>
                     </div>
 
@@ -1231,7 +1229,7 @@ export default function Home() {
                       <div className="flex items-center space-x-2">
                         <span className="text-purple-400 text-sm">POST</span>
                         <span className="text-gray-300 text-sm font-mono">
-                          api.leadsnipper.com/extract
+                          api.leadsnipper.com/enrich
                         </span>
                       </div>
                       <div className="mt-2 text-gray-400 text-xs">
@@ -1276,7 +1274,7 @@ export default function Home() {
                           delay: 0.4,
                         }}
                       />
-                      <span className="text-sm ml-2">AI Processing...</span>
+                      <span className="text-sm ml-2">Building profile...</span>
                     </motion.div>
                   </motion.div>
 
@@ -1293,7 +1291,7 @@ export default function Home() {
                         animate={{ scale: [1, 1.3, 1] }}
                         transition={{ duration: 1, repeat: Infinity }}
                       />
-                      <span>✅ 12+ Data Points Extracted</span>
+                      <span>✅ 12+ Profile Data Points</span>
                     </div>
                   </motion.div>
 
@@ -1512,7 +1510,7 @@ export default function Home() {
                 <span className="text-pink-300 font-semibold">
                   AI-driven insights
                 </span>{" "}
-                and real-time business intelligence extraction.
+                and real-time revenue intelligence.
               </motion.p>
 
               {/* Stats row */}
@@ -1526,7 +1524,7 @@ export default function Home() {
                   { number: "99.9%", label: "Accuracy Rate" },
                   { number: "<2s", label: "Response Time" },
                   { number: "12+", label: "Data Points" },
-                  { number: "24/7", label: "API Uptime" },
+                  { number: "24/7", label: "Platform Uptime" },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -1607,15 +1605,12 @@ export default function Home() {
                       transition={{ delay: 0.2 }}
                     >
                       <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300">
-                        AI-Powered Data Extraction
+                        Pipeline Growth Engine
                       </CardTitle>
                       <CardDescription className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                        Extract comprehensive business intelligence from any
-                        website using advanced AI algorithms with{" "}
-                        <span className="text-purple-300 font-semibold">
-                          99.9% accuracy
-                        </span>
-                        .
+                        Turn websites into complete company profiles your reps
+                        can act on — contacts, signals, and buying context — in
+                        seconds.
                       </CardDescription>
                     </motion.div>
 
@@ -1627,9 +1622,9 @@ export default function Home() {
                       transition={{ delay: 0.4 }}
                     >
                       {[
-                        "Smart Content Recognition",
-                        "Multi-page Analysis",
-                        "Real-time Processing",
+                        "Company Profile Assembly",
+                        "Multi-page Understanding",
+                        "Sub-3s Turnaround",
                       ].map((feature, idx) => (
                         <div
                           key={idx}
@@ -1704,15 +1699,12 @@ export default function Home() {
                       transition={{ delay: 0.3 }}
                     >
                       <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-pink-200 transition-colors duration-300">
-                        Contact Intelligence
+                        Decision-Maker Ready Data
                       </CardTitle>
                       <CardDescription className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                        Extract email addresses, phone numbers, social profiles,
-                        and decision-maker information with{" "}
-                        <span className="text-pink-300 font-semibold">
-                          AI-powered precision
-                        </span>
-                        .
+                        Auto-enriched contacts with verified phones, socials,
+                        and roles — deduped and formatted to drop straight into
+                        your sequences.
                       </CardDescription>
                     </motion.div>
 
@@ -1724,8 +1716,8 @@ export default function Home() {
                       transition={{ delay: 0.5 }}
                     >
                       {[
-                        "Email & Phone Extraction",
-                        "Social Profile Mapping",
+                        "Verified Phones & Emails",
+                        "Social Presence Mapping",
                         "Decision Maker ID",
                       ].map((feature, idx) => (
                         <div
@@ -1800,7 +1792,7 @@ export default function Home() {
                       transition={{ delay: 0.4 }}
                     >
                       <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors duration-300">
-                        ICP Lead Scoring
+                        ICP Fit & Next Best Action
                       </CardTitle>
                       <CardDescription className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                         Automatically score and qualify leads based on your
@@ -1821,8 +1813,8 @@ export default function Home() {
                     >
                       {[
                         "Custom ICP Profiles",
-                        "Automated Scoring",
-                        "Lead Qualification",
+                        "Why-it-Matches Reasons",
+                        "Next Best Action",
                       ].map((feature, idx) => (
                         <div
                           key={idx}
@@ -1949,6 +1941,157 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Use Cases Section */}
+        <section
+          id="use-cases"
+          className="py-24 bg-gradient-to-br from-slate-900 via-purple-900/30 to-slate-900 relative overflow-hidden"
+        >
+          <div className="container mx-auto px-4 relative">
+            <motion.div
+              className="text-center mb-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInUp}
+            >
+              <motion.div
+                className="inline-block px-4 py-2 bg-purple-500/20 rounded-full border border-purple-500/30 mb-6"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <span className="text-purple-300 text-sm font-semibold">
+                  🎯 USE CASES
+                </span>
+              </motion.div>
+
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Where{" "}
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  LeadSnipper
+                </span>{" "}
+                Wins
+              </h2>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Results your team can feel in days — not months.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
+              {/* SDR / AE Prospecting */}
+              <motion.div
+                variants={staggerItem}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Card className="h-full relative overflow-hidden border-0 backdrop-blur-xl bg-white/10 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-700">
+                  <CardHeader className="text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl font-bold text-white mb-2">
+                      SDR / AE Prospecting
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 text-sm leading-relaxed">
+                      Book more meetings with decision‑maker‑ready profiles.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-purple-300 mr-2" />
+                      Verified phones, socials, roles — deduped
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-purple-300 mr-2" />
+                      ICP fit score + why‑it‑matches reasons
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-purple-300 mr-2" />
+                      Next best action suggested
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* RevOps / Data Quality */}
+              <motion.div
+                variants={staggerItem}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <Card className="h-full relative overflow-hidden border-0 backdrop-blur-xl bg-white/10 hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-700">
+                  <CardHeader className="text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <Workflow className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl font-bold text-white mb-2">
+                      RevOps / Data Quality
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 text-sm leading-relaxed">
+                      Keep CRM data clean and actionable.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-300 mr-2" />
+                      Normalize and dedupe contacts automatically
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-300 mr-2" />
+                      Firmographics, tech stack, and location enriched
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-green-300 mr-2" />
+                      Reduce manual research and bounce
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Founders / Marketing / Growth */}
+              <motion.div
+                variants={staggerItem}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Card className="h-full relative overflow-hidden border-0 backdrop-blur-xl bg-white/10 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-700">
+                  <CardHeader className="text-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <BarChart3 className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl font-bold text-white mb-2">
+                      Founders / Marketing / Growth
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 text-sm leading-relaxed">
+                      Find and prioritize high‑fit accounts faster.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-blue-300 mr-2" />
+                      Multi‑page understanding for sharper messaging
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-blue-300 mr-2" />
+                      Summarized insights to guide outreach
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-blue-300 mr-2" />
+                      Faster market research on target accounts
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Pricing Section */}
         <section
           id="pricing"
@@ -1987,7 +2130,7 @@ export default function Home() {
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
                 Start free and scale seamlessly. Every plan includes our core
-                AI-powered extraction with no setup fees or hidden costs.
+                Sales Intelligence Engine with no setup fees or hidden costs.
               </p>
 
               {/* Pricing Toggle */}
@@ -2047,16 +2190,16 @@ export default function Home() {
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
                       <span>
-                        <strong>50</strong> API calls/month
+                        <strong>50</strong> profiles/month
                       </span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Basic data extraction
+                      Basic company profiles
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Standard response time
+                      Standard turnaround
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
@@ -2110,20 +2253,20 @@ export default function Home() {
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
                       <span>
-                        <strong>2,000</strong> API calls/month
+                        <strong>2,000</strong> profiles/month
                       </span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      AI-enhanced extraction
+                      Advanced profiles with insights
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      ICP lead scoring
+                      ICP fit scoring + reasons
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Priority processing
+                      Priority turnaround
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
@@ -2231,7 +2374,7 @@ export default function Home() {
                   <CardContent className="space-y-3 relative">
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
-                      Unlimited API calls
+                      Unlimited profiles
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
@@ -2334,8 +2477,8 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                From a single API call to comprehensive business intelligence -
-                our streamlined process delivers results in seconds, not hours.
+                From a single request to a complete company profile - our
+                streamlined process delivers results in seconds, not hours.
               </p>
             </motion.div>
 
@@ -2370,18 +2513,18 @@ export default function Home() {
                     </div>
 
                     <h3 className="text-xl font-bold text-white mb-3">
-                      Send API Request
+                      Send Enrichment Request
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">
                       Make a simple POST request with the target website URL and
-                      optional parameters like ICP profiles or extraction
+                      optional parameters like ICP profiles and enrichment
                       preferences.
                     </p>
 
                     {/* Code snippet preview */}
                     <div className="bg-slate-900/50 rounded-lg p-3 border border-slate-700/50">
                       <code className="text-xs text-purple-300 font-mono">
-                        POST /api/extract
+                        POST /api/enrich
                         <br />
                         {"{ url: 'company.com' }"}
                       </code>
@@ -2420,12 +2563,12 @@ export default function Home() {
                     </div>
 
                     <h3 className="text-xl font-bold text-white mb-3">
-                      AI Processing
+                      Intelligence Engine
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">
                       Our advanced AI engine analyzes the website content,
-                      extracts business intelligence, and structures data
-                      according to your specifications.
+                      builds a company profile and structures data according to
+                      your specifications.
                     </p>
 
                     {/* Processing indicators */}
@@ -2439,7 +2582,7 @@ export default function Home() {
                           className="w-2 h-2 bg-pink-400 rounded-full mr-2 animate-pulse"
                           style={{ animationDelay: "0.5s" }}
                         ></div>
-                        Extracting business data...
+                        Building a go-to-market profile...
                       </div>
                       <div className="flex items-center text-xs text-gray-500">
                         <div
@@ -2486,7 +2629,7 @@ export default function Home() {
                       Get Structured Results
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      Receive comprehensive JSON response with business data,
+                      Receive a complete company profile with business data,
                       contact information, lead intelligence, and actionable
                       insights.
                     </p>
@@ -2498,9 +2641,16 @@ export default function Home() {
                         <br />
                         &nbsp;&nbsp;&quot;company&quot;: &quot;TechCorp&quot;,
                         <br />
-                        &nbsp;&nbsp;&quot;email&quot;: &quot;contact@...&quot;,
+                        &nbsp;&nbsp;&quot;contactInfo&quot;: {"{"}
+                        &quot;phone&quot;:[&quot;+91 8823831234&quot;],
+                        &quot;email&quot;:&quot;contact@...&quot;{"}"},
                         <br />
-                        &nbsp;&nbsp;&quot;leadScore&quot;: 85
+                        &nbsp;&nbsp;&quot;icp&quot;: {"{"}&quot;fit&quot;: 85,
+                        &quot;reasons&quot;:[&quot;Matches SMB marketing
+                        services&quot;]{"}"},
+                        <br />
+                        &nbsp;&nbsp;&quot;nextBestAction&quot;: &quot;Start with
+                        a case study email to the founder&quot;
                         <br />
                         {"}"}
                       </code>
@@ -2528,7 +2678,7 @@ export default function Home() {
               <div className="text-center p-6 bg-slate-800/30 backdrop-blur-xl rounded-xl border border-slate-700/50">
                 <div className="text-3xl font-bold text-pink-400 mb-2">12+</div>
                 <div className="text-sm text-gray-400">
-                  Data Points Extracted
+                  Data Points per Company
                 </div>
               </div>
               <div className="text-center p-6 bg-slate-800/30 backdrop-blur-xl rounded-xl border border-slate-700/50">
@@ -2541,7 +2691,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* API Response Showcase Section */}
+        {/* Response Showcase Section */}
         <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0">
@@ -2564,7 +2714,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="text-green-300 text-sm font-semibold">
-                  📊 API RESPONSE
+                  📊 RESPONSE PREVIEW
                 </span>
               </motion.div>
 
@@ -2576,12 +2726,12 @@ export default function Home() {
                 Response
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                See exactly what data you get back from our API - comprehensive
-                business intelligence in a structured JSON format.
+                See exactly how your pipeline benefits — a structured company
+                profile your reps can act on immediately.
               </p>
             </motion.div>
 
-            {/* API Response Example */}
+            {/* Response Example */}
             <motion.div
               className="max-w-6xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
@@ -2659,7 +2809,7 @@ export default function Home() {
         "github": "https://github.com/techcorp"
       }
     },
-    "extractedEntities": {
+    "identifiedEntities": {
       "people": ["John Smith - CEO", "Jane Doe - CTO"],
       "organizations": ["TechCorp Solutions", "AWS", "Microsoft"],
       "locations": ["San Francisco", "California", "United States"],
@@ -2726,7 +2876,7 @@ export default function Home() {
                   AI Insights
                 </h3>
                 <p className="text-sm text-gray-400">
-                  Business intelligence, market analysis, and lead scoring
+                  Business intelligence, market analysis, and ICP fit insights
                 </p>
               </div>
 
@@ -2736,7 +2886,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Real-time</h3>
                 <p className="text-sm text-gray-400">
-                  Fresh data extraction with sub-3 second response times
+                  Fresh company profiles with sub-3 second response times
                 </p>
               </div>
             </motion.div>
@@ -2898,7 +3048,7 @@ export default function Home() {
                     5M+
                   </div>
                   <div className="text-gray-400 font-medium text-sm">
-                    API Calls
+                    Profiles Enriched
                   </div>
                 </div>
               </motion.div>
@@ -3050,7 +3200,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  AI-Powered Intelligence
+                  Revenue Intelligence
                   <motion.div
                     className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-xl -z-10 rounded-lg"
                     animate={{
@@ -3076,9 +3226,8 @@ export default function Home() {
                 <span className="text-purple-300 font-semibold">
                   10,000+ developers
                 </span>{" "}
-                who trust LeadSnipper to extract comprehensive business
-                intelligence and build next-generation lead generation
-                applications.
+                who trust LeadSnipper to deliver comprehensive business
+                intelligence and build next‑generation revenue workflows.
               </motion.p>
 
               {/* Stats Row */}
@@ -3224,7 +3373,7 @@ export default function Home() {
                 <div className="flex items-center justify-center text-green-400 text-base font-semibold">
                   <CheckCircle className="w-5 h-5 mr-2" />
                   <span>
-                    50 Free API Calls • No Credit Card Required • Instant Access
+                    50 Free Profiles • No Credit Card Required • Instant Access
                   </span>
                 </div>
 
@@ -3271,8 +3420,10 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-slate-400 mb-4 leading-relaxed text-sm">
-                  AI-powered lead intelligence API for developers building the
-                  next generation of lead generation tools.
+                  Sales Intelligence Engine that turns websites into complete
+                  company profiles with verified contacts, ICP fit, and
+                  next‑best actions — built for go‑to‑market teams and
+                  developers.
                 </p>
                 <div className="flex space-x-3">
                   <motion.div
@@ -3328,7 +3479,7 @@ export default function Home() {
                       className="hover:text-purple-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-purple-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      API Docs
+                      Docs
                     </a>
                   </li>
                   <li>
