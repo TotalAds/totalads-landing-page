@@ -493,7 +493,7 @@ export default function Home() {
                   size="sm"
                   className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
                 >
-                  Start Free Trial
+                  Start for $5
                 </Button>
               </motion.div>
             </div>
@@ -1140,7 +1140,7 @@ export default function Home() {
                       />
 
                       <span className="relative z-10 flex items-center tracking-wide">
-                        🚀 START FREE TRIAL
+                        START FOR $5
                         <motion.div
                           className="ml-4"
                           animate={{
@@ -2156,8 +2156,9 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                Start free and scale seamlessly. Every plan includes our core
-                Sales Intelligence Engine with no setup fees or hidden costs.
+                Start with $5 credits and scale seamlessly. Every plan includes
+                our core Sales Intelligence Engine with no setup fees or hidden
+                costs.
               </p>
 
               {/* Pricing Toggle */}
@@ -2180,7 +2181,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 max-w-7xl mx-auto"
+              className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 max-w-7xl mx-auto"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -2188,6 +2189,7 @@ export default function Home() {
             >
               {/* Free Tier */}
               <motion.div
+                className="hidden"
                 variants={staggerItem}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -2263,12 +2265,12 @@ export default function Home() {
                       <span className="text-2xl">💼</span>
                     </div>
                     <CardTitle className="text-xl font-bold text-white mb-2">
-                      Pro Credits – 500 hits
+                      Pro Plan
                     </CardTitle>
                     <div className="text-3xl font-bold text-purple-300 mb-2">
                       $19
                       <span className="text-sm text-gray-400 font-normal">
-                        one-time
+                        /month
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
@@ -2327,12 +2329,12 @@ export default function Home() {
                       <span className="text-2xl">⚡</span>
                     </div>
                     <CardTitle className="text-xl font-bold text-white mb-2">
-                      Pay-as-you-go
+                      Starter Plan
                     </CardTitle>
                     <div className="text-3xl font-bold text-pink-400 mb-2">
-                      Starter Credits – 100 hits
+                      $5
                       <span className="text-sm text-gray-400 font-normal block">
-                        $5 one-time
+                        /month
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
@@ -3399,9 +3401,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-center text-green-400 text-base font-semibold">
                   <CheckCircle className="w-5 h-5 mr-2" />
-                  <span>
-                    50 Free Profiles • No Credit Card Required • Instant Access
-                  </span>
+                  <span>Start for $5 • Cancel anytime • Instant Access</span>
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400">
