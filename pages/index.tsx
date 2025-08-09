@@ -13,6 +13,7 @@ import {
   Workflow,
 } from "lucide-react";
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -3553,13 +3554,13 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/contact"
                       className="hover:text-pink-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-pink-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -3588,31 +3589,31 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/privacy-policy"
                       className="hover:text-blue-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       Privacy Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/terms-of-service"
                       className="hover:text-blue-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       Terms of Service
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/refund-policy"
                       className="hover:text-blue-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       Refund Policy
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
