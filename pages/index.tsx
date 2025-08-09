@@ -42,6 +42,27 @@ const staggerItem = {
 
 // Floating animation component - removed unused component
 
+// Deterministic random helpers to avoid SSR/CSR mismatch in render
+const hashString = (str: string) => {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+};
+const seededRandom = (seed: number) => {
+  let t = seed + 0x6d2b79f5;
+  t = Math.imul(t ^ (t >>> 15), t | 1);
+  t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+};
+const randFromIndex = (i: number, salt: string, min = 0, max = 1) => {
+  const s = hashString(`${salt}:${i}`);
+  const r = seededRandom(s);
+  return min + r * (max - min);
+};
+
 // Sound simulation function
 const playSound = (frequency: number, duration: number) => {
   if (typeof window !== "undefined" && "AudioContext" in window) {
@@ -450,6 +471,7 @@ export default function Home() {
                 Success Stories
                 <motion.div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300" />
               </motion.a>
+
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -783,8 +805,8 @@ export default function Home() {
               key={i}
               className="absolute w-1 h-1 bg-purple-400/20 rounded-full"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: `${randFromIndex(i, "bg1-left") * 100}%`,
+                top: `${randFromIndex(i, "bg1-top") * 100}%`,
               }}
               animate={{
                 y: [0, -100, 0],
@@ -792,9 +814,9 @@ export default function Home() {
                 scale: [0, 1, 0],
               }}
               transition={{
-                duration: 4 + Math.random() * 4,
+                duration: 4 + randFromIndex(i, "bg1-duration", 0, 4),
                 repeat: Infinity,
-                delay: Math.random() * 4,
+                delay: randFromIndex(i, "bg1-delay", 0, 4),
                 ease: "easeInOut",
               }}
             />
@@ -890,17 +912,17 @@ export default function Home() {
                   key={i}
                   className="absolute w-1 h-1 bg-purple-400 rounded-full"
                   style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
+                    left: `${randFromIndex(i, "dots-left") * 100}%`,
+                    top: `${randFromIndex(i, "dots-top") * 100}%`,
                   }}
                   animate={{
                     opacity: [0.2, 1, 0.2],
                     scale: [1, 1.5, 1],
                   }}
                   transition={{
-                    duration: 3 + Math.random() * 2,
+                    duration: 3 + randFromIndex(i, "dots-duration", 0, 2),
                     repeat: Infinity,
-                    delay: Math.random() * 2,
+                    delay: randFromIndex(i, "dots-delay", 0, 2),
                     ease: "easeInOut",
                   }}
                 />
@@ -1403,17 +1425,17 @@ export default function Home() {
                         key={i}
                         className="absolute w-1 h-1 bg-purple-400 rounded-full"
                         style={{
-                          left: `${Math.random() * 100}%`,
-                          top: `${Math.random() * 100}%`,
+                          left: `${randFromIndex(i, "demo-left") * 100}%`,
+                          top: `${randFromIndex(i, "demo-top") * 100}%`,
                         }}
                         animate={{
                           opacity: [0.2, 1, 0.2],
                           scale: [1, 1.5, 1],
                         }}
                         transition={{
-                          duration: 3 + Math.random() * 2,
+                          duration: 3 + randFromIndex(i, "demo-duration", 0, 2),
                           repeat: Infinity,
-                          delay: Math.random() * 2,
+                          delay: randFromIndex(i, "demo-delay", 0, 2),
                         }}
                       />
                     ))}
@@ -1436,8 +1458,8 @@ export default function Home() {
                 key={i}
                 className="absolute w-1 h-1 bg-purple-400/30 rounded-full"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  left: `${randFromIndex(i, "features-left") * 100}%`,
+                  top: `${randFromIndex(i, "features-top") * 100}%`,
                 }}
                 animate={{
                   opacity: [0.1, 0.8, 0.1],
@@ -1445,9 +1467,9 @@ export default function Home() {
                   y: [0, -20, 0],
                 }}
                 transition={{
-                  duration: 4 + Math.random() * 3,
+                  duration: 4 + randFromIndex(i, "features-duration", 0, 3),
                   repeat: Infinity,
-                  delay: Math.random() * 3,
+                  delay: randFromIndex(i, "features-delay", 0, 3),
                   ease: "easeInOut",
                 }}
               />
@@ -1569,8 +1591,8 @@ export default function Home() {
                         key={i}
                         className="absolute w-1 h-1 bg-purple-400/60 rounded-full"
                         style={{
-                          left: `${20 + Math.random() * 60}%`,
-                          top: `${20 + Math.random() * 60}%`,
+                          left: `${20 + randFromIndex(i, "feat1-left") * 60}%`,
+                          top: `${20 + randFromIndex(i, "feat1-top") * 60}%`,
                         }}
                         animate={{
                           opacity: [0.3, 1, 0.3],
@@ -1578,9 +1600,10 @@ export default function Home() {
                           y: [0, -10, 0],
                         }}
                         transition={{
-                          duration: 2 + Math.random(),
+                          duration:
+                            2 + randFromIndex(i, "feat1-duration", 0, 1),
                           repeat: Infinity,
-                          delay: Math.random(),
+                          delay: randFromIndex(i, "feat1-delay", 0, 1),
                         }}
                       />
                     ))}
@@ -1663,8 +1686,8 @@ export default function Home() {
                         key={i}
                         className="absolute w-1 h-1 bg-pink-400/60 rounded-full"
                         style={{
-                          left: `${20 + Math.random() * 60}%`,
-                          top: `${20 + Math.random() * 60}%`,
+                          left: `${20 + randFromIndex(i, "feat2-left") * 60}%`,
+                          top: `${20 + randFromIndex(i, "feat2-top") * 60}%`,
                         }}
                         animate={{
                           opacity: [0.3, 1, 0.3],
@@ -1672,9 +1695,10 @@ export default function Home() {
                           x: [0, 10, 0],
                         }}
                         transition={{
-                          duration: 2.5 + Math.random(),
+                          duration:
+                            2.5 + randFromIndex(i, "feat2-duration", 0, 1),
                           repeat: Infinity,
-                          delay: Math.random(),
+                          delay: randFromIndex(i, "feat2-delay", 0, 1),
                         }}
                       />
                     ))}
@@ -1756,8 +1780,8 @@ export default function Home() {
                         key={i}
                         className="absolute w-1 h-1 bg-blue-400/60 rounded-full"
                         style={{
-                          left: `${20 + Math.random() * 60}%`,
-                          top: `${20 + Math.random() * 60}%`,
+                          left: `${20 + randFromIndex(i, "feat3-left") * 60}%`,
+                          top: `${20 + randFromIndex(i, "feat3-top") * 60}%`,
                         }}
                         animate={{
                           opacity: [0.3, 1, 0.3],
@@ -1765,9 +1789,10 @@ export default function Home() {
                           rotate: [0, 180, 360],
                         }}
                         transition={{
-                          duration: 3 + Math.random(),
+                          duration:
+                            3 + randFromIndex(i, "feat3-duration", 0, 1),
                           repeat: Infinity,
-                          delay: Math.random(),
+                          delay: randFromIndex(i, "feat3-delay", 0, 1),
                         }}
                       />
                     ))}
@@ -1852,8 +1877,8 @@ export default function Home() {
                         key={i}
                         className="absolute w-1 h-1 bg-green-400/60 rounded-full"
                         style={{
-                          left: `${20 + Math.random() * 60}%`,
-                          top: `${20 + Math.random() * 60}%`,
+                          left: `${20 + randFromIndex(i, "feat4-left") * 60}%`,
+                          top: `${20 + randFromIndex(i, "feat4-top") * 60}%`,
                         }}
                         animate={{
                           opacity: [0.3, 1, 0.3],
@@ -1861,9 +1886,10 @@ export default function Home() {
                           y: [0, -15, 0],
                         }}
                         transition={{
-                          duration: 2.2 + Math.random(),
+                          duration:
+                            2.2 + randFromIndex(i, "feat4-duration", 0, 1),
                           repeat: Infinity,
-                          delay: Math.random(),
+                          delay: randFromIndex(i, "feat4-delay", 0, 1),
                         }}
                       />
                     ))}
@@ -2236,12 +2262,12 @@ export default function Home() {
                       <span className="text-2xl">💼</span>
                     </div>
                     <CardTitle className="text-xl font-bold text-white mb-2">
-                      Professional
+                      Pro Credits – 500 hits
                     </CardTitle>
                     <div className="text-3xl font-bold text-purple-300 mb-2">
-                      ₹999
+                      $19
                       <span className="text-sm text-gray-400 font-normal">
-                        /month
+                        one-time
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
@@ -2303,9 +2329,9 @@ export default function Home() {
                       Pay-as-you-go
                     </CardTitle>
                     <div className="text-3xl font-bold text-pink-400 mb-2">
-                      ₹0.50
-                      <span className="text-sm text-gray-400 font-normal">
-                        /call
+                      Starter Credits – 100 hits
+                      <span className="text-sm text-gray-400 font-normal block">
+                        $5 one-time
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
@@ -2361,9 +2387,9 @@ export default function Home() {
                       Enterprise
                     </CardTitle>
                     <div className="text-3xl font-bold text-blue-400 mb-2">
-                      Custom
+                      Enterprise Plan
                       <span className="text-sm text-gray-400 font-normal block">
-                        pricing
+                        Contact for quote
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
@@ -3146,8 +3172,8 @@ export default function Home() {
                 key={i}
                 className="absolute w-2 h-2 bg-gradient-to-r from-purple-400/40 to-pink-400/40 rounded-full"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  left: `${randFromIndex(i, "enh-left") * 100}%`,
+                  top: `${randFromIndex(i, "enh-top") * 100}%`,
                 }}
                 animate={{
                   y: [0, -100, 0],
@@ -3156,9 +3182,9 @@ export default function Home() {
                   rotate: [0, 360],
                 }}
                 transition={{
-                  duration: 4 + Math.random() * 3,
+                  duration: 4 + randFromIndex(i, "enh-duration", 0, 3),
                   repeat: Infinity,
-                  delay: Math.random() * 4,
+                  delay: randFromIndex(i, "enh-delay", 0, 4),
                   ease: "easeOut",
                 }}
               />
@@ -3528,7 +3554,7 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="#contact"
+                      href="/contact"
                       className="hover:text-pink-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-pink-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -3563,7 +3589,7 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="#privacy"
+                      href="/privacy-policy"
                       className="hover:text-blue-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -3572,11 +3598,20 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      href="#terms"
+                      href="/terms-of-service"
                       className="hover:text-blue-400 transition-colors duration-300 flex items-center group"
                     >
                       <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       Terms of Service
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/refund-policy"
+                      className="hover:text-blue-400 transition-colors duration-300 flex items-center group"
+                    >
+                      <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      Refund Policy
                     </a>
                   </li>
                 </ul>
