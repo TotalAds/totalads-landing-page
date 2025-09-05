@@ -1,16 +1,13 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
-import Countdown from "@/components/waitlist/Countdown";
-import ShareButtons from "@/components/waitlist/ShareButtons";
-import TrustBar from "@/components/waitlist/TrustBar";
-import WaitlistForm from "@/components/waitlist/WaitlistForm";
-import { randFromIndex } from "@/lib/landing";
-import { staggerContainer, staggerItem } from "@/lib/utils";
+import AuthButtons from '@/components/auth/AuthButtons';
+import { randFromIndex } from '@/lib/landing';
+import { staggerContainer, staggerItem } from '@/lib/utils';
 
-export default function HeroWaitlist({
+export default function HeroBeta({
   onHoverChange,
 }: {
   onHoverChange?: (hover: boolean) => void;
@@ -265,18 +262,22 @@ export default function HeroWaitlist({
                 Sales Intelligence Engine
               </motion.span>
               <motion.span
-                className="block mt-2 text-gray-400 text-sm md:text-base"
+                className="block mt-4 text-gray-400 text-sm md:text-base"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 2.2 }}
               >
-                Get complete business intelligence in seconds - perfect for
-                sales teams, lead generation, and market research
+                🚀{" "}
+                <span className="text-green-400 font-semibold">
+                  Now Live in Beta!
+                </span>{" "}
+                Free to explore and test - perfect for sales teams, lead
+                generation, and market research
               </motion.span>
             </motion.p>
 
             <motion.div
-              id="waitlist"
+              id="auth-buttons"
               className="space-y-4 mb-8"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
@@ -284,14 +285,8 @@ export default function HeroWaitlist({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 2.4 }}
             >
-              <WaitlistForm />
-              <div className="space-y-2">
-                <Countdown target={new Date("2025-09-01T00:00:00Z")} />
-                <TrustBar />
-              </div>
+              <AuthButtons />
             </motion.div>
-
-            <ShareButtons />
           </motion.div>
 
           {/* Right Side - Interactive Demo */}

@@ -1,30 +1,15 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
-  ArrowRight,
-  BarChart3,
-  CheckCircle,
-  Eye,
-  MessageSquare,
-  Play,
-  Search,
-  Sparkles,
-  Target,
-  Users,
-  Workflow,
-} from "lucide-react";
-import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+    ArrowRight, BarChart3, CheckCircle, Eye, MessageSquare, Play, Search, Sparkles, Target, Users,
+    Workflow
+} from 'lucide-react';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
-import HeroWaitlist from "@/components/sections/HeroWaitlist";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import HeroBeta from '@/components/sections/HeroWaitlist';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Simplified Animation variants for better performance
 const fadeInUp = {
@@ -369,10 +354,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>LeadSnipper – Sales Intelligence that Fills Your Pipeline</title>
+        <title>
+          LeadSnipper – Sales Intelligence that Fills Your Pipeline | Now Live
+          in Beta
+        </title>
         <meta
           name="description"
-          content="Turn any website into a complete company profile with verified contacts, social presence, tech stack, ICP fit score and next-best actions. Book more meetings — not do manual research."
+          content="🚀 Now Live in Beta! Turn any website into a complete company profile with verified contacts, social presence, tech stack, ICP fit score and next-best actions. Free to explore and test."
         />
         <meta
           name="keywords"
@@ -380,11 +368,11 @@ export default function Home() {
         />
         <meta
           property="og:title"
-          content="LeadSnipper – Sales Intelligence that Fills Your Pipeline"
+          content="LeadSnipper – Sales Intelligence that Fills Your Pipeline | Now Live in Beta"
         />
         <meta
           property="og:description"
-          content="Turn any website into a complete company profile with verified contacts, ICP scoring and actionable insights."
+          content="🚀 Now Live in Beta! Turn any website into a complete company profile with verified contacts, ICP scoring and actionable insights. Free to explore and test."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -443,14 +431,17 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <a href="#waitlist" className="inline-flex">
+                <Link
+                  href="https://app.leadsnipper.com/signup"
+                  className="inline-flex"
+                >
                   <Button
                     size="sm"
                     className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
                   >
-                    Join Waitlist
+                    Start Free Beta
                   </Button>
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -609,103 +600,105 @@ export default function Home() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
-        <motion.button
-          data-magnetic
-          className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-2xl flex items-center justify-center text-white font-bold text-xl relative overflow-hidden group"
-          whileHover={{
-            scale: 1.2,
-            boxShadow: "0 25px 50px rgba(168, 85, 247, 0.5)",
-            rotateY: 15,
-          }}
-          whileTap={{ scale: 0.8, rotateY: -15 }}
-          animate={{
-            y: [0, -8, 0],
-            rotate: [0, 5, -5, 0],
-          }}
-          transition={{
-            y: {
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            rotate: {
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-          style={{
-            transformStyle: "preserve-3d",
-            transition: "transform 0.3s ease",
-          }}
-          onClick={() => {
-            playSound(1200, 0.15);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        >
-          {/* Animated background */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"
+        <Link href="https://app.leadsnipper.com/signup">
+          <motion.button
+            data-magnetic
+            className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-2xl flex items-center justify-center text-white font-bold text-xl relative overflow-hidden group"
+            whileHover={{
+              scale: 1.2,
+              boxShadow: "0 25px 50px rgba(168, 85, 247, 0.5)",
+              rotateY: 15,
+            }}
+            whileTap={{ scale: 0.8, rotateY: -15 }}
             animate={{
-              rotate: [0, 360],
-              scale: [1, 1.1, 1],
+              y: [0, -8, 0],
+              rotate: [0, 5, -5, 0],
             }}
             transition={{
-              rotate: { duration: 8, repeat: Infinity, ease: "linear" },
-              scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+              rotate: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
             }}
-          />
-
-          {/* Pulsing ring */}
-          <motion.div
-            className="absolute inset-0 border-2 border-white/30 rounded-full"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.3, 0.8, 0.3],
+            style={{
+              transformStyle: "preserve-3d",
+              transition: "transform 0.3s ease",
             }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          <motion.span
-            className="relative z-10"
-            animate={{
-              y: [0, -2, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
+            onClick={() => {
+              playSound(1200, 0.15);
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            ↑
-          </motion.span>
-
-          {/* Sparkle effects */}
-          {[...Array(6)].map((_, i) => (
+            {/* Animated background */}
             <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full"
-              style={{
-                left: `${20 + Math.cos((i / 6) * Math.PI * 2) * 15}px`,
-                top: `${20 + Math.sin((i / 6) * Math.PI * 2) * 15}px`,
-              }}
+              className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"
               animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 1, 0],
+                rotate: [0, 360],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                rotate: { duration: 8, repeat: Infinity, ease: "linear" },
+                scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+              }}
+            />
+
+            {/* Pulsing ring */}
+            <motion.div
+              className="absolute inset-0 border-2 border-white/30 rounded-full"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.8, 0.3],
               }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
-                delay: i * 0.3,
                 ease: "easeInOut",
               }}
             />
-          ))}
-        </motion.button>
+
+            <motion.span
+              className="relative z-10"
+              animate={{
+                y: [0, -2, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              ↑
+            </motion.span>
+
+            {/* Sparkle effects */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full"
+                style={{
+                  left: `${20 + Math.cos((i / 6) * Math.PI * 2) * 15}px`,
+                  top: `${20 + Math.sin((i / 6) * Math.PI * 2) * 15}px`,
+                }}
+                animate={{
+                  scale: [0, 1, 0],
+                  opacity: [0, 1, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.3,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </motion.button>
+        </Link>
       </motion.div>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-x-hidden">
@@ -780,7 +773,7 @@ export default function Home() {
           ))}
         </div>
         {/* Hero Section (extracted) */}
-        <HeroWaitlist />
+        <HeroBeta />
 
         {/* Features Section */}
         <section
@@ -2547,7 +2540,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <span className="text-purple-300 text-xs font-bold tracking-wide">
-                🚀 START BUILDING TODAY
+                🚀 NOW LIVE IN BETA
               </span>
             </motion.div>
 
@@ -2588,10 +2581,11 @@ export default function Home() {
               >
                 Join{" "}
                 <span className="text-purple-300 font-semibold">
-                  10,000+ developers
+                  500+ GTM teams
                 </span>{" "}
-                who trust LeadSnipper to deliver comprehensive business
-                intelligence and build next‑generation revenue workflows.
+                already using LeadSnipper in beta to deliver comprehensive
+                business intelligence and build next‑generation revenue
+                workflows.
               </motion.p>
 
               {/* Stats Row */}
@@ -2628,57 +2622,59 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onHoverStart={() => playSound(800, 0.1)}
-                >
-                  <Button
-                    data-magnetic
-                    size="lg"
-                    className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 text-white hover:from-purple-600 hover:via-pink-600 hover:to-purple-700 px-8 py-4 text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 overflow-hidden rounded-xl"
-                    style={{ transition: "transform 0.3s ease" }}
+                <Link href="https://app.leadsnipper.com/signup">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onHoverStart={() => playSound(800, 0.1)}
                   >
-                    {/* Animated background shimmer */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.8 }}
-                    />
-
-                    {/* Pulsing glow */}
-                    <motion.div
-                      className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-xl blur-lg"
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.5, 0.8, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    />
-
-                    <span className="relative z-10 flex items-center">
-                      🚀 Start Building Free
+                    <Button
+                      data-magnetic
+                      size="lg"
+                      className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 text-white hover:from-purple-600 hover:via-pink-600 hover:to-purple-700 px-8 py-4 text-lg font-bold shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 overflow-hidden rounded-xl"
+                      style={{ transition: "transform 0.3s ease" }}
+                    >
+                      {/* Animated background shimmer */}
                       <motion.div
-                        className="ml-2"
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "100%" }}
+                        transition={{ duration: 0.8 }}
+                      />
+
+                      {/* Pulsing glow */}
+                      <motion.div
+                        className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-xl blur-lg"
                         animate={{
-                          x: [0, 5, 0],
+                          scale: [1, 1.1, 1],
+                          opacity: [0.5, 0.8, 0.5],
                         }}
                         transition={{
                           duration: 2,
                           repeat: Infinity,
                           ease: "easeInOut",
                         }}
-                      >
-                        <ArrowRight className="w-5 h-5" />
-                      </motion.div>
-                    </span>
-                  </Button>
-                </motion.div>
+                      />
+
+                      <span className="relative z-10 flex items-center">
+                        🚀 Start Free Beta
+                        <motion.div
+                          className="ml-2"
+                          animate={{
+                            x: [0, 5, 0],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        >
+                          <ArrowRight className="w-5 h-5" />
+                        </motion.div>
+                      </span>
+                    </Button>
+                  </motion.div>
+                </Link>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -2736,7 +2732,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-center text-green-400 text-base font-semibold">
                   <CheckCircle className="w-5 h-5 mr-2" />
-                  <span>Start for $5 • Cancel anytime • Instant Access</span>
+                  <span>Free Beta Access • No Credit Card • Instant Setup</span>
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400">

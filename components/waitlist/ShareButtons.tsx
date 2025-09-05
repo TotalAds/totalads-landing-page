@@ -1,11 +1,14 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
 export default function ShareButtons() {
-  const url = typeof window !== "undefined" ? window.location.href : "https://leadsnipper.com";
+  const url =
+    typeof window !== "undefined"
+      ? window.location.href
+      : "https://leadsnipper.com";
   const text = encodeURIComponent(
-    "I just joined the LeadSnipper waitlist. Turn any website into a complete company profile in seconds. Join me!"
+    "Check out LeadSnipper - now live in beta! Turn any website into a complete company profile in seconds. Try it free!"
   );
   const shareUrl = encodeURIComponent(url);
 
@@ -49,4 +52,3 @@ export default function ShareButtons() {
     </div>
   );
 }
-
