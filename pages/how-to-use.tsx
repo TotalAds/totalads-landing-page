@@ -15,10 +15,10 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import Head from "next/head";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -160,15 +160,7 @@ export default function HowToUse() {
 
   return (
     <>
-      <Head>
-        <title>How to Use LeadSnipper - Step-by-Step Guide</title>
-        <meta
-          name="description"
-          content="Learn how to extract business intelligence from any website with LeadSnipper. Step-by-step guide for sales teams and developers."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO pageKey="howToUse" />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
         {/* Navigation */}

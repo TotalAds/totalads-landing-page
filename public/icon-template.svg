@@ -1,0 +1,30 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="url(#iconGradient)" />
+  
+  <!-- Target/Crosshair Icon -->
+  <g transform="translate(45, 45)">
+    <!-- Outer Circle -->
+    <circle cx="45" cy="45" r="35" stroke="white" stroke-width="4" fill="none" />
+    
+    <!-- Middle Circle -->
+    <circle cx="45" cy="45" r="22" stroke="white" stroke-width="3" fill="none" />
+    
+    <!-- Center Dot -->
+    <circle cx="45" cy="45" r="8" fill="white" />
+    
+    <!-- Crosshair Lines -->
+    <line x1="45" y1="5" x2="45" y2="20" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <line x1="45" y1="70" x2="45" y2="85" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <line x1="5" y1="45" x2="20" y2="45" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <line x1="70" y1="45" x2="85" y2="45" stroke="white" stroke-width="4" stroke-linecap="round" />
+  </g>
+</svg>

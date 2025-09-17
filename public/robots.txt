@@ -1,0 +1,56 @@
+# Robots.txt for LeadSnipper Landing Page
+# https://leadsnipper.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Disallow admin and API routes (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /
+Allow: /how-to-use
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /refund-policy
+
+# Sitemap location
+Sitemap: https://leadsnipper.com/sitemap.xml
+Sitemap: https://leadsnipper.com/sitemap-index.xml
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1
+
+# Host directive (helps with canonicalization)
+Host: https://leadsnipper.com

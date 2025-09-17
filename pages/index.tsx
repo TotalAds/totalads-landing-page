@@ -14,11 +14,11 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import HeroBeta from "@/components/sections/HeroWaitlist";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -378,33 +378,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>
-          LeadSnipper – Sales Intelligence that Fills Your Pipeline | Now Live
-          in Beta
-        </title>
-        <meta
-          name="description"
-          content="🚀 Now Live in Beta! Turn any website into a complete company profile with verified contacts, social presence, tech stack, ICP fit score and next-best actions. Free to explore and test."
-        />
-        <meta
-          name="keywords"
-          content="sales intelligence, lead enrichment, ICP scoring, revenue operations, B2B prospecting, lead qualification, go-to-market"
-        />
-        <meta
-          property="og:title"
-          content="LeadSnipper – Sales Intelligence that Fills Your Pipeline | Now Live in Beta"
-        />
-        <meta
-          property="og:description"
-          content="🚀 Now Live in Beta! Turn any website into a complete company profile with verified contacts, ICP scoring and actionable insights. Free to explore and test."
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#a855f7" />
-        <link rel="canonical" href="https://leadsnipper.com" />
-      </Head>
+      <SEO pageKey="home" structuredDataType="organization" />
 
       {/* Navigation */}
       <motion.nav
