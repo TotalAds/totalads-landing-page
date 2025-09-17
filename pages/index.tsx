@@ -1,15 +1,33 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
-    ArrowRight, BarChart3, CheckCircle, Eye, MessageSquare, Play, Search, Sparkles, Target, Users,
-    Workflow
-} from 'lucide-react';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+  ArrowRight,
+  BarChart3,
+  CheckCircle,
+  Eye,
+  Menu,
+  MessageSquare,
+  Play,
+  Search,
+  Sparkles,
+  Target,
+  Users,
+  Workflow,
+  X,
+} from "lucide-react";
+import Head from "next/head";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-import HeroBeta from '@/components/sections/HeroWaitlist';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import HeroBeta from "@/components/sections/HeroWaitlist";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { LeadSnipperLogo } from "@/components/ui/LeadSnipperLogo";
 
 // Simplified Animation variants for better performance
 const fadeInUp = {
@@ -110,6 +128,8 @@ const testimonials = [
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const [showClickEffect, setShowClickEffect] = useState(false);
@@ -154,6 +174,11 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // Client-side hydration fix
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Optimized background particle system
   useEffect(() => {
@@ -397,29 +422,11 @@ export default function Home() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <motion.div
-                className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg"
-                whileHover={{
-                  boxShadow: "0 8px 25px rgba(168, 85, 247, 0.4)",
-                  scale: 1.05,
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                <motion.div
-                  animate={{ rotate: [0, 360] }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  <Sparkles className="w-5 h-5 text-white" />
-                </motion.div>
-              </motion.div>
+              <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mr-3 group-hover:scale-110 transition-transform duration-200">
+                <LeadSnipperLogo className="h-8 w-8 text-white" />
+              </div>
               <div>
-                <span className="text-2xl font-bold text-white">
-                  LeadSnipper
-                </span>
+                <h1 className="text-2xl font-bold text-white">LeadSnipper</h1>
                 <div className="text-xs text-gray-300 font-medium">
                   Revenue-Focused Sales Intelligence
                 </div>
@@ -427,6 +434,17 @@ export default function Home() {
             </motion.div>
 
             <div className="hidden md:flex items-center space-x-8">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  href="/how-to-use"
+                  className="text-gray-300 hover:text-white transition-colors font-medium"
+                >
+                  How to Use
+                </Link>
+              </motion.div>
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -443,7 +461,55 @@ export default function Home() {
                   </Button>
                 </Link>
               </motion.div>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-white hover:bg-white/10"
+                >
+                  {isMobileMenuOpen ? (
+                    <X className="w-6 h-6" />
+                  ) : (
+                    <Menu className="w-6 h-6" />
+                  )}
+                </Button>
+              </div>
             </div>
+
+            {/* Mobile Navigation Menu */}
+            {isMobileMenuOpen && (
+              <motion.div
+                className="md:hidden py-4 border-t border-white/10"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex flex-col space-y-4 px-6">
+                  <Link
+                    href="/how-to-use"
+                    className="text-gray-300 hover:text-white transition-colors font-medium py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    How to Use
+                  </Link>
+                  <Link
+                    href="https://app.leadsnipper.com/signup"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Button
+                      size="sm"
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg hover:shadow-purple-500/25 transition-all duration-300 w-full"
+                    >
+                      Start Free Beta
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.nav>
@@ -504,34 +570,35 @@ export default function Home() {
       </motion.div>
 
       {/* Dynamic Particle System */}
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          className="fixed w-1 h-1 bg-purple-400 rounded-full pointer-events-none z-30"
-          initial={{
-            x: particle.x,
-            y: particle.y,
-            opacity: 1,
-            scale: 1,
-          }}
-          animate={{
-            x: particle.x + particle.vx * 50,
-            y: particle.y + particle.vy * 50,
-            opacity: 0,
-            scale: 0,
-          }}
-          transition={{
-            duration: 1,
-            ease: "easeOut",
-          }}
-          onAnimationComplete={() => {
-            setParticles((prev) => prev.filter((p) => p.id !== particle.id));
-          }}
-        />
-      ))}
+      {isClient &&
+        particles.map((particle) => (
+          <motion.div
+            key={particle.id}
+            className="fixed w-1 h-1 bg-purple-400 rounded-full pointer-events-none z-30"
+            initial={{
+              x: particle.x,
+              y: particle.y,
+              opacity: 1,
+              scale: 1,
+            }}
+            animate={{
+              x: particle.x + particle.vx * 50,
+              y: particle.y + particle.vy * 50,
+              opacity: 0,
+              scale: 0,
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            onAnimationComplete={() => {
+              setParticles((prev) => prev.filter((p) => p.id !== particle.id));
+            }}
+          />
+        ))}
 
       {/* Enhanced Click Effects */}
-      {showClickEffect && (
+      {isClient && showClickEffect && (
         <>
           {/* Main ripple */}
           <motion.div
@@ -703,28 +770,29 @@ export default function Home() {
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-x-hidden">
         {/* Optimized Background Particle System */}
-        {backgroundParticles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="fixed pointer-events-none z-10"
-            style={{
-              left: particle.x,
-              top: particle.y,
-              width: particle.size,
-              height: particle.size,
-            }}
-            animate={{
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <div className="w-full h-full bg-purple-400/20 rounded-full blur-sm" />
-          </motion.div>
-        ))}
+        {isClient &&
+          backgroundParticles.map((particle) => (
+            <motion.div
+              key={particle.id}
+              className="fixed pointer-events-none z-10"
+              style={{
+                left: particle.x,
+                top: particle.y,
+                width: particle.size,
+                height: particle.size,
+              }}
+              animate={{
+                opacity: [0.1, 0.3, 0.1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <div className="w-full h-full bg-purple-400/20 rounded-full blur-sm" />
+            </motion.div>
+          ))}
 
         {/* Scroll-responsive background elements */}
         <motion.div
@@ -2770,8 +2838,8 @@ export default function Home() {
             <div className="grid md:grid-cols-4 gap-6 mb-8">
               <div className="md:col-span-1">
                 <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-7 h-7 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-white" />
+                  <div className=" p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mr-3 group-hover:scale-110 transition-transform duration-200">
+                    <LeadSnipperLogo className="h-6 w-6 text-white" />
                   </div>
                   <span className="text-lg font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                     LeadSnipper

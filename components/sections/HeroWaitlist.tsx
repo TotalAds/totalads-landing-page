@@ -1,11 +1,10 @@
-"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Sparkles } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-
-import AuthButtons from '@/components/auth/AuthButtons';
-import { randFromIndex } from '@/lib/landing';
-import { staggerContainer, staggerItem } from '@/lib/utils';
+import AuthButtons from "@/components/auth/AuthButtons";
+import { randFromIndex } from "@/lib/landing";
+import { staggerContainer, staggerItem } from "@/lib/utils";
 
 export default function HeroBeta({
   onHoverChange,
@@ -227,7 +226,7 @@ export default function HeroBeta({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                Get 12+ data points in one profile
+                Create your ICP and get 12+ data points
               </motion.span>
               <motion.span
                 initial={{ opacity: 0 }}
@@ -243,7 +242,7 @@ export default function HeroBeta({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-                contacts, social profiles, company details, tech stack
+                contacts, business intelligence, and ICP fit scoring
               </motion.span>
               <motion.span
                 initial={{ opacity: 0 }}
@@ -251,7 +250,7 @@ export default function HeroBeta({
                 transition={{ duration: 0.8, delay: 1.8 }}
               >
                 {" "}
-                and an ICP fit score — powered by our{" "}
+                for every prospect — powered by our{" "}
               </motion.span>
               <motion.span
                 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-bold"
@@ -271,9 +270,21 @@ export default function HeroBeta({
                 <span className="text-green-400 font-semibold">
                   Now Live in Beta!
                 </span>{" "}
-                Free to explore and test - perfect for sales teams, lead
-                generation, and market research
+                Free to explore and test - perfect for ICP-based sales
+                prospecting, lead generation, and market research
               </motion.span>
+
+              <motion.div
+                className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 mt-4"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 2.4 }}
+              >
+                <Sparkles className="w-4 h-4 mr-2 text-green-400" />
+                <span className="text-sm font-bold text-green-300">
+                  🎉 Early User Bonus: 1000 Free Credits for First 100 Users!
+                </span>
+              </motion.div>
             </motion.p>
 
             <motion.div

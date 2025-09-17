@@ -21,8 +21,8 @@ export default function AuthButtons() {
 
         {/* Login Button - Secondary */}
         <Link href="https://app.leadsnipper.com/login" className="flex-1">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="w-full border-white/20 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 backdrop-blur-sm"
           >
             Login
@@ -31,7 +31,7 @@ export default function AuthButtons() {
       </div>
 
       {/* Beta Badge */}
-      <motion.div
+      {/* <motion.div
         className="mt-4 text-center"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export default function AuthButtons() {
             Beta Access • Free Forever Plan Available
           </span>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Trust indicators */}
       <motion.div
