@@ -441,7 +441,7 @@ export default function Contact() {
             </div>
             <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-gray-400">
               <p>
-                © 2024 LeadSnipper Technologies. All rights reserved. Built with
+                © 2025 LeadSnipper Technologies. All rights reserved. Built with
                 ❤️ by a remote-first team.
               </p>
             </div>

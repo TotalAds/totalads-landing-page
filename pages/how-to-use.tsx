@@ -760,7 +760,7 @@ export default function HowToUse() {
               </div>
             </div>
             <div className="text-center text-gray-400 text-sm mt-6">
-              © 2024 LeadSnipper. All rights reserved.
+              © 2025 LeadSnipper. All rights reserved.
             </div>
           </div>
         </footer>
