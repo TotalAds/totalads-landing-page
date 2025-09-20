@@ -3,16 +3,13 @@ import {
   ArrowRight,
   CheckCircle,
   Copy,
-  Eye,
   Globe,
   Menu,
-  MessageSquare,
   Play,
   Search,
   Sparkles,
   Target,
   Users,
-  Workflow,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -30,10 +27,6 @@ import {
 import { LeadSnipperLogo } from "@/components/ui/LeadSnipperLogo";
 
 // Animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const staggerContainer = {
   hidden: {},
@@ -317,9 +310,9 @@ export default function HowToUse() {
                 variants={staggerItem}
                 className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto"
               >
-                Transform any website into ICP-scored business intelligence in 4
-                simple steps. Create your Ideal Customer Profile and get
-                AI-powered fit scoring for every prospect.
+                Master the art of AI-powered lead generation in 4 simple steps.
+                Extract comprehensive business data, verified contacts, and ICP
+                scoring from any company website in under 30 seconds.
               </motion.p>
 
               <motion.div
@@ -348,110 +341,188 @@ export default function HowToUse() {
           </div>
         </motion.section>
 
-        {/* Step-by-Step Guide */}
+        {/* Article-Style Guide */}
         <section className="py-20 relative">
           <div className="container mx-auto px-6">
+            {/* Article Header */}
             <motion.div
-              className="text-center mb-16"
+              className="max-w-4xl mx-auto mb-16"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={staggerContainer}
             >
-              <motion.h2
+              <motion.div className="text-center mb-12" variants={staggerItem}>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
+                    Complete Guide to LeadSnipper
+                  </span>
+                </h2>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Transform any website into actionable sales intelligence in
+                  under 30 seconds. Follow this comprehensive guide to master
+                  AI-powered lead generation.
+                </p>
+              </motion.div>
+
+              {/* Article Meta */}
+              <motion.div
+                className="flex items-center justify-center space-x-6 text-sm text-gray-400 mb-8 pb-8 border-b border-gray-700"
                 variants={staggerItem}
-                className="text-3xl md:text-4xl font-bold text-white mb-4"
               >
-                Simple 4-Step ICP Process
-              </motion.h2>
-              <motion.p
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">LS</span>
+                  </div>
+                  <span>LeadSnipper Team</span>
+                </div>
+                <span>•</span>
+                <span>5 min read</span>
+                <span>•</span>
+                <span>Updated Dec 2024</span>
+              </motion.div>
+
+              {/* Table of Contents */}
+              <motion.div
+                className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6 mb-12"
                 variants={staggerItem}
-                className="text-xl text-gray-300 max-w-2xl mx-auto"
               >
-                From website URL to ICP-scored business intelligence in minutes
-              </motion.p>
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs">📋</span>
+                  </div>
+                  Table of Contents
+                </h3>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {steps.map((step, index) => (
+                    <a
+                      key={index}
+                      href={`#step-${step.number}`}
+                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-500/10 transition-colors group"
+                    >
+                      <span className="text-purple-400 font-mono text-sm">
+                        {step.number}
+                      </span>
+                      <span className="text-gray-300 group-hover:text-white transition-colors">
+                        {step.title}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
 
-            <div className="grid gap-8 max-w-6xl mx-auto">
+            {/* Article Content */}
+            <div className="max-w-4xl mx-auto space-y-16">
               {steps.map((step, index) => (
-                <motion.div
+                <motion.article
                   key={index}
-                  className="relative"
+                  id={`step-${step.number}`}
+                  className="relative scroll-mt-24"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
                   variants={staggerItem}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 overflow-hidden">
-                    <CardHeader className="pb-4">
-                      <div className="flex items-start gap-6">
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
+                  {/* Step Header */}
+                  <div className="mb-8">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                        {step.icon}
+                      </div>
+                      <div>
+                        <span className="text-sm font-bold text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full">
+                          STEP {step.number}
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-300 text-lg leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  {/* Product Image Placeholder */}
+                  <div className="mb-8">
+                    <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-purple-500/20 rounded-2xl overflow-hidden group hover:border-purple-500/40 transition-all duration-300">
+                      {/* Decorative background pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                      </div>
+
+                      <div className="aspect-video flex items-center justify-center relative z-10">
+                        <div className="text-center">
+                          <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300">
                             {step.icon}
                           </div>
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <span className="text-sm font-bold text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full">
-                              STEP {step.number}
-                            </span>
+                          <div className="space-y-2">
+                            <p className="text-white font-semibold text-lg">
+                              Step {step.number} Screenshot
+                            </p>
+                            <p className="text-gray-400 text-sm max-w-md mx-auto">
+                              {step.title} - Interactive product demonstration
+                            </p>
+                            <div className="inline-flex items-center px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full mt-3">
+                              <span className="text-purple-300 text-xs font-medium">
+                                📸 Product Image Placeholder
+                              </span>
+                            </div>
                           </div>
-                          <CardTitle className="text-2xl font-bold text-white mb-2">
-                            {step.title}
-                          </CardTitle>
-                          <CardDescription className="text-gray-300 text-lg">
-                            {step.description}
-                          </CardDescription>
                         </div>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">
-                            Action Required:
-                          </h4>
-                          <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-lg border border-purple-500/20">
-                            <code className="text-purple-300 font-mono text-sm flex-1">
-                              {step.action}
-                            </code>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() =>
-                                copyToClipboard(step.action, index)
-                              }
-                              className="border-purple-500/50 text-purple-300 hover:bg-purple-500/10"
+
+                      {/* Subtle glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+
+                  {/* Step Content */}
+                  <div className="prose prose-invert max-w-none">
+                    <div className="grid md:grid-cols-2 gap-8 mb-8">
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">
+                          Action Required:
+                        </h4>
+                        <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-lg border border-purple-500/20">
+                          <code className="text-purple-300 font-mono text-sm flex-1">
+                            {step.action}
+                          </code>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() => copyToClipboard(step.action, index)}
+                            className="border-purple-500/50 text-purple-300 hover:bg-purple-500/10"
+                          >
+                            {copiedStep === index ? (
+                              <CheckCircle className="w-4 h-4" />
+                            ) : (
+                              <Copy className="w-4 h-4" />
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">
+                          What You Get:
+                        </h4>
+                        <ul className="space-y-2">
+                          {step.details.map((detail, detailIndex) => (
+                            <li
+                              key={detailIndex}
+                              className="flex items-center gap-2 text-gray-300"
                             >
-                              {copiedStep === index ? (
-                                <CheckCircle className="w-4 h-4" />
-                              ) : (
-                                <Copy className="w-4 h-4" />
-                              )}
-                            </Button>
-                          </div>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">
-                            What You Get:
-                          </h4>
-                          <ul className="space-y-2">
-                            {step.details.map((detail, detailIndex) => (
-                              <li
-                                key={detailIndex}
-                                className="flex items-center gap-2 text-gray-300"
-                              >
-                                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                                <span className="text-sm">{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                              <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                              <span className="text-sm">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                    </div>
+                  </div>
+                </motion.article>
               ))}
             </div>
           </div>

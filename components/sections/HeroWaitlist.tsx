@@ -157,7 +157,7 @@ export default function HeroBeta({
                     ease: "easeOut",
                   }}
                 >
-                  TURN ANY WEBSITE INTO
+                  TRANSFORM ANY WEBSITE INTO
                 </motion.span>
               </motion.div>
 
@@ -178,7 +178,7 @@ export default function HeroBeta({
                   }}
                 >
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
-                    ACTIONABLE BUSINESS
+                    SALES INTELLIGENCE
                   </span>
                   <motion.div
                     className="absolute -inset-2 bg-gradient-to-r from-purple-600/30 to-pink-600/30 blur-2xl -z-10"
@@ -211,7 +211,7 @@ export default function HeroBeta({
                     ease: "easeOut",
                   }}
                 >
-                  INTELLIGENCE
+                  IN SECONDS
                 </motion.span>
               </motion.div>
             </motion.h1>
@@ -226,7 +226,8 @@ export default function HeroBeta({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                Create your ICP and get 12+ data points
+                Extract comprehensive business data, verified contacts, and ICP
+                scoring
               </motion.span>
               <motion.span
                 initial={{ opacity: 0 }}
@@ -234,7 +235,7 @@ export default function HeroBeta({
                 transition={{ duration: 0.8, delay: 1.4 }}
               >
                 {" "}
-                including{" "}
+                from any company website with{" "}
               </motion.span>
               <motion.span
                 className="text-pink-300 font-semibold"
@@ -242,15 +243,14 @@ export default function HeroBeta({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
-                contacts, business intelligence, and ICP fit scoring
+                AI-powered precision and lightning speed
               </motion.span>
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.8 }}
               >
-                {" "}
-                for every prospect — powered by our{" "}
+                . Perfect for{" "}
               </motion.span>
               <motion.span
                 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-bold"
@@ -258,7 +258,7 @@ export default function HeroBeta({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 2.0 }}
               >
-                Sales Intelligence Engine
+                sales teams, lead generation, and market research
               </motion.span>
               <motion.span
                 className="block mt-4 text-gray-400 text-sm md:text-base"
@@ -270,8 +270,8 @@ export default function HeroBeta({
                 <span className="text-green-400 font-semibold">
                   Now Live in Beta!
                 </span>{" "}
-                Free to explore and test - perfect for ICP-based sales
-                prospecting, lead generation, and market research
+                Start with 1000 free credits • No credit card required • Instant
+                access
               </motion.span>
 
               <motion.div
