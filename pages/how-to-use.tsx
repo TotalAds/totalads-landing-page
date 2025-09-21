@@ -460,16 +460,17 @@ export default function HowToUse() {
                           </div>
                           <div className="space-y-2">
                             <p className="text-white font-semibold text-lg">
-                              Step {step.number} Screenshot
+                              Step {step.number}
                             </p>
                             <p className="text-gray-400 text-sm max-w-md mx-auto">
                               {step.title} - Interactive product demonstration
                             </p>
-                            <div className="inline-flex items-center px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full mt-3">
+
+                            {/* <div className="inline-flex items-center px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full mt-3">
                               <span className="text-purple-300 text-xs font-medium">
                                 📸 Product Image Placeholder
                               </span>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
