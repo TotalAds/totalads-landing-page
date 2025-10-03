@@ -1,33 +1,16 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
-  ArrowRight,
-  BarChart3,
-  CheckCircle,
-  Eye,
-  Menu,
-  MessageSquare,
-  Play,
-  Search,
-  Sparkles,
-  Target,
-  Users,
-  Workflow,
-  X,
-} from "lucide-react";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+    ArrowRight, BarChart3, CheckCircle, Eye, Menu, MessageSquare, Play, Search, Sparkles, Target,
+    Users, Workflow, X
+} from 'lucide-react';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
-import HeroBeta from "@/components/sections/HeroWaitlist";
-import SEO from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { LeadSnipperLogo } from "@/components/ui/LeadSnipperLogo";
+import HeroBeta from '@/components/sections/HeroWaitlist';
+import SEO from '@/components/SEO';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { LeadSnipperLogo } from '@/components/ui/LeadSnipperLogo';
 
 // Simplified Animation variants for better performance
 const fadeInUp = {
@@ -134,6 +117,9 @@ export default function Home() {
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const [showClickEffect, setShowClickEffect] = useState(false);
   const [mouseVelocity, setMouseVelocity] = useState({ x: 0, y: 0 });
+
+  // Currency state - INR as default
+  const [currency, setCurrency] = useState<"USD" | "INR">("INR");
 
   const [particles, setParticles] = useState<
     Array<{ id: number; x: number; y: number; vx: number; vy: number }>
@@ -1526,40 +1512,49 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                Start with $5 credits and scale seamlessly. Every plan includes
-                our core Sales Intelligence Engine with no setup fees or hidden
-                costs.
+                Buy credits once, use them forever. No subscriptions, no expiry,
+                no recurring charges. Pay only for what you need.
               </p>
 
-              {/* Pricing Toggle */}
+              {/* Currency Toggle */}
               <motion.div
-                className="flex items-center justify-center mt-8 p-1 bg-slate-800/50 rounded-lg border border-slate-700/50 w-fit mx-auto"
+                className="flex items-center justify-center mt-8 p-1 bg-slate-800/50 rounded-lg border border-slate-700/50 w-fit mx-auto shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <button className="px-4 py-2 text-sm font-medium text-white bg-purple-500 rounded-md transition-all">
-                  Monthly
+                <button
+                  onClick={() => setCurrency("USD")}
+                  className={`px-6 py-2.5 text-sm font-semibold transition-all duration-300 rounded-md ${
+                    currency === "USD"
+                      ? "text-white bg-purple-500 shadow-lg"
+                      : "text-gray-400 hover:text-white hover:bg-slate-700/50"
+                  }`}
+                >
+                  USD ($)
                 </button>
-                <button className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-all">
-                  Annual
-                  <span className="ml-1 text-xs text-green-400">
-                    (Save 20%)
-                  </span>
+                <button
+                  onClick={() => setCurrency("INR")}
+                  className={`px-6 py-2.5 text-sm font-semibold transition-all duration-300 rounded-md ${
+                    currency === "INR"
+                      ? "text-white bg-purple-500 shadow-lg"
+                      : "text-gray-400 hover:text-white hover:bg-slate-700/50"
+                  }`}
+                >
+                  INR (₹)
                 </button>
               </motion.div>
             </motion.div>
 
             <motion.div
-              className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 max-w-7xl mx-auto"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-[1600px] mx-auto"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={staggerContainer}
             >
-              {/* Free Tier */}
+              {/* Starter - Free Tier */}
               <motion.div
-                className="hidden"
                 variants={staggerItem}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -1574,14 +1569,14 @@ export default function Home() {
                     <CardTitle className="text-xl font-bold text-white mb-2">
                       Starter
                     </CardTitle>
+                    <div className="text-sm text-gray-400 mb-2">
+                      For Testing
+                    </div>
                     <div className="text-3xl font-bold text-purple-400 mb-2">
-                      ₹0
-                      <span className="text-sm text-gray-400 font-normal">
-                        /month
-                      </span>
+                      Free
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
-                      Perfect for testing & prototyping
+                      Try the API, no card required
                     </CardDescription>
                   </CardHeader>
 
@@ -1589,24 +1584,8 @@ export default function Home() {
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
                       <span>
-                        <strong>50</strong> profiles/month
+                        <strong>20 credits</strong>
                       </span>
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Basic company profiles
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Standard turnaround
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Community support
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      API documentation
                     </div>
 
                     <div className="pt-4">
@@ -1618,7 +1597,67 @@ export default function Home() {
                 </Card>
               </motion.div>
 
-              {/* Professional Tier */}
+              {/* Hobby Tier */}
+              <motion.div
+                variants={staggerItem}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Card className="h-full relative overflow-hidden border border-slate-700/50 backdrop-blur-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <CardHeader className="text-center pb-6 relative">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                      <span className="text-2xl">💻</span>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-white mb-2">
+                      Hobby
+                    </CardTitle>
+                    <div className="text-sm text-gray-400 mb-2">
+                      For Developers
+                    </div>
+                    <div className="text-3xl font-bold text-blue-400 mb-2">
+                      {currency === "USD" ? "$9" : "₹699"}
+                      <span className="text-sm text-gray-400 font-normal block">
+                        one-time
+                      </span>
+                    </div>
+                    <CardDescription className="text-gray-400 text-sm">
+                      {currency === "USD" ? "$0.045" : "₹3.50"}/credit · No
+                      expiry
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="space-y-3 relative">
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
+                      <span>
+                        <strong>200 credits</strong>
+                      </span>
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
+                      JSON output
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
+                      Multi-page scrape
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
+                      Email support
+                    </div>
+
+                    <div className="pt-4">
+                      <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0 shadow-lg">
+                        Buy Credits
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Growth Tier - Most Popular */}
               <motion.div
                 variants={staggerItem}
                 whileHover={{ y: -8, scale: 1.02 }}
@@ -1632,19 +1671,23 @@ export default function Home() {
 
                   <CardHeader className="text-center pb-6 pt-10 relative">
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-xl flex items-center justify-center mx-auto mb-4 border border-purple-400/50">
-                      <span className="text-2xl">💼</span>
+                      <span className="text-2xl">🚀</span>
                     </div>
                     <CardTitle className="text-xl font-bold text-white mb-2">
-                      Pro Plan
+                      Growth
                     </CardTitle>
+                    <div className="text-sm text-gray-400 mb-2">
+                      For Startups
+                    </div>
                     <div className="text-3xl font-bold text-purple-300 mb-2">
-                      $19
-                      <span className="text-sm text-gray-400 font-normal">
-                        /month
+                      {currency === "USD" ? "$29" : "₹2,299"}
+                      <span className="text-sm text-gray-400 font-normal block">
+                        one-time
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
-                      For growing businesses & teams
+                      {currency === "USD" ? "$0.029" : "₹2.30"}/credit · No
+                      expiry
                     </CardDescription>
                   </CardHeader>
 
@@ -1652,40 +1695,28 @@ export default function Home() {
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
                       <span>
-                        <strong>2,000</strong> profiles/month
+                        <strong>1,000 credits</strong>
                       </span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Advanced profiles with insights
+                      ICP scoring included
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      ICP fit scoring + reasons
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Priority turnaround
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Email support
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-purple-400 mr-3 flex-shrink-0" />
-                      Advanced analytics
+                      Priority API access
                     </div>
 
                     <div className="pt-4">
                       <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 shadow-lg font-semibold">
-                        Start Professional
+                        Buy Credits
                       </Button>
                     </div>
                   </CardContent>
                 </Card>
               </motion.div>
 
-              {/* Pay-per-use */}
+              {/* Pro Tier */}
               <motion.div
                 variants={staggerItem}
                 whileHover={{ y: -8, scale: 1.02 }}
@@ -1696,42 +1727,36 @@ export default function Home() {
 
                   <CardHeader className="text-center pb-6 relative">
                     <div className="w-12 h-12 bg-gradient-to-br from-pink-500/20 to-pink-600/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-pink-500/30">
-                      <span className="text-2xl">⚡</span>
+                      <span className="text-2xl">💼</span>
                     </div>
                     <CardTitle className="text-xl font-bold text-white mb-2">
-                      Starter Plan
+                      Pro
                     </CardTitle>
+                    <div className="text-sm text-gray-400 mb-2">
+                      For Agencies & SDRs
+                    </div>
                     <div className="text-3xl font-bold text-pink-400 mb-2">
-                      $5
+                      {currency === "USD" ? "$99" : "₹7,999"}
                       <span className="text-sm text-gray-400 font-normal block">
-                        /month
+                        one-time
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
-                      Flexible pricing for any scale
+                      {currency === "USD" ? "$0.025" : "₹2.00"}/credit · No
+                      expiry
                     </CardDescription>
                   </CardHeader>
 
                   <CardContent className="space-y-3 relative">
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-pink-400 mr-3 flex-shrink-0" />
-                      No monthly commitment
+                      <span>
+                        <strong>4,000 credits</strong>
+                      </span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <CheckCircle className="w-4 h-4 text-pink-400 mr-3 flex-shrink-0" />
-                      All professional features
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-pink-400 mr-3 flex-shrink-0" />
-                      Credit-based billing
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-pink-400 mr-3 flex-shrink-0" />
-                      Volume discounts
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-pink-400 mr-3 flex-shrink-0" />
-                      Instant activation
+                      Dedicated support
                     </div>
 
                     <div className="pt-4">
@@ -1749,51 +1774,40 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Card className="h-full relative overflow-hidden border border-slate-700/50 backdrop-blur-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="h-full relative overflow-hidden border border-slate-700/50 backdrop-blur-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <CardHeader className="text-center pb-6 relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-green-500/30">
                       <span className="text-2xl">🏢</span>
                     </div>
                     <CardTitle className="text-xl font-bold text-white mb-2">
                       Enterprise
                     </CardTitle>
-                    <div className="text-3xl font-bold text-blue-400 mb-2">
-                      Enterprise Plan
+                    <div className="text-sm text-gray-400 mb-2">For Scale</div>
+                    <div className="text-3xl font-bold text-green-400 mb-2">
+                      Custom
                       <span className="text-sm text-gray-400 font-normal block">
-                        Contact for quote
+                        starts at {currency === "USD" ? "$499" : "₹39,999"}
                       </span>
                     </div>
                     <CardDescription className="text-gray-400 text-sm">
-                      For large-scale operations
+                      25,000+ credits · No expiry
                     </CardDescription>
                   </CardHeader>
 
                   <CardContent className="space-y-3 relative">
                     <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
-                      Unlimited profiles
+                      <CheckCircle className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                      White-label options
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
-                      Dedicated infrastructure
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
-                      Custom integrations
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
-                      24/7 priority support
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0" />
-                      SLA guarantees
+                      <CheckCircle className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                      Account manager
                     </div>
 
                     <div className="pt-4">
-                      <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0 shadow-lg">
+                      <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-0 shadow-lg">
                         Contact Sales
                       </Button>
                     </div>
@@ -1830,8 +1844,9 @@ export default function Home() {
 
                 <div className="mt-6 p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
                   <p className="text-purple-300 text-sm">
-                    💡 <strong>Free Trial:</strong> Start with our free tier -
-                    no credit card required. Upgrade anytime as your needs grow.
+                    💡 <strong>No Subscriptions:</strong> Buy credits once, use
+                    them forever. No recurring charges, no expiry dates. Start
+                    free with 20 credits - no credit card required.
                   </p>
                 </div>
               </div>
