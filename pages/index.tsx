@@ -1,16 +1,33 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
-    ArrowRight, BarChart3, CheckCircle, Eye, Menu, MessageSquare, Play, Search, Sparkles, Target,
-    Users, Workflow, X
-} from 'lucide-react';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+  ArrowRight,
+  BarChart3,
+  CheckCircle,
+  Eye,
+  Menu,
+  MessageSquare,
+  Play,
+  Search,
+  Sparkles,
+  Target,
+  Users,
+  Workflow,
+  X,
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-import HeroBeta from '@/components/sections/HeroWaitlist';
-import SEO from '@/components/SEO';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { LeadSnipperLogo } from '@/components/ui/LeadSnipperLogo';
+import HeroBeta from "@/components/sections/HeroWaitlist";
+import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { LeadSnipperLogo } from "@/components/ui/LeadSnipperLogo";
 
 // Simplified Animation variants for better performance
 const fadeInUp = {
@@ -806,7 +823,7 @@ export default function Home() {
         {/* Features Section */}
         <section
           id="features"
-          className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-purple-900/20 relative overflow-hidden"
+          className="py-24 scroll-mt-28 bg-gradient-to-br from-slate-800 via-slate-900 to-purple-900/20 relative overflow-hidden"
         >
           {/* Animated background elements */}
           <div className="absolute inset-0 pointer-events-none">
@@ -1295,20 +1312,17 @@ export default function Home() {
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.7 }}
                     >
-                      {[
-                        "OpenAPI 3.0 Specification",
-                        "Multiple Language SDKs",
-                        "Interactive API Explorer",
-                        "Webhook Support",
-                      ].map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center justify-center text-xs text-green-300"
-                        >
-                          <div className="w-1 h-1 bg-green-400 rounded-full mr-2" />
-                          {feature}
-                        </div>
-                      ))}
+                      {["Interactive API Explorer", "Email Support"].map(
+                        (feature, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center justify-center text-xs text-green-300"
+                          >
+                            <div className="w-1 h-1 bg-green-400 rounded-full mr-2" />
+                            {feature}
+                          </div>
+                        )
+                      )}
                     </motion.div>
 
                     {/* Simplified API Example */}
@@ -1327,7 +1341,7 @@ export default function Home() {
         {/* Use Cases Section */}
         <section
           id="use-cases"
-          className="py-24 bg-gradient-to-br from-slate-900 via-purple-900/30 to-slate-900 relative overflow-hidden"
+          className="py-24 scroll-mt-28 bg-gradient-to-br from-slate-900 via-purple-900/30 to-slate-900 relative overflow-hidden"
         >
           <div className="container mx-auto px-4 relative">
             <motion.div
@@ -1478,7 +1492,7 @@ export default function Home() {
         {/* Pricing Section */}
         <section
           id="pricing"
-          className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
+          className="py-24 scroll-mt-28 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
         >
           {/* Background Effects */}
           <div className="absolute inset-0">
@@ -1857,7 +1871,7 @@ export default function Home() {
         {/* Workflow Section */}
         <section
           id="workflow"
-          className="py-24 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden"
+          className="py-24 scroll-mt-28 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden"
         >
           {/* Background Effects */}
           <div className="absolute inset-0">
@@ -2310,7 +2324,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section
           id="testimonials"
-          className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden"
+          className="py-20 scroll-mt-28 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden"
         >
           {/* Background Effects */}
           <div className="absolute inset-0">
@@ -2733,7 +2747,7 @@ export default function Home() {
                   </motion.div>
                 </Link>
 
-                <motion.div
+                {/* <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onHoverStart={() => playSound(600, 0.1)}
@@ -2745,7 +2759,7 @@ export default function Home() {
                     className="group relative border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-8 py-4 text-lg font-bold backdrop-blur-sm transition-all duration-500 overflow-hidden rounded-xl"
                     style={{ transition: "transform 0.3s ease" }}
                   >
-                    {/* Hover background effect */}
+                   
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10"
                       initial={{ scale: 0, opacity: 0 }}
@@ -2753,7 +2767,7 @@ export default function Home() {
                       transition={{ duration: 0.4, ease: "easeOut" }}
                     />
 
-                    {/* Border glow effect */}
+                    
                     <motion.div
                       className="absolute -inset-1 border-2 border-white/0 rounded-xl"
                       whileHover={{
@@ -2777,7 +2791,7 @@ export default function Home() {
                       📖 View Documentation
                     </span>
                   </Button>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
 
               {/* Trust Indicators */}
@@ -2793,14 +2807,14 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5"></div>
                     SOC 2 Compliant
                   </div>
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-1.5"></div>
                     GDPR Ready
-                  </div>
+                  </div> */}
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mr-1.5"></div>
                     Enterprise Grade
@@ -2841,7 +2855,7 @@ export default function Home() {
                   developers.
                 </p>
                 <div className="flex space-x-3">
-                  <motion.div
+                  {/* <motion.div
                     className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center hover:bg-purple-500/30 transition-all duration-300 cursor-pointer border border-purple-500/30"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -2861,7 +2875,7 @@ export default function Home() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <span className="text-blue-400 text-xs font-bold">𝕏</span>
-                  </motion.div>
+                  </motion.div> */}
                 </div>
               </div>
 
@@ -2888,7 +2902,7 @@ export default function Home() {
                       Pricing
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="#api"
                       className="hover:text-purple-400 transition-colors duration-300 flex items-center group"
@@ -2896,7 +2910,7 @@ export default function Home() {
                       <span className="w-1 h-1 bg-purple-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       Docs
                     </a>
-                  </li>
+                  </li> */}
                   {/* <li>
                     <a
                       href="#integrations"
@@ -2914,7 +2928,7 @@ export default function Home() {
                   🏢 Company
                 </h4>
                 <ul className="space-y-2 text-slate-400 text-sm">
-                  <li>
+                  {/* <li>
                     <a
                       href="#about"
                       className="hover:text-pink-400 transition-colors duration-300 flex items-center group"
@@ -2922,7 +2936,7 @@ export default function Home() {
                       <span className="w-1 h-1 bg-pink-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       About Us
                     </a>
-                  </li>
+                  </li>/*}
                   {/* <li>
                     <a
                       href="#blog"

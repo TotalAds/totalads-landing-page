@@ -1,14 +1,74 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+
+const SECTION_IDS = [
+  "features",
+  "workflow",
+  "use-cases",
+  "testimonials",
+  "pricing",
+] as const;
+
+type SectionId = (typeof SECTION_IDS)[number];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState<SectionId | null>(null);
+
+  // Scroll spy: highlight the link of the section currently in view
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(id);
+          });
+        },
+        {
+          root: null,
+          rootMargin: "-45% 0px -50% 0px",
+          threshold: [0, 0.25, 0.5, 0.75, 1],
+        }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, []);
+
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: SectionId
+  ) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Reflect hash in the URL for deep-linking/back navigation
+      if (typeof window !== "undefined" && window.location.hash !== `#${id}`) {
+        window.history.pushState(null, "", `#${id}`);
+      }
+      // Make sure the selection updates immediately on click
+      setActive(id);
+    }
+    setIsOpen(false);
+  };
+
+  const linkBase = "transition-colors text-[#075E54] hover:text-[#25D366]";
+  const linkActive = "text-[#25D366] font-semibold";
 
   return (
     <motion.nav
@@ -36,25 +96,46 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#features"
-              className="text-[#075E54] hover:text-[#25D366] transition-colors"
+              onClick={(e) => handleAnchorClick(e, "features")}
+              className={`${linkBase} ${
+                active === "features" ? linkActive : ""
+              }`}
             >
               Features
             </a>
             <a
-              href="#how-it-works"
-              className="text-[#075E54] hover:text-[#25D366] transition-colors"
+              href="#workflow"
+              onClick={(e) => handleAnchorClick(e, "workflow")}
+              className={`${linkBase} ${
+                active === "workflow" ? linkActive : ""
+              }`}
             >
               How It Works
             </a>
             <a
-              href="#roadmap"
-              className="text-[#075E54] hover:text-[#25D366] transition-colors"
+              href="#use-cases"
+              onClick={(e) => handleAnchorClick(e, "use-cases")}
+              className={`${linkBase} ${
+                active === "use-cases" ? linkActive : ""
+              }`}
             >
-              Roadmap
+              Use Cases
+            </a>
+            <a
+              href="#testimonials"
+              onClick={(e) => handleAnchorClick(e, "testimonials")}
+              className={`${linkBase} ${
+                active === "testimonials" ? linkActive : ""
+              }`}
+            >
+              Testimonials
             </a>
             <a
               href="#pricing"
-              className="text-[#075E54] hover:text-[#25D366] transition-colors"
+              onClick={(e) => handleAnchorClick(e, "pricing")}
+              className={`${linkBase} ${
+                active === "pricing" ? linkActive : ""
+              }`}
             >
               Pricing
             </a>
@@ -89,25 +170,46 @@ export default function Navigation() {
             <div className="flex flex-col space-y-4">
               <a
                 href="#features"
-                className="text-[#075E54] hover:text-[#25D366] transition-colors"
+                onClick={(e) => handleAnchorClick(e, "features")}
+                className={`${linkBase} ${
+                  active === "features" ? linkActive : ""
+                }`}
               >
                 Features
               </a>
               <a
-                href="#how-it-works"
-                className="text-[#075E54] hover:text-[#25D366] transition-colors"
+                href="#workflow"
+                onClick={(e) => handleAnchorClick(e, "workflow")}
+                className={`${linkBase} ${
+                  active === "workflow" ? linkActive : ""
+                }`}
               >
                 How It Works
               </a>
               <a
-                href="#roadmap"
-                className="text-[#075E54] hover:text-[#25D366] transition-colors"
+                href="#use-cases"
+                onClick={(e) => handleAnchorClick(e, "use-cases")}
+                className={`${linkBase} ${
+                  active === "use-cases" ? linkActive : ""
+                }`}
               >
-                Roadmap
+                Use Cases
+              </a>
+              <a
+                href="#testimonials"
+                onClick={(e) => handleAnchorClick(e, "testimonials")}
+                className={`${linkBase} ${
+                  active === "testimonials" ? linkActive : ""
+                }`}
+              >
+                Testimonials
               </a>
               <a
                 href="#pricing"
-                className="text-[#075E54] hover:text-[#25D366] transition-colors"
+                onClick={(e) => handleAnchorClick(e, "pricing")}
+                className={`${linkBase} ${
+                  active === "pricing" ? linkActive : ""
+                }`}
               >
                 Pricing
               </a>
