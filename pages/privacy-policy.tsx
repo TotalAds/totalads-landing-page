@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
         <div className="mx-auto max-w-3xl rounded-xl border border-white/10 bg-slate-900/60 p-6 shadow-xl backdrop-blur">
           <h1 className="text-3xl font-bold text-white">Privacy Policy</h1>
           <p className="mt-2 text-sm text-gray-400">
-            Last updated: 09 Aug 2025
+            Last updated: 18 Oct 2025
           </p>
 
           <div className="prose prose-invert mt-8 max-w-none prose-headings:text-white prose-a:text-purple-300">
@@ -42,7 +42,9 @@ export default function PrivacyPolicy() {
               collects, uses, and safeguards information when you use our
               website, APIs, and related products. We build sales intelligence
               tools that turn public websites into structured company profiles
-              and lead insights for legitimate business purposes.
+              and lead insights for legitimate business purposes. We also
+              provide bulk email services for outreach and lead engagement
+              campaigns.
             </p>
 
             <h2>Who we are</h2>
@@ -72,6 +74,16 @@ export default function PrivacyPolicy() {
                 explicitly submit to the Service, processed to create profiles
                 and insights.
               </li>
+              <li>
+                Email campaign data: recipient email addresses, campaign
+                content, delivery status, open/click metrics, and engagement
+                data for bulk email services.
+              </li>
+              <li>
+                Mailbox data: email account credentials (encrypted), mailbox
+                configuration, and email metadata for email warmup and delivery
+                optimization.
+              </li>
             </ul>
 
             <h2>How we use information</h2>
@@ -88,6 +100,15 @@ export default function PrivacyPolicy() {
               <li>
                 Communicate product updates and important notices (you can opt
                 out of marketing).
+              </li>
+              <li>
+                For bulk email services: send campaigns on your behalf, track
+                delivery and engagement metrics, optimize email deliverability,
+                and maintain mailbox health through warmup processes.
+              </li>
+              <li>
+                Analyze email performance data to improve our email
+                infrastructure and services.
               </li>
             </ul>
 
@@ -130,12 +151,22 @@ export default function PrivacyPolicy() {
               protect your information during transfers.
             </p>
 
+            <h2>Email compliance and recipient consent</h2>
+            <p>
+              For bulk email services, you are responsible for ensuring that all
+              recipients have provided proper consent to receive emails in
+              accordance with applicable laws (CAN-SPAM, GDPR, CASL, etc.). You
+              must maintain accurate records of consent and provide recipients
+              with clear unsubscribe options. We do not send emails to
+              recipients without your explicit instruction and authorization.
+            </p>
+
             <h2>Security</h2>
             <p>
               We employ industry-standard security practices including
               encryption in transit, access controls, and continuous monitoring.
-              No method is 100% secure; please use strong credentials and
-              protect your tokens.
+              Email credentials are encrypted at rest. No method is 100% secure;
+              please use strong credentials and protect your tokens.
             </p>
 
             <h2>Your rights</h2>

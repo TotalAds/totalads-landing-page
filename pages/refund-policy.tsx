@@ -33,13 +33,14 @@ export default function RefundPolicy() {
         <div className="mx-auto max-w-3xl rounded-xl border border-white/10 bg-slate-900/60 p-6 shadow-xl backdrop-blur">
           <h1 className="text-3xl font-bold text-white">Refund Policy</h1>
           <p className="mt-2 text-sm text-gray-400">
-            Last updated: 09 Aug 2025
+            Last updated: 18 Oct 2025
           </p>
 
           <div className="prose prose-invert mt-8 max-w-none prose-headings:text-white prose-a:text-purple-300">
             <p>
               We want you to get value from LeadSnipper. This policy explains
-              how refunds work for subscriptions and usage-based credits.
+              how refunds work for subscriptions, usage-based credits, and bulk
+              email services.
             </p>
 
             <h2>Subscriptions</h2>
@@ -71,6 +72,30 @@ export default function RefundPolicy() {
               <li>
                 We may, at our discretion, credit your account if a platform
                 error caused failed jobs.
+              </li>
+            </ul>
+
+            <h2>Bulk email service</h2>
+            <ul>
+              <li>
+                Email credits and campaign packages are non-refundable once
+                campaigns have been sent or emails have been delivered.
+              </li>
+              <li>
+                Unused email credits may be carried forward to the next billing
+                period or expire as specified in your plan.
+              </li>
+              <li>
+                If emails fail to send due to a platform error, we will credit
+                your account for the failed sends at our discretion.
+              </li>
+              <li>
+                Email warmup and deliverability optimization services are
+                non-refundable as they are ongoing services.
+              </li>
+              <li>
+                Refunds for email service issues must be requested within 7 days
+                of the incident with supporting documentation.
               </li>
             </ul>
 

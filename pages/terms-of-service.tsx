@@ -33,15 +33,15 @@ export default function TermsOfService() {
         <div className="mx-auto max-w-3xl rounded-xl border border-white/10 bg-slate-900/60 p-6 shadow-xl backdrop-blur">
           <h1 className="text-3xl font-bold text-white">Terms of Service</h1>
           <p className="mt-2 text-sm text-gray-400">
-            Last updated: 09 Aug 2025
+            Last updated: 18 Oct 2025
           </p>
 
           <div className="prose prose-invert mt-8 max-w-none prose-headings:text-white prose-a:text-purple-300">
             <p>
               These Terms of Service (the “Terms”) govern your access to and use
-              of LeadSnipper, including our website, APIs, and related services
-              (collectively, the “Service”). By using the Service you agree to
-              these Terms.
+              of LeadSnipper, including our website, APIs, bulk email services,
+              and related services (collectively, the “Service”). By using the
+              Service you agree to these Terms.
             </p>
 
             <h2>1. Accounts and access</h2>
@@ -72,6 +72,41 @@ export default function TermsOfService() {
               <li>
                 No reverse engineering, circumventing rate limits, or
                 interfering with platform integrity.
+              </li>
+              <li>
+                For bulk email services: only send emails to recipients who have
+                provided proper consent; comply with all applicable email laws
+                (CAN-SPAM, GDPR, CASL, etc.); do not use the service for spam,
+                phishing, or malicious purposes.
+              </li>
+            </ul>
+
+            <h2>2a. Bulk Email Service Terms</h2>
+            <ul>
+              <li>
+                You are solely responsible for obtaining and maintaining proper
+                consent from all email recipients.
+              </li>
+              <li>
+                You must provide recipients with clear unsubscribe mechanisms
+                and honor unsubscribe requests promptly.
+              </li>
+              <li>
+                You are responsible for the content of all emails sent through
+                our service and ensuring compliance with applicable laws.
+              </li>
+              <li>
+                We reserve the right to suspend email services if we detect
+                violations of these terms or applicable laws.
+              </li>
+              <li>
+                Email warmup and deliverability optimization are provided on an
+                &quot;as-is&quot; basis; we do not guarantee specific delivery
+                rates or inbox placement.
+              </li>
+              <li>
+                You must not use our email service to send emails on behalf of
+                third parties without explicit authorization.
               </li>
             </ul>
 
