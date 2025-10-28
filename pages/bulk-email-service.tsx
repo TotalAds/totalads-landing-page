@@ -101,52 +101,68 @@ export default function BulkEmailService() {
 
   const pricingPlans = [
     {
-      name: "Starter",
-      description: "Perfect for individuals and small teams",
-      price: currency === "INR" ? "₹2,999" : "$39",
+      name: "Free Trial",
+      description: "Perfect for getting started",
+      price: currency === "INR" ? "₹0" : "Free",
       period: "/month",
       features: [
-        "2,000 active leads",
-        "6,000 monthly emails",
-        "Unlimited warmups",
+        "100 emails/month",
         "Basic analytics",
         "Email support",
+        "Single domain",
+        "Standard deliverability",
       ],
-      cta: "Start Free Trial",
+      cta: "Start Free",
       highlighted: false,
     },
     {
-      name: "Professional",
-      description: "For growing agencies and teams",
-      price: currency === "INR" ? "₹7,499" : "$94",
+      name: "Starter",
+      description: "For small teams and businesses",
+      price: currency === "INR" ? "₹499" : "$6",
       period: "/month",
       features: [
-        "30,000 active leads",
-        "150,000 monthly emails",
-        "Unlimited warmups",
+        "1,000 emails/month",
+        "Volume sending enabled",
         "Advanced analytics",
+        "Custom domain",
         "Priority support",
-        "Custom CRM",
         "API access",
       ],
-      cta: "Start Free Trial",
+      cta: "Subscribe Now",
+      highlighted: false,
+    },
+    {
+      name: "Growth",
+      description: "For growing businesses",
+      price: currency === "INR" ? "₹999" : "$12",
+      period: "/month",
+      features: [
+        "2,000 emails/month",
+        "Volume sending enabled",
+        "Advanced analytics",
+        "Custom domain",
+        "Priority support",
+        "API access",
+        "Dedicated support",
+      ],
+      cta: "Subscribe Now",
       highlighted: true,
     },
     {
-      name: "Enterprise",
-      description: "For large-scale operations",
-      price: "Custom",
-      period: "pricing",
+      name: "Pay-as-you-go",
+      description: "For variable usage",
+      price: currency === "INR" ? "₹0.01" : "$0.0001",
+      period: "/email",
       features: [
-        "Unlimited leads",
         "Unlimited emails",
-        "Dedicated account manager",
-        "White-label solution",
-        "Custom integrations",
-        "SLA guarantee",
-        "24/7 support",
+        "No monthly fee",
+        "Volume sending enabled",
+        "Advanced analytics",
+        "Custom domain",
+        "API access",
+        "Flexible scaling",
       ],
-      cta: "Contact Sales",
+      cta: "Get Started",
       highlighted: false,
     },
   ];
@@ -365,7 +381,7 @@ export default function BulkEmailService() {
             </motion.div>
 
             <motion.div
-              className="grid md:grid-cols-3 gap-8"
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
