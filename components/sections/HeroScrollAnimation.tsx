@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
-import LeadsnipperSc from "@/asset/leadsnipper_dash_sc.png";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import LeadsnipperSc from '@/asset/leadsnipper_dash_sc.png';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 
 export function HeroScrollAnimation() {
   return (
@@ -17,7 +17,7 @@ export function HeroScrollAnimation() {
                 AI-Powered Personalization
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-[#4a4a4a] mt-6 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-[#4a4a4a] mt-6 max-w-2xl mx-auto mb-4">
               Send unlimited emails with 99.9% deliverability and watch your
               reply rates soar
             </p>
