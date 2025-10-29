@@ -7,10 +7,10 @@ export const seoConfig = {
       : "http://localhost:3001",
 
   // Default SEO settings
-  defaultTitle: "LeadSnipper - ICP-Based Sales Intelligence Platform",
+  defaultTitle: "LeadSnipper - AI-Powered Email Campaign Platform",
   titleTemplate: "%s | LeadSnipper",
   defaultDescription:
-    "Transform any website into comprehensive company profiles with ICP fit scoring. Get verified contacts, business intelligence, and actionable insights for your sales team. 1000 free credits for early users.",
+    "Scale your cold email outreach with 99.9% deliverability, AI personalization, and unlimited mailboxes. Send campaigns at scale with premium inbox placement. 1000 free credits for early users.",
 
   // Open Graph defaults
   defaultOpenGraph: {
@@ -23,7 +23,7 @@ export const seoConfig = {
         url: "https://leadsnipper.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "LeadSnipper - ICP-Based Sales Intelligence Platform",
+        alt: "LeadSnipper - AI-Powered Email Campaign Platform",
       },
     ],
   },
@@ -107,61 +107,61 @@ export interface PageConfig {
 // Page-specific SEO configurations
 export const pageConfigs: Record<string, PageConfig> = {
   home: {
-    title: "LeadSnipper - ICP-Based Sales Intelligence Platform",
+    title: "LeadSnipper - AI-Powered Email Campaign Platform",
     description:
-      "Transform any website into comprehensive company profiles with ICP fit scoring. Get verified contacts, business intelligence, and actionable insights for your sales team. 1000 free credits for early users.",
+      "Scale your cold email outreach with 99.9% deliverability, AI personalization, and unlimited mailboxes. Send campaigns at scale with premium inbox placement. 1000 free credits for early users.",
     keywords:
-      "sales intelligence, lead generation, ICP scoring, business intelligence, contact finder, sales automation, B2B leads, company profiles, sales prospecting, CRM integration",
+      "cold email, email campaigns, email marketing, email automation, deliverability, AI personalization, email outreach, sales automation, email sequences, campaign management",
     canonical: "https://leadsnipper.com",
     openGraph: {
-      title: "LeadSnipper - ICP-Based Sales Intelligence Platform",
+      title: "LeadSnipper - AI-Powered Email Campaign Platform",
       description:
-        "Transform websites into complete company profiles with ICP fit scoring and verified contacts.",
+        "Scale cold email campaigns with 99.9% deliverability and AI-powered personalization.",
       url: "https://leadsnipper.com",
       images: [
         {
           url: "https://leadsnipper.com/og-home.png",
           width: 1200,
           height: 630,
-          alt: "LeadSnipper Homepage - Sales Intelligence Platform",
+          alt: "LeadSnipper Homepage - Email Campaign Platform",
         },
       ],
     },
   },
 
   howToUse: {
-    title: "How to Use LeadSnipper - Step-by-Step Guide",
+    title: "How to Use LeadSnipper - Email Campaign Guide",
     description:
-      "Learn how to use LeadSnipper to extract business intelligence from any website. Create ICP profiles, get company data, and score leads in 4 simple steps.",
+      "Learn how to launch email campaigns with LeadSnipper. Add domains, upload leads, create campaigns, and send at scale in 4 simple steps.",
     keywords:
-      "how to use leadsnipper, ICP profile setup, lead scoring guide, sales intelligence tutorial, business data extraction",
+      "how to use leadsnipper, email campaign setup, cold email guide, email automation tutorial, campaign creation",
     canonical: "https://leadsnipper.com/how-to-use",
     openGraph: {
-      title: "How to Use LeadSnipper - Complete Guide",
+      title: "How to Use LeadSnipper - Email Campaign Guide",
       description:
-        "Step-by-step guide to extracting business intelligence and scoring leads with ICP profiles.",
+        "Step-by-step guide to creating and launching email campaigns with premium deliverability.",
       url: "https://leadsnipper.com/how-to-use",
     },
   },
 
   contact: {
-    title: "Contact LeadSnipper - Get Support & Sales Help",
+    title: "Contact LeadSnipper - Email Campaign Support",
     description:
-      "Contact LeadSnipper for support, sales inquiries, or partnership opportunities. Get help with ICP setup, API integration, and platform features.",
+      "Contact LeadSnipper for support, sales inquiries, or partnership opportunities. Get help with email campaigns, deliverability, and platform features.",
     keywords:
-      "contact leadsnipper, customer support, sales help, API support, partnership inquiries",
+      "contact leadsnipper, customer support, email support, campaign help, partnership inquiries",
     canonical: "https://leadsnipper.com/contact",
     openGraph: {
-      title: "Contact LeadSnipper - Get Support & Sales Help",
+      title: "Contact LeadSnipper - Email Campaign Support",
       description:
-        "Contact our remote-first team for support, sales inquiries, or partnership opportunities.",
+        "Contact our team for support, sales inquiries, or partnership opportunities.",
       url: "https://leadsnipper.com/contact",
       images: [
         {
           url: "https://leadsnipper.com/og-contact.png",
           width: 1200,
           height: 630,
-          alt: "Contact LeadSnipper - Remote-First Support Team",
+          alt: "Contact LeadSnipper - Email Campaign Support Team",
         },
       ],
     },
@@ -204,7 +204,7 @@ export const structuredData = {
     url: "https://leadsnipper.com",
     logo: "https://leadsnipper.com/logo.png",
     description:
-      "ICP-based sales intelligence platform that transforms websites into comprehensive company profiles with verified contacts and business intelligence.",
+      "AI-powered email campaign platform for cold outreach with 99.9% deliverability, unlimited mailboxes, and AI personalization.",
     foundingDate: "2024",
     sameAs: [
       "https://twitter.com/leadsnipper",
@@ -224,7 +224,7 @@ export const structuredData = {
     name: "LeadSnipper",
     url: "https://leadsnipper.com",
     description:
-      "ICP-based sales intelligence platform for B2B lead generation and company profiling.",
+      "AI-powered email campaign platform for cold outreach with premium deliverability and personalization.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://app.leadsnipper.com/search?q={search_term_string}",
@@ -239,7 +239,7 @@ export const structuredData = {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web Browser",
     description:
-      "Sales intelligence platform that extracts business data and scores leads based on Ideal Customer Profiles (ICP).",
+      "AI-powered email campaign platform for cold outreach with 99.9% deliverability and unlimited mailboxes.",
     url: "https://leadsnipper.com",
     downloadUrl: "https://app.leadsnipper.com/signup",
     softwareVersion: "1.0",
