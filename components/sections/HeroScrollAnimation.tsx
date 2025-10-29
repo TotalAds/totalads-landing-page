@@ -25,17 +25,6 @@ export function HeroScrollAnimation() {
         }
       >
         <div className="w-full h-full flex items-center justify-center ">
-          {/* <div className="text-center">
-            <div className="inline-block p-8 bg-white rounded-2xl shadow-lg border border-[#e0e0e0]">
-              <div className="text-6xl mb-4">📧</div>
-              <h3 className="text-2xl font-bold text-[#131313] mb-2">
-                Email Campaign Platform
-              </h3>
-              <p className="text-[#4a4a4a]">
-                Unlimited mailboxes • AI personalization • 99.9% deliverability
-              </p>
-            </div>
-          </div> */}
           <Image src={LeadsnipperSc} alt="" className="w-full" />
         </div>
       </ContainerScroll>

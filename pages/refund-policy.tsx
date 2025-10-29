@@ -1,9 +1,11 @@
-import Head from "next/head";
-import Link from "next/link";
+import Head from 'next/head';
+
+import Footer from '@/components/sections/Footer';
+import { Navbar } from '@/components/ui/navbar';
 
 export default function RefundPolicy() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f0f0f0] to-[#fafafa]">
       <Head>
         <title>Refund Policy – LeadSnipper</title>
         <meta
@@ -13,30 +15,18 @@ export default function RefundPolicy() {
         <meta name="robots" content="index,follow" />
       </Head>
 
-      <header className="border-b border-white/10 backdrop-blur-xl sticky top-0 z-40 bg-slate-900/70">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 font-bold">
-              ✨
-            </span>
-            <span className="text-xl font-bold">LeadSnipper</span>
-          </Link>
-          <nav className="text-sm">
-            <Link href="/" className="text-gray-300 hover:text-white">
-              Home
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="container mx-auto px-6 py-12">
-        <div className="mx-auto max-w-3xl rounded-xl border border-white/10 bg-slate-900/60 p-6 shadow-xl backdrop-blur">
-          <h1 className="text-3xl font-bold text-white">Refund Policy</h1>
-          <p className="mt-2 text-sm text-gray-400">
+      <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#131313] mb-2">
+            Refund Policy
+          </h1>
+          <p className="text-[#4a4a4a] text-sm mb-8">
             Last updated: 18 Oct 2025
           </p>
 
-          <div className="prose prose-invert mt-8 max-w-none prose-headings:text-white prose-a:text-purple-300">
+          <div className="prose max-w-none prose-headings:text-[#131313] prose-headings:font-bold prose-a:text-[#eb857a] prose-a:hover:text-[#9DD0c7] prose-p:text-[#4a4a4a] prose-li:text-[#4a4a4a] text-[#131313]">
             <p>
               We want you to get value from LeadSnipper. This policy explains
               how refunds work for subscriptions, usage-based credits, and bulk
@@ -135,6 +125,8 @@ export default function RefundPolicy() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

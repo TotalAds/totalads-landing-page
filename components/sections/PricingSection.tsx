@@ -195,7 +195,7 @@ export default function PricingSection() {
               </div>
 
               <Link
-                href="/signup"
+                href="https://app.leadsnipper.com/signup"
                 className={`block w-full py-3 rounded-lg font-semibold text-center transition mb-8 ${
                   plan.highlighted
                     ? "bg-[#eb857a]  text-white hover:shadow-lg hover:shadow-[#eb857a]/50"

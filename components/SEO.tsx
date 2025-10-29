@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import { PageConfig, pageConfigs, seoConfig, structuredData } from "@/lib/seo";
+import { PageConfig, pageConfigs, seoConfig, structuredData } from '@/lib/seo';
 
 interface SEOProps {
   pageKey?: keyof typeof pageConfigs;
@@ -93,8 +93,8 @@ export default function SEO({
 
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#a855f7" />
-      <meta name="msapplication-TileColor" content="#a855f7" />
+      <meta name="theme-color" content="#eb857a" />
+      <meta name="msapplication-TileColor" content="#eb857a" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="format-detection" content="telephone=no" />

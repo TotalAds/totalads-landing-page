@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -33,20 +32,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-      {/* subtle footer link */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 8,
-          right: 12,
-          fontSize: 10,
-          opacity: 0.6,
-        }}
-      >
-        <Link href="/legal/data-use" style={{ color: "inherit" }}>
-          Data use
-        </Link>
-      </div>
     </>
   );
 }

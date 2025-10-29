@@ -1,28 +1,29 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
-import React from "react";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+
+import Logo from '@/asset/leadsnipper_rec.svg';
+import { IconBrandLinkedin } from '@tabler/icons-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     Product: [
-      { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "FAQ", href: "#faq" },
-      { label: "API Docs", href: "#" },
+      { label: "Features", href: "/#features" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "FAQ", href: "/#faq" },
     ],
     Company: [
-      { label: "About", href: "#" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "/contact" },
+      { label: "Contact", href: "mailto:rehan@leadsnipper.com" },
+      { label: "Careers", href: "mailto:rehan@leadsnipper.com" },
     ],
+
     Legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
       { label: "Refund Policy", href: "/refund-policy" },
-      { label: "Data Use", href: "/legal/data-use" },
     ],
   };
 
@@ -39,8 +40,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#eb857a] to-[#9DD0c7] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">LS</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-[#eb857a] to-[#9DD0c7] rounded flex items-center justify-center overflow-hidden">
+                <Image src={Logo} alt="" />
               </div>
               <span className="text-white font-bold">LeadSnipper</span>
             </Link>
@@ -77,22 +78,10 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/leadsnipper/"
               className="text-[#f4cdc1] hover:text-[#eb857a] transition"
             >
-              Twitter
-            </a>
-            <a
-              href="#"
-              className="text-[#f4cdc1] hover:text-[#eb857a] transition"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="#"
-              className="text-[#f4cdc1] hover:text-[#eb857a] transition"
-            >
-              GitHub
+              <IconBrandLinkedin />
             </a>
           </div>
         </div>

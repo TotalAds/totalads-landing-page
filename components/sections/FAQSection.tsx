@@ -8,32 +8,32 @@ export default function FAQSection() {
     {
       question: "How does LeadSnipper ensure 99.9% deliverability?",
       answer:
-        "We use enterprise-grade infrastructure with dedicated IP servers, advanced email authentication (DKIM, SPF, DMARC), and AI-powered warmup sequences to build sender reputation.",
+        "We use enterprise-grade infrastructure with dedicated IP servers, advanced email authentication (DKIM, SPF, DMARC), and AI-powered warmup sequences to build sender reputation. Our system monitors bounce rates and complaints in real-time to maintain optimal deliverability.",
     },
     {
-      question: "Can I really send unlimited emails?",
+      question: "Can I send unlimited emails with LeadSnipper?",
       answer:
-        "Yes! With unlimited mailboxes, you can add as many email accounts as you want and send at scale. We handle all the infrastructure and deliverability optimization.",
+        "Yes! With unlimited mailboxes, you can add as many email accounts as you want and send at scale. Choose from our flexible pricing plans or pay-as-you-go model to match your sending volume.",
     },
     {
-      question: "How long does it take to set up?",
+      question: "How long does it take to set up my first campaign?",
       answer:
-        "Most users are sending their first campaign within 15 minutes. Just add your domain, upload leads, and launch. No technical knowledge required.",
+        "Most users are sending their first campaign within 15 minutes. Just verify your domain, add your email account, upload your lead list, and launch. No technical knowledge required.",
     },
     {
-      question: "Do you provide leads?",
+      question: "What email integrations do you support?",
       answer:
-        "We have access to a database of millions of verified B2B contacts. You can search and filter by company, industry, role, and more.",
+        "We integrate with HubSpot, Salesforce, Zapier, Make, Clay, Slack, and Google Sheets. We also have a powerful API for custom integrations. More integrations are coming soon.",
     },
     {
-      question: "What integrations do you support?",
+      question: "Can I personalize emails at scale?",
       answer:
-        "We integrate with HubSpot, Salesforce, Pipedrive, Zapier, Make, Clay, and more. We also have a powerful API for custom integrations.",
+        "Absolutely! Use dynamic variables like {{first_name}}, {{company}}, and custom fields to personalize each email. Our AI can help you craft compelling subject lines and body copy for better engagement.",
     },
     {
       question: "Is there a free trial?",
       answer:
-        "Yes! Start free with no credit card required. You get 1000 free credits to test the platform.",
+        "Yes! Start free with no credit card required. You get 1000 free credits to test the platform and send your first campaigns.",
     },
   ];
 

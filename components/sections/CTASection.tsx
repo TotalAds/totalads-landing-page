@@ -34,7 +34,7 @@ export default function CTASection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/signup"
+              href="https://app.leadsnipper.com/signup"
               className="px-8 py-4 bg-[#eb857a]  text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#eb857a]/50 transition transform hover:scale-105"
             >
               Start Free — No Credit Card
