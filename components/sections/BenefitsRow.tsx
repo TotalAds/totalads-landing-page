@@ -5,21 +5,36 @@ export default function BenefitsRow() {
   const benefits = [
     {
       icon: "📧",
-      title: "99.9% Deliverability",
+      title: "99.9% Deliverability. Real Inbox Placement.",
       description:
-        "Enterprise-grade infrastructure ensures your emails reach the primary inbox every time.",
+        "Every email lands where it should — the primary inbox. We handle SPF, DKIM, and DMARC automatically, run smart warmup sequences, and monitor reputation 24/7. Stop guessing. Start scaling safely.",
+      bullets: [
+        "Automated warmup for every domain",
+        "Real-time bounce & complaint monitoring",
+        "Dedicated IPs available for scaling teams",
+      ],
     },
     {
       icon: "🤖",
       title: "AI Personalization",
       description:
-        "Automatically personalize every email with AI-powered variables and content optimization.",
+        "Our AI writes unique intros, subject lines, and CTAs for each prospect using real business data. No templates. No repetition.",
+      bullets: [
+        "AI variables trained on your tone",
+        "Automatic follow-up generation",
+        "One-click optimization for open & reply rates",
+      ],
     },
     {
       icon: "📊",
-      title: "Unified Inbox",
+      title: "Automation + Unified Inbox",
       description:
-        "Manage all replies from unlimited mailboxes in one centralized, organized dashboard.",
+        "Manage all your campaigns, replies, and warmups in one dashboard — beautifully organized and synced with your favorite tools.",
+      bullets: [
+        "Centralized inbox for unlimited mailboxes",
+        "HubSpot, Zoho, and Google Sheets integrations",
+        "Instant analytics on open, click, and reply rates",
+      ],
     },
   ];
 
@@ -69,6 +84,16 @@ export default function BenefitsRow() {
               <p className="text-[#4a4a4a] text-sm leading-relaxed">
                 {benefit.description}
               </p>
+              {benefit.bullets && (
+                <ul className="mt-4 space-y-2 text-[#4a4a4a] text-sm">
+                  {benefit.bullets.map((b: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-[#eb857a] mt-0.5">•</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </motion.div>
           ))}
         </motion.div>

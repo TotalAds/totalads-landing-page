@@ -7,74 +7,59 @@ export default function PricingSection() {
 
   const plans = [
     {
-      name: "Free Trial",
-      price: 0, // ₹0 / Free
-      description: "Perfect for getting started",
+      name: "Free Forever",
+      price: 0,
+      description: "Perfect for testing and small-scale sending.",
       features: [
         "100 emails/month",
         "100 monthly credits",
         "Max 200 contacts",
-        "API access (limited)",
         "Basic analytics",
+        "API access (limited)",
         "No custom domain",
         "No priority support",
       ],
-      cta: "Start Free",
+      cta: "Start Free — No Credit Card Needed",
       highlighted: false,
     },
     {
-      name: "Starter",
-      price: 499, // ₹499 / month
-      description: "For small teams and businesses",
+      name: "Launch",
+      price: 499,
+      description: "For freelancers & small teams starting cold outreach.",
       features: [
         "1,000 emails/month",
-        "1,000 monthly credits",
-        "Max 2,000 contacts",
-        "Volume sending enabled",
-        "API access",
-        "Analytics",
+        "2,000 contacts",
         "Custom domain",
-        "Email support",
-        "Unlimited warmups",
+        "Email analytics",
       ],
       cta: "Start Free",
       highlighted: false,
     },
     {
-      name: "Growth",
-      price: 999, // ₹999 / month
-      description: "For growing businesses",
+      name: "Scale",
+      price: 999,
+      description: "For agencies & growing teams automating outreach.",
       features: [
         "2,000 emails/month",
-        "2,000 monthly credits",
-        "Max 5,000 contacts",
-        "Volume sending enabled",
-        "API access",
+        "5,000 contacts",
         "Advanced analytics",
-        "Custom domain",
         "Priority support",
         "Unlimited warmups",
       ],
       cta: "Start Free",
-      highlighted: true, // recommend this plan
+      highlighted: true,
     },
     {
-      name: "Pay-as-you-go",
+      name: "Pay-As-You-Go",
       price: "(₹0.01/email)",
-      description: "For variable usage — no monthly fee, pay per email",
+      description: "Perfect for high-volume senders.",
       features: [
         "No monthly fee",
-        "Pay ₹0.01 per email",
-        "Unlimited monthly email limit",
-        "No allocated monthly credits",
         "Unlimited contacts",
-        "Volume sending enabled",
         "API access",
-        "Analytics",
-        "Custom domain",
-        "Priority support",
+        "Deliverability reports",
       ],
-      cta: "Contact Us",
+      cta: "Contact Sales",
       highlighted: false,
     },
   ];
@@ -112,10 +97,10 @@ export default function PricingSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
-            Simple, transparent pricing
+            Simple, Transparent Pricing — Start Free, Scale Anytime.
           </h2>
           <p className="text-[#4a4a4a] text-lg mb-8">
-            Start free. Scale as you grow.
+            Pay only for what you need. No contracts. No hidden limits.
           </p>
 
           {/* Toggle */}
@@ -195,7 +180,11 @@ export default function PricingSection() {
               </div>
 
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href={
+                  plan.cta === "Contact Sales"
+                    ? "/contact"
+                    : "https://app.leadsnipper.com/signup"
+                }
                 className={`block w-full py-3 rounded-lg font-semibold text-center transition mb-8 ${
                   plan.highlighted
                     ? "bg-[#eb857a]  text-white hover:shadow-lg hover:shadow-[#eb857a]/50"

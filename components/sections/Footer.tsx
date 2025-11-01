@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-import Logo from '@/asset/leadsnipper_rec.svg';
-import { IconBrandLinkedin } from '@tabler/icons-react';
+import Logo from "@/asset/leadsnipper_rec.svg";
+import { IconBrandLinkedin } from "@tabler/icons-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,6 +24,14 @@ export default function Footer() {
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
       { label: "Refund Policy", href: "/refund-policy" },
+    ],
+    Socials: [
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/company/leadsnipper/",
+      },
+      { label: "Twitter", href: "#" },
+      { label: "YouTube", href: "#" },
     ],
   };
 
@@ -46,8 +54,9 @@ export default function Footer() {
               <span className="text-white font-bold">LeadSnipper</span>
             </Link>
             <p className="text-[#f4cdc1] text-sm">
-              Convert cold email into predictable revenue with 99.9%
-              deliverability.
+              LeadSnipper — Convert cold email into predictable revenue.
+              <br />
+              Made with ❤️ in India.
             </p>
           </div>
 

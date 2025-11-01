@@ -20,16 +20,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>LeadSnipper - Convert Cold Email Into Predictable Revenue</title>
+        <title>
+          LeadSnipper — Turn Cold Emails Into Booked Meetings Automatically
+        </title>
         <meta
           name="description"
-          content="Scale cold email campaigns with 99.9% deliverability, unlimited mailboxes, and AI personalization. Start free - no credit card required."
+          content="LeadSnipper is the AI-powered email platform for agencies, founders, and sales teams. Join 40,000+ teams turning cold email into predictable revenue. Free Forever — no credit card."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="LeadSnipper - Cold Email Platform" />
+        <meta
+          property="og:title"
+          content="LeadSnipper — Book More Meetings from Cold Email"
+        />
         <meta
           property="og:description"
-          content="Convert cold email into predictable revenue with unlimited mailboxes and premium deliverability."
+          content="Turn cold emails into booked meetings automatically. Free Forever plan, 99.9% deliverability, AI personalization."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://leadsnipper.com" />

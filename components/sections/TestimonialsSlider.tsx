@@ -4,25 +4,23 @@ import React, { useState } from "react";
 export default function TestimonialsSlider() {
   const testimonials = [
     {
-      quote:
-        "LeadSnipper helped us increase our reply rate from 2% to 8%. The deliverability is unmatched.",
+      quote: "LeadSnipper boosted our reply rate from 3% to 9% in two weeks.",
       author: "Sarah Chen",
-      role: "Founder, Growth Agency",
-      metric: "42% reply rate",
+      role: "Founder @ GrowthWorks",
+      metric: "3% to 9% replies",
     },
     {
       quote:
-        "We went from 100 emails/day to 5000 emails/day with zero spam complaints. Game changer.",
-      author: "Mike Johnson",
-      role: "Sales Director, B2B SaaS",
-      metric: "5000 emails/day",
+        "Our entire SDR team switched from Instantly to LeadSnipper - same results, half the cost.",
+      author: "Arjun Mehta",
+      role: "CEO @ Salesify",
+      metric: "50% cost savings",
     },
     {
-      quote:
-        "The unified inbox saved us hours every day. We can now manage 10 campaigns from one dashboard.",
-      author: "Emma Rodriguez",
-      role: "CEO, Lead Gen Agency",
-      metric: "10x productivity",
+      quote: "Zero spam issues and a unified inbox that changed our workflow.",
+      author: "Emily Park",
+      role: "Head of Growth @ ByteLabs",
+      metric: "98% inbox placement",
     },
   ];
 
@@ -43,10 +41,11 @@ export default function TestimonialsSlider() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
-            Loved by customers
+            Loved by Agencies, Founders, and Growth Teams.
           </h2>
           <p className="text-[#4a4a4a] text-lg">
-            Join 40,000+ teams scaling their cold email campaigns
+            ⭐ Trusted by 250+ Agencies • 🚀 20M+ Emails Sent • 💼 98% Customer
+            Retention
           </p>
         </motion.div>
 

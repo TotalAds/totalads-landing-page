@@ -56,10 +56,11 @@ export default function IntegrationsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
-            Integrations
+            Integrate With Your Favorite Tools.
           </h2>
           <p className="text-[#4a4a4a] text-lg">
-            Connect with your favorite tools and automate your workflow
+            Connect LeadSnipper with your existing workflow — no manual uploads,
+            no extra effort.
           </p>
         </motion.div>
 

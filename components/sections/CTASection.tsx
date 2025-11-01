@@ -25,11 +25,11 @@ export default function CTASection() {
           className="text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-6">
-            Ready to scale your cold email?
+            Ready to Turn Cold Prospects Into Paying Customers?
           </h2>
           <p className="text-xl text-[#4a4a4a] mb-8 max-w-2xl mx-auto">
-            Join 40,000+ teams converting cold email into predictable revenue.
-            Start free today.
+            Join 40,000+ teams using LeadSnipper to generate predictable revenue
+            from cold email.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -37,7 +37,7 @@ export default function CTASection() {
               href="https://app.leadsnipper.com/signup"
               className="px-8 py-4 bg-[#eb857a]  text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#eb857a]/50 transition transform hover:scale-105"
             >
-              Start Free — No Credit Card
+              Start Free Now
             </Link>
             <button
               onClick={() => {
@@ -53,8 +53,7 @@ export default function CTASection() {
           </div>
 
           <p className="text-[#4a4a4a] text-sm mt-6">
-            ✓ 1000 free credits included • ✓ No credit card required • ✓ 14-day
-            free trial
+            ✅ Free Forever Plan • ✅ No Credit Card • ✅ Upgrade Anytime
           </p>
         </motion.div>
       </div>

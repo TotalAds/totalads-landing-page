@@ -6,23 +6,20 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Add Your Domains",
-      description:
-        "Connect your email domains and set up DKIM, SPF, and DMARC in minutes.",
+      title: "Connect your domains",
+      description: "We verify SPF/DKIM in minutes.",
       icon: <UploadIcon color="#131313" />,
     },
     {
       number: "02",
-      title: "Upload Your Leads",
-      description:
-        "Import your prospect list via CSV or connect your CRM directly.",
+      title: "Upload your leads",
+      description: "Import via CSV or connect your CRM.",
       icon: <Sheet color="#131313" />,
     },
     {
       number: "03",
-      title: "Create & Launch",
-      description:
-        "Build personalized campaigns with AI and send at scale with unlimited mailboxes.",
+      title: "Launch",
+      description: "AI writes and sends automatically at the best times.",
       icon: <Rocket color="#131313" />,
     },
   ];
@@ -57,10 +54,10 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
-            How it works
+            Launch Your First Campaign in 3 Simple Steps.
           </h2>
           <p className="text-[#4a4a4a] text-lg max-w-2xl mx-auto">
-            Get started in minutes. No technical knowledge required.
+            No technical setup. No coding. Just results.
           </p>
         </motion.div>
 
