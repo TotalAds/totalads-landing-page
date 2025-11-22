@@ -5,6 +5,8 @@ import React from "react";
 
 import BenefitsRow from "@/components/sections/BenefitsRow";
 import CTASection from "@/components/sections/CTASection";
+import EmailVerificationSection from "@/components/sections/EmailVerificationSection";
+import EmailWarmupSection from "@/components/sections/EmailWarmupSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/sections/Footer";
 import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
@@ -47,6 +49,8 @@ export default function Home() {
           <TrustStrip />
           <BenefitsRow />
           <HowItWorks />
+          <EmailVerificationSection />
+          <EmailWarmupSection />
           <FeaturesSectionWithHoverEffects />
           <TestimonialsSlider />
           <PricingSection />
