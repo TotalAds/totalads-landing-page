@@ -17,50 +17,66 @@ export default function PricingSection() {
         "Basic analytics",
         "API access (limited)",
         "No custom domain",
-        "No priority support",
+        "No warmup",
       ],
       cta: "Start Free — No Credit Card Needed",
       highlighted: false,
+      badge: null,
     },
     {
-      name: "Launch",
-      price: 499,
-      description: "For freelancers & small teams starting cold outreach.",
+      name: "Founding Pro",
+      price: 299,
+      originalPrice: 699,
+      description: "Early Access Special - For freelancers & small teams",
       features: [
-        "1,000 emails/month",
-        "2,000 contacts",
+        "3,000 emails/month",
+        "3,000 contacts",
         "Custom domain",
+        "Warmup (20 emails/day)",
         "Email analytics",
+        "Priority support",
+        "Founding Member Badge",
+        "Lifetime locked pricing",
       ],
-      cta: "Start Free",
-      highlighted: false,
+      cta: "Get Early Access",
+      highlighted: true,
+      badge: "🔥 Founding Member - Only 100 Seats",
     },
     {
-      name: "Scale",
-      price: 999,
-      description: "For agencies & growing teams automating outreach.",
+      name: "Founding Agency",
+      price: 699,
+      originalPrice: 1499,
+      description: "Early Access Special - For agencies & growth teams",
       features: [
-        "2,000 emails/month",
-        "5,000 contacts",
+        "10,000 emails/month",
+        "Unlimited contacts",
+        "Unlimited domains",
+        "Unlimited warmup",
         "Advanced analytics",
-        "Priority support",
-        "Unlimited warmups",
+        "Deliverability reports",
+        "Highest priority support",
+        "Founding Member Badge",
+        "Lifetime locked pricing",
       ],
-      cta: "Start Free",
-      highlighted: true,
+      cta: "Get Early Access",
+      highlighted: false,
+      badge: "⭐ Founding Member - Only 100 Seats",
     },
     {
       name: "Pay-As-You-Go",
       price: "(₹0.01/email)",
-      description: "Perfect for high-volume senders.",
+      description: "For variable usage - Large senders",
       features: [
         "No monthly fee",
         "Unlimited contacts",
+        "Unlimited domains",
+        "Unlimited warmup",
         "API access",
         "Deliverability reports",
       ],
       cta: "Contact Sales",
       highlighted: false,
+      badge: null,
     },
   ];
 
@@ -96,11 +112,15 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
+          <div className="inline-block bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+            🔥 Early Access Pricing — First 100 Users Only
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
-            Simple, Transparent Pricing — Start Free, Scale Anytime.
+            Become a Founding Member — Lock in Lifetime Pricing
           </h2>
           <p className="text-[#4a4a4a] text-lg mb-8">
-            Pay only for what you need. No contracts. No hidden limits.
+            Get up to 70% off forever. Help us improve LeadSnipper, get priority
+            support & direct access to the team.
           </p>
 
           {/* Toggle */}
@@ -153,9 +173,9 @@ export default function PricingSection() {
                   : "bg-white border-2 border-[#f0f0f0] shadow-md hover:shadow-lg"
               }`}
             >
-              {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] text-white px-4 py-1 rounded-full text-xs font-bold">
-                  Most Popular
+              {plan.badge && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] text-white px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                  {plan.badge}
                 </div>
               )}
 
@@ -167,10 +187,31 @@ export default function PricingSection() {
               <div className="mb-6">
                 {typeof plan.price === "number" ? (
                   <>
+                    {plan.originalPrice && (
+                      <div className="mb-2">
+                        <span className="text-lg text-[#4a4a4a] line-through">
+                          ₹{plan.originalPrice}
+                        </span>
+                        <span className="ml-2 text-sm text-[#9DD0c7] font-bold">
+                          Save{" "}
+                          {Math.round(
+                            ((plan.originalPrice - plan.price) /
+                              plan.originalPrice) *
+                              100
+                          )}
+                          %
+                        </span>
+                      </div>
+                    )}
                     <span className="text-4xl font-bold text-[#eb857a]">
                       ₹{plan.price}
                     </span>
                     <span className="text-[#4a4a4a] text-sm">/month</span>
+                    {plan.originalPrice && (
+                      <div className="mt-1 text-xs text-[#9DD0c7] font-semibold">
+                        Locked forever for founding members
+                      </div>
+                    )}
                   </>
                 ) : (
                   <span className="text-4xl font-bold text-[#eb857a]">
