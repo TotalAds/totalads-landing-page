@@ -37,10 +37,10 @@ export default function DataUse() {
       <p style={{ marginBottom: 8, fontSize: 14 }}>
         For takedown or access concerns, contact us at
         <a
-          href="mailto:support@totalads.app"
+          href="mailto:support@leadsnipper.com"
           style={{ marginLeft: 4, textDecoration: "underline" }}
         >
-          support@totalads.app
+          support@leadsnipper.com
         </a>
         . See our{" "}
         <Link href="/privacy-policy" style={{ textDecoration: "underline" }}>
