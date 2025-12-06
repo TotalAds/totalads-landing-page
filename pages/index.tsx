@@ -49,8 +49,8 @@ export default function Home() {
           <TrustStrip />
           <BenefitsRow />
           <HowItWorks />
-          <EmailVerificationSection />
-          <EmailWarmupSection />
+          {/* <EmailVerificationSection /> */}
+          {/* <EmailWarmupSection /> */}
           <FeaturesSectionWithHoverEffects />
           <TestimonialsSlider />
           <PricingSection />
