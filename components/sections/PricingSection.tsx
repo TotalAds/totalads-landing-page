@@ -7,76 +7,69 @@ export default function PricingSection() {
 
   const plans = [
     {
-      name: "Free Forever",
+      name: "Trial",
       price: 0,
-      description: "Perfect for testing and small-scale sending.",
+      description: "Perfect for testing — 1 month free trial",
       features: [
-        "100 emails/month",
-        "100 monthly credits",
-        "Max 200 contacts",
+        "1,000 emails/month",
+        "500 contacts",
         "Basic analytics",
-        "API access (limited)",
-        "No custom domain",
-        "No warmup",
+        "API access",
+        "1 month trial period",
       ],
-      cta: "Start Free — No Credit Card Needed",
+      cta: "Start Free Trial",
       highlighted: false,
       badge: null,
     },
     {
-      name: "Founding Pro",
-      price: 299,
-      originalPrice: 699,
-      description: "Early Access Special - For freelancers & small teams",
+      name: "Starter",
+      price: 499,
+      originalPrice: 999,
+      description: "For freelancers & small teams",
       features: [
-        "3,000 emails/month",
+        "5,000 emails/month",
         "3,000 contacts",
         "Custom domain",
-        "Warmup (20 emails/day)",
+        "Email warmup (50/day)",
         "Email analytics",
-        "Priority support",
-        "Founding Member Badge",
-        "Lifetime locked pricing",
+        "3 custom domains",
       ],
-      cta: "Get Early Access",
+      cta: "Get Started",
       highlighted: true,
-      badge: "🔥 Founding Member - Only 100 Seats",
+      badge: "🎉 Early Signup Bonus — 50% Off",
     },
     {
-      name: "Founding Agency",
-      price: 699,
-      originalPrice: 1499,
-      description: "Early Access Special - For agencies & growth teams",
+      name: "Business",
+      price: 999,
+      originalPrice: 1999,
+      description: "For growing businesses & agencies",
       features: [
-        "10,000 emails/month",
-        "Unlimited contacts",
+        "15,000 emails/month",
+        "10,000 contacts",
         "Unlimited domains",
         "Unlimited warmup",
         "Advanced analytics",
-        "Deliverability reports",
-        "Highest priority support",
-        "Founding Member Badge",
-        "Lifetime locked pricing",
+        "Priority support",
       ],
-      cta: "Get Early Access",
+      cta: "Get Started",
       highlighted: false,
-      badge: "⭐ Founding Member - Only 100 Seats",
+      badge: "🎉 Early Signup Bonus — 50% Off",
     },
     {
-      name: "Pay-As-You-Go",
-      price: "(₹0.01/email)",
-      description: "For variable usage - Large senders",
+      name: "Custom",
+      price: "Contact Us",
+      description: "Enterprise — Custom pricing for your needs",
       features: [
-        "No monthly fee",
+        "Unlimited emails",
         "Unlimited contacts",
         "Unlimited domains",
         "Unlimited warmup",
-        "API access",
-        "Deliverability reports",
+        "Dedicated support",
+        "Custom integrations",
       ],
-      cta: "Contact Sales",
+      cta: "Contact Us",
       highlighted: false,
-      badge: null,
+      badge: "Enterprise",
     },
   ];
 
@@ -113,14 +106,14 @@ export default function PricingSection() {
           className="text-center mb-12"
         >
           <div className="inline-block bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
-            🔥 Early Access Pricing — First 100 Users Only
+            🎉 Early Signup Bonus — Limited Time Offer
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
-            Become a Founding Member — Lock in Lifetime Pricing
+            Simple, Transparent Pricing
           </h2>
           <p className="text-[#4a4a4a] text-lg mb-8">
-            Get up to 70% off forever. Help us improve LeadSnipper, get priority
-            support & direct access to the team.
+            Start with a free trial. Upgrade when you&apos;re ready. Early
+            signups get 50% off.
           </p>
 
           {/* Toggle */}
@@ -209,7 +202,7 @@ export default function PricingSection() {
                     <span className="text-[#4a4a4a] text-sm">/month</span>
                     {plan.originalPrice && (
                       <div className="mt-1 text-xs text-[#9DD0c7] font-semibold">
-                        Locked forever for founding members
+                        Limited time early signup bonus
                       </div>
                     )}
                   </>
@@ -222,7 +215,7 @@ export default function PricingSection() {
 
               <Link
                 href={
-                  plan.cta === "Contact Sales"
+                  plan.cta === "Contact Us"
                     ? "/contact"
                     : "https://app.leadsnipper.com/signup"
                 }
