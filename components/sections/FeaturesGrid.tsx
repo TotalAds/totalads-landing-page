@@ -73,10 +73,10 @@ export default function FeaturesGrid() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Powerful features
           </h2>
-          <p className="text-[#4a4a4a] text-lg max-w-2xl mx-auto">
+          <p className="text-[#475569] text-lg max-w-2xl mx-auto">
             Everything you need to scale cold email campaigns at enterprise
             level.
           </p>
@@ -95,15 +95,15 @@ export default function FeaturesGrid() {
               variants={itemVariants}
               whileHover={{
                 y: -8,
-                boxShadow: "0 20px 40px rgba(235, 133, 122, 0.15)",
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.15)",
               }}
-              className="p-6 bg-white border-2 border-[#f0f0f0] rounded-xl hover:border-[#eb857a] transition-all duration-300 shadow-md hover:shadow-xl"
+              className="p-6 bg-white border-2 border-[#f0f0f0] rounded-xl hover:border-[#3b82f6] transition-all duration-300 shadow-md hover:shadow-xl"
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-lg font-bold text-[#131313] mb-2">
+              <h3 className="text-lg font-bold text-[#1e293b] mb-2">
                 {feature.title}
               </h3>
-              <p className="text-[#4a4a4a] text-sm leading-relaxed">
+              <p className="text-[#475569] text-sm leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

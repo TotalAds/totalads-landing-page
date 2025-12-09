@@ -20,9 +20,9 @@ export default function TrustStrip() {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 border-y border-[#e0e0e0] bg-gradient-to-r from-[#fafafa] to-[#f0f0f0]">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 border-y border-[#e2e8f0] bg-gradient-to-r from-[#f8fafc] to-[#f1f5f9]">
       <div className="max-w-7xl mx-auto">
-        <p className="text-center text-[#4a4a4a] text-m mb-8 font-medium">
+        <p className="text-center text-[#475569] text-m mb-8 font-medium">
           Integrates with your favorite tools
         </p>
 
@@ -36,10 +36,10 @@ export default function TrustStrip() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.1 }}
-              className="flex flex-col items-center gap-2 text-[#4a4a4a] hover:text-[#eb857a] transition"
+              className="flex flex-col items-center gap-2 text-[#475569] hover:text-[#3b82f6] transition"
             >
               <div className="h-14 w-auto">
-                <Image src={logo.image} alt="" height={40} />
+                <Image src={logo.image} alt={logo.name} height={40} />
               </div>
             </motion.div>
           ))}

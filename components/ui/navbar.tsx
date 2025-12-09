@@ -1,12 +1,12 @@
 "use client";
 
-import { Menu, X } from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
+import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 
-import LeadsnipperRounded from '@/asset/leadsnipper.svg';
+import LeadsnipperRounded from "@/asset/leadsnipper.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +14,8 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed top-0 left-0 right-0 flex justify-center w-full py-6 px-4 z-50 bg-gradient-to-b from-[#fafafa] via-[#fafafa] to-transparent">
-      <div className="flex items-center justify-between px-6 py-3 bg-white rounded-full shadow-lg w-full max-w-3xl relative z-10">
+    <div className="fixed top-0 left-0 right-0 flex justify-center w-full py-6 px-4 z-50 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc] to-transparent">
+      <div className="flex items-center justify-between px-6 py-3 bg-white rounded-full shadow-lg w-full max-w-3xl relative z-10 border border-[#e2e8f0]">
         <div className="flex items-center">
           <Link href={"/"}>
             <motion.div
@@ -50,7 +50,7 @@ const Navbar = () => {
             >
               <Link
                 href={item.href}
-                className="text-sm text-[#131313] hover:text-[#eb857a] transition-colors font-semibold"
+                className="text-sm text-[#1e293b] hover:text-[#3b82f6] transition-colors font-semibold"
               >
                 {item.label}
               </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
         >
           <Link
             href="https://app.leadsnipper.com/signup"
-            className="inline-flex items-center justify-center px-5 py-2 text-sm text-white bg-black rounded-full hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center justify-center px-5 py-2 text-sm text-white bg-[#3b82f6] rounded-full hover:bg-[#2563eb] transition-colors"
           >
             Get Started
           </Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
           onClick={toggleMenu}
           whileTap={{ scale: 0.9 }}
         >
-          <Menu className="h-6 w-6 text-[#131313]" />
+          <Menu className="h-6 w-6 text-[#1e293b]" />
         </motion.button>
       </div>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <X className="h-6 w-6 text-[#131313]" />
+              <X className="h-6 w-6 text-[#1e293b]" />
             </motion.button>
             <div className="flex flex-col space-y-6">
               {[
@@ -119,7 +119,7 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className="text-base text-[#131313] font-semibold"
+                    className="text-base text-[#1e293b] font-semibold"
                     onClick={toggleMenu}
                   >
                     {item.label}
@@ -136,7 +136,7 @@ const Navbar = () => {
               >
                 <Link
                   href="https://app.leadsnipper.com/signup"
-                  className="inline-flex items-center justify-center w-full px-5 py-3 text-base text-white bg-black rounded-full hover:bg-gray-800 transition-colors"
+                  className="inline-flex items-center justify-center w-full px-5 py-3 text-base text-white bg-[#3b82f6] rounded-full hover:bg-[#2563eb] transition-colors"
                   onClick={toggleMenu}
                 >
                   Get Started

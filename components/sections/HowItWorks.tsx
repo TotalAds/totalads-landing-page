@@ -8,19 +8,19 @@ export default function HowItWorks() {
       number: "01",
       title: "Connect your domains",
       description: "We verify SPF/DKIM in minutes.",
-      icon: <UploadIcon color="#131313" />,
+      icon: <UploadIcon className="text-[#3b82f6]" />,
     },
     {
       number: "02",
       title: "Upload your leads",
       description: "Import via CSV or connect your CRM.",
-      icon: <Sheet color="#131313" />,
+      icon: <Sheet className="text-[#3b82f6]" />,
     },
     {
       number: "03",
       title: "Launch",
       description: "AI writes and sends automatically at the best times.",
-      icon: <Rocket color="#131313" />,
+      icon: <Rocket className="text-[#3b82f6]" />,
     },
   ];
 
@@ -53,10 +53,10 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Launch Your First Campaign in 3 Simple Steps.
           </h2>
-          <p className="text-[#4a4a4a] text-lg max-w-2xl mx-auto">
+          <p className="text-[#475569] text-lg max-w-2xl mx-auto">
             No technical setup. No coding. Just results.
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ export default function HowItWorks() {
           className="grid md:grid-cols-3 gap-8 relative"
         >
           {/* Connection Lines */}
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-1  bg-[#eb857a]  "></div>
+          <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-[#3b82f6] to-[#22c55e]"></div>
 
           {steps.map((step, index) => (
             <motion.div
@@ -77,19 +77,19 @@ export default function HowItWorks() {
               variants={itemVariants}
               className="relative"
             >
-              <div className="bg-white border-2 border-[#f0f0f0] rounded-xl p-8 h-full shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="bg-white border-2 border-[#f0f0f0] rounded-xl p-8 h-full shadow-md hover:shadow-lg hover:border-[#3b82f6] transition-all duration-300">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-[#f4cdc1] rounded-lg flex items-center justify-center text-2xl shadow-lg">
+                  <div className="w-16 h-16 bg-[#eff6ff] rounded-lg flex items-center justify-center text-2xl shadow-md">
                     {step.icon}
                   </div>
-                  <div className="text-4xl font-bold text-[#eb857a]">
+                  <div className="text-4xl font-bold text-[#3b82f6]">
                     {step.number}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-[#131313] mb-3">
+                <h3 className="text-xl font-bold text-[#1e293b] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-[#4a4a4a] text-sm leading-relaxed">
+                <p className="text-[#475569] text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>

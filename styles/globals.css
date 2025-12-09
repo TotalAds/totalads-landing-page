@@ -1,31 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  /* Exact Brand Colors from Frontend Repo */
-  --primary-100: #25D366;
-  --primary-200: #20B754;
-  --primary-300: #1A9444;
-  --accent-100: #34B7F1;
-  --accent-200: #0099CC;
-  --text-100: #075E54;
-  --text-200: #128C7E;
-  --bg-100: #F4F4F4;
-  --bg-200: #EBEBEB;
-  --bg-300: #FFFFFF;
+  /* Brand colors - aligned with totalads-frontend design system */
+  --primary-100: #3b82f6; /* Blue - primary brand */
+  --primary-200: #60a5fa; /* Light blue */
+  --primary-300: #22c55e; /* Green accent */
+  --accent-100: #22c55e; /* Green */
+  --accent-200: #16a34a; /* Darker green */
 
-  /* Additional Interactive Colors */
-  --success: #0be881;
-  --warning: #ffd32a;
-  --error: #ff3f34;
+  /* Text colors - professional slate palette */
+  --text-100: #1e293b; /* Dark slate for main text */
+  --text-200: #475569; /* Medium slate for secondary text */
+  --text-300: #64748b; /* Light slate for muted text */
+
+  /* Background colors - clean light theme */
+  --bg-100: #f8fafc; /* Main page background */
+  --bg-200: #ffffff; /* Card/content background */
+  --bg-300: #f1f5f9; /* Subtle background */
+
+  /* Semantic colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
 
   /* Default theme variables */
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #1e293b;
 
-  /* Gradient backgrounds for modern look */
+  /* Gradient backgrounds */
   --gradient-primary: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%);
   --gradient-accent: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
-  --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  --gradient-hero: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
 }
 
 @theme inline {
@@ -35,14 +40,6 @@
   --color-accent: var(--accent-100);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --gradient-hero: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
-  }
 }
 
 body {
@@ -59,19 +56,41 @@ html {
 
 /* Custom animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(37, 211, 102, 0.6); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animate-float {
@@ -96,39 +115,77 @@ html {
 
 /* Advanced animations */
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes float-up {
-  0% { transform: translateY(100px) scale(0); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-100px) scale(1); opacity: 0; }
+  0% {
+    transform: translateY(100px) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
 }
 
 @keyframes glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(16, 185, 129, 0.3),
-                0 0 40px rgba(16, 185, 129, 0.1),
-                0 0 60px rgba(16, 185, 129, 0.05);
+      0 0 40px rgba(16, 185, 129, 0.1),
+      0 0 60px rgba(16, 185, 129, 0.05);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(16, 185, 129, 0.5),
-                0 0 60px rgba(16, 185, 129, 0.2),
-                0 0 90px rgba(16, 185, 129, 0.1);
+      0 0 60px rgba(16, 185, 129, 0.2),
+      0 0 90px rgba(16, 185, 129, 0.1);
   }
 }
 
 @keyframes text-glow {
-  0%, 100% { text-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
-  50% { text-shadow: 0 0 20px rgba(16, 185, 129, 0.6), 0 0 30px rgba(16, 185, 129, 0.3); }
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  }
+
+  50% {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.6), 0 0 30px rgba(16, 185, 129, 0.3);
+  }
 }
 
 @keyframes particle-float {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .animate-shimmer {
@@ -188,41 +245,81 @@ html {
 
 /* Purple/Pink Theme Animations */
 @keyframes purple-gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes purple-glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.3),
-                0 0 40px rgba(168, 85, 247, 0.1),
-                0 0 60px rgba(168, 85, 247, 0.05);
+      0 0 40px rgba(168, 85, 247, 0.1),
+      0 0 60px rgba(168, 85, 247, 0.05);
   }
+
   50% {
     box-shadow: 0 0 30px rgba(168, 85, 247, 0.5),
-                0 0 60px rgba(168, 85, 247, 0.2),
-                0 0 90px rgba(168, 85, 247, 0.1);
+      0 0 60px rgba(168, 85, 247, 0.2),
+      0 0 90px rgba(168, 85, 247, 0.1);
   }
 }
 
 @keyframes text-shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes bounce-in {
-  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
-  50% { transform: scale(1.05) rotate(5deg); }
-  70% { transform: scale(0.9) rotate(-2deg); }
-  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+
+  70% {
+    transform: scale(0.9) rotate(-2deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
 }
 
 @keyframes float-rotate {
-  0% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-10px) rotate(120deg); }
-  66% { transform: translateY(5px) rotate(240deg); }
-  100% { transform: translateY(0px) rotate(360deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+
+  66% {
+    transform: translateY(5px) rotate(240deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
 }
 
 .animate-purple-gradient {
@@ -236,12 +333,10 @@ html {
 }
 
 .animate-text-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   background-size: 200% 100%;
   animation: text-shimmer 2s infinite;
 }
@@ -264,17 +359,37 @@ html {
   animation: purple-gradient-shift 3s ease infinite;
 }
 
-/* Custom scrollbar for purple theme */
-       ::-webkit-scrollbar {
-          width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-          background: #f0f0f0;
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #eb857a;
-          border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-          background: #9DD0c7;
-        }
+/* Custom scrollbar - Professional Light Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #64748b;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f1f5f9;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}

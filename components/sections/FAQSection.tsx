@@ -50,10 +50,10 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Frequently asked questions
           </h2>
-          <p className="text-[#4a4a4a] text-lg">
+          <p className="text-[#475569] text-lg">
             Everything you need to know about LeadSnipper
           </p>
         </motion.div>
@@ -66,19 +66,19 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-white border-2 border-[#f0f0f0] rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white border-2 border-[#f0f0f0] rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:border-[#3b82f6] transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full p-6 flex items-center justify-between hover:bg-[#f0f0f0] transition"
+                className="w-full p-6 flex items-center justify-between hover:bg-[#f8fafc] transition"
               >
-                <span className="text-lg font-semibold text-[#131313] text-left">
+                <span className="text-lg font-semibold text-[#1e293b] text-left">
                   {faq.question}
                 </span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-[#eb857a] text-2xl flex-shrink-0 ml-4"
+                  className="text-[#3b82f6] text-2xl flex-shrink-0 ml-4"
                 >
                   ↓
                 </motion.span>
@@ -93,7 +93,7 @@ export default function FAQSection() {
                     transition={{ duration: 0.3 }}
                     className="border-t border-[#f0f0f0] px-6 py-4"
                   >
-                    <p className="text-[#4a4a4a] leading-relaxed">
+                    <p className="text-[#475569] leading-relaxed">
                       {faq.answer}
                     </p>
                   </motion.div>

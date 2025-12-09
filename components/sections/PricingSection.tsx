@@ -105,13 +105,13 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-block bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
+          <div className="inline-block bg-gradient-to-r from-[#3b82f6] to-[#22c55e] text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
             🎉 Early Signup Bonus — Limited Time Offer
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-[#4a4a4a] text-lg mb-8">
+          <p className="text-[#475569] text-lg mb-8">
             Start with a free trial. Upgrade when you&apos;re ready. Early
             signups get 50% off.
           </p>
@@ -120,7 +120,7 @@ export default function PricingSection() {
           {/* <div className="flex justify-center items-center gap-4">
             <span
               className={`text-sm ${
-                !isAnnual ? "text-[#131313]" : "text-[#4a4a4a]"
+                !isAnnual ? "text-[#1e293b]" : "text-[#475569]"
               }`}
             >
               Monthly
@@ -131,16 +131,16 @@ export default function PricingSection() {
             >
               <motion.div
                 layout
-                className="absolute top-1 left-1 w-5 h-5 bg-[#eb857a] rounded-full"
+                className="absolute top-1 left-1 w-5 h-5 bg-[#3b82f6] rounded-full"
                 animate={{ x: isAnnual ? 28 : 0 }}
               />
             </button>
             <span
               className={`text-sm ${
-                isAnnual ? "text-[#131313]" : "text-[#4a4a4a]"
+                isAnnual ? "text-[#1e293b]" : "text-[#475569]"
               }`}
             >
-              Annual <span className="text-[#9DD0c7]">(Save 20%)</span>
+              Annual <span className="text-[#22c55e]">(Save 20%)</span>
             </span>
           </div> */}
         </motion.div>
@@ -158,34 +158,34 @@ export default function PricingSection() {
               variants={itemVariants}
               whileHover={{
                 y: -10,
-                boxShadow: "0 20px 40px rgba(235, 133, 122, 0.2)",
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.15)",
               }}
               className={`relative rounded-2xl p-8 transition-all duration-300 ${
                 plan.highlighted
-                  ? "bg-gradient-to-br from-[#eb857a]/10 to-[#9DD0c7]/10 border-2 border-[#eb857a] shadow-lg"
+                  ? "bg-gradient-to-br from-[#3b82f6]/10 to-[#22c55e]/10 border-2 border-[#3b82f6] shadow-lg"
                   : "bg-white border-2 border-[#f0f0f0] shadow-md hover:shadow-lg"
               }`}
             >
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] text-white px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#3b82f6] to-[#22c55e] text-white px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap">
                   {plan.badge}
                 </div>
               )}
 
-              <h3 className="text-2xl font-bold text-[#131313] mb-2">
+              <h3 className="text-2xl font-bold text-[#1e293b] mb-2">
                 {plan.name}
               </h3>
-              <p className="text-[#4a4a4a] text-sm mb-6">{plan.description}</p>
+              <p className="text-[#475569] text-sm mb-6">{plan.description}</p>
 
               <div className="mb-6">
                 {typeof plan.price === "number" ? (
                   <>
                     {plan.originalPrice && (
                       <div className="mb-2">
-                        <span className="text-lg text-[#4a4a4a] line-through">
+                        <span className="text-lg text-[#64748b] line-through">
                           ₹{plan.originalPrice}
                         </span>
-                        <span className="ml-2 text-sm text-[#9DD0c7] font-bold">
+                        <span className="ml-2 text-sm text-[#22c55e] font-bold">
                           Save{" "}
                           {Math.round(
                             ((plan.originalPrice - plan.price) /
@@ -196,18 +196,18 @@ export default function PricingSection() {
                         </span>
                       </div>
                     )}
-                    <span className="text-4xl font-bold text-[#eb857a]">
+                    <span className="text-4xl font-bold text-[#3b82f6]">
                       ₹{plan.price}
                     </span>
-                    <span className="text-[#4a4a4a] text-sm">/month</span>
+                    <span className="text-[#475569] text-sm">/month</span>
                     {plan.originalPrice && (
-                      <div className="mt-1 text-xs text-[#9DD0c7] font-semibold">
+                      <div className="mt-1 text-xs text-[#22c55e] font-semibold">
                         Limited time early signup bonus
                       </div>
                     )}
                   </>
                 ) : (
-                  <span className="text-4xl font-bold text-[#eb857a]">
+                  <span className="text-4xl font-bold text-[#3b82f6]">
                     {plan.price}
                   </span>
                 )}
@@ -221,8 +221,8 @@ export default function PricingSection() {
                 }
                 className={`block w-full py-3 rounded-lg font-semibold text-center transition mb-8 ${
                   plan.highlighted
-                    ? "bg-[#eb857a]  text-white hover:shadow-lg hover:shadow-[#eb857a]/50"
-                    : "border-2 border-[#eb857a] text-[#eb857a] hover:bg-[#eb857a]/10"
+                    ? "bg-[#3b82f6] text-white hover:bg-[#2563eb] hover:shadow-lg hover:shadow-[#3b82f6]/30"
+                    : "border-2 border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6]/10"
                 }`}
               >
                 {plan.cta}
@@ -232,9 +232,9 @@ export default function PricingSection() {
                 {plan.features.map((feature, i) => (
                   <li
                     key={i}
-                    className="flex items-center gap-3 text-[#4a4a4a] text-sm"
+                    className="flex items-center gap-3 text-[#475569] text-sm"
                   >
-                    <span className="text-[#9DD0c7]">✓</span>
+                    <span className="text-[#22c55e]">✓</span>
                     {feature}
                   </li>
                 ))}

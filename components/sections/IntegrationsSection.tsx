@@ -55,10 +55,10 @@ export default function IntegrationsSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Integrate With Your Favorite Tools.
           </h2>
-          <p className="text-[#4a4a4a] text-lg">
+          <p className="text-[#475569] text-lg">
             Connect LeadSnipper with your existing workflow — no manual uploads,
             no extra effort.
           </p>
@@ -77,14 +77,18 @@ export default function IntegrationsSection() {
               variants={itemVariants}
               whileHover={{
                 y: -5,
-                boxShadow: "0 10px 25px rgba(235, 133, 122, 0.15)",
+                boxShadow: "0 10px 25px rgba(59, 130, 246, 0.15)",
               }}
-              className="p-6 bg-white border-2 border-[#f0f0f0] rounded-xl text-center hover:border-[#eb857a] transition shadow-md hover:shadow-lg flex flex-col justify-between"
+              className="p-6 bg-white border-2 border-[#f0f0f0] rounded-xl text-center hover:border-[#3b82f6] transition shadow-md hover:shadow-lg flex flex-col justify-between"
             >
               <div className="flex items-center justify-center mb-3">
-                <Image src={integration.icon} alt="" height={60} />
+                <Image
+                  src={integration.icon}
+                  alt={integration.name}
+                  height={60}
+                />
               </div>
-              <p className="text-[#131313] font-medium text-sm">
+              <p className="text-[#1e293b] font-medium text-sm">
                 {integration.name}
               </p>
             </motion.div>

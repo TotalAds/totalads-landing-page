@@ -10,31 +10,44 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Primary colors - aligned with totalads-frontend
         primary: {
-          DEFAULT: "#eb857a",
-          100: "#eb857a",
-          200: "#f4cdc1",
-          300: "#9DD0c7",
+          DEFAULT: "#3b82f6",
+          100: "#3b82f6",
+          200: "#60a5fa",
+          300: "#22c55e",
         },
+        // Accent colors
         accent: {
-          DEFAULT: "#9DD0c7",
-          100: "#9DD0c7",
-          200: "#f4cdc1",
+          DEFAULT: "#22c55e",
+          100: "#22c55e",
+          200: "#16a34a",
         },
+        // Text colors - professional slate palette
         text: {
-          DEFAULT: "#131313",
-          100: "#131313",
-          200: "#4a4a4a",
+          DEFAULT: "#1e293b",
+          100: "#1e293b",
+          200: "#475569",
+          300: "#64748b",
         },
+        // Background colors - clean light theme
         bg: {
-          DEFAULT: "#fafafa",
-          100: "#fafafa",
-          200: "#f0f0f0",
-          300: "#ffffff",
+          DEFAULT: "#f8fafc",
+          100: "#f8fafc",
+          200: "#ffffff",
+          300: "#f1f5f9",
         },
-        success: "#0be881",
-        warning: "#ffd32a",
-        error: "#ff3f34",
+        // Semantic colors
+        success: "#22c55e",
+        warning: "#f59e0b",
+        error: "#ef4444",
+        // Brand colors for consistency
+        brand: {
+          DEFAULT: "#3b82f6",
+          main: "#3b82f6",
+          secondary: "#60a5fa",
+          tertiary: "#22c55e",
+        },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
@@ -47,8 +60,8 @@ const config: Config = {
           "50%": { transform: "translateY(-20px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(37, 211, 102, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(37, 211, 102, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(59, 130, 246, 0.6)" },
         },
         "gradient-shift": {
           "0%": { backgroundPosition: "0% 50%" },

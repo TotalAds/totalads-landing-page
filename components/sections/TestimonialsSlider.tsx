@@ -40,10 +40,10 @@ export default function TestimonialsSlider() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Loved by Agencies, Founders, and Growth Teams.
           </h2>
-          <p className="text-[#4a4a4a] text-lg">
+          <p className="text-[#475569] text-lg">
             ⭐ Trusted by 250+ Agencies • 🚀 20M+ Emails Sent • 💼 98% Customer
             Retention
           </p>
@@ -66,20 +66,20 @@ export default function TestimonialsSlider() {
                   </span>
                 ))}
               </div>
-              <p className="text-xl text-[#131313] mb-6 leading-relaxed">
+              <p className="text-xl text-[#1e293b] mb-6 leading-relaxed">
                 &quot;{testimonials[current].quote}&quot;
               </p>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-bold text-[#131313]">
+                  <p className="font-bold text-[#1e293b]">
                     {testimonials[current].author}
                   </p>
-                  <p className="text-[#4a4a4a] text-sm">
+                  <p className="text-[#475569] text-sm">
                     {testimonials[current].role}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[#eb857a] font-bold text-lg">
+                  <p className="text-[#22c55e] font-bold text-lg">
                     {testimonials[current].metric}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export default function TestimonialsSlider() {
           <div className="flex justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="p-3 bg-[#f0f0f0] hover:bg-[#eb857a] text-[#131313] hover:text-white rounded-lg transition"
+              className="p-3 bg-[#f0f0f0] hover:bg-[#3b82f6] text-[#1e293b] hover:text-white rounded-lg transition"
             >
               ←
             </button>
@@ -101,14 +101,14 @@ export default function TestimonialsSlider() {
                   key={i}
                   onClick={() => setCurrent(i)}
                   className={`w-2 h-2 rounded-full transition ${
-                    i === current ? "bg-[#eb857a] w-8" : "bg-[#e0e0e0]"
+                    i === current ? "bg-[#3b82f6] w-8" : "bg-[#e0e0e0]"
                   }`}
                 />
               ))}
             </div>
             <button
               onClick={next}
-              className="p-3 bg-[#f0f0f0] hover:bg-[#eb857a] text-[#131313] hover:text-white rounded-lg transition"
+              className="p-3 bg-[#f0f0f0] hover:bg-[#3b82f6] text-[#1e293b] hover:text-white rounded-lg transition"
             >
               →
             </button>

@@ -8,16 +8,16 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function HeroScrollAnimation() {
   return (
-    <div className="flex flex-col overflow-hidden  ">
+    <div className="flex flex-col overflow-hidden">
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-[#131313]">
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-gradient-to-r from-[#eb857a] to-[#9DD0c7] bg-clip-text text-transparent">
+            <h1 className="text-4xl font-semibold text-[#1e293b]">
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-gradient-to-r from-[#3b82f6] to-[#22c55e] bg-clip-text text-transparent">
                 Turn Cold Emails Into Booked Meetings — Automatically.
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-[#4a4a4a] mt-6 max-w-2xl mx-auto mb-4">
+            <p className="text-lg md:text-xl text-[#475569] mt-6 max-w-2xl mx-auto mb-4">
               LeadSnipper is the AI-powered email platform built for agencies,
               founders, and sales teams. Join 40,000+ teams using LeadSnipper to
               generate predictable revenue from cold email.
@@ -25,7 +25,7 @@ export function HeroScrollAnimation() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="https://app.leadsnipper.com/signup"
-                className="px-8 py-4 bg-[#eb857a]  text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#eb857a]/50 transition transform hover:scale-105"
+                className="px-8 py-4 bg-[#3b82f6] text-white rounded-lg font-semibold hover:bg-[#2563eb] hover:shadow-lg hover:shadow-[#3b82f6]/30 transition transform hover:scale-105"
               >
                 Start Free Now
               </Link>
@@ -36,19 +36,23 @@ export function HeroScrollAnimation() {
                     window.dataLayer.push({ event: "book_demo_click" });
                   }
                 }}
-                className="px-8 py-4 border-2 border-[#eb857a] text-[#eb857a] rounded-lg font-semibold hover:bg-[#eb857a]/10 transition"
+                className="px-8 py-4 border-2 border-[#3b82f6] text-[#3b82f6] rounded-lg font-semibold hover:bg-[#3b82f6]/10 transition"
               >
                 Book a Demo
               </button>
             </div>
-            <p className="text-[#4a4a4a] text-sm mt-6">
+            <p className="text-[#64748b] text-sm mt-6">
               ✅ Free Forever Plan • ✅ No Credit Card • ✅ Upgrade Anytime
             </p>
           </>
         }
       >
-        <div className="w-full h-full flex items-center justify-center ">
-          <Image src={LeadsnipperSc} alt="" className="w-full" />
+        <div className="w-full h-full flex items-center justify-center">
+          <Image
+            src={LeadsnipperSc}
+            alt="LeadSnipper Dashboard"
+            className="w-full"
+          />
         </div>
       </ContainerScroll>
     </div>

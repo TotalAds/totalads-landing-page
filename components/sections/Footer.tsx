@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-[#2a2a2d] bg-gradient-to-b from-[#131313] to-[#0a0a0a]">
+    <footer className="border-t border-[#e2e8f0] bg-gradient-to-b from-[#1e293b] to-[#0f172a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,12 +48,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#eb857a] to-[#9DD0c7] rounded flex items-center justify-center overflow-hidden">
-                <Image src={Logo} alt="" />
+              <div className="w-8 h-8 bg-gradient-to-br from-[#3b82f6] to-[#22c55e] rounded flex items-center justify-center overflow-hidden">
+                <Image src={Logo} alt="LeadSnipper Logo" />
               </div>
               <span className="text-white font-bold">LeadSnipper</span>
             </Link>
-            <p className="text-[#f4cdc1] text-sm">
+            <p className="text-[#94a3b8] text-sm">
               LeadSnipper — Convert cold email into predictable revenue.
               <br />
               Made with ❤️ in India.
@@ -69,7 +69,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[#f4cdc1] hover:text-[#eb857a] transition text-sm"
+                      className="text-[#94a3b8] hover:text-[#3b82f6] transition text-sm"
                     >
                       {link.label}
                     </Link>
@@ -81,14 +81,14 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom */}
-        <div className="border-t border-[#2a2a2d] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[#f4cdc1] text-sm">
+        <div className="border-t border-[#334155] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[#94a3b8] text-sm">
             © {currentYear} LeadSnipper. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a
               href="https://www.linkedin.com/company/leadsnipper/"
-              className="text-[#f4cdc1] hover:text-[#eb857a] transition"
+              className="text-[#94a3b8] hover:text-[#3b82f6] transition"
             >
               <IconBrandLinkedin />
             </a>

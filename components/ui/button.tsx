@@ -11,13 +11,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gradient-to-r from-[#25D366] to-[#20B754] text-white hover:from-[#20B754] hover:to-[#1A9444] shadow-lg hover:shadow-xl transform hover:scale-105",
+          "bg-[#3b82f6] text-white hover:bg-[#2563eb] shadow-lg hover:shadow-xl transform hover:scale-105",
         secondary:
-          "bg-gradient-to-r from-[#34B7F1] to-[#0099CC] text-white hover:from-[#0099CC] hover:to-[#007399] shadow-lg hover:shadow-xl transform hover:scale-105",
+          "bg-[#22c55e] text-white hover:bg-[#16a34a] shadow-lg hover:shadow-xl transform hover:scale-105",
         outline:
-          "border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white",
-        ghost: "hover:bg-[#25D366]/10 hover:text-[#25D366]",
-        link: "text-[#25D366] underline-offset-4 hover:underline",
+          "border-2 border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white",
+        ghost: "hover:bg-[#3b82f6]/10 hover:text-[#3b82f6]",
+        link: "text-[#3b82f6] underline-offset-4 hover:underline",
       },
       size: {
         default: "h-12 px-6 py-3",

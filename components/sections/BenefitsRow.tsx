@@ -73,22 +73,22 @@ export default function BenefitsRow() {
               variants={itemVariants}
               whileHover={{
                 y: -8,
-                boxShadow: "0 20px 40px rgba(235, 133, 122, 0.15)",
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.15)",
               }}
-              className="p-8 bg-white border-2 border-[#f0f0f0] rounded-2xl hover:border-[#eb857a] transition-all duration-300 shadow-md hover:shadow-xl"
+              className="p-8 bg-white border-2 border-[#f0f0f0] rounded-2xl hover:border-[#3b82f6] transition-all duration-300 shadow-md hover:shadow-xl"
             >
               <div className="text-5xl mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-bold text-[#131313] mb-3">
+              <h3 className="text-xl font-bold text-[#1e293b] mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-[#4a4a4a] text-sm leading-relaxed">
+              <p className="text-[#475569] text-sm leading-relaxed">
                 {benefit.description}
               </p>
               {benefit.bullets && (
-                <ul className="mt-4 space-y-2 text-[#4a4a4a] text-sm">
+                <ul className="mt-4 space-y-2 text-[#475569] text-sm">
                   {benefit.bullets.map((b: string, i: number) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#eb857a] mt-0.5">•</span>
+                      <span className="text-[#22c55e] mt-0.5">✓</span>
                       <span>{b}</span>
                     </li>
                   ))}

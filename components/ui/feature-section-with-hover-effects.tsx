@@ -42,14 +42,12 @@ export function FeaturesSectionWithHoverEffects() {
     },
     {
       title: "24/7 Support",
-      description:
-        "Round-the-clock customer support to help you succeed.",
+      description: "Round-the-clock customer support to help you succeed.",
       icon: <IconHelp />,
     },
     {
       title: "Satisfaction Guaranteed",
-      description:
-        "Not satisfied? Get your money back, no questions asked.",
+      description: "Not satisfied? Get your money back, no questions asked.",
       icon: <IconAdjustmentsBolt />,
     },
     {
@@ -81,30 +79,27 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature border-[#e0e0e0]",
-        (index === 0 || index === 4) && "lg:border-l border-[#e0e0e0]",
-        index < 4 && "lg:border-b border-[#e0e0e0]"
+        "flex flex-col lg:border-r py-10 relative group/feature border-[#e2e8f0]",
+        (index === 0 || index === 4) && "lg:border-l border-[#e2e8f0]",
+        index < 4 && "lg:border-b border-[#e2e8f0]"
       )}
     >
       {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-[#f0f0f0] to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-[#eff6ff] to-transparent pointer-events-none" />
       )}
       {index >= 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-[#f0f0f0] to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-[#eff6ff] to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-[#eb857a]">
-        {icon}
-      </div>
+      <div className="mb-4 relative z-10 px-10 text-[#3b82f6]">{icon}</div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-[#f0f0f0] group-hover/feature:bg-[#eb857a] transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-[#131313]">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-[#e2e8f0] group-hover/feature:bg-[#3b82f6] transition-all duration-200 origin-center" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-[#1e293b]">
           {title}
         </span>
       </div>
-      <p className="text-sm text-[#4a4a4a] max-w-xs relative z-10 px-10">
+      <p className="text-sm text-[#475569] max-w-xs relative z-10 px-10">
         {description}
       </p>
     </div>
   );
 };
-

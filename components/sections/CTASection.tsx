@@ -13,7 +13,7 @@ export default function CTASection() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-[#ffffff] to-[#f0f0f0]">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#eb857a]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#3b82f6]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -24,10 +24,10 @@ export default function CTASection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#131313] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-6">
             Ready to Turn Cold Prospects Into Paying Customers?
           </h2>
-          <p className="text-xl text-[#4a4a4a] mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-[#475569] mb-8 max-w-2xl mx-auto">
             Join 40,000+ teams using LeadSnipper to generate predictable revenue
             from cold email.
           </p>
@@ -35,7 +35,7 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="https://app.leadsnipper.com/signup"
-              className="px-8 py-4 bg-[#eb857a]  text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#eb857a]/50 transition transform hover:scale-105"
+              className="px-8 py-4 bg-[#3b82f6] text-white rounded-lg font-semibold hover:bg-[#2563eb] hover:shadow-lg hover:shadow-[#3b82f6]/30 transition transform hover:scale-105"
             >
               Start Free Now
             </Link>
@@ -46,13 +46,13 @@ export default function CTASection() {
                   window.dataLayer.push({ event: "book_demo_click" });
                 }
               }}
-              className="px-8 py-4 border-2 border-[#eb857a] text-[#eb857a] rounded-lg font-semibold hover:bg-[#eb857a]/10 transition"
+              className="px-8 py-4 border-2 border-[#3b82f6] text-[#3b82f6] rounded-lg font-semibold hover:bg-[#3b82f6]/10 transition"
             >
               Book a Demo
             </button>
           </div>
 
-          <p className="text-[#4a4a4a] text-sm mt-6">
+          <p className="text-[#64748b] text-sm mt-6">
             ✅ Free Forever Plan • ✅ No Credit Card • ✅ Upgrade Anytime
           </p>
         </motion.div>
