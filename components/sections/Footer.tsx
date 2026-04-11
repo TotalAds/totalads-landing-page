@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 import Logo from "@/asset/leadsnipper_rec.svg";
-import { IconBrandLinkedin } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,25 +13,26 @@ export default function Footer() {
     Product: [
       { label: "Features", href: "/#features" },
       { label: "Pricing", href: "/#pricing" },
+      { label: "Integrations", href: "/#integrations" },
       { label: "FAQ", href: "/#faq" },
     ],
     Company: [
-      { label: "Contact", href: "mailto:rehan@leadsnipper.com" },
+      { label: "Contact", href: "/contact" },
       { label: "Careers", href: "mailto:rehan@leadsnipper.com" },
     ],
-
     Legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
       { label: "Refund Policy", href: "/refund-policy" },
+      { label: "Data Use Policy", href: "/legal/data-use" },
     ],
-    Socials: [
+    Resources: [
+      // { label: "API Docs", href: "#" },
       {
         label: "LinkedIn",
         href: "https://www.linkedin.com/company/leadsnipper/",
       },
       { label: "Twitter", href: "#" },
-      { label: "YouTube", href: "#" },
     ],
   };
 
@@ -45,7 +46,6 @@ export default function Footer() {
           viewport={{ once: true }}
           className="grid md:grid-cols-5 gap-8 mb-12"
         >
-          {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-[#3b82f6] to-[#22c55e] rounded flex items-center justify-center overflow-hidden">
@@ -53,14 +53,15 @@ export default function Footer() {
               </div>
               <span className="text-white font-bold">LeadSnipper</span>
             </Link>
-            <p className="text-[#94a3b8] text-sm">
-              LeadSnipper — Convert cold email into predictable revenue.
-              <br />
-              Made with ❤️ in India.
+            <p className="text-[#94a3b8] text-sm leading-relaxed">
+              AI-first cold email platform. Own your sending infrastructure. Own
+              your deliverability.
+            </p>
+            <p className="text-[#64748b] text-xs mt-3">
+              Made with care in India.
             </p>
           </div>
 
-          {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h4 className="text-white font-semibold mb-4">{category}</h4>
@@ -80,17 +81,24 @@ export default function Footer() {
           ))}
         </motion.div>
 
-        {/* Bottom */}
         <div className="border-t border-[#334155] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#94a3b8] text-sm">
-            © {currentYear} LeadSnipper. All rights reserved.
+            Copyright &copy; {currentYear} LeadSnipper. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-4">
             <a
               href="https://www.linkedin.com/company/leadsnipper/"
               className="text-[#94a3b8] hover:text-[#3b82f6] transition"
+              aria-label="LinkedIn"
             >
-              <IconBrandLinkedin />
+              <IconBrandLinkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="#"
+              className="text-[#94a3b8] hover:text-[#3b82f6] transition"
+              aria-label="Twitter"
+            >
+              <IconBrandX className="w-5 h-5" />
             </a>
           </div>
         </div>

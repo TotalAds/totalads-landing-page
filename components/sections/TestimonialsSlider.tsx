@@ -4,23 +4,39 @@ import React, { useState } from "react";
 export default function TestimonialsSlider() {
   const testimonials = [
     {
-      quote: "LeadSnipper boosted our reply rate from 3% to 9% in two weeks.",
-      author: "Sarah Chen",
-      role: "Founder @ GrowthWorks",
-      metric: "3% to 9% replies",
+      quote:
+        "We switched to LeadSnipper after our shared-pool tool got flagged overnight. Open rates dropped from 45% to 6% — and we hadn't changed anything. With BYO SES, that's never happening again.",
+      author: "Arjun Mehta",
+      role: "Founder, Growth Agency",
+      metric: "Open rates: 6% → 42% after switching",
     },
     {
       quote:
-        "Our entire SDR team switched from Instantly to LeadSnipper - same results, half the cost.",
-      author: "Arjun Mehta",
-      role: "CEO @ Salesify",
-      metric: "50% cost savings",
+        "I was paying for a cold email sender, a warmup tool, a verification service, and a spreadsheet to track domain health. Four subscriptions, four tabs. LeadSnipper replaced all of them and saved us ₹15,000/month.",
+      author: "Priya Sharma",
+      role: "SDR Team Lead, 200-person SaaS",
+      metric: "4 tools → 1 platform, saved ₹15k/mo",
     },
     {
-      quote: "Zero spam issues and a unified inbox that changed our workflow.",
-      author: "Emily Park",
-      role: "Head of Growth @ ByteLabs",
-      metric: "98% inbox placement",
+      quote:
+        "A client uploaded 10,000 leads and hit send with no verification. Bounce rate hit 15% in the first hour and the domain got blacklisted. After LeadSnipper, built-in verification catches that before it ever happens.",
+      author: "David Park",
+      role: "CEO, Outbound Agency (8 clients)",
+      metric: "Bounce rate: 15% → 1.2%",
+    },
+    {
+      quote:
+        "Every morning I'd check MXToolbox, Google Postmaster, and my sending tool — three places — just to answer 'Is my domain okay?' The domain health dashboard replaced all of that. One screen, 10 seconds.",
+      author: "Sarah Chen",
+      role: "Head of Sales, B2B SaaS",
+      metric: "3 monitoring tools → 1 dashboard",
+    },
+    {
+      quote:
+        "We scaled from 2,000 to 25,000 emails/month safely. The multi-day sending and AI warmup handled the ramp-up automatically. Zero blacklisting incidents in 6 months.",
+      author: "Rahul Kapoor",
+      role: "VP Sales, Revenue Agency",
+      metric: "2k → 25k emails/mo, zero incidents",
     },
   ];
 
@@ -41,11 +57,11 @@ export default function TestimonialsSlider() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-            Loved by Agencies, Founders, and Growth Teams.
+            Teams Who Stopped Renting Their Deliverability.
           </h2>
           <p className="text-[#475569] text-lg">
-            ⭐ Trusted by 250+ Agencies • 🚀 20M+ Emails Sent • 💼 98% Customer
-            Retention
+            Real numbers from founders, agencies, and sales teams who made the
+            switch.
           </p>
         </motion.div>
 
@@ -61,15 +77,15 @@ export default function TestimonialsSlider() {
             >
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-2xl">
-                    ⭐
+                  <span key={i} className="text-2xl text-[#f59e0b]">
+                    ★
                   </span>
                 ))}
               </div>
               <p className="text-xl text-[#1e293b] mb-6 leading-relaxed">
                 &quot;{testimonials[current].quote}&quot;
               </p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                   <p className="font-bold text-[#1e293b]">
                     {testimonials[current].author}
@@ -78,8 +94,8 @@ export default function TestimonialsSlider() {
                     {testimonials[current].role}
                   </p>
                 </div>
-                <div className="text-right">
-                  <p className="text-[#22c55e] font-bold text-lg">
+                <div className="bg-[#f0fdf4] border border-[#bbf7d0] px-4 py-2 rounded-lg">
+                  <p className="text-[#16a34a] font-bold text-sm">
                     {testimonials[current].metric}
                   </p>
                 </div>
@@ -87,7 +103,6 @@ export default function TestimonialsSlider() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation */}
           <div className="flex justify-center gap-4 mt-8">
             <button
               onClick={prev}
@@ -100,8 +115,8 @@ export default function TestimonialsSlider() {
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`w-2 h-2 rounded-full transition ${
-                    i === current ? "bg-[#3b82f6] w-8" : "bg-[#e0e0e0]"
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === current ? "bg-[#3b82f6] w-8" : "bg-[#e0e0e0] w-2"
                   }`}
                 />
               ))}

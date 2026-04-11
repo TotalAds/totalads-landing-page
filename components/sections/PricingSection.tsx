@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
+import { X } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 export default function PricingSection() {
-  const [isAnnual, setIsAnnual] = useState(false);
-
   const plans = [
     {
       name: "Trial",
       price: 0,
-      description: "Perfect for testing — 1 month free trial",
+      description: "Test the full platform — 1 month free",
       features: [
         "1,000 emails/month",
         "500 contacts",
         "Basic analytics",
         "API access",
+        "Domain verification",
         "1 month trial period",
       ],
       cta: "Start Free Trial",
@@ -25,71 +25,77 @@ export default function PricingSection() {
       name: "Starter",
       price: 499,
       originalPrice: 999,
-      description: "For freelancers & small teams",
+      description: "For founders and small teams doing outbound",
       features: [
         "5,000 emails/month",
         "3,000 contacts",
-        "Custom domain",
+        "Custom domain sending",
         "Email warmup (50/day)",
-        "Email analytics",
+        "Full campaign analytics",
         "3 custom domains",
+        "Built-in verification",
+        "AI email writer",
       ],
       cta: "Get Started",
       highlighted: true,
-      badge: "🎉 Early Signup Bonus — 50% Off",
+      badge: "Most Popular — 50% Off",
     },
     {
       name: "Business",
       price: 999,
       originalPrice: 1999,
-      description: "For growing businesses & agencies",
+      description: "For agencies and growing sales teams",
       features: [
         "15,000 emails/month",
         "10,000 contacts",
         "Unlimited domains",
         "Unlimited warmup",
-        "Advanced analytics",
+        "Advanced analytics + PDF export",
         "Priority support",
+        "BYO SES support",
+        "AI writer + smart scheduling",
       ],
       cta: "Get Started",
       highlighted: false,
-      badge: "🎉 Early Signup Bonus — 50% Off",
+      badge: "Early Bird — 50% Off",
     },
     {
       name: "Custom",
       price: "Contact Us",
-      description: "Enterprise — Custom pricing for your needs",
+      description: "Enterprise — your infrastructure, your rules",
       features: [
         "Unlimited emails",
         "Unlimited contacts",
         "Unlimited domains",
         "Unlimited warmup",
         "Dedicated support",
-        "Custom integrations",
+        "Custom API integrations",
+        "Dedicated SES setup",
+        "Custom onboarding",
       ],
-      cta: "Contact Us",
+      cta: "Talk to Us",
       highlighted: false,
       badge: "Enterprise",
     },
+  ];
+
+  const notFor = [
+    "Beginners sending 50 emails/day who don't care about deliverability",
+    "Newsletter marketing teams (use Mailchimp for that)",
+    "Teams looking for the cheapest tool regardless of reputation risk",
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
@@ -106,43 +112,28 @@ export default function PricingSection() {
           className="text-center mb-12"
         >
           <div className="inline-block bg-gradient-to-r from-[#3b82f6] to-[#22c55e] text-white px-6 py-2 rounded-full text-sm font-bold mb-4">
-            🎉 Early Signup Bonus — Limited Time Offer
+            Early-Bird Pricing — Limited Time
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-            Simple, Transparent Pricing
+            Pay Less Than Instantly. Own More Than Smartlead.
           </h2>
-          <p className="text-[#475569] text-lg mb-8">
-            Start with a free trial. Upgrade when you&apos;re ready. Early
-            signups get 50% off.
-          </p>
 
-          {/* Toggle */}
-          {/* <div className="flex justify-center items-center gap-4">
-            <span
-              className={`text-sm ${
-                !isAnnual ? "text-[#1e293b]" : "text-[#475569]"
-              }`}
-            >
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="relative w-14 h-7 bg-[#e0e0e0] rounded-full transition"
-            >
-              <motion.div
-                layout
-                className="absolute top-1 left-1 w-5 h-5 bg-[#3b82f6] rounded-full"
-                animate={{ x: isAnnual ? 28 : 0 }}
-              />
-            </button>
-            <span
-              className={`text-sm ${
-                isAnnual ? "text-[#1e293b]" : "text-[#475569]"
-              }`}
-            >
-              Annual <span className="text-[#22c55e]">(Save 20%)</span>
-            </span>
-          </div> */}
+          {/* Anchoring psychology */}
+          <div className="max-w-2xl mx-auto mb-4 p-4 bg-[#f8fafc] border border-[#e2e8f0] rounded-xl">
+            <p className="text-[#475569] text-base">
+              Most tools charge{" "}
+              <span className="font-bold text-[#1e293b]">$37–$97/month</span>{" "}
+              (₹3,000–₹8,000) and you{" "}
+              <span className="font-bold text-[#ef4444]">
+                don&apos;t own your infrastructure
+              </span>
+              . AWS SES costs{" "}
+              <span className="font-bold text-[#22c55e]">
+                ₹0.84 per 1,000 emails
+              </span>
+              . The math speaks for itself.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -197,12 +188,14 @@ export default function PricingSection() {
                       </div>
                     )}
                     <span className="text-4xl font-bold text-[#3b82f6]">
-                      ₹{plan.price}
+                      {plan.price === 0 ? "Free" : `₹${plan.price}`}
                     </span>
-                    <span className="text-[#475569] text-sm">/month</span>
+                    {plan.price > 0 && (
+                      <span className="text-[#475569] text-sm">/month</span>
+                    )}
                     {plan.originalPrice && (
                       <div className="mt-1 text-xs text-[#22c55e] font-semibold">
-                        Limited time early signup bonus
+                        Early-bird pricing — will increase
                       </div>
                     )}
                   </>
@@ -215,7 +208,7 @@ export default function PricingSection() {
 
               <Link
                 href={
-                  plan.cta === "Contact Us"
+                  plan.cta === "Talk to Us"
                     ? "/contact"
                     : "https://app.leadsnipper.com/signup"
                 }
@@ -228,19 +221,50 @@ export default function PricingSection() {
                 {plan.cta}
               </Link>
 
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {plan.features.map((feature, i) => (
                   <li
                     key={i}
                     className="flex items-center gap-3 text-[#475569] text-sm"
                   >
-                    <span className="text-[#22c55e]">✓</span>
+                    <span className="text-[#22c55e] flex-shrink-0">✓</span>
                     {feature}
                   </li>
                 ))}
               </ul>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Who This Is NOT For */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-14 max-w-2xl mx-auto"
+        >
+          <div className="p-6 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl">
+            <h4 className="text-lg font-bold text-[#1e293b] mb-3">
+              LeadSnipper is <span className="text-[#ef4444]">not</span> for
+              everyone
+            </h4>
+            <ul className="space-y-2">
+              {notFor.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-2 text-[#475569] text-sm"
+                >
+                  <X className="w-4 h-4 text-[#ef4444] mt-0.5 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[#1e293b] text-sm font-medium mt-4">
+              If you&apos;re serious about cold outbound at scale — and you want
+              to own your infrastructure — this is built for you.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

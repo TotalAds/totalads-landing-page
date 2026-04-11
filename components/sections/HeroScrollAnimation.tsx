@@ -13,44 +13,72 @@ export function HeroScrollAnimation() {
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-[#1e293b]">
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-gradient-to-r from-[#3b82f6] to-[#22c55e] bg-clip-text text-transparent">
-                Turn Cold Emails Into Booked Meetings — Automatically.
+              <span className="text-3xl md:text-[4.5rem] font-bold mt-1 leading-[1.05] bg-linear-to-r from-[#3b82f6] to-[#22c55e] bg-clip-text text-transparent">
+                Send 10,000+ Cold Emails Without Killing Your Domain Reputation.
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-[#475569] mt-6 max-w-2xl mx-auto mb-4">
-              LeadSnipper is the AI-powered email platform built for agencies,
-              founders, and sales teams. Join 40,000+ teams using LeadSnipper to
-              generate predictable revenue from cold email.
+            <p className="text-lg md:text-xl text-[#475569] mt-6 max-w-3xl mx-auto mb-2">
+              Most tools use shared infrastructure. When they fail, your domain
+              gets flagged.{" "}
+              <span className="font-semibold text-[#1e293b]">
+                LeadSnipper lets you bring your own AWS SES
+              </span>
+              , verify domains, warm up with AI, clean lists with built-in
+              verification, and send campaigns that actually land in the inbox.
             </p>
+
+            {/* Immediate proof — trust triggers in first 5 seconds */}
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[#1e293b] text-sm font-medium mt-4 mb-8">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
+                Built for teams sending 1k–100k emails/month
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
+                Runs on AWS SES — not shared pools
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
+                Used by founders, agencies &amp; SDR teams
+              </span>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="https://app.leadsnipper.com/signup"
                 className="px-8 py-4 bg-[#3b82f6] text-white rounded-lg font-semibold hover:bg-[#2563eb] hover:shadow-lg hover:shadow-[#3b82f6]/30 transition transform hover:scale-105"
               >
-                Start Free Now
+                Start Free — 1,000 Emails, No Credit Card
               </Link>
-              <button
-                onClick={() => {
-                  if (typeof window !== "undefined") {
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({ event: "book_demo_click" });
-                  }
-                }}
+              <Link
+                href="/contact"
                 className="px-8 py-4 border-2 border-[#3b82f6] text-[#3b82f6] rounded-lg font-semibold hover:bg-[#3b82f6]/10 transition"
               >
-                Book a Demo
-              </button>
+                Talk to Us
+              </Link>
             </div>
-            <p className="text-[#64748b] text-sm mt-6">
-              ✅ Free Forever Plan • ✅ No Credit Card • ✅ Upgrade Anytime
-            </p>
+
+            <div className="flex flex-wrap justify-center gap-6 text-[#64748b] text-sm mt-8">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+                Own your sending reputation (BYO SES)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+                Built-in verification — no bounce disasters
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
+                Domain health dashboard — know before you send
+              </span>
+            </div>
           </>
         }
       >
         <div className="w-full h-full flex items-center justify-center">
           <Image
             src={LeadsnipperSc}
-            alt="LeadSnipper Dashboard"
+            alt="LeadSnipper AI Dashboard — Domain health, campaign analytics, and sending controls"
             className="w-full"
           />
         </div>

@@ -8,6 +8,13 @@ import React, { useState } from "react";
 
 import LeadsnipperRounded from "@/asset/leadsnipper.svg";
 
+const navItems = [
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Integrations", href: "/#integrations" },
+  { label: "FAQ", href: "/#faq" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,7 +24,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 flex justify-center w-full py-6 px-4 z-50 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc] to-transparent">
       <div className="flex items-center justify-between px-6 py-3 bg-white rounded-full shadow-lg w-full max-w-3xl relative z-10 border border-[#e2e8f0]">
         <div className="flex items-center">
-          <Link href={"/"}>
+          <Link href="/">
             <motion.div
               className="w-8 h-8 mr-6"
               initial={{ scale: 0.8 }}
@@ -27,20 +34,15 @@ const Navbar = () => {
             >
               <Image
                 src={LeadsnipperRounded}
-                alt="Leadsnipper logo"
+                alt="LeadSnipper logo"
                 className="h-8 w-8"
               />
             </motion.div>
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {[
-            { label: "Pricing", href: "/#pricing" },
-            { label: "Integrations", href: "/#integrations" },
-            { label: "FAQ", href: "/#faq" },
-          ].map((item) => (
+          {navItems.map((item) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: -10 }}
@@ -58,7 +60,6 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop CTA Button */}
         <motion.div
           className="hidden md:block"
           initial={{ opacity: 0, x: 20 }}
@@ -70,11 +71,10 @@ const Navbar = () => {
             href="https://app.leadsnipper.com/signup"
             className="inline-flex items-center justify-center px-5 py-2 text-sm text-white bg-[#3b82f6] rounded-full hover:bg-[#2563eb] transition-colors"
           >
-            Get Started
+            Start Free
           </Link>
         </motion.div>
 
-        {/* Mobile Menu Button */}
         <motion.button
           className="md:hidden flex items-center"
           onClick={toggleMenu}
@@ -84,7 +84,6 @@ const Navbar = () => {
         </motion.button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -105,11 +104,7 @@ const Navbar = () => {
               <X className="h-6 w-6 text-[#1e293b]" />
             </motion.button>
             <div className="flex flex-col space-y-6">
-              {[
-                { label: "Pricing", href: "#pricing" },
-                { label: "Integrations", href: "#integrations" },
-                { label: "FAQ", href: "#faq" },
-              ].map((item, i) => (
+              {navItems.map((item, i) => (
                 <motion.div
                   key={item.label}
                   initial={{ opacity: 0, x: 20 }}
@@ -139,7 +134,7 @@ const Navbar = () => {
                   className="inline-flex items-center justify-center w-full px-5 py-3 text-base text-white bg-[#3b82f6] rounded-full hover:bg-[#2563eb] transition-colors"
                   onClick={toggleMenu}
                 >
-                  Get Started
+                  Start Free
                 </Link>
               </motion.div>
             </div>

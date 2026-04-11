@@ -1,67 +1,90 @@
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
+  IconBrain,
+  IconChartBar,
   IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
+  IconCode,
+  IconFlame,
+  IconMail,
+  IconShieldCheck,
+  IconUsers,
 } from "@tabler/icons-react";
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
     {
-      title: "AI-Powered Extraction",
+      title: "BYO AWS SES or Managed",
       description:
-        "Automatically extract business data with advanced AI algorithms for accurate results.",
-      icon: <IconTerminal2 />,
-    },
-    {
-      title: "Easy to Use",
-      description:
-        "Simple and intuitive interface designed for everyone, no technical skills required.",
-      icon: <IconEaseInOut />,
-    },
-    {
-      title: "Affordable Pricing",
-      description:
-        "Transparent pricing with no hidden fees. Pay only for what you use.",
-      icon: <IconCurrencyDollar />,
-    },
-    {
-      title: "99.9% Uptime",
-      description: "Enterprise-grade reliability with guaranteed uptime.",
+        "Stop renting infrastructure you don't control. Bring your own SES for full ownership — or choose managed mode and start in minutes.",
       icon: <IconCloud />,
     },
     {
-      title: "Multi-Source Integration",
-      description: "Combine data from LinkedIn, Crunchbase, and web scraping.",
-      icon: <IconRouteAltLeft />,
+      title: "AI Email Writer",
+      description:
+        "Write cold emails in minutes, not hours. AI drafts using your tone — so campaigns sound human, not like a marketing bot.",
+      icon: <IconBrain />,
     },
     {
-      title: "24/7 Support",
-      description: "Round-the-clock customer support to help you succeed.",
-      icon: <IconHelp />,
+      title: "AI-Powered Warmup",
+      description:
+        "Stop new domains from hitting spam. AI generates real conversations across Gmail, Outlook, Yahoo, and SES — building trust automatically.",
+      icon: <IconFlame />,
     },
     {
-      title: "Satisfaction Guaranteed",
-      description: "Not satisfied? Get your money back, no questions asked.",
-      icon: <IconAdjustmentsBolt />,
+      title: "Built-In Email Verification",
+      description:
+        "Never upload 10k leads and watch half bounce. Reoon verification removes bad addresses before they touch your sender reputation.",
+      icon: <IconShieldCheck />,
     },
     {
-      title: "And Much More",
-      description: "Continuous updates and new features added regularly.",
-      icon: <IconHeart />,
+      title: "Domain Health Dashboard",
+      description:
+        "Stop checking MXToolbox, Postmaster, and your sending tool every morning. One screen tells you if your domain is healthy.",
+      icon: <IconMail />,
+    },
+    {
+      title: "Multi-Day Smart Sending",
+      description:
+        "\"Send 50k emails\" doesn't mean send them all today. The system paces across days — protecting you from reputation-killing spikes.",
+      icon: <IconUsers />,
+    },
+    {
+      title: "Analytics & PDF Reports",
+      description:
+        "Prove campaign results to clients and leadership with real data. Opens, clicks, bounces — per campaign, exportable as PDF. No more screenshots.",
+      icon: <IconChartBar />,
+    },
+    {
+      title: "API-First Architecture",
+      description:
+        "Build custom workflows, connect your CRM, or power your entire outbound stack through our REST API and webhooks.",
+      icon: <IconCode />,
     },
   ];
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
-      {features.map((feature, index) => (
-        <Feature key={feature.title} {...feature} index={index} />
-      ))}
-    </div>
+    <section
+      id="features"
+      className="py-16 bg-gradient-to-b from-[#f0f0f0] to-[#ffffff]"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
+            Everything You Need. Nothing You Don&apos;t.
+          </h2>
+          <p className="text-[#475569] text-lg max-w-2xl mx-auto">
+            Domains, verification, warmup, AI writing, campaigns, analytics —
+            one platform, not 4 tools duct-taped together.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

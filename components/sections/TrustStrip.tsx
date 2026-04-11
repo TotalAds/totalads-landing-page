@@ -22,8 +22,8 @@ export default function TrustStrip() {
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 border-y border-[#e2e8f0] bg-gradient-to-r from-[#f8fafc] to-[#f1f5f9]">
       <div className="max-w-7xl mx-auto">
-        <p className="text-center text-[#475569] text-m mb-8 font-medium">
-          Integrates with your favorite tools
+        <p className="text-center text-[#475569] text-sm mb-8 font-medium">
+          Connects with the tools your outbound team already uses
         </p>
 
         <motion.div

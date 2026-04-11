@@ -56,11 +56,12 @@ export default function IntegrationsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-            Integrate With Your Favorite Tools.
+            Plugs Into Your Existing Stack.
           </h2>
-          <p className="text-[#475569] text-lg">
-            Connect LeadSnipper with your existing workflow — no manual uploads,
-            no extra effort.
+          <p className="text-[#475569] text-lg max-w-2xl mx-auto">
+            Connect LeadSnipper with the CRMs, automation tools, and data
+            sources your outbound team already uses. Plus a full API for
+            anything custom.
           </p>
         </motion.div>
 
@@ -93,6 +94,21 @@ export default function IntegrationsSection() {
               </p>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-8"
+        >
+          <p className="text-[#64748b] text-sm">
+            Need a custom integration? Our{" "}
+            <span className="text-[#3b82f6] font-medium">REST API</span> and{" "}
+            <span className="text-[#3b82f6] font-medium">webhooks</span> power
+            any workflow you can think of.
+          </p>
         </motion.div>
       </div>
     </section>

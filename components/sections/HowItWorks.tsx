@@ -1,26 +1,36 @@
 import { motion } from "framer-motion";
-import { Rocket, Sheet, UploadIcon } from "lucide-react";
+import { Globe, Rocket, Shield, Upload } from "lucide-react";
 import React from "react";
 
 export default function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Connect your domains",
-      description: "We verify SPF/DKIM in minutes.",
-      icon: <UploadIcon className="text-[#3b82f6]" />,
+      title: "Connect & Verify Your Domain",
+      description:
+        "Add your domain, follow the guided DNS setup for SPF/DKIM, and choose BYO SES or Managed mode. We verify everything before you send a single email.",
+      icon: <Globe className="w-6 h-6 text-[#3b82f6]" />,
     },
     {
       number: "02",
-      title: "Upload your leads",
-      description: "Import via CSV or connect your CRM.",
-      icon: <Sheet className="text-[#3b82f6]" />,
+      title: "Upload Leads & Verify with AI",
+      description:
+        "Import via CSV or connect your CRM. Built-in Reoon verification removes invalid and risky addresses automatically — so bad data never touches your sender reputation.",
+      icon: <Upload className="w-6 h-6 text-[#3b82f6]" />,
     },
     {
       number: "03",
-      title: "Launch",
-      description: "AI writes and sends automatically at the best times.",
-      icon: <Rocket className="text-[#3b82f6]" />,
+      title: "Warm Up with AI Conversations",
+      description:
+        "Our AI warmup engine generates human-like email threads across Gmail, Outlook, Yahoo, and SES — building trust with mailbox providers before you scale.",
+      icon: <Shield className="w-6 h-6 text-[#3b82f6]" />,
+    },
+    {
+      number: "04",
+      title: "Launch & Monitor in Real-Time",
+      description:
+        "AI drafts your campaign, paces sends across multiple days, and monitors domain health in real time. You see opens, clicks, bounces, and complaints — all in one dashboard.",
+      icon: <Rocket className="w-6 h-6 text-[#3b82f6]" />,
     },
   ];
 
@@ -54,10 +64,11 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-            Launch Your First Campaign in 3 Simple Steps.
+            From Zero to Sending in 15 Minutes.
           </h2>
           <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-            No technical setup. No coding. Just results.
+            No duct-taping 4 different tools. One platform handles domains,
+            verification, warmup, and campaigns.
           </p>
         </motion.div>
 
@@ -66,27 +77,22 @@ export default function HowItWorks() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8 relative"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative"
         >
-          {/* Connection Lines */}
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-[#3b82f6] to-[#22c55e]"></div>
+          <div className="hidden lg:block absolute top-24 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#3b82f6] to-[#22c55e]" />
 
           {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="relative"
-            >
-              <div className="bg-white border-2 border-[#f0f0f0] rounded-xl p-8 h-full shadow-md hover:shadow-lg hover:border-[#3b82f6] transition-all duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-[#eff6ff] rounded-lg flex items-center justify-center text-2xl shadow-md">
+            <motion.div key={index} variants={itemVariants} className="relative">
+              <div className="bg-white border-2 border-[#f0f0f0] rounded-xl p-6 h-full shadow-md hover:shadow-lg hover:border-[#3b82f6] transition-all duration-300">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 bg-[#eff6ff] rounded-lg flex items-center justify-center shadow-sm relative z-10">
                     {step.icon}
                   </div>
-                  <div className="text-4xl font-bold text-[#3b82f6]">
+                  <span className="text-3xl font-bold text-[#3b82f6]">
                     {step.number}
-                  </div>
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-[#1e293b] mb-3">
+                <h3 className="text-lg font-bold text-[#1e293b] mb-2">
                   {step.title}
                 </h3>
                 <p className="text-[#475569] text-sm leading-relaxed">
