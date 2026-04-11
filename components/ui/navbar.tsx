@@ -11,7 +11,7 @@ import LeadsnipperRounded from "@/asset/leadsnipper.svg";
 const navItems = [
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "Integrations", href: "/#integrations" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ];
 

@@ -393,3 +393,31 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 #f1f5f9;
 }
+
+/* Blog content styles */
+.blog-content h2 {
+  scroll-margin-top: 100px;
+}
+
+.blog-content code {
+  font-size: 0.875em;
+}
+
+.blog-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

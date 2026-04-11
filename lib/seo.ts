@@ -1,18 +1,16 @@
 // SEO Configuration for LeadSnipper Landing Page
 export const seoConfig = {
-  // Base configuration
   baseUrl:
     process.env.NODE_ENV === "production"
       ? "https://leadsnipper.com"
       : "http://localhost:3001",
 
-  // Default SEO settings
-  defaultTitle: "LeadSnipper - AI-Powered Email Campaign Platform",
+  defaultTitle:
+    "LeadSnipper — Cold Email at Scale Without Burning Your Domain",
   titleTemplate: "%s | LeadSnipper",
   defaultDescription:
-    "Scale your cold email outreach with 99.9% deliverability, AI personalization, and unlimited mailboxes. Send campaigns at scale with premium inbox placement. 1000 free credits for early users.",
+    "LeadSnipper is the cold email platform built on AWS SES. Bring your own sending infrastructure, verify leads with Reoon, warm up domains, and send campaigns that land in the inbox — not spam. Start free.",
 
-  // Open Graph defaults
   defaultOpenGraph: {
     type: "website",
     locale: "en_US",
@@ -23,19 +21,17 @@ export const seoConfig = {
         url: "https://leadsnipper.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "LeadSnipper - AI-Powered Email Campaign Platform",
+        alt: "LeadSnipper — Cold email at scale without burning your domain",
       },
     ],
   },
 
-  // Twitter defaults
   defaultTwitter: {
     handle: "@leadsnipper",
     site: "@leadsnipper",
     cardType: "summary_large_image",
   },
 
-  // Additional meta tags
   additionalMetaTags: [
     {
       name: "viewport",
@@ -43,11 +39,11 @@ export const seoConfig = {
     },
     {
       name: "theme-color",
-      content: "#a855f7",
+      content: "#3b82f6",
     },
     {
       name: "msapplication-TileColor",
-      content: "#a855f7",
+      content: "#3b82f6",
     },
     {
       name: "apple-mobile-web-app-capable",
@@ -63,7 +59,6 @@ export const seoConfig = {
     },
   ],
 
-  // Additional link tags
   additionalLinkTags: [
     {
       rel: "icon",
@@ -85,7 +80,6 @@ export const seoConfig = {
   ],
 };
 
-// Type definitions for page configurations
 export interface PageConfig {
   title: string;
   description: string;
@@ -104,93 +98,87 @@ export interface PageConfig {
   };
 }
 
-// Page-specific SEO configurations
 export const pageConfigs: Record<string, PageConfig> = {
   home: {
-    title: "LeadSnipper - AI-Powered Email Campaign Platform",
+    title:
+      "LeadSnipper — Send 10,000+ Cold Emails Without Killing Your Domain Reputation",
     description:
-      "Scale your cold email outreach with 99.9% deliverability, AI personalization, and unlimited mailboxes. Send campaigns at scale with premium inbox placement. 1000 free credits for early users.",
+      "LeadSnipper is the cold email outreach platform built on AWS SES. Bring your own sending infrastructure, verify leads with built-in Reoon verification, warm up domains with daily pacing, and send campaigns that land in the inbox. Free trial — no credit card required.",
     keywords:
-      "cold email, email campaigns, email marketing, email automation, deliverability, AI personalization, email outreach, sales automation, email sequences, campaign management",
+      "cold email platform, cold email software, email outreach tool, AWS SES cold email, BYO SES, email deliverability, domain reputation, email warmup, email verification, cold email at scale, bulk email sender, email campaign tool, sender reputation, inbox placement, cold outreach, Instantly alternative, Smartlead alternative, cold email infrastructure",
     canonical: "https://leadsnipper.com",
     openGraph: {
-      title: "LeadSnipper - AI-Powered Email Campaign Platform",
+      title:
+        "LeadSnipper — Cold Email at Scale Without Burning Your Domain",
       description:
-        "Scale cold email campaigns with 99.9% deliverability and AI-powered personalization.",
+        "Own your sending infrastructure with BYO AWS SES. Built-in email verification, domain health monitoring, intelligent warmup, and campaigns that land in the inbox.",
       url: "https://leadsnipper.com",
       images: [
         {
           url: "https://leadsnipper.com/og-home.png",
           width: 1200,
           height: 630,
-          alt: "LeadSnipper Homepage - Email Campaign Platform",
+          alt: "LeadSnipper — Cold email platform with BYO AWS SES, email warmup, and verification",
         },
       ],
-    },
-  },
-
-  howToUse: {
-    title: "How to Use LeadSnipper - Email Campaign Guide",
-    description:
-      "Learn how to launch email campaigns with LeadSnipper. Add domains, upload leads, create campaigns, and send at scale in 4 simple steps.",
-    keywords:
-      "how to use leadsnipper, email campaign setup, cold email guide, email automation tutorial, campaign creation",
-    canonical: "https://leadsnipper.com/how-to-use",
-    openGraph: {
-      title: "How to Use LeadSnipper - Email Campaign Guide",
-      description:
-        "Step-by-step guide to creating and launching email campaigns with premium deliverability.",
-      url: "https://leadsnipper.com/how-to-use",
     },
   },
 
   contact: {
-    title: "Contact LeadSnipper - Email Campaign Support",
+    title: "Contact LeadSnipper — Sales, Support & Partnership Inquiries",
     description:
-      "Contact LeadSnipper for support, sales inquiries, or partnership opportunities. Get help with email campaigns, deliverability, and platform features.",
+      "Get in touch with the LeadSnipper team for cold email platform support, sales questions, enterprise plans, or partnership opportunities. We respond within 24 hours.",
     keywords:
-      "contact leadsnipper, customer support, email support, campaign help, partnership inquiries",
+      "contact LeadSnipper, cold email support, email platform help, LeadSnipper sales, enterprise cold email",
     canonical: "https://leadsnipper.com/contact",
     openGraph: {
-      title: "Contact LeadSnipper - Email Campaign Support",
+      title: "Contact LeadSnipper — Sales, Support & Partnerships",
       description:
-        "Contact our team for support, sales inquiries, or partnership opportunities.",
+        "Reach the LeadSnipper team for support, sales inquiries, or partnership opportunities.",
       url: "https://leadsnipper.com/contact",
-      images: [
-        {
-          url: "https://leadsnipper.com/og-contact.png",
-          width: 1200,
-          height: 630,
-          alt: "Contact LeadSnipper - Email Campaign Support Team",
-        },
-      ],
+    },
+  },
+
+  blog: {
+    title:
+      "LeadSnipper Blog — Cold Email Tips, Deliverability Guides & Outbound Strategy",
+    description:
+      "Learn cold email best practices, email deliverability strategies, domain health tips, and outbound sales techniques. Practical guides from the LeadSnipper team.",
+    keywords:
+      "cold email blog, email deliverability tips, cold outreach guide, email warmup guide, domain reputation blog, cold email best practices, outbound email strategy, BYO SES guide, email verification tips",
+    canonical: "https://leadsnipper.com/blog",
+    openGraph: {
+      title: "LeadSnipper Blog — Cold Email & Deliverability Guides",
+      description:
+        "Practical cold email guides, deliverability strategies, and outbound tips from the LeadSnipper team.",
+      url: "https://leadsnipper.com/blog",
     },
   },
 
   privacy: {
-    title: "Privacy Policy - LeadSnipper Data Protection",
+    title: "Privacy Policy — LeadSnipper Data Protection",
     description:
-      "LeadSnipper privacy policy explaining how we collect, use, and protect your data. GDPR compliant data handling for sales intelligence.",
+      "LeadSnipper privacy policy. How we collect, use, and protect your data. GDPR compliant data handling.",
     keywords:
-      "privacy policy, data protection, GDPR compliance, data security, user privacy",
+      "privacy policy, data protection, GDPR compliance, LeadSnipper privacy",
     canonical: "https://leadsnipper.com/privacy-policy",
   },
 
   terms: {
-    title: "Terms of Service - LeadSnipper Usage Agreement",
+    title: "Terms of Service — LeadSnipper Usage Agreement",
     description:
-      "LeadSnipper terms of service and usage agreement. Understand your rights and responsibilities when using our sales intelligence platform.",
+      "LeadSnipper terms of service and usage agreement. Your rights and responsibilities when using our cold email platform.",
     keywords:
-      "terms of service, usage agreement, legal terms, service conditions",
+      "terms of service, usage agreement, LeadSnipper terms, legal terms",
     canonical: "https://leadsnipper.com/terms-of-service",
   },
 
   refund: {
-    title: "Refund Policy - LeadSnipper Money-Back Guarantee",
+    title: "Refund Policy — LeadSnipper",
     description:
-      "LeadSnipper refund policy and money-back guarantee. Learn about our fair refund process for sales intelligence services.",
+      "LeadSnipper refund policy. Learn about our fair refund process for cold email platform subscriptions.",
     keywords:
-      "refund policy, money back guarantee, billing support, payment terms",
+      "refund policy, billing support, LeadSnipper refund, payment terms",
     canonical: "https://leadsnipper.com/refund-policy",
   },
 };
@@ -204,7 +192,7 @@ export const structuredData = {
     url: "https://leadsnipper.com",
     logo: "https://leadsnipper.com/logo.png",
     description:
-      "AI-powered email campaign platform for cold outreach with 99.9% deliverability, unlimited mailboxes, and AI personalization.",
+      "Cold email outreach platform built on AWS SES. Own your sending infrastructure, verify leads, warm up domains, and send campaigns that land in the inbox.",
     foundingDate: "2024",
     sameAs: [
       "https://twitter.com/leadsnipper",
@@ -212,8 +200,8 @@ export const structuredData = {
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-555-LEADS-01",
       contactType: "customer service",
+      email: "rehan@leadsnipper.com",
       availableLanguage: "English",
     },
   },
@@ -224,10 +212,10 @@ export const structuredData = {
     name: "LeadSnipper",
     url: "https://leadsnipper.com",
     description:
-      "AI-powered email campaign platform for cold outreach with premium deliverability and personalization.",
+      "Cold email outreach platform built on AWS SES with built-in email verification, domain health monitoring, and intelligent warmup.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://app.leadsnipper.com/search?q={search_term_string}",
+      target: "https://leadsnipper.com/blog?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   },
@@ -239,7 +227,7 @@ export const structuredData = {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web Browser",
     description:
-      "AI-powered email campaign platform for cold outreach with 99.9% deliverability and unlimited mailboxes.",
+      "Cold email platform with BYO AWS SES, built-in Reoon email verification, domain health dashboard, AI warmup, and campaign analytics.",
     url: "https://leadsnipper.com",
     downloadUrl: "https://app.leadsnipper.com/signup",
     softwareVersion: "1.0",
@@ -248,16 +236,90 @@ export const structuredData = {
       "@type": "Organization",
       name: "LeadSnipper",
     },
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "1000 free credits for early users",
-    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Trial",
+        price: "0",
+        priceCurrency: "INR",
+        description:
+          "Free trial — 1,000 emails, 500 contacts, basic analytics, API access",
+      },
+      {
+        "@type": "Offer",
+        name: "Starter",
+        price: "499",
+        priceCurrency: "INR",
+        description:
+          "5,000 emails, 3,000 contacts, custom domain, warmup, analytics, 3 domains",
+      },
+      {
+        "@type": "Offer",
+        name: "Business",
+        price: "999",
+        priceCurrency: "INR",
+        description:
+          "15,000 emails, 10,000 contacts, unlimited domains, unlimited warmup, advanced analytics",
+      },
+    ],
+  },
+
+  faqPage: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Why should I use LeadSnipper instead of Instantly?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Instantly owns your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper, you bring your own AWS SES. You own your reputation, your deliverability, your data. Plus, we have built-in Reoon email verification and a domain health dashboard that Instantly doesn't offer.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is BYO SES? Do I need to know AWS?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: 'BYO SES means "Bring Your Own" Amazon Simple Email Service. It gives you full control over your sending infrastructure and reputation. If you don\'t know AWS, choose our Managed mode — we handle everything. The BYO option is there when you\'re ready for full control.',
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does LeadSnipper handle email deliverability?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Deliverability is built into the architecture. Verified domains with proper DNS (DKIM, SPF), warmup with daily pacing, automatic bounce suppression, complaint tracking, and built-in Reoon verification. Every layer ensures your emails land in the inbox, not spam.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does email warmup work in LeadSnipper?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our warmup engine generates realistic email conversations across Gmail, Outlook, Yahoo, Zoho, and SES. It creates natural threads with varied writing styles and proper timing, building sender trust before you run cold campaigns at scale.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is there a free trial?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Start free with no credit card. You get 1,000 emails, 500 contacts, basic analytics, and API access for 1 month — enough to run a real campaign and see if LeadSnipper fits your outbound workflow.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much does LeadSnipper cost?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "LeadSnipper starts at ₹499/month (Starter plan) for 5,000 emails and 3,000 contacts. Business plan is ₹999/month for 15,000 emails and unlimited domains. Free trial available with 1,000 emails. Significantly cheaper than Instantly ($37-97/mo) or Smartlead ($39-94/mo).",
+        },
+      },
+    ],
   },
 };
 
-// Generate meta tags for a specific page
 export function generateMetaTags(pageKey: keyof typeof pageConfigs) {
   const config = pageConfigs[pageKey];
   const base = seoConfig;

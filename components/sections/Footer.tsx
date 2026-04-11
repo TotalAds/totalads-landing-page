@@ -27,7 +27,7 @@ export default function Footer() {
       { label: "Data Use Policy", href: "/legal/data-use" },
     ],
     Resources: [
-      // { label: "API Docs", href: "#" },
+      { label: "Blog", href: "/blog" },
       {
         label: "LinkedIn",
         href: "https://www.linkedin.com/company/leadsnipper/",

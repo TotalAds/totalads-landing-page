@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { PageConfig, pageConfigs, seoConfig, structuredData } from '@/lib/seo';
+import { pageConfigs, seoConfig, structuredData } from '@/lib/seo';
 
 interface SEOProps {
   pageKey?: keyof typeof pageConfigs;
