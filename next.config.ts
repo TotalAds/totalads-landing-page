@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
   // Compression
   compress: true,
 
+  // Sitemap lives under /api/*; expose canonical SEO URLs at the root.
+  async rewrites() {
+    return [
+      { source: "/sitemap.xml", destination: "/api/sitemap.xml" },
+      { source: "/sitemap-index.xml", destination: "/api/sitemap-index.xml" },
+    ];
+  },
+
   // Image optimization
   images: {
     formats: ["image/webp", "image/avif"],
