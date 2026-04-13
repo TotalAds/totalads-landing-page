@@ -199,9 +199,10 @@ export default function BlogPost2() {
         <div className="bg-gradient-to-br from-[#3b82f6]/5 to-[#22c55e]/5 border border-[#3b82f6]/20 rounded-xl p-6">
           <h3 className="font-bold text-[#3b82f6] mb-2">BYO SES Mode</h3>
           <p className="text-[#475569] text-sm">
-            You connect your own AWS SES account. Full control over IPs,
-            regions, and sending configuration. LeadSnipper handles the
-            campaigns, warmup, and analytics layer on top.
+            You connect your own AWS SES account. You choose regions, identities,
+            and quotas in AWS; LeadSnipper is the campaign, analytics, and
+            operations layer on top. We don&apos;t cap sends below what your AWS
+            account allows — compliance, reputation, and limits stay with SES.
           </p>
         </div>
       </div>
@@ -210,6 +211,78 @@ export default function BlogPost2() {
         SES is one configuration step away. No migration, no data loss, no
         downtime.
       </p>
+
+      <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
+        BYO SES pricing: try free, then Pro
+      </h2>
+      <p className="text-[#475569] leading-relaxed mb-4">
+        Bring Your Own SES uses its own plan line so you&apos;re not paying for
+        managed sending capacity you don&apos;t need. You pay AWS for mail; you
+        pay LeadSnipper for the product.
+      </p>
+      <div className="grid md:grid-cols-2 gap-4 mb-4">
+        <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-6">
+          <h3 className="font-bold text-[#1e293b] mb-1">Try BYO SES (Free)</h3>
+          <p className="text-[#64748b] text-sm mb-3">
+            Enough to validate the workflow — not enough to abuse at scale.
+          </p>
+          <ul className="space-y-2 text-[#475569] text-sm list-disc pl-5">
+            <li>
+              <strong>1,000 contacts</strong> and <strong>2,000 emails/month</strong>
+            </li>
+            <li>
+              <strong>Up to 2 verified domains</strong>
+            </li>
+            <li>
+              <strong>Limited active campaigns</strong> (full builder, capped
+              concurrency for testing)
+            </li>
+          </ul>
+        </div>
+        <div className="bg-gradient-to-br from-[#3b82f6]/5 to-[#22c55e]/5 border border-[#3b82f6]/20 rounded-xl p-6">
+          <h3 className="font-bold text-[#1e293b] mb-1">
+            BYO SES Pro — ₹999/month
+          </h3>
+          <p className="text-[#64748b] text-sm mb-3">
+            Full control. Your AWS. Your responsibility.
+          </p>
+          <ul className="space-y-2 text-[#475569] text-sm list-disc pl-5">
+            <li>
+              <strong>Connect your own AWS SES</strong> — send through your
+              account; no artificial monthly send cap from us (your SES quotas
+              apply)
+            </li>
+            <li>
+              <strong>Unlimited domains</strong> in LeadSnipper (you still pay
+              AWS for sending)
+            </li>
+            <li>
+              <strong>Full campaign builder</strong>, scheduling, and core
+              analytics
+            </li>
+            <li>
+              <strong>Platform safeguards:</strong> fair use policy, basic abuse
+              monitoring, and account action for extreme misuse — so the product
+              stays viable for serious teams without pretending we enforce SES
+              deliverability for you
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="bg-[#fefce8] border border-[#facc15]/40 rounded-xl p-5 mb-6">
+        <p className="text-[#713f12] text-sm leading-relaxed">
+          <strong className="text-[#854d0e]">Important:</strong> LeadSnipper
+          provides sending infrastructure and campaign tools.{" "}
+          <strong>
+            Sending reputation, compliance, bounces/complaints handling, and
+            deliverability limits are governed by your AWS SES account and
+            policies
+          </strong>
+          — not by LeadSnipper as your mail provider. We give you complete
+          control: you own your infrastructure, your AWS bill, and your
+          outcomes in SES.
+        </p>
+      </div>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         Real-World Cost Comparison
@@ -229,10 +302,10 @@ export default function BlogPost2() {
             ~<strong>$120/month</strong>. Shared infrastructure.
           </li>
           <li>
-            <strong>LeadSnipper Business + BYO SES:</strong> ₹999/month
-            (~$12/month) + AWS SES costs (~$1.50 for 15k emails) ={" "}
-            <strong>~$13.50/month</strong>. Dedicated infrastructure with
-            built-in verification.
+            <strong>LeadSnipper BYO SES Pro:</strong> ₹999/month (~$12/month) +
+            AWS SES costs (~$1.50 for 15k emails) ={" "}
+            <strong>~$13.50/month</strong>. Your SES, your quotas; platform
+            tools + verification on top.
           </li>
         </ul>
       </div>

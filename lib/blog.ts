@@ -31,13 +31,13 @@ export const blogPosts: BlogPost[] = [
     title:
       "BYO AWS SES vs Shared Email Infrastructure: Why It Matters for Cold Outreach",
     excerpt:
-      "When your cold email tool owns your sending infrastructure, their problems become your problems. Here's why bringing your own AWS SES gives you control over deliverability that shared infrastructure never will.",
+      "When your cold email tool owns your sending infrastructure, their problems become your problems. Here's why BYO AWS SES wins — plus Try BYO SES (free) vs BYO SES Pro (₹999), your responsibility in SES, and how we protect the platform without capping your AWS sends.",
     description:
-      "Compare BYO AWS SES vs shared email infrastructure for cold outreach. Understand why owning your sending reputation with Amazon SES gives you better deliverability, control, and cost savings compared to tools like Instantly and Smartlead.",
+      "Compare BYO AWS SES vs shared email infrastructure for cold outreach. Covers Try BYO SES vs BYO SES Pro pricing, unlimited domains on your SES, disclaimers, and why full control beats shared pools — with safeguards for legitimate teams.",
     keywords:
       "BYO AWS SES, shared email infrastructure, Amazon SES cold email, email sending infrastructure, own sending reputation, AWS SES vs shared IP, cold email infrastructure, Instantly alternative, Smartlead alternative, email deliverability control, cold email cost comparison, dedicated IP cold email",
     date: "2026-04-04",
-    readTime: "10 min read",
+    readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Infrastructure",
   },

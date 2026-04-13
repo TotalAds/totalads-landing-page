@@ -52,7 +52,7 @@ export default function PricingSection() {
         "Unlimited warmup",
         "Advanced analytics + PDF export",
         "Priority support",
-        "BYO SES support",
+        "Managed SES — we run sending & reputation for you",
         "AI writer + smart scheduling",
       ],
       cta: "Get Started",
@@ -234,6 +234,113 @@ export default function PricingSection() {
               </ul>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* BYO SES — separate plan line */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <div className="text-center mb-10">
+            <div className="inline-block bg-[#f0fdf4] text-[#15803d] text-xs font-bold px-3 py-1 rounded-full mb-3">
+              BRING YOUR OWN AWS SES
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#1e293b] mb-2">
+              BYO SES pricing
+            </h3>
+            <p className="text-[#475569] max-w-2xl mx-auto text-sm md:text-base">
+              Full control — your AWS, your responsibility. You pay AWS for
+              sending; you pay LeadSnipper for the platform. No artificial send
+              caps from us beyond fair use and keeping the product safe for
+              legitimate teams.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="rounded-2xl p-8 bg-white border-2 border-[#e2e8f0] shadow-md">
+              <h4 className="text-xl font-bold text-[#1e293b] mb-1">
+                Try BYO SES
+              </h4>
+              <p className="text-[#64748b] text-sm mb-4">Free — test the flow</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-[#3b82f6]">Free</span>
+              </div>
+              <Link
+                href="https://app.leadsnipper.com/signup"
+                className="block w-full py-3 rounded-lg font-semibold text-center transition mb-6 border-2 border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6]/10"
+              >
+                Start free
+              </Link>
+              <ul className="space-y-3 text-[#475569] text-sm">
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  1,000 contacts · 2,000 emails/month
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Up to 2 verified domains
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Limited active campaigns (enough to validate)
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Connect your own AWS SES
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-2xl p-8 bg-gradient-to-br from-[#3b82f6]/10 to-[#22c55e]/10 border-2 border-[#3b82f6] shadow-lg relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#3b82f6] to-[#22c55e] text-white px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                BYO SES Pro
+              </div>
+              <h4 className="text-xl font-bold text-[#1e293b] mb-1 mt-2">
+                Full platform access
+              </h4>
+              <p className="text-[#64748b] text-sm mb-4">
+                Your SES quotas — we don&apos;t cap sends below AWS
+              </p>
+              <div className="mb-2">
+                <span className="text-4xl font-bold text-[#3b82f6]">₹999</span>
+                <span className="text-[#475569] text-sm">/month</span>
+              </div>
+              <p className="text-xs text-[#64748b] mb-6">
+                Early-bird pricing where applicable
+              </p>
+              <Link
+                href="https://app.leadsnipper.com/signup"
+                className="block w-full py-3 rounded-lg font-semibold text-center transition mb-6 bg-[#3b82f6] text-white hover:bg-[#2563eb] hover:shadow-lg hover:shadow-[#3b82f6]/30"
+              >
+                Get BYO SES Pro
+              </Link>
+              <ul className="space-y-3 text-[#475569] text-sm">
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Connect your own AWS SES — unlimited domains in LeadSnipper
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Send as AWS allows (no artificial monthly send limit from us)
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Full campaign builder + core analytics
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-[#22c55e] flex-shrink-0">✓</span>
+                  Fair use + abuse monitoring; extreme misuse may result in
+                  suspension
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-[#64748b] text-xs max-w-2xl mx-auto mt-8 leading-relaxed">
+            LeadSnipper provides sending infrastructure and campaign tools.
+            Sending reputation, compliance, and deliverability limits are fully
+            managed by your AWS SES account and AWS policies.
+          </p>
         </motion.div>
 
         {/* Who This Is NOT For */}
