@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 import LeadsnipperSc from "@/asset/leadsnipper_dash_sc.png";
+import { HeroLeadCapture } from "@/components/sections/HeroLeadCapture";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function HeroScrollAnimation() {
@@ -43,20 +43,7 @@ export function HeroScrollAnimation() {
               </span>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="https://app.leadsnipper.com/signup"
-                className="px-8 py-4 bg-[#3b82f6] text-white rounded-lg font-semibold hover:bg-[#2563eb] hover:shadow-lg hover:shadow-[#3b82f6]/30 transition transform hover:scale-105"
-              >
-                Start Free — 1,000 Emails, No Credit Card
-              </Link>
-              <Link
-                href="/contact"
-                className="px-8 py-4 border-2 border-[#3b82f6] text-[#3b82f6] rounded-lg font-semibold hover:bg-[#3b82f6]/10 transition"
-              >
-                Talk to Us
-              </Link>
-            </div>
+            <HeroLeadCapture />
 
             <div className="flex flex-wrap justify-center gap-6 text-[#64748b] text-sm mt-8">
               <span className="flex items-center gap-1.5">

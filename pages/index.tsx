@@ -6,7 +6,9 @@ import SEO from "@/components/SEO";
 import BenefitsRow from "@/components/sections/BenefitsRow";
 import BlogSection from "@/components/sections/BlogSection";
 import CTASection from "@/components/sections/CTASection";
+import ChecklistLeadCaptureSystem from "@/components/sections/ChecklistLeadCaptureSystem";
 import FAQSection from "@/components/sections/FAQSection";
+import FeaturedInBar from "@/components/sections/FeaturedInBar";
 import Footer from "@/components/sections/Footer";
 import FounderStory from "@/components/sections/FounderStory";
 import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
@@ -31,6 +33,7 @@ export default function Home() {
         <Navbar />
         <div className="pt-24">
           <HeroScrollAnimation />
+          <FeaturedInBar />
           <TrustStrip />
           <PainSection />
           <WhyBYOSES />
@@ -44,6 +47,7 @@ export default function Home() {
           <BlogSection />
           <CTASection />
           <Footer />
+          <ChecklistLeadCaptureSystem />
         </div>
       </div>
     </>
