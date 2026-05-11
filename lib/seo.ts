@@ -1,3 +1,5 @@
+import { generateFaqPageSchema } from "./faqs";
+
 // SEO Configuration for LeadSnipper Landing Page
 export const seoConfig = {
   baseUrl:
@@ -156,6 +158,38 @@ export const pageConfigs: Record<string, PageConfig> = {
     },
   },
 
+  instantlyAlternative: {
+    title:
+      "Instantly Alternative — LeadSnipper vs Instantly for Cold Email",
+    description:
+      "Compare LeadSnipper with Instantly for cold email. See how BYO AWS SES, built-in Reoon verification, domain health monitoring, and lower sending costs stack up against shared infrastructure.",
+    keywords:
+      "Instantly alternative, Instantly competitor, LeadSnipper vs Instantly, cold email software alternative, Instantly pricing alternative, BYO AWS SES cold email, cold email deliverability tool, email verification cold outreach",
+    canonical: "https://leadsnipper.com/vs/instantly",
+    openGraph: {
+      title: "Instantly Alternative — Own Your Cold Email Infrastructure",
+      description:
+        "LeadSnipper gives outbound teams BYO AWS SES, built-in verification, domain health monitoring, and campaign pacing without shared infrastructure risk.",
+      url: "https://leadsnipper.com/vs/instantly",
+    },
+  },
+
+  smartleadAlternative: {
+    title:
+      "Smartlead Alternative — LeadSnipper vs Smartlead for Cold Email",
+    description:
+      "Compare LeadSnipper with Smartlead for cold email. See how dedicated AWS SES control, built-in verification, domain health, and simpler pricing help teams protect deliverability.",
+    keywords:
+      "Smartlead alternative, Smartlead competitor, LeadSnipper vs Smartlead, cold email software alternative, Smartlead pricing alternative, BYO AWS SES cold email, email deliverability tools, cold outreach platform",
+    canonical: "https://leadsnipper.com/vs/smartlead",
+    openGraph: {
+      title: "Smartlead Alternative — Cold Email Control Without Complexity",
+      description:
+        "LeadSnipper helps outbound teams own sending infrastructure, verify leads, monitor domain health, and send campaigns with safer pacing.",
+      url: "https://leadsnipper.com/vs/smartlead",
+    },
+  },
+
   blog: {
     title:
       "LeadSnipper Blog — Cold Email Tips, Deliverability Guides & Outbound Strategy",
@@ -240,8 +274,11 @@ export const structuredData = {
   softwareApplication: {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://leadsnipper.com/#software",
     name: "LeadSnipper",
+    alternateName: "LeadSnipper Cold Email Platform",
     applicationCategory: "BusinessApplication",
+    applicationSubCategory: "Cold Email Software",
     operatingSystem: "Web Browser",
     description:
       "Cold email platform with BYO AWS SES, built-in Reoon email verification, domain health dashboard, AI warmup, and campaign analytics.",
@@ -249,92 +286,100 @@ export const structuredData = {
     downloadUrl: "https://app.leadsnipper.com/signup",
     softwareVersion: "1.0",
     datePublished: "2024-01-01",
+    featureList: [
+      "Bring Your Own AWS SES sending infrastructure",
+      "Managed SES sending option",
+      "Reoon email verification",
+      "Domain health monitoring",
+      "AI-powered email warmup",
+      "Cold email campaign builder",
+      "Sender rotation and daily pacing",
+      "Campaign analytics and reporting",
+    ],
+    audience: {
+      "@type": "Audience",
+      audienceType: "B2B founders, sales teams, growth teams, and outbound agencies",
+    },
+    brand: {
+      "@type": "Brand",
+      name: "LeadSnipper",
+      url: "https://leadsnipper.com",
+    },
     author: {
       "@type": "Organization",
       name: "LeadSnipper",
+      url: "https://leadsnipper.com",
     },
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Trial",
-        price: "0",
-        priceCurrency: "INR",
-        description:
-          "Free trial — 1,000 emails, 500 contacts, basic analytics, API access",
-      },
-      {
-        "@type": "Offer",
-        name: "Starter",
-        price: "499",
-        priceCurrency: "INR",
-        description:
-          "5,000 emails, 3,000 contacts, custom domain, warmup, analytics, 3 domains",
-      },
-      {
-        "@type": "Offer",
-        name: "Business",
-        price: "999",
-        priceCurrency: "INR",
-        description:
-          "15,000 emails, 10,000 contacts, unlimited domains, unlimited warmup, advanced analytics",
-      },
-    ],
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "INR",
+      lowPrice: "0",
+      highPrice: "999",
+      offerCount: "3",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Free Trial",
+          price: "0",
+          priceCurrency: "INR",
+          url: "https://app.leadsnipper.com/signup",
+          availability: "https://schema.org/InStock",
+          description:
+            "Free trial with 1,000 emails, 500 contacts, basic analytics, and API access.",
+        },
+        {
+          "@type": "Offer",
+          name: "Starter",
+          price: "499",
+          priceCurrency: "INR",
+          url: "https://app.leadsnipper.com/signup",
+          availability: "https://schema.org/InStock",
+          description:
+            "Starter cold email plan with 5,000 emails, 3,000 contacts, custom domain, warmup, analytics, and 3 domains.",
+        },
+        {
+          "@type": "Offer",
+          name: "Business",
+          price: "999",
+          priceCurrency: "INR",
+          url: "https://app.leadsnipper.com/signup",
+          availability: "https://schema.org/InStock",
+          description:
+            "Business cold email plan with 15,000 emails, 10,000 contacts, unlimited domains, unlimited warmup, and advanced analytics.",
+        },
+      ],
+    },
   },
 
-  faqPage: {
+  product: {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Why should I use LeadSnipper instead of Instantly?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Instantly owns your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper, you bring your own AWS SES. You own your reputation, your deliverability, your data. Plus, we have built-in Reoon email verification and a domain health dashboard that Instantly doesn't offer.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is BYO SES? Do I need to know AWS?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: 'BYO SES means "Bring Your Own" Amazon Simple Email Service. It gives you full control over your sending infrastructure and reputation. If you don\'t know AWS, choose our Managed mode — we handle everything. The BYO option is there when you\'re ready for full control.',
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How does LeadSnipper handle email deliverability?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Deliverability is built into the architecture. Verified domains with proper DNS (DKIM, SPF), warmup with daily pacing, automatic bounce suppression, complaint tracking, and built-in Reoon verification. Every layer ensures your emails land in the inbox, not spam.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How does email warmup work in LeadSnipper?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Our warmup engine generates realistic email conversations across Gmail, Outlook, Yahoo, Zoho, and SES. It creates natural threads with varied writing styles and proper timing, building sender trust before you run cold campaigns at scale.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Is there a free trial?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Start free with no credit card. You get 1,000 emails, 500 contacts, basic analytics, and API access for 1 month — enough to run a real campaign and see if LeadSnipper fits your outbound workflow.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How much does LeadSnipper cost?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "LeadSnipper starts at ₹499/month (Starter plan) for 5,000 emails and 3,000 contacts. Business plan is ₹999/month for 15,000 emails and unlimited domains. Free trial available with 1,000 emails. Significantly cheaper than Instantly ($37-97/mo) or Smartlead ($39-94/mo).",
-        },
-      },
-    ],
+    "@type": "Product",
+    "@id": "https://leadsnipper.com/#product",
+    name: "LeadSnipper",
+    image: "https://leadsnipper.com/og-image.png",
+    description:
+      "LeadSnipper is a cold email platform built around AWS SES, email verification, domain warmup, campaign management, and deliverability safeguards.",
+    brand: {
+      "@type": "Brand",
+      name: "LeadSnipper",
+    },
+    category: "Cold Email Software",
+    url: "https://leadsnipper.com",
+    audience: {
+      "@type": "Audience",
+      audienceType: "B2B founders, sales teams, growth teams, and outbound agencies",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "INR",
+      lowPrice: "0",
+      highPrice: "999",
+      offerCount: "3",
+      url: "https://leadsnipper.com/#pricing",
+    },
   },
+
+  faqPage: generateFaqPageSchema(),
 };
 
 export function generateMetaTags(pageKey: keyof typeof pageConfigs) {

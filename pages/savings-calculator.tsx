@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import SEO from "@/components/SEO";
 import Footer from "@/components/sections/Footer";
@@ -58,6 +59,25 @@ export default function SavingsCalculatorPage() {
                   After that: ₹999/month platform + AWS SES usage.
                 </p>
               </div>
+            </div>
+            <div className="mt-8 rounded-2xl border border-[#dbeafe] bg-white p-5 text-center">
+              <p className="text-[#475569]">
+                Comparing tools before switching? Read the dedicated{" "}
+                <Link
+                  href="/vs/instantly"
+                  className="font-bold text-[#2563eb] hover:underline"
+                >
+                  Instantly alternative
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/vs/smartlead"
+                  className="font-bold text-[#2563eb] hover:underline"
+                >
+                  Smartlead alternative
+                </Link>{" "}
+                pages for deliverability, infrastructure, and verification trade-offs.
+              </p>
             </div>
           </section>
         </main>

@@ -15,7 +15,7 @@ export default function Footer() {
       { label: "Pricing", href: "/#pricing" },
       { label: "Integrations", href: "/#integrations" },
       { label: "FAQ", href: "/#faq" },
-      { label: "Cost Calculator", href: "/savings-calculator" }
+      { label: "Cost Calculator", href: "/savings-calculator" },
       ],
     Company: [
       { label: "Contact", href: "/contact" },
@@ -30,6 +30,8 @@ export default function Footer() {
     ],
     Resources: [
       { label: "Blog", href: "/blog" },
+      { label: "Instantly Alternative", href: "/vs/instantly" },
+      { label: "Smartlead Alternative", href: "/vs/smartlead" },
       {
         label: "LinkedIn",
         href: "https://www.linkedin.com/company/leadsnipper/",

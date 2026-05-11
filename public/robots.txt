@@ -42,9 +42,13 @@ Allow: /
 Allow: /blog
 Allow: /blog/*
 Allow: /contact
+Allow: /savings-calculator
+Allow: /vs/instantly
+Allow: /vs/smartlead
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /refund-policy
+Allow: /legal/data-use
 
 # Sitemap location
 Sitemap: https://leadsnipper.com/sitemap.xml

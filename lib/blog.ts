@@ -12,6 +12,21 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cold-email-open-rate-dropping-fix-domain-reputation",
+    title:
+      "Cold Email Open Rate Dropping? How to Diagnose and Fix Domain Reputation",
+    excerpt:
+      "A sudden open-rate drop is usually a deliverability warning, not a copywriting problem. Learn how to check domain reputation, DNS, bounce rates, warmup, and list quality before your campaigns slide into spam.",
+    description:
+      "Learn why your cold email open rate is dropping and how to fix domain reputation problems. Covers DNS checks, bounce rate diagnosis, email verification, warmup, sender rotation, and domain health monitoring.",
+    keywords:
+      "cold email open rate dropping, fix email domain reputation, cold email open rate drop, email domain reputation, cold email deliverability problem, email open rate decline, domain health monitoring, cold email warmup, email bounce rate, sender reputation fix",
+    date: "2026-04-12",
+    readTime: "11 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+  },
+  {
     slug: "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
     title:
       "How to Send Cold Emails at Scale Without Getting Blacklisted in 2026",

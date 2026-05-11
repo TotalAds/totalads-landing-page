@@ -42,6 +42,16 @@ export const sitemapConfig = {
       priority: 0.8,
     },
     {
+      path: "/vs/instantly",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/vs/smartlead",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       path: "/privacy-policy",
       changefreq: "yearly" as const,
       priority: 0.3,
@@ -53,6 +63,11 @@ export const sitemapConfig = {
     },
     {
       path: "/refund-policy",
+      changefreq: "yearly" as const,
+      priority: 0.3,
+    },
+    {
+      path: "/legal/data-use",
       changefreq: "yearly" as const,
       priority: 0.3,
     },

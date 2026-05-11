@@ -24,10 +24,7 @@ import { Navbar } from "@/components/ui/navbar";
 export default function Home() {
   return (
     <>
-      <SEO
-        pageKey="home"
-        structuredDataType="softwareApplication"
-      />
+      <SEO pageKey="home" />
 
       <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f0f0f0] to-[#fafafa]">
         <Navbar />

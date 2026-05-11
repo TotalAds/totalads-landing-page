@@ -12,7 +12,14 @@ interface SEOProps {
   nofollow?: boolean;
   ogImage?: string;
   ogType?: string;
-  structuredDataType?: "organization" | "website" | "softwareApplication";
+  structuredDataType?:
+    | "organization"
+    | "website"
+    | "softwareApplication"
+    | "product"
+    | "faqPage";
+  structuredDataTypes?: Array<keyof typeof structuredData>;
+  additionalStructuredData?: Array<Record<string, unknown>>;
 }
 
 export default function SEO({
@@ -26,6 +33,8 @@ export default function SEO({
   ogImage,
   ogType = "website",
   structuredDataType,
+  structuredDataTypes,
+  additionalStructuredData,
 }: SEOProps) {
   // Get page-specific config or use provided props
   const pageConfig = pageKey ? pageConfigs[pageKey] : null;
@@ -47,13 +56,22 @@ export default function SEO({
     nofollow ? "nofollow" : "follow",
   ].join(", ");
 
-  // Get structured data if specified
-  const getStructuredData = () => {
-    if (!structuredDataType) return null;
-    return structuredData[structuredDataType];
-  };
-
-  const structuredDataJson = getStructuredData();
+  const schemaKeys = [
+    ...(structuredDataTypes || []),
+    ...(structuredDataType ? [structuredDataType] : []),
+    ...(pageKey === "home"
+      ? ([
+          "organization",
+          "website",
+          "softwareApplication",
+          "product",
+          "faqPage",
+        ] as Array<keyof typeof structuredData>)
+      : []),
+  ].filter(
+    (key, index, allKeys): key is keyof typeof structuredData =>
+      Boolean(key) && allKeys.indexOf(key) === index
+  );
 
   return (
     <Head>
@@ -144,38 +162,24 @@ export default function SEO({
       <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
 
       {/* Structured Data */}
-      {structuredDataJson && (
+      {schemaKeys.map((schemaKey) => (
         <script
+          key={schemaKey}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredDataJson),
+            __html: JSON.stringify(structuredData[schemaKey]),
           }}
         />
-      )}
-
-      {/* Additional page-specific structured data */}
-      {pageKey === "home" && (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(structuredData.organization),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(structuredData.website),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(structuredData.softwareApplication),
-            }}
-          />
-        </>
-      )}
+      ))}
+      {additionalStructuredData?.map((schemaData, index) => (
+        <script
+          key={`additional-schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaData),
+          }}
+        />
+      ))}
     </Head>
   );
 }

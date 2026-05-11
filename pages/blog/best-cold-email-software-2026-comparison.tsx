@@ -85,7 +85,14 @@ export default function BestColdEmailSoftware() {
         <strong>Pricing:</strong> $37/month (Growth) to $97/month (Hypergrowth).
         Plus you&apos;ll likely need a separate email verification service
         ($20-50/month), bringing real costs to $57-147/month — all on shared
-        infrastructure.
+        infrastructure. For a deeper decision page, read our{" "}
+        <Link
+          href="/vs/instantly"
+          className="text-[#3b82f6] font-semibold hover:underline"
+        >
+          Instantly alternative comparison
+        </Link>
+        .
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -120,7 +127,14 @@ export default function BestColdEmailSoftware() {
       <p className="text-[#475569] leading-relaxed mb-6">
         <strong>Pricing:</strong> $39/month (Basic) to $94/month (Pro). Add
         verification and the real cost is $59-144/month. Still shared
-        infrastructure.
+        infrastructure. See the dedicated{" "}
+        <Link
+          href="/vs/smartlead"
+          className="text-[#3b82f6] font-semibold hover:underline"
+        >
+          Smartlead alternative comparison
+        </Link>{" "}
+        for the full trade-off breakdown.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
