@@ -15,11 +15,13 @@ export default function Footer() {
       { label: "Pricing", href: "/#pricing" },
       { label: "Integrations", href: "/#integrations" },
       { label: "FAQ", href: "/#faq" },
-    ],
+      { label: "Cost Calculator", href: "/savings-calculator" }
+      ],
     Company: [
       { label: "Contact", href: "/contact" },
       { label: "Careers", href: "mailto:rehan@leadsnipper.com" },
     ],
+    
     Legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },

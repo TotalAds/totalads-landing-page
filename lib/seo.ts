@@ -139,6 +139,23 @@ export const pageConfigs: Record<string, PageConfig> = {
     },
   },
 
+  savingsCalculator: {
+    title:
+      "Cold Email Savings Calculator — Instantly/Smartlead vs LeadSnipper",
+    description:
+      "Use this cold email savings calculator to compare Instantly and Smartlead costs against LeadSnipper + AWS SES. Enter monthly email volume and see your potential yearly savings in INR.",
+    keywords:
+      "cold email cost calculator, Instantly pricing comparison, Smartlead pricing comparison, LeadSnipper savings calculator, AWS SES pricing calculator, outbound software cost",
+    canonical: "https://leadsnipper.com/savings-calculator",
+    openGraph: {
+      title:
+        "Cold Email Savings Calculator — Save vs Instantly and Smartlead",
+      description:
+        "Enter your monthly email volume and instantly see how much you can save per year with LeadSnipper + AWS SES.",
+      url: "https://leadsnipper.com/savings-calculator",
+    },
+  },
+
   blog: {
     title:
       "LeadSnipper Blog — Cold Email Tips, Deliverability Guides & Outbound Strategy",

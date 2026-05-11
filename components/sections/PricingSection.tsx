@@ -1,9 +1,31 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import {
+  detectDisplayCurrency,
+  formatInr,
+  formatUsd,
+  inrToUsd,
+  type DisplayCurrency,
+} from "@/lib/currency";
 
 export default function PricingSection() {
+  const [displayCurrency, setDisplayCurrency] = useState<DisplayCurrency>("INR");
+
+  useEffect(() => {
+    setDisplayCurrency(detectDisplayCurrency());
+  }, []);
+
+  const displayAmount = (inr: number) =>
+    displayCurrency === "INR" ? formatInr(inr) : formatUsd(inrToUsd(inr));
+
+  const dualAmount = (inr: number) =>
+    `${formatInr(inr)} (${formatUsd(inrToUsd(inr))})`;
+
   const plans = [
     {
       name: "Trial",
@@ -123,13 +145,15 @@ export default function PricingSection() {
             <p className="text-[#475569] text-base">
               Most tools charge{" "}
               <span className="font-bold text-[#1e293b]">$37–$97/month</span>{" "}
-              (₹3,000–₹8,000) and you{" "}
+              ({dualAmount(3000)} to {dualAmount(8000)}) and you{" "}
               <span className="font-bold text-[#ef4444]">
                 don&apos;t own your infrastructure
               </span>
               . AWS SES costs{" "}
               <span className="font-bold text-[#22c55e]">
-                ₹0.84 per 1,000 emails
+                {displayCurrency === "INR"
+                  ? `${formatInr(0.84)} per 1,000 emails`
+                  : `${formatUsd(inrToUsd(0.84))} per 1,000 emails`}
               </span>
               . The math speaks for itself.
             </p>
@@ -174,7 +198,7 @@ export default function PricingSection() {
                     {plan.originalPrice && (
                       <div className="mb-2">
                         <span className="text-lg text-[#64748b] line-through">
-                          ₹{plan.originalPrice}
+                          {displayAmount(plan.originalPrice)}
                         </span>
                         <span className="ml-2 text-sm text-[#22c55e] font-bold">
                           Save{" "}
@@ -188,7 +212,7 @@ export default function PricingSection() {
                       </div>
                     )}
                     <span className="text-4xl font-bold text-[#3b82f6]">
-                      {plan.price === 0 ? "Free" : `₹${plan.price}`}
+                      {plan.price === 0 ? "Free" : displayAmount(plan.price)}
                     </span>
                     {plan.price > 0 && (
                       <span className="text-[#475569] text-sm">/month</span>
@@ -303,7 +327,9 @@ export default function PricingSection() {
                 Your SES quotas — we don&apos;t cap sends below AWS
               </p>
               <div className="mb-2">
-                <span className="text-4xl font-bold text-[#3b82f6]">₹999</span>
+                <span className="text-4xl font-bold text-[#3b82f6]">
+                  {displayAmount(999)}
+                </span>
                 <span className="text-[#475569] text-sm">/month</span>
               </div>
               <p className="text-xs text-[#64748b] mb-6">

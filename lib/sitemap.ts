@@ -37,6 +37,11 @@ export const sitemapConfig = {
       priority: 0.6,
     },
     {
+      path: "/savings-calculator",
+      changefreq: "weekly" as const,
+      priority: 0.8,
+    },
+    {
       path: "/privacy-policy",
       changefreq: "yearly" as const,
       priority: 0.3,
@@ -147,6 +152,7 @@ Allow: /
 Allow: /blog
 Allow: /blog/*
 Allow: /contact
+Allow: /savings-calculator
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /refund-policy

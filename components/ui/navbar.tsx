@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,11 +12,13 @@ const navItems = [
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/#faq" },
 ];
+
+const toolItems = [{ label: "Cost Calculator", href: "/savings-calculator" }];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -58,6 +60,34 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            onMouseEnter={() => setIsToolsOpen(true)}
+            onMouseLeave={() => setIsToolsOpen(false)}
+          >
+            <button className="inline-flex items-center gap-1 text-sm text-[#1e293b] hover:text-[#3b82f6] transition-colors font-semibold">
+              Tools
+              <ChevronDown className="w-4 h-4" />
+            </button>
+            <div
+              className={`absolute top-full left-0 pt-2 min-w-[180px] z-50 transition ${isToolsOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+            >
+              <div className="rounded-xl border border-[#e2e8f0] bg-white shadow-lg p-2">
+              {toolItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#334155] hover:bg-[#eff6ff] hover:text-[#2563eb]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              </div>
+            </div>
+          </motion.div>
         </nav>
 
         <motion.div
@@ -121,6 +151,28 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+              <div className="pt-2 border-t border-[#e2e8f0]">
+                <p className="text-xs font-bold uppercase tracking-wide text-[#64748b] mb-3">
+                  Tools
+                </p>
+                {toolItems.map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 + 0.25 }}
+                    exit={{ opacity: 0, x: 20 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className="text-base text-[#1e293b] font-semibold"
+                      onClick={toggleMenu}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
