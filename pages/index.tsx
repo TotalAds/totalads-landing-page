@@ -1,24 +1,18 @@
-"use client";
-
 import React from "react";
 
-import SEO from "@/components/SEO";
-import BenefitsRow from "@/components/sections/BenefitsRow";
-import BlogSection from "@/components/sections/BlogSection";
-import CTASection from "@/components/sections/CTASection";
 import ChecklistLeadCaptureSystem from "@/components/sections/ChecklistLeadCaptureSystem";
+import CTASection from "@/components/sections/CTASection";
+import DeliverabilityStack from "@/components/sections/DeliverabilityStack";
 import FAQSection from "@/components/sections/FAQSection";
-import FeaturedInBar from "@/components/sections/FeaturedInBar";
 import Footer from "@/components/sections/Footer";
-import FounderStory from "@/components/sections/FounderStory";
 import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
-import HowItWorks from "@/components/sections/HowItWorks";
 import PainSection from "@/components/sections/PainSection";
-import PricingSection from "@/components/sections/PricingSection";
+import ProductsShowcase from "@/components/sections/ProductsShowcase";
+import ServicesBento from "@/components/sections/ServicesBento";
 import TestimonialsSlider from "@/components/sections/TestimonialsSlider";
-import TrustStrip from "@/components/sections/TrustStrip";
-import WhyBYOSES from "@/components/sections/WhyBYOSES";
-import { FeaturesSectionWithHoverEffects } from "@/components/ui/feature-section-with-hover-effects";
+import TwoWaysSection from "@/components/sections/TwoWaysSection";
+import VisionSection from "@/components/sections/VisionSection";
+import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 
 export default function Home() {
@@ -26,27 +20,46 @@ export default function Home() {
     <>
       <SEO pageKey="home" />
 
-      <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f0f0f0] to-[#fafafa]">
-        <Navbar />
-        <div className="pt-24">
-          <HeroScrollAnimation />
-          <FeaturedInBar />
-          <TrustStrip />
-          <PainSection />
-          <WhyBYOSES />
-          <BenefitsRow />
-          <HowItWorks />
-          <FeaturesSectionWithHoverEffects />
-          <TestimonialsSlider />
-          <PricingSection />
-          <FounderStory />
-          <FAQSection />
-          <BlogSection />
-          <CTASection />
-          <Footer />
-          <ChecklistLeadCaptureSystem />
-        </div>
-      </div>
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Hero — Centered layout with dot-grid & radial glow */}
+      <section className="hero-bg dot-grid pt-24 md:pt-32">
+        <HeroScrollAnimation />
+      </section>
+
+      {/* Problem — The Reality */}
+      <PainSection />
+
+      {/* Two Ways to Work */}
+      <TwoWaysSection />
+
+      {/* Products Showcase — LeadSnipper + SocialSnipper */}
+      <ProductsShowcase />
+
+      {/* Deliverability Stack Visual */}
+      <DeliverabilityStack />
+
+      {/* Services Bento Grid */}
+      <ServicesBento />
+
+      {/* Testimonials */}
+      <TestimonialsSlider />
+
+      {/* Vision — Why Build With Us */}
+      <VisionSection />
+
+      {/* FAQ */}
+      <FAQSection />
+
+      {/* Final CTA */}
+      <CTASection />
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Lead capture system — preserved (scroll bar + exit intent) */}
+      <ChecklistLeadCaptureSystem />
     </>
   );
 }

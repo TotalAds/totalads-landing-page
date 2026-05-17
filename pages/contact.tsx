@@ -2,14 +2,6 @@
 
 import SEO from "@/components/SEO";
 import Footer from "@/components/sections/Footer";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Navbar } from "@/components/ui/navbar";
 import { motion } from "framer-motion";
 import { Clock, Globe2, Mail, MessageSquare, Send } from "lucide-react";
@@ -80,303 +72,304 @@ export default function Contact() {
     }
   };
 
+  const infoCards = [
+    {
+      icon: <Mail className="w-5 h-5" />,
+      color: "#0058be",
+      title: "Email us",
+      desc: "We respond within 24 hours",
+      content: (
+        <a
+          href="mailto:hello@leadsnipper.com"
+          className="text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
+        >
+          hello@leadsnipper.com
+        </a>
+      ),
+    },
+    {
+      icon: <Globe2 className="w-5 h-5" />,
+      color: "#10b981",
+      title: "Remote-first",
+      desc: "Distributed team, global coverage",
+      content: (
+        <p className="text-xs text-[#727785] leading-relaxed">
+          We work across time zones so you get answers when you need them.
+        </p>
+      ),
+    },
+    {
+      icon: <Clock className="w-5 h-5" />,
+      color: "#8b5cf6",
+      title: "Response time",
+      desc: "Fast turnaround on all queries",
+      content: (
+        <ul className="text-xs text-[#727785] space-y-1.5">
+          <li className="flex justify-between gap-4">
+            <span>General</span>
+            <span className="font-heading font-semibold text-[#131b2e]">
+              &lt; 24h
+            </span>
+          </li>
+          <li className="flex justify-between gap-4">
+            <span>Technical</span>
+            <span className="font-heading font-semibold text-[#131b2e]">
+              &lt; 12h
+            </span>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      icon: <MessageSquare className="w-5 h-5" />,
+      color: "#b75b00",
+      title: "Book a call",
+      desc: "30-min intro — no strings attached",
+      content: (
+        <a
+          href="https://cal.com/heyrehan/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-heading font-semibold text-[#b75b00] hover:text-[#d97706] transition-colors"
+        >
+          Schedule on Cal.com →
+        </a>
+      ),
+    },
+  ];
+
+  const inputClass =
+    "w-full px-4 py-3 rounded-xl border border-[#c2c6d6]/40 bg-white text-sm text-[#131b2e] placeholder:text-[#c2c6d6] outline-none focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/15 transition font-body";
+
   return (
     <>
       <SEO pageKey="contact" />
 
-      <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f0f0f0] to-[#fafafa]">
+      <div className="min-h-screen bg-[#faf8ff]">
         <Navbar />
 
-        <main className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[480px] h-[480px] bg-[#3b82f6]/8 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-[15%] w-72 h-72 bg-[#22c55e]/8 rounded-full blur-3xl" />
-          </div>
-
-          <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Hero */}
+        <section className="hero-bg dot-grid pt-32 pb-16">
+          <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16 text-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center mb-14"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#e2e8f0] text-sm font-semibold text-[#3b82f6] shadow-sm mb-6">
-                <MessageSquare className="w-4 h-4" />
+              <span className="badge-hero mb-6">
+                <MessageSquare className="w-3.5 h-3.5" />
                 We&apos;re here to help
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4 tracking-tight">
+              <h1 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6 mb-4">
                 Get in{" "}
-                <span className="bg-gradient-to-r from-[#3b82f6] to-[#22c55e] bg-clip-text text-transparent">
+                <span className="font-display italic text-[#0058be]">
                   touch
                 </span>
               </h1>
-              <p className="text-lg text-[#475569] max-w-2xl mx-auto leading-relaxed">
+              <p className="text-body-lg text-[#727785] max-w-2xl mx-auto">
                 Questions about cold email, pricing, or partnerships? Send a
                 message — our team replies within one business day.
               </p>
             </motion.div>
+          </div>
+        </section>
 
+        {/* Content */}
+        <section className="py-16 section-warm border-t border-[#c2c6d6]/20">
+          <div className="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-16">
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-10">
+              {/* Info Cards */}
               <div className="lg:col-span-2 space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.05 }}
-                >
-                  <Card className="hover:scale-[1.02] border-[#e2e8f0] bg-white/90">
-                    <CardHeader className="pb-2">
-                      <div className="flex items-start gap-3">
-                        <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#3b82f6] to-[#2563eb] text-white shadow-md">
-                          <Mail className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-lg">Email us</CardTitle>
-                          <CardDescription>
-                            We respond within 24 hours
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <a
-                        href="mailto:hello@leadsnipper.com"
-                        className="text-[#3b82f6] font-semibold hover:text-[#2563eb] transition-colors"
+                {infoCards.map((card, i) => (
+                  <motion.div
+                    key={card.title}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: i * 0.05 }}
+                    className="glass-card glass-card-hover rounded-2xl p-5 border border-[#c2c6d6]/15"
+                  >
+                    <div className="flex items-start gap-3 mb-3">
+                      <div
+                        className="p-2.5 rounded-xl text-white shadow-sm"
+                        style={{
+                          background: `linear-gradient(135deg, ${card.color}, ${card.color}dd)`,
+                        }}
                       >
-                        hello@leadsnipper.com
-                      </a>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.1 }}
-                >
-                  <Card className="hover:scale-[1.02] border-[#e2e8f0] bg-white/90">
-                    <CardHeader className="pb-2">
-                      <div className="flex items-start gap-3">
-                        <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white shadow-md">
-                          <Globe2 className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-lg">Remote-first</CardTitle>
-                          <CardDescription>
-                            Distributed team, global coverage
-                          </CardDescription>
-                        </div>
+                        {card.icon}
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-[#475569] leading-relaxed">
-                        We work across time zones so you get answers when you
-                        need them.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.15 }}
-                >
-                  <Card className="hover:scale-[1.02] border-[#e2e8f0] bg-white/90">
-                    <CardHeader className="pb-2">
-                      <div className="flex items-start gap-3">
-                        <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] text-white shadow-md">
-                          <Clock className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-lg">
-                            Typical response
-                          </CardTitle>
-                          <CardDescription>
-                            Sales & general — fast turnaround
-                          </CardDescription>
-                        </div>
+                      <div>
+                        <h3 className="font-heading font-bold text-sm text-[#131b2e]">
+                          {card.title}
+                        </h3>
+                        <p className="text-[10px] font-mono text-[#727785]">
+                          {card.desc}
+                        </p>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="text-sm text-[#475569] space-y-2">
-                        <li className="flex justify-between gap-4">
-                          <span>General</span>
-                          <span className="font-medium text-[#1e293b]">
-                            &lt; 24h
-                          </span>
-                        </li>
-                        <li className="flex justify-between gap-4">
-                          <span>Technical</span>
-                          <span className="font-medium text-[#1e293b]">
-                            &lt; 12h
-                          </span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                    </div>
+                    {card.content}
+                  </motion.div>
+                ))}
               </div>
 
+              {/* Form Card */}
               <motion.div
                 className="lg:col-span-3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.08 }}
               >
-                <Card className="border-[#e2e8f0] bg-white shadow-xl shadow-[#0f172a]/5">
-                  <CardHeader>
-                    <div className="flex items-start gap-3">
-                      <div className="p-2.5 rounded-xl bg-[#1e293b] text-white">
-                        <Send className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl">Send us a message</CardTitle>
-                        <CardDescription className="text-base mt-1">
-                          Tell us about your use case or ask anything — it goes
-                          straight to our team.
-                        </CardDescription>
-                      </div>
+                <div className="glass-card rounded-2xl border border-[#c2c6d6]/15 shadow-lg p-7">
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="p-2.5 rounded-xl bg-[#131b2e] text-white">
+                      <Send className="w-5 h-5" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={sendMessage} className="space-y-5">
-                      <div className="grid sm:grid-cols-2 gap-5">
-                        <div>
-                          <label
-                            htmlFor="contact-name"
-                            className="block text-sm font-medium text-[#334155] mb-1.5"
-                          >
-                            Full name <span className="text-red-500">*</span>
-                          </label>
-                          <input
-                            id="contact-name"
-                            name="name"
-                            type="text"
-                            required
-                            autoComplete="name"
-                            className="w-full px-4 py-3 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/40 focus:border-[#3b82f6] transition-shadow"
-                            placeholder="Jane Doe"
-                          />
-                        </div>
-                        <div>
-                          <label
-                            htmlFor="contact-email"
-                            className="block text-sm font-medium text-[#334155] mb-1.5"
-                          >
-                            Work email <span className="text-red-500">*</span>
-                          </label>
-                          <input
-                            id="contact-email"
-                            name="email"
-                            type="email"
-                            required
-                            autoComplete="email"
-                            className="w-full px-4 py-3 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/40 focus:border-[#3b82f6] transition-shadow"
-                            placeholder="you@company.com"
-                          />
-                        </div>
-                      </div>
+                    <div>
+                      <h2 className="font-heading font-bold text-lg text-[#131b2e]">
+                        Send us a message
+                      </h2>
+                      <p className="text-xs text-[#727785] mt-0.5">
+                        Tell us about your use case or ask anything — it goes
+                        straight to our team.
+                      </p>
+                    </div>
+                  </div>
 
+                  <form onSubmit={sendMessage} className="space-y-5">
+                    <div className="grid sm:grid-cols-2 gap-5">
                       <div>
                         <label
-                          htmlFor="contact-company"
-                          className="block text-sm font-medium text-[#334155] mb-1.5"
+                          htmlFor="contact-name"
+                          className="block text-xs font-heading font-semibold text-[#131b2e] mb-1.5"
                         >
-                          Company{" "}
-                          <span className="text-[#94a3b8] font-normal">
-                            (optional)
-                          </span>
+                          Full name <span className="text-[#ba1a1a]">*</span>
                         </label>
                         <input
-                          id="contact-company"
-                          name="company"
+                          id="contact-name"
+                          name="name"
                           type="text"
-                          autoComplete="organization"
-                          className="w-full px-4 py-3 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/40 focus:border-[#3b82f6] transition-shadow"
-                          placeholder="Acme Inc."
+                          required
+                          autoComplete="name"
+                          className={inputClass}
+                          placeholder="Jane Doe"
                         />
                       </div>
-
                       <div>
                         <label
-                          htmlFor="contact-subject"
-                          className="block text-sm font-medium text-[#334155] mb-1.5"
+                          htmlFor="contact-email"
+                          className="block text-xs font-heading font-semibold text-[#131b2e] mb-1.5"
                         >
-                          Topic <span className="text-red-500">*</span>
+                          Work email <span className="text-[#ba1a1a]">*</span>
                         </label>
-                        <select
-                          id="contact-subject"
-                          name="subject"
+                        <input
+                          id="contact-email"
+                          name="email"
+                          type="email"
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] text-[#1e293b] focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/40 focus:border-[#3b82f6] transition-shadow"
-                          defaultValue=""
-                        >
-                          <option value="" disabled>
-                            Select a topic
-                          </option>
-                          <option value="general">General inquiry</option>
-                          <option value="sales">Sales & pricing</option>
-                          <option value="support">Technical support</option>
-                          <option value="partnership">Partnership</option>
-                          <option value="feedback">Product feedback</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="contact-message"
-                          className="block text-sm font-medium text-[#334155] mb-1.5"
-                        >
-                          Message <span className="text-red-500">*</span>
-                        </label>
-                        <textarea
-                          id="contact-message"
-                          name="message"
-                          rows={6}
-                          required
-                          className="w-full px-4 py-3 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] text-[#1e293b] placeholder:text-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/40 focus:border-[#3b82f6] transition-shadow resize-y min-h-[140px]"
-                          placeholder="How can we help?"
+                          autoComplete="email"
+                          className={inputClass}
+                          placeholder="you@company.com"
                         />
                       </div>
+                    </div>
 
-                      {submitMessage && (
-                        <div
-                          role="alert"
-                          className={`p-4 rounded-lg border text-sm ${
-                            submitStatus === "success"
-                              ? "bg-[#f0fdf4] border-[#86efac] text-[#166534]"
-                              : submitStatus === "success_dev"
-                                ? "bg-[#fffbeb] border-[#fcd34d] text-[#92400e]"
-                                : "bg-[#fef2f2] border-[#fecaca] text-[#991b1b]"
-                          }`}
-                        >
-                          {submitMessage}
-                        </div>
-                      )}
-
-                      <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full rounded-full"
-                        disabled={isSubmitting}
+                    <div>
+                      <label
+                        htmlFor="contact-company"
+                        className="block text-xs font-heading font-semibold text-[#131b2e] mb-1.5"
                       >
-                        {isSubmitting ? (
-                          "Sending…"
-                        ) : (
-                          <>
-                            <Send className="w-4 h-4 mr-2" />
-                            Send message
-                          </>
-                        )}
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
+                        Company{" "}
+                        <span className="text-[#c2c6d6] font-normal">
+                          (optional)
+                        </span>
+                      </label>
+                      <input
+                        id="contact-company"
+                        name="company"
+                        type="text"
+                        autoComplete="organization"
+                        className={inputClass}
+                        placeholder="Acme Inc."
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="contact-subject"
+                        className="block text-xs font-heading font-semibold text-[#131b2e] mb-1.5"
+                      >
+                        Topic <span className="text-[#ba1a1a]">*</span>
+                      </label>
+                      <select
+                        id="contact-subject"
+                        name="subject"
+                        required
+                        className={inputClass}
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Select a topic
+                        </option>
+                        <option value="general">General inquiry</option>
+                        <option value="sales">Sales & pricing</option>
+                        <option value="support">Technical support</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="feedback">Product feedback</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="contact-message"
+                        className="block text-xs font-heading font-semibold text-[#131b2e] mb-1.5"
+                      >
+                        Message <span className="text-[#ba1a1a]">*</span>
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        rows={6}
+                        required
+                        className={`${inputClass} resize-y min-h-[140px]`}
+                        placeholder="How can we help?"
+                      />
+                    </div>
+
+                    {submitMessage && (
+                      <div
+                        role="alert"
+                        className={`p-4 rounded-xl border text-sm ${
+                          submitStatus === "success"
+                            ? "bg-[#10b981]/[0.06] border-[#10b981]/20 text-[#10b981]"
+                            : submitStatus === "success_dev"
+                              ? "bg-[#b75b00]/[0.06] border-[#b75b00]/20 text-[#b75b00]"
+                              : "bg-[#ba1a1a]/[0.06] border-[#ba1a1a]/20 text-[#ba1a1a]"
+                        }`}
+                      >
+                        {submitMessage}
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      className="btn-primary w-full rounded-full text-sm"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        "Sending…"
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          Send message
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </div>
               </motion.div>
             </div>
           </div>
-        </main>
+        </section>
 
         <Footer />
       </div>

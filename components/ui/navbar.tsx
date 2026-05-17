@@ -1,194 +1,427 @@
 "use client";
 
-import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  BarChart3,
+  Bot,
+  BriefcaseBusiness,
+  ChevronDown,
+  Code2,
+  Cog,
+  Globe,
+  Linkedin,
+  Mail,
+  Menu,
+  Rocket,
+  Search,
+  Target,
+  Wrench,
+  X,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import LeadsnipperRounded from "@/asset/leadsnipper.svg";
 
-const navItems = [
-  { label: "Features", href: "/#features" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Blog", href: "/blog" },
+const productItems = [
+  {
+    label: "LeadSnipper",
+    desc: "Email Deliverability Platform",
+    href: "/products/leadsnipper",
+    badge: "live" as const,
+    icon: <Mail className="w-4.5 h-4.5" />,
+  },
+  {
+    label: "SocialSnipper",
+    desc: "LinkedIn Scheduler + Content Researcher",
+    href: "/products/socialsnipper",
+    badge: "soon" as const,
+    icon: <Linkedin className="w-4.5 h-4.5" />,
+  },
 ];
 
-const toolItems = [{ label: "Cost Calculator", href: "/savings-calculator" }];
+const serviceItems = [
+  { label: "AI Automation", icon: <Bot className="w-4 h-4" />, href: "/services/ai-automation" },
+  { label: "AI Search (AI SEO)", icon: <Search className="w-4 h-4" />, href: "/services/ai-seo" },
+  { label: "Lead Generation", icon: <Target className="w-4 h-4" />, href: "/services/lead-generation" },
+  { label: "CRM Automation", icon: <Wrench className="w-4 h-4" />, href: "/services/crm-automation" },
+  { label: "Custom Software", icon: <Cog className="w-4 h-4" />, href: "/services/custom-software" },
+  { label: "MVP Development", icon: <Rocket className="w-4 h-4" />, href: "/services/mvp-development" },
+  { label: "Web Applications", icon: <Globe className="w-4 h-4" />, href: "/services/web-apps" },
+  { label: "AI Dashboards", icon: <BarChart3 className="w-4 h-4" />, href: "/services/analytics" },
+  { label: "Tech Consulting", icon: <Code2 className="w-4 h-4" />, href: "/services/consulting" },
+];
+
+const moreItems = [
+  { label: "Blog", href: "/blog" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isToolsOpen, setIsToolsOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const [tryNowOpen, setTryNowOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.5);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 flex justify-center w-full py-6 px-4 z-50 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc] to-transparent">
-      <div className="flex items-center justify-between px-6 py-3 bg-white rounded-full shadow-lg w-full max-w-3xl relative z-10 border border-[#e2e8f0]">
-        <div className="flex items-center">
-          <Link href="/">
-            <motion.div
-              className="w-8 h-8 mr-6"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              whileHover={{ rotate: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image
-                src={LeadsnipperRounded}
-                alt="LeadSnipper logo"
-                className="h-8 w-8"
-              />
-            </motion.div>
-          </Link>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <Link
-                href={item.href}
-                className="text-sm text-[#1e293b] hover:text-[#3b82f6] transition-colors font-semibold"
-              >
-                {item.label}
-              </Link>
-            </motion.div>
-          ))}
+    <div
+      className="fixed top-0 left-0 right-0 flex justify-center w-full py-4 px-4 z-50 transition-all duration-500"
+      style={{ background: "transparent" }}
+    >
+      <div
+        className={`flex items-center justify-between px-6 py-3 bg-white/50 backdrop-blur-sm  rounded-3xl relative z-10 transition-all duration-500 ${
+          scrolled
+            ? "shadow-lg border border-[#c2c6d6]/40 max-w-xl"
+            : "shadow-md border border-[#c2c6d6]/20 max-w-4xl"
+        } w-full`}
+      >
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            onMouseEnter={() => setIsToolsOpen(true)}
-            onMouseLeave={() => setIsToolsOpen(false)}
+            className="w-8 h-8"
+            whileHover={{ rotate: 8 }}
+            transition={{ duration: 0.2 }}
           >
-            <button className="inline-flex items-center gap-1 text-sm text-[#1e293b] hover:text-[#3b82f6] transition-colors font-semibold">
-              Tools
-              <ChevronDown className="w-4 h-4" />
-            </button>
-            <div
-              className={`absolute top-full left-0 pt-2 min-w-[180px] z-50 transition ${isToolsOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
-            >
-              <div className="rounded-xl border border-[#e2e8f0] bg-white shadow-lg p-2">
-              {toolItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#334155] hover:bg-[#eff6ff] hover:text-[#2563eb]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              </div>
-            </div>
+            <Image
+              src={LeadsnipperRounded}
+              alt="LeadSnipper logo"
+              className="h-8 w-8"
+            />
           </motion.div>
+          <span
+            className={`font-heading font-bold text-[15px] text-[#131b2e] transition-all duration-500 overflow-hidden whitespace-nowrap ${
+              scrolled ? "w-0 opacity-0" : "w-auto opacity-100 sm:inline hidden"
+            }`}
+          >
+            Lead<span className="text-[#0058be]">Snipper</span>
+          </span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-1">
+          {/* Products Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setProductsOpen(true)}
+            onMouseLeave={() => setProductsOpen(false)}
+          >
+            <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-heading font-semibold text-[#424754] hover:text-[#131b2e] transition-colors rounded-lg hover:bg-[#f2f3ff]">
+              Products
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {productsOpen && (
+                <motion.div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[380px] z-50"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <div className="rounded-2xl border border-[#c2c6d6]/30 bg-white shadow-xl p-3">
+                    <p className="px-3 py-1.5 text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest">
+                      Products
+                    </p>
+                    {productItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="flex items-start gap-3 rounded-xl px-3 py-3 hover:bg-[#f2f3ff] transition-colors"
+                      >
+                        <span className="mt-0.5 text-[#424754]">{item.icon}</span>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-heading font-semibold text-[#131b2e]">
+                              {item.label}
+                            </span>
+                            {item.badge === "live" && (
+                              <span className="badge-live text-[9px] py-0.5 px-2">
+                                LIVE
+                              </span>
+                            )}
+                            {item.badge === "soon" && (
+                              <span className="badge-coming-soon text-[9px] py-0.5 px-2">
+                                COMING SOON
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-[#727785] mt-0.5">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Services Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-heading font-semibold text-[#424754] hover:text-[#131b2e] transition-colors rounded-lg hover:bg-[#f2f3ff]">
+              Services
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {servicesOpen && (
+                <motion.div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[460px] z-50"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <div className="rounded-2xl border border-[#c2c6d6]/30 bg-white shadow-xl p-3">
+                    <p className="px-3 py-1.5 text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest">
+                      Done-for-you Services
+                    </p>
+                    <div className="grid grid-cols-2 gap-1">
+                      {serviceItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 hover:bg-[#f2f3ff] transition-colors text-sm font-heading font-medium text-[#424754] hover:text-[#131b2e]"
+                        >
+                          <span className="text-[#727785]">{item.icon}</span>
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-[#c2c6d6]/20 px-3">
+                      <Link
+                        href="https://cal.com/heyrehan/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
+                      >
+                        Book free audit →
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* More Dropdown (Blog, Pricing, About, Contact) */}
+          <div
+            className="relative"
+            onMouseEnter={() => setMoreOpen(true)}
+            onMouseLeave={() => setMoreOpen(false)}
+          >
+            <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-heading font-semibold text-[#424754] hover:text-[#131b2e] transition-colors rounded-lg hover:bg-[#f2f3ff]">
+              More
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[180px] z-50"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <div className="rounded-2xl border border-[#c2c6d6]/30 bg-white shadow-xl p-2">
+                    {moreItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-xl px-4 py-2.5 text-sm font-heading font-medium text-[#424754] hover:text-[#131b2e] hover:bg-[#f2f3ff] transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </nav>
 
-        <motion.div
-          className="hidden md:block"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <Link
-            href="https://app.leadsnipper.com/signup"
-            className="inline-flex items-center justify-center px-5 py-2 text-sm text-white bg-[#3b82f6] rounded-full hover:bg-[#2563eb] transition-colors"
+        {/* Right CTA — Try Now with submenu */}
+        <div className="hidden md:flex items-center relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setTryNowOpen(true)}
+            onMouseLeave={() => setTryNowOpen(false)}
           >
-            Start Free
-          </Link>
-        </motion.div>
+            <button className="btn-primary !text-sm !py-2 !px-4 rounded-full inline-flex items-center gap-.5">
+              Try now
+              <ChevronDown
+                className={`w-2.5 h-2.5 transition-transform duration-200 ${tryNowOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {tryNowOpen && (
+                <motion.div
+                  className="absolute top-full right-0 pt-2 w-[200px] z-50"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.12 }}
+                >
+                  <div className="rounded-xl border border-[#c2c6d6]/30 bg-white shadow-lg p-1.5">
+                    <Link
+                      href="https://app.leadsnipper.com/signup"
+                      className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-[#f2f3ff] transition-colors"
+                      target="_blank"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-[#0058be]" />
+                      <span className="text-[13px] font-heading font-semibold text-[#131b2e]">
+                        LeadSnipper
+                      </span>
+                      <span className="badge-live text-[6px] py-0.5 px-1.5 ml-auto">
+                        LIVE
+                      </span>
+                    </Link>
+                    <div className="flex items-center gap-2 rounded-lg px-3 py-2 opacity-40 cursor-not-allowed">
+                      <Linkedin className="w-3.5 h-3.5 text-[#727785]" />
+                      <span className="text-[13px] font-heading font-semibold text-[#727785]">
+                        SocialSnipper
+                      </span>
+                      <span className="badge-coming-soon text-[6px] py-0.5 px-1.5 ml-auto">
+                        SOON
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
 
+        {/* Mobile Hamburger */}
         <motion.button
           className="md:hidden flex items-center"
-          onClick={toggleMenu}
+          onClick={() => setIsOpen(!isOpen)}
           whileTap={{ scale: 0.9 }}
         >
-          <Menu className="h-6 w-6 text-[#1e293b]" />
+          <Menu className="h-5 w-5 text-[#131b2e]" />
         </motion.button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-white z-50 pt-24 px-6 md:hidden"
+            className="fixed inset-0 bg-white z-50 pt-6 px-6 md:hidden overflow-y-auto"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
-            <motion.button
-              className="absolute top-6 right-6 p-2"
-              onClick={toggleMenu}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <X className="h-6 w-6 text-[#1e293b]" />
-            </motion.button>
-            <div className="flex flex-col space-y-6">
-              {navItems.map((item, i) => (
-                <motion.div
+            <div className="flex justify-between items-center mb-8">
+              <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <Image
+                  src={LeadsnipperRounded}
+                  alt="LeadSnipper logo"
+                  className="h-8 w-8"
+                />
+                <span className="font-heading font-bold text-[15px] text-[#131b2e]">
+                  Lead<span className="text-[#0058be]">Snipper</span>
+                </span>
+              </Link>
+              <motion.button onClick={() => setIsOpen(false)} whileTap={{ scale: 0.9 }}>
+                <X className="h-6 w-6 text-[#131b2e]" />
+              </motion.button>
+            </div>
+
+            <div className="flex flex-col gap-1">
+              {/* Products Section */}
+              <p className="text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest px-3 pt-4 pb-2">
+                Products
+              </p>
+              {productItems.map((item) => (
+                <Link
                   key={item.label}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 + 0.1 }}
-                  exit={{ opacity: 0, x: 20 }}
+                  href={item.href}
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#f2f3ff] transition-colors"
+                  onClick={() => setIsOpen(false)}
                 >
+                  <span className="text-[#424754]">{item.icon}</span>
+                  <span className="text-sm font-heading font-semibold text-[#131b2e]">
+                    {item.label}
+                  </span>
+                  {item.badge === "live" && <span className="badge-live text-[9px] py-0.5 px-2">LIVE</span>}
+                  {item.badge === "soon" && <span className="badge-coming-soon text-[9px] py-0.5 px-2">SOON</span>}
+                </Link>
+              ))}
+
+              {/* Services Section */}
+              <p className="text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest px-3 pt-6 pb-2">
+                Services
+              </p>
+              <div className="grid grid-cols-2 gap-1">
+                {serviceItems.map((item) => (
                   <Link
+                    key={item.label}
                     href={item.href}
-                    className="text-base text-[#1e293b] font-semibold"
-                    onClick={toggleMenu}
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#f2f3ff] transition-colors text-sm font-heading font-medium text-[#424754]"
+                    onClick={() => setIsOpen(false)}
                   >
+                    <span className="text-[#727785]">{item.icon}</span>
                     {item.label}
                   </Link>
-                </motion.div>
-              ))}
-              <div className="pt-2 border-t border-[#e2e8f0]">
-                <p className="text-xs font-bold uppercase tracking-wide text-[#64748b] mb-3">
-                  Tools
-                </p>
-                {toolItems.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 + 0.25 }}
-                    exit={{ opacity: 0, x: 20 }}
-                  >
-                    <Link
-                      href={item.href}
-                      className="text-base text-[#1e293b] font-semibold"
-                      onClick={toggleMenu}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
                 ))}
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                exit={{ opacity: 0, y: 20 }}
-                className="pt-6"
-              >
+              {/* More Links */}
+              <div className="border-t border-[#c2c6d6]/20 mt-4 pt-4">
+                {moreItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="block px-3 py-3 text-sm font-heading font-semibold text-[#131b2e]"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="mt-6 flex flex-col gap-3">
                 <Link
                   href="https://app.leadsnipper.com/signup"
-                  className="inline-flex items-center justify-center w-full px-5 py-3 text-base text-white bg-[#3b82f6] rounded-full hover:bg-[#2563eb] transition-colors"
-                  onClick={toggleMenu}
+                  className="btn-primary w-full text-center rounded-full"
+                  onClick={() => setIsOpen(false)}
                 >
-                  Start Free
+                  Try LeadSnipper free →
                 </Link>
-              </motion.div>
+                <Link
+                  href="https://cal.com/heyrehan/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost w-full text-center rounded-full"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Book a call →
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

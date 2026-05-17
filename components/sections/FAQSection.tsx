@@ -9,7 +9,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#ffffff] to-[#f0f0f0]"
+      className="py-24 px-4 sm:px-6 lg:px-8 section-warm border-t border-[#c2c6d6]/20"
     >
       <div className="max-w-3xl mx-auto">
         <motion.div
@@ -17,17 +17,19 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-            Got Questions? Real Answers.
+          <span className="section-tag justify-center mb-6">FAQ</span>
+          <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6 mb-4">
+            Got questions?{" "}
+            <span className="font-display italic text-[#0058be]">Real answers.</span>
           </h2>
-          <p className="text-[#475569] text-lg">
+          <p className="text-body-md text-[#727785]">
             No fluff. Here&apos;s what teams actually ask before switching.
           </p>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {homepageFaqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -35,21 +37,27 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.03 }}
               viewport={{ once: true }}
-              className="bg-white border-2 border-[#f0f0f0] rounded-xl overflow-hidden shadow-md hover:shadow-lg hover:border-[#3b82f6] transition-all duration-300"
+              className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 ${
+                openIndex === index
+                  ? "border-[#0058be]/20 shadow-md"
+                  : "border-[#c2c6d6]/20 hover:border-[#0058be]/15"
+              }`}
             >
               <button
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full p-6 flex items-center justify-between hover:bg-[#f8fafc] transition"
+                onClick={() =>
+                  setOpenIndex(openIndex === index ? -1 : index)
+                }
+                className="w-full p-6 flex items-center justify-between hover:bg-[#f2f3ff]/50 transition"
               >
-                <span className="text-lg font-semibold text-[#1e293b] text-left">
+                <span className="font-heading text-[15px] font-semibold text-[#131b2e] text-left pr-4">
                   {faq.question}
                 </span>
                 <motion.span
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-[#3b82f6] text-2xl flex-shrink-0 ml-4"
+                  animate={{ rotate: openIndex === index ? 45 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-[#0058be] text-xl flex-shrink-0 w-7 h-7 rounded-full border border-[#0058be]/20 flex items-center justify-center"
                 >
-                  ↓
+                  +
                 </motion.span>
               </button>
 
@@ -60,9 +68,9 @@ export default function FAQSection() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-t border-[#f0f0f0] px-6 py-4"
+                    className="border-t border-[#c2c6d6]/20 px-6 py-5"
                   >
-                    <p className="text-[#475569] leading-relaxed">
+                    <p className="text-sm text-[#424754] leading-relaxed">
                       {faq.answer}
                     </p>
                   </motion.div>

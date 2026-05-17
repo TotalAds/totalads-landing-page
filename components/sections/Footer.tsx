@@ -1,80 +1,146 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import Logo from "@/asset/leadsnipper_rec.svg";
 import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [nlEmail, setNlEmail] = useState("");
 
   const footerLinks = {
-    Product: [
-      { label: "Features", href: "/#features" },
-      { label: "Pricing", href: "/#pricing" },
-      { label: "Integrations", href: "/#integrations" },
-      { label: "FAQ", href: "/#faq" },
+    Products: [
+      { label: "LeadSnipper", href: "/products/leadsnipper" },
+      { label: "SocialSnipper", href: "/products/socialsnipper" },
+      { label: "Pricing", href: "/pricing" },
       { label: "Cost Calculator", href: "/savings-calculator" },
-      ],
-    Company: [
-      { label: "Contact", href: "/contact" },
-      { label: "Careers", href: "mailto:rehan@leadsnipper.com" },
     ],
-    
-    Legal: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Service", href: "/terms-of-service" },
-      { label: "Refund Policy", href: "/refund-policy" },
-      { label: "Data Use Policy", href: "/legal/data-use" },
+    Services: [
+      { label: "AI Automation", href: "/services/ai-automation" },
+      { label: "AI Search (AI SEO)", href: "/services/ai-seo" },
+      { label: "Lead Generation", href: "/services/lead-generation" },
+      { label: "CRM Automation", href: "/services/crm-automation" },
+      { label: "MVP Development", href: "/services/mvp-development" },
+      { label: "All Services →", href: "/services" },
     ],
     Resources: [
       { label: "Blog", href: "/blog" },
       { label: "Instantly Alternative", href: "/vs/instantly" },
       { label: "Smartlead Alternative", href: "/vs/smartlead" },
-      {
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/company/leadsnipper/",
-      },
-      { label: "Twitter", href: "#" },
+      { label: "Contact", href: "/contact" },
+    ],
+    Company: [
+      { label: "About", href: "/about" },
+      { label: "Careers", href: "mailto:rehan@leadsnipper.com" },
     ],
   };
 
+  const legalLinks = [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "Refund Policy", href: "/refund-policy" },
+    { label: "Data Use Policy", href: "/legal/data-use" },
+  ];
+
   return (
-    <footer className="border-t border-[#e2e8f0] bg-gradient-to-b from-[#1e293b] to-[#0f172a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="border-t border-[#c2c6d6]/30 bg-[#faf8ff] ">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16 pt-10">
+        {/* Newsletter Strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-5 gap-8 mb-12"
+          className="flex flex-col md:flex-row items-center justify-between gap-6 rounded-2xl border border-[#0058be]/15 bg-[#0058be]/[0.04] px-8 py-6 -mt-px my-12"
         >
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#3b82f6] to-[#22c55e] rounded flex items-center justify-center overflow-hidden">
-                <Image src={Logo} alt="LeadSnipper Logo" />
-              </div>
-              <span className="text-white font-bold">LeadSnipper</span>
-            </Link>
-            <p className="text-[#94a3b8] text-sm leading-relaxed">
-              AI-first cold email platform. Own your sending infrastructure. Own
-              your deliverability.
-            </p>
-            <p className="text-[#64748b] text-xs mt-3">
-              Made with care in India.
+            <h4 className="font-heading font-semibold text-[17px] text-[#131b2e]">
+              Get the outbound playbook.
+            </h4>
+            <p className="text-sm text-[#727785] mt-1">
+              Deliverability guides + AI outbound insights. Every other week.
             </p>
           </div>
+          <form
+            className="flex w-full md:w-auto gap-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setNlEmail("");
+            }}
+          >
+            <input
+              type="email"
+              value={nlEmail}
+              onChange={(e) => setNlEmail(e.target.value)}
+              placeholder="you@company.com"
+              className="flex-1 md:w-64 rounded-lg border border-[#c2c6d6]/50 bg-white px-4 py-2.5 text-sm text-[#131b2e] placeholder:text-[#c2c6d6] outline-none focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/15 transition"
+            />
+            <button
+              type="submit"
+              className="btn-primary text-sm py-2.5 px-5 rounded-lg whitespace-nowrap"
+            >
+              Subscribe →
+            </button>
+          </form>
+        </motion.div>
 
+        {/* Footer Columns */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-6 gap-8 pb-12"
+        >
+          {/* Brand Column (spans 2) */}
+          <div className="col-span-2 pr-8">
+            <Link href="/" className="flex items-center gap-2.5 mb-5">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#0058be] to-[#2170e4] rounded-lg flex items-center justify-center overflow-hidden">
+                <Image src={Logo} alt="LeadSnipper Logo" className="w-6 h-6" />
+              </div>
+              <span className="font-heading font-bold text-[15px] text-[#131b2e]">
+                Lead<span className="text-[#0058be]">Snipper</span>
+              </span>
+            </Link>
+            <p className="text-sm text-[#727785] leading-relaxed max-w-[220px] mb-6">
+              We build and operate AI-powered outbound systems.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="https://www.linkedin.com/company/leadsnipper/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
+                aria-label="LinkedIn"
+              >
+                <IconBrandLinkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
+                aria-label="Twitter"
+              >
+                <IconBrandX className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Link Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-white font-semibold mb-4">{category}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-mono text-[11px] font-medium text-[#0058be] uppercase tracking-widest mb-4">
+                {category}
+              </h4>
+              <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[#94a3b8] hover:text-[#3b82f6] transition text-sm"
+                      className="text-sm text-[#727785] hover:text-[#0058be] transition-colors inline-block hover:translate-x-0.5 transition-transform"
                     >
                       {link.label}
                     </Link>
@@ -85,27 +151,28 @@ export default function Footer() {
           ))}
         </motion.div>
 
-        <div className="border-t border-[#334155] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[#94a3b8] text-sm">
-            Copyright &copy; {currentYear} LeadSnipper. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="border-t border-[#c2c6d6]/30 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-[#727785]">
+            © {currentYear} LeadSnipper. Built in India.
           </p>
-          <div className="flex gap-4">
-            <a
-              href="https://www.linkedin.com/company/leadsnipper/"
-              className="text-[#94a3b8] hover:text-[#3b82f6] transition"
-              aria-label="LinkedIn"
-            >
-              <IconBrandLinkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="text-[#94a3b8] hover:text-[#3b82f6] transition"
-              aria-label="Twitter"
-            >
-              <IconBrandX className="w-5 h-5" />
-            </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-xs text-[#727785] hover:text-[#0058be] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
+
+        {/* Large Watermark Text */}
+        <p className="text-center uppercase mt-4 mb-8 text-5xl md:text-8xl lg:text-[10rem] font-heading font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#eaedff] to-[#f2f3ff] select-none pointer-events-none leading-none">
+          LeadSnipper
+        </p>
       </div>
     </footer>
   );

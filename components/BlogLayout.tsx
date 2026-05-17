@@ -98,46 +98,62 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f0f0f0] to-[#fafafa]">
+      <div className="min-h-screen bg-[#faf8ff]">
         <Navbar />
-        <div className="pt-28 pb-20">
-          <article className="max-w-3xl mx-auto px-4 sm:px-6">
+
+        {/* Blog post hero */}
+        <section className="hero-bg dot-grid pt-32 pb-12">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            {/* Breadcrumb */}
             <nav className="mb-8" aria-label="Breadcrumb">
-              <ol className="flex items-center gap-2 text-sm text-[#94a3b8]">
+              <ol className="flex items-center gap-2 text-xs font-mono text-[#727785]">
                 <li>
                   <Link
                     href="/"
-                    className="hover:text-[#3b82f6] transition-colors"
+                    className="hover:text-[#0058be] transition-colors"
                   >
                     Home
                   </Link>
                 </li>
-                <li>/</li>
+                <li className="text-[#c2c6d6]">/</li>
                 <li>
                   <Link
                     href="/blog"
-                    className="hover:text-[#3b82f6] transition-colors"
+                    className="hover:text-[#0058be] transition-colors"
                   >
                     Blog
                   </Link>
                 </li>
-                <li>/</li>
-                <li className="text-[#475569] truncate max-w-[200px]">
+                <li className="text-[#c2c6d6]">/</li>
+                <li className="text-[#424754] truncate max-w-[200px]">
                   {post.title}
                 </li>
               </ol>
             </nav>
 
-            <header className="mb-10">
-              <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] mb-4">
-                {post.category}
+            <header>
+              <span className="inline-flex items-center px-2.5 py-1 rounded-md font-mono text-[10px] font-medium text-[#0058be] bg-[#0058be]/[0.06] border border-[#0058be]/20 mb-5">
+                {post.category.toUpperCase()}
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#1e293b] leading-tight mb-4">
+              <h1 className="font-heading font-bold text-[28px] md:text-[36px] lg:text-[42px] text-[#131b2e] leading-tight mb-5">
                 {post.title}
               </h1>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-[#64748b]">
-                <span>{post.author}</span>
-                <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
+              <div className="flex flex-wrap items-center gap-4 text-xs text-[#727785]">
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center text-[8px] font-heading font-bold text-white"
+                    style={{
+                      background: "linear-gradient(135deg, #0058be, #2170e4)",
+                    }}
+                  >
+                    {post.author
+                      .split(" ")
+                      .map((n: string) => n[0])
+                      .join("")}
+                  </div>
+                  <span>{post.author}</span>
+                </div>
+                <span className="w-1 h-1 rounded-full bg-[#c2c6d6]" />
                 <time dateTime={post.date}>
                   {new Date(post.date).toLocaleDateString("en-US", {
                     month: "long",
@@ -145,47 +161,57 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                     year: "numeric",
                   })}
                 </time>
-                <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
+                <span className="w-1 h-1 rounded-full bg-[#c2c6d6]" />
                 <span className="flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5" />
                   {post.readTime}
                 </span>
               </div>
             </header>
+          </div>
+        </section>
 
-            <div className="blog-content">
+        {/* Blog content */}
+        <section className="py-12 section-warm border-t border-[#c2c6d6]/20">
+          <article className="max-w-3xl mx-auto px-4 sm:px-6">
+            <div className="blog-content prose-headings:font-heading prose-headings:text-[#131b2e] prose-p:text-[#424754] prose-a:text-[#0058be] prose-strong:text-[#131b2e]">
               {children}
             </div>
 
-            <footer className="mt-16 pt-8 border-t border-[#e2e8f0]">
-              <div className="bg-gradient-to-r from-[#3b82f6]/5 to-[#22c55e]/5 border border-[#3b82f6]/20 rounded-2xl p-8 text-center">
-                <h3 className="text-2xl font-bold text-[#1e293b] mb-3">
-                  Ready to own your cold email deliverability?
-                </h3>
-                <p className="text-[#475569] mb-6 max-w-lg mx-auto">
-                  LeadSnipper gives you BYO AWS SES, built-in verification,
-                  domain health monitoring, and intelligent warmup — all in one
-                  platform.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Link
-                    href="https://app.leadsnipper.com/signup"
-                    className="px-6 py-3 bg-[#3b82f6] text-white rounded-lg font-semibold hover:bg-[#2563eb] transition"
-                  >
-                    Start Free — 1,000 Emails, No Credit Card
-                  </Link>
-                  <Link
-                    href="/blog"
-                    className="px-6 py-3 border border-[#e2e8f0] text-[#475569] rounded-lg font-semibold hover:bg-[#f8fafc] transition flex items-center justify-center gap-2"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to Blog
-                  </Link>
+            {/* Footer CTA */}
+            <footer className="mt-16 pt-8 border-t border-[#c2c6d6]/20">
+              <div className="glass-card rounded-2xl border border-[#0058be]/15 p-8 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0058be]/[0.03] via-transparent to-transparent pointer-events-none" />
+                <div className="relative">
+                  <h3 className="font-heading font-bold text-headline-md text-[#131b2e] mb-3">
+                    Ready to own your cold email deliverability?
+                  </h3>
+                  <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
+                    LeadSnipper gives you BYO AWS SES, built-in verification,
+                    domain health monitoring, and intelligent warmup — all in one
+                    platform.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Link
+                      href="https://app.leadsnipper.com/signup"
+                      className="btn-primary rounded-full text-sm"
+                    >
+                      Start free — 1,000 emails, no card
+                    </Link>
+                    <Link
+                      href="/blog"
+                      className="btn-ghost rounded-full text-sm inline-flex items-center justify-center gap-2"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                      Back to Blog
+                    </Link>
+                  </div>
                 </div>
               </div>
             </footer>
           </article>
-        </div>
+        </section>
+
         <Footer />
       </div>
     </>
