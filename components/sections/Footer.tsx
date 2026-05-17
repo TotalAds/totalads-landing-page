@@ -29,8 +29,9 @@ export default function Footer() {
     ],
     Resources: [
       { label: "Blog", href: "/blog" },
-      { label: "Instantly Alternative", href: "/vs/instantly" },
-      { label: "Smartlead Alternative", href: "/vs/smartlead" },
+      { label: "Cost Calculator", href: "/savings-calculator" },
+      { label: "vs Instantly", href: "/vs/instantly" },
+      { label: "vs Smartlead", href: "/vs/smartlead" },
       { label: "Contact", href: "/contact" },
     ],
     Company: [

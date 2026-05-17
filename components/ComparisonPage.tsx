@@ -1,8 +1,16 @@
-import { CheckCircle2, ShieldCheck, XCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  XCircle,
+  Zap,
+} from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 import SEO from "@/components/SEO";
+import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 import { Navbar } from "@/components/ui/navbar";
 import { generateFaqPageSchema } from "@/lib/faqs";
@@ -31,10 +39,10 @@ interface ComparisonPageProps {
 }
 
 const leadsnipperWins = [
-  "Bring your own AWS SES or use managed sending",
-  "Verify leads with built-in Reoon checks before sending",
-  "Monitor domain health, DNS, bounces, complaints, and pacing together",
-  "Run cold campaigns with infrastructure ownership and transparent costs",
+  "Bring your own AWS SES or use managed sending — your choice",
+  "Verify leads with built-in Reoon checks before any campaign fires",
+  "Monitor domain health, DNS, bounces, complaints, and pacing in one view",
+  "Run cold campaigns with full infrastructure ownership and transparent costs",
 ];
 
 export default function ComparisonPage({
@@ -80,241 +88,344 @@ export default function ComparisonPage({
         structuredDataTypes={["product", "softwareApplication"]}
         additionalStructuredData={additionalStructuredData}
       />
+      <Navbar />
 
-      <div className="min-h-screen bg-gradient-to-b from-[#f8fafc] via-white to-[#f0f7ff]">
-        <Navbar />
-        <main className="pt-28">
-          <section className="px-4 sm:px-6 lg:px-8 pb-16">
-            <div className="max-w-6xl mx-auto">
-              <nav className="mb-8 text-sm text-[#64748b]" aria-label="Breadcrumb">
-                <Link href="/" className="hover:text-[#2563eb]">
-                  Home
+      {/* ─── Hero ─── */}
+      <section className="hero-bg dot-grid pt-32 pb-20">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-16">
+          {/* Breadcrumb */}
+          <nav className="mb-8 text-xs text-[#727785]" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#0058be] transition-colors">Home</Link>
+            <span className="mx-2">/</span>
+            <span className="text-[#131b2e]">{competitor} alternative</span>
+          </nav>
+
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="section-tag mb-6">{eyebrow}</span>
+              <h1 className="font-heading font-extrabold text-[#131b2e] mt-6 text-3xl md:text-display-lg leading-[1.08] tracking-tight">
+                {headline}
+              </h1>
+              <p className="text-body-lg text-[#424754] mt-5 max-w-xl leading-relaxed">
+                {subheadline}
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="https://app.leadsnipper.com/signup"
+                  className="btn-primary rounded-full inline-flex items-center justify-center gap-2"
+                >
+                  Start free trial
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
-                <span className="mx-2">/</span>
-                <span>{competitor} alternative</span>
-              </nav>
+                <Link
+                  href="/savings-calculator"
+                  className="btn-ghost rounded-full inline-flex items-center justify-center gap-2"
+                >
+                  <Zap className="w-4 h-4" />
+                  Compare costs
+                </Link>
+              </div>
+            </motion.div>
 
-              <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
-                <div>
-                  <span className="inline-flex rounded-full border border-[#bfdbfe] bg-[#eff6ff] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#1d4ed8]">
-                    {eyebrow}
-                  </span>
-                  <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight text-[#0f172a] leading-[1.04]">
-                    {headline}
-                  </h1>
-                  <p className="mt-5 text-lg text-[#475569] leading-relaxed max-w-2xl">
-                    {subheadline}
+            {/* Hero card */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="glass-card rounded-2xl border border-[#c2c6d6]/15 p-6"
+            >
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="rounded-xl bg-[#f2f3ff] p-4 border border-[#c2c6d6]/20">
+                  <p className="text-xs font-heading font-semibold text-[#727785] mb-2">{competitor}</p>
+                  <p className="text-2xl font-heading font-extrabold text-[#131b2e]">Shared</p>
+                  <p className="text-xs text-[#727785] mt-1.5 leading-relaxed">
+                    Easier to start, less control over your sending infrastructure.
                   </p>
-                  <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                    <Link
-                      href="https://app.leadsnipper.com/signup"
-                      className="inline-flex items-center justify-center rounded-xl bg-[#2563eb] px-6 py-3 font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-[#1d4ed8] transition"
-                    >
-                      Start Free Trial
-                    </Link>
-                    <Link
-                      href="/savings-calculator"
-                      className="inline-flex items-center justify-center rounded-xl border border-[#cbd5e1] bg-white px-6 py-3 font-bold text-[#1e293b] hover:border-[#2563eb] hover:text-[#2563eb] transition"
-                    >
-                      Compare Costs
-                    </Link>
-                  </div>
                 </div>
-
-                <div className="rounded-[2rem] border border-[#dbeafe] bg-white p-6 shadow-2xl shadow-blue-900/10">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-2xl bg-[#f8fafc] p-5">
-                      <p className="text-sm font-bold text-[#64748b]">{competitor}</p>
-                      <p className="mt-3 text-3xl font-extrabold text-[#0f172a]">
-                        Shared
-                      </p>
-                      <p className="mt-2 text-sm text-[#64748b]">
-                        Easier to start, less infrastructure control.
-                      </p>
-                    </div>
-                    <div className="rounded-2xl bg-gradient-to-br from-[#eff6ff] to-[#ecfdf5] p-5">
-                      <p className="text-sm font-bold text-[#2563eb]">LeadSnipper</p>
-                      <p className="mt-3 text-3xl font-extrabold text-[#0f172a]">
-                        Owned
-                      </p>
-                      <p className="mt-2 text-sm text-[#475569]">
-                        SES control, verification, and domain health.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-5 rounded-2xl border border-[#e2e8f0] p-5">
-                    <p className="font-bold text-[#0f172a]">
-                      Why teams compare both
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-[#475569]">
-                      {competitorSummary}
-                    </p>
-                  </div>
+                <div
+                  className="rounded-xl p-4 border border-[#0058be]/15"
+                  style={{ background: "linear-gradient(135deg, #eff6ff, #f0fdf4)" }}
+                >
+                  <p className="text-xs font-heading font-semibold text-[#0058be] mb-2">LeadSnipper</p>
+                  <p className="text-2xl font-heading font-extrabold text-[#131b2e]">Owned</p>
+                  <p className="text-xs text-[#424754] mt-1.5 leading-relaxed">
+                    SES control, built-in verification, and domain health.
+                  </p>
                 </div>
               </div>
-            </div>
-          </section>
-
-          <section className="px-4 sm:px-6 lg:px-8 py-14 bg-white">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-              <div className="rounded-3xl border border-[#e2e8f0] bg-[#f8fafc] p-7">
-                <h2 className="text-2xl font-extrabold text-[#0f172a]">
-                  Where {competitor} can work
-                </h2>
-                <ul className="mt-5 space-y-3">
-                  {competitorBestFor.map((item) => (
-                    <li key={item} className="flex gap-3 text-[#475569]">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#16a34a]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="rounded-xl border border-[#c2c6d6]/20 bg-white/70 p-4">
+                <p className="font-heading font-semibold text-[13px] text-[#131b2e] mb-2">
+                  Why teams compare both
+                </p>
+                <p className="text-xs text-[#727785] leading-relaxed">{competitorSummary}</p>
               </div>
-              <div className="rounded-3xl border border-[#dbeafe] bg-gradient-to-br from-[#eff6ff] to-white p-7">
-                <h2 className="text-2xl font-extrabold text-[#0f172a]">
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Where each works ─── */}
+      <section className="py-20 section-warm border-t border-[#c2c6d6]/20">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-6">
+            {/* Competitor best for */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              viewport={{ once: true }}
+              className="glass-card rounded-2xl border border-[#c2c6d6]/15 p-7"
+            >
+              <span className="font-mono text-[10px] text-[#727785] uppercase tracking-widest">
+                {competitor}
+              </span>
+              <h2 className="font-heading font-bold text-xl text-[#131b2e] mt-3 mb-5">
+                Where {competitor} can work
+              </h2>
+              <ul className="space-y-3">
+                {competitorBestFor.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-[#424754] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* LeadSnipper wins */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.08 }}
+              viewport={{ once: true }}
+              className="glass-card rounded-2xl border border-[#0058be]/15 p-7 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0058be]/[0.03] to-transparent pointer-events-none" />
+              <div className="relative">
+                <span className="font-mono text-[10px] text-[#0058be] uppercase tracking-widest">
+                  LeadSnipper
+                </span>
+                <h2 className="font-heading font-bold text-xl text-[#131b2e] mt-3 mb-5">
                   Why teams choose LeadSnipper instead
                 </h2>
-                <ul className="mt-5 space-y-3">
+                <ul className="space-y-3">
                   {leadsnipperWins.map((item) => (
-                    <li key={item} className="flex gap-3 text-[#475569]">
-                      <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#2563eb]" />
-                      <span>{item}</span>
+                    <li key={item} className="flex gap-3 text-sm text-[#424754] leading-relaxed">
+                      <ShieldCheck className="w-4 h-4 text-[#0058be] shrink-0 mt-0.5" />
+                      {item}
                     </li>
                   ))}
                 </ul>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Feature comparison table ─── */}
+      <section className="py-20 section-blue border-t border-[#c2c6d6]/20">
+        <div className="max-w-[1000px] mx-auto px-5 sm:px-6 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <span className="section-tag mb-6">Feature Comparison</span>
+            <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
+              {competitor} vs LeadSnipper:{" "}
+              <span className="font-display italic text-[#0058be]">
+                feature by feature.
+              </span>
+            </h2>
+            <p className="text-body-md text-[#727785] mt-4 max-w-2xl">
+              The biggest difference isn&apos;t the editor or templates. It&apos;s who controls
+              the sending layer, verification, and reputation signals.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="glass-card rounded-2xl border border-[#c2c6d6]/15 overflow-hidden"
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm min-w-[600px]">
+                <thead>
+                  <tr className="bg-[#f2f3ff] border-b border-[#c2c6d6]/20">
+                    <th className="text-left px-5 py-4 font-heading font-semibold text-[#727785] text-xs uppercase tracking-wider w-1/3">
+                      Feature
+                    </th>
+                    <th className="text-left px-5 py-4 font-heading font-semibold text-[#727785] text-xs uppercase tracking-wider w-1/3">
+                      {competitor}
+                    </th>
+                    <th className="text-left px-5 py-4 font-heading font-bold text-[#0058be] text-xs uppercase tracking-wider w-1/3">
+                      LeadSnipper
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, i) => (
+                    <tr
+                      key={row.feature}
+                      className={`border-b border-[#c2c6d6]/10 ${i % 2 === 0 ? "" : "bg-[#f2f3ff]/30"}`}
+                    >
+                      <td className="px-5 py-4 font-heading font-semibold text-[#131b2e] text-[13px]">
+                        {row.feature}
+                      </td>
+                      <td className="px-5 py-4 text-[#727785] text-[13px]">
+                        {row.competitor}
+                      </td>
+                      <td className="px-5 py-4 text-[13px] font-heading font-semibold text-[#0058be]">
+                        {row.leadsnipper}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </section>
+          </motion.div>
+        </div>
+      </section>
 
-          <section className="px-4 sm:px-6 lg:px-8 py-16">
-            <div className="max-w-6xl mx-auto">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a]">
-                  {competitor} vs LeadSnipper: feature-by-feature
-                </h2>
-                <p className="mt-3 text-[#475569]">
-                  The biggest difference is not the editor or templates. It is
-                  who controls the sending layer, verification, and reputation signals.
-                </p>
-              </div>
-
-              <div className="mt-8 overflow-hidden rounded-3xl border border-[#dbeafe] bg-white shadow-xl shadow-blue-900/5">
-                <div className="overflow-x-auto">
-                  <table className="w-full min-w-[720px] text-left text-sm">
-                    <thead className="bg-[#f8fafc] text-[#0f172a]">
-                      <tr>
-                        <th className="p-4 font-extrabold">Feature</th>
-                        <th className="p-4 font-extrabold">{competitor}</th>
-                        <th className="p-4 font-extrabold text-[#2563eb]">
-                          LeadSnipper
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {comparisonRows.map((row, index) => (
-                        <tr
-                          key={row.feature}
-                          className={index % 2 === 0 ? "bg-white" : "bg-[#f8fafc]"}
-                        >
-                          <td className="border-t border-[#e2e8f0] p-4 font-bold text-[#1e293b]">
-                            {row.feature}
-                          </td>
-                          <td className="border-t border-[#e2e8f0] p-4 text-[#64748b]">
-                            {row.competitor}
-                          </td>
-                          <td className="border-t border-[#e2e8f0] p-4 font-semibold text-[#2563eb]">
-                            {row.leadsnipper}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="px-4 sm:px-6 lg:px-8 py-16 bg-white">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-8">
-              <div>
-                <h2 className="text-3xl font-extrabold text-[#0f172a]">
-                  The trade-offs to check before switching
-                </h2>
-                <p className="mt-4 text-[#475569] leading-relaxed">
-                  A comparison page should help you make a clean decision. If you
-                  only need a quick starter tool, {competitor} may be enough. If
-                  you care about cost, verified leads, sender reputation, and AWS
-                  SES ownership, LeadSnipper is built for that workflow.
-                </p>
-              </div>
-              <div className="space-y-3">
-                {competitorLimits.map((item) => (
-                  <div
-                    key={item}
-                    className="flex gap-3 rounded-2xl border border-[#fee2e2] bg-[#fef2f2] p-4 text-[#7f1d1d]"
-                  >
-                    <XCircle className="mt-0.5 h-5 w-5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="px-4 sm:px-6 lg:px-8 py-16">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-center text-3xl font-extrabold text-[#0f172a]">
-                Frequently asked questions
+      {/* ─── Competitor limits ─── */}
+      <section className="py-20 section-warm border-t border-[#c2c6d6]/20">
+        <div className="max-w-[1000px] mx-auto px-5 sm:px-6 lg:px-16">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              viewport={{ once: true }}
+            >
+              <span className="section-tag mb-6">Trade-offs</span>
+              <h2 className="font-heading font-bold text-headline-md text-[#131b2e] mt-6">
+                Check these before switching.
               </h2>
-              <div className="mt-8 space-y-4">
-                {faqs.map((faq) => (
-                  <article
-                    key={faq.question}
-                    className="rounded-2xl border border-[#e2e8f0] bg-white p-6"
-                  >
-                    <h3 className="text-lg font-bold text-[#0f172a]">
-                      {faq.question}
-                    </h3>
-                    <p className="mt-2 text-[#475569] leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="px-4 sm:px-6 lg:px-8 pb-20">
-            <div className="max-w-5xl mx-auto rounded-[2rem] bg-gradient-to-br from-[#1d4ed8] to-[#0f172a] p-8 md:p-12 text-center text-white shadow-2xl shadow-blue-900/20">
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#bfdbfe]">
-                {pageConfig.title}
+              <p className="text-body-md text-[#727785] mt-4 leading-relaxed">
+                A comparison page should help you make a clean decision. If you
+                only need a quick starter tool, {competitor} may be enough. If
+                you care about cost, verified leads, sender reputation, and AWS
+                SES ownership, LeadSnipper is built for that workflow.
               </p>
-              <h2 className="mt-4 text-3xl md:text-5xl font-extrabold">
-                Send cold email with infrastructure you control.
+              <Link
+                href="/savings-calculator"
+                className="inline-flex items-center gap-2 mt-6 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
+              >
+                <Zap className="w-4 h-4" />
+                Calculate cost difference →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.08 }}
+              viewport={{ once: true }}
+              className="space-y-3"
+            >
+              {competitorLimits.map((item) => (
+                <div
+                  key={item}
+                  className="flex gap-3 rounded-2xl border border-red-100 bg-red-50/60 p-4"
+                >
+                  <XCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                  <span className="text-sm text-red-800 leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <section className="py-20 section-mesh border-t border-[#c2c6d6]/20">
+        <div className="max-w-[700px] mx-auto px-5 sm:px-6 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="section-tag justify-center mb-6">FAQ</span>
+            <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
+              Frequently asked questions.
+            </h2>
+          </motion.div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <motion.article
+                key={faq.question}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                viewport={{ once: true }}
+                className="glass-card rounded-2xl border border-[#c2c6d6]/15 p-6"
+              >
+                <h3 className="font-heading font-bold text-[15px] text-[#131b2e] mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-sm text-[#727785] leading-relaxed">{faq.answer}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Final CTA ─── */}
+      <section className="py-16 border-t border-[#c2c6d6]/20">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-6 lg:px-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="glass-card rounded-3xl border border-[#0058be]/15 p-10 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0058be]/[0.03] via-transparent to-transparent pointer-events-none" />
+            <div className="relative">
+              <span className="font-mono text-[10px] text-[#0058be] uppercase tracking-widest">
+                {pageConfig.title}
+              </span>
+              <h2 className="font-heading font-bold text-headline-md text-[#131b2e] mt-4 mb-3">
+                Send cold email on infrastructure{" "}
+                <span className="font-display italic text-[#0058be]">you control.</span>
               </h2>
-              <p className="mt-4 text-[#dbeafe] max-w-2xl mx-auto">
+              <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
                 Start with 1,000 emails free, verify leads before launch, and
                 see whether BYO AWS SES makes your outbound stack cheaper and safer.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="https://app.leadsnipper.com/signup"
-                  className="rounded-xl bg-white px-6 py-3 font-bold text-[#1d4ed8] hover:bg-[#eff6ff] transition"
+                  className="btn-primary rounded-full inline-flex items-center justify-center gap-2"
                 >
-                  Start Free
+                  Start free trial
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/blog/best-cold-email-software-2026-comparison"
-                  className="rounded-xl border border-white/30 px-6 py-3 font-bold text-white hover:bg-white/10 transition"
+                  className="btn-ghost rounded-full"
                 >
-                  Read Full Tool Comparison
+                  Read full comparison →
                 </Link>
               </div>
             </div>
-          </section>
-        </main>
-        <Footer />
-      </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <CTASection />
+      <Footer />
     </>
   );
 }

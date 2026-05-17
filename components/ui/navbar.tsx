@@ -56,6 +56,7 @@ const serviceItems = [
 const moreItems = [
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Cost Calculator", href: "/savings-calculator" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

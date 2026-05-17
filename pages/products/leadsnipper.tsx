@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import {
   BarChart3,
@@ -9,7 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -78,6 +80,311 @@ const comparisonData = [
   { feature: "PDF reports", leadsnipper: "Yes", instantly: "No", smartlead: "No" },
   { feature: "Pricing (India)", leadsnipper: "From ₹499", instantly: "From $30", smartlead: "From $39" },
 ];
+
+const Check = () => (
+  <svg className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+  </svg>
+);
+
+const normalPlans = [
+  {
+    name: "Trial",
+    price: "Free",
+    desc: "Test the full platform — 1 month free",
+    badge: null,
+    highlighted: false,
+    cta: "Start Free",
+    features: [
+      "1,000 emails/month",
+      "500 contacts",
+      "Basic analytics",
+      "API access",
+      "Domain verification",
+      "1 month trial period",
+    ],
+  },
+  {
+    name: "Starter",
+    price: "₹499",
+    originalPrice: "₹999",
+    desc: "For founders and small teams doing outbound",
+    badge: "Most Popular — 50% Off",
+    highlighted: true,
+    cta: "Get Started",
+    features: [
+      "5,000 emails/month",
+      "3,000 contacts",
+      "Custom domain sending",
+      "Email warmup (50/day)",
+      "Full campaign analytics",
+      "3 custom domains",
+      "Built-in verification",
+      "AI email writer",
+    ],
+  },
+  {
+    name: "Business",
+    price: "₹999",
+    originalPrice: "₹1,999",
+    desc: "For agencies and growing sales teams",
+    badge: "Early Bird — 50% Off",
+    highlighted: false,
+    cta: "Get Started",
+    features: [
+      "15,000 emails/month",
+      "10,000 contacts",
+      "Unlimited domains",
+      "Unlimited warmup",
+      "Advanced analytics + PDF export",
+      "Priority support",
+      "Managed SES",
+      "AI writer + smart scheduling",
+    ],
+  },
+  {
+    name: "Custom",
+    price: "Talk to us",
+    desc: "Enterprise — your infrastructure, your rules",
+    badge: "Enterprise",
+    highlighted: false,
+    cta: "Contact Us",
+    isCustom: true,
+    features: [
+      "Unlimited emails",
+      "Unlimited contacts",
+      "Unlimited domains",
+      "Dedicated support",
+      "Custom API integrations",
+      "Dedicated SES setup",
+      "Custom onboarding",
+    ],
+  },
+];
+
+const byoPlans = [
+  {
+    name: "BYO SES Free",
+    price: "Free",
+    desc: "Connect your own AWS SES — validate the flow",
+    badge: null,
+    highlighted: false,
+    cta: "Start free",
+    features: [
+      "1,000 contacts · 2,000 emails/month",
+      "Up to 2 verified domains",
+      "Limited active campaigns",
+      "Connect your own AWS SES",
+    ],
+  },
+  {
+    name: "BYO SES Pro",
+    price: "₹999",
+    suffix: "/month",
+    note: "Early-bird — will increase",
+    desc: "Your SES quotas — we don't cap sends below AWS limits",
+    badge: "BYO SES Pro",
+    highlighted: true,
+    cta: "Get BYO SES Pro",
+    features: [
+      "Connect your own AWS SES — unlimited domains",
+      "Send as AWS allows (no artificial monthly cap)",
+      "Full campaign builder + core analytics",
+      "Built-in Reoon email verification",
+      "Domain health dashboard",
+      "AI email writer + smart warmup",
+      "PDF analytics reports",
+      "Fair use + abuse monitoring",
+    ],
+  },
+];
+
+function LeadSnipperPricing() {
+  const [tab, setTab] = useState<"normal" | "byo">("normal");
+
+  return (
+    <section className="py-24 section-mesh border-t border-[#c2c6d6]/20">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <span className="section-tag justify-center mb-6">Pricing</span>
+          <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
+            Simple pricing.{" "}
+            <span className="font-display italic text-[#0058be]">Two ways to run it.</span>
+          </h2>
+          <p className="text-body-md text-[#727785] max-w-xl mx-auto mt-4">
+            Use LeadSnipper&apos;s managed infrastructure, or bring your own AWS SES for full control and lower unit cost.
+          </p>
+
+          {/* Tab toggle */}
+          <div className="inline-flex items-center gap-1 mt-8 bg-white border border-[#c2c6d6]/30 rounded-full p-1 shadow-sm">
+            <button
+              onClick={() => setTab("normal")}
+              className={`px-5 py-2 rounded-full text-sm font-heading font-semibold transition-all ${
+                tab === "normal"
+                  ? "bg-[#0058be] text-white shadow"
+                  : "text-[#727785] hover:text-[#131b2e]"
+              }`}
+            >
+              Managed Hosting
+            </button>
+            <button
+              onClick={() => setTab("byo")}
+              className={`px-5 py-2 rounded-full text-sm font-heading font-semibold transition-all ${
+                tab === "byo"
+                  ? "bg-[#10b981] text-white shadow"
+                  : "text-[#727785] hover:text-[#131b2e]"
+              }`}
+            >
+              BYO AWS SES
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Normal plans */}
+        {tab === "normal" && (
+          <motion.div
+            key="normal"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-5"
+          >
+            {normalPlans.map((plan, i) => (
+              <motion.div
+                key={plan.name}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: i * 0.06 }}
+                className={`relative glass-card rounded-2xl p-7 transition-all hover:-translate-y-1 hover:shadow-lg ${
+                  plan.highlighted
+                    ? "border-2 border-[#0058be] shadow-md"
+                    : "border border-[#c2c6d6]/20"
+                }`}
+              >
+                {plan.badge && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0058be] text-white px-3 py-0.5 rounded-full text-[10px] font-mono font-medium whitespace-nowrap">
+                    {plan.badge}
+                  </div>
+                )}
+                <h3 className="font-heading font-bold text-[15px] text-[#131b2e] mb-1 mt-1">{plan.name}</h3>
+                <p className="text-xs text-[#727785] mb-4">{plan.desc}</p>
+                <div className="mb-4">
+                  {"originalPrice" in plan && (
+                    <div className="mb-0.5">
+                      <span className="text-xs text-[#727785] line-through">{plan.originalPrice}</span>
+                      <span className="ml-2 text-[10px] font-mono text-[#10b981] font-medium">SAVE 50%</span>
+                    </div>
+                  )}
+                  <span className="font-heading font-bold text-2xl text-[#0058be]">{plan.price}</span>
+                  {!("isCustom" in plan) && plan.price !== "Free" && (
+                    <span className="text-sm text-[#727785]">/mo</span>
+                  )}
+                </div>
+                <Link
+                  href={"isCustom" in plan ? "https://cal.com/heyrehan/30min" : "https://app.leadsnipper.com/signup"}
+                  target={"isCustom" in plan ? "_blank" : undefined}
+                  rel={"isCustom" in plan ? "noopener noreferrer" : undefined}
+                  className={`block w-full py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition mb-5 ${
+                    plan.highlighted
+                      ? "btn-primary"
+                      : "border border-[#0058be]/30 text-[#0058be] hover:bg-[#0058be]/[0.04]"
+                  }`}
+                >
+                  {plan.cta}
+                </Link>
+                <ul className="space-y-2">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-xs text-[#424754]">
+                      <Check /> {f}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+
+        {/* BYO plans */}
+        {tab === "byo" && (
+          <motion.div
+            key="byo"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {byoPlans.map((plan, i) => (
+                <motion.div
+                  key={plan.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: i * 0.08 }}
+                  className={`relative glass-card rounded-2xl p-7 transition-all hover:-translate-y-1 hover:shadow-lg ${
+                    plan.highlighted
+                      ? "border-2 border-[#10b981] shadow-md"
+                      : "border border-[#c2c6d6]/20"
+                  }`}
+                >
+                  {plan.badge && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#10b981] text-white px-3 py-0.5 rounded-full text-[10px] font-mono font-medium whitespace-nowrap">
+                      {plan.badge}
+                    </div>
+                  )}
+                  <h3 className="font-heading font-bold text-[15px] text-[#131b2e] mb-1 mt-1">{plan.name}</h3>
+                  <p className="text-xs text-[#727785] mb-4">{plan.desc}</p>
+                  <div className="mb-1">
+                    <span className="font-heading font-bold text-2xl text-[#10b981]">{plan.price}</span>
+                    {"suffix" in plan && <span className="text-sm text-[#727785]">{plan.suffix}</span>}
+                  </div>
+                  {"note" in plan && (
+                    <p className="text-[10px] font-mono text-[#10b981] mb-4">{plan.note}</p>
+                  )}
+                  <Link
+                    href="https://app.leadsnipper.com/signup"
+                    className={`block w-full py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition mb-5 ${
+                      plan.highlighted
+                        ? "bg-[#10b981] hover:bg-[#059669] text-white"
+                        : "border border-[#10b981]/40 text-[#10b981] hover:bg-[#10b981]/[0.04]"
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+                  <ul className="space-y-2">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2 text-xs text-[#424754]">
+                        <Check /> {f}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+
+            <p className="text-center text-[10px] font-mono text-[#727785] max-w-2xl mx-auto mt-8 leading-relaxed">
+              With BYO SES, you pay AWS directly for email sending (~$0.10 per 1,000 emails).
+              LeadSnipper only charges for platform access. Sending reputation and compliance are managed by your AWS account.
+            </p>
+
+            <div className="flex justify-center mt-6">
+              <Link
+                href="/savings-calculator"
+                className="text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] underline underline-offset-4 transition"
+              >
+                Calculate your savings vs Instantly / Smartlead →
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  );
+}
 
 export default function LeadSnipperProduct() {
   return (
@@ -241,128 +548,8 @@ export default function LeadSnipperProduct() {
         </div>
       </section>
 
-      {/* BYO SES Pricing */}
-      <section className="py-24 section-mesh border-t border-[#c2c6d6]/20">
-        <div className="max-w-[1000px] mx-auto px-5 sm:px-6 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="inline-flex items-center px-3 py-1 rounded-full font-mono text-[10px] font-medium text-[#10b981] bg-[#10b981]/[0.06] border border-[#10b981]/20 mb-6">
-              BRING YOUR OWN AWS SES
-            </span>
-            <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-4">
-              BYO SES pricing.{" "}
-              <span className="font-display italic text-[#0058be]">Your AWS, your rules.</span>
-            </h2>
-            <p className="text-body-md text-[#727785] max-w-2xl mx-auto mt-4">
-              Full control — your AWS, your responsibility. You pay AWS for
-              sending; you pay LeadSnipper for the platform. No artificial send
-              caps beyond fair use.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* BYO SES Free */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="glass-card rounded-2xl p-7 border border-[#c2c6d6]/20"
-            >
-              <h3 className="font-heading font-bold text-lg text-[#131b2e] mb-1">
-                Try BYO SES
-              </h3>
-              <p className="text-xs text-[#727785] mb-5">Free — test the flow</p>
-              <div className="mb-5">
-                <span className="font-heading font-bold text-3xl text-[#0058be]">Free</span>
-              </div>
-              <Link
-                href="https://app.leadsnipper.com/signup"
-                className="block w-full py-2.5 rounded-xl text-sm font-heading font-semibold text-center border border-[#0058be]/30 text-[#0058be] hover:bg-[#0058be]/[0.04] transition mb-6"
-              >
-                Start free
-              </Link>
-              <ul className="space-y-2.5">
-                {[
-                  "1,000 contacts · 2,000 emails/month",
-                  "Up to 2 verified domains",
-                  "Limited active campaigns (enough to validate)",
-                  "Connect your own AWS SES",
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-xs text-[#424754]">
-                    <svg className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* BYO SES Pro */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="glass-card rounded-2xl p-7 border-2 border-[#0058be] shadow-md relative"
-            >
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0058be] text-white px-3 py-0.5 rounded-full text-[10px] font-mono font-medium whitespace-nowrap">
-                BYO SES Pro
-              </div>
-              <h3 className="font-heading font-bold text-lg text-[#131b2e] mb-1 mt-1">
-                Full platform access
-              </h3>
-              <p className="text-xs text-[#727785] mb-5">
-                Your SES quotas — we don&apos;t cap sends below AWS
-              </p>
-              <div className="mb-1">
-                <span className="font-heading font-bold text-3xl text-[#0058be]">₹999</span>
-                <span className="text-sm text-[#727785]">/month</span>
-              </div>
-              <p className="text-[10px] font-mono text-[#10b981] mb-5">
-                Early-bird pricing — will increase
-              </p>
-              <Link
-                href="https://app.leadsnipper.com/signup"
-                className="btn-primary block w-full text-sm text-center rounded-xl mb-6"
-              >
-                Get BYO SES Pro
-              </Link>
-              <ul className="space-y-2.5">
-                {[
-                  "Connect your own AWS SES — unlimited domains",
-                  "Send as AWS allows (no artificial monthly limit)",
-                  "Full campaign builder + core analytics",
-                  "Built-in Reoon email verification",
-                  "Domain health dashboard",
-                  "AI email writer + smart warmup",
-                  "PDF analytics reports",
-                  "Fair use + abuse monitoring",
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-xs text-[#424754]">
-                    <svg className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-
-          <p className="text-center text-[10px] font-mono text-[#727785] max-w-2xl mx-auto mt-8 leading-relaxed">
-            LeadSnipper provides sending infrastructure and campaign tools.
-            Sending reputation, compliance, and deliverability limits are fully
-            managed by your AWS SES account and AWS policies.
-          </p>
-        </div>
-      </section>
+      {/* Pricing — Tabbed: Normal + BYO */}
+      <LeadSnipperPricing />
 
       {/* FAQ */}
       <FAQSection />
