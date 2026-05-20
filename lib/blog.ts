@@ -12,6 +12,51 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "instantly-vs-leadsnipper-indian-agencies-comparison",
+    title:
+      "Instantly vs LeadSnipper: Which is Better for Agencies in India? (2026)",
+    excerpt:
+      "Indian agencies face unique challenges: INR pricing, forex fees, and multi-client deliverability. Here's a detailed comparison of Instantly vs LeadSnipper built specifically for agency owners in India.",
+    description:
+      "Compare Instantly vs LeadSnipper for Indian agencies. Covers INR vs USD pricing, forex fees, BYO AWS SES vs shared infrastructure, built-in verification, and local support — from the perspective of running a lead generation agency in India.",
+    keywords:
+      "Instantly vs LeadSnipper India, cold email tool for Indian agencies, Instantly alternative India, LeadSnipper vs Instantly pricing, cold email software India, best cold email tool for agencies India, INR pricing cold email, AWS SES India, lead generation agency India, cold email deliverability India",
+    date: "2026-05-21",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Comparison",
+  },
+  {
+    slug: "why-cold-emails-land-in-spam-fix-today",
+    title:
+      "Why Your Cold Emails Are Landing in Spam (And How to Fix It Today)",
+    excerpt:
+      "90% of deliverability problems have nothing to do with your copy. Here are the 5 real reasons cold emails go to spam — domain reputation, DNS records, bounce rates, sending speed, and content triggers — with actionable fixes for each.",
+    description:
+      "Learn why your cold emails are landing in spam and how to fix it today. Covers domain reputation, SPF DKIM DMARC setup, bounce rate management, email verification, sending pace, and spam trigger words — with a diagnostic checklist.",
+    keywords:
+      "cold emails landing in spam, fix cold email deliverability, why emails go to spam, cold email spam folder, improve email deliverability, email domain reputation fix, SPF DKIM DMARC setup, reduce email bounce rate, email verification importance, cold email sending best practices, spam filter triggers, inbox placement fix",
+    date: "2026-05-18",
+    readTime: "11 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+  },
+  {
+    slug: "outbound-stack-20-meetings-per-month",
+    title:
+      "The Exact Outbound Stack We Use to Book 20+ Meetings Per Month",
+    excerpt:
+      "Sustainable outbound requires a system, not a tactic. Here's the complete stack: infrastructure (domains, DNS, AWS SES), list building (Apollo, Sales Nav), messaging (sequences, personalization), execution (daily rhythm), and analytics — with real numbers and costs.",
+    description:
+      "Discover the exact outbound stack for booking 20+ B2B meetings per month. Complete breakdown of infrastructure, list building tools, email sequences, sending cadence, analytics, and monthly costs — with real performance numbers and lessons learned.",
+    keywords:
+      "outbound stack 20 meetings per month, cold email stack, B2B outbound system, cold email infrastructure, outbound meeting booking, cold email tools stack, Apollo LinkedIn Sales Navigator, AWS SES cold email, email sequence templates, cold email analytics, outbound sales process, lead generation stack, cold email best practices 2026",
+    date: "2026-05-15",
+    readTime: "14 min read",
+    author: "LeadSnipper Team",
+    category: "Strategy",
+  },
+  {
     slug: "cold-email-open-rate-dropping-fix-domain-reputation",
     title:
       "Cold Email Open Rate Dropping? How to Diagnose and Fix Domain Reputation",
