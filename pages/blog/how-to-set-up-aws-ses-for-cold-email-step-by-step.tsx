@@ -15,7 +15,9 @@ export default function AwsSesSetupGuide() {
         Amazon SES (Simple Email Service) costs $0.10 per 1,000 emails and
         gives you full control over your sending reputation. For cold email
         senders, it&apos;s the most cost-effective and reliable way to own your
-        infrastructure. This guide walks you through setting up AWS SES from
+        infrastructure. This guide — part of our series on{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">sending cold email at scale without getting blacklisted</Link>
+        {" "}— walks you through setting up AWS SES from
         scratch — account creation to production sending — even if you&apos;ve
         never touched AWS before.
       </p>
@@ -310,7 +312,9 @@ export default function AwsSesSetupGuide() {
           <li>
             <strong>Monitor thresholds</strong> — AWS SES puts you on probation
             if your bounce rate exceeds 5% or complaint rate exceeds 0.1%. Keep
-            well below these.
+            well below these. Our{" "}
+            <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">domain reputation management guide</Link>{" "}
+            covers this in depth.
           </li>
         </ul>
       </div>
@@ -372,7 +376,8 @@ export default function AwsSesSetupGuide() {
         Compare this to Instantly at $37-97/month or Smartlead at $39-94/month
         — all on shared infrastructure. With LeadSnipper Business (₹999/month,
         ~$12) plus AWS SES, you get dedicated infrastructure at a fraction of
-        the cost.
+        the cost. See our full breakdown of{" "}
+        <Link href="/blog/byo-aws-ses-vs-shared-email-infrastructure-cold-outreach" className="text-[#3b82f6] font-medium hover:underline">BYO AWS SES vs shared infrastructure</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

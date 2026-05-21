@@ -10,10 +10,13 @@ export default function OutboundStack20Meetings() {
   return (
     <BlogLayout post={post}>
       <p className="text-lg text-[#475569] leading-relaxed mb-8">
-        Everyone wants the tactic. The one subject line, the perfect template,
-        the magic tool that books meetings on autopilot. But sustainable
-        outbound doesn&apos;t work that way. What works is a stack — a set of
-        integrated systems that together produce predictable results.
+        20 qualified meetings per month is the benchmark most B2B teams aim for.
+        Not 20 &quot;let me think about it&quot; calls — 20 genuine conversations
+        with prospects who have a real problem you can solve. This guide covers
+        the complete outbound stack — from{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">cold email infrastructure</Link>{" "}
+        to copy to follow-up cadences —
+        with real numbers from teams that hit this target consistently.
       </p>
       <p className="text-[#475569] leading-relaxed mb-8">
         This is the exact outbound stack we use to consistently book 20+
@@ -100,12 +103,18 @@ export default function OutboundStack20Meetings() {
       <p className="text-[#475569] leading-relaxed mb-4">
         We use LeadSnipper with BYO AWS SES. Why? Control and cost. Our SES
         costs roughly $0.80 per month for 8,000 emails. Shared infrastructure
-        tools charge 20-50x that amount baked into their subscription.
+        tools charge 20-50x that amount baked into their subscription. Follow
+        our{" "}
+        <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">step-by-step AWS SES setup guide</Link>{" "}
+        to get started.
       </p>
       <p className="text-[#475569] leading-relaxed mb-6">
-        The BYO model also means our reputation is isolated. No other sender can
-        damage our deliverability. For a company whose entire pipeline depends
-        on outbound, that isolation is worth the extra AWS setup.
+        Domains need 2-4 weeks of{" "}
+        <Link href="/blog/email-warmup-verification-domain-health-complete-guide" className="text-[#3b82f6] font-medium hover:underline">email warmup</Link>{" "}
+        before they can send campaign volume. Start with 10-20
+        emails/day, gradually increase to 200-500/day. LeadSnipper&apos;s
+        warmup engine generates realistic threads across Gmail, Outlook, Yahoo,
+        Zoho, and SES to build genuine engagement signals.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -399,8 +408,9 @@ export default function OutboundStack20Meetings() {
           emails each. Measure open rates.
         </li>
         <li>
-          <strong>Week 5-6:</strong> Scale to 100 emails/day. Monitor bounce
-          rates and replies obsessively.
+          <strong>Week 5-6:</strong> Scale to 100 emails/day. Monitor{" "}
+          <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">domain reputation</Link>{" "}
+          and replies obsessively.
         </li>
         <li>
           <strong>Month 2:</strong> Add 2 more domains. Scale to 250/day.

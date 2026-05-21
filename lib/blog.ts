@@ -1,3 +1,6 @@
+export type BlogCluster = "infrastructure" | "deliverability";
+export type ClusterRole = "hub" | "spoke" | "bridge";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -8,6 +11,9 @@ export interface BlogPost {
   readTime: string;
   author: string;
   category: string;
+  cluster: BlogCluster;
+  clusterRole: ClusterRole;
+  relatedSlugs: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -25,6 +31,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Comparison",
+    cluster: "infrastructure",
+    clusterRole: "bridge",
+    relatedSlugs: [
+      "best-cold-email-software-2026-comparison",
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+    ],
   },
   {
     slug: "why-cold-emails-land-in-spam-fix-today",
@@ -40,6 +53,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "11 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "domain-reputation-management-protect-sender-score",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+      "email-warmup-verification-domain-health-complete-guide",
+    ],
   },
   {
     slug: "outbound-stack-20-meetings-per-month",
@@ -55,6 +75,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "14 min read",
     author: "LeadSnipper Team",
     category: "Strategy",
+    cluster: "infrastructure",
+    clusterRole: "bridge",
+    relatedSlugs: [
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "domain-reputation-management-protect-sender-score",
+    ],
   },
   {
     slug: "cold-email-open-rate-dropping-fix-domain-reputation",
@@ -70,6 +97,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "11 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "domain-reputation-management-protect-sender-score",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+      "email-warmup-verification-domain-health-complete-guide",
+    ],
   },
   {
     slug: "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
@@ -85,6 +119,15 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
+    cluster: "infrastructure",
+    clusterRole: "hub",
+    relatedSlugs: [
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "cold-email-vs-newsletter-tools-why-mailchimp-wont-work",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+      "domain-reputation-management-protect-sender-score",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+    ],
   },
   {
     slug: "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
@@ -100,6 +143,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Infrastructure",
+    cluster: "infrastructure",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "domain-reputation-management-protect-sender-score",
+    ],
   },
   {
     slug: "email-warmup-verification-domain-health-complete-guide",
@@ -115,6 +165,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "15 min read",
     author: "LeadSnipper Team",
     category: "Guide",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "domain-reputation-management-protect-sender-score",
+      "cold-email-open-rate-dropping-fix-domain-reputation",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+    ],
   },
   {
     slug: "best-cold-email-software-2026-comparison",
@@ -130,6 +187,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "14 min read",
     author: "LeadSnipper Team",
     category: "Comparison",
+    cluster: "infrastructure",
+    clusterRole: "bridge",
+    relatedSlugs: [
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "domain-reputation-management-protect-sender-score",
+    ],
   },
   {
     slug: "domain-reputation-management-protect-sender-score",
@@ -145,6 +209,15 @@ export const blogPosts: BlogPost[] = [
     readTime: "11 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "hub",
+    relatedSlugs: [
+      "email-warmup-verification-domain-health-complete-guide",
+      "cold-email-open-rate-dropping-fix-domain-reputation",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+      "why-cold-emails-land-in-spam-fix-today",
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+    ],
   },
   {
     slug: "cold-email-vs-newsletter-tools-why-mailchimp-wont-work",
@@ -160,6 +233,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "9 min read",
     author: "LeadSnipper Team",
     category: "Strategy",
+    cluster: "infrastructure",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+    ],
   },
   {
     slug: "how-to-set-up-aws-ses-for-cold-email-step-by-step",
@@ -175,6 +255,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "13 min read",
     author: "LeadSnipper Team",
     category: "Tutorial",
+    cluster: "infrastructure",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+      "cold-email-vs-newsletter-tools-why-mailchimp-wont-work",
+    ],
   },
   {
     slug: "email-list-cleaning-why-verification-prevents-bounce-disasters",
@@ -190,6 +277,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "10 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "domain-reputation-management-protect-sender-score",
+      "email-warmup-verification-domain-health-complete-guide",
+      "cold-email-open-rate-dropping-fix-domain-reputation",
+    ],
   },
 ];
 
@@ -197,7 +291,57 @@ export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
 
+/**
+ * Get related posts for a given blog post, based on its relatedSlugs.
+ * Returns full BlogPost objects in the order specified by relatedSlugs.
+ */
+export function getRelatedPosts(post: BlogPost): BlogPost[] {
+  return post.relatedSlugs
+    .map((slug) => blogPosts.find((p) => p.slug === slug))
+    .filter((p): p is BlogPost => p !== undefined);
+}
+
+/**
+ * Get the hub/pillar page for a given cluster.
+ */
+export function getClusterHub(cluster: BlogCluster): BlogPost | undefined {
+  return blogPosts.find(
+    (p) => p.cluster === cluster && p.clusterRole === "hub"
+  );
+}
+
+/**
+ * Get all posts in a given cluster (hub + spokes + bridges).
+ */
+export function getClusterPosts(cluster: BlogCluster): BlogPost[] {
+  return blogPosts.filter((p) => p.cluster === cluster);
+}
+
+/**
+ * Cluster display metadata for the blog index and navigation.
+ */
+export const clusterMeta: Record<
+  BlogCluster,
+  { label: string; icon: string; description: string }
+> = {
+  infrastructure: {
+    label: "Infrastructure & Scale",
+    icon: "🔧",
+    description:
+      "The mechanics of cold email sending — from DNS and AWS SES setup to scaling without blacklists.",
+  },
+  deliverability: {
+    label: "Deliverability & Domain Health",
+    icon: "📬",
+    description:
+      "Maintaining inbox placement — domain reputation, warmup, verification, and troubleshooting.",
+  },
+};
+
 export function generateBlogPostSchema(post: BlogPost) {
+  const hub = getClusterHub(post.cluster);
+  const relatedPosts = getRelatedPosts(post);
+
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -230,5 +374,23 @@ export function generateBlogPostSchema(post: BlogPost) {
       : post.readTime.includes("12")
         ? 2600
         : 2200,
+    // Cluster relationship: spoke pages reference their hub as "isPartOf"
+    ...(post.clusterRole === "spoke" && hub
+      ? {
+          isPartOf: {
+            "@type": "WebPage",
+            "@id": `https://leadsnipper.com/blog/${hub.slug}`,
+            name: hub.title,
+          },
+        }
+      : {}),
+    // Related links for all posts
+    ...(relatedPosts.length > 0
+      ? {
+          relatedLink: relatedPosts.map(
+            (rp) => `https://leadsnipper.com/blog/${rp.slug}`
+          ),
+        }
+      : {}),
   };
 }

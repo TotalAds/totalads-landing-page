@@ -16,7 +16,11 @@ export default function BlogPost2() {
         other outreach platforms, here&apos;s what you probably don&apos;t
         realize: you don&apos;t own your sending infrastructure. You&apos;re
         sharing IPs with every other user on the platform. When they mess up,
-        your domain reputation takes the hit. This article explains why bringing
+        your{" "}
+        <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">domain reputation</Link>{" "}
+        takes the hit. This article — part of our{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">cold email at scale guide</Link>
+        {" "}— explains why bringing
         your own AWS SES (BYO SES) is the single biggest upgrade you can make
         for cold email deliverability.
       </p>
@@ -209,7 +213,9 @@ export default function BlogPost2() {
       <p className="text-[#475569] leading-relaxed mb-6">
         Start with Managed mode. When you&apos;re ready for full control, BYO
         SES is one configuration step away. No migration, no data loss, no
-        downtime.
+        downtime. Our{" "}
+        <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">step-by-step AWS SES setup guide</Link>{" "}
+        walks you through the entire process.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

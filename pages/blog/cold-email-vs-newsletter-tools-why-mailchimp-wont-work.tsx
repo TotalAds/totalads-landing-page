@@ -16,8 +16,10 @@ export default function ColdEmailVsNewsletter() {
         email?&quot; The short answer is no. Newsletter tools like Mailchimp,
         Mailerlite, ConvertKit, and Brevo are built for opt-in subscribers, not
         cold outreach. Using them for cold email will get your account banned,
-        your domain flagged, and your deliverability wrecked. Here&apos;s why —
-        and what to use instead.
+        your domain flagged, and your deliverability wrecked. If you&apos;re
+        planning to{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">scale cold email without getting blacklisted</Link>,
+        {" "}here&apos;s why newsletter tools aren&apos;t the answer — and what to use instead.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -186,9 +188,13 @@ export default function ColdEmailVsNewsletter() {
           </li>
           <li>
             <strong>Infrastructure ownership</strong> — cold email platforms
-            like LeadSnipper let you bring your own AWS SES, so your reputation
+            like LeadSnipper let you{" "}
+            <Link href="/blog/byo-aws-ses-vs-shared-email-infrastructure-cold-outreach" className="text-[#3b82f6] font-medium hover:underline">bring your own sending infrastructure</Link>,
+            {" "}so your reputation
             is isolated. Newsletter tools use shared infrastructure designed for
-            a different use case.
+            a different use case. Follow our{" "}
+            <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">AWS SES setup guide</Link>{" "}
+            to get started.
           </li>
         </ul>
       </div>

@@ -90,7 +90,9 @@ export default function InstantlyVsLeadSnipperIndia() {
         LeadSnipper is built around BYO AWS SES. You bring your own Amazon
         account, your own verified domains, your own sending reputation. No other
         sender can damage your deliverability because you don&apos;t share
-        infrastructure with anyone. For agencies managing multiple client
+        infrastructure with anyone. Follow our{" "}
+        <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">AWS SES setup guide</Link>{" "}
+        to get started. For agencies managing multiple client
         campaigns, this is the difference between sleeping soundly and waking up
         to a blacklist notification.
       </p>
@@ -195,7 +197,11 @@ export default function InstantlyVsLeadSnipperIndia() {
         LeadSnipper offers a free trial with 1,000 emails — no credit card
         required. Run the same campaign through both platforms, compare
         deliverability, support response times, and total cost. Most agencies
-        switch after seeing the difference in their first week.{" "}
+        switch after seeing the difference in their first week. For a broader
+        view, see our{" "}
+        <Link href="/blog/best-cold-email-software-2026-comparison" className="text-[#3b82f6] font-medium hover:underline">cold email software comparison</Link>{" "}
+        and{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">scaling cold email guide</Link>.{" "}
         <Link
           href="https://app.leadsnipper.com/signup"
           className="text-[#3b82f6] font-semibold hover:underline"

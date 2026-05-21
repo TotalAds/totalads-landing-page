@@ -19,7 +19,9 @@ export default function ColdEmailsInSpam() {
       <p className="text-[#475569] leading-relaxed mb-8">
         Cold emails land in spam for five specific reasons. Most senders blame
         their copy, but 90% of deliverability problems have nothing to do with
-        what you wrote. Here are the actual causes — and how to fix each one
+        what you wrote — they&apos;re rooted in{" "}
+        <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">domain reputation</Link>{" "}
+        and infrastructure. Here are the actual causes — and how to fix each one
         today.
       </p>
 
@@ -95,8 +97,9 @@ export default function ColdEmailsInSpam() {
           <li>• Known spam traps</li>
         </ul>
         <p className="text-[#92400e] text-sm">
-          LeadSnipper has Reoon verification built in. Upload, verify, send
-          only to valid addresses. Your bounce rate stays under 1%.
+          LeadSnipper has Reoon verification built in. Upload,{" "}
+          <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#92400e] font-medium underline">verify your email list</Link>,
+          {" "}send only to valid addresses. Your bounce rate stays under 1%.
         </p>
       </div>
 
@@ -247,7 +250,9 @@ export default function ColdEmailsInSpam() {
         Spam folder placement is rarely about your offer or copy. It&apos;s
         almost always technical: domain reputation, DNS configuration, list
         quality, sending behavior. Fix these five areas and your open rates will
-        jump from 2% to 40%+ within two weeks.
+        jump from 2% to 40%+ within two weeks. For the complete playbook, read
+        our guide on{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">sending cold emails at scale without getting blacklisted</Link>.
       </p>
       <p className="text-[#475569] leading-relaxed">
         LeadSnipper was built specifically to prevent these problems. Built-in

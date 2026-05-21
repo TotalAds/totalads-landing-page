@@ -13,9 +13,12 @@ export default function DomainReputationManagement() {
         Your domain reputation is the single most important factor in whether
         your cold emails reach the inbox or land in spam. It&apos;s not your
         subject line. It&apos;s not your copy. It&apos;s whether Gmail, Outlook,
-        and Yahoo trust your domain enough to deliver your email. This guide
-        covers how domain reputation works, what damages it, and exactly how to
-        protect it when sending cold email at scale.
+        and Yahoo trust your domain enough to deliver your email. If you&apos;re
+        wondering{" "}
+        <Link href="/blog/why-cold-emails-land-in-spam-fix-today" className="text-[#3b82f6] font-medium hover:underline">why your cold emails land in spam</Link>,
+        {" "}this guide covers how domain reputation works, what damages it, and exactly how to
+        protect it when{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">sending cold email at scale</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -89,7 +92,8 @@ export default function DomainReputationManagement() {
           LeadSnipper
         </Link>
         , Reoon verification is built into the lead upload flow — you
-        can&apos;t send to unverified leads.
+        can&apos;t send to unverified leads. See our in-depth guide on{" "}
+        <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">why verification prevents bounce disasters</Link>.
       </p>
 
       <h3 className="text-xl font-bold text-[#1e293b] mt-8 mb-3">
@@ -104,6 +108,9 @@ export default function DomainReputationManagement() {
         <strong>Fix:</strong> Warm up new domains for 2-4 weeks with gradual
         volume increases. Start with 10-20 emails/day. Increase by 10-20%
         daily. Generate real engagement — opens, replies, thread conversations.
+        Our{" "}
+        <Link href="/blog/email-warmup-verification-domain-health-complete-guide" className="text-[#3b82f6] font-medium hover:underline">complete warmup and domain health guide</Link>{" "}
+        covers the full process.
       </p>
 
       <h3 className="text-xl font-bold text-[#1e293b] mt-8 mb-3">
@@ -265,7 +272,9 @@ export default function DomainReputationManagement() {
       <p className="text-[#475569] leading-relaxed mb-6">
         Recovery typically takes 2-4 weeks of clean sending behavior. Some
         blacklists clear faster, others are stubborn. The key is patience and
-        absolutely clean sending practices during recovery.
+        absolutely clean sending practices during recovery. If your open rates
+        have suddenly dropped, see our guide on{" "}
+        <Link href="/blog/cold-email-open-rate-dropping-fix-domain-reputation" className="text-[#3b82f6] font-medium hover:underline">diagnosing and fixing open rate drops</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

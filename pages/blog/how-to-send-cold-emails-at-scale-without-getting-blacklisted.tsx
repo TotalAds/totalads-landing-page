@@ -14,9 +14,10 @@ export default function BlogPost1() {
       <p className="text-lg text-[#475569] leading-relaxed mb-8">
         Sending cold emails at scale is how SaaS founders, agencies, and SDR
         teams generate pipeline. But most senders get blacklisted within weeks
-        because they skip the fundamentals: <strong>domain warmup</strong>,{" "}
-        <strong>email list verification</strong>, and{" "}
-        <strong>sender reputation monitoring</strong>. This guide covers
+        because they skip the fundamentals:{" "}
+        <Link href="/blog/email-warmup-verification-domain-health-complete-guide" className="text-[#3b82f6] font-medium hover:underline">domain warmup</Link>,{" "}
+        <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">email list verification</Link>, and{" "}
+        <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">sender reputation monitoring</Link>. This guide covers
         everything you need to send 10,000+ cold emails per month without
         destroying your domain reputation.
       </p>
@@ -187,7 +188,9 @@ export default function BlogPost1() {
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper has Reoon email verification built directly into the lead
         upload flow. You don&apos;t need a separate tool or a separate tab — your
-        list gets cleaned as part of the campaign creation process.
+        list gets cleaned as part of the campaign creation process. Learn more
+        in our guide to{" "}
+        <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">why verification prevents bounce disasters</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -209,12 +212,17 @@ export default function BlogPost1() {
         reputation completely. Your IPs, your domain, your deliverability — not
         affected by anyone else&apos;s behavior. AWS SES costs just $0.10 per
         1,000 emails, making it dramatically cheaper than paying premium prices
-        for shared infrastructure.
+        for shared infrastructure. Follow our{" "}
+        <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">step-by-step AWS SES setup guide</Link>{" "}
+        to get started, or read about{" "}
+        <Link href="/blog/cold-email-vs-newsletter-tools-why-mailchimp-wont-work" className="text-[#3b82f6] font-medium hover:underline">why standard newsletter tools fail for cold outreach</Link>.
       </p>
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper is built around this model. You can either bring your own AWS
         SES account or use Managed mode (we handle the infrastructure). Either
-        way, you get a dedicated sending setup, not a shared one.
+        way, you get a dedicated sending setup, not a shared one. For a deeper
+        comparison, see{" "}
+        <Link href="/blog/byo-aws-ses-vs-shared-email-infrastructure-cold-outreach" className="text-[#3b82f6] font-medium hover:underline">BYO AWS SES vs shared infrastructure</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

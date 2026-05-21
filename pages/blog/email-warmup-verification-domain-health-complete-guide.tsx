@@ -15,7 +15,9 @@ export default function BlogPost3() {
         Cold email deliverability has three pillars:{" "}
         <strong>email warmup</strong>, <strong>list verification</strong>, and{" "}
         <strong>domain health monitoring</strong>. Skip any one of them and your
-        campaigns land in spam. This guide covers all three in depth —
+        campaigns land in spam. All three ultimately serve one goal:{" "}
+        <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">protecting your overall sender score</Link>.
+        {" "}This guide covers all three in depth —
         practical strategies, real numbers, and exactly how to implement each
         one for reliable inbox placement.
       </p>
@@ -181,7 +183,8 @@ export default function BlogPost3() {
         flow</strong>. You don&apos;t need a separate tool, a separate tab, or
         a separate subscription. Verification happens as part of campaign
         creation — unverified leads are flagged and can&apos;t be sent to
-        until they pass verification.
+        until they pass verification. For a deeper dive, read our guide on{" "}
+        <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">email list cleaning best practices</Link>.
       </p>
 
       {/* === PART 3: DOMAIN HEALTH === */}
@@ -423,7 +426,9 @@ export default function BlogPost3() {
         >
           start a free trial
         </Link>{" "}
-        and see what a real deliverability stack looks like.
+        and see what a real deliverability stack looks like. When you&apos;re
+        ready to scale, check out our guide to{" "}
+        <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">sending cold email at scale without getting blacklisted</Link>.
       </p>
     </BlogLayout>
   );

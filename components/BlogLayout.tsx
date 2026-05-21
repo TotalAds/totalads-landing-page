@@ -1,9 +1,15 @@
-import { ArrowLeft, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Compass } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-import { BlogPost, generateBlogPostSchema } from "@/lib/blog";
+import {
+  BlogPost,
+  clusterMeta,
+  generateBlogPostSchema,
+  getClusterHub,
+  getRelatedPosts,
+} from "@/lib/blog";
 import { seoConfig, structuredData } from "@/lib/seo";
 
 import Footer from "./sections/Footer";
@@ -17,6 +23,9 @@ interface BlogLayoutProps {
 export default function BlogLayout({ post, children }: BlogLayoutProps) {
   const canonical = `https://leadsnipper.com/blog/${post.slug}`;
   const blogSchema = generateBlogPostSchema(post);
+  const relatedPosts = getRelatedPosts(post);
+  const clusterHub = getClusterHub(post.cluster);
+  const cluster = clusterMeta[post.cluster];
 
   return (
     <>
@@ -89,6 +98,12 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 {
                   "@type": "ListItem",
                   position: 3,
+                  name: cluster.label,
+                  item: "https://leadsnipper.com/blog",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
                   name: post.title,
                   item: canonical,
                 },
@@ -104,9 +119,9 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         {/* Blog post hero */}
         <section className="hero-bg dot-grid pt-32 pb-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            {/* Breadcrumb */}
+            {/* Breadcrumb with cluster context */}
             <nav className="mb-8" aria-label="Breadcrumb">
-              <ol className="flex items-center gap-2 text-xs font-mono text-[#727785]">
+              <ol className="flex items-center gap-2 text-xs font-mono text-[#727785] flex-wrap">
                 <li>
                   <Link
                     href="/"
@@ -125,6 +140,10 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                   </Link>
                 </li>
                 <li className="text-[#c2c6d6]">/</li>
+                <li className="text-[#0058be] font-medium">
+                  {cluster.icon} {cluster.label}
+                </li>
+                <li className="text-[#c2c6d6]">/</li>
                 <li className="text-[#424754] truncate max-w-[200px]">
                   {post.title}
                 </li>
@@ -132,9 +151,16 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             </nav>
 
             <header>
-              <span className="inline-flex items-center px-2.5 py-1 rounded-md font-mono text-[10px] font-medium text-[#0058be] bg-[#0058be]/[0.06] border border-[#0058be]/20 mb-5">
-                {post.category.toUpperCase()}
-              </span>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-md font-mono text-[10px] font-medium text-[#0058be] bg-[#0058be]/[0.06] border border-[#0058be]/20">
+                  {post.category.toUpperCase()}
+                </span>
+                {post.clusterRole === "hub" && (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-md font-mono text-[10px] font-medium text-[#10b981] bg-[#10b981]/[0.06] border border-[#10b981]/20">
+                    PILLAR GUIDE
+                  </span>
+                )}
+              </div>
               <h1 className="font-heading font-bold text-[28px] md:text-[36px] lg:text-[42px] text-[#131b2e] leading-tight mb-5">
                 {post.title}
               </h1>
@@ -177,6 +203,66 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             <div className="blog-content prose-headings:font-heading prose-headings:text-[#131b2e] prose-p:text-[#424754] prose-a:text-[#0058be] prose-strong:text-[#131b2e]">
               {children}
             </div>
+
+            {/* Back to Hub navigation (for spoke pages) */}
+            {post.clusterRole === "spoke" && clusterHub && (
+              <div className="mt-12 p-5 rounded-xl border border-[#0058be]/10 bg-[#0058be]/[0.02]">
+                <div className="flex items-start gap-3">
+                  <Compass className="w-5 h-5 text-[#0058be] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-xs font-mono text-[#727785] mb-1">
+                      PART OF: {cluster.icon} {cluster.label.toUpperCase()}
+                    </p>
+                    <Link
+                      href={`/blog/${clusterHub.slug}`}
+                      className="text-[#0058be] font-heading font-semibold text-sm hover:underline"
+                    >
+                      ← Read the full guide: {clusterHub.title}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Related Articles — "Continue Your Journey" */}
+            {relatedPosts.length > 0 && (
+              <div className="mt-14">
+                <h3 className="font-heading font-bold text-lg text-[#131b2e] mb-6 flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-[#0058be]" />
+                  Continue Your Journey
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {relatedPosts.slice(0, 3).map((related) => (
+                    <Link
+                      key={related.slug}
+                      href={`/blog/${related.slug}`}
+                      className="group block p-5 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 transition-all hover:shadow-sm"
+                    >
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[9px] font-mono font-medium px-2 py-0.5 rounded border text-[#0058be] bg-[#0058be]/[0.06] border-[#0058be]/20">
+                          {related.category.toUpperCase()}
+                        </span>
+                        {related.clusterRole === "hub" && (
+                          <span className="text-[9px] font-mono font-medium px-2 py-0.5 rounded border text-[#10b981] bg-[#10b981]/[0.06] border-[#10b981]/20">
+                            PILLAR
+                          </span>
+                        )}
+                      </div>
+                      <h4 className="font-heading font-semibold text-sm text-[#131b2e] mb-2 leading-snug group-hover:text-[#0058be] transition-colors">
+                        {related.title}
+                      </h4>
+                      <p className="text-xs text-[#727785] leading-relaxed line-clamp-2">
+                        {related.excerpt}
+                      </p>
+                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-heading font-semibold text-[#0058be] group-hover:gap-2 transition-all">
+                        Read article
+                        <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Footer CTA */}
             <footer className="mt-16 pt-8 border-t border-[#c2c6d6]/20">

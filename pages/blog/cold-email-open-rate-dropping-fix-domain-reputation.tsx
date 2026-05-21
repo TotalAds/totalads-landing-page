@@ -13,7 +13,8 @@ export default function ColdEmailOpenRateDropping() {
         When cold email open rates drop, most teams rewrite subject lines first.
         Sometimes that helps. But a sudden drop across multiple campaigns is
         usually a deliverability warning: inbox providers are trusting your
-        domain less than they did last week.
+        domain less than they did last week. This often points to a{" "}
+        <Link href="/blog/domain-reputation-management-protect-sender-score" className="text-[#3b82f6] font-medium hover:underline">domain reputation problem</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -109,7 +110,8 @@ export default function ColdEmailOpenRateDropping() {
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper uses built-in Reoon verification so list quality is not a
         separate afterthought. That matters because unverified leads should never
-        be treated as send-ready.
+        be treated as send-ready. Learn more in our guide to{" "}
+        <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">email list cleaning and verification</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -123,7 +125,9 @@ export default function ColdEmailOpenRateDropping() {
       <ol className="list-decimal pl-6 text-[#475569] space-y-2 mb-6">
         <li>Pause campaigns on domains with abnormal bounce or complaint rates.</li>
         <li>Lower daily caps for new or recently affected senders.</li>
-        <li>Keep warmup running with natural pacing.</li>
+        <li>Keep warmup running with natural pacing. See our{" "}
+        <Link href="/blog/email-warmup-verification-domain-health-complete-guide" className="text-[#3b82f6] font-medium hover:underline">email warmup and verification guide</Link>{" "}
+        for best practices.</li>
         <li>Resume outbound only after DNS, verification, and bounce trends look clean.</li>
       </ol>
 

@@ -88,7 +88,7 @@ export function generateSitemapUrls(): SitemapUrl[] {
     loc: `${sitemapConfig.baseUrl}/blog/${post.slug}`,
     lastmod: new Date(post.date).toISOString(),
     changefreq: "monthly" as const,
-    priority: 0.8,
+    priority: post.clusterRole === "hub" ? 0.9 : 0.8,
   }));
 
   return [...staticUrls, ...blogUrls];
