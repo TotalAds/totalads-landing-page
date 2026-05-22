@@ -6,7 +6,13 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import Logo from "@/asset/leadsnipper_rec.svg";
-import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandX,
+  IconBrandYoutube,
+} from "@tabler/icons-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -111,21 +117,55 @@ export default function Footer() {
               We build and operate AI-powered outbound systems.
             </p>
             <div className="flex gap-3">
+              {/* Social media links with SEO best practices:
+                  - target="_blank" opens in new tab (good UX for external links)
+                  - rel="noopener noreferrer me" provides security + SEO signals
+                  - "me" attribute helps establish entity relationships for search engines
+                  - aria-label for accessibility */}
               <a
                 href="https://www.linkedin.com/company/leadsnipper/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
-                aria-label="LinkedIn"
+                aria-label="Follow LeadSnipper on LinkedIn"
               >
                 <IconBrandLinkedin className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://x.com/leadsnipper_"
+                target="_blank"
+                rel="noopener noreferrer me"
                 className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
-                aria-label="Twitter"
+                aria-label="Follow LeadSnipper on X (Twitter)"
               >
                 <IconBrandX className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/people/Leadsnipper/61590183337984/"
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
+                aria-label="Follow LeadSnipper on Facebook"
+              >
+                <IconBrandFacebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/leadsnipper/"
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
+                aria-label="Follow LeadSnipper on Instagram"
+              >
+                <IconBrandInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.youtube.com/@leadsnipper_official"
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="w-9 h-9 rounded-lg border border-[#c2c6d6]/30 flex items-center justify-center text-[#727785] hover:text-[#0058be] hover:border-[#0058be]/30 hover:bg-[#0058be]/[0.04] transition-all"
+                aria-label="Subscribe to LeadSnipper on YouTube"
+              >
+                <IconBrandYoutube className="w-4 h-4" />
               </a>
             </div>
           </div>

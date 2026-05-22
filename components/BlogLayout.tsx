@@ -56,7 +56,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         <meta property="article:section" content={post.category} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@leadsnipper" />
+        <meta name="twitter:site" content="@leadsnipper_" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.description} />
         <meta

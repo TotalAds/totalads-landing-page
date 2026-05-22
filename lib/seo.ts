@@ -29,8 +29,8 @@ export const seoConfig = {
   },
 
   defaultTwitter: {
-    handle: "@leadsnipper",
-    site: "@leadsnipper",
+    handle: "@leadsnipper_",
+    site: "@leadsnipper_",
     cardType: "summary_large_image",
   },
 
@@ -246,8 +246,11 @@ export const structuredData = {
       "Cold email outreach platform built on AWS SES. Own your sending infrastructure, verify leads, warm up domains, and send campaigns that land in the inbox.",
     foundingDate: "2024",
     sameAs: [
-      "https://twitter.com/leadsnipper",
-      "https://linkedin.com/company/leadsnipper",
+      "https://www.linkedin.com/company/leadsnipper",
+      "https://x.com/leadsnipper_",
+      "https://www.facebook.com/people/Leadsnipper/61590183337984/",
+      "https://www.instagram.com/leadsnipper/",
+      "https://www.youtube.com/@leadsnipper_official",
     ],
     contactPoint: {
       "@type": "ContactPoint",
