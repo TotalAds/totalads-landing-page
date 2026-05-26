@@ -1,11 +1,11 @@
 {
-  "name": "LeadSnipper - ICP-Based Sales Intelligence Platform",
+  "name": "LeadSnipper — Cold Email Platform",
   "short_name": "LeadSnipper",
-  "description": "Transform any website into comprehensive company profiles with ICP fit scoring. Get verified contacts, business intelligence, and actionable insights for your sales team.",
+  "description": "Cold email outreach platform built on AWS SES. Bring your own sending infrastructure, verify leads, warm up domains, and send campaigns that land in the inbox.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#a855f7",
+  "background_color": "#fafafa",
+  "theme_color": "#eb857a",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
@@ -39,28 +39,12 @@
       "purpose": "maskable any"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "LeadSnipper Dashboard - Desktop View"
-    },
-    {
-      "src": "/screenshot-mobile.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "LeadSnipper Dashboard - Mobile View"
-    }
-  ],
   "shortcuts": [
     {
-      "name": "How to Use",
-      "short_name": "Guide",
-      "description": "Learn how to use LeadSnipper",
-      "url": "/how-to-use",
+      "name": "Savings Calculator",
+      "short_name": "Calculator",
+      "description": "See how much you save with LeadSnipper vs Instantly or Smartlead",
+      "url": "/savings-calculator",
       "icons": [
         {
           "src": "/favicon-32x32.png",

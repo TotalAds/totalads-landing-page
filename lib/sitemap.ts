@@ -71,6 +71,76 @@ export const sitemapConfig = {
       changefreq: "yearly" as const,
       priority: 0.3,
     },
+    {
+      path: "/about",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/pricing",
+      changefreq: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      path: "/products/leadsnipper",
+      changefreq: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      path: "/products/socialsnipper",
+      changefreq: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      path: "/services",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/ai-automation",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/ai-seo",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/analytics",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/consulting",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/crm-automation",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/custom-software",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/lead-generation",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/mvp-development",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      path: "/services/web-apps",
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    },
   ],
 };
 

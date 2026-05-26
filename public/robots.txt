@@ -39,12 +39,17 @@ Disallow: /admin/
 
 # Allow important pages
 Allow: /
+Allow: /about
+Allow: /pricing
 Allow: /blog
 Allow: /blog/*
 Allow: /contact
 Allow: /savings-calculator
 Allow: /vs/instantly
 Allow: /vs/smartlead
+Allow: /products/*
+Allow: /services
+Allow: /services/*
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /refund-policy

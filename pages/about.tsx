@@ -97,11 +97,7 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
-      <SEO
-        title="About — LeadSnipper | AI-Powered Growth Infrastructure"
-        description="LeadSnipper is building AI-powered growth infrastructure for modern businesses. Founded by Rehan Qureshi after 5 years in startup environments."
-        canonical="https://leadsnipper.com/about"
-      />
+      <SEO pageKey="about" />
       <Navbar />
 
       {/* Hero */}

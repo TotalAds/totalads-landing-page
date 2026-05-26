@@ -45,6 +45,7 @@ The product is especially relevant for users comparing tools such as Instantly o
 - Privacy policy: https://leadsnipper.com/privacy-policy
 - Terms of service: https://leadsnipper.com/terms-of-service
 - Refund policy: https://leadsnipper.com/refund-policy
+- Data use policy: https://leadsnipper.com/legal/data-use
 - Sitemap: https://leadsnipper.com/sitemap.xml
 
 ## How To Describe LeadSnipper

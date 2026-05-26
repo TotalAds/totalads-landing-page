@@ -160,11 +160,7 @@ export default function PricingPage() {
 
   return (
     <>
-      <SEO
-        title="Pricing — LeadSnipper | From ₹0 to Enterprise"
-        description="Transparent pricing for cold email infrastructure and done-for-you services. Start free with 1,000 emails. No credit card required."
-        canonical="https://leadsnipper.com/pricing"
-      />
+      <SEO pageKey="pricing" structuredDataTypes={["softwareApplication"]} />
       <Navbar />
 
       {/* Hero */}

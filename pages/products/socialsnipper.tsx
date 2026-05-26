@@ -44,11 +44,7 @@ export default function SocialSnipperProduct() {
 
   return (
     <>
-      <SEO
-        title="SocialSnipper — LinkedIn Scheduler & Content Researcher"
-        description="Stay visible on LinkedIn without the daily grind. Schedule posts, research trending topics, and let AI help you write — so your emails land and your profile compounds."
-        canonical="https://leadsnipper.com/products/socialsnipper"
-      />
+      <SEO pageKey="socialsnipper" />
       <Navbar />
 
       {/* Hero */}

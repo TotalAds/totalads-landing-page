@@ -389,11 +389,7 @@ function LeadSnipperPricing() {
 export default function LeadSnipperProduct() {
   return (
     <>
-      <SEO
-        title="LeadSnipper — Cold Email on Infrastructure You Own"
-        description="Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES. Domain health, warmup, verification, and campaigns in one platform."
-        canonical="https://leadsnipper.com/products/leadsnipper"
-      />
+      <SEO pageKey="leadsnipper" structuredDataTypes={["softwareApplication", "product"]} />
       <Navbar />
 
       {/* Hero */}

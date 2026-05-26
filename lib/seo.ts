@@ -207,30 +207,99 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   privacy: {
-    title: "Privacy Policy — LeadSnipper Data Protection",
+    title: "Privacy Policy — LeadSnipper & SocialSnipper",
     description:
-      "LeadSnipper privacy policy. How we collect, use, and protect your data. GDPR compliant data handling.",
+      "Privacy policy for LeadSnipper email outreach, SocialSnipper LinkedIn tools, and Razorpay billing. GDPR and DPDP aligned.",
     keywords:
-      "privacy policy, data protection, GDPR compliance, LeadSnipper privacy",
+      "privacy policy, data protection, GDPR, LeadSnipper, SocialSnipper",
     canonical: "https://leadsnipper.com/privacy-policy",
   },
 
   terms: {
-    title: "Terms of Service — LeadSnipper Usage Agreement",
+    title: "Terms of Service — LeadSnipper & SocialSnipper",
     description:
-      "LeadSnipper terms of service and usage agreement. Your rights and responsibilities when using our cold email platform.",
+      "Terms for LeadSnipper cold email, SocialSnipper LinkedIn publishing, acceptable use, and subscription payments.",
     keywords:
-      "terms of service, usage agreement, LeadSnipper terms, legal terms",
+      "terms of service, LeadSnipper terms, SocialSnipper, legal agreement",
     canonical: "https://leadsnipper.com/terms-of-service",
   },
 
   refund: {
-    title: "Refund Policy — LeadSnipper",
+    title: "Refund Policy — LeadSnipper & SocialSnipper",
     description:
-      "LeadSnipper refund policy. Learn about our fair refund process for cold email platform subscriptions.",
+      "Refund policy for LeadSnipper and SocialSnipper subscriptions, credits, and Razorpay payments.",
     keywords:
-      "refund policy, billing support, LeadSnipper refund, payment terms",
+      "refund policy, billing, LeadSnipper refund, SocialSnipper, Razorpay",
     canonical: "https://leadsnipper.com/refund-policy",
+  },
+
+  dataUse: {
+    title: "Data Use Policy — LeadSnipper & SocialSnipper",
+    description:
+      "How we process contact lists, AWS SES email data, LinkedIn API data, and payment information.",
+    keywords:
+      "data use policy, processor agreement, lead data, LinkedIn API",
+    canonical: "https://leadsnipper.com/legal/data-use",
+  },
+
+  about: {
+    title: "About LeadSnipper — AI-Powered Growth Infrastructure for B2B Teams",
+    description:
+      "LeadSnipper is building AI-powered growth infrastructure for modern businesses. Founded by Rehan Qureshi after 5 years in startup environments. Meet the team and the mission.",
+    keywords:
+      "about LeadSnipper, LeadSnipper team, cold email company, AI growth tools, B2B outreach platform, founder Rehan Qureshi",
+    canonical: "https://leadsnipper.com/about",
+    openGraph: {
+      title: "About LeadSnipper — AI-Powered Growth Infrastructure",
+      description:
+        "Meet the team building AI-powered email outreach and social publishing tools for modern B2B businesses.",
+      url: "https://leadsnipper.com/about",
+    },
+  },
+
+  pricing: {
+    title: "Pricing — LeadSnipper | From ₹0 to Enterprise Cold Email",
+    description:
+      "LeadSnipper pricing plans starting free. Starter at ₹499/mo, Business at ₹999/mo, and Enterprise with BYO AWS SES, unlimited domains, and advanced analytics. No credit card required.",
+    keywords:
+      "LeadSnipper pricing, cold email pricing, email outreach cost, AWS SES pricing plan, cold email platform price, BYO SES plan",
+    canonical: "https://leadsnipper.com/pricing",
+    openGraph: {
+      title: "LeadSnipper Pricing — Cold Email From ₹0",
+      description:
+        "Start free or pick a plan that scales with your outreach. Starter ₹499/mo, Business ₹999/mo, Enterprise custom.",
+      url: "https://leadsnipper.com/pricing",
+    },
+  },
+
+  leadsnipper: {
+    title: "LeadSnipper — Cold Email on Infrastructure You Own",
+    description:
+      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES. Domain health, warmup, verification, and campaigns in one platform.",
+    keywords:
+      "LeadSnipper product, cold email platform, AWS SES email, BYO SES, email warmup, domain health, email verification, cold email campaigns",
+    canonical: "https://leadsnipper.com/products/leadsnipper",
+    openGraph: {
+      title: "LeadSnipper — Cold Email on Infrastructure You Own",
+      description:
+        "AWS SES cold email with domain health monitoring, built-in verification, intelligent warmup, and campaign analytics.",
+      url: "https://leadsnipper.com/products/leadsnipper",
+    },
+  },
+
+  socialsnipper: {
+    title: "SocialSnipper — LinkedIn Scheduler & AI Content Tool",
+    description:
+      "Stay visible on LinkedIn without the daily grind. Schedule posts, research trending topics, and let AI help you write — so your emails land and your profile compounds.",
+    keywords:
+      "SocialSnipper, LinkedIn scheduler, LinkedIn content tool, AI LinkedIn posts, social media automation, LinkedIn publishing, B2B social media",
+    canonical: "https://leadsnipper.com/products/socialsnipper",
+    openGraph: {
+      title: "SocialSnipper — LinkedIn Scheduler & AI Content Tool",
+      description:
+        "AI-assisted LinkedIn content creation, post scheduling, and topic research for B2B founders and sales teams.",
+      url: "https://leadsnipper.com/products/socialsnipper",
+    },
   },
 };
 

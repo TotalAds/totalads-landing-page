@@ -50,9 +50,54 @@ export default function ServicePageLayout({
   results,
   faqs,
 }: ServicePageProps) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://leadsnipper.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://leadsnipper.com/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: badge,
+        item: seo.canonical,
+      },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: badge,
+    description: seo.description,
+    url: seo.canonical,
+    provider: {
+      "@type": "Organization",
+      name: "LeadSnipper",
+      url: "https://leadsnipper.com",
+    },
+    areaServed: "Worldwide",
+    serviceType: badge,
+  };
+
   return (
     <>
-      <SEO title={seo.title} description={seo.description} canonical={seo.canonical} />
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        canonical={seo.canonical}
+        additionalStructuredData={[breadcrumbSchema, serviceSchema]}
+      />
       <Navbar />
 
       {/* Hero */}
@@ -63,6 +108,26 @@ export default function ServicePageLayout({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <nav
+              className="flex items-center justify-center gap-1.5 text-xs text-[#727785] mb-8"
+              aria-label="Breadcrumb"
+            >
+              <ol className="flex items-center gap-1.5">
+                <li>
+                  <Link href="/" className="hover:text-[#eb857a] transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <Link href="/services" className="hover:text-[#eb857a] transition-colors">
+                    Services
+                  </Link>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li className="text-[#131b2e] font-medium">{badge}</li>
+              </ol>
+            </nav>
             <span className="section-tag justify-center mb-6">{badge}</span>
             <h1 className="font-heading font-extrabold text-[#131b2e] mt-6">
               <span className="block text-3xl md:text-display-lg leading-[1.1] tracking-tight">
