@@ -1,4 +1,5 @@
 import { blogPosts } from "./blog";
+import { getAllIndustrySlugs } from "./industries";
 
 export interface SitemapUrl {
   loc: string;
@@ -137,6 +138,46 @@ export const sitemapConfig = {
       priority: 0.7,
     },
     {
+      path: "/cold-email-software",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/email-warmup",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/email-deliverability",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/cold-email-infrastructure",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/ai-cold-email-generator",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/vs/apollo",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/vs/lemlist",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      path: "/vs/mailshake",
+      changefreq: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       path: "/services/web-apps",
       changefreq: "monthly" as const,
       priority: 0.7,
@@ -161,7 +202,14 @@ export function generateSitemapUrls(): SitemapUrl[] {
     priority: post.clusterRole === "hub" ? 0.9 : 0.8,
   }));
 
-  return [...staticUrls, ...blogUrls];
+  const industryUrls: SitemapUrl[] = getAllIndustrySlugs().map((slug) => ({
+    loc: `${sitemapConfig.baseUrl}/cold-email-for/${slug}`,
+    lastmod: currentDate,
+    changefreq: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticUrls, ...blogUrls, ...industryUrls];
 }
 
 export function generateSitemapXml(urls: SitemapUrl[]): string {
@@ -241,9 +289,17 @@ Allow: /savings-calculator
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /refund-policy
+Allow: /cold-email-software
+Allow: /email-warmup
+Allow: /email-deliverability
+Allow: /cold-email-infrastructure
+Allow: /ai-cold-email-generator
+Allow: /cold-email-for/*
+Allow: /vs/*
 
 Sitemap: ${sitemapConfig.baseUrl}/sitemap.xml
 Sitemap: ${sitemapConfig.baseUrl}/sitemap-index.xml
+Sitemap: ${sitemapConfig.baseUrl}/rss.xml
 
 Crawl-delay: 1
 

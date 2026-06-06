@@ -17,9 +17,21 @@ interface SEOProps {
     | "website"
     | "softwareApplication"
     | "product"
-    | "faqPage";
+    | "faqPage"
+    | "socialSnipperSoftwareApplication";
   structuredDataTypes?: Array<keyof typeof structuredData>;
   additionalStructuredData?: Array<Record<string, unknown>>;
+  skipTitleTemplate?: boolean;
+}
+
+function formatTitle(title: string, pageKey?: keyof typeof pageConfigs, skipTitleTemplate?: boolean): string {
+  if (skipTitleTemplate || pageKey === "home") {
+    return title;
+  }
+  if (title.includes("| LeadSnipper")) {
+    return title;
+  }
+  return seoConfig.titleTemplate.replace("%s", title);
 }
 
 export default function SEO({
@@ -35,11 +47,13 @@ export default function SEO({
   structuredDataType,
   structuredDataTypes,
   additionalStructuredData,
+  skipTitleTemplate = false,
 }: SEOProps) {
   // Get page-specific config or use provided props
   const pageConfig = pageKey ? pageConfigs[pageKey] : null;
 
-  const finalTitle = title || pageConfig?.title || seoConfig.defaultTitle;
+  const rawTitle = title || pageConfig?.title || seoConfig.defaultTitle;
+  const finalTitle = formatTitle(rawTitle, pageKey, skipTitleTemplate);
   const finalDescription =
     description || pageConfig?.description || seoConfig.defaultDescription;
   const finalKeywords = keywords || pageConfig?.keywords || "";

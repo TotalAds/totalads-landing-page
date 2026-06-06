@@ -285,6 +285,131 @@ export const blogPosts: BlogPost[] = [
       "cold-email-open-rate-dropping-fix-domain-reputation",
     ],
   },
+  {
+    slug: "how-to-avoid-spam-folder-cold-email",
+    title: "How to Avoid the Spam Folder in Cold Email (2026 Guide)",
+    excerpt:
+      "Landing in spam kills campaigns before they start. Here are the 7 proven steps to keep cold emails in the inbox — from DNS setup to list verification to sending pace.",
+    description:
+      "Learn how to avoid the spam folder in cold email. Covers SPF DKIM DMARC, domain warmup, list verification, sending pace, content triggers, and deliverability monitoring — with actionable fixes.",
+    keywords:
+      "how to avoid spam folder cold email, cold email spam folder fix, avoid spam cold outreach, cold email deliverability tips, inbox placement cold email, prevent spam folder cold email",
+    date: "2026-06-01",
+    readTime: "10 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "why-cold-emails-land-in-spam-fix-today",
+      "spf-dkim-dmarc-cold-email-guide",
+      "cold-email-deliverability-checklist",
+    ],
+  },
+  {
+    slug: "spf-dkim-dmarc-cold-email-guide",
+    title: "SPF vs DKIM vs DMARC Explained for Cold Email Senders",
+    excerpt:
+      "SPF, DKIM, and DMARC are the three DNS records that decide whether your cold emails reach the inbox. Here's what each one does and how to set them up correctly.",
+    description:
+      "SPF vs DKIM vs DMARC explained for cold email. Learn what each DNS record does, how to configure them for AWS SES, and why missing authentication sends your emails straight to spam.",
+    keywords:
+      "SPF DKIM DMARC explained, SPF vs DKIM vs DMARC, cold email DNS setup, email authentication records, DMARC policy cold email, DKIM setup AWS SES, SPF record cold email",
+    date: "2026-06-02",
+    readTime: "9 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-avoid-spam-folder-cold-email",
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "cold-email-deliverability-checklist",
+    ],
+  },
+  {
+    slug: "amazon-ses-cold-email-setup-2026",
+    title: "How to Set Up Amazon SES for Cold Email in 2026 (Updated Guide)",
+    excerpt:
+      "AWS SES costs $0.10 per 1,000 emails and gives you full sending control. This updated 2026 guide walks through SES setup for cold outreach — sandbox exit, DNS, and LeadSnipper connection.",
+    description:
+      "How to setup Amazon SES for cold email in 2026. Step-by-step guide covering account creation, sandbox exit, domain verification, DKIM SPF DMARC, sending limits, and connecting SES to LeadSnipper.",
+    keywords:
+      "Amazon SES cold email setup 2026, how to setup AWS SES for cold email, SES cold email configuration, AWS SES tutorial cold outreach, connect SES to cold email tool",
+    date: "2026-06-03",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Tutorial",
+    cluster: "infrastructure",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+    ],
+  },
+  {
+    slug: "cold-email-deliverability-checklist",
+    title: "Cold Email Deliverability Checklist: 15 Steps Before You Hit Send",
+    excerpt:
+      "Use this deliverability checklist before every cold email campaign. 15 steps covering DNS, list quality, warmup, sending pace, and monitoring — skip any one and risk the spam folder.",
+    description:
+      "Cold email deliverability checklist with 15 steps before sending. Covers DNS authentication, list verification, domain warmup, sending limits, content review, and post-send monitoring.",
+    keywords:
+      "cold email deliverability checklist, email deliverability checklist, pre-send email checklist, cold email launch checklist, inbox placement checklist, email sending checklist",
+    date: "2026-06-04",
+    readTime: "8 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-avoid-spam-folder-cold-email",
+      "email-warmup-verification-domain-health-complete-guide",
+      "domain-reputation-management-protect-sender-score",
+    ],
+  },
+  {
+    slug: "how-many-emails-per-day-cold-outreach",
+    title: "How Many Emails Can I Send Per Day? Cold Outreach Volume Guide",
+    excerpt:
+      "The answer depends on your domain age, warmup status, and reputation. Here's a practical guide to daily send limits for cold email — from new domains to scaled outbound.",
+    description:
+      "How many emails can I send per day for cold outreach? Practical daily send limits by domain age, warmup stage, and reputation. Includes scaling timeline and multi-domain strategies.",
+    keywords:
+      "how many emails per day cold email, cold email daily send limit, email sending volume guide, cold outreach volume limits, how many cold emails per day, email send rate cold outreach",
+    date: "2026-06-05",
+    readTime: "7 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    relatedSlugs: [
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "email-warmup-verification-domain-health-complete-guide",
+      "cold-email-deliverability-checklist",
+    ],
+  },
+  {
+    slug: "cold-email-for-saas-companies",
+    title: "Cold Email for SaaS Companies: Strategy, Sequences & Deliverability",
+    excerpt:
+      "SaaS outbound is different — long cycles, multiple ICPs, and one domain mistake can kill all company email. Here's how SaaS teams run cold email safely and effectively.",
+    description:
+      "Cold email for SaaS companies — strategy, sample sequences, deliverability tips, and infrastructure setup. Learn how B2B SaaS teams book demos through outbound without burning domains.",
+    keywords:
+      "cold email for SaaS, SaaS cold outreach, B2B SaaS outbound email, cold email SaaS companies, SaaS lead generation email, SaaS outbound strategy 2026",
+    date: "2026-06-06",
+    readTime: "11 min read",
+    author: "LeadSnipper Team",
+    category: "Strategy",
+    cluster: "infrastructure",
+    clusterRole: "hub",
+    relatedSlugs: [
+      "outbound-stack-20-meetings-per-month",
+      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "best-cold-email-software-2026-comparison",
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
@@ -369,6 +494,12 @@ export function generateBlogPostSchema(post: BlogPost) {
     },
     url: `https://leadsnipper.com/blog/${post.slug}`,
     keywords: post.keywords,
+    image: {
+      "@type": "ImageObject",
+      url: "https://leadsnipper.com/og-image.png",
+      width: 1200,
+      height: 630,
+    },
     wordCount: post.readTime.includes("15")
       ? 3200
       : post.readTime.includes("12")

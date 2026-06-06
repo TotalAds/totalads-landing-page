@@ -41,11 +41,11 @@ export const seoConfig = {
     },
     {
       name: "theme-color",
-      content: "#3b82f6",
+      content: "#eb857a",
     },
     {
       name: "msapplication-TileColor",
-      content: "#3b82f6",
+      content: "#eb857a",
     },
     {
       name: "apple-mobile-web-app-capable",
@@ -103,9 +103,9 @@ export interface PageConfig {
 export const pageConfigs: Record<string, PageConfig> = {
   home: {
     title:
-      "LeadSnipper — Send 10,000+ Cold Emails Without Killing Your Domain Reputation",
+      "Cold Email Software That Sends 10,000+ Emails Without Hitting Spam",
     description:
-      "LeadSnipper is the cold email outreach platform built on AWS SES. Bring your own sending infrastructure, verify leads with built-in Reoon verification, warm up domains with daily pacing, and send campaigns that land in the inbox. Free trial — no credit card required.",
+      "LeadSnipper is cold email software built on AWS SES. Capture more qualified leads, verify contacts before sending, warm up domains, and automate outreach that lands in the inbox — not spam. Start free, no credit card required.",
     keywords:
       "cold email platform, cold email software, email outreach tool, AWS SES cold email, BYO SES, email deliverability, domain reputation, email warmup, email verification, cold email at scale, bulk email sender, email campaign tool, sender reputation, inbox placement, cold outreach, Instantly alternative, Smartlead alternative, cold email infrastructure",
     canonical: "https://leadsnipper.com",
@@ -160,9 +160,9 @@ export const pageConfigs: Record<string, PageConfig> = {
 
   instantlyAlternative: {
     title:
-      "Instantly Alternative — LeadSnipper vs Instantly for Cold Email",
+      "Best Instantly Alternative for Agencies in 2026",
     description:
-      "Compare LeadSnipper with Instantly for cold email. See how BYO AWS SES, built-in Reoon verification, domain health monitoring, and lower sending costs stack up against shared infrastructure.",
+      "Compare LeadSnipper with Instantly for cold email. BYO AWS SES, built-in Reoon verification, domain health monitoring, and lower sending costs — see how it stacks up. Start free, no credit card required.",
     keywords:
       "Instantly alternative, Instantly competitor, LeadSnipper vs Instantly, cold email software alternative, Instantly pricing alternative, BYO AWS SES cold email, cold email deliverability tool, email verification cold outreach",
     canonical: "https://leadsnipper.com/vs/instantly",
@@ -176,9 +176,9 @@ export const pageConfigs: Record<string, PageConfig> = {
 
   smartleadAlternative: {
     title:
-      "Smartlead Alternative — LeadSnipper vs Smartlead for Cold Email",
+      "Best Smartlead Alternative for Cold Email Deliverability",
     description:
-      "Compare LeadSnipper with Smartlead for cold email. See how dedicated AWS SES control, built-in verification, domain health, and simpler pricing help teams protect deliverability.",
+      "Compare LeadSnipper with Smartlead for cold email. Dedicated AWS SES control, built-in verification, domain health, and simpler pricing help teams protect deliverability. See how it works — start free.",
     keywords:
       "Smartlead alternative, Smartlead competitor, LeadSnipper vs Smartlead, cold email software alternative, Smartlead pricing alternative, BYO AWS SES cold email, email deliverability tools, cold outreach platform",
     canonical: "https://leadsnipper.com/vs/smartlead",
@@ -192,9 +192,9 @@ export const pageConfigs: Record<string, PageConfig> = {
 
   blog: {
     title:
-      "LeadSnipper Blog — Cold Email Tips, Deliverability Guides & Outbound Strategy",
+      "Cold Email Blog — Deliverability, Infrastructure & Outbound Strategy",
     description:
-      "Learn cold email best practices, email deliverability strategies, domain health tips, and outbound sales techniques. Practical guides from the LeadSnipper team.",
+      "Learn cold email best practices, email deliverability strategies, domain health tips, and outbound sales techniques. Practical guides from the LeadSnipper team. Start applying them today.",
     keywords:
       "cold email blog, email deliverability tips, cold outreach guide, email warmup guide, domain reputation blog, cold email best practices, outbound email strategy, BYO SES guide, email verification tips",
     canonical: "https://leadsnipper.com/blog",
@@ -273,9 +273,9 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   leadsnipper: {
-    title: "LeadSnipper — Cold Email on Infrastructure You Own",
+    title: "Cold Email Infrastructure Built on AWS SES",
     description:
-      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES. Domain health, warmup, verification, and campaigns in one platform.",
+      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES with domain health, warmup, verification, and campaigns in one platform. Start free — no credit card required.",
     keywords:
       "LeadSnipper product, cold email platform, AWS SES email, BYO SES, email warmup, domain health, email verification, cold email campaigns",
     canonical: "https://leadsnipper.com/products/leadsnipper",
@@ -290,7 +290,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   socialsnipper: {
     title: "SocialSnipper — LinkedIn Scheduler & AI Content Tool",
     description:
-      "Stay visible on LinkedIn without the daily grind. Schedule posts, research trending topics, and let AI help you write — so your emails land and your profile compounds.",
+      "Stay visible on LinkedIn without the daily grind. Schedule posts, research trending topics, and let AI help you write — so your emails land and your profile compounds. Join the waitlist free.",
     keywords:
       "SocialSnipper, LinkedIn scheduler, LinkedIn content tool, AI LinkedIn posts, social media automation, LinkedIn publishing, B2B social media",
     canonical: "https://leadsnipper.com/products/socialsnipper",
@@ -299,6 +299,126 @@ export const pageConfigs: Record<string, PageConfig> = {
       description:
         "AI-assisted LinkedIn content creation, post scheduling, and topic research for B2B founders and sales teams.",
       url: "https://leadsnipper.com/products/socialsnipper",
+    },
+  },
+
+  coldEmailSoftware: {
+    title: "Cold Email Software That Sends 10,000+ Emails Without Hitting Spam",
+    description:
+      "LeadSnipper is cold email software built on AWS SES. Automate outreach, verify leads, warm up domains, and track deliverability — all in one platform. Start free, no credit card required.",
+    keywords:
+      "cold email software, cold email automation software, best cold email software 2026, cold email outreach software, bulk cold email software, cold email platform, cold email sender, cold email tool",
+    canonical: "https://leadsnipper.com/cold-email-software",
+    openGraph: {
+      title: "Cold Email Software — Send at Scale Without Hitting Spam",
+      description:
+        "Automate cold email outreach with BYO AWS SES, built-in verification, domain warmup, and deliverability monitoring.",
+      url: "https://leadsnipper.com/cold-email-software",
+    },
+  },
+
+  emailWarmup: {
+    title: "Email Warmup Tool That Improves Inbox Placement in Days",
+    description:
+      "LeadSnipper's email warmup tool gradually ramps sending volume, mirrors human patterns, and pauses automatically when domain health drops. Improve inbox placement — start free.",
+    keywords:
+      "email warmup tool, domain warmup software, email warmup service, cold email warmup, sender reputation warmup, inbox warmup tool, email deliverability warmup",
+    canonical: "https://leadsnipper.com/email-warmup",
+    openGraph: {
+      title: "Email Warmup Tool — Improve Inbox Placement in Days",
+      description:
+        "AI-paced email warmup tied to your domain health. Gradual volume ramp that protects sender reputation.",
+      url: "https://leadsnipper.com/email-warmup",
+    },
+  },
+
+  emailDeliverability: {
+    title: "Email Deliverability Tool for Better Inbox Placement",
+    description:
+      "Monitor SPF, DKIM, DMARC, bounce rates, and complaint signals in one dashboard. LeadSnipper's email deliverability tool helps you fix issues before they hurt campaigns. Start free.",
+    keywords:
+      "email deliverability tool, inbox placement tool, email deliverability software, domain health monitoring, SPF DKIM DMARC checker, cold email deliverability, sender reputation tool",
+    canonical: "https://leadsnipper.com/email-deliverability",
+    openGraph: {
+      title: "Email Deliverability Tool — Monitor & Fix Inbox Placement",
+      description:
+        "Real-time domain health dashboard with DNS checks, bounce tracking, and deliverability alerts.",
+      url: "https://leadsnipper.com/email-deliverability",
+    },
+  },
+
+  coldEmailInfrastructure: {
+    title: "Cold Email Infrastructure Built on AWS SES You Control",
+    description:
+      "Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification and warmup. Start free.",
+    keywords:
+      "cold email infrastructure, BYO SES cold email, AWS SES cold email, cold email sending infrastructure, dedicated email infrastructure, cold email platform infrastructure",
+    canonical: "https://leadsnipper.com/cold-email-infrastructure",
+    openGraph: {
+      title: "Cold Email Infrastructure — BYO AWS SES Control",
+      description:
+        "Build cold email on infrastructure you own. BYO AWS SES with verification, warmup, and domain health built in.",
+      url: "https://leadsnipper.com/cold-email-infrastructure",
+    },
+  },
+
+  aiColdEmailGenerator: {
+    title: "AI Cold Email Software That Writes & Sends at Scale",
+    description:
+      "Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and warmup. Start free — no credit card required.",
+    keywords:
+      "AI cold email software, AI cold email generator, AI email writer cold outreach, AI cold email tool, automated cold email AI, AI email copywriting cold outreach",
+    canonical: "https://leadsnipper.com/ai-cold-email-generator",
+    openGraph: {
+      title: "AI Cold Email Software — Write & Send at Scale",
+      description:
+        "AI-powered cold email generation with deliverability-first sending on AWS SES.",
+      url: "https://leadsnipper.com/ai-cold-email-generator",
+    },
+  },
+
+  apolloAlternative: {
+    title: "Best Apollo Alternative for Cold Email in 2026",
+    description:
+      "Looking for an Apollo alternative focused on cold email deliverability? LeadSnipper offers BYO AWS SES, built-in verification, domain warmup, and campaign analytics without shared infrastructure. Start free.",
+    keywords:
+      "Apollo alternative, Apollo.io alternative, Apollo competitor cold email, LeadSnipper vs Apollo, cold email software alternative, Apollo pricing alternative",
+    canonical: "https://leadsnipper.com/vs/apollo",
+    openGraph: {
+      title: "Apollo Alternative — Cold Email with Infrastructure You Own",
+      description:
+        "Compare LeadSnipper vs Apollo for cold email deliverability, verification, and AWS SES control.",
+      url: "https://leadsnipper.com/vs/apollo",
+    },
+  },
+
+  lemlistAlternative: {
+    title: "Best Lemlist Alternative for Cold Email Deliverability",
+    description:
+      "Compare LeadSnipper with Lemlist for cold email. Get BYO AWS SES, built-in Reoon verification, domain health monitoring, and simpler pricing for deliverability-first outbound. Start free.",
+    keywords:
+      "Lemlist alternative, Lemlist competitor, LeadSnipper vs Lemlist, cold email software alternative, Lemlist pricing alternative, email deliverability tool",
+    canonical: "https://leadsnipper.com/vs/lemlist",
+    openGraph: {
+      title: "Lemlist Alternative — Deliverability-First Cold Email",
+      description:
+        "LeadSnipper vs Lemlist: infrastructure ownership, verification, and domain health compared.",
+      url: "https://leadsnipper.com/vs/lemlist",
+    },
+  },
+
+  mailshakeAlternative: {
+    title: "Best Mailshake Alternative for Cold Email at Scale",
+    description:
+      "Compare LeadSnipper with Mailshake for cold email. BYO AWS SES, built-in verification, domain health, and lower per-email costs for teams scaling outbound. See how it works — start free.",
+    keywords:
+      "Mailshake alternative, Mailshake competitor, LeadSnipper vs Mailshake, cold email software alternative, Mailshake pricing alternative, bulk cold email tool",
+    canonical: "https://leadsnipper.com/vs/mailshake",
+    openGraph: {
+      title: "Mailshake Alternative — Scale Cold Email Safely",
+      description:
+        "LeadSnipper vs Mailshake: sending infrastructure, verification, and deliverability compared.",
+      url: "https://leadsnipper.com/vs/mailshake",
     },
   },
 };
@@ -336,11 +456,6 @@ export const structuredData = {
     url: "https://leadsnipper.com",
     description:
       "Cold email outreach platform built on AWS SES with built-in email verification, domain health monitoring, and intelligent warmup.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://leadsnipper.com/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
   },
 
   softwareApplication: {
@@ -452,6 +567,47 @@ export const structuredData = {
   },
 
   faqPage: generateFaqPageSchema(),
+
+  socialSnipperSoftwareApplication: {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "SocialSnipper",
+    alternateName: "SocialSnipper LinkedIn Content Tool",
+    applicationCategory: "BusinessApplication",
+    applicationSubCategory: "Social Media Management Software",
+    operatingSystem: "Web Browser",
+    description:
+      "LinkedIn content scheduler and AI writing assistant for B2B founders and sales teams. Schedule posts, research topics, and stay visible without the daily grind.",
+    url: "https://leadsnipper.com/products/socialsnipper",
+    softwareVersion: "1.0",
+    featureList: [
+      "LinkedIn post scheduling and content calendar",
+      "AI writing assistant for LinkedIn content",
+      "Content research and trending topic discovery",
+      "Performance analytics and engagement tracking",
+      "Multi-account support for agencies",
+      "Best-time posting recommendations",
+    ],
+    brand: {
+      "@type": "Brand",
+      name: "SocialSnipper",
+      url: "https://leadsnipper.com/products/socialsnipper",
+    },
+    author: {
+      "@type": "Organization",
+      name: "LeadSnipper",
+      url: "https://leadsnipper.com",
+    },
+    offers: {
+      "@type": "Offer",
+      name: "Waitlist",
+      price: "0",
+      priceCurrency: "INR",
+      url: "https://leadsnipper.com/products/socialsnipper",
+      availability: "https://schema.org/PreOrder",
+      description: "Join the waitlist for early access to SocialSnipper.",
+    },
+  },
 };
 
 export function generateMetaTags(pageKey: keyof typeof pageConfigs) {

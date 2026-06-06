@@ -4,15 +4,19 @@ import {
   BarChart3,
   Bot,
   BriefcaseBusiness,
+  Building2,
   ChevronDown,
   Code2,
   Cog,
+  Flame,
   Globe,
   Linkedin,
   Mail,
   Menu,
   Rocket,
   Search,
+  ShieldCheck,
+  Sparkles,
   Target,
   Wrench,
   X,
@@ -41,6 +45,39 @@ const productItems = [
   },
 ];
 
+const coldEmailItems = [
+  {
+    label: "Cold Email Software",
+    desc: "Full platform with verification & warmup",
+    href: "/cold-email-software",
+    icon: <Mail className="w-4.5 h-4.5" />,
+  },
+  {
+    label: "Email Warmup Tool",
+    desc: "Improve inbox placement in days",
+    href: "/email-warmup",
+    icon: <Flame className="w-4.5 h-4.5" />,
+  },
+  {
+    label: "Email Deliverability",
+    desc: "Monitor SPF, DKIM, DMARC & health",
+    href: "/email-deliverability",
+    icon: <ShieldCheck className="w-4.5 h-4.5" />,
+  },
+  {
+    label: "BYO AWS SES",
+    desc: "Own your cold email infrastructure",
+    href: "/cold-email-infrastructure",
+    icon: <Building2 className="w-4.5 h-4.5" />,
+  },
+  {
+    label: "AI Email Generator",
+    desc: "AI-powered cold email writing",
+    href: "/ai-cold-email-generator",
+    icon: <Sparkles className="w-4.5 h-4.5" />,
+  },
+];
+
 const serviceItems = [
   { label: "AI Automation", icon: <Bot className="w-4 h-4" />, href: "/services/ai-automation" },
   { label: "AI Search (AI SEO)", icon: <Search className="w-4 h-4" />, href: "/services/ai-seo" },
@@ -64,6 +101,7 @@ const moreItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [coldEmailOpen, setColdEmailOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [tryNowOpen, setTryNowOpen] = useState(false);
@@ -84,7 +122,7 @@ const Navbar = () => {
       <div
         className={`flex items-center justify-between px-6 py-3 bg-white/50 backdrop-blur-sm  rounded-3xl relative z-10 transition-all duration-500 ${
           scrolled
-            ? "shadow-lg border border-[#c2c6d6]/40 max-w-xl"
+            ? "shadow-lg border border-[#c2c6d6]/40 max-w-2xl"
             : "shadow-md border border-[#c2c6d6]/20 max-w-4xl"
         } w-full`}
       >
@@ -218,6 +256,70 @@ const Navbar = () => {
                       >
                         Book free audit →
                       </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Cold Email Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setColdEmailOpen(true)}
+            onMouseLeave={() => setColdEmailOpen(false)}
+          >
+            <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-heading font-semibold text-[#424754] hover:text-[#131b2e] transition-colors rounded-lg hover:bg-[#f2f3ff]">
+              Cold Email
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${coldEmailOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {coldEmailOpen && (
+                <motion.div
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[380px] z-50"
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <div className="rounded-2xl border border-[#c2c6d6]/30 bg-white shadow-xl p-3">
+                    <p className="px-3 py-1.5 text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest">
+                      Cold Email Platform
+                    </p>
+                    {coldEmailItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="flex items-start gap-3 rounded-xl px-3 py-3 hover:bg-[#f2f3ff] transition-colors"
+                      >
+                        <span className="mt-0.5 text-[#424754]">{item.icon}</span>
+                        <div className="flex-1">
+                          <span className="text-sm font-heading font-semibold text-[#131b2e]">
+                            {item.label}
+                          </span>
+                          <p className="text-xs text-[#727785] mt-0.5">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                    <div className="mt-2 pt-2 border-t border-[#c2c6d6]/20 px-3">
+                      <p className="text-[10px] font-mono text-[#727785] uppercase tracking-widest mb-2">
+                        Alternatives
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {["vs Instantly", "vs Smartlead", "vs Apollo", "vs Lemlist", "vs Mailshake"].map((label) => (
+                          <Link
+                            key={label}
+                            href={`/vs/${label.replace("vs ", "").toLowerCase()}`}
+                            className="text-xs text-[#0058be] hover:underline"
+                          >
+                            {label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -371,6 +473,41 @@ const Navbar = () => {
                   {item.badge === "soon" && <span className="badge-coming-soon text-[9px] py-0.5 px-2">SOON</span>}
                 </Link>
               ))}
+
+              {/* Cold Email Section */}
+              <p className="text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest px-3 pt-6 pb-2">
+                Cold Email
+              </p>
+              {coldEmailItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-[#f2f3ff] transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span className="text-[#424754]">{item.icon}</span>
+                  <span className="text-sm font-heading font-semibold text-[#131b2e]">
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+              <div className="px-3 py-2">
+                <p className="text-[10px] font-mono text-[#727785] uppercase tracking-widest mb-2">
+                  Alternatives
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Instantly", "Smartlead", "Apollo", "Lemlist", "Mailshake"].map((name) => (
+                    <Link
+                      key={name}
+                      href={`/vs/${name.toLowerCase()}`}
+                      className="text-xs text-[#0058be] hover:underline"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      vs {name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
               {/* Services Section */}
               <p className="text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest px-3 pt-6 pb-2">

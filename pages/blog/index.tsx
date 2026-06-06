@@ -171,6 +171,81 @@ export default function BlogIndex() {
             <ClusterSection cluster="infrastructure" />
             <ClusterSection cluster="deliverability" />
 
+            {/* Cold Email Tools Section */}
+            <div className="mt-12 mb-12 glass-card rounded-2xl border border-[#c2c6d6]/15 p-8">
+              <h3 className="font-heading font-bold text-lg text-[#131b2e] mb-6">
+                Cold Email Tools & Resources
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Link
+                  href="/cold-email-software"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    Cold Email Software
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    Full platform with verification & warmup
+                  </span>
+                </Link>
+                <Link
+                  href="/email-warmup"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    Email Warmup Tool
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    Improve inbox placement in days
+                  </span>
+                </Link>
+                <Link
+                  href="/email-deliverability"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    Email Deliverability
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    Monitor SPF, DKIM, DMARC & health
+                  </span>
+                </Link>
+                <Link
+                  href="/cold-email-infrastructure"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    BYO AWS SES
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    Own your cold email infrastructure
+                  </span>
+                </Link>
+                <Link
+                  href="/ai-cold-email-generator"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    AI Email Generator
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    AI-powered cold email writing
+                  </span>
+                </Link>
+                <Link
+                  href="/cold-email-for/saas"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    Cold Email by Industry
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    SaaS, agencies, real estate & more
+                  </span>
+                </Link>
+              </div>
+            </div>
+
             {/* CTA Banner */}
             <div className="mt-8 glass-card rounded-3xl border border-[#0058be]/15 p-10 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-[#0058be]/[0.03] via-transparent to-transparent pointer-events-none" />
@@ -185,12 +260,20 @@ export default function BlogIndex() {
                   LeadSnipper gives you BYO AWS SES, built-in verification, domain
                   health monitoring, and intelligent warmup — all in one platform.
                 </p>
-                <Link
-                  href="https://app.leadsnipper.com/signup"
-                  className="btn-primary rounded-full"
-                >
-                  Start free — 1,000 emails, no card →
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Link
+                    href="https://app.leadsnipper.com/signup"
+                    className="btn-primary rounded-full"
+                  >
+                    Start free — 1,000 emails, no card →
+                  </Link>
+                  <Link
+                    href="/cold-email-software"
+                    className="btn-ghost rounded-full"
+                  >
+                    Explore cold email software →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

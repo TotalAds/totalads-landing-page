@@ -76,12 +76,12 @@ export default function TwoWaysSection() {
                 <p className="font-heading font-bold text-2xl text-[#131b2e] mb-4">
                   ₹499 <span className="text-sm font-normal text-[#727785]">/month</span>
                 </p>
-                <Link
-                  href="/products/leadsnipper"
-                  className="btn-primary w-full text-center rounded-full text-sm"
-                >
-                  Explore Products →
-                </Link>
+              <Link
+                href="/cold-email-software"
+                className="btn-primary w-full text-center rounded-full text-sm"
+              >
+                Explore Cold Email Software →
+              </Link>
               </div>
             </div>
           </motion.div>

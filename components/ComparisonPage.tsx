@@ -23,8 +23,13 @@ interface ComparisonPoint {
 }
 
 interface ComparisonPageProps {
-  pageKey: "instantlyAlternative" | "smartleadAlternative";
-  competitor: "Instantly" | "Smartlead";
+  pageKey:
+    | "instantlyAlternative"
+    | "smartleadAlternative"
+    | "apolloAlternative"
+    | "lemlistAlternative"
+    | "mailshakeAlternative";
+  competitor: "Instantly" | "Smartlead" | "Apollo" | "Lemlist" | "Mailshake";
   eyebrow: string;
   headline: string;
   subheadline: string;
@@ -421,6 +426,34 @@ export default function ComparisonPage({
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Cross-links to other alternatives ─── */}
+      <section className="py-12 border-t border-[#c2c6d6]/20">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-6 lg:px-16 text-center">
+          <p className="text-xs font-mono text-[#727785] mb-4 uppercase tracking-widest">
+            Compare other alternatives
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {[
+              { href: "/vs/instantly", label: "Instantly alternative" },
+              { href: "/vs/smartlead", label: "Smartlead alternative" },
+              { href: "/vs/apollo", label: "Apollo alternative" },
+              { href: "/vs/lemlist", label: "Lemlist alternative" },
+              { href: "/vs/mailshake", label: "Mailshake alternative" },
+            ]
+              .filter((link) => !link.href.includes(competitor.toLowerCase()))
+              .map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
+                >
+                  {link.label}
+                </Link>
+              ))}
+          </div>
         </div>
       </section>
 

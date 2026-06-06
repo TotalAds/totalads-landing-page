@@ -25,19 +25,25 @@ export default function Footer() {
       { label: "Pricing", href: "/pricing" },
       { label: "Cost Calculator", href: "/savings-calculator" },
     ],
-    Services: [
-      { label: "AI Automation", href: "/services/ai-automation" },
-      { label: "AI Search (AI SEO)", href: "/services/ai-seo" },
-      { label: "Lead Generation", href: "/services/lead-generation" },
-      { label: "CRM Automation", href: "/services/crm-automation" },
-      { label: "MVP Development", href: "/services/mvp-development" },
-      { label: "All Services →", href: "/services" },
+    "Cold Email": [
+      { label: "Cold Email Software", href: "/cold-email-software" },
+      { label: "Email Warmup Tool", href: "/email-warmup" },
+      { label: "Email Deliverability", href: "/email-deliverability" },
+      { label: "BYO AWS SES", href: "/cold-email-infrastructure" },
+      { label: "AI Email Generator", href: "/ai-cold-email-generator" },
+    ],
+    "Compare": [
+      { label: "vs Instantly", href: "/vs/instantly" },
+      { label: "vs Smartlead", href: "/vs/smartlead" },
+      { label: "vs Apollo", href: "/vs/apollo" },
+      { label: "vs Lemlist", href: "/vs/lemlist" },
+      { label: "vs Mailshake", href: "/vs/mailshake" },
     ],
     Resources: [
       { label: "Blog", href: "/blog" },
+      { label: "SaaS Cold Email", href: "/cold-email-for/saas" },
+      { label: "Agency Cold Email", href: "/cold-email-for/agencies" },
       { label: "Cost Calculator", href: "/savings-calculator" },
-      { label: "vs Instantly", href: "/vs/instantly" },
-      { label: "vs Smartlead", href: "/vs/smartlead" },
       { label: "Contact", href: "/contact" },
     ],
     Company: [
@@ -101,7 +107,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-6 gap-8 pb-12"
+          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 pb-12"
         >
           {/* Brand Column (spans 2) */}
           <div className="col-span-2 pr-8">

@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Clock, Compass } from "lucide-react";
+import { ArrowRight, Clock, Compass } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
@@ -264,6 +264,42 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
               </div>
             )}
 
+            {/* Money page links */}
+            <div className="mt-12 p-5 rounded-xl border border-[#0058be]/10 bg-[#0058be]/[0.02]">
+              <p className="text-xs font-mono text-[#727785] mb-3 uppercase tracking-widest">
+                Explore LeadSnipper
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/cold-email-software"
+                  className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
+                >
+                  Cold email software
+                </Link>
+                <span className="text-[#c2c6d6]">·</span>
+                <Link
+                  href="/email-warmup"
+                  className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
+                >
+                  Email warmup tool
+                </Link>
+                <span className="text-[#c2c6d6]">·</span>
+                <Link
+                  href="/email-deliverability"
+                  className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
+                >
+                  Email deliverability tool
+                </Link>
+                <span className="text-[#c2c6d6]">·</span>
+                <Link
+                  href="/cold-email-infrastructure"
+                  className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
+                >
+                  Cold email infrastructure
+                </Link>
+              </div>
+            </div>
+
             {/* Footer CTA */}
             <footer className="mt-16 pt-8 border-t border-[#c2c6d6]/20">
               <div className="glass-card rounded-2xl border border-[#0058be]/15 p-8 text-center relative overflow-hidden">
@@ -275,7 +311,10 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                   <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
                     LeadSnipper gives you BYO AWS SES, built-in verification,
                     domain health monitoring, and intelligent warmup — all in one
-                    platform.
+                    platform. Explore our{" "}
+                    <Link href="/cold-email-software" className="text-[#0058be] hover:underline">
+                      cold email software
+                    </Link>.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
@@ -285,11 +324,10 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                       Start free — 1,000 emails, no card
                     </Link>
                     <Link
-                      href="/blog"
-                      className="btn-ghost rounded-full text-sm inline-flex items-center justify-center gap-2"
+                      href="/email-warmup"
+                      className="btn-ghost rounded-full text-sm"
                     >
-                      <ArrowLeft className="w-4 h-4" />
-                      Back to Blog
+                      Email warmup tool
                     </Link>
                   </div>
                 </div>

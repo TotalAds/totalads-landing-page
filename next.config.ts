@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/sitemap.xml", destination: "/api/sitemap.xml" },
       { source: "/sitemap-index.xml", destination: "/api/sitemap-index.xml" },
+      { source: "/rss.xml", destination: "/api/rss.xml" },
       {
         source: "/downloads/deliverability-checklist.pdf",
         destination: "/LeadSnipper_Deliverability_Checklist_v2.pdf",

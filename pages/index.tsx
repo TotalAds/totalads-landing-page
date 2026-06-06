@@ -8,6 +8,7 @@ import Footer from "@/components/sections/Footer";
 import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
 import PainSection from "@/components/sections/PainSection";
 import ProductsShowcase from "@/components/sections/ProductsShowcase";
+import SEOLinksSection from "@/components/sections/SEOLinksSection";
 import ServicesBento from "@/components/sections/ServicesBento";
 import TestimonialsSlider from "@/components/sections/TestimonialsSlider";
 import TwoWaysSection from "@/components/sections/TwoWaysSection";
@@ -36,6 +37,9 @@ export default function Home() {
 
       {/* Products Showcase — LeadSnipper + SocialSnipper */}
       <ProductsShowcase />
+
+      {/* SEO Links — Money Pages & Competitor Comparisons */}
+      <SEOLinksSection />
 
       {/* Deliverability Stack Visual */}
       <DeliverabilityStack />

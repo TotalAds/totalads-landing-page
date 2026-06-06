@@ -44,7 +44,10 @@ export default function SocialSnipperProduct() {
 
   return (
     <>
-      <SEO pageKey="socialsnipper" />
+      <SEO
+        pageKey="socialsnipper"
+        structuredDataTypes={["socialSnipperSoftwareApplication"]}
+      />
       <Navbar />
 
       {/* Hero */}

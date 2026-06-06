@@ -39,12 +39,27 @@ export default function CTASection() {
                 Start free — ₹0
               </Link>
               <Link
-                href="https://cal.com/heyrehan/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/cold-email-software"
                 className="btn-ghost btn-hero rounded-full"
               >
-                Book a 30-min call →
+                Explore cold email software →
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <Link href="/email-warmup" className="text-xs text-[#727785] hover:text-[#0058be] transition-colors">
+                Email warmup tool
+              </Link>
+              <span className="text-[#c2c6d6]">·</span>
+              <Link href="/email-deliverability" className="text-xs text-[#727785] hover:text-[#0058be] transition-colors">
+                Email deliverability
+              </Link>
+              <span className="text-[#c2c6d6]">·</span>
+              <Link href="/cold-email-infrastructure" className="text-xs text-[#727785] hover:text-[#0058be] transition-colors">
+                BYO AWS SES
+              </Link>
+              <span className="text-[#c2c6d6]">·</span>
+              <Link href="/ai-cold-email-generator" className="text-xs text-[#727785] hover:text-[#0058be] transition-colors">
+                AI email generator
               </Link>
             </div>
             <p className="text-xs text-[#727785] mt-6">

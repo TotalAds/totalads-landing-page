@@ -62,15 +62,23 @@ export default function ProductsShowcase() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/products/leadsnipper"
-              className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-[#0058be] hover:text-[#2170e4] transition-colors"
-            >
-              Explore LeadSnipper
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/cold-email-software"
+                className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-[#0058be] hover:text-[#2170e4] transition-colors"
+              >
+                Cold Email Software
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/products/leadsnipper"
+                className="inline-flex items-center gap-2 text-sm text-[#727785] hover:text-[#0058be] transition-colors"
+              >
+                Product Overview →
+              </Link>
+            </div>
           </motion.div>
 
           <motion.div
