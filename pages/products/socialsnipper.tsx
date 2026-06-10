@@ -58,19 +58,43 @@ export default function SocialSnipperProduct() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="badge-coming-soon mb-6">COMING SOON</span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#8b5cf6]/10 text-[#8b5cf6] text-sm font-semibold mb-6">
+              SocialSnipper — Live
+            </span>
             <h1 className="font-heading font-extrabold text-[#131b2e] mt-6">
               <span className="block text-3xl md:text-display-lg leading-[1.1] tracking-tight">
                 Stay visible on LinkedIn
               </span>
               <span className="block font-display italic text-[#8b5cf6] text-3xl md:text-display-hero mt-2">
-                without the daily grind.
+                with AI posts and Gemini images.
               </span>
             </h1>
             <p className="text-body-lg text-[#424754] mt-6 max-w-2xl mx-auto leading-relaxed">
-              Schedule posts, research trending content, and let AI help you
-              write — so your emails land and your LinkedIn profile compounds.
+              Free forever for 20 posts/month. Pro from ₹499 with BYOK unlimited images.
+              Business adds advanced images, articles, and advanced analytics.
             </p>
+            <div className="mt-10 grid md:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+              {[
+                { name: "Free", price: "₹0", posts: "20 posts · 5 images" },
+                { name: "Pro", price: "₹499/mo", posts: "50 posts · BYOK unlimited" },
+                { name: "Business", price: "₹999/mo", posts: "200 posts · Articles" },
+              ].map((t) => (
+                <div
+                  key={t.name}
+                  className="p-4 rounded-xl bg-white border border-[#c2c6d6]/30 shadow-sm"
+                >
+                  <p className="font-bold text-[#131b2e]">{t.name}</p>
+                  <p className="text-[#8b5cf6] font-semibold">{t.price}</p>
+                  <p className="text-sm text-[#424754] mt-1">{t.posts}</p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://app.leadsnipper.com/login?product=socialsnipper"
+              className="inline-block mt-8 px-8 py-3 rounded-xl bg-[#8b5cf6] text-white font-semibold"
+            >
+              Start free
+            </a>
           </motion.div>
         </div>
       </section>
