@@ -247,7 +247,7 @@ export default function BlogPost2() {
         </div>
         <div className="bg-gradient-to-br from-[#3b82f6]/5 to-[#22c55e]/5 border border-[#3b82f6]/20 rounded-xl p-6">
           <h3 className="font-bold text-[#1e293b] mb-1">
-            BYO SES Pro — ₹999/month
+            Growth plan with BYO SES — ₹2,499/month
           </h3>
           <p className="text-[#64748b] text-sm mb-3">
             Full control. Your AWS. Your responsibility.
@@ -308,10 +308,11 @@ export default function BlogPost2() {
             ~<strong>$120/month</strong>. Shared infrastructure.
           </li>
           <li>
-            <strong>LeadSnipper BYO SES Pro:</strong> ₹999/month (~$12/month) +
-            AWS SES costs (~$1.50 for 15k emails) ={" "}
-            <strong>~$13.50/month</strong>. Your SES, your quotas; platform
-            tools + verification on top.
+            <strong>LeadSnipper Growth (BYO SES included):</strong> ₹2,499/month
+            (~$50/month) + AWS SES costs (~$1.50 for 15k emails) ={" "}
+            <strong>~$51.50/month</strong>. Your SES, your quotas; platform
+            tools + verification on top. For lower volume, Starter is ₹999/month
+            (~$20/month) and includes 10,000 emails.
           </li>
         </ul>
       </div>

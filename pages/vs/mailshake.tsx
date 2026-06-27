@@ -68,7 +68,7 @@ export default function MailshakeAlternativePage() {
         {
           question: "How does pricing compare to Mailshake?",
           answer:
-            "Mailshake charges per user ($59-99/mo). LeadSnipper starts free, then ₹499-999/mo platform fee plus AWS SES usage (~$0.10/1K emails). At volume, LeadSnipper is typically more cost-effective.",
+            "Mailshake charges per user ($59-99/mo). LeadSnipper starts on a 14-day trial, then ₹999/mo Starter or ₹2,499/mo Growth, plus AWS SES usage (~$0.10/1K emails). At volume, LeadSnipper is typically more cost-effective.",
         },
       ]}
     />

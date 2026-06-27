@@ -47,16 +47,21 @@ export default function RefundPolicyContent() {
       <h2>3. Usage-based credits and add-ons</h2>
       <ul>
         <li>
-          Purchased email credits, verification credits, and similar metered
-          packs are <strong>non-refundable</strong> once used or once a
-          verification job has started.
+          Purchased email send credits and similar metered packs are{" "}
+          <strong>non-refundable</strong> once used or once a send has been
+          initiated.
+        </li>
+        <li>
+          LeadSnipper does not resell email verification. Customers connect
+          their own Reoon account, so verification usage is billed and
+          refunded directly by Reoon under their own terms.
         </li>
         <li>
           Unused promotional credits may expire as stated in the offer.
         </li>
         <li>
-          If a platform error caused failed sends or failed verification jobs, we
-          may credit your account at our discretion after investigation.
+          If a platform error caused failed sends, we may credit your account
+          at our discretion after investigation.
         </li>
       </ul>
 

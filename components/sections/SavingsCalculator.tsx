@@ -21,9 +21,6 @@ interface SavingsCalculatorProps {
 const SES_COST_PER_1000_INR = 0.84;
 const DEFAULT_EMAILS_PER_MONTH = 50000;
 const DEFAULT_CONTACTS = 10000;
-const BYO_FREE_CONTACTS_LIMIT = 1000;
-const BYO_FREE_EMAILS_LIMIT = 2000;
-const BYO_PLATFORM_CHARGE_INR = 999;
 
 type CompetitorPlan = {
   name: string;
@@ -89,22 +86,22 @@ const smartleadPlans: CompetitorPlan[] = [
 
 const managedSesPlans: LeadSnipperManagedPlan[] = [
   {
-    name: "Trial",
-    monthlyInr: 0,
-    monthlyEmails: 1000,
-    contacts: 500,
-  },
-  {
     name: "Starter",
-    monthlyInr: 499,
-    monthlyEmails: 5000,
-    contacts: 3000,
+    monthlyInr: 999,
+    monthlyEmails: 10000,
+    contacts: Number.POSITIVE_INFINITY,
   },
   {
-    name: "Business",
-    monthlyInr: 999,
-    monthlyEmails: 15000,
-    contacts: 10000,
+    name: "Growth",
+    monthlyInr: 2499,
+    monthlyEmails: 100000,
+    contacts: Number.POSITIVE_INFINITY,
+  },
+  {
+    name: "Scale",
+    monthlyInr: 5999,
+    monthlyEmails: 500000,
+    contacts: Number.POSITIVE_INFINITY,
   },
   {
     name: "Custom",
@@ -150,12 +147,7 @@ export default function SavingsCalculator({
     const monthlySesCost =
       (sanitizedEmails / 1000) * SES_COST_PER_1000_INR;
 
-    const platformChargeApplies =
-      sanitizedContacts > BYO_FREE_CONTACTS_LIMIT &&
-      sanitizedEmails > BYO_FREE_EMAILS_LIMIT;
-    const leadsnipperPlatformCharge = platformChargeApplies
-      ? BYO_PLATFORM_CHARGE_INR
-      : 0;
+    const leadsnipperPlatformCharge = 0;
     const leadsnipperMonthlyTotal = leadsnipperPlatformCharge + monthlySesCost;
 
     const instantlyPlan = pickPlan(
@@ -180,7 +172,6 @@ export default function SavingsCalculator({
       sanitizedEmails,
       instantlyPlan,
       smartleadPlan,
-      platformChargeApplies,
       leadsnipperPlatformCharge,
       managedPlan,
       monthlySesCost,
@@ -310,9 +301,9 @@ export default function SavingsCalculator({
               <div className="flex items-center justify-between">
                 <span>Platform charge</span>
                 <span className="font-semibold">
-                  {result.platformChargeApplies
-                    ? `${money(result.leadsnipperPlatformCharge)}/month`
-                    : "Free"}
+                  {result.managedPlan.monthlyInr === null
+                    ? "Custom"
+                    : `${money(result.managedPlan.monthlyInr)}/month`}
                 </span>
               </div>
               <div className="flex items-center justify-between">
@@ -346,11 +337,11 @@ export default function SavingsCalculator({
               </div>
             </div>
             <p className="mt-4 text-xs text-[#475569] leading-relaxed">
-              BYO SES rule: free up to{" "}
-              {BYO_FREE_CONTACTS_LIMIT.toLocaleString("en-IN")} contacts and{" "}
-              {BYO_FREE_EMAILS_LIMIT.toLocaleString("en-IN")} emails/month.{" "}
-              {money(BYO_PLATFORM_CHARGE_INR)}/month applies only when both
-              limits are crossed.
+              LeadSnipper charges a flat platform fee per tier plus AWS SES
+              usage. Match your email volume to Starter (₹999 / 10k emails),
+              Growth (₹2,499 / 100k emails), or Scale (₹5,999 / 500k emails).
+              There is no permanent free tier — only the in-product 14-day
+              trial.
             </p>
           </div>
 
@@ -404,7 +395,7 @@ export default function SavingsCalculator({
             href="https://app.leadsnipper.com/signup"
             className="inline-flex w-full items-center justify-center rounded-xl bg-[#2563eb] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1d4ed8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d4ed8] focus-visible:ring-offset-2"
           >
-            Start saving — try free
+            Start a 14-day trial
           </Link>
           {!compact && (
             <p className="text-center text-xs text-[#64748b]">

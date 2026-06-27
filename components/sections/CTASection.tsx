@@ -36,7 +36,7 @@ export default function CTASection() {
                 href="https://app.leadsnipper.com/signup"
                 className="btn-primary btn-hero rounded-full"
               >
-                Start free — ₹0
+                Start a 14-day trial
               </Link>
               <Link
                 href="/cold-email-software"

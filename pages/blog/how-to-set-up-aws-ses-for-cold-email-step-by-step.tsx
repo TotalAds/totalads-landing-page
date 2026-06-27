@@ -374,9 +374,9 @@ export default function AwsSesSetupGuide() {
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
         Compare this to Instantly at $37-97/month or Smartlead at $39-94/month
-        — all on shared infrastructure. With LeadSnipper Business (₹999/month,
-        ~$12) plus AWS SES, you get dedicated infrastructure at a fraction of
-        the cost. See our full breakdown of{" "}
+        — all on shared infrastructure. With LeadSnipper Starter (₹999/month,
+        ~$20) or Growth (₹2,499/month, ~$50) plus AWS SES, you get dedicated
+        infrastructure at a fraction of the cost. See our full breakdown of{" "}
         <Link href="/blog/byo-aws-ses-vs-shared-email-infrastructure-cold-outreach" className="text-[#3b82f6] font-medium hover:underline">BYO AWS SES vs shared infrastructure</Link>.
       </p>
 

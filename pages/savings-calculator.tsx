@@ -29,9 +29,6 @@ import {
 } from "@/lib/currency";
 
 const SES_COST_PER_1000_INR = 0.84;
-const BYO_FREE_CONTACTS_LIMIT = 1000;
-const BYO_FREE_EMAILS_LIMIT = 2000;
-const BYO_PLATFORM_CHARGE_INR = 999;
 
 type CompetitorPlan = {
   name: string;
@@ -61,9 +58,9 @@ const smartleadPlans: CompetitorPlan[] = [
 ];
 
 const managedPlans: ManagedPlan[] = [
-  { name: "Trial", monthlyInr: 0, monthlyEmails: 1000, contacts: 500 },
-  { name: "Starter", monthlyInr: 499, monthlyEmails: 5000, contacts: 3000 },
-  { name: "Business", monthlyInr: 999, monthlyEmails: 15000, contacts: 10000 },
+  { name: "Starter", monthlyInr: 999, monthlyEmails: 10000, contacts: Number.POSITIVE_INFINITY },
+  { name: "Growth", monthlyInr: 2499, monthlyEmails: 100000, contacts: Number.POSITIVE_INFINITY },
+  { name: "Scale", monthlyInr: 5999, monthlyEmails: 500000, contacts: Number.POSITIVE_INFINITY },
   { name: "Custom", monthlyInr: null, monthlyEmails: Number.POSITIVE_INFINITY, contacts: Number.POSITIVE_INFINITY },
 ];
 
@@ -96,13 +93,11 @@ export default function SavingsCalculatorPage() {
     const c = Math.max(0, contacts || 0);
     const e = Math.max(0, emails || 0);
     const sesCost = (e / 1000) * SES_COST_PER_1000_INR;
-    const platformApplies = c > BYO_FREE_CONTACTS_LIMIT && e > BYO_FREE_EMAILS_LIMIT;
-    const platformCharge = platformApplies ? BYO_PLATFORM_CHARGE_INR : 0;
-    const byoMonthly = platformCharge + sesCost;
-
     const instantlyPlan = pickPlan(instantlyPlans, c, e);
     const smartleadPlan = pickPlan(smartleadPlans, c, e);
     const managedPlan = pickManaged(c, e);
+    const platformCharge = managedPlan.monthlyInr ?? 0;
+    const byoMonthly = platformCharge + sesCost;
 
     const instantlyYearly = usdToInr(instantlyPlan.monthlyUsd) * 12;
     const smartleadYearly = usdToInr(smartleadPlan.monthlyUsd) * 12;
@@ -111,7 +106,7 @@ export default function SavingsCalculatorPage() {
 
     return {
       c, e, sesCost,
-      platformApplies, platformCharge, byoMonthly,
+      platformCharge, byoMonthly,
       instantlyPlan, smartleadPlan, managedPlan,
       instantlyYearly, smartleadYearly, byoYearly, managedYearly,
       savingsByoVsInstantly: instantlyYearly - byoYearly,
@@ -290,7 +285,7 @@ export default function SavingsCalculatorPage() {
                     <div className="rounded-xl bg-white/80 border border-[#c2c6d6]/20 p-3 text-center">
                       <p className="text-[10px] font-mono text-[#727785] uppercase">Platform</p>
                       <p className="font-heading font-bold text-sm text-[#131b2e] mt-0.5">
-                        {result.platformApplies ? money(result.platformCharge) : "Free"}
+                        {result.managedPlan.monthlyInr === null ? "Custom" : money(result.platformCharge)}
                       </p>
                       <p className="text-[10px] text-[#727785]">/month</p>
                     </div>
@@ -386,7 +381,7 @@ export default function SavingsCalculatorPage() {
                   href="https://app.leadsnipper.com/signup"
                   className="btn-primary rounded-full text-sm flex-1 text-center inline-flex items-center justify-center gap-2"
                 >
-                  Start saving — free to try
+                  Start a 14-day trial
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
@@ -443,13 +438,15 @@ export default function SavingsCalculatorPage() {
                 </div>
               </div>
               <div className="glass-card rounded-2xl border border-[#10b981]/20 bg-[#10b981]/[0.02] p-5">
-                <p className="text-[10px] font-mono text-[#10b981] uppercase tracking-wider mb-3">LeadSnipper BYO rule</p>
+                <p className="text-[10px] font-mono text-[#10b981] uppercase tracking-wider mb-3">LeadSnipper plans</p>
                 <p className="text-xs text-[#424754] leading-relaxed">
-                  Free up to <strong>1,000 contacts</strong> and <strong>2,000 emails/month</strong>.
+                  Three paid plans on AWS SES:
                 </p>
-                <p className="text-xs text-[#424754] leading-relaxed mt-2">
-                  ₹999/month platform fee when both limits are exceeded.
-                </p>
+                <ul className="text-xs text-[#424754] leading-relaxed mt-2 space-y-1">
+                  <li><strong>Starter</strong> — ₹999/mo · 10k emails</li>
+                  <li><strong>Growth</strong> — ₹2,499/mo · 100k emails</li>
+                  <li><strong>Scale</strong> — ₹5,999/mo · 500k emails</li>
+                </ul>
                 <p className="text-xs text-[#424754] leading-relaxed mt-2">
                   AWS SES: ~$0.10 per 1,000 emails — paid directly to AWS.
                 </p>

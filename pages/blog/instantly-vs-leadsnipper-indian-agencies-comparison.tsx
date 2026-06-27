@@ -30,7 +30,7 @@ export default function InstantlyVsLeadSnipperIndia() {
         single seat.
       </p>
       <p className="text-[#475569] leading-relaxed mb-4">
-        LeadSnipper charges in INR. Business plan is ₹999/month. No forex fees.
+        LeadSnipper charges in INR. Starter plan is ₹999/month, Growth is ₹2,499/month. No forex fees.
         Clean GST invoices. And you get BYO AWS SES on top — meaning your actual
         sending costs drop to roughly $0.10 per 1,000 emails instead of
         whatever margin Instantly builds into their shared infrastructure.
@@ -51,7 +51,7 @@ export default function InstantlyVsLeadSnipperIndia() {
             <tr className="border-b border-[#f0f0f0]">
               <td className="py-2">Platform Fee</td>
               <td>₹3,100/month</td>
-              <td className="font-medium text-[#3b82f6]">₹999/month</td>
+              <td className="font-medium text-[#3b82f6]">₹2,499/month</td>
             </tr>
             <tr className="border-b border-[#f0f0f0]">
               <td className="py-2">Forex + Bank Fees</td>

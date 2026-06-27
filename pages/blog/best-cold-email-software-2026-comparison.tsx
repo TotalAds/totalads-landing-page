@@ -175,10 +175,10 @@ export default function BestColdEmailSoftware() {
         </div>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        <strong>Pricing:</strong> Free trial (1,000 emails). Starter at
-        ₹499/month (~$6). Business at ₹999/month (~$12). AWS SES adds ~$0.10
-        per 1,000 emails. Total cost for 15,000 emails/month:{" "}
-        <strong>~$13.50</strong> with dedicated infrastructure and built-in
+        <strong>Pricing:</strong> 14-day trial (1,000 emails). Starter at
+        ₹999/month (~$20). Growth at ₹2,499/month (~$50). AWS SES adds ~$0.10
+        per 1,000 emails. Total cost for 15,000 emails/month on Starter:{" "}
+        <strong>~$21.50</strong> with dedicated infrastructure and built-in
         verification.
       </p>
 
@@ -212,7 +212,7 @@ export default function BestColdEmailSoftware() {
               ["AI email writer", "Basic", "Basic", "Knowledge-base trained"],
               ["Multi-day pacing", "Manual", "Manual", "Automatic"],
               ["PDF reports", "No", "Add-on", "Built-in"],
-              ["Starting price", "$37/mo", "$39/mo", "Free (then ₹499/mo)"],
+              ["Starting price", "$37/mo", "$39/mo", "14-day trial (then ₹999/mo)"],
               ["Infrastructure", "Shared", "Shared", "Dedicated (BYO SES)"],
             ].map(([feature, instantly, smartlead, leadsnipper], i) => (
               <tr

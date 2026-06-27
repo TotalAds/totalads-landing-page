@@ -11,7 +11,7 @@ export const seoConfig = {
     "LeadSnipper — Cold Email at Scale Without Burning Your Domain",
   titleTemplate: "%s | LeadSnipper",
   defaultDescription:
-    "LeadSnipper is the cold email platform built on AWS SES. Bring your own sending infrastructure, verify leads with Reoon, warm up domains, and send campaigns that land in the inbox — not spam. Start free.",
+    "LeadSnipper is the cold email platform built on AWS SES. Verify leads with Reoon, warm up domains, and send campaigns that land in the inbox — not spam. Start a 14-day trial.",
 
   defaultOpenGraph: {
     type: "website",
@@ -103,24 +103,24 @@ export interface PageConfig {
 export const pageConfigs: Record<string, PageConfig> = {
   home: {
     title:
-      "Cold Email Software That Sends 10,000+ Emails Without Hitting Spam",
+      "LeadSnipper — Deliverability-First Cold Email Platform (Instantly Alternative)",
     description:
-      "LeadSnipper is cold email software built on AWS SES. Capture more qualified leads, verify contacts before sending, warm up domains, and automate outreach that lands in the inbox — not spam. Start free, no credit card required.",
+      "LeadSnipper is a deliverability-first cold email platform that helps businesses send from infrastructure they control — Google Workspace, Microsoft 365, SMTP, or AWS SES — with intelligent reputation protection, AI-powered personalization, and advanced campaign automation. Own your email infrastructure.",
     keywords:
-      "cold email platform, cold email software, email outreach tool, AWS SES cold email, BYO SES, email deliverability, domain reputation, email warmup, email verification, cold email at scale, bulk email sender, email campaign tool, sender reputation, inbox placement, cold outreach, Instantly alternative, Smartlead alternative, cold email infrastructure",
+      "deliverability-first cold email platform, cold email software, Instantly alternative, Smartlead alternative, email outreach tool, email deliverability, sender reputation, domain reputation, inbox placement, email warmup, email verification, AI personalization, BYO SES, AWS SES cold email, cold email infrastructure, bulk cold email, cold outreach platform, cold email at scale",
     canonical: "https://leadsnipper.com",
     openGraph: {
       title:
-        "LeadSnipper — Cold Email at Scale Without Burning Your Domain",
+        "LeadSnipper — Deliverability-First Cold Email Platform",
       description:
-        "Own your sending infrastructure with BYO AWS SES. Built-in email verification, domain health monitoring, intelligent warmup, and campaigns that land in the inbox.",
+        "Own your email infrastructure. Send from Google Workspace, Microsoft 365, SMTP, or AWS SES — with intelligent reputation protection, AI personalization, and advanced analytics.",
       url: "https://leadsnipper.com",
       images: [
         {
           url: "https://leadsnipper.com/og-home.png",
           width: 1200,
           height: 630,
-          alt: "LeadSnipper — Cold email platform with BYO AWS SES, email warmup, and verification",
+          alt: "LeadSnipper — Deliverability-first cold email platform that protects your domains automatically",
         },
       ],
     },
@@ -162,7 +162,7 @@ export const pageConfigs: Record<string, PageConfig> = {
     title:
       "Best Instantly Alternative for Agencies in 2026",
     description:
-      "Compare LeadSnipper with Instantly for cold email. BYO AWS SES, built-in Reoon verification, domain health monitoring, and lower sending costs — see how it stacks up. Start free, no credit card required.",
+      "Compare LeadSnipper with Instantly for cold email. BYO AWS SES, built-in Reoon verification, domain health monitoring, and lower sending costs — see how it stacks up. Start a 14-day trial.",
     keywords:
       "Instantly alternative, Instantly competitor, LeadSnipper vs Instantly, cold email software alternative, Instantly pricing alternative, BYO AWS SES cold email, cold email deliverability tool, email verification cold outreach",
     canonical: "https://leadsnipper.com/vs/instantly",
@@ -258,16 +258,16 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   pricing: {
-    title: "Pricing — LeadSnipper | From ₹0 to Enterprise Cold Email",
+    title: "Pricing — LeadSnipper | Three Paid Plans, Dual INR/USD",
     description:
-      "LeadSnipper pricing plans starting free. Starter at ₹499/mo, Business at ₹999/mo, and Enterprise with BYO AWS SES, unlimited domains, and advanced analytics. No credit card required.",
+      "LeadSnipper pricing for deliverability-first cold email teams. Starter at ₹999/mo ($19), Growth at ₹2,499/mo ($49), Scale at ₹5,999/mo ($119). Built on AWS SES with mailbox-aware limits. Start a 14-day trial.",
     keywords:
-      "LeadSnipper pricing, cold email pricing, email outreach cost, AWS SES pricing plan, cold email platform price, BYO SES plan",
+      "LeadSnipper pricing, cold email pricing, email outreach cost, AWS SES pricing plan, cold email platform price, mailbox limits, dual currency pricing",
     canonical: "https://leadsnipper.com/pricing",
     openGraph: {
-      title: "LeadSnipper Pricing — Cold Email From ₹0",
+      title: "LeadSnipper Pricing — Three Plans, Dual INR/USD",
       description:
-        "Start free or pick a plan that scales with your outreach. Starter ₹499/mo, Business ₹999/mo, Enterprise custom.",
+        "Pick a plan that scales with your outreach. Starter ₹999/mo ($19), Growth ₹2,499/mo ($49), Scale ₹5,999/mo ($119).",
       url: "https://leadsnipper.com/pricing",
     },
   },
@@ -275,7 +275,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   leadsnipper: {
     title: "Cold Email Infrastructure Built on AWS SES",
     description:
-      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES with domain health, warmup, verification, and campaigns in one platform. Start free — no credit card required.",
+      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES with domain health, warmup, verification, and campaigns in one platform. Start a 14-day trial.",
     keywords:
       "LeadSnipper product, cold email platform, AWS SES email, BYO SES, email warmup, domain health, email verification, cold email campaigns",
     canonical: "https://leadsnipper.com/products/leadsnipper",
@@ -305,7 +305,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   coldEmailSoftware: {
     title: "Cold Email Software That Sends 10,000+ Emails Without Hitting Spam",
     description:
-      "LeadSnipper is cold email software built on AWS SES. Automate outreach, verify leads, warm up domains, and track deliverability — all in one platform. Start free, no credit card required.",
+      "LeadSnipper is cold email software built on AWS SES. Automate outreach, verify leads, warm up domains, and track deliverability — all in one platform. Start a 14-day trial.",
     keywords:
       "cold email software, cold email automation software, best cold email software 2026, cold email outreach software, bulk cold email software, cold email platform, cold email sender, cold email tool",
     canonical: "https://leadsnipper.com/cold-email-software",
@@ -335,7 +335,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   emailDeliverability: {
     title: "Email Deliverability Tool for Better Inbox Placement",
     description:
-      "Monitor SPF, DKIM, DMARC, bounce rates, and complaint signals in one dashboard. LeadSnipper's email deliverability tool helps you fix issues before they hurt campaigns. Start free.",
+      "Monitor SPF, DKIM, DMARC, bounce rates, and complaint signals in one dashboard. LeadSnipper's email deliverability tool helps you fix issues before they hurt campaigns. Start a 14-day trial.",
     keywords:
       "email deliverability tool, inbox placement tool, email deliverability software, domain health monitoring, SPF DKIM DMARC checker, cold email deliverability, sender reputation tool",
     canonical: "https://leadsnipper.com/email-deliverability",
@@ -350,7 +350,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   coldEmailInfrastructure: {
     title: "Cold Email Infrastructure Built on AWS SES You Control",
     description:
-      "Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification and warmup. Start free.",
+      "Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification and warmup. Start a 14-day trial.",
     keywords:
       "cold email infrastructure, BYO SES cold email, AWS SES cold email, cold email sending infrastructure, dedicated email infrastructure, cold email platform infrastructure",
     canonical: "https://leadsnipper.com/cold-email-infrastructure",
@@ -365,7 +365,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   aiColdEmailGenerator: {
     title: "AI Cold Email Software That Writes & Sends at Scale",
     description:
-      "Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and warmup. Start free — no credit card required.",
+      "Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and warmup. Start a 14-day trial.",
     keywords:
       "AI cold email software, AI cold email generator, AI email writer cold outreach, AI cold email tool, automated cold email AI, AI email copywriting cold outreach",
     canonical: "https://leadsnipper.com/ai-cold-email-generator",
@@ -380,7 +380,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   apolloAlternative: {
     title: "Best Apollo Alternative for Cold Email in 2026",
     description:
-      "Looking for an Apollo alternative focused on cold email deliverability? LeadSnipper offers BYO AWS SES, built-in verification, domain warmup, and campaign analytics without shared infrastructure. Start free.",
+      "Looking for an Apollo alternative focused on cold email deliverability? LeadSnipper offers BYO AWS SES, built-in verification, domain warmup, and campaign analytics without shared infrastructure. Start a 14-day trial.",
     keywords:
       "Apollo alternative, Apollo.io alternative, Apollo competitor cold email, LeadSnipper vs Apollo, cold email software alternative, Apollo pricing alternative",
     canonical: "https://leadsnipper.com/vs/apollo",
@@ -395,7 +395,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   lemlistAlternative: {
     title: "Best Lemlist Alternative for Cold Email Deliverability",
     description:
-      "Compare LeadSnipper with Lemlist for cold email. Get BYO AWS SES, built-in Reoon verification, domain health monitoring, and simpler pricing for deliverability-first outbound. Start free.",
+      "Compare LeadSnipper with Lemlist for cold email. Get BYO AWS SES, built-in Reoon verification, domain health monitoring, and simpler pricing for deliverability-first outbound. Start a 14-day trial.",
     keywords:
       "Lemlist alternative, Lemlist competitor, LeadSnipper vs Lemlist, cold email software alternative, Lemlist pricing alternative, email deliverability tool",
     canonical: "https://leadsnipper.com/vs/lemlist",
@@ -500,39 +500,39 @@ export const structuredData = {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "INR",
-      lowPrice: "0",
-      highPrice: "999",
+      lowPrice: "999",
+      highPrice: "5999",
       offerCount: "3",
       offers: [
         {
           "@type": "Offer",
-          name: "Free Trial",
-          price: "0",
-          priceCurrency: "INR",
-          url: "https://app.leadsnipper.com/signup",
-          availability: "https://schema.org/InStock",
-          description:
-            "Free trial with 1,000 emails, 500 contacts, basic analytics, and API access.",
-        },
-        {
-          "@type": "Offer",
           name: "Starter",
-          price: "499",
-          priceCurrency: "INR",
-          url: "https://app.leadsnipper.com/signup",
-          availability: "https://schema.org/InStock",
-          description:
-            "Starter cold email plan with 5,000 emails, 3,000 contacts, custom domain, warmup, analytics, and 3 domains.",
-        },
-        {
-          "@type": "Offer",
-          name: "Business",
           price: "999",
           priceCurrency: "INR",
           url: "https://app.leadsnipper.com/signup",
           availability: "https://schema.org/InStock",
           description:
-            "Business cold email plan with 15,000 emails, 10,000 contacts, unlimited domains, unlimited warmup, and advanced analytics.",
+            "Starter cold email plan with 10 sending mailboxes, 10,000 emails per month, custom domain sending, warmup, AI email writer, and use your Reoon account for verification.",
+        },
+        {
+          "@type": "Offer",
+          name: "Growth",
+          price: "2499",
+          priceCurrency: "INR",
+          url: "https://app.leadsnipper.com/signup",
+          availability: "https://schema.org/InStock",
+          description:
+            "Growth cold email plan with 50 sending mailboxes, 100,000 emails per month, unlimited custom domains, unlimited warmup, smart scheduling, advanced analytics, and priority support.",
+        },
+        {
+          "@type": "Offer",
+          name: "Scale",
+          price: "5999",
+          priceCurrency: "INR",
+          url: "https://leadsnipper.com/contact",
+          availability: "https://schema.org/InStock",
+          description:
+            "Scale cold email plan with unlimited sending mailboxes, 500,000 emails per month, dedicated SES setup, custom API integrations, dedicated CSM, and SLA-backed deliverability.",
         },
       ],
     },
@@ -559,8 +559,8 @@ export const structuredData = {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "INR",
-      lowPrice: "0",
-      highPrice: "999",
+      lowPrice: "999",
+      highPrice: "5999",
       offerCount: "3",
       url: "https://leadsnipper.com/#pricing",
     },

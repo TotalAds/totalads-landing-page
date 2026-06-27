@@ -93,6 +93,7 @@ const serviceItems = [
 const moreItems = [
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Services", href: "/services" },
   { label: "Cost Calculator", href: "/savings-calculator" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -102,7 +103,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [coldEmailOpen, setColdEmailOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [tryNowOpen, setTryNowOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -204,59 +204,6 @@ const Navbar = () => {
                         </div>
                       </Link>
                     ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Services Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button className="inline-flex items-center gap-1 px-3 py-2 text-sm font-heading font-semibold text-[#424754] hover:text-[#131b2e] transition-colors rounded-lg hover:bg-[#f2f3ff]">
-              Services
-              <ChevronDown
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-            <AnimatePresence>
-              {servicesOpen && (
-                <motion.div
-                  className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[460px] z-50"
-                  initial={{ opacity: 0, y: -4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <div className="rounded-2xl border border-[#c2c6d6]/30 bg-white shadow-xl p-3">
-                    <p className="px-3 py-1.5 text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest">
-                      Done-for-you Services
-                    </p>
-                    <div className="grid grid-cols-2 gap-1">
-                      {serviceItems.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 hover:bg-[#f2f3ff] transition-colors text-sm font-heading font-medium text-[#424754] hover:text-[#131b2e]"
-                        >
-                          <span className="text-[#727785]">{item.icon}</span>
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                    <div className="mt-2 pt-2 border-t border-[#c2c6d6]/20 px-3">
-                      <Link
-                        href="https://cal.com/heyrehan/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
-                      >
-                        Book free audit →
-                      </Link>
-                    </div>
                   </div>
                 </motion.div>
               )}
@@ -507,24 +454,6 @@ const Navbar = () => {
                     </Link>
                   ))}
                 </div>
-              </div>
-
-              {/* Services Section */}
-              <p className="text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest px-3 pt-6 pb-2">
-                Services
-              </p>
-              <div className="grid grid-cols-2 gap-1">
-                {serviceItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-[#f2f3ff] transition-colors text-sm font-heading font-medium text-[#424754]"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="text-[#727785]">{item.icon}</span>
-                    {item.label}
-                  </Link>
-                ))}
               </div>
 
               {/* More Links */}

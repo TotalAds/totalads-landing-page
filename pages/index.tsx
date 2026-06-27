@@ -1,18 +1,21 @@
 import React from "react";
 
+import CampaignHealthScore from "@/components/sections/CampaignHealthScore";
 import ChecklistLeadCaptureSystem from "@/components/sections/ChecklistLeadCaptureSystem";
 import CTASection from "@/components/sections/CTASection";
 import DeliverabilityStack from "@/components/sections/DeliverabilityStack";
 import FAQSection from "@/components/sections/FAQSection";
+import FeaturedInBar from "@/components/sections/FeaturedInBar";
 import Footer from "@/components/sections/Footer";
 import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
+import InboxIntegrationsSection from "@/components/sections/InboxIntegrationsSection";
+import ManagedServicesSection from "@/components/sections/ManagedServicesSection";
 import PainSection from "@/components/sections/PainSection";
-import ProductsShowcase from "@/components/sections/ProductsShowcase";
-import SEOLinksSection from "@/components/sections/SEOLinksSection";
-import ServicesBento from "@/components/sections/ServicesBento";
+import PricingSection from "@/components/sections/PricingSection";
+import SimplicitySection from "@/components/sections/SimplicitySection";
 import TestimonialsSlider from "@/components/sections/TestimonialsSlider";
-import TwoWaysSection from "@/components/sections/TwoWaysSection";
-import VisionSection from "@/components/sections/VisionSection";
+import TrustStrip from "@/components/sections/TrustStrip";
+import FeaturesGrid from "@/components/sections/TwoWaysSection";
 import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 
@@ -24,34 +27,43 @@ export default function Home() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero — Centered layout with dot-grid & radial glow */}
+      {/* Hero — Own Your Email Infrastructure */}
       <section className="hero-bg dot-grid pt-24 md:pt-32">
         <HeroScrollAnimation />
       </section>
 
-      {/* Problem — The Reality */}
+      {/* Trust Strip — real company logos */}
+      <TrustStrip />
+
+      {/* Featured In — wordmarks + segment pills */}
+      <FeaturedInBar />
+
+      {/* Problem — Before / After */}
       <PainSection />
 
-      {/* Two Ways to Work */}
-      <TwoWaysSection />
-
-      {/* Products Showcase — LeadSnipper + SocialSnipper */}
-      <ProductsShowcase />
-
-      {/* SEO Links — Money Pages & Competitor Comparisons */}
-      <SEOLinksSection />
-
-      {/* Deliverability Stack Visual */}
+      {/* Solution — Flagship: Intelligent Deliverability Protection */}
       <DeliverabilityStack />
 
-      {/* Services Bento Grid */}
-      <ServicesBento />
+      {/* Campaign Health Score — live deliverability dashboard */}
+      <CampaignHealthScore />
+
+      {/* Features — Connect / Send / Protect / Measure */}
+      <FeaturesGrid />
+
+      {/* Inbox Integrations — Gmail / Outlook / SMTP + Campaign Guardrails */}
+      <InboxIntegrationsSection />
+
+      {/* From Zero to Sending — 4-step onboarding */}
+      <SimplicitySection />
+
+      {/* Add-on Support Services + Premium Managed AWS SES */}
+      <ManagedServicesSection />
+
+      {/* Pricing — Starter / Growth / Scale */}
+      <PricingSection />
 
       {/* Testimonials */}
       <TestimonialsSlider />
-
-      {/* Vision — Why Build With Us */}
-      <VisionSection />
 
       {/* FAQ */}
       <FAQSection />

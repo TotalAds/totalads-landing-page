@@ -5,6 +5,26 @@ export interface FAQItem {
 
 export const homepageFaqs: FAQItem[] = [
   {
+    question: "Can I use my existing Gmail or Microsoft 365 account?",
+    answer:
+      "Absolutely — that's the primary way most teams use LeadSnipper. Connect any Google Workspace inbox or Microsoft 365 / Outlook account via OAuth in one click. No passwords stored. You're authenticated and sending in under 5 minutes. Custom SMTP / IMAP (Zoho, Fastmail, GoDaddy, corporate mail servers) is also fully supported and takes about 10 minutes to configure.",
+  },
+  {
+    question: "What email guardrails protect my sender reputation?",
+    answer:
+      "Four systems run automatically on every campaign. (1) Sequencing: multi-step follow-ups fire only when prospects haven't replied — zero manual work. (2) Spintax: randomizes subject lines and copy with {Hey|Hello|Hi} syntax so each recipient gets a unique variant, defeating spam filters that catch identical templates. (3) Bounce auto-pause: the moment a hard bounce is detected, the campaign halts and you're alerted — no overnight domain burning. (4) Granular daily caps: set per-mailbox and per-domain daily send limits, spread intelligently across all connected inboxes via inbox rotation.",
+  },
+  {
+    question: "Do you offer help setting up Google Workspace or Microsoft 365?",
+    answer:
+      "Yes — we offer hands-on workspace support as an add-on. This includes creating brand-new Google Workspace accounts, configuring DNS (MX, SPF, DKIM, DMARC), and having inboxes ready to connect in LeadSnipper. We also troubleshoot existing connection issues (OAuth failures, SMTP auth errors, Cloudflare conflicts) and handle Microsoft 365 account blocks and Outlook sending restrictions — including the appeal, remediation, and re-connection.",
+  },
+  {
+    question: "What is the Premium Managed AWS SES service?",
+    answer:
+      "This is our done-for-you infrastructure tier. We connect your sending domains to our enterprise AWS SES setup — dedicated IPs, sending limit increases, bounce management, and ongoing deliverability monitoring all included. You keep your brand and domains; we own the infrastructure. Ideal for agencies and high-volume teams sending 100,000–500,000+ emails/month who don't want an in-house DevOps team managing AWS. Priced as a flat monthly retainer with no per-email markup. Book a call to get a quote.",
+  },
+  {
     question: "Why should I use LeadSnipper instead of Instantly?",
     answer:
       "Instantly is solid for getting started. But they own your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper, you bring your own AWS SES. You own your reputation, your deliverability, your data. Plus, we have built-in Reoon email verification, AI-powered warmup, and a domain health dashboard that Instantly doesn't offer.",
