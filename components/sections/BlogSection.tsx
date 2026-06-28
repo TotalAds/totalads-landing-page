@@ -3,7 +3,7 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-import { blogPosts } from "@/lib/blog";
+import { blogPosts, formatDateLong } from "@/lib/blog";
 
 const categoryColors: Record<string, string> = {
   Deliverability: "bg-[#22c55e]/10 text-[#16a34a]",
@@ -83,11 +83,7 @@ export default function BlogSection() {
                       dateTime={post.date}
                       className="text-xs text-[#94a3b8]"
                     >
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
+                      {formatDateLong(post.date)}
                     </time>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#3b82f6] group-hover:gap-2 transition-all">
                       Read more

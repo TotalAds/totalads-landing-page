@@ -1,4 +1,5 @@
 import { ArrowRight, Clock, Star } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -10,6 +11,7 @@ import {
   type BlogPost,
   blogPosts,
   clusterMeta,
+  formatDate,
 } from "@/lib/blog";
 
 const categoryColors: Record<string, string> = {
@@ -31,14 +33,29 @@ function PostCard({ post, featured = false }: { post: BlogPost; featured?: boole
       }`}
     >
       <Link href={`/blog/${post.slug}`} className="block">
-        {/* Top accent bar */}
-        <div
-          className={`h-1.5 ${
-            featured
-              ? "bg-gradient-to-r from-[#0058be] via-[#8b5cf6] to-[#10b981]"
-              : "bg-gradient-to-r from-[#0058be] to-[#8b5cf6]"
-          }`}
-        />
+        {/* Hero image thumbnail */}
+        {post.heroImage ? (
+          <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16/7" }}>
+            <Image
+              src={post.heroImage.src}
+              alt={post.heroImage.alt}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
+          </div>
+        ) : (
+          /* Top accent bar for posts without images */
+          <div
+            className={`h-1.5 ${
+              featured
+                ? "bg-gradient-to-r from-[#0058be] via-[#8b5cf6] to-[#10b981]"
+                : "bg-gradient-to-r from-[#0058be] to-[#8b5cf6]"
+            }`}
+          />
+        )}
         <div className="p-6">
           <div className="flex items-center gap-3 mb-4">
             <span
@@ -85,11 +102,7 @@ function PostCard({ post, featured = false }: { post: BlogPost; featured?: boole
               dateTime={post.date}
               className="text-[10px] font-mono text-[#727785]"
             >
-              {new Date(post.date).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              })}
+              {formatDate(post.date)}
             </time>
           </div>
 
@@ -170,6 +183,7 @@ export default function BlogIndex() {
           <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16">
             <ClusterSection cluster="infrastructure" />
             <ClusterSection cluster="deliverability" />
+            <ClusterSection cluster="comparison" />
 
             {/* Cold Email Tools Section */}
             <div className="mt-12 mb-12 glass-card rounded-2xl border border-[#c2c6d6]/15 p-8">

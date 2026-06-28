@@ -192,16 +192,16 @@ export const pageConfigs: Record<string, PageConfig> = {
 
   blog: {
     title:
-      "Cold Email Blog — Deliverability, Infrastructure & Outbound Strategy",
+      "Cold Email Blog — Deliverability, Comparisons & Outbound Strategy",
     description:
-      "Learn cold email best practices, email deliverability strategies, domain health tips, and outbound sales techniques. Practical guides from the LeadSnipper team. Start applying them today.",
+      "Learn cold email best practices, compare tools like Lemlist, Smartlead, Mailshake and Apollo alternatives, and master email deliverability. Practical guides from the LeadSnipper team.",
     keywords:
-      "cold email blog, email deliverability tips, cold outreach guide, email warmup guide, domain reputation blog, cold email best practices, outbound email strategy, BYO SES guide, email verification tips",
+      "cold email blog, lemlist alternatives, smartlead alternatives, mailshake alternatives, apollo alternative cold email, amazon ses pricing 2026, email deliverability tips, cold outreach guide, email warmup guide, domain reputation blog, cold email best practices, outbound email strategy, BYO SES guide, email verification tips",
     canonical: "https://leadsnipper.com/blog",
     openGraph: {
-      title: "LeadSnipper Blog — Cold Email & Deliverability Guides",
+      title: "LeadSnipper Blog — Cold Email Guides, Tool Comparisons & Deliverability",
       description:
-        "Practical cold email guides, deliverability strategies, and outbound tips from the LeadSnipper team.",
+        "Practical cold email guides, tool comparisons (Lemlist, Smartlead, Mailshake), deliverability strategies, and outbound tips from the LeadSnipper team.",
       url: "https://leadsnipper.com/blog",
     },
   },

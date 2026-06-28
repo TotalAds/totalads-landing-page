@@ -1,4 +1,4 @@
-export type BlogCluster = "infrastructure" | "deliverability";
+export type BlogCluster = "infrastructure" | "deliverability" | "comparison";
 export type ClusterRole = "hub" | "spoke" | "bridge";
 
 export interface BlogPost {
@@ -14,6 +14,12 @@ export interface BlogPost {
   cluster: BlogCluster;
   clusterRole: ClusterRole;
   relatedSlugs: string[];
+  /** SEO-friendly hero image from Unsplash — always include descriptive alt text */
+  heroImage?: {
+    src: string;
+    alt: string;
+    credit?: string;
+  };
 }
 
 export const blogPosts: BlogPost[] = [
@@ -33,6 +39,11 @@ export const blogPosts: BlogPost[] = [
     category: "Comparison",
     cluster: "infrastructure",
     clusterRole: "bridge",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
+      alt: "Agency team discussing Instantly vs LeadSnipper cold email tools in India",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "best-cold-email-software-2026-comparison",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
@@ -55,6 +66,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=1200&q=80",
+      alt: "Spam folder containing cold outreach emails",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "domain-reputation-management-protect-sender-score",
       "email-list-cleaning-why-verification-prevents-bounce-disasters",
@@ -77,6 +93,11 @@ export const blogPosts: BlogPost[] = [
     category: "Strategy",
     cluster: "infrastructure",
     clusterRole: "bridge",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+      alt: "Outbound sales stack dashboard showing metrics and analytics",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
@@ -99,6 +120,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80",
+      alt: "Sales professional analyzing declining open rates chart",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "domain-reputation-management-protect-sender-score",
       "email-list-cleaning-why-verification-prevents-bounce-disasters",
@@ -121,6 +147,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "infrastructure",
     clusterRole: "hub",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+      alt: "Sending cold emails at scale from server infrastructure without getting blacklisted",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
       "cold-email-vs-newsletter-tools-why-mailchimp-wont-work",
@@ -145,6 +176,11 @@ export const blogPosts: BlogPost[] = [
     category: "Infrastructure",
     cluster: "infrastructure",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=1200&q=80",
+      alt: "Cloud datacenter showing infrastructure for BYO AWS SES cold email",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
@@ -167,6 +203,11 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
+      alt: "Domain health monitoring dashboard showing deliverability metrics",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "domain-reputation-management-protect-sender-score",
       "cold-email-open-rate-dropping-fix-domain-reputation",
@@ -189,6 +230,11 @@ export const blogPosts: BlogPost[] = [
     category: "Comparison",
     cluster: "infrastructure",
     clusterRole: "bridge",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+      alt: "Best cold email software comparison chart",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
@@ -211,6 +257,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "hub",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+      alt: "Shield symbol on a computer representing domain reputation protection",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "email-warmup-verification-domain-health-complete-guide",
       "cold-email-open-rate-dropping-fix-domain-reputation",
@@ -235,6 +286,11 @@ export const blogPosts: BlogPost[] = [
     category: "Strategy",
     cluster: "infrastructure",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80",
+      alt: "Comparison representation of cold email vs newsletter tools",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
@@ -257,6 +313,11 @@ export const blogPosts: BlogPost[] = [
     category: "Tutorial",
     cluster: "infrastructure",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80",
+      alt: "Developer configuring AWS SES settings",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
@@ -279,6 +340,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&q=80",
+      alt: "Filter representation of cleaning and verifying email list",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "domain-reputation-management-protect-sender-score",
       "email-warmup-verification-domain-health-complete-guide",
@@ -300,6 +366,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+      alt: "Inbox with high deliverability keeping emails out of the spam folder",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "why-cold-emails-land-in-spam-fix-today",
       "spf-dkim-dmarc-cold-email-guide",
@@ -321,6 +392,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80",
+      alt: "Code and tags representing DNS settings SPF DKIM DMARC",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-avoid-spam-folder-cold-email",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
@@ -342,6 +418,11 @@ export const blogPosts: BlogPost[] = [
     category: "Tutorial",
     cluster: "infrastructure",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
+      alt: "Server rack wiring representing Amazon SES cold email setup",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
       "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
@@ -362,6 +443,11 @@ export const blogPosts: BlogPost[] = [
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=80",
+      alt: "Checklist representing cold email pre-send verification verification steps",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-avoid-spam-folder-cold-email",
       "email-warmup-verification-domain-health-complete-guide",
@@ -370,19 +456,24 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "how-many-emails-per-day-cold-outreach",
-    title: "How Many Emails Can I Send Per Day? Cold Outreach Volume Guide",
+    title: "How Many Emails Per Day Per Domain? Cold Outreach Volume Guide (2026)",
     excerpt:
-      "The answer depends on your domain age, warmup status, and reputation. Here's a practical guide to daily send limits for cold email — from new domains to scaled outbound.",
+      "The answer depends on your domain age, warmup status, and reputation. Here's a practical guide to daily send limits for cold email — from new domains to scaled outbound with AWS SES.",
     description:
-      "How many emails can I send per day for cold outreach? Practical daily send limits by domain age, warmup stage, and reputation. Includes scaling timeline and multi-domain strategies.",
+      "How many emails can you send per day per domain for cold outreach? Practical daily send limits by domain age, warmup stage, and AWS SES quotas. Covers new domains, warming domains, and multi-domain scaling strategies for 2026.",
     keywords:
-      "how many emails per day cold email, cold email daily send limit, email sending volume guide, cold outreach volume limits, how many cold emails per day, email send rate cold outreach",
+      "how many emails per day cold outreach, how many emails per day per domain, cold email daily send limit, emails per day cold email, cold outreach volume limits, how many cold emails per day, email send rate cold outreach, safe sending volume cold email, cold email sending frequency, domain email sending limit",
     date: "2026-06-05",
-    readTime: "7 min read",
+    readTime: "9 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
     cluster: "deliverability",
     clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&q=80",
+      alt: "Cold email outreach dashboard showing daily email sending volume and domain health metrics",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "email-warmup-verification-domain-health-complete-guide",
@@ -404,9 +495,144 @@ export const blogPosts: BlogPost[] = [
     category: "Strategy",
     cluster: "infrastructure",
     clusterRole: "hub",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+      alt: "SaaS company sales and developer team discussing outbound cold email strategy",
+      credit: "Unsplash",
+    },
     relatedSlugs: [
       "outbound-stack-20-meetings-per-month",
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
+      "best-cold-email-software-2026-comparison",
+    ],
+  },
+  {
+    slug: "amazon-ses-pricing-2026",
+    title: "Amazon SES Pricing for Cold Email in 2026: Complete Cost Breakdown",
+    excerpt:
+      "AWS SES costs $0.10 per 1,000 emails sent outside EC2. But that's just the start. Here's the full cost breakdown — sending, data transfer, dedicated IPs, and how BYO SES on LeadSnipper compares to Instantly and Smartlead.",
+    description:
+      "Complete Amazon SES pricing breakdown for cold email outbound in 2026. Covers per-email costs, data transfer fees, dedicated IP pricing, SES vs shared infrastructure comparison, and total cost of ownership with LeadSnipper BYO SES.",
+    keywords:
+      "amazon ses pricing 2026, aws ses pricing outbound email, amazon ses cost cold email, ses email pricing per 1000, aws ses dedicated ip cost, aws ses vs instantly pricing, ses outbound email cost, aws ses pricing comparison, amazon ses cold email cost calculator, ses email sending cost",
+    date: "2026-06-20",
+    readTime: "10 min read",
+    author: "LeadSnipper Team",
+    category: "Infrastructure",
+    cluster: "infrastructure",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&q=80",
+      alt: "AWS Amazon SES pricing dashboard for cold email outbound sending cost calculator 2026",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+      "best-cold-email-software-2026-comparison",
+    ],
+  },
+  {
+    slug: "lemlist-alternatives",
+    title: "Best Lemlist Alternatives in 2026 (Honest Comparison for Cold Email)",
+    excerpt:
+      "Lemlist is expensive, has bounce issues, and runs on shared infrastructure. Here are the best Lemlist alternatives — including Smartlead, Instantly, Mailshake, Woodpecker, and LeadSnipper — with honest trade-offs for each.",
+    description:
+      "Best Lemlist alternatives in 2026 for cold email outreach. Honest comparison of Smartlead, Instantly, Mailshake, Woodpecker, and LeadSnipper covering pricing, deliverability, bounce handling, BYO AWS SES, and email verification.",
+    keywords:
+      "lemlist alternatives, lemlist alternative, best lemlist alternatives 2026, lemlist vs instantly vs smartlead vs woodpecker cold email, lemlist competitor, replace lemlist, lemlist pricing too expensive, lemlist bounce issues, cold email tool instead of lemlist, lemlist bad data alternative",
+    date: "2026-06-22",
+    readTime: "13 min read",
+    author: "LeadSnipper Team",
+    category: "Comparison",
+    cluster: "comparison",
+    clusterRole: "hub",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+      alt: "Cold email software comparison showing lemlist alternatives including Instantly Smartlead Woodpecker Mailshake LeadSnipper",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "best-cold-email-software-2026-comparison",
+      "smartlead-alternatives",
+      "mailshake-alternatives",
+    ],
+  },
+  {
+    slug: "apollo-alternative-cold-email",
+    title: "Best Apollo.io Alternative for Cold Email: Fix Bad Data & High Bounce Rates",
+    excerpt:
+      "Apollo.io is a great prospecting database — but users report bad data, high bounce rates, and limited cold email controls. Here are the best Apollo alternatives when data quality and deliverability matter.",
+    description:
+      "Best Apollo.io alternative for cold email outreach in 2026. Covers Apollo bad data problems, high bounce rates from Apollo leads, and top alternatives for B2B prospecting with better data quality and built-in email verification.",
+    keywords:
+      "apollo alternative cold email, apollo io alternative, apollo bad data cold email, apollo bounce rate high, apollo alternative for outbound, replace apollo cold email, apollo io cold email problems, best apollo alternative 2026, apollo competitor cold email, apollo alternative bad data bounce",
+    date: "2026-06-24",
+    readTime: "11 min read",
+    author: "LeadSnipper Team",
+    category: "Comparison",
+    cluster: "comparison",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+      alt: "B2B prospecting data quality comparison showing Apollo.io alternatives for cold email with lower bounce rates",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "lemlist-alternatives",
+      "best-cold-email-software-2026-comparison",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+    ],
+  },
+  {
+    slug: "smartlead-alternatives",
+    title: "Best Smartlead Alternatives in 2026 (For Agencies & High-Volume Senders)",
+    excerpt:
+      "Smartlead is powerful but complex — and expensive for agencies managing multiple clients. Here are the best Smartlead alternatives ranked by price, deliverability, and infrastructure control.",
+    description:
+      "Best Smartlead alternatives in 2026 for cold email agencies and high-volume senders. Comparison of Instantly, Lemlist, Mailshake, and LeadSnipper covering pricing, client management, BYO AWS SES, and deliverability features.",
+    keywords:
+      "smartlead alternatives, smartlead alternative 2026, replace smartlead cold email, best smartlead alternative, smartlead vs instantly vs lemlist, smartlead competitor, smartlead pricing too high, cold email tool instead of smartlead, smartlead alternative for agencies",
+    date: "2026-06-25",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Comparison",
+    cluster: "comparison",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
+      alt: "Cold email agency dashboard comparing Smartlead alternatives for high-volume outbound campaigns",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "lemlist-alternatives",
+      "best-cold-email-software-2026-comparison",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+    ],
+  },
+  {
+    slug: "mailshake-alternatives",
+    title: "Best Mailshake Alternatives in 2026 (Cheaper, More Deliverable Options)",
+    excerpt:
+      "Mailshake raised prices and still runs on shared sending pools. Here are the best Mailshake alternatives in 2026 — including tools with BYO AWS SES, built-in verification, and lower monthly costs.",
+    description:
+      "Best Mailshake alternatives in 2026 for cold email outreach. Honest comparison of Instantly, Smartlead, Lemlist, and LeadSnipper covering pricing, deliverability, email warmup, and BYO infrastructure vs Mailshake shared pools.",
+    keywords:
+      "mailshake alternatives, mailshake alternative 2026, best mailshake alternative, replace mailshake cold email, mailshake vs instantly vs lemlist, mailshake pricing too expensive, mailshake competitor cold email, mailshake alternative cheaper, cold email tool instead of mailshake",
+    date: "2026-06-26",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Comparison",
+    cluster: "comparison",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+      alt: "Cold email software pricing comparison showing Mailshake alternatives with better deliverability and lower cost",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "lemlist-alternatives",
+      "smartlead-alternatives",
       "best-cold-email-software-2026-comparison",
     ],
   },
@@ -461,17 +687,33 @@ export const clusterMeta: Record<
     description:
       "Maintaining inbox placement — domain reputation, warmup, verification, and troubleshooting.",
   },
+  comparison: {
+    label: "Tool Comparisons & Alternatives",
+    icon: "⚖️",
+    description:
+      "Honest head-to-head comparisons of cold email tools — pricing, deliverability, and infrastructure trade-offs.",
+  },
 };
 
 export function generateBlogPostSchema(post: BlogPost) {
   const hub = getClusterHub(post.cluster);
   const relatedPosts = getRelatedPosts(post);
 
+  // Parse readTime like "9 min read" → estimate wordCount (~200 wpm)
+  const minuteMatch = post.readTime.match(/(\d+)/);
+  const minutes = minuteMatch ? parseInt(minuteMatch[1], 10) : 10;
+  const wordCount = minutes * 200;
+
+  // Use the post's heroImage for structured data when available
+  const imageUrl = post.heroImage?.src ?? "https://leadsnipper.com/og-image.png";
+  const imageAlt = post.heroImage?.alt ?? post.title;
+
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    inLanguage: "en-US",
     author: {
       "@type": "Organization",
       name: "LeadSnipper",
@@ -496,15 +738,12 @@ export function generateBlogPostSchema(post: BlogPost) {
     keywords: post.keywords,
     image: {
       "@type": "ImageObject",
-      url: "https://leadsnipper.com/og-image.png",
+      url: imageUrl,
+      description: imageAlt,
       width: 1200,
       height: 630,
     },
-    wordCount: post.readTime.includes("15")
-      ? 3200
-      : post.readTime.includes("12")
-        ? 2600
-        : 2200,
+    wordCount,
     // Cluster relationship: spoke pages reference their hub as "isPartOf"
     ...(post.clusterRole === "spoke" && hub
       ? {
@@ -525,3 +764,28 @@ export function generateBlogPostSchema(post: BlogPost) {
       : {}),
   };
 }
+
+/**
+ * Deterministic date formatter to prevent timezone-based hydration mismatch
+ */
+export function formatDate(dateStr: string): string {
+  const [year, month, day] = dateStr.split("-");
+  const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  const monthName = months[parseInt(month, 10) - 1];
+  return `${monthName} ${parseInt(day, 10)}, ${year}`;
+}
+
+export function formatDateLong(dateStr: string): string {
+  const [year, month, day] = dateStr.split("-");
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const monthName = months[parseInt(month, 10) - 1];
+  return `${monthName} ${parseInt(day, 10)}, ${year}`;
+}
+
+

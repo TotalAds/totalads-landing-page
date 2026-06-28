@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-
+console.log("Next config loaded");
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   turbopack: {
@@ -31,6 +31,18 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 31536000, // 1 year
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
 
   // Headers for better caching and security

@@ -1,5 +1,6 @@
 import { ArrowRight, Clock, Compass } from "lucide-react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,6 +10,7 @@ import {
   generateBlogPostSchema,
   getClusterHub,
   getRelatedPosts,
+  formatDateLong,
 } from "@/lib/blog";
 import { seoConfig, structuredData } from "@/lib/seo";
 
@@ -26,11 +28,14 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
   const relatedPosts = getRelatedPosts(post);
   const clusterHub = getClusterHub(post.cluster);
   const cluster = clusterMeta[post.cluster];
+  // Use the post's own hero image for social sharing if available
+  const ogImage = post.heroImage?.src ?? seoConfig.defaultOpenGraph.images[0].url;
+  const ogImageAlt = post.heroImage?.alt ?? post.title;
 
   return (
     <>
       <Head>
-        <title>{post.title} | LeadSnipper Blog</title>
+        <title>{`${post.title} | LeadSnipper Blog`}</title>
         <meta name="description" content={post.description} />
         <meta name="keywords" content={post.keywords} />
         <meta name="robots" content="index, follow" />
@@ -46,23 +51,23 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
           content={seoConfig.defaultOpenGraph.siteName}
         />
         <meta property="og:locale" content="en_US" />
-        <meta
-          property="og:image"
-          content={seoConfig.defaultOpenGraph.images[0].url}
-        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={ogImageAlt} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time" content={post.date} />
         <meta property="article:author" content="LeadSnipper" />
         <meta property="article:section" content={post.category} />
+        <meta property="article:tag" content={post.keywords} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@leadsnipper_" />
+        <meta name="twitter:creator" content="@leadsnipper_" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.description} />
-        <meta
-          name="twitter:image"
-          content={seoConfig.defaultOpenGraph.images[0].url}
-        />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image:alt" content={ogImageAlt} />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -181,11 +186,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 </div>
                 <span className="w-1 h-1 rounded-full bg-[#c2c6d6]" />
                 <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
+                  {formatDateLong(post.date)}
                 </time>
                 <span className="w-1 h-1 rounded-full bg-[#c2c6d6]" />
                 <span className="flex items-center gap-1">
@@ -194,6 +195,27 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 </span>
               </div>
             </header>
+
+            {/* SEO Hero Image */}
+            {post.heroImage && (
+              <div className="mt-8 rounded-2xl overflow-hidden border border-[#c2c6d6]/20 shadow-sm">
+                <div className="relative w-full" style={{ aspectRatio: "16/7" }}>
+                  <Image
+                    src={post.heroImage.src}
+                    alt={post.heroImage.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    priority
+                  />
+                </div>
+                {post.heroImage.credit && (
+                  <p className="text-[10px] font-mono text-[#a0a7b8] text-right px-3 py-1.5 bg-[#f8f9fc] border-t border-[#c2c6d6]/15">
+                    Photo via {post.heroImage.credit}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </section>
 
