@@ -410,7 +410,7 @@ export default function EmailListCleaning() {
         intelligent warmup, it&apos;s the deliverability stack that protects
         your campaigns from bounce disasters.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start a free trial

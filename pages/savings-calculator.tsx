@@ -378,7 +378,7 @@ export default function SavingsCalculatorPage() {
               {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://app.leadsnipper.com/signup"
+                  href="https://app.leadsnipper.com/signup?product=leadsnipper"
                   className="btn-primary rounded-full text-sm flex-1 text-center inline-flex items-center justify-center gap-2"
                 >
                   Start a 14-day trial

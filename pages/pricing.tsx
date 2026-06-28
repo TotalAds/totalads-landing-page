@@ -301,7 +301,7 @@ export default function PricingPage() {
                       href={
                         plan.cta === "Talk to Sales"
                           ? "/contact"
-                          : "https://app.leadsnipper.com/signup"
+                          : "https://app.leadsnipper.com/signup?product=leadsnipper"
                       }
                       className={`block w-full py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition mb-6 ${
                         plan.highlighted
@@ -381,7 +381,7 @@ export default function PricingPage() {
                   Talk to Sales
                 </Link>
                 <Link
-                  href="https://app.leadsnipper.com/signup"
+                  href="https://app.leadsnipper.com/signup?product=leadsnipper"
                   className="text-sm font-heading font-semibold text-[#727785] hover:text-[#0058be] self-center"
                 >
                   Or start a 14-day trial →

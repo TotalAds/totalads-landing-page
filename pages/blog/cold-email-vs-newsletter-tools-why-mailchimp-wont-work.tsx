@@ -312,7 +312,7 @@ export default function ColdEmailVsNewsletter() {
       <p className="text-[#475569] leading-relaxed">
         If your goal is cold outreach at scale, use a tool designed for it.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Try LeadSnipper free

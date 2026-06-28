@@ -106,7 +106,7 @@ export default function SimplicitySection() {
         {/* CTA row */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="https://app.leadsnipper.com/signup"
+            href="https://app.leadsnipper.com/signup?product=leadsnipper"
             className="btn-primary rounded-full text-sm"
           >
             Start Free 14-Day Trial →

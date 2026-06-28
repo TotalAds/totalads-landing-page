@@ -276,7 +276,7 @@ export default function BlogIndex() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
-                    href="https://app.leadsnipper.com/signup"
+                    href="https://app.leadsnipper.com/signup?product=leadsnipper"
                     className="btn-primary rounded-full"
                   >
                     Start free — 1,000 emails, no card →

@@ -395,7 +395,7 @@ export default function AwsSesSetupGuide() {
         mode — we set up and manage the infrastructure for you. Either way, you
         get dedicated sending that&apos;s isolated from everyone else.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start your free trial

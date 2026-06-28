@@ -436,7 +436,7 @@ export default function OutboundStack20Meetings() {
         health monitoring for deliverability. Multi-day sending for sustainable
         volume.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start with 1,000 free emails

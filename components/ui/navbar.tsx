@@ -336,7 +336,7 @@ const Navbar = () => {
                 >
                   <div className="rounded-xl border border-[#c2c6d6]/30 bg-white shadow-lg p-1.5">
                     <Link
-                      href="https://app.leadsnipper.com/signup"
+                      href="https://app.leadsnipper.com/signup?product=leadsnipper"
                       className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-[#f2f3ff] transition-colors"
                       target="_blank"
                     >
@@ -473,7 +473,7 @@ const Navbar = () => {
               {/* CTA */}
               <div className="mt-6 flex flex-col gap-3">
                 <Link
-                  href="https://app.leadsnipper.com/signup"
+                  href="https://app.leadsnipper.com/signup?product=leadsnipper"
                   className="btn-primary w-full text-center rounded-full"
                   onClick={() => setIsOpen(false)}
                 >

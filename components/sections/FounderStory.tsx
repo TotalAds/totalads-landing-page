@@ -75,7 +75,7 @@ export default function FounderStory() {
                 <p className="text-[#475569] text-sm">Founder, LeadSnipper</p>
               </div>
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="inline-flex items-center gap-2 text-[#3b82f6] font-semibold text-sm hover:text-[#2563eb] transition"
               >
                 Try it yourself — start free

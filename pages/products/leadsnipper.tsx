@@ -264,7 +264,7 @@ function LeadSnipperPricing() {
                   href={
                     plan.cta === "Talk to Sales"
                       ? "/contact"
-                      : "https://app.leadsnipper.com/signup"
+                      : "https://app.leadsnipper.com/signup?product=leadsnipper"
                   }
                   className={`block w-full py-2.5 rounded-xl text-sm font-heading font-semibold text-center transition mb-5 ${
                     plan.highlighted
@@ -340,7 +340,7 @@ export default function LeadSnipperProduct() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="btn-primary btn-hero"
               >
                 Start a 14-day trial

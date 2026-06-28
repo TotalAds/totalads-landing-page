@@ -284,7 +284,7 @@ export default function BestColdEmailSoftware() {
       <p className="text-[#475569] leading-relaxed">
         The free trial gives you 1,000 emails with no credit card.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Try it and compare

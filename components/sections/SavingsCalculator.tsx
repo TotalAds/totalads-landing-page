@@ -392,7 +392,7 @@ export default function SavingsCalculator({
           </div>
 
           <Link
-            href="https://app.leadsnipper.com/signup"
+            href="https://app.leadsnipper.com/signup?product=leadsnipper"
             className="inline-flex w-full items-center justify-center rounded-xl bg-[#2563eb] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1d4ed8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d4ed8] focus-visible:ring-offset-2"
           >
             Start a 14-day trial

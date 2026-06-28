@@ -337,7 +337,7 @@ export default function DomainReputationManagement() {
         sending, warm up your domains properly, monitor health in one dashboard,
         and own your infrastructure with BYO AWS SES.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start a free trial

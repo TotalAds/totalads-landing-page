@@ -203,7 +203,7 @@ export default function InstantlyVsLeadSnipperIndia() {
         and{" "}
         <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">scaling cold email guide</Link>.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start your free trial

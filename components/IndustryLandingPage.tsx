@@ -89,7 +89,7 @@ export default function IndustryLandingPage({
             </p>
             <div className="mt-8">
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="btn-primary rounded-full inline-flex items-center justify-center gap-2"
               >
                 Start free trial
@@ -198,7 +198,7 @@ export default function IndustryLandingPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="btn-primary rounded-full inline-flex items-center justify-center gap-2"
               >
                 Start free trial

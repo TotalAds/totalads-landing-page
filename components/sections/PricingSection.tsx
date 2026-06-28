@@ -222,7 +222,7 @@ export default function PricingSection() {
                   href={
                     plan.cta === "Talk to Sales"
                       ? "/contact"
-                      : "https://app.leadsnipper.com/signup"
+                      : "https://app.leadsnipper.com/signup?product=leadsnipper"
                   }
                   className={`block w-full py-3 rounded-lg font-semibold text-center transition mb-8 ${
                     plan.highlighted

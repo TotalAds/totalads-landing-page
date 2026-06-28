@@ -373,7 +373,7 @@ export default function BlogPost2() {
         warmup, verification, and analytics you need to actually run outbound at
         scale. Ready to stop renting?{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start your free trial

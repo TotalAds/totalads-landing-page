@@ -345,7 +345,7 @@ export default function BlogPost1() {
         dashboard so you always know where you stand. If you&apos;re tired of
         getting blacklisted by tools that don&apos;t give you control,{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           start a free trial

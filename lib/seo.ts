@@ -470,7 +470,7 @@ export const structuredData = {
     description:
       "Cold email platform with BYO AWS SES, built-in Reoon email verification, domain health dashboard, AI warmup, and campaign analytics.",
     url: "https://leadsnipper.com",
-    downloadUrl: "https://app.leadsnipper.com/signup",
+    downloadUrl: "https://app.leadsnipper.com/signup?product=leadsnipper",
     softwareVersion: "1.0",
     datePublished: "2024-01-01",
     featureList: [
@@ -509,7 +509,7 @@ export const structuredData = {
           name: "Starter",
           price: "999",
           priceCurrency: "INR",
-          url: "https://app.leadsnipper.com/signup",
+          url: "https://app.leadsnipper.com/signup?product=leadsnipper",
           availability: "https://schema.org/InStock",
           description:
             "Starter cold email plan with 10 sending mailboxes, 10,000 emails per month, custom domain sending, warmup, AI email writer, and use your Reoon account for verification.",
@@ -519,7 +519,7 @@ export const structuredData = {
           name: "Growth",
           price: "2499",
           priceCurrency: "INR",
-          url: "https://app.leadsnipper.com/signup",
+          url: "https://app.leadsnipper.com/signup?product=leadsnipper",
           availability: "https://schema.org/InStock",
           description:
             "Growth cold email plan with 50 sending mailboxes, 100,000 emails per month, unlimited custom domains, unlimited warmup, smart scheduling, advanced analytics, and priority support.",

@@ -421,7 +421,7 @@ export default function BlogPost3() {
         duct-taping 4 tools together and still wondering why your emails land
         in spam,{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           start a free trial

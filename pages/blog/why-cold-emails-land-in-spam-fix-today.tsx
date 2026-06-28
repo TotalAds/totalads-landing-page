@@ -260,7 +260,7 @@ export default function ColdEmailsInSpam() {
         DNS issues. Intelligent warmup paces your sending. And BYO AWS SES means
         you own your reputation, not share it with random senders.{" "}
         <Link
-          href="https://app.leadsnipper.com/signup"
+          href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
           Start with 1,000 free emails

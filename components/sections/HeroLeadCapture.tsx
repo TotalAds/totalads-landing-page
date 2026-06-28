@@ -9,7 +9,7 @@ export function HeroLeadCapture() {
 		"idle",
 	);
 	const [errorMessage, setErrorMessage] = useState<string | null>(null);
-	const signupBaseUrl = "https://app.leadsnipper.com/signup";
+	const signupBaseUrl = "https://app.leadsnipper.com/signup?product=leadsnipper";
 
 	async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -40,7 +40,7 @@ export function HeroLeadCapture() {
 			}
 			setStatus("success");
 			window.location.assign(
-				`${signupBaseUrl}?email=${encodeURIComponent(normalizedEmail)}`,
+				`${signupBaseUrl}?product=leadsnipper&email=${encodeURIComponent(normalizedEmail)}`,
 			);
 		} catch {
 			setStatus("error");
@@ -104,7 +104,7 @@ export function HeroLeadCapture() {
 			)}
 			<div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-center">
 				<Link
-					href={signupBaseUrl}
+					href={`${signupBaseUrl}?product=leadsnipper`}
 					className="text-sm font-semibold text-[#3b82f6] hover:text-[#2563eb] underline-offset-4 hover:underline"
 				>
 					Or go straight to signup →

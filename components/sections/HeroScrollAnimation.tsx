@@ -44,7 +44,7 @@ export function HeroScrollAnimation() {
             {/* CTA Row */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="btn-primary btn-hero"
               >
                 Start Free 14-Day Trial

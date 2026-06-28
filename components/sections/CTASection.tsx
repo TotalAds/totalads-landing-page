@@ -33,7 +33,7 @@ export default function CTASection() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="https://app.leadsnipper.com/signup"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="btn-primary btn-hero rounded-full"
               >
                 Start a 14-day trial
