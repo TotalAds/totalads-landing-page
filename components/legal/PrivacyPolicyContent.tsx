@@ -71,7 +71,144 @@ export default function PrivacyPolicyContent() {
         </li>
       </ul>
 
-      <h2>3. How we use information</h2>
+      <h2>3. Gmail and Google Workspace Data</h2>
+      <p>
+        When you connect a Google / Gmail account to LeadSnipper (for example to
+        send cold-email campaigns or enable email warmup), we access data through
+        Google&apos;s official OAuth 2.0 APIs. This section explains exactly what
+        we access, why, and your rights.
+      </p>
+
+      <h3>3a. What Gmail data we access</h3>
+      <ul>
+        <li>
+          <strong>Send email on your behalf</strong> — we use the{" "}
+          <code>gmail.send</code> scope to compose and deliver outbound messages
+          (campaigns and warmup emails) that you authorise.
+        </li>
+        <li>
+          <strong>Read warmup replies</strong> — we use the{" "}
+          <code>gmail.readonly</code> or <code>gmail.modify</code> scope solely
+          to detect auto-generated warmup replies so we can mark them as read and
+          move them out of your inbox. We never read your personal or business
+          emails.
+        </li>
+        <li>
+          <strong>OAuth tokens</strong> — we store encrypted OAuth access and
+          refresh tokens so your mailbox stays connected without you needing to
+          re-authenticate every session.
+        </li>
+        <li>
+          We do <strong>not</strong> access attachments, contacts, calendar data,
+          drafts, or any other Gmail data beyond what is explicitly listed above.
+        </li>
+      </ul>
+
+      <h3>3b. Why we access Gmail data</h3>
+      <ul>
+        <li>
+          <strong>Campaign sending:</strong> to deliver the outbound emails you
+          set up inside LeadSnipper, using your mailbox as the sending address.
+        </li>
+        <li>
+          <strong>Email warmup:</strong> to send and receive low-volume warmup
+          messages that improve your domain&apos;s sender reputation with email
+          providers.
+        </li>
+        <li>
+          <strong>Deliverability monitoring:</strong> to detect bounces and
+          warmup-reply threads so we can report accurate metrics to you.
+        </li>
+      </ul>
+
+      <h3>3c. How long we store Gmail data</h3>
+      <ul>
+        <li>
+          <strong>OAuth tokens</strong> are retained for as long as your sending
+          account is connected. They are deleted immediately when you disconnect
+          the account or delete your LeadSnipper account.
+        </li>
+        <li>
+          <strong>Sent-email metadata</strong> (subject, recipient, timestamp,
+          open/click status) is retained for up to <strong>24 months</strong> or
+          until you request deletion, whichever comes first.
+        </li>
+        <li>
+          <strong>Message content</strong> (body text) of emails sent through our
+          platform is retained for up to <strong>90 days</strong> to support
+          delivery retries and reporting, then permanently deleted.
+        </li>
+        <li>
+          Warmup reply content is <strong>never stored</strong> — we only process
+          it in memory to perform the inbox-cleanup action and immediately discard
+          it.
+        </li>
+      </ul>
+
+      <h3>3d. We do not sell Gmail data</h3>
+      <p>
+        We <strong>never sell, rent, share, or monetise</strong> any data
+        obtained through Google APIs — including Gmail data — to third parties.
+        Gmail data is used exclusively to provide the LeadSnipper features you
+        have explicitly enabled. It is not used for advertising, profiling,
+        training AI models, or any other purpose unrelated to operating the
+        Service on your behalf.
+      </p>
+
+      <h3>3e. How to revoke Google access</h3>
+      <p>
+        You can revoke LeadSnipper&apos;s access to your Google account at any
+        time using either of the following methods:
+      </p>
+      <ul>
+        <li>
+          <strong>Inside LeadSnipper:</strong> go to{" "}
+          <em>Settings → Sending Accounts</em>, find the Gmail address, and click{" "}
+          <em>Disconnect</em>. This immediately invalidates our stored tokens.
+        </li>
+        <li>
+          <strong>Via Google Account settings:</strong> visit{" "}
+          <a
+            href="https://myaccount.google.com/permissions"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            myaccount.google.com/permissions
+          </a>{
+            " "
+          }
+          and remove <em>LeadSnipper</em> from the list of connected apps. Once
+          revoked, we will be unable to access your Gmail and no further emails
+          will be sent through that account.
+        </li>
+      </ul>
+
+      <h3>3f. How to delete your Gmail data</h3>
+      <p>
+        To request deletion of all Gmail-related data we hold about you:
+      </p>
+      <ul>
+        <li>
+          Email{" "}
+          <a href={`mailto:${LEGAL_CONTACT.privacy}`}>
+            {LEGAL_CONTACT.privacy}
+          </a>{" "}
+          with the subject line <em>&quot;Gmail Data Deletion Request&quot;</em>.
+          Include the Gmail address(es) connected to your account.
+        </li>
+        <li>
+          We will permanently delete all OAuth tokens, sent-email metadata, and
+          any stored message content associated with that address within{" "}
+          <strong>30 days</strong> of receiving your verified request.
+        </li>
+        <li>
+          You may also delete your entire LeadSnipper account from{" "}
+          <em>Settings → Account → Delete Account</em>, which triggers immediate
+          deletion of all your data including Gmail data.
+        </li>
+      </ul>
+
+      <h2>4. How we use information</h2>
       <ul>
         <li>Provide, operate, and secure the Services and your account.</li>
         <li>
@@ -93,7 +230,7 @@ export default function PrivacyPolicyContent() {
         </li>
       </ul>
 
-      <h2>4. Legal bases (where applicable)</h2>
+      <h2>5. Legal bases (where applicable)</h2>
       <p>
         For users in the EEA, UK, and similar jurisdictions, we process personal
         data based on: (a) contract — to provide the Services you sign up for;
@@ -103,7 +240,7 @@ export default function PrivacyPolicyContent() {
         requests.
       </p>
 
-      <h2>5. Sharing with third parties</h2>
+      <h2>6. Sharing with third parties</h2>
       <p>We share data only as needed to run the Services:</p>
       <ul>
         <li>
@@ -140,7 +277,7 @@ export default function PrivacyPolicyContent() {
         handle data under appropriate contractual safeguards.
       </p>
 
-      <h2>6. International transfers</h2>
+      <h2>7. International transfers</h2>
       <p>
         Your data may be processed in India and other countries where our
         providers operate. We use reputable vendors and appropriate safeguards
@@ -148,7 +285,7 @@ export default function PrivacyPolicyContent() {
         cross-border transfers.
       </p>
 
-      <h2>7. Data retention</h2>
+      <h2>8. Data retention</h2>
       <p>
         We retain account, billing, and usage records while your account is
         active and as needed for legal, tax, and security purposes. Campaign and
@@ -157,7 +294,7 @@ export default function PrivacyPolicyContent() {
         deletion; some records may be retained where required by law.
       </p>
 
-      <h2>8. Cookies</h2>
+      <h2>9. Cookies</h2>
       <p>
         Our marketing site and app use essential cookies for authentication and
         security. We may use analytics cookies to understand traffic; you can
@@ -165,7 +302,7 @@ export default function PrivacyPolicyContent() {
         available.
       </p>
 
-      <h2>9. Your responsibilities (customer data)</h2>
+      <h2>10. Your responsibilities (customer data)</h2>
       <p>
         When you upload leads or connect LinkedIn, you act as the controller of
         that contact data. You must have a lawful basis (consent, legitimate
@@ -174,7 +311,7 @@ export default function PrivacyPolicyContent() {
         recipient data only on your documented instructions as a processor.
       </p>
 
-      <h2>10. Your rights</h2>
+      <h2>11. Your rights</h2>
       <p>
         Depending on your location, you may have rights to access, correct,
         delete, restrict, or port your personal data, and to object to certain
@@ -184,27 +321,27 @@ export default function PrivacyPolicyContent() {
         applicable.
       </p>
 
-      <h2>11. Security</h2>
+      <h2>12. Security</h2>
       <p>
         We use encryption in transit, access controls, and monitoring. Sensitive
         credentials (e.g. mailbox or API secrets) are encrypted at rest where
         stored. No method is 100% secure; protect your account credentials.
       </p>
 
-      <h2>12. Children</h2>
+      <h2>13. Children</h2>
       <p>
         The Services are for business users aged 18 and over. We do not
         knowingly collect data from children under 16.
       </p>
 
-      <h2>13. Changes</h2>
+      <h2>14. Changes</h2>
       <p>
         We may update this policy when our practices or legal requirements
         change. We will update the “Last updated” date and, for material
         changes, provide notice through the Service or email.
       </p>
 
-      <h2>14. Contact</h2>
+      <h2>15. Contact</h2>
       <p>
         Privacy questions:{" "}
         <a href={`mailto:${LEGAL_CONTACT.privacy}`}>{LEGAL_CONTACT.privacy}</a>

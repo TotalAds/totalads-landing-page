@@ -1,5 +1,5 @@
-export const LEGAL_VERSION = "2026-05-24";
-export const LEGAL_LAST_UPDATED = "24 May 2026";
+export const LEGAL_VERSION = "2026-06-30";
+export const LEGAL_LAST_UPDATED = "30 June 2026";
 export const LEGAL_BASE_URL = "https://leadsnipper.com";
 
 export const LEGAL_URLS = {
