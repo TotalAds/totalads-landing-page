@@ -87,11 +87,13 @@ export const sitemapConfig = {
       changefreq: "monthly" as const,
       priority: 0.8,
     },
+    /*
     {
       path: "/products/socialsnipper",
       changefreq: "monthly" as const,
       priority: 0.8,
     },
+    */
     {
       path: "/services",
       changefreq: "monthly" as const,

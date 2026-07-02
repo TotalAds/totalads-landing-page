@@ -28,7 +28,13 @@ import React, { useEffect, useState } from "react";
 
 import LeadsnipperRounded from "@/asset/leadsnipper.svg";
 
-const productItems = [
+const productItems: Array<{
+  label: string;
+  desc: string;
+  href: string;
+  badge: "live" | "soon";
+  icon: React.ReactNode;
+}> = [
   {
     label: "LeadSnipper",
     desc: "Email Deliverability Platform",
@@ -36,6 +42,7 @@ const productItems = [
     badge: "live" as const,
     icon: <Mail className="w-4.5 h-4.5" />,
   },
+  /*
   {
     label: "SocialSnipper",
     desc: "LinkedIn Scheduler + Content Researcher",
@@ -43,6 +50,7 @@ const productItems = [
     badge: "soon" as const,
     icon: <Linkedin className="w-4.5 h-4.5" />,
   },
+  */
 ];
 
 const coldEmailItems = [
@@ -348,6 +356,7 @@ const Navbar = () => {
                         LIVE
                       </span>
                     </Link>
+                    {/*
                     <div className="flex items-center gap-2 rounded-lg px-3 py-2 opacity-40 cursor-not-allowed">
                       <Linkedin className="w-3.5 h-3.5 text-[#727785]" />
                       <span className="text-[13px] font-heading font-semibold text-[#727785]">
@@ -357,6 +366,7 @@ const Navbar = () => {
                         SOON
                       </span>
                     </div>
+                    */}
                   </div>
                 </motion.div>
               )}

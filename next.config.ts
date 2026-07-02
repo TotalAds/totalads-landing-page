@@ -116,6 +116,11 @@ const nextConfig: NextConfig = {
         destination: "/sitemap.xml",
         permanent: true,
       },
+      {
+        source: "/products/socialsnipper",
+        destination: "/products/leadsnipper",
+        permanent: false,
+      },
     ];
   },
 };

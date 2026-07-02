@@ -21,7 +21,7 @@ export default function Footer() {
   const footerLinks = {
     Products: [
       { label: "LeadSnipper", href: "/products/leadsnipper" },
-      { label: "SocialSnipper", href: "/products/socialsnipper" },
+      // { label: "SocialSnipper", href: "/products/socialsnipper" },
       { label: "Pricing", href: "/pricing" },
       { label: "Cost Calculator", href: "/savings-calculator" },
     ],

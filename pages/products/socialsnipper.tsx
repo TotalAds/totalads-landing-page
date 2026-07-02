@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import Footer from "@/components/sections/Footer";
 import SEO from "@/components/SEO";
@@ -39,6 +40,17 @@ const features = [
 ];
 
 export default function SocialSnipperProduct() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/products/leadsnipper");
+  }, [router]);
+
+  return null;
+}
+
+// Deprecated implementation preserved for reference
+function OldSocialSnipperProduct() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -69,143 +81,106 @@ export default function SocialSnipperProduct() {
                 with AI posts and Gemini images.
               </span>
             </h1>
-            <p className="text-body-lg text-[#424754] mt-6 max-w-2xl mx-auto leading-relaxed">
-              Free forever for 20 posts/month. Pro from ₹499 with BYOK unlimited images.
-              Business adds advanced images, articles, and advanced analytics.
+            <p className="text-body-lg text-[#727785] max-w-xl mx-auto mt-6 mb-10">
+              Generate consistent, high-impact content customized for your brand.
+              Schedule posts, research trends, and manage all your team accounts from
+              one collaborative dashboard.
             </p>
-            <div className="mt-10 grid md:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
-              {[
-                { name: "Free", price: "₹0", posts: "20 posts · 5 images" },
-                { name: "Pro", price: "₹499/mo", posts: "50 posts · BYOK unlimited" },
-                { name: "Business", price: "₹999/mo", posts: "200 posts · Articles" },
-              ].map((t) => (
-                <div
-                  key={t.name}
-                  className="p-4 rounded-xl bg-white border border-[#c2c6d6]/30 shadow-sm"
-                >
-                  <p className="font-bold text-[#131b2e]">{t.name}</p>
-                  <p className="text-[#8b5cf6] font-semibold">{t.price}</p>
-                  <p className="text-sm text-[#424754] mt-1">{t.posts}</p>
-                </div>
-              ))}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://app.leadsnipper.com/login?product=socialsnipper"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 font-body font-semibold text-sm text-white bg-[#8b5cf6] rounded-full hover:bg-[#7c3aed] transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-[#8b5cf6]/25"
+              >
+                Get Started Free →
+              </a>
+              <a
+                href="#features"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 font-body font-semibold text-sm text-[#131b2e] bg-[#c2c6d6]/10 rounded-full hover:bg-[#c2c6d6]/20 transition-all border border-[#c2c6d6]/30"
+              >
+                Explore Features
+              </a>
             </div>
-            <a
-              href="https://app.leadsnipper.com/login?product=socialsnipper"
-              className="inline-block mt-8 px-8 py-3 rounded-xl bg-[#8b5cf6] text-white font-semibold"
-            >
-              Start free
-            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Problem */}
-      <section className="py-24 bg-[#f2f3ff]/30 border-t border-[#c2c6d6]/20">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="section-tag justify-center mb-6">The Problem</span>
-            <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
-              Post three times,{" "}
-              <span className="font-display italic text-[#ba1a1a]">
-                then disappear for a month.
-              </span>
-            </h2>
-            <p className="text-body-md text-[#727785] mt-4 max-w-xl mx-auto">
-              LinkedIn rewards consistency. But between campaigns, client work, and
-              daily fires — posting falls off. Your profile goes quiet. Your prospects
-              forget you exist.
-            </p>
-          </motion.div>
+      {/* Social Proof */}
+      <section className="py-16 border-y border-[#c2c6d6]/20 bg-[#faf8ff]/50">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16 text-center">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#727785] mb-8">
+            TRUSTED BY LINKEDIN CREATORS & TEAMS
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-12 opacity-65 grayscale">
+            <span className="font-heading font-black text-xl text-[#131b2e]">
+              Content Labs
+            </span>
+            <span className="font-heading font-black text-xl text-[#131b2e]">
+              GrowthPartners
+            </span>
+            <span className="font-heading font-black text-xl text-[#131b2e]">
+              SaaSBuilders
+            </span>
+            <span className="font-heading font-black text-xl text-[#131b2e]">
+              BrandArchitects
+            </span>
+          </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {[
-              { icon: "😴", text: "You know LinkedIn works, but you can't keep up." },
-              { icon: "🔄", text: "You have content ideas but no system to execute." },
-              { icon: "📉", text: "Inconsistency kills your reach faster than bad content." },
-            ].map((card, i) => (
+      {/* Features Grid */}
+      <section id="features" className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="font-heading font-bold text-headline-lg text-[#131b2e]">
+              Everything you need to master LinkedIn
+            </h2>
+            <p className="text-body-md text-[#727785] mt-4">
+              SocialSnipper is loaded with features designed to save you hours of work
+              every week while keeping your feed fresh and active.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
                 viewport={{ once: true }}
-                className="glass-card glass-card-hover p-6 rounded-2xl text-center"
+                className="glass-card rounded-2xl border border-[#c2c6d6]/30 p-6 flex flex-col items-start"
               >
-                <span className="text-3xl mb-3 block">{card.icon}</span>
-                <p className="text-sm text-[#131b2e] font-heading font-medium">
-                  {card.text}
+                <div className="w-12 h-12 rounded-xl bg-[#8b5cf6]/[0.08] flex items-center justify-center text-xl mb-5">
+                  {feature.icon}
+                </div>
+                <h3 className="font-heading font-bold text-lg text-[#131b2e] mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-[#727785] leading-relaxed">
+                  {feature.desc}
                 </p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-24 bg-[#faf8ff] border-t border-[#c2c6d6]/20">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16">
+          {/* API Compliance Info */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mt-16 p-6 rounded-2xl border border-[#c2c6d6]/30 bg-[#faf8ff] flex flex-col md:flex-row items-start gap-4"
           >
-            <span className="section-tag justify-center mb-6">Features</span>
-            <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
-              Everything you need to{" "}
-              <span className="font-display italic text-[#8b5cf6]">
-                stay consistent.
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewport={{ once: true }}
-                className="glass-card glass-card-hover p-6 rounded-2xl border-t-4 border-t-[#8b5cf6]/20"
-              >
-                <span className="text-2xl mb-3 block">{f.icon}</span>
-                <h3 className="font-heading font-bold text-[15px] text-[#131b2e] mb-2">
-                  {f.title}
-                </h3>
-                <p className="text-sm text-[#727785] leading-relaxed">{f.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LinkedIn API Compliance */}
-      <section className="py-12 bg-[#f2f3ff]/50 border-t border-[#c2c6d6]/20">
-        <div className="max-w-[800px] mx-auto px-5 sm:px-6 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="glass-card rounded-2xl p-6 border-l-4 border-l-[#0058be]"
-          >
-            <h4 className="font-heading font-bold text-sm text-[#131b2e] mb-2">
-              🔒 LinkedIn API Compliance
-            </h4>
-            <p className="text-xs text-[#727785] leading-relaxed">
-              SocialSnipper uses official LinkedIn APIs only. We do <strong>not</strong> scrape
-              profiles, automate connection requests, or send automated messages.
-              This tool is strictly for content scheduling and analytics — keeping
-              your account safe and compliant.
-            </p>
+            <div className="text-2xl mt-1">🛡️</div>
+            <div>
+              <h4 className="font-heading font-bold text-sm text-[#131b2e] mb-2">
+                🔒 LinkedIn API Compliance
+              </h4>
+              <p className="text-xs text-[#727785] leading-relaxed">
+                SocialSnipper uses official LinkedIn APIs only. We do <strong>not</strong> scrape
+                profiles, automate connection requests, or send automated messages.
+                This tool is strictly for content scheduling and analytics — keeping
+                your account safe and compliant.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
