@@ -104,11 +104,12 @@ export function HeroScrollAnimation() {
         }
       >
         <div className="w-full h-full flex items-center justify-center">
-          <Image
+          {/* <Image
             src={LeadsnipperSc}
             alt="LeadSnipper Dashboard — Domain health, campaign analytics, and sending controls"
             className="w-full"
-          />
+          /> */}
+          <iframe className="w-full h-full" src="https://www.youtube.com/embed/g7D7nUPE2qI?si=UHUcJRk4-7nYWEkD" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
       </ContainerScroll>
     </div>
