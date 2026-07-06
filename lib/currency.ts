@@ -7,6 +7,8 @@
  * page, savings calculator, in-app pricing, comparison pages, JSON-LD).
  */
 
+import { detectIsIndiaUserSync, resolveUserRegion } from "./userRegion";
+
 export type DisplayCurrency = "INR" | "USD";
 
 export type PlanName = "starter" | "growth" | "scale";
@@ -29,17 +31,10 @@ export const PLANS: Record<PlanName, PlanPrice> = {
   scale: { inr: 5999, usd: 119 },
 };
 
+export { resolveUserRegion };
+
 export function detectDisplayCurrency(): DisplayCurrency {
-  if (typeof window === "undefined") return "INR";
-
-  const languages = navigator.languages ?? [navigator.language];
-  const isIndiaLanguage = languages.some((lang) =>
-    lang.toUpperCase().endsWith("-IN")
-  );
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone ?? "";
-  const isIndiaTimeZone = timeZone.includes("Asia/Kolkata");
-
-  return isIndiaLanguage || isIndiaTimeZone ? "INR" : "USD";
+  return detectIsIndiaUserSync() ? "INR" : "USD";
 }
 
 export function formatInr(inr: number): string {

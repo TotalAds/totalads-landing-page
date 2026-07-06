@@ -19,7 +19,6 @@ import Footer from "@/components/sections/Footer";
 import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 import {
-  detectDisplayCurrency,
   formatInr,
   formatUsd,
   inrToUsd,
@@ -27,6 +26,7 @@ import {
   USD_TO_INR,
   type DisplayCurrency,
 } from "@/lib/currency";
+import { useUserRegion } from "@/hooks/useUserRegion";
 
 const SES_COST_PER_1000_INR = 0.84;
 
@@ -78,13 +78,10 @@ const PRESETS = [
 ];
 
 export default function SavingsCalculatorPage() {
-  const [displayCurrency, setDisplayCurrency] = useState<DisplayCurrency>("INR");
+  const { isIndia } = useUserRegion();
+  const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
   const [contacts, setContacts] = useState(10000);
   const [emails, setEmails] = useState(50000);
-
-  useEffect(() => {
-    setDisplayCurrency(detectDisplayCurrency());
-  }, []);
 
   const money = (inr: number) =>
     displayCurrency === "INR" ? formatInr(inr) : formatUsd(inrToUsd(inr));

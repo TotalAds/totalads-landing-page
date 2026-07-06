@@ -3,16 +3,16 @@
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
-  detectDisplayCurrency,
   displayPlanPrice,
   formatInr,
   formatUsd,
   inrToUsd,
   type DisplayCurrency,
 } from "@/lib/currency";
+import { useUserRegion } from "@/hooks/useUserRegion";
 
 type ProductPlan = {
   id: "starter" | "growth" | "scale";
@@ -108,12 +108,8 @@ const displayPlanPriceNumber = (
 };
 
 export default function PricingSection() {
-  const [displayCurrency, setDisplayCurrency] =
-    useState<DisplayCurrency>("INR");
-
-  useEffect(() => {
-    setDisplayCurrency(detectDisplayCurrency());
-  }, []);
+  const { isIndia } = useUserRegion();
+  const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
 
   const notFor = [
     "Beginners sending 50 emails/day who don't care about deliverability",

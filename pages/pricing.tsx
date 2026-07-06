@@ -10,7 +10,6 @@ import Footer from "@/components/sections/Footer";
 import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 import {
-  detectDisplayCurrency,
   displayPlanPrice,
   formatAmount,
   formatInr,
@@ -18,6 +17,7 @@ import {
   inrToUsd,
   type DisplayCurrency,
 } from "@/lib/currency";
+import { useUserRegion } from "@/hooks/useUserRegion";
 
 const Check = () => (
   <svg className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -191,11 +191,8 @@ const displayPlanPriceNumber = (
 
 export default function PricingPage() {
   const [mode, setMode] = useState<"product" | "service">("product");
-  const [displayCurrency, setDisplayCurrency] = useState<DisplayCurrency>("INR");
-
-  useEffect(() => {
-    setDisplayCurrency(detectDisplayCurrency());
-  }, []);
+  const { isIndia } = useUserRegion();
+  const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
 
   return (
     <>

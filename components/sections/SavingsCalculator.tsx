@@ -5,7 +5,6 @@ import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 
 import {
-  detectDisplayCurrency,
   formatInr,
   formatUsd,
   inrToUsd,
@@ -13,6 +12,7 @@ import {
   USD_TO_INR,
   type DisplayCurrency,
 } from "@/lib/currency";
+import { useUserRegion } from "@/hooks/useUserRegion";
 
 interface SavingsCalculatorProps {
   compact?: boolean;
@@ -128,13 +128,10 @@ const pickManagedPlan = (contacts: number, emailsPerMonth: number) =>
 export default function SavingsCalculator({
   compact = false,
 }: SavingsCalculatorProps) {
-  const [displayCurrency, setDisplayCurrency] = useState<DisplayCurrency>("INR");
+  const { isIndia } = useUserRegion();
+  const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
   const [emailsPerMonth, setEmailsPerMonth] = useState(DEFAULT_EMAILS_PER_MONTH);
   const [contacts, setContacts] = useState(DEFAULT_CONTACTS);
-
-  useEffect(() => {
-    setDisplayCurrency(detectDisplayCurrency());
-  }, []);
 
   const money = (inr: number) =>
     displayCurrency === "INR" ? formatInr(inr) : formatUsd(inrToUsd(inr));

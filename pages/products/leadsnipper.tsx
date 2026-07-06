@@ -19,13 +19,13 @@ import Footer from "@/components/sections/Footer";
 import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 import {
-  detectDisplayCurrency,
   displayPlanPrice,
   formatInr,
   formatUsd,
   inrToUsd,
   type DisplayCurrency,
 } from "@/lib/currency";
+import { useUserRegion } from "@/hooks/useUserRegion";
 
 const features = [
   {
@@ -189,11 +189,8 @@ const displayPlanPriceNumber = (
 };
 
 function LeadSnipperPricing() {
-  const [displayCurrency, setDisplayCurrency] = useState<DisplayCurrency>("INR");
-
-  useEffect(() => {
-    setDisplayCurrency(detectDisplayCurrency());
-  }, []);
+  const { isIndia } = useUserRegion();
+  const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
 
   return (
     <section className="py-24 section-mesh border-t border-[#c2c6d6]/20">
