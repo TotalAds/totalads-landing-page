@@ -512,7 +512,7 @@ export const structuredData = {
           url: "https://app.leadsnipper.com/signup?product=leadsnipper",
           availability: "https://schema.org/InStock",
           description:
-            "Starter cold email plan with 10 sending mailboxes, 10,000 emails per month, custom domain sending, warmup, AI email writer, and use your Reoon account for verification.",
+            "Starter cold email plan with 10 sending mailboxes, 10,000 emails per month, custom domain sending, AI email writer, and use your Reoon account for verification.",
         },
         {
           "@type": "Offer",
@@ -522,7 +522,7 @@ export const structuredData = {
           url: "https://app.leadsnipper.com/signup?product=leadsnipper",
           availability: "https://schema.org/InStock",
           description:
-            "Growth cold email plan with 50 sending mailboxes, 100,000 emails per month, unlimited custom domains, unlimited warmup, smart scheduling, advanced analytics, and priority support.",
+            "Growth cold email plan with 50 sending mailboxes, 100,000 emails per month, unlimited custom domains, smart scheduling, advanced analytics, and priority support.",
         },
         {
           "@type": "Offer",
@@ -532,7 +532,7 @@ export const structuredData = {
           url: "https://leadsnipper.com/contact",
           availability: "https://schema.org/InStock",
           description:
-            "Scale cold email plan with unlimited sending mailboxes, 500,000 emails per month, dedicated SES setup, custom API integrations, dedicated CSM, and SLA-backed deliverability.",
+            "Scale cold email plan with unlimited sending mailboxes, 500,000 emails per month, dedicated SES setup, dedicated CSM, and SLA-backed deliverability.",
         },
       ],
     },
