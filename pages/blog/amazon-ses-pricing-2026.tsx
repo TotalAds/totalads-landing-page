@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
+import BlogCalculatorCTA from "@/components/BlogCalculatorCTA";
 import BlogLayout from "@/components/BlogLayout";
 import { getBlogPost } from "@/lib/blog";
 
@@ -153,6 +154,8 @@ export default function AmazonSesPricing2026() {
         DKIM/SPF), and SES&apos;s shared pools are generally clean because AWS
         enforces strict usage policies.
       </p>
+
+      <BlogCalculatorCTA />
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         Data Transfer and Attachment Fees

@@ -386,6 +386,41 @@ export default function ComparisonPage({
         </div>
       </section>
 
+      {/* ─── Blog alternatives cross-link ─── */}
+      {(competitor === "Mailshake" || competitor === "Lemlist" || competitor === "Smartlead") && (
+        <section className="py-12 border-t border-[#c2c6d6]/20">
+          <div className="max-w-[700px] mx-auto px-5 sm:px-6 lg:px-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="glass-card rounded-2xl border border-[#0058be]/10 bg-gradient-to-br from-[#0058be]/[0.02] to-[#10b981]/[0.01] p-8"
+            >
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-[#0058be]/10 flex items-center justify-center">
+                  <ArrowRight className="w-5 h-5 text-[#0058be]" />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold text-[17px] text-[#131b2e] mb-2">
+                    Want a deeper comparison?
+                  </h3>
+                  <p className="text-sm text-[#727785] leading-relaxed mb-3">
+                    Read our full guide comparing the top 5 {competitor} alternatives — including pricing, features, and which one fits your use case.
+                  </p>
+                  <Link
+                    href={`/blog/${competitor.toLowerCase()}-alternatives`}
+                    className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
+                  >
+                    Read: Best {competitor} Alternatives in 2026 →
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* ─── Final CTA ─── */}
       <section className="py-16 border-t border-[#c2c6d6]/20">
         <div className="max-w-[800px] mx-auto px-5 sm:px-6 lg:px-16 text-center">

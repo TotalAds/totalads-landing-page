@@ -125,6 +125,22 @@ export default function LemlistAlternatives() {
         options.
       </p>
 
+      {/* Quick comparison callout */}
+      <div className="my-8 p-5 rounded-xl border-2 border-[#0058be]/20 bg-gradient-to-br from-[#0058be]/[0.03] to-[#10b981]/[0.02]">
+        <p className="text-sm text-[#1e293b] font-semibold mb-2">
+          Looking for a quick side-by-side comparison?
+        </p>
+        <p className="text-sm text-[#475569] mb-3">
+          See our detailed LeadSnipper vs Lemlist feature table with pricing, infrastructure, and deliverability controls.
+        </p>
+        <Link
+          href="/vs/lemlist"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-[#0058be] hover:underline"
+        >
+          View LeadSnipper vs Lemlist comparison →
+        </Link>
+      </div>
+
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         Why People Switch Away from Lemlist
       </h2>

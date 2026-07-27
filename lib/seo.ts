@@ -178,7 +178,7 @@ export const pageConfigs: Record<string, PageConfig> = {
     title:
       "Best Smartlead Alternative for Cold Email Deliverability",
     description:
-      "Compare LeadSnipper with Smartlead for cold email. Dedicated AWS SES control, built-in verification, domain health, and simpler pricing help teams protect deliverability. See how it works — start free.",
+      "Feature-by-feature comparison: LeadSnipper vs Smartlead side-by-side. Compare pricing, BYO AWS SES control, built-in verification, and domain health monitoring in a single comparison table.",
     keywords:
       "Smartlead alternative, Smartlead competitor, LeadSnipper vs Smartlead, cold email software alternative, Smartlead pricing alternative, BYO AWS SES cold email, email deliverability tools, cold outreach platform",
     canonical: "https://leadsnipper.com/vs/smartlead",
@@ -393,9 +393,9 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   lemlistAlternative: {
-    title: "Best Lemlist Alternative for Cold Email Deliverability",
+    title: "Lemlist Alternative 2026: Deliverability-First Cold Email (BYO SES)",
     description:
-      "Compare LeadSnipper with Lemlist for cold email. Get BYO AWS SES, built-in Reoon verification, domain health monitoring, and simpler pricing for deliverability-first outbound. Start a 14-day trial.",
+      "Side-by-side feature comparison: LeadSnipper vs Lemlist for cold email. See pricing, BYO AWS SES vs shared infrastructure, built-in verification, and deliverability controls in one table.",
     keywords:
       "Lemlist alternative, Lemlist competitor, LeadSnipper vs Lemlist, cold email software alternative, Lemlist pricing alternative, email deliverability tool",
     canonical: "https://leadsnipper.com/vs/lemlist",
@@ -408,9 +408,9 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   mailshakeAlternative: {
-    title: "Best Mailshake Alternative for Cold Email at Scale",
+    title: "Mailshake Alternative 2026: Scale Cold Email Without Per-Seat Pricing",
     description:
-      "Compare LeadSnipper with Mailshake for cold email. BYO AWS SES, built-in verification, domain health, and lower per-email costs for teams scaling outbound. See how it works — start free.",
+      "Direct feature comparison: LeadSnipper vs Mailshake side-by-side. Compare pricing (no per-seat fees), BYO AWS SES vs shared infrastructure, and built-in verification in one table.",
     keywords:
       "Mailshake alternative, Mailshake competitor, LeadSnipper vs Mailshake, cold email software alternative, Mailshake pricing alternative, bulk cold email tool",
     canonical: "https://leadsnipper.com/vs/mailshake",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
+import BlogCalculatorCTA from "@/components/BlogCalculatorCTA";
 import BlogLayout from "@/components/BlogLayout";
 import { getBlogPost } from "@/lib/blog";
 
@@ -100,6 +101,8 @@ export default function BlogPost2() {
           </li>
         </ul>
       </div>
+
+      <BlogCalculatorCTA />
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         BYO AWS SES vs Shared Infrastructure: Side-by-Side Comparison

@@ -12,6 +12,7 @@ import {
   getRelatedPosts,
   formatDateLong,
 } from "@/lib/blog";
+import { generateFaqPageSchema } from "@/lib/faqs";
 import { seoConfig, structuredData } from "@/lib/seo";
 
 import Footer from "./sections/Footer";
@@ -116,6 +117,14 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             }),
           }}
         />
+        {post.faqs && post.faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(generateFaqPageSchema(post.faqs)),
+            }}
+          />
+        )}
       </Head>
 
       <div className="min-h-screen bg-[#faf8ff]">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 import BlogLayout from "@/components/BlogLayout";
+import BlogSoftCTA from "@/components/BlogSoftCTA";
 import { getBlogPost } from "@/lib/blog";
 
 const post = getBlogPost(
@@ -104,6 +105,8 @@ export default function BlogPost1() {
         exactly what&apos;s missing or misconfigured — before you send your
         first campaign.
       </p>
+
+      <BlogSoftCTA />
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         Step 2: Warm Up Your Domain Before Sending Campaigns

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 import BlogLayout from "@/components/BlogLayout";
+import BlogSoftCTA from "@/components/BlogSoftCTA";
 import { getBlogPost } from "@/lib/blog";
 
 const post = getBlogPost("how-many-emails-per-day-cold-outreach")!;
