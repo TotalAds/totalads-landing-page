@@ -23,6 +23,8 @@ export interface BlogPost {
     credit?: string;
   };
   faqs?: FAQItem[];
+  /** ISO date string (YYYY-MM-DD) for when the post was last meaningfully updated. Used for dateModified in schema and "Last updated" display. */
+  lastUpdated?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -145,6 +147,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "cold email at scale, email blacklist prevention, domain reputation management, email deliverability guide, cold email best practices, avoid email blacklist, bulk email sending tips, sender reputation, DKIM SPF setup, cold email warmup, email bounce rate, cold outreach strategy 2026",
     date: "2026-04-08",
+    lastUpdated: "2026-07-28",
     readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
@@ -316,6 +319,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "best cold email software 2026, cold email tool comparison, Instantly vs Smartlead, Instantly alternative, Smartlead alternative, cold email platform review, email outreach tool, cold email pricing comparison, best bulk email sender, cold email deliverability tools, email campaign software, sales email automation",
     date: "2026-04-10",
+    lastUpdated: "2026-07-28",
     readTime: "14 min read",
     author: "LeadSnipper Team",
     category: "Comparison",
@@ -361,6 +365,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "domain reputation management, sender score, email sender reputation, protect domain reputation, email reputation monitoring, sender reputation cold email, bounce rate management, complaint rate threshold, domain blacklist recovery, Google Postmaster Tools, email reputation score, cold email domain health",
     date: "2026-03-22",
+    lastUpdated: "2026-07-28",
     readTime: "11 min read",
     author: "LeadSnipper Team",
     category: "Deliverability",
@@ -625,6 +630,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "amazon ses pricing 2026, aws ses pricing outbound email, amazon ses cost cold email, ses email pricing per 1000, aws ses dedicated ip cost, aws ses vs instantly pricing, ses outbound email cost, aws ses pricing comparison, amazon ses cold email cost calculator, ses email sending cost",
     date: "2026-06-20",
+    lastUpdated: "2026-07-28",
     readTime: "10 min read",
     author: "LeadSnipper Team",
     category: "Infrastructure",
@@ -669,6 +675,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "lemlist alternatives, lemlist alternative, best lemlist alternatives 2026, lemlist vs instantly vs smartlead vs woodpecker cold email, lemlist competitor, replace lemlist, lemlist pricing too expensive, lemlist bounce issues, cold email tool instead of lemlist, lemlist bad data alternative",
     date: "2026-06-22",
+    lastUpdated: "2026-07-28",
     readTime: "13 min read",
     author: "LeadSnipper Team",
     category: "Comparison",
@@ -805,6 +812,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "smartlead alternatives, smartlead alternative 2026, replace smartlead cold email, best smartlead alternative, smartlead vs instantly vs lemlist, smartlead competitor, smartlead pricing too high, cold email tool instead of smartlead, smartlead alternative for agencies",
     date: "2026-06-25",
+    lastUpdated: "2026-07-28",
     readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Comparison",
@@ -831,6 +839,7 @@ export const blogPosts: BlogPost[] = [
     keywords:
       "mailshake alternatives, mailshake alternative 2026, best mailshake alternative, replace mailshake cold email, mailshake vs instantly vs lemlist, mailshake pricing too expensive, mailshake competitor cold email, mailshake alternative cheaper, cold email tool instead of mailshake",
     date: "2026-06-26",
+    lastUpdated: "2026-07-28",
     readTime: "12 min read",
     author: "LeadSnipper Team",
     category: "Comparison",
@@ -958,7 +967,7 @@ export function generateBlogPostSchema(post: BlogPost) {
       },
     },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.lastUpdated || post.date,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://leadsnipper.com/blog/${post.slug}`,

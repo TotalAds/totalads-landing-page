@@ -57,7 +57,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content={ogImageAlt} />
         <meta property="article:published_time" content={post.date} />
-        <meta property="article:modified_time" content={post.date} />
+        <meta property="article:modified_time" content={post.lastUpdated || post.date} />
         <meta property="article:author" content="LeadSnipper" />
         <meta property="article:section" content={post.category} />
         <meta property="article:tag" content={post.keywords} />
@@ -202,6 +202,14 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                   <Clock className="w-3.5 h-3.5" />
                   {post.readTime}
                 </span>
+                {post.lastUpdated && post.lastUpdated !== post.date && (
+                  <>
+                    <span className="w-1 h-1 rounded-full bg-[#c2c6d6]" />
+                    <span className="text-[#10b981] font-medium">
+                      Updated {formatDateLong(post.lastUpdated)}
+                    </span>
+                  </>
+                )}
               </div>
             </header>
 

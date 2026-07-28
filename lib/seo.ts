@@ -440,6 +440,7 @@ export const structuredData = {
       "https://www.facebook.com/people/Leadsnipper/61590183337984/",
       "https://www.instagram.com/leadsnipper/",
       "https://www.youtube.com/@leadsnipper_official",
+      "https://www.g2.com/products/leadsnipper/reviews",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -456,6 +457,14 @@ export const structuredData = {
     url: "https://leadsnipper.com",
     description:
       "Cold email outreach platform built on AWS SES with built-in email verification, domain health monitoring, and intelligent warmup.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://leadsnipper.com/blog?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   },
 
   softwareApplication: {

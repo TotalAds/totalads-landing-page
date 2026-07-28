@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
       { source: "/sitemap.xml", destination: "/api/sitemap.xml" },
       { source: "/sitemap-index.xml", destination: "/api/sitemap-index.xml" },
       { source: "/rss.xml", destination: "/api/rss.xml" },
+      { source: "/llms.txt", destination: "/api/llms.txt" },
       {
         source: "/downloads/deliverability-checklist.pdf",
         destination: "/LeadSnipper_Deliverability_Checklist_v2.pdf",
@@ -98,6 +99,32 @@ const nextConfig: NextConfig = {
           {
             key: "Content-Type",
             value: "text/plain",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=86400",
+          },
+        ],
+      },
+      {
+        source: "/llms.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/markdown; charset=utf-8",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=86400",
+          },
+        ],
+      },
+      {
+        source: "/llms-full.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/markdown; charset=utf-8",
           },
           {
             key: "Cache-Control",

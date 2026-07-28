@@ -4,7 +4,7 @@
 User-agent: *
 Allow: /
 
-# Allow all major search engines
+# ─── Search Engines ───
 User-agent: Googlebot
 Allow: /
 
@@ -23,6 +23,41 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+# ─── AI Crawlers & Answer Engines ───
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: AppleBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ─── Social Media Crawlers ───
 User-agent: facebookexternalhit
 Allow: /
 
@@ -32,12 +67,12 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Disallow admin and API routes
+# ─── Disallow internal routes ───
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 
-# Allow important pages
+# ─── Explicitly allow important pages ───
 Allow: /
 Allow: /about
 Allow: /pricing
@@ -45,17 +80,26 @@ Allow: /blog
 Allow: /blog/*
 Allow: /contact
 Allow: /savings-calculator
-Allow: /vs/instantly
-Allow: /vs/smartlead
+Allow: /vs/*
 Allow: /products/*
 Allow: /services
 Allow: /services/*
+Allow: /cold-email-software
+Allow: /email-warmup
+Allow: /email-deliverability
+Allow: /cold-email-infrastructure
+Allow: /ai-cold-email-generator
+Allow: /cold-email-for/*
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /refund-policy
 Allow: /legal/data-use
 
-# Sitemap location
+# ─── LLMs discovery files ───
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# ─── Sitemaps ───
 Sitemap: https://leadsnipper.com/sitemap.xml
 Sitemap: https://leadsnipper.com/sitemap-index.xml
 

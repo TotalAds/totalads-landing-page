@@ -1,0 +1,80 @@
+# LeadSnipper
+
+> LeadSnipper is a cold email and outbound infrastructure platform for SaaS teams and agencies, built on AWS SES, with tools for deliverability, email warmup, campaign automation, and lead sourcing.
+
+LeadSnipper helps teams send cold outbound email at scale without damaging sender reputation, by combining managed AWS SES infrastructure, automated email warmup, domain/DNS setup (SPF, DKIM, DMARC), and campaign tooling in one platform. It is built for SaaS founders, growth teams, and outbound agencies who want lower per-email cost than tools like Smartlead, Instantly, Lemlist, Mailshake, or Apollo, without sacrificing deliverability.
+
+## Product
+
+- [LeadSnipper Product Overview](https://leadsnipper.com/products/leadsnipper): Core cold email and outbound platform, features and capabilities.
+- [Pricing](https://leadsnipper.com/pricing): Current LeadSnipper pricing tiers — Starter ₹999/$19, Growth ₹2,499/$49, Scale ₹5,999/$119 per month.
+- [Cold Email Software](https://leadsnipper.com/cold-email-software): Overview of the cold email sending and campaign product.
+- [Cold Email Infrastructure](https://leadsnipper.com/cold-email-infrastructure): Managed AWS SES-based sending infrastructure, setup, and scaling.
+- [Email Warmup](https://leadsnipper.com/email-warmup): Automated inbox warmup tool to protect sender reputation before scaling outreach.
+- [Email Deliverability](https://leadsnipper.com/email-deliverability): Deliverability monitoring and domain reputation tools.
+- [AI Cold Email Generator](https://leadsnipper.com/ai-cold-email-generator): AI-assisted cold email copywriting tool.
+- [Savings Calculator](https://leadsnipper.com/savings-calculator): Calculator comparing LeadSnipper cost vs AWS SES direct and other cold email tools.
+- [SocialSnipper](https://leadsnipper.com/products/socialsnipper): Companion product for LinkedIn scheduling and AI content.
+
+## Comparisons
+
+- [LeadSnipper vs Instantly](https://leadsnipper.com/vs/instantly): Feature and pricing comparison — BYO SES vs shared infrastructure.
+- [LeadSnipper vs Smartlead](https://leadsnipper.com/vs/smartlead): Feature and pricing comparison — deliverability and infrastructure control.
+- [LeadSnipper vs Lemlist](https://leadsnipper.com/vs/lemlist): Feature and pricing comparison — BYO SES vs Lemlist's shared sending.
+- [LeadSnipper vs Mailshake](https://leadsnipper.com/vs/mailshake): Feature and pricing comparison — no per-seat fees vs Mailshake pricing.
+- [LeadSnipper vs Apollo](https://leadsnipper.com/vs/apollo): Feature and pricing comparison, including data quality and bounce-rate differences.
+
+## Use Cases
+
+- [Cold Email for SaaS](https://leadsnipper.com/cold-email-for/saas): Strategy, sequences, and deliverability for SaaS outbound.
+- [Cold Email for B2B Startups](https://leadsnipper.com/cold-email-for/b2b-startups): First outbound motion for early-stage startups.
+- [Cold Email for Agencies](https://leadsnipper.com/cold-email-for/agencies): Multi-client campaign management and domain isolation.
+- [Cold Email for Recruiters](https://leadsnipper.com/cold-email-for/recruiters): Candidate outreach with inbox placement focus.
+- [Cold Email for Consultants](https://leadsnipper.com/cold-email-for/consultants): Affordable outbound for independent consultants.
+- [Cold Email for Healthcare](https://leadsnipper.com/cold-email-for/healthcare): Compliance-aware outreach for healthtech teams.
+- [Cold Email for Fintech](https://leadsnipper.com/cold-email-for/fintech): Regulated industry outbound with infrastructure control.
+- [Cold Email for Real Estate](https://leadsnipper.com/cold-email-for/real-estate): Property owner and investor cold outreach.
+
+## Guides
+
+- [Amazon SES Pricing 2026](https://leadsnipper.com/blog/amazon-ses-pricing-2026): Official AWS SES cost breakdown — $0.10 per 1,000 emails.
+- [How to Set Up AWS SES for Cold Email](https://leadsnipper.com/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step): Step-by-step AWS SES configuration guide.
+- [Best Cold Email Software 2026 Comparison](https://leadsnipper.com/blog/best-cold-email-software-2026-comparison): Comparison of 9 leading cold email tools.
+- [How Many Emails Per Day Per Domain](https://leadsnipper.com/blog/how-many-emails-per-day-cold-outreach): Sending limits and domain warmup guidance.
+- [How to Scale Cold Email Without Getting Blacklisted](https://leadsnipper.com/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted): Domain warmup, list verification, and reputation monitoring.
+- [Domain Reputation Management](https://leadsnipper.com/blog/domain-reputation-management-protect-sender-score): Sender score monitoring, bounce rate management, recovery strategies.
+- [SPF, DKIM, DMARC Guide](https://leadsnipper.com/blog/spf-dkim-dmarc-cold-email-guide): DNS authentication records explained for cold email.
+- [BYO AWS SES vs Shared Infrastructure](https://leadsnipper.com/blog/byo-aws-ses-vs-shared-email-infrastructure-cold-outreach): Why infrastructure ownership matters for cold outreach.
+- [Cold Email Deliverability Checklist](https://leadsnipper.com/blog/cold-email-deliverability-checklist): 15 steps before hitting send.
+- [Email Warmup, Verification & Domain Health](https://leadsnipper.com/blog/email-warmup-verification-domain-health-complete-guide): Complete deliverability guide covering all three pillars.
+- [Email List Cleaning Guide](https://leadsnipper.com/blog/email-list-cleaning-why-verification-prevents-bounce-disasters): Why verification prevents bounce disasters.
+- [Apollo Alternative for Cold Email](https://leadsnipper.com/blog/apollo-alternative-cold-email): Data quality and bounce-rate concerns with Apollo, and alternatives.
+- [Mailshake Alternatives](https://leadsnipper.com/blog/mailshake-alternatives): Best Mailshake alternatives for cold email in 2026.
+- [Lemlist Alternatives](https://leadsnipper.com/blog/lemlist-alternatives): Best Lemlist alternatives for cold email in 2026.
+- [Smartlead Alternatives](https://leadsnipper.com/blog/smartlead-alternatives): Best Smartlead alternatives for agencies and high-volume senders.
+- [The Outbound Stack for 20+ Meetings/Month](https://leadsnipper.com/blog/outbound-stack-20-meetings-per-month): Complete outbound stack breakdown with real numbers.
+- [Why Cold Emails Land in Spam](https://leadsnipper.com/blog/why-cold-emails-land-in-spam-fix-today): 5 real reasons and actionable fixes.
+- [Cold Email vs Newsletter Tools](https://leadsnipper.com/blog/cold-email-vs-newsletter-tools-why-mailchimp-wont-work): Why Mailchimp and Mailerlite fail for outbound.
+- [Apollo.io Data Quality & Bounce Rate](https://leadsnipper.com/blog/apollo-io-data-quality-bounce-rate-2026): Real user reports of 8-15% bounce rates.
+- [Email Warmup Tools Compared 2026](https://leadsnipper.com/blog/email-warmup-tools-compared-2026): Warmbox vs Instantly vs Mailreach vs LeadSnipper.
+- [Lemlist vs Instantly vs Smartlead vs Woodpecker](https://leadsnipper.com/blog/lemlist-vs-instantly-vs-smartlead-vs-woodpecker-2026): Head-to-head comparison of the four most popular platforms.
+
+## Services
+
+- [Services Overview](https://leadsnipper.com/services): Managed services and consulting.
+- [Lead Generation](https://leadsnipper.com/services/lead-generation): Done-for-you lead sourcing and list building.
+- [AI Automation](https://leadsnipper.com/services/ai-automation): AI-powered workflow automation for outbound.
+- [CRM Automation](https://leadsnipper.com/services/crm-automation): CRM integration and pipeline automation.
+- [Analytics](https://leadsnipper.com/services/analytics): Campaign analytics and reporting services.
+- [AI SEO](https://leadsnipper.com/services/ai-seo): SEO and content optimization services.
+- [Consulting](https://leadsnipper.com/services/consulting): Outbound strategy consulting.
+
+## Optional
+
+- [About](https://leadsnipper.com/about): Company story and team.
+- [Contact](https://leadsnipper.com/contact): Sales, support, and partnership inquiries.
+- [Terms of Service](https://leadsnipper.com/terms-of-service)
+- [Privacy Policy](https://leadsnipper.com/privacy-policy)
+- [Refund Policy](https://leadsnipper.com/refund-policy)
+- [Data Use Policy](https://leadsnipper.com/legal/data-use)
+- [G2 Reviews](https://www.g2.com/products/leadsnipper/reviews)

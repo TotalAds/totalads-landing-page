@@ -14,6 +14,11 @@ import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 import { Navbar } from "@/components/ui/navbar";
 import { generateFaqPageSchema } from "@/lib/faqs";
+import {
+  generateComparisonSchema,
+  competitorData,
+  leadsnipperProduct,
+} from "@/lib/schemas";
 import { pageConfigs } from "@/lib/seo";
 
 interface ComparisonPoint {
@@ -64,6 +69,16 @@ export default function ComparisonPage({
 }: ComparisonPageProps) {
   const pageConfig = pageConfigs[pageKey];
   const canonical = pageConfig.canonical;
+
+  // Build comparison ItemList schema if we have competitor data
+  const comparisonSchema = competitorData[competitor]
+    ? generateComparisonSchema(
+        competitor,
+        leadsnipperProduct,
+        competitorData[competitor].product
+      )
+    : null;
+
   const additionalStructuredData = [
     generateFaqPageSchema(faqs),
     {
@@ -84,6 +99,7 @@ export default function ComparisonPage({
         },
       ],
     },
+    ...(comparisonSchema ? [comparisonSchema] : []),
   ];
 
   return (
