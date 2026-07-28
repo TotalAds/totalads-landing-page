@@ -374,15 +374,25 @@ export default function BlogPost2() {
         BYO AWS SES with LeadSnipper gives you the sending control of an
         enterprise setup at a fraction of the cost, plus the campaign management,
         warmup, verification, and analytics you need to actually run outbound at
-        scale. Ready to stop renting?{" "}
+        scale.{" "}
+        <Link
+          href="/savings-calculator"
+          className="text-[#3b82f6] font-semibold hover:underline"
+        >
+          See how much you save vs shared tools →
+        </Link>{" "}
+        or{" "}
         <Link
           href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
-          Start your free trial
+          start your free trial
         </Link>
         .
       </p>
+
+      <BlogCalculatorCTA />
+
     </BlogLayout>
   );
 }

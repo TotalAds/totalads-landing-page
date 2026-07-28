@@ -89,9 +89,27 @@ export default function AmazonSesPricing2026() {
       </div>
       <p className="text-[#475569] leading-relaxed mb-4">
         For context: sending 100,000 cold emails per month costs{" "}
-        <strong>$10 in SES fees</strong>. Compare that to Instantly ($97–$358/mo
-        for shared infrastructure) or Lemlist ($55–$220/mo). The infrastructure
-        savings alone often pay for the cold email tool.
+        <strong>$10 in SES fees</strong>. Compare that to{" "}
+        <Link
+          href="/savings-calculator?tool=instantly&emails=100000"
+          className="text-[#0058be] font-medium hover:underline"
+        >
+          Instantly ($97–$358/mo for shared infrastructure)
+        </Link>{" "}
+        or{" "}
+        <Link
+          href="/savings-calculator?tool=lemlist&emails=100000"
+          className="text-[#0058be] font-medium hover:underline"
+        >
+          Lemlist ($39–$159/mo)
+        </Link>
+        . The infrastructure savings alone often pay for the cold email tool.{" "}
+        <Link
+          href="/savings-calculator"
+          className="text-[#0058be] font-medium hover:underline"
+        >
+          Calculate your exact savings →
+        </Link>
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -371,6 +389,8 @@ export default function AmazonSesPricing2026() {
         </Link>
         .
       </p>
+      <BlogCalculatorCTA />
+
     </BlogLayout>
   );
 }

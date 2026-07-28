@@ -141,19 +141,34 @@ export const pageConfigs: Record<string, PageConfig> = {
     },
   },
 
+  emailDeliverabilityChecker: {
+    title: "Free Email Deliverability Checker (SPF, DKIM, DMARC Validator)",
+    description:
+      "Run live DNS TXT lookups for SPF, DKIM, and DMARC records. Get instant deliverability scores and plain-English fixes for domain authentication errors.",
+    keywords:
+      "spf dkim dmarc checker, email deliverability checker free, check email authentication, spf lookup, dmarc validator",
+    canonical: "https://leadsnipper.com/tools/email-deliverability-checker",
+    openGraph: {
+      title: "Free Email Deliverability Checker (SPF, DKIM, DMARC Validator)",
+      description:
+        "Verify your domain's email authentication settings in seconds. Detect SPF lookup limits, missing DKIM keys, or weak DMARC policies.",
+      url: "https://leadsnipper.com/tools/email-deliverability-checker",
+    },
+  },
+
   savingsCalculator: {
     title:
-      "Cold Email Savings Calculator — Instantly/Smartlead vs LeadSnipper",
+      "Cold Email Cost Calculator: AWS SES vs Smartlead vs Instantly vs LeadSnipper (2026)",
     description:
-      "Use this cold email savings calculator to compare Instantly and Smartlead costs against LeadSnipper + AWS SES. Enter monthly email volume and see your potential yearly savings in INR.",
+      "Compare cold email costs side-by-side: AWS SES, Instantly, Smartlead, Lemlist, Mailshake, Apollo vs LeadSnipper. Enter your monthly volume and see exactly how much you save per year.",
     keywords:
-      "cold email cost calculator, Instantly pricing comparison, Smartlead pricing comparison, LeadSnipper savings calculator, AWS SES pricing calculator, outbound software cost",
+      "cold email cost calculator, cold email pricing comparison, Instantly pricing calculator, Smartlead cost comparison, Lemlist pricing, Mailshake pricing, Apollo pricing, LeadSnipper savings calculator, AWS SES pricing calculator, outbound email cost comparison 2026, cold email tool pricing, email outreach cost",
     canonical: "https://leadsnipper.com/savings-calculator",
     openGraph: {
       title:
-        "Cold Email Savings Calculator — Save vs Instantly and Smartlead",
+        "Cold Email Cost Calculator: AWS SES vs Smartlead vs Instantly vs LeadSnipper (2026)",
       description:
-        "Enter your monthly email volume and instantly see how much you can save per year with LeadSnipper + AWS SES.",
+        "Enter your monthly email volume, pick your current tool, and see your annual savings with LeadSnipper + AWS SES — side by side.",
       url: "https://leadsnipper.com/savings-calculator",
     },
   },

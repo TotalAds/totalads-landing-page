@@ -43,6 +43,11 @@ export const sitemapConfig = {
       priority: 0.8,
     },
     {
+      path: "/tools/email-deliverability-checker",
+      changefreq: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       path: "/vs/instantly",
       changefreq: "monthly" as const,
       priority: 0.9,
@@ -326,6 +331,7 @@ Allow: /blog
 Allow: /blog/*
 Allow: /contact
 Allow: /savings-calculator
+Allow: /tools/*
 Allow: /vs/*
 Allow: /products/*
 Allow: /services

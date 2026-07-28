@@ -143,11 +143,11 @@ export default function ComparisonPage({
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/savings-calculator"
+                  href={`/savings-calculator?tool=${competitor.toLowerCase()}`}
                   className="btn-ghost rounded-full inline-flex items-center justify-center gap-2"
                 >
                   <Zap className="w-4 h-4" />
-                  Compare costs
+                  Calculate your savings
                 </Link>
               </div>
             </motion.div>
@@ -337,11 +337,11 @@ export default function ComparisonPage({
                 SES ownership, LeadSnipper is built for that workflow.
               </p>
               <Link
-                href="/savings-calculator"
+                href={`/savings-calculator?tool=${competitor.toLowerCase()}`}
                 className="inline-flex items-center gap-2 mt-6 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
               >
                 <Zap className="w-4 h-4" />
-                Calculate cost difference →
+                See how much you save vs {competitor} →
               </Link>
             </motion.div>
 

@@ -41,6 +41,7 @@ export default function Footer() {
     ],
     Resources: [
       { label: "Blog", href: "/blog" },
+      { label: "Deliverability Checker", href: "/tools/email-deliverability-checker" },
       { label: "SaaS Cold Email", href: "/cold-email-for/saas" },
       { label: "Agency Cold Email", href: "/cold-email-for/agencies" },
       { label: "Cost Calculator", href: "/savings-calculator" },
