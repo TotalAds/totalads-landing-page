@@ -37,17 +37,17 @@ export interface SendingLimitResult {
 /* ── Constants & Labels ───────────────────────────────────────────── */
 
 export const DOMAIN_AGE_OPTIONS = [
-  { id: "new" as DomainAge, label: "New domain (0–30 days)", value: "new" as DomainAge },
+  { id: "new" as DomainAge, label: "Brand new (0–30 days)", value: "new" as DomainAge },
   { id: "1-3mo" as DomainAge, label: "1–3 months old", value: "1-3mo" as DomainAge },
   { id: "3-6mo" as DomainAge, label: "3–6 months old", value: "3-6mo" as DomainAge },
   { id: "6mo+" as DomainAge, label: "6+ months old", value: "6mo+" as DomainAge },
 ];
 
 export const WARMUP_STATUS_OPTIONS = [
-  { id: "not_started" as WarmupStatus, label: "Not started", value: "not_started" as WarmupStatus },
-  { id: "week_1_2" as WarmupStatus, label: "Week 1–2 (warming up)", value: "week_1_2" as WarmupStatus },
-  { id: "week_3_4" as WarmupStatus, label: "Week 3–4 (nearly warmed)", value: "week_3_4" as WarmupStatus },
-  { id: "fully_warmed" as WarmupStatus, label: "Fully warmed", value: "fully_warmed" as WarmupStatus },
+  { id: "not_started" as WarmupStatus, label: "Not started yet", value: "not_started" as WarmupStatus },
+  { id: "week_1_2" as WarmupStatus, label: "Week 1–2 (just starting)", value: "week_1_2" as WarmupStatus },
+  { id: "week_3_4" as WarmupStatus, label: "Week 3–4 (almost ready)", value: "week_3_4" as WarmupStatus },
+  { id: "fully_warmed" as WarmupStatus, label: "Fully warmed up", value: "fully_warmed" as WarmupStatus },
 ];
 
 const HEALTH_THRESHOLDS: HealthThresholds = {
@@ -138,7 +138,7 @@ function buildRampSchedule(
         dailyMin: min,
         dailyMax: max,
         type: "warmup",
-        notes: "Warmup only – no cold outreach. Send to colleagues, existing customers, warmup partners.",
+        notes: "Warmup only. Do not send cold email yet. Send to people who know you.",
       });
       current = max;
     }
@@ -156,8 +156,8 @@ function buildRampSchedule(
         type: weekNum <= 4 ? "limited-cold" : "full-cold",
         notes:
           weekNum <= 4
-            ? "Mix in limited cold outreach – verified contacts only."
-            : "Full cold outreach allowed – monitor bounce/complaint rates closely.",
+            ? "You can send a little cold email. Only use checked, real addresses."
+            : "Cold email is OK now. Watch bounce and spam rates every day.",
       });
       current = max;
       weekNum++;
@@ -177,8 +177,8 @@ function buildRampSchedule(
         type: weekNum <= 2 ? "limited-cold" : "full-cold",
         notes:
           weekNum <= 2
-            ? "Mix in limited cold outreach – verified contacts only."
-            : "Full cold outreach allowed – monitor bounce/complaint rates closely.",
+            ? "You can send a little cold email. Only use checked, real addresses."
+            : "Cold email is OK now. Watch bounce and spam rates every day.",
       });
       current = max;
       weekNum++;
@@ -191,7 +191,7 @@ function buildRampSchedule(
       dailyMin: ageCeiling,
       dailyMax: ageCeiling,
       type: "full-cold",
-      notes: "Maintain current volume. Monitor health metrics daily to protect sender reputation.",
+      notes: "You are at a safe full volume. Keep watching opens, bounces, and spam reports.",
     });
 
     // Add scaling guidance if there's room to grow
@@ -201,7 +201,7 @@ function buildRampSchedule(
         dailyMin: ageCeiling,
         dailyMax: ageCeiling,
         type: "full-cold",
-        notes: "To scale beyond this limit, add more sending domains or wait for domain to age further.",
+        notes: "Want to send more? Add another domain, or wait until this domain is older.",
       });
     } else {
       schedule.push({
@@ -209,7 +209,7 @@ function buildRampSchedule(
         dailyMin: ageCeiling,
         dailyMax: ageCeiling,
         type: "full-cold",
-        notes: "To scale beyond 150/day per domain, add more sending domains and distribute volume.",
+        notes: "Want more than 150/day? Add more domains and split the sending.",
       });
     }
   }

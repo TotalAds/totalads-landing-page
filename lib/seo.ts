@@ -142,16 +142,16 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   emailDeliverabilityChecker: {
-    title: "Free Email Deliverability Checker (SPF, DKIM, DMARC Validator)",
+    title: "Free Email Deliverability Checker (SPF, DKIM, DMARC)",
     description:
-      "Run live DNS TXT lookups for SPF, DKIM, and DMARC records. Get instant deliverability scores and plain-English fixes for domain authentication errors.",
+      "Check if your domain is set up to send email safely. See SPF, DKIM, and DMARC results in seconds, plus simple steps to fix problems.",
     keywords:
       "spf dkim dmarc checker, email deliverability checker free, check email authentication, spf lookup, dmarc validator",
     canonical: "https://leadsnipper.com/tools/email-deliverability-checker",
     openGraph: {
-      title: "Free Email Deliverability Checker (SPF, DKIM, DMARC Validator)",
+      title: "Free Email Deliverability Checker (SPF, DKIM, DMARC)",
       description:
-        "Verify your domain's email authentication settings in seconds. Detect SPF lookup limits, missing DKIM keys, or weak DMARC policies.",
+        "Enter your domain. We check your email setup and tell you what to fix in plain English.",
       url: "https://leadsnipper.com/tools/email-deliverability-checker",
     },
   },
@@ -175,17 +175,17 @@ export const pageConfigs: Record<string, PageConfig> = {
 
   coldEmailSendingLimitCalculator: {
     title:
-      "Cold Email Sending Limit Calculator – Safe Daily Send Limits by Domain Age",
+      "Cold Email Sending Limit Calculator – How Many Emails Per Day?",
     description:
-      "Calculate your safe cold email sending limit based on domain age and warmup status. Get a personalized week-by-week ramp-up schedule to avoid spam filters and protect sender reputation.",
+      "Find how many cold emails you can safely send each day. Enter your domain age and warmup status to get a simple week-by-week plan.",
     keywords:
       "cold email sending limit calculator, how many cold emails per day, safe sending limit, email warmup schedule, daily send limit calculator, domain sending capacity, cold outreach volume limits, emails per day per domain, how many emails can I send, cold email daily limit, sender reputation calculator",
     canonical: "https://leadsnipper.com/tools/cold-email-sending-limit-calculator",
     openGraph: {
       title:
-        "Cold Email Sending Limit Calculator – Safe Daily Limits + Ramp Schedule",
+        "Cold Email Sending Limit Calculator – How Many Emails Per Day?",
       description:
-        "Get your personalized daily send limit and week-by-week ramp schedule based on domain age and warmup status — protect your sender reputation.",
+        "Get a safe daily number and a simple week-by-week plan based on your domain age and warmup.",
       url: "https://leadsnipper.com/tools/cold-email-sending-limit-calculator",
     },
   },

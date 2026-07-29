@@ -11,16 +11,17 @@ export default function BlogSendingLimitCTA() {
         </div>
         <div className="flex-1">
           <h3 className="font-heading font-bold text-[17px] text-[#131b2e] mb-2">
-            Get your personalized sending limit + ramp schedule
+            Find how many emails you can send today
           </h3>
           <p className="text-sm text-[#475569] leading-relaxed mb-3">
-            Calculate your safe daily send limit based on your domain age and warmup status — plus a week-by-week ramp-up plan to reach full volume without tripping spam filters.
+            Tell us your domain age and warmup stage. Get a safe daily number
+            and a simple week-by-week plan so you do not get blocked.
           </p>
           <Link
             href="/tools/cold-email-sending-limit-calculator"
             className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
           >
-            Try our free Sending Limit Calculator →
+            Try the free Sending Limit Calculator →
           </Link>
         </div>
       </div>

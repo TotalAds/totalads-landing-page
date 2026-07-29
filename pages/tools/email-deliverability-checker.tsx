@@ -68,32 +68,32 @@ const checkerFaqs = [
   {
     question: "What is SPF, DKIM, and DMARC?",
     answer:
-      "SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail), and DMARC (Domain-based Message Authentication, Reporting, and Conformance) are the three foundational email authentication protocols. SPF defines which mail servers can send on your behalf, DKIM cryptographically signs your messages, and DMARC tells receiving servers how to handle emails that fail SPF/DKIM checks.",
+      "They are three checks that prove your emails are really from you. SPF says which servers can send for your domain. DKIM adds a digital stamp to each email. DMARC tells Gmail and Outlook what to do if a check fails. Together, they help your emails land in the inbox.",
   },
   {
-    question: "Why is SPF/DKIM/DMARC authentication required?",
+    question: "Why do I need SPF, DKIM, and DMARC?",
     answer:
-      "Major email providers like Gmail, Yahoo, and Outlook enforce strict authentication rules. Unauthenticated or misconfigured emails are flagged as spam, rate-limited, or blocked outright to protect users from phishing and domain spoofing.",
+      "Gmail, Yahoo, and Outlook expect these checks. Without them, your emails can go to spam, get slowed down, or get blocked. They also stop other people from sending fake emails that look like they came from you.",
   },
   {
-    question: "How does the Email Deliverability Checker work?",
+    question: "How does this tool work?",
     answer:
-      "Enter your domain name (and optional DKIM selector). Our tool performs live DNS TXT lookups against your domain, extracts the SPF, DKIM, and DMARC records, validates them against RFC specifications, points out misconfigurations, and gives you actionable plain-English fixes.",
+      "Type your domain name. We look up your email settings online, check if SPF, DKIM, and DMARC look correct, and show you what to fix in plain English.",
   },
   {
     question: "What is a DKIM selector?",
     answer:
-      "A DKIM selector is a string used to identify your public DKIM key record in DNS (e.g., 'google' for Google Workspace, 'selector1' for Microsoft 365, or 'k1' for Mailchimp). If you leave it set to 'google', we check the default Google Workspace selector, but you can enter your custom provider selector.",
+      "It is a short name that points to your DKIM key. Google often uses \"google\". Microsoft often uses \"selector1\". Mailchimp often uses \"k1\". Pick your email provider above, or choose Custom and type your own.",
   },
   {
-    question: "Why does my SPF record fail due to too many DNS lookups?",
+    question: "Why does my SPF record fail for too many lookups?",
     answer:
-      "The SPF specification (RFC 7208) limits DNS lookups to a maximum of 10. Mechanisms like 'include:', 'a', 'mx', and 'redirect' trigger lookups. If your SPF record exceeds 10 lookups, receiving mail servers reject it with a PermError. You can resolve this by consolidating includes or using SPF flattening.",
+      "SPF can only look up about 10 other records. If you have too many \"include\" rules, the check fails. Fix it by combining rules or using fewer includes.",
   },
   {
-    question: "Is this deliverability checker tool completely free?",
+    question: "Is this tool free?",
     answer:
-      "Yes. This tool is 100% free with no login required. You can check any domain instantly, view detailed failure logs, copy fixes, and share results via a unique URL.",
+      "Yes. It is free. You do not need an account. Check any domain, see the results, copy the fixes, and share a link.",
   },
 ];
 
@@ -220,7 +220,7 @@ export default function EmailDeliverabilityCheckerPage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web Browser",
     description:
-      "Free SPF, DKIM, and DMARC validator tool. Check domain email authentication records, identify bounce risks, and get plain-English fix recommendations.",
+      "Free tool to check if your email setup is safe. See SPF, DKIM, and DMARC results and simple fixes so more emails reach the inbox.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -304,7 +304,7 @@ export default function EmailDeliverabilityCheckerPage() {
                 onClick={() => toggleFix(fixKey)}
                 className="text-[11px] text-[#0058be] font-semibold flex items-center gap-1 hover:underline pt-1"
               >
-                {isExpanded ? "Hide Fix" : "How to Fix"}
+                {isExpanded ? "Hide fix" : "How to fix"}
                 <ChevronDown
                   className={`w-3 h-3 transition-transform ${
                     isExpanded ? "rotate-180" : ""
@@ -327,8 +327,8 @@ export default function EmailDeliverabilityCheckerPage() {
   return (
     <>
       <SEO
-        title="Free Email Deliverability Checker (SPF, DKIM, DMARC Validator)"
-        description="Run live DNS TXT lookups for SPF, DKIM, and DMARC records. Get instant deliverability scores and plain-English fixes for domain authentication errors."
+        title="Free Email Deliverability Checker (SPF, DKIM, DMARC)"
+        description="Check if your domain is set up to send email safely. See SPF, DKIM, and DMARC results in seconds, plus simple steps to fix problems."
         keywords="spf dkim dmarc checker, email deliverability checker free, check email authentication, spf lookup, dmarc validator"
         canonical="https://leadsnipper.com/tools/email-deliverability-checker"
         additionalStructuredData={[webAppSchema, faqSchema]}
@@ -345,20 +345,19 @@ export default function EmailDeliverabilityCheckerPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="section-tag justify-center mb-6">
-              Free Deliverability Tool
+              Free Email Check Tool
             </span>
             <h1 className="font-heading font-extrabold text-[#131b2e] mt-6">
               <span className="block text-3xl md:text-display-lg leading-[1.1] tracking-tight">
                 Email Deliverability Checker
               </span>
               <span className="block font-display italic text-[#0058be] text-2xl md:text-display-lg mt-2">
-                SPF, DKIM & DMARC Validator
+                Check SPF, DKIM & DMARC in seconds
               </span>
             </h1>
             <p className="text-body-lg text-[#424754] mt-6 max-w-2xl mx-auto">
-              Run live DNS TXT lookups against your domain in seconds. Detect
-              broken SPF lookups, missing DKIM keys, or weak DMARC policies
-              before sending cold emails.
+              Enter your domain. We check your email setup and tell you what is
+              wrong — and how to fix it — before your cold emails go to spam.
             </p>
           </motion.div>
         </div>
@@ -378,9 +377,9 @@ export default function EmailDeliverabilityCheckerPage() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label className="text-xs font-heading font-semibold text-[#424754] mb-1.5 flex items-center justify-between">
-                    <span>Domain name</span>
+                    <span>Your website domain</span>
                     <span className="text-[11px] font-mono text-[#727785] font-normal flex items-center gap-1">
-                      <Lock className="w-3 h-3 text-[#10b981]" /> Private DNS lookup
+                      <Lock className="w-3 h-3 text-[#10b981]" /> Private check
                     </span>
                   </label>
 
@@ -410,7 +409,7 @@ export default function EmailDeliverabilityCheckerPage() {
                       ) : (
                         <>
                           <Search className="w-4 h-4" />
-                          <span>Check Deliverability</span>
+                          <span>Check My Email Setup</span>
                         </>
                       )}
                     </button>
@@ -419,12 +418,13 @@ export default function EmailDeliverabilityCheckerPage() {
 
                 <div className="pt-4 border-t border-[#c2c6d6]/20">
                   <label className="text-xs font-heading font-semibold text-[#424754] flex items-center gap-1.5 mb-2.5">
-                    <span>DKIM selector</span>
+                    <span>Email provider (DKIM)</span>
                     <span className="group relative cursor-pointer text-[#727785] hover:text-[#0058be]">
                       <HelpCircle className="w-3.5 h-3.5" />
                       <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 rounded-xl bg-[#131b2e] p-2.5 text-[11px] text-white shadow-lg leading-tight z-30">
-                        DKIM keys live at selector._domainkey.domain.com. Google
-                        uses &apos;google&apos;, M365 uses &apos;selector1&apos;.
+                        Pick who sends your email. Google uses &apos;google&apos;.
+                        Microsoft uses &apos;selector1&apos;. Not sure? Start with
+                        Google.
                       </span>
                     </span>
                   </label>
@@ -459,7 +459,7 @@ export default function EmailDeliverabilityCheckerPage() {
                         type="text"
                         value={customSelectorInput}
                         onChange={(e) => setCustomSelectorInput(e.target.value)}
-                        placeholder="Type custom selector (e.g., s1, default, k1)"
+                        placeholder="Type your own name (e.g. s1 or default)"
                         className="w-full px-4 py-2.5 rounded-xl border border-[#c2c6d6]/40 bg-white text-[#131b2e] text-xs font-mono focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/15 outline-none"
                       />
                     </motion.div>
@@ -534,35 +534,35 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="space-y-1.5">
                       <div className="flex flex-wrap items-center gap-2">
                         <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#131b2e]">
-                          Audit for{" "}
+                          Results for{" "}
                           <span className="text-[#0058be]">{result.domain}</span>
                         </h2>
                         <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-medium bg-[#eaedff] text-[#0058be]">
-                          Selector: {currentDkimSelector}
+                          Provider: {currentDkimSelector}
                         </span>
                       </div>
 
                       <p className="text-sm text-[#424754]">
                         {result.score >= 80 ? (
                           <span className="text-[#10b981] font-semibold flex items-center gap-1.5">
-                            <ShieldCheck className="w-4 h-4" /> Strong domain
-                            authentication. Low bounce risk.
+                            <ShieldCheck className="w-4 h-4" /> Looks good. Your
+                            setup is strong.
                           </span>
                         ) : result.score >= 50 ? (
                           <span className="text-[#b75b00] font-semibold flex items-center gap-1.5">
-                            <ShieldAlert className="w-4 h-4" /> Moderate risk.
-                            Some tags need optimization.
+                            <ShieldAlert className="w-4 h-4" /> Some issues.
+                            Fix them before you send a lot.
                           </span>
                         ) : (
                           <span className="text-[#ba1a1a] font-semibold flex items-center gap-1.5">
-                            <AlertCircle className="w-4 h-4" /> High bounce risk.
-                            Authentication incomplete.
+                            <AlertCircle className="w-4 h-4" /> High risk.
+                            Fix these before you send.
                           </span>
                         )}
                       </p>
 
                       <p className="text-xs text-[#727785]">
-                        Checked live on{" "}
+                        Checked at{" "}
                         {new Date(result.checkedAt).toLocaleTimeString([], {
                           hour: "2-digit",
                           minute: "2-digit",
@@ -584,7 +584,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     ) : (
                       <>
                         <Link2 className="w-4 h-4" />
-                        <span>Share Report</span>
+                        <span>Share Results</span>
                       </>
                     )}
                   </button>
@@ -597,10 +597,10 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#c2c6d6]/20">
                       <div>
                         <h3 className="font-heading font-bold text-base text-[#131b2e]">
-                          SPF Record
+                          SPF
                         </h3>
                         <p className="text-xs text-[#727785]">
-                          Sender Policy Framework
+                          Who can send for you
                         </p>
                       </div>
                       {renderStatusBadge(result.spf.status)}
@@ -609,7 +609,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-[10px] font-mono text-[#727785] uppercase tracking-wider">
-                          DNS TXT Value
+                          Current setting
                         </span>
                         {result.spf.raw && (
                           <button
@@ -634,7 +634,7 @@ export default function EmailDeliverabilityCheckerPage() {
                         </div>
                       ) : (
                         <div className="p-3 bg-[#ba1a1a]/5 rounded-xl border border-[#ba1a1a]/20 text-xs text-[#ba1a1a] font-medium italic">
-                          No v=spf1 record found for this domain
+                          No SPF setting found for this domain
                         </div>
                       )}
                     </div>
@@ -642,7 +642,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     {renderIssues(
                       result.spf.issues,
                       "spf",
-                      "SPF record is fully valid and optimized."
+                      "SPF looks good."
                     )}
                   </div>
 
@@ -651,10 +651,10 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#c2c6d6]/20">
                       <div>
                         <h3 className="font-heading font-bold text-base text-[#131b2e]">
-                          DKIM Record
+                          DKIM
                         </h3>
                         <p className="text-xs text-[#727785]">
-                          DomainKeys Identified Mail
+                          Email stamp / signature
                         </p>
                       </div>
                       {renderStatusBadge(result.dkim.status)}
@@ -663,7 +663,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-[10px] font-mono text-[#727785] uppercase tracking-wider">
-                          Key at: {currentDkimSelector}._domainkey
+                          Key name: {currentDkimSelector}
                         </span>
                         {result.dkim.raw && (
                           <button
@@ -690,7 +690,7 @@ export default function EmailDeliverabilityCheckerPage() {
                         </div>
                       ) : (
                         <div className="p-3 bg-[#ba1a1a]/5 rounded-xl border border-[#ba1a1a]/20 text-xs text-[#ba1a1a] font-medium italic">
-                          No key found at {currentDkimSelector}._domainkey
+                          No DKIM key found for {currentDkimSelector}
                         </div>
                       )}
                     </div>
@@ -698,7 +698,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     {renderIssues(
                       result.dkim.issues,
                       "dkim",
-                      "DKIM key verified successfully."
+                      "DKIM looks good."
                     )}
                   </div>
 
@@ -707,10 +707,10 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#c2c6d6]/20">
                       <div>
                         <h3 className="font-heading font-bold text-base text-[#131b2e]">
-                          DMARC Record
+                          DMARC
                         </h3>
                         <p className="text-xs text-[#727785]">
-                          Domain-based Policy
+                          What to do if checks fail
                         </p>
                       </div>
                       {renderStatusBadge(result.dmarc.status)}
@@ -719,7 +719,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-[10px] font-mono text-[#727785] uppercase tracking-wider">
-                          DNS Record (_dmarc)
+                          Current setting
                         </span>
                         {result.dmarc.raw && (
                           <button
@@ -746,7 +746,7 @@ export default function EmailDeliverabilityCheckerPage() {
                         </div>
                       ) : (
                         <div className="p-3 bg-[#ba1a1a]/5 rounded-xl border border-[#ba1a1a]/20 text-xs text-[#ba1a1a] font-medium italic">
-                          No TXT record found at _dmarc
+                          No DMARC setting found
                         </div>
                       )}
                     </div>
@@ -754,7 +754,7 @@ export default function EmailDeliverabilityCheckerPage() {
                     {renderIssues(
                       result.dmarc.issues,
                       "dmarc",
-                      "DMARC policy active and protecting domain."
+                      "DMARC looks good."
                     )}
                   </div>
                 </div>
@@ -763,14 +763,14 @@ export default function EmailDeliverabilityCheckerPage() {
                 <div className="glass-card rounded-2xl border border-[#c2c6d6]/15 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0058be]/[0.03]">
                   <div className="space-y-2 text-center md:text-left">
                     <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#0058be]">
-                      <Zap className="w-3.5 h-3.5" /> Automated domain health
+                      <Zap className="w-3.5 h-3.5" /> Auto domain checks
                     </span>
                     <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#131b2e]">
-                      Protect deliverability on autopilot
+                      Keep your inbox safe on autopilot
                     </h3>
                     <p className="text-sm text-[#727785] max-w-xl leading-relaxed">
-                      LeadSnipper continuously monitors SPF/DKIM/DMARC, auto-pauses
-                      failing campaigns, and includes built-in email verification.
+                      LeadSnipper watches SPF, DKIM, and DMARC for you, pauses
+                      bad campaigns, and checks emails before you send.
                     </p>
                   </div>
 
@@ -798,14 +798,13 @@ export default function EmailDeliverabilityCheckerPage() {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <span className="section-tag mb-6">Understanding Authentication</span>
+            <span className="section-tag mb-6">Simple Guide</span>
             <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6 mb-2">
-              Why email authentication matters
+              Why these three checks matter
             </h2>
             <p className="text-body-md text-[#727785] max-w-2xl">
-              Gmail and Yahoo require full SPF, DKIM, and DMARC authentication
-              for cold outbound senders. Missing records lead to high bounce
-              rates and immediate spam placement.
+              Gmail and Yahoo want SPF, DKIM, and DMARC set up. If they are
+              missing, more of your emails go to spam.
             </p>
           </motion.div>
 
@@ -813,18 +812,18 @@ export default function EmailDeliverabilityCheckerPage() {
             {[
               {
                 step: "1",
-                title: "SPF (Sender Policy)",
-                body: "Lists IP addresses and authorized servers permitted to send email on behalf of your domain. Prevents spammers from spoofing your sender address.",
+                title: "SPF — Who can send",
+                body: "A list of servers allowed to send email for your domain. It stops strangers from faking your address.",
               },
               {
                 step: "2",
-                title: "DKIM (Digital Signature)",
-                body: "Attaches an encrypted digital signature to outgoing mail headers. Receiving mail servers verify the public key in your DNS to confirm authenticity.",
+                title: "DKIM — Email stamp",
+                body: "A digital stamp on each email. The inbox checks it to make sure the message was not changed.",
               },
               {
                 step: "3",
-                title: "DMARC (Policy Rule)",
-                body: "Defines the action receiving mail servers take when SPF or DKIM fails (quarantine or reject). Essential for maintaining long-term sender score.",
+                title: "DMARC — What if it fails",
+                body: "A rule for what inboxes should do when SPF or DKIM fails — like put the email in spam or block it.",
               },
             ].map((item) => (
               <div
@@ -858,7 +857,7 @@ export default function EmailDeliverabilityCheckerPage() {
           >
             <span className="section-tag justify-center mb-6">FAQ</span>
             <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
-              Frequently asked questions.
+              Common questions
             </h2>
           </motion.div>
 
@@ -894,7 +893,7 @@ export default function EmailDeliverabilityCheckerPage() {
             viewport={{ once: true }}
           >
             <p className="text-sm text-[#727785] mb-5">
-              Learn more about email deliverability:
+              Want to learn more?
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
@@ -907,13 +906,13 @@ export default function EmailDeliverabilityCheckerPage() {
                 href="/blog/spf-dkim-dmarc-cold-email-guide"
                 className="btn-ghost rounded-full text-sm"
               >
-                SPF / DKIM / DMARC guide →
+                Simple SPF / DKIM / DMARC guide →
               </Link>
               <Link
                 href="/blog/cold-email-deliverability-checklist"
                 className="btn-ghost rounded-full text-sm"
               >
-                Deliverability checklist →
+                Pre-send checklist →
               </Link>
             </div>
             <div className="mt-8">
