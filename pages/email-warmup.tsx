@@ -73,6 +73,11 @@ export default function EmailWarmupPage() {
           description: "Monitor domain health alongside warmup progress.",
         },
         {
+          href: "/tools/cold-email-sending-limit-calculator",
+          label: "Sending limit calculator",
+          description: "Calculate your safe daily send limit and week-by-week ramp schedule.",
+        },
+        {
           href: "/blog/email-warmup-verification-domain-health-complete-guide",
           label: "Email warmup complete guide",
           description: "In-depth guide to warmup, verification, and domain health.",

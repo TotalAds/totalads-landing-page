@@ -79,6 +79,16 @@ export default function EmailDeliverabilityPage() {
           description: "Build sender reputation before cold outreach.",
         },
         {
+          href: "/tools/cold-email-sending-limit-calculator",
+          label: "Sending limit calculator",
+          description: "Calculate safe daily send limits by domain age and warmup status.",
+        },
+        {
+          href: "/blog/how-many-emails-per-day-cold-outreach",
+          label: "Daily volume guide",
+          description: "How many emails per day per domain for cold outreach.",
+        },
+        {
           href: "/blog/spf-dkim-dmarc-cold-email-guide",
           label: "SPF vs DKIM vs DMARC guide",
           description: "Understand email authentication for cold email.",

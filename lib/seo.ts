@@ -173,6 +173,23 @@ export const pageConfigs: Record<string, PageConfig> = {
     },
   },
 
+  coldEmailSendingLimitCalculator: {
+    title:
+      "Cold Email Sending Limit Calculator – Safe Daily Send Limits by Domain Age",
+    description:
+      "Calculate your safe cold email sending limit based on domain age and warmup status. Get a personalized week-by-week ramp-up schedule to avoid spam filters and protect sender reputation.",
+    keywords:
+      "cold email sending limit calculator, how many cold emails per day, safe sending limit, email warmup schedule, daily send limit calculator, domain sending capacity, cold outreach volume limits, emails per day per domain, how many emails can I send, cold email daily limit, sender reputation calculator",
+    canonical: "https://leadsnipper.com/tools/cold-email-sending-limit-calculator",
+    openGraph: {
+      title:
+        "Cold Email Sending Limit Calculator – Safe Daily Limits + Ramp Schedule",
+      description:
+        "Get your personalized daily send limit and week-by-week ramp schedule based on domain age and warmup status — protect your sender reputation.",
+      url: "https://leadsnipper.com/tools/cold-email-sending-limit-calculator",
+    },
+  },
+
   instantlyAlternative: {
     title:
       "Best Instantly Alternative for Agencies in 2026",

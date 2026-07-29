@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 import BlogLayout from "@/components/BlogLayout";
+import BlogSendingLimitCTA from "@/components/BlogSendingLimitCTA";
 import BlogSoftCTA from "@/components/BlogSoftCTA";
 import { getBlogPost } from "@/lib/blog";
 
@@ -15,7 +16,15 @@ export default function HowManyEmailsPerDay() {
         Googled cold email question — and the wrong answer costs you your domain.
         Send too few and you leave pipeline on the table. Send too many too fast
         and mailbox providers flag you as a spammer. Here is the data-backed
-        answer, broken down by domain age, warmup stage, and infrastructure.
+        answer, broken down by domain age, warmup stage, and infrastructure. Use
+        our{" "}
+        <Link
+          href="/tools/cold-email-sending-limit-calculator"
+          className="text-[#0058be] font-medium hover:underline"
+        >
+          personalized sending limit calculator
+        </Link>{" "}
+        to get your exact safe volume and ramp schedule.
       </p>
 
       {/* Quick Answer Box */}
@@ -46,6 +55,8 @@ export default function HowManyEmailsPerDay() {
           </li>
         </ul>
       </div>
+
+      <BlogSendingLimitCTA />
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         Why &quot;How Many Emails Per Day&quot; Is the Wrong Question Alone
@@ -377,6 +388,8 @@ export default function HowManyEmailsPerDay() {
           </div>
         ))}
       </div>
+
+      <BlogSoftCTA />
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         Daily Volume Cheat Sheet

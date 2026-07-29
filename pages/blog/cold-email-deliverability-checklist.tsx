@@ -60,6 +60,14 @@ export default function DeliverabilityChecklist() {
         </Link>
       </p>
 
+      <p className="text-[#475569] leading-relaxed mb-4">
+        For item #8 (daily send volume), use our{" "}
+        <Link href="/tools/cold-email-sending-limit-calculator" className="text-[#0058be] font-medium hover:underline">
+          sending limit calculator
+        </Link>{" "}
+        to get your personalized safe volume based on domain age and warmup status.
+      </p>
+
       <p className="text-[#475569] leading-relaxed mb-8">
         For deeper guidance, read{" "}
         <Link href="/blog/how-to-avoid-spam-folder-cold-email" className="text-[#0058be] font-medium hover:underline">

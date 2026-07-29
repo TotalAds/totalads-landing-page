@@ -48,6 +48,11 @@ export const sitemapConfig = {
       priority: 0.9,
     },
     {
+      path: "/tools/cold-email-sending-limit-calculator",
+      changefreq: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       path: "/vs/instantly",
       changefreq: "monthly" as const,
       priority: 0.9,

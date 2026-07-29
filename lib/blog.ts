@@ -593,6 +593,33 @@ export const blogPosts: BlogPost[] = [
       "email-warmup-verification-domain-health-complete-guide",
       "cold-email-deliverability-checklist",
     ],
+    faqs: [
+      {
+        question: "How many cold emails can I send per day on a new domain?",
+        answer:
+          "New domains (0–30 days old) should start with 10–30 emails per day during the first two weeks of warmup. Do not send cold outreach during this period—only warmup emails to engaged recipients. After 2–4 weeks of warmup, you can gradually scale to 50 emails per day for cold outreach on new domains.",
+      },
+      {
+        question: "How many emails per day per domain is safe for cold outreach?",
+        answer:
+          "Safe daily send limits depend on domain age and warmup status. New domains: 50/day max after warmup. Domains 1–3 months old: 80/day. Domains 3–6 months old: 120/day. Domains 6+ months old: 150/day. These limits assume proper warmup, verified contacts, and healthy bounce/complaint rates under 3% and 0.1% respectively.",
+      },
+      {
+        question: "When can I start cold outreach after warmup?",
+        answer:
+          "You can start limited cold outreach in week 3–4 of your warmup schedule, but only to verified contacts with low bounce risk. Full cold outreach volume is safe after 4+ weeks of gradual ramp-up, once your domain has established positive engagement patterns with open rates above 10% and bounce rates under 3%.",
+      },
+      {
+        question: "How do I scale to 1,000+ emails per day without getting blacklisted?",
+        answer:
+          "Scale by adding more sending domains (not by pushing a single domain beyond its ceiling) and distributing volume across them. For example, 10 domains at 100 emails/day each = 1,000 emails/day total. Each domain should ramp up gradually following its own warmup schedule, and you should monitor bounce rates, complaint rates, and deliverability signals daily.",
+      },
+      {
+        question: "How many emails per day with AWS SES?",
+        answer:
+          "AWS SES sandbox accounts are limited to 200 emails per day at 1 email per second. After moving to production, you typically start with a 50,000/day quota at ~14 emails/second. Your actual safe sending volume per domain is still limited by domain reputation (50–150/day per domain depending on age), not by SES quota. Use multiple domains to distribute volume safely.",
+      },
+    ],
   },
   {
     slug: "cold-email-for-saas-companies",
