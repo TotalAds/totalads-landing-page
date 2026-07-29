@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import Footer from "@/components/sections/Footer";
 import SEO from "@/components/SEO";
@@ -101,6 +101,8 @@ const checkerFaqs = [
 
 export default function EmailDeliverabilityCheckerPage() {
   const router = useRouter();
+  const hasInitializedFromQuery = useRef(false);
+  const checkInFlightRef = useRef(false);
   const [domainInput, setDomainInput] = useState("");
   const [activeSelectorPreset, setActiveSelectorPreset] = useState("google");
   const [customSelectorInput, setCustomSelectorInput] = useState("");
@@ -118,7 +120,9 @@ export default function EmailDeliverabilityCheckerPage() {
 
   const runCheck = useCallback(
     async (dom: string, sel: string) => {
-      if (!dom.trim()) return;
+      if (!dom.trim() || checkInFlightRef.current) return;
+
+      checkInFlightRef.current = true;
       setLoading(true);
       setError("");
       setResult(null);
@@ -147,6 +151,7 @@ export default function EmailDeliverabilityCheckerPage() {
         const msg = err instanceof Error ? err.message : "An error occurred";
         setError(msg);
       } finally {
+        checkInFlightRef.current = false;
         setLoading(false);
       }
     },
@@ -154,22 +159,24 @@ export default function EmailDeliverabilityCheckerPage() {
   );
 
   useEffect(() => {
-    if (!router.isReady) return;
+    if (!router.isReady || hasInitializedFromQuery.current) return;
+    hasInitializedFromQuery.current = true;
+
     const { domain, selector } = router.query;
-    if (domain && typeof domain === "string") {
-      setDomainInput(domain);
-      const sel = typeof selector === "string" ? selector : "google";
+    if (!domain || typeof domain !== "string") return;
 
-      const matched = PRESET_SELECTORS.find((p) => p.value === sel && p.id !== "custom");
-      if (matched) {
-        setActiveSelectorPreset(matched.id);
-      } else {
-        setActiveSelectorPreset("custom");
-        setCustomSelectorInput(sel);
-      }
+    setDomainInput(domain);
+    const sel = typeof selector === "string" ? selector : "google";
 
-      runCheck(domain, sel);
+    const matched = PRESET_SELECTORS.find((p) => p.value === sel && p.id !== "custom");
+    if (matched) {
+      setActiveSelectorPreset(matched.id);
+    } else {
+      setActiveSelectorPreset("custom");
+      setCustomSelectorInput(sel);
     }
+
+    runCheck(domain, sel);
   }, [router.isReady, router.query, runCheck]);
 
   const handleSubmit = (e: React.FormEvent) => {
