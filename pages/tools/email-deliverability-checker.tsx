@@ -50,17 +50,12 @@ interface CheckResponse {
   spf: RecordResult;
   dkim: RecordResult;
   dmarc: RecordResult;
+  dkimSelector: string | null;
+  requestedDkimSelector: string | null;
+  dkimSelectorsFound: string[];
+  dkimSelectorSource: "auto" | "user" | "none";
   checkedAt: string;
 }
-
-/* ── Preset Selectors ─────────────────────────────────────────────── */
-
-const PRESET_SELECTORS = [
-  { id: "google", label: "Google Workspace", value: "google" },
-  { id: "microsoft", label: "Microsoft 365", value: "selector1" },
-  { id: "mailchimp", label: "Mailchimp", value: "k1" },
-  { id: "custom", label: "Custom...", value: "" },
-];
 
 /* ── FAQ Data ─────────────────────────────────────────────────────── */
 
@@ -83,7 +78,7 @@ const checkerFaqs = [
   {
     question: "What is a DKIM selector?",
     answer:
-      "It is a short name that points to your DKIM key. Google often uses \"google\". Microsoft often uses \"selector1\". Mailchimp often uses \"k1\". Pick your email provider above, or choose Custom and type your own.",
+      "It is a short name for your DKIM key in DNS (like \"google\" or \"selector1\"). You do not need to enter it — we find it for you. If you know the name, you can type it in the optional field and we will check that one.",
   },
   {
     question: "Why does my SPF record fail for too many lookups?",
@@ -104,8 +99,8 @@ export default function EmailDeliverabilityCheckerPage() {
   const hasInitializedFromQuery = useRef(false);
   const checkInFlightRef = useRef(false);
   const [domainInput, setDomainInput] = useState("");
-  const [activeSelectorPreset, setActiveSelectorPreset] = useState("google");
-  const [customSelectorInput, setCustomSelectorInput] = useState("");
+  const [optionalSelector, setOptionalSelector] = useState("");
+  const [showOptionalSelector, setShowOptionalSelector] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CheckResponse | null>(null);
@@ -113,13 +108,8 @@ export default function EmailDeliverabilityCheckerPage() {
   const [copiedRecordKey, setCopiedRecordKey] = useState<string | null>(null);
   const [expandedFixes, setExpandedFixes] = useState<Record<string, boolean>>({});
 
-  const currentDkimSelector =
-    activeSelectorPreset === "custom"
-      ? customSelectorInput.trim() || "google"
-      : PRESET_SELECTORS.find((s) => s.id === activeSelectorPreset)?.value || "google";
-
   const runCheck = useCallback(
-    async (dom: string, sel: string) => {
+    async (dom: string, sel?: string) => {
       if (!dom.trim() || checkInFlightRef.current) return;
 
       checkInFlightRef.current = true;
@@ -127,11 +117,16 @@ export default function EmailDeliverabilityCheckerPage() {
       setError("");
       setResult(null);
 
+      const trimmedSelector = sel?.trim() || "";
+
       try {
         const res = await fetch("/api/check-deliverability", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ domain: dom, dkimSelector: sel }),
+          body: JSON.stringify({
+            domain: dom,
+            ...(trimmedSelector ? { dkimSelector: trimmedSelector } : {}),
+          }),
         });
         const data = await res.json();
         if (!res.ok) {
@@ -141,7 +136,7 @@ export default function EmailDeliverabilityCheckerPage() {
 
         const params = new URLSearchParams();
         params.set("domain", data.domain);
-        if (sel !== "google") params.set("selector", sel);
+        if (trimmedSelector) params.set("selector", trimmedSelector);
         router.replace(
           `/tools/email-deliverability-checker?${params.toString()}`,
           undefined,
@@ -166,22 +161,18 @@ export default function EmailDeliverabilityCheckerPage() {
     if (!domain || typeof domain !== "string") return;
 
     setDomainInput(domain);
-    const sel = typeof selector === "string" ? selector : "google";
-
-    const matched = PRESET_SELECTORS.find((p) => p.value === sel && p.id !== "custom");
-    if (matched) {
-      setActiveSelectorPreset(matched.id);
+    if (typeof selector === "string" && selector.trim()) {
+      setOptionalSelector(selector.trim());
+      setShowOptionalSelector(true);
+      runCheck(domain, selector.trim());
     } else {
-      setActiveSelectorPreset("custom");
-      setCustomSelectorInput(sel);
+      runCheck(domain);
     }
-
-    runCheck(domain, sel);
   }, [router.isReady, router.query, runCheck]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    runCheck(domainInput, currentDkimSelector);
+    runCheck(domainInput, optionalSelector);
   };
 
   const toggleFix = (key: string) => {
@@ -190,9 +181,12 @@ export default function EmailDeliverabilityCheckerPage() {
 
   const copyShareLink = async () => {
     if (!result) return;
-    const url = `https://leadsnipper.com/tools/email-deliverability-checker?domain=${encodeURIComponent(
-      result.domain
-    )}${currentDkimSelector !== "google" ? `&selector=${encodeURIComponent(currentDkimSelector)}` : ""}`;
+    const params = new URLSearchParams();
+    params.set("domain", result.domain);
+    if (result.requestedDkimSelector) {
+      params.set("selector", result.requestedDkimSelector);
+    }
+    const url = `https://leadsnipper.com/tools/email-deliverability-checker?${params.toString()}`;
     try {
       await navigator.clipboard.writeText(url);
       setLinkCopied(true);
@@ -417,39 +411,20 @@ export default function EmailDeliverabilityCheckerPage() {
                 </div>
 
                 <div className="pt-4 border-t border-[#c2c6d6]/20">
-                  <label className="text-xs font-heading font-semibold text-[#424754] flex items-center gap-1.5 mb-2.5">
-                    <span>Email provider (DKIM)</span>
-                    <span className="group relative cursor-pointer text-[#727785] hover:text-[#0058be]">
-                      <HelpCircle className="w-3.5 h-3.5" />
-                      <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 rounded-xl bg-[#131b2e] p-2.5 text-[11px] text-white shadow-lg leading-tight z-30">
-                        Pick who sends your email. Google uses &apos;google&apos;.
-                        Microsoft uses &apos;selector1&apos;. Not sure? Start with
-                        Google.
-                      </span>
-                    </span>
-                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setShowOptionalSelector((v) => !v)}
+                    className="text-xs font-heading font-semibold text-[#0058be] hover:underline flex items-center gap-1.5"
+                  >
+                    {showOptionalSelector ? "Hide" : "Optional"}: enter a DKIM name yourself
+                    <HelpCircle className="w-3.5 h-3.5 text-[#727785]" />
+                  </button>
+                  <p className="text-[11px] text-[#727785] mt-1.5 leading-relaxed">
+                    We find your DKIM key automatically from DNS. Only fill this
+                    in if you already know the key name.
+                  </p>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    {PRESET_SELECTORS.map((preset) => {
-                      const isSelected = activeSelectorPreset === preset.id;
-                      return (
-                        <button
-                          key={preset.id}
-                          type="button"
-                          onClick={() => setActiveSelectorPreset(preset.id)}
-                          className={`px-3 py-1.5 rounded-xl text-xs font-heading font-medium transition-all ${
-                            isSelected
-                              ? "bg-[#0058be] text-white"
-                              : "bg-white text-[#424754] border border-[#c2c6d6]/40 hover:border-[#0058be]/40 hover:text-[#0058be]"
-                          }`}
-                        >
-                          {preset.label}
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {activeSelectorPreset === "custom" && (
+                  {showOptionalSelector && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
@@ -457,9 +432,9 @@ export default function EmailDeliverabilityCheckerPage() {
                     >
                       <input
                         type="text"
-                        value={customSelectorInput}
-                        onChange={(e) => setCustomSelectorInput(e.target.value)}
-                        placeholder="Type your own name (e.g. s1 or default)"
+                        value={optionalSelector}
+                        onChange={(e) => setOptionalSelector(e.target.value)}
+                        placeholder="e.g. google, selector1, or k1"
                         className="w-full px-4 py-2.5 rounded-xl border border-[#c2c6d6]/40 bg-white text-[#131b2e] text-xs font-mono focus:border-[#0058be] focus:ring-2 focus:ring-[#0058be]/15 outline-none"
                       />
                     </motion.div>
@@ -537,9 +512,13 @@ export default function EmailDeliverabilityCheckerPage() {
                           Results for{" "}
                           <span className="text-[#0058be]">{result.domain}</span>
                         </h2>
-                        <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-medium bg-[#eaedff] text-[#0058be]">
-                          Provider: {currentDkimSelector}
-                        </span>
+                        {result.dkimSelector && (
+                          <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-medium bg-[#eaedff] text-[#0058be]">
+                            {result.dkimSelectorSource === "user"
+                              ? `Your DKIM key: ${result.dkimSelector}`
+                              : `DKIM key found: ${result.dkimSelector}`}
+                          </span>
+                        )}
                       </div>
 
                       <p className="text-sm text-[#424754]">
@@ -663,7 +642,9 @@ export default function EmailDeliverabilityCheckerPage() {
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-[10px] font-mono text-[#727785] uppercase tracking-wider">
-                          Key name: {currentDkimSelector}
+                          {result.dkimSelector
+                            ? `Key name: ${result.dkimSelector}`
+                            : "Key name"}
                         </span>
                         {result.dkim.raw && (
                           <button
@@ -690,7 +671,10 @@ export default function EmailDeliverabilityCheckerPage() {
                         </div>
                       ) : (
                         <div className="p-3 bg-[#ba1a1a]/5 rounded-xl border border-[#ba1a1a]/20 text-xs text-[#ba1a1a] font-medium italic">
-                          No DKIM key found for {currentDkimSelector}
+                          No DKIM key found
+                            {result.requestedDkimSelector
+                              ? ` for ${result.requestedDkimSelector}`
+                              : ""}
                         </div>
                       )}
                     </div>
@@ -699,6 +683,14 @@ export default function EmailDeliverabilityCheckerPage() {
                       result.dkim.issues,
                       "dkim",
                       "DKIM looks good."
+                    )}
+                    {result.dkimSelectorsFound.length > 1 && (
+                      <p className="mt-3 text-[11px] text-[#727785] leading-relaxed">
+                        Also found DKIM names:{" "}
+                        {result.dkimSelectorsFound
+                          .filter((s) => s !== result.dkimSelector)
+                          .join(", ")}
+                      </p>
                     )}
                   </div>
 

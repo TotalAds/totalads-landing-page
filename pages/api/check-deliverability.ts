@@ -43,7 +43,173 @@ interface CheckResponse {
   spf: RecordResult;
   dkim: RecordResult;
   dmarc: RecordResult;
+  /** Selector used for the primary DKIM result */
+  dkimSelector: string | null;
+  /** Selector the user asked us to check (if any) */
+  requestedDkimSelector: string | null;
+  /** All selectors that returned a DKIM record */
+  dkimSelectorsFound: string[];
+  /** Whether the primary selector came from the user or auto-discovery */
+  dkimSelectorSource: "auto" | "user" | "none";
   checkedAt: string;
+}
+
+/* ── Common DKIM selectors to probe ───────────────────────────────── */
+
+const COMMON_DKIM_SELECTORS = [
+  "google",
+  "selector1",
+  "selector2",
+  "k1",
+  "s1",
+  "s2",
+  "default",
+  "dkim",
+  "mail",
+  "smtp",
+  "cm",
+  "mandrill",
+  "hs1",
+  "hs2",
+  "zendesk1",
+  "zendesk2",
+  "protonmail",
+  "pm",
+  "everlytickey1",
+  "everlytickey2",
+  "ctct1",
+  "ctct2",
+  "sig1",
+  "mx",
+  "email",
+];
+
+async function getCnameTargets(hostname: string): Promise<string[]> {
+  try {
+    return await resolver.resolveCname(hostname);
+  } catch {
+    return [];
+  }
+}
+
+/** Look up DKIM TXT at selector._domainkey.domain, following CNAMEs if needed */
+async function lookupDkimAtSelector(
+  domain: string,
+  selector: string
+): Promise<string[]> {
+  const host = `${selector}._domainkey.${domain}`;
+  const direct = await getTxtRecords(host);
+  if (direct.length > 0) return direct;
+
+  // Many providers publish a CNAME that points to their hosted DKIM key
+  const cnames = await getCnameTargets(host);
+  if (cnames.length === 0) return [];
+
+  const nested = await Promise.all(
+    cnames.map((target) => getTxtRecords(target.replace(/\.$/, "")))
+  );
+  return nested.flat();
+}
+
+function looksLikeDkim(records: string[]): boolean {
+  return records.some(
+    (r) =>
+      r.includes("p=") ||
+      r.includes("v=DKIM1") ||
+      r.includes("k=rsa") ||
+      r.includes("k=ed25519")
+  );
+}
+
+async function discoverDkim(
+  domain: string,
+  preferredSelector?: string | null
+): Promise<{
+  selector: string | null;
+  records: string[];
+  foundSelectors: string[];
+  source: "auto" | "user" | "none";
+}> {
+  const preferred =
+    preferredSelector && /^[a-z0-9._-]+$/i.test(preferredSelector)
+      ? preferredSelector.trim()
+      : null;
+
+  // Build probe list: user selector first (if any), then common ones (deduped)
+  const toProbe = [
+    ...(preferred ? [preferred] : []),
+    ...COMMON_DKIM_SELECTORS.filter((s) => s !== preferred),
+  ];
+
+  const results = await Promise.all(
+    toProbe.map(async (selector) => {
+      const records = await lookupDkimAtSelector(domain, selector);
+      return { selector, records, valid: looksLikeDkim(records) };
+    })
+  );
+
+  const found = results.filter((r) => r.valid);
+
+  // Prefer the user's selector when they provided one and it exists
+  if (preferred) {
+    const userHit = found.find((r) => r.selector === preferred);
+    if (userHit) {
+      return {
+        selector: userHit.selector,
+        records: userHit.records,
+        foundSelectors: found.map((r) => r.selector),
+        source: "user",
+      };
+    }
+    // User selector missing — if we found others, use the best auto match
+    // but keep source as "user" is wrong; mark auto with preferred noted via foundSelectors
+    if (found.length > 0) {
+      const priority = ["google", "selector1", "selector2", "k1", "default", "s1"];
+      found.sort((a, b) => {
+        const ai = priority.indexOf(a.selector);
+        const bi = priority.indexOf(b.selector);
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      });
+      return {
+        selector: found[0].selector,
+        records: found[0].records,
+        foundSelectors: found.map((r) => r.selector),
+        source: "auto",
+      };
+    }
+    return {
+      selector: preferred,
+      records: [],
+      foundSelectors: [],
+      source: "user",
+    };
+  }
+
+  if (found.length === 0) {
+    return {
+      selector: null,
+      records: [],
+      foundSelectors: [],
+      source: "none",
+    };
+  }
+
+  // Prefer well-known provider selectors when several are present
+  const priority = ["google", "selector1", "selector2", "k1", "default", "s1"];
+  found.sort((a, b) => {
+    const ai = priority.indexOf(a.selector);
+    const bi = priority.indexOf(b.selector);
+    const aw = ai === -1 ? 999 : ai;
+    const bw = bi === -1 ? 999 : bi;
+    return aw - bw;
+  });
+
+  return {
+    selector: found[0].selector,
+    records: found[0].records,
+    foundSelectors: found.map((r) => r.selector),
+    source: "auto",
+  };
 }
 
 /* ── Helpers ──────────────────────────────────────────────────────── */
@@ -168,16 +334,26 @@ function validateSpf(records: string[]): RecordResult {
 
 /* ── DKIM Validation ──────────────────────────────────────────────── */
 
-function validateDkim(records: string[], selector: string): RecordResult {
-  if (records.length === 0) {
+function validateDkim(
+  records: string[],
+  selector: string | null,
+  foundSelectors: string[],
+  source: "auto" | "user" | "none",
+  requestedSelector: string | null
+): RecordResult {
+  if (records.length === 0 || !selector) {
     return {
       status: "missing",
       raw: null,
       issues: [
         {
           severity: "error",
-          message: `No DKIM record found at "${selector}._domainkey".`,
-          fix: `Your email provider should have generated a DKIM key for you. In Google Workspace, go to Admin → Apps → Google Workspace → Gmail → Authenticate email. For Microsoft 365, check the Exchange admin center under Protection → DKIM. If you use a different selector, try entering it above.`,
+          message: requestedSelector
+            ? `No DKIM key found for "${requestedSelector}".`
+            : "No DKIM key found for this domain.",
+          fix: requestedSelector
+            ? `We looked for "${requestedSelector}._domainkey" and did not find a key. Double-check the name in your email provider, or leave the field blank so we can find it for you.`
+            : "We checked common names like google, selector1, and k1. Your email provider should give you a DKIM key to add in DNS. In Google Workspace: Admin → Gmail → Authenticate email. In Microsoft 365: Exchange admin → Protection → DKIM.",
         },
       ],
     };
@@ -186,7 +362,36 @@ function validateDkim(records: string[], selector: string): RecordResult {
   const raw = records[0];
   const issues: Issue[] = [];
 
-  // Check for v=DKIM1
+  if (source === "user" && requestedSelector) {
+    issues.push({
+      severity: "info",
+      message: `Using the DKIM name you entered: "${requestedSelector}".`,
+      fix:
+        foundSelectors.length > 1
+          ? `We also found other DKIM names on this domain: ${foundSelectors.filter((s) => s !== selector).join(", ")}.`
+          : "Clear the optional field and re-check if you want us to pick the name automatically.",
+    });
+  } else if (
+    source === "auto" &&
+    requestedSelector &&
+    requestedSelector !== selector
+  ) {
+    issues.push({
+      severity: "warning",
+      message: `We could not find the DKIM name you entered ("${requestedSelector}"). Showing "${selector}" instead.`,
+      fix: `Check the spelling of "${requestedSelector}", or keep using "${selector}" if that is the key your provider set up.`,
+    });
+  } else if (source === "auto") {
+    issues.push({
+      severity: "info",
+      message: `We found your DKIM key automatically: "${selector}".`,
+      fix:
+        foundSelectors.length > 1
+          ? `Also found keys for: ${foundSelectors.filter((s) => s !== selector).join(", ")}. Your mail can use more than one DKIM name.`
+          : "You do not need to enter a DKIM name unless you want to check a different one.",
+    });
+  }
+
   if (!raw.includes("v=DKIM1")) {
     issues.push({
       severity: "warning",
@@ -195,7 +400,6 @@ function validateDkim(records: string[], selector: string): RecordResult {
     });
   }
 
-  // Check for key type
   if (raw.includes("k=") && !raw.includes("k=rsa")) {
     issues.push({
       severity: "info",
@@ -204,7 +408,6 @@ function validateDkim(records: string[], selector: string): RecordResult {
     });
   }
 
-  // Check for public key presence
   if (!raw.includes("p=")) {
     issues.push({
       severity: "error",
@@ -212,7 +415,6 @@ function validateDkim(records: string[], selector: string): RecordResult {
       fix: "The p= tag contains the Base64-encoded public key used to verify email signatures. Without it, DKIM verification will fail. Regenerate your DKIM key in your email provider's admin console.",
     });
   } else {
-    // Check if key is empty (revoked)
     const keyMatch = raw.match(/p=([^;\s]*)/);
     if (keyMatch && keyMatch[1].length === 0) {
       issues.push({
@@ -387,7 +589,7 @@ export default async function handler(
     });
   }
 
-  const { domain: rawDomain, dkimSelector = "google" } = req.body || {};
+  const { domain: rawDomain, dkimSelector } = req.body || {};
 
   if (!rawDomain || typeof rawDomain !== "string") {
     return res.status(400).json({ error: "Please provide a domain to check." });
@@ -401,21 +603,27 @@ export default async function handler(
     });
   }
 
-  const selector =
-    typeof dkimSelector === "string" && /^[a-z0-9._-]+$/i.test(dkimSelector)
-      ? dkimSelector
-      : "google";
+  const preferredSelector =
+    typeof dkimSelector === "string" && dkimSelector.trim().length > 0
+      ? dkimSelector.trim()
+      : null;
 
   try {
-    // Run all DNS lookups in parallel
-    const [domainTxt, dkimTxt, dmarcTxt] = await Promise.all([
+    // SPF + DMARC in parallel with DKIM auto-discovery
+    const [domainTxt, dmarcTxt, dkimDiscovery] = await Promise.all([
       getTxtRecords(domain),
-      getTxtRecords(`${selector}._domainkey.${domain}`),
       getTxtRecords(`_dmarc.${domain}`),
+      discoverDkim(domain, preferredSelector),
     ]);
 
     const spf = validateSpf(domainTxt);
-    const dkim = validateDkim(dkimTxt, selector);
+    const dkim = validateDkim(
+      dkimDiscovery.records,
+      dkimDiscovery.selector,
+      dkimDiscovery.foundSelectors,
+      dkimDiscovery.source,
+      preferredSelector
+    );
     const dmarc = validateDmarc(dmarcTxt);
     const score = calculateScore(spf, dkim, dmarc);
 
@@ -425,6 +633,10 @@ export default async function handler(
       spf,
       dkim,
       dmarc,
+      dkimSelector: dkimDiscovery.selector,
+      requestedDkimSelector: preferredSelector,
+      dkimSelectorsFound: dkimDiscovery.foundSelectors,
+      dkimSelectorSource: dkimDiscovery.source,
       checkedAt: new Date().toISOString(),
     };
 
