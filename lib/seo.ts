@@ -247,6 +247,16 @@ export const pageConfigs: Record<string, PageConfig> = {
     canonical: "https://leadsnipper.com/privacy-policy",
   },
 
+  readreuseCalculatorPrivacy: {
+    title: "Privacy Policy — Readreuse Calculator",
+    description:
+      "Privacy policy for the Readreuse Calculator Android app (com.readreusecalculator), developed by Mohd Rehan Qureshi. No personal data collected or shared.",
+    keywords:
+      "Readreuse Calculator privacy policy, com.readreusecalculator, Mohd Rehan Qureshi",
+    canonical:
+      "https://leadsnipper.com/legal/readreuse-calculator-privacy",
+  },
+
   terms: {
     title: "Terms of Service — LeadSnipper & SocialSnipper",
     description:

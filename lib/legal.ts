@@ -7,6 +7,7 @@ export const LEGAL_URLS = {
   terms: `${LEGAL_BASE_URL}/terms-of-service`,
   refund: `${LEGAL_BASE_URL}/refund-policy`,
   dataUse: `${LEGAL_BASE_URL}/legal/data-use`,
+  readreuseCalculatorPrivacy: `${LEGAL_BASE_URL}/legal/readreuse-calculator-privacy`,
 } as const;
 
 export const LEGAL_CONTACT = {
@@ -19,4 +20,15 @@ export const LEGAL_CONTACT = {
 export const LEGAL_ENTITY = {
   name: "LeadSnipper Technologies",
   jurisdiction: "Indore, Madhya Pradesh, India",
+} as const;
+
+/** Google Play app: Readreuse Calculator (com.readreusecalculator) */
+export const READREUSE_CALCULATOR = {
+  appName: "Readreuse Calculator",
+  packageName: "com.readreusecalculator",
+  developerName: "Mohd Rehan Qureshi",
+  contactEmail: "mohdrehanrq0@gmail.com",
+  contactPhone: "+919926488445",
+  jurisdiction: "India",
+  lastUpdated: "30 July 2026",
 } as const;

@@ -68,6 +68,11 @@ export const sitemapConfig = {
       priority: 0.3,
     },
     {
+      path: "/legal/readreuse-calculator-privacy",
+      changefreq: "yearly" as const,
+      priority: 0.2,
+    },
+    {
       path: "/terms-of-service",
       changefreq: "yearly" as const,
       priority: 0.3,
@@ -351,6 +356,7 @@ Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /refund-policy
 Allow: /legal/data-use
+Allow: /legal/readreuse-calculator-privacy
 Allow: /llms.txt
 Allow: /llms-full.txt
 

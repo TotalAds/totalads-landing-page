@@ -11,12 +11,14 @@ type LegalPageLayoutProps = {
   pageKey: keyof typeof pageConfigs;
   breadcrumbLabel: string;
   children: ReactNode;
+  lastUpdated?: string;
 };
 
 export default function LegalPageLayout({
   pageKey,
   breadcrumbLabel,
   children,
+  lastUpdated = LEGAL_LAST_UPDATED,
 }: LegalPageLayoutProps) {
   const canonical = pageConfigs[pageKey]?.canonical ?? "https://leadsnipper.com";
 
@@ -76,7 +78,7 @@ export default function LegalPageLayout({
             {breadcrumbLabel}
           </h1>
           <p className="text-[#4a4a4a] text-sm mb-8">
-            Last updated: {LEGAL_LAST_UPDATED}
+            Last updated: {lastUpdated}
           </p>
 
           <div className="prose max-w-none prose-headings:text-[#131313] prose-headings:font-bold prose-a:text-[#eb857a] prose-a:hover:text-[#9DD0c7] prose-p:text-[#4a4a4a] prose-li:text-[#4a4a4a] text-[#131313]">
