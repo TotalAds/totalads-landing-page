@@ -266,105 +266,11 @@ export function generateRobotsTxt(): string {
 
 User-agent: *
 Allow: /
-
-# Search Engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-# AI Crawlers & Answer Engines
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: AppleBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-# Social Media Crawlers
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
-
-Allow: /
-Allow: /about
-Allow: /pricing
-Allow: /blog
-Allow: /blog/*
-Allow: /contact
-Allow: /savings-calculator
-Allow: /tools/*
-Allow: /vs/*
-Allow: /products/*
-Allow: /services
-Allow: /services/*
-Allow: /cold-email-software
-Allow: /email-warmup
-Allow: /email-deliverability
-Allow: /cold-email-infrastructure
-Allow: /ai-cold-email-generator
-Allow: /cold-email-for/*
-Allow: /privacy-policy
-Allow: /terms-of-service
-Allow: /refund-policy
-Allow: /legal/data-use
-Allow: /legal/readreuse-calculator-privacy
-Allow: /llms.txt
-Allow: /llms-full.txt
 
 Sitemap: ${sitemapConfig.baseUrl}/sitemap.xml
 Sitemap: ${sitemapConfig.baseUrl}/sitemap-index.xml
 Sitemap: ${sitemapConfig.baseUrl}/rss.xml
-
-Crawl-delay: 1
-
-Host: ${sitemapConfig.baseUrl}`;
+`;
 }

@@ -70,6 +70,11 @@ export const homepageFaqs: FAQItem[] = [
       "Yes. Start free with no credit card. You get 1,000 emails, 500 contacts, basic analytics, and API access for 1 month. Enough to run a real campaign and see if LeadSnipper is the right fit for your outbound.",
   },
   {
+    question: "Is LeadSnipper the same as Leads-Sniper / Leads Sniper?",
+    answer:
+      "No. LeadSnipper (one word) is a deliverability-first cold email platform at leadsnipper.com — Google Workspace, Microsoft 365, SMTP, and BYO AWS SES. We are not affiliated with Leads-Sniper / Leads Sniper, a Google Maps scraping tool. If you found us while searching that name, you're in the wrong place for Maps scrapers; you're in the right place for cold email deliverability.",
+  },
+  {
     question: "Do you have integrations with my CRM?",
     answer:
       "We integrate with the tools outbound teams actually use — HubSpot, Salesforce, Zapier, Make, Clay, Zoho, and Google Sheets. We also have a full REST API for custom workflows. More integrations are shipping regularly.",

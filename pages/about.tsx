@@ -231,23 +231,29 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#0058be]/[0.03] via-transparent to-[#8b5cf6]/[0.02] pointer-events-none" />
               <div className="relative space-y-6 text-body-md text-[#424754] leading-relaxed">
                 <h2 className="font-heading font-bold text-headline-md text-[#131b2e]">
-                  AI-powered growth infrastructure{" "}
+                  Deliverability-first cold email{" "}
                   <span className="font-display italic text-[#0058be]">
-                    for modern businesses.
+                    on infrastructure you own.
                   </span>
                 </h2>
                 <p>
-                  LeadSnipper is focused on building AI-powered growth
-                  infrastructure for modern businesses. Our mission is simple:
-                  automate repetitive workflows, outbound operations, and manual
-                  business processes so companies can focus on what actually
-                  matters — growth.
+                  LeadSnipper is a deliverability-first cold email platform for
+                  B2B teams. Our mission is simple: help companies send from
+                  infrastructure they control — Google Workspace, Microsoft 365,
+                  SMTP, or BYO AWS SES — with warmup, verification, and
+                  reputation guardrails that keep domains healthy.
                 </p>
                 <p>
-                  We help businesses streamline lead generation, outbound
-                  systems, email deliverability, CRM automation, LinkedIn
-                  growth, and AI-driven workflows through a combination of
-                  software products and implementation services.
+                  We also help teams with outbound systems, CRM automation,
+                  LinkedIn growth via SocialSnipper, and AI-driven workflows
+                  through a combination of software products and implementation
+                  services.
+                </p>
+                <p className="rounded-xl border border-[#c2c6d6]/30 bg-white/60 px-4 py-3 text-sm text-[#424754]">
+                  <span className="font-medium text-[#131b2e]">Not Leads-Sniper.</span>{" "}
+                  LeadSnipper (one word) is not affiliated with Leads-Sniper /
+                  Leads Sniper, a Google Maps scraping product. We build cold
+                  email deliverability software at leadsnipper.com.
                 </p>
                 <p>
                   Instead of adding more manual work, we believe businesses

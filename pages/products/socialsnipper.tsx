@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import React, { useState } from "react";
 
 import Footer from "@/components/sections/Footer";
 import SEO from "@/components/SEO";
@@ -40,17 +39,6 @@ const features = [
 ];
 
 export default function SocialSnipperProduct() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace("/products/leadsnipper");
-  }, [router]);
-
-  return null;
-}
-
-// Deprecated implementation preserved for reference
-function OldSocialSnipperProduct() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -75,7 +63,7 @@ function OldSocialSnipperProduct() {
             </span>
             <h1 className="font-heading font-extrabold text-[#131b2e] mt-6">
               <span className="block text-3xl md:text-display-lg leading-[1.1] tracking-tight">
-                Stay visible on LinkedIn
+                Stay visible on LinkedIn{" "}
               </span>
               <span className="block font-display italic text-[#8b5cf6] text-3xl md:text-display-hero mt-2">
                 with AI posts and Gemini images.

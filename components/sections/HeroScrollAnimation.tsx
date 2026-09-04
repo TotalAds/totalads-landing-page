@@ -22,7 +22,7 @@ export function HeroScrollAnimation() {
             {/* H1 — outcome-led, AWS SES moved to sub-line */}
             <h1 className="font-heading font-extrabold text-[#131b2e] text-center">
               <span className="block text-3xl md:text-display-lg leading-[1.1] tracking-tight">
-                Own Your Email Infrastructure.
+                Own Your Email Infrastructure.{" "}
               </span>
               <span className="block font-display italic text-[#0058be] text-3xl md:text-display-hero mt-2">
                 Land in the inbox. Stay out of spam.

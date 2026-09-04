@@ -518,31 +518,6 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "amazon-ses-cold-email-setup-2026",
-    title: "How to Set Up Amazon SES for Cold Email in 2026 (Updated Guide)",
-    excerpt:
-      "AWS SES costs $0.10 per 1,000 emails and gives you full sending control. This updated 2026 guide walks through SES setup for cold outreach — sandbox exit, DNS, and LeadSnipper connection.",
-    description:
-      "How to setup Amazon SES for cold email in 2026. Step-by-step guide covering account creation, sandbox exit, domain verification, DKIM SPF DMARC, sending limits, and connecting SES to LeadSnipper.",
-    keywords:
-      "Amazon SES cold email setup 2026, how to setup AWS SES for cold email, SES cold email configuration, AWS SES tutorial cold outreach, connect SES to cold email tool",
-    date: "2026-06-03",
-    readTime: "12 min read",
-    author: "LeadSnipper Team",
-    category: "Tutorial",
-    cluster: "infrastructure",
-    clusterRole: "spoke",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
-      alt: "Server rack wiring representing Amazon SES cold email setup",
-      credit: "Unsplash",
-    },
-    relatedSlugs: [
-      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
-      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
-    ],
-  },
-  {
     slug: "cold-email-deliverability-checklist",
     title: "Cold Email Deliverability Checklist: 15 Steps Before You Hit Send",
     excerpt:
@@ -970,7 +945,7 @@ export function generateBlogPostSchema(post: BlogPost) {
   const wordCount = minutes * 200;
 
   // Use the post's heroImage for structured data when available
-  const imageUrl = post.heroImage?.src ?? "https://leadsnipper.com/og-image.png";
+  const imageUrl = post.heroImage?.src ?? "https://leadsnipper.com/og-image.jpg";
   const imageAlt = post.heroImage?.alt ?? post.title;
 
   return {

@@ -20,7 +20,7 @@ export const seoConfig = {
     siteName: "LeadSnipper",
     images: [
       {
-        url: "https://leadsnipper.com/og-image.png",
+        url: "https://leadsnipper.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "LeadSnipper — Cold email at scale without burning your domain",
@@ -105,7 +105,7 @@ export const pageConfigs: Record<string, PageConfig> = {
     title:
       "LeadSnipper — Deliverability-First Cold Email Platform (Instantly Alternative)",
     description:
-      "LeadSnipper is a deliverability-first cold email platform that helps businesses send from infrastructure they control — Google Workspace, Microsoft 365, SMTP, or AWS SES — with intelligent reputation protection, AI-powered personalization, and advanced campaign automation. Own your email infrastructure.",
+      "Deliverability-first cold email on your Google, Microsoft, or AWS SES. Warmup, verification, and auto reputation guardrails. From ₹999/mo. 14-day trial.",
     keywords:
       "deliverability-first cold email platform, cold email software, Instantly alternative, Smartlead alternative, email outreach tool, email deliverability, sender reputation, domain reputation, inbox placement, email warmup, email verification, AI personalization, BYO SES, AWS SES cold email, cold email infrastructure, bulk cold email, cold outreach platform, cold email at scale",
     canonical: "https://leadsnipper.com",
@@ -117,7 +117,7 @@ export const pageConfigs: Record<string, PageConfig> = {
       url: "https://leadsnipper.com",
       images: [
         {
-          url: "https://leadsnipper.com/og-home.png",
+          url: "https://leadsnipper.com/og-home.jpg",
           width: 1200,
           height: 630,
           alt: "LeadSnipper — Deliverability-first cold email platform that protects your domains automatically",
@@ -158,7 +158,7 @@ export const pageConfigs: Record<string, PageConfig> = {
 
   savingsCalculator: {
     title:
-      "Cold Email Cost Calculator: AWS SES vs Smartlead vs Instantly vs LeadSnipper (2026)",
+      "Cold Email Cost Calculator: SES vs Instantly vs Smartlead (2026)",
     description:
       "Compare cold email costs side-by-side: AWS SES, Instantly, Smartlead, Lemlist, Mailshake, Apollo vs LeadSnipper. Enter your monthly volume and see exactly how much you save per year.",
     keywords:
@@ -285,22 +285,22 @@ export const pageConfigs: Record<string, PageConfig> = {
   },
 
   about: {
-    title: "About LeadSnipper — AI-Powered Growth Infrastructure for B2B Teams",
+    title: "About LeadSnipper — Cold Email Platform for B2B Teams",
     description:
-      "LeadSnipper is building AI-powered growth infrastructure for modern businesses. Founded by Rehan Qureshi after 5 years in startup environments. Meet the team and the mission.",
+      "LeadSnipper is a deliverability-first cold email platform founded by Rehan Qureshi. Meet the team building outbound infrastructure you own — not a Maps scraper named Leads-Sniper.",
     keywords:
-      "about LeadSnipper, LeadSnipper team, cold email company, AI growth tools, B2B outreach platform, founder Rehan Qureshi",
+      "about LeadSnipper, LeadSnipper team, cold email company, deliverability-first cold email, B2B outreach platform, founder Rehan Qureshi",
     canonical: "https://leadsnipper.com/about",
     openGraph: {
-      title: "About LeadSnipper — AI-Powered Growth Infrastructure",
+      title: "About LeadSnipper — Cold Email Platform for B2B Teams",
       description:
-        "Meet the team building AI-powered email outreach and social publishing tools for modern B2B businesses.",
+        "Meet the team building deliverability-first cold email on infrastructure you own.",
       url: "https://leadsnipper.com/about",
     },
   },
 
   pricing: {
-    title: "Pricing — LeadSnipper | Three Paid Plans, Dual INR/USD",
+    title: "Pricing — Three Paid Plans, Dual INR/USD",
     description:
       "LeadSnipper pricing for deliverability-first cold email teams. Starter at ₹999/mo ($19), Growth at ₹2,499/mo ($49), Scale at ₹5,999/mo ($119). Built on AWS SES with mailbox-aware limits. Start a 14-day trial.",
     keywords:
@@ -594,7 +594,7 @@ export const structuredData = {
     "@type": "Product",
     "@id": "https://leadsnipper.com/#product",
     name: "LeadSnipper",
-    image: "https://leadsnipper.com/og-image.png",
+    image: "https://leadsnipper.com/og-image.jpg",
     description:
       "LeadSnipper is a cold email platform built around AWS SES, email verification, domain warmup, campaign management, and deliverability safeguards.",
     brand: {

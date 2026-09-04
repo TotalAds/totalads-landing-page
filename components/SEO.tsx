@@ -24,6 +24,23 @@ interface SEOProps {
   skipTitleTemplate?: boolean;
 }
 
+
+function normalizeCanonical(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (parsed.pathname !== "/" && parsed.pathname.endsWith("/")) {
+      parsed.pathname = parsed.pathname.replace(/\/+$/, "");
+    }
+    // Prefer apex without trailing slash for the homepage canonical.
+    if (parsed.pathname === "/") {
+      return `${parsed.origin}`;
+    }
+    return `${parsed.origin}${parsed.pathname}${parsed.search}`;
+  } catch {
+    return url.replace(/\/$/, "") || url;
+  }
+}
+
 function formatTitle(title: string, pageKey?: keyof typeof pageConfigs, skipTitleTemplate?: boolean): string {
   if (skipTitleTemplate || pageKey === "home") {
     return title;
@@ -57,8 +74,9 @@ export default function SEO({
   const finalDescription =
     description || pageConfig?.description || seoConfig.defaultDescription;
   const finalKeywords = keywords || pageConfig?.keywords || "";
-  const finalCanonical =
-    canonical || pageConfig?.canonical || seoConfig.baseUrl;
+  const finalCanonical = normalizeCanonical(
+    canonical || pageConfig?.canonical || seoConfig.baseUrl,
+  );
   const finalOgImage =
     ogImage ||
     pageConfig?.openGraph?.images?.[0]?.url ||

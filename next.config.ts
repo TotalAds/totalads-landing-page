@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 console.log("Next config loaded");
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  trailingSlash: false,
   turbopack: {
     root: __dirname,
   },
@@ -144,9 +145,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/products/socialsnipper",
-        destination: "/products/leadsnipper",
-        permanent: false,
+        source: "/blog/amazon-ses-cold-email-setup-2026",
+        destination: "/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step",
+        permanent: true,
       },
     ];
   },
