@@ -29,6 +29,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "google-postmaster-tools-cold-email-setup-guide",
+    title:
+      "Google Postmaster Tools for Cold Email: Setup Guide & Metrics That Matter (2026)",
+    excerpt:
+      "Google Postmaster Tools is free — and it is the closest view you get of how Gmail judges your cold email domains. Here is how to set it up, which metrics actually matter, and what to do when spam rate or reputation slips.",
+    description:
+      "Google Postmaster Tools setup for cold email: verify domains, read spam rate (0.1%/0.3%), fix auth dips, and recover Gmail deliverability — 2026 guide.",
+    keywords:
+      "Google Postmaster Tools cold email, Postmaster Tools setup guide, Gmail spam rate cold email, domain reputation Postmaster Tools, Google Postmaster Tools 2026, cold email deliverability Gmail, monitor domain reputation Gmail, Postmaster Tools spam rate 0.1%, Gmail sender guidelines cold email, email deliverability monitoring",
+    date: "2026-09-04",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+      alt: "Analytics dashboard representing Google Postmaster Tools metrics for cold email deliverability",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "domain-reputation-management-protect-sender-score",
+      "spf-dkim-dmarc-cold-email-guide",
+      "cold-email-deliverability-checklist",
+    ],
+  },
+  {
     slug: "instantly-vs-leadsnipper-indian-agencies-comparison",
     title:
       "Instantly vs LeadSnipper: Which is Better for Agencies in India? (2026)",
