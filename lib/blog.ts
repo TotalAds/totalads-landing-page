@@ -29,6 +29,56 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "microsoft-snds-cold-email-outlook-deliverability-2026",
+    title:
+      "Microsoft SNDS for Cold Email: Outlook Deliverability Guide (2026)",
+    excerpt:
+      "Google Postmaster only covers Gmail. Microsoft SNDS (and JMRP) is how you see Outlook.com / Hotmail reputation — including the 2026 portal migration. Here is how cold email teams set it up and what to do when IP data turns bad.",
+    description:
+      "Microsoft SNDS setup for cold email in 2026: claim sending IPs, read Outlook reputation, use JMRP complaints, and recover deliverability after the Substrate portal migration.",
+    keywords:
+      "Microsoft SNDS cold email, SNDS Outlook deliverability, Smart Network Data Services, JMRP feedback loop, Outlook.com cold email, Hotmail deliverability, Microsoft postmaster tools 2026, SNDS setup guide, cold email Outlook reputation, SNDS JMRP 2026",
+    date: "2026-09-07",
+    readTime: "13 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
+      alt: "Network operations dashboard representing Microsoft SNDS IP reputation for Outlook cold email deliverability",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "google-postmaster-tools-cold-email-setup-guide",
+      "domain-reputation-management-protect-sender-score",
+      "spf-dkim-dmarc-cold-email-guide",
+      "cold-email-deliverability-checklist",
+    ],
+    faqs: [
+      {
+        question: "What is Microsoft SNDS for cold email?",
+        answer:
+          "Smart Network Data Services (SNDS) is Microsoft's free postmaster dashboard for Outlook.com, Hotmail, Live.com, and MSN. It shows how Microsoft rates the IPs you send from — complaint ratios, spam trap activity signals (when available), and volume patterns — so you can catch Outlook deliverability problems before open rates collapse.",
+      },
+      {
+        question: "Do I need SNDS if I already use Google Postmaster Tools?",
+        answer:
+          "Yes. Google Postmaster Tools only reflects personal Gmail. A large share of B2B lists still hit Outlook.com and Microsoft 365 consumer paths. Teams that only watch Gmail miss half the inbox picture. Run both: Postmaster for Gmail spam rate, SNDS for Microsoft IP reputation.",
+      },
+      {
+        question: "What changed in Microsoft SNDS in 2026?",
+        answer:
+          "In June 2026 Microsoft moved SNDS and JMRP to a new Substrate-based portal. Automated CSV access links now expire (~30 days), programmatic access prefers a REST API with OAuth 2.0, and JMRP complaint reports are privacy-trimmed (headers/ARF style, not full message bodies). Update bookmarks and any scripts still pointed at the old sendersupport URLs.",
+      },
+      {
+        question: "Can I use SNDS with AWS SES for cold email?",
+        answer:
+          "Yes — but SNDS is IP-based. On shared SES IP pools you may not control or claim the IPs Microsoft sees. Dedicated IPs (or a provider that lets you claim them) make SNDS actionable. With BYO SES plus careful IP strategy, agencies can monitor reputation per sending path instead of flying blind on Outlook.",
+      },
+    ],
+  },
+  {
     slug: "google-postmaster-tools-cold-email-setup-guide",
     title:
       "Google Postmaster Tools for Cold Email: Setup Guide & Metrics That Matter (2026)",
@@ -50,6 +100,7 @@ export const blogPosts: BlogPost[] = [
       credit: "Unsplash",
     },
     relatedSlugs: [
+      "microsoft-snds-cold-email-outlook-deliverability-2026",
       "domain-reputation-management-protect-sender-score",
       "spf-dkim-dmarc-cold-email-guide",
       "cold-email-deliverability-checklist",
