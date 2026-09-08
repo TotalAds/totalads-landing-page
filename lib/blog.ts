@@ -29,6 +29,56 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "inbox-placement-testing-seed-list-cold-email-2026",
+    title:
+      "Inbox Placement Testing for Cold Email: Seed Lists That Actually Help (2026)",
+    excerpt:
+      "Seed-list inbox placement tests are useful early warnings — not ground truth. Here is how cold email teams run them in 2026, read Gmail vs Outlook results, and pair them with Postmaster, SNDS, and real bounce/reply signals.",
+    description:
+      "Inbox placement testing for cold email in 2026: how seed lists work, what GlockApps-style tools can and cannot prove, Gmail vs Outlook seeds, and how to combine placement tests with Google Postmaster and Microsoft SNDS.",
+    keywords:
+      "inbox placement testing cold email, seed list testing cold email, email inbox placement test, GlockApps cold email, Mail-Tester limitations, Gmail vs Outlook inbox placement, seed inbox deliverability, cold email spam folder test, Postmaster Tools placement, SNDS Outlook placement, inbox placement monitoring 2026",
+    date: "2026-09-08",
+    readTime: "14 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+      alt: "Email analytics and inbox placement testing dashboard for cold email seed list checks",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "google-postmaster-tools-cold-email-setup-guide",
+      "microsoft-snds-cold-email-outlook-deliverability-2026",
+      "cold-email-deliverability-checklist",
+      "domain-reputation-management-protect-sender-score",
+    ],
+    faqs: [
+      {
+        question: "What is inbox placement testing for cold email?",
+        answer:
+          "Inbox placement testing sends a sample of your campaign to a network of seed inboxes (Gmail, Outlook, Yahoo, and others) and reports whether each seed landed in inbox, spam, or promotions. It is a diagnostic snapshot for one send — not a guarantee of how every prospect will see your mail.",
+      },
+      {
+        question: "Are seed list results the same as real deliverability?",
+        answer:
+          "No. Seeds do not behave like real prospects: they rarely reply, never buy, and sit on known testing networks. Use placement tests as an early warning, then confirm with Google Postmaster spam rate, Microsoft SNDS, bounce rates, and reply quality before you change volume.",
+      },
+      {
+        question: "Is Mail-Tester enough for cold email inbox placement?",
+        answer:
+          "Mail-Tester is useful for spotting obvious authentication and content issues (SPF/DKIM/DMARC, blacklists, spammy markup). It is not a multi-provider seed network and should not be your only placement check. Pair a content/auth score with a real seed-list placement run and provider postmaster data.",
+      },
+      {
+        question: "How often should cold email teams run seed placement tests?",
+        answer:
+          "Run a baseline after DNS/warmup changes, before scaling a new domain, and whenever Gmail or Outlook metrics slip. Many agencies spot-check weekly on active domains and immediately after infrastructure or list-source changes — not after every single follow-up email.",
+      },
+    ],
+  },
+  {
     slug: "microsoft-snds-cold-email-outlook-deliverability-2026",
     title:
       "Microsoft SNDS for Cold Email: Outlook Deliverability Guide (2026)",
@@ -50,9 +100,9 @@ export const blogPosts: BlogPost[] = [
       credit: "Unsplash",
     },
     relatedSlugs: [
+      "inbox-placement-testing-seed-list-cold-email-2026",
       "google-postmaster-tools-cold-email-setup-guide",
       "domain-reputation-management-protect-sender-score",
-      "spf-dkim-dmarc-cold-email-guide",
       "cold-email-deliverability-checklist",
     ],
     faqs: [
@@ -100,9 +150,9 @@ export const blogPosts: BlogPost[] = [
       credit: "Unsplash",
     },
     relatedSlugs: [
+      "inbox-placement-testing-seed-list-cold-email-2026",
       "microsoft-snds-cold-email-outlook-deliverability-2026",
       "domain-reputation-management-protect-sender-score",
-      "spf-dkim-dmarc-cold-email-guide",
       "cold-email-deliverability-checklist",
     ],
   },
@@ -296,94 +346,6 @@ export const blogPosts: BlogPost[] = [
       "domain-reputation-management-protect-sender-score",
       "cold-email-open-rate-dropping-fix-domain-reputation",
       "email-list-cleaning-why-verification-prevents-bounce-disasters",
-    ],
-  },
-  {
-    slug: "email-warmup-tools-compared-2026",
-    title: "Email Warmup Tools Compared: Warmbox vs Instantly vs Mailreach vs LeadSnipper (2026)",
-    excerpt:
-      "Email warmup isn't optional in 2026 — it's the difference between inbox and spam. Here's an honest comparison of the top warmup tools: Warmbox, Instantly's built-in warmup, Mailreach, and LeadSnipper's AI warmup — with pricing, network sizes, and which one actually works.",
-    description:
-      "Compare the best email warmup tools in 2026: Warmbox, Instantly, Mailreach, and LeadSnipper. Side-by-side breakdown of pricing, warmup network sizes, automation quality, and which tool delivers the best sender reputation results.",
-    keywords:
-      "email warmup tools 2026, warmbox vs mailreach, instantly warmup review, best email warmup service, email warmup tool comparison, warmup network size, AI email warmup, sender reputation warmup, cold email warmup tools, mailbox warmup service comparison",
-    date: "2026-07-28",
-    readTime: "12 min read",
-    author: "LeadSnipper Team",
-    category: "Deliverability",
-    cluster: "deliverability",
-    clusterRole: "spoke",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
-      alt: "Email warmup dashboard comparing warmup tools and sender reputation metrics",
-      credit: "Unsplash",
-    },
-    relatedSlugs: [
-      "email-warmup-verification-domain-health-complete-guide",
-      "domain-reputation-management-protect-sender-score",
-      "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
-    ],
-    faqs: [
-      {
-        question: "What is the best email warmup tool in 2026?",
-        answer: "For standalone warmup, Warmbox (€15/mo/mailbox) has the largest network and best track record. For all-in-one convenience, LeadSnipper's AI warmup is included in platform pricing. For budget-conscious users, Mailreach ($25/mo for 3 mailboxes) offers good value. Instantly's warmup works but is less transparent about network size.",
-      },
-      {
-        question: "How long does email warmup take?",
-        answer: "Minimum 2-3 weeks for a new domain/mailbox. Conservative teams warm for 4-6 weeks before running full cold campaigns. Warmup is ongoing — you should keep warmup active even while sending cold email to maintain reputation. Most tools run warmup conversations 24/7 in the background.",
-      },
-      {
-        question: "Do I need a separate warmup tool or can I use my cold email platform's built-in warmup?",
-        answer: "Depends on volume. For <10K emails/month, built-in warmup (Instantly, LeadSnipper) is usually sufficient. For 50K+ emails/month or critical domains, use a dedicated tool (Warmbox, Mailreach) for larger warmup networks and more control. Many agencies run both — platform warmup + Warmbox for high-value domains.",
-      },
-      {
-        question: "How much does email warmup cost?",
-        answer: "Warmbox: €15/mo per mailbox. Mailreach: $25/mo for 3 mailboxes, $49/mo for 10. Instantly: included in platform pricing ($37+/mo). LeadSnipper: included in platform pricing (free tier or ₹999/mo). For a 5-mailbox setup, expect $50-$75/month for dedicated warmup tools.",
-      },
-    ],
-  },
-  {
-    slug: "lemlist-vs-instantly-vs-smartlead-vs-woodpecker-2026",
-    title: "Lemlist vs Instantly vs Smartlead vs Woodpecker: Head-to-Head Comparison (2026)",
-    excerpt:
-      "The four most popular cold email platforms compared side-by-side. Here's an honest breakdown of pricing, infrastructure, deliverability, and which tool wins for your specific use case — no fluff.",
-    description:
-      "Head-to-head comparison of Lemlist vs Instantly vs Smartlead vs Woodpecker in 2026. Compare pricing, shared vs BYO infrastructure, email verification, warmup features, and UI — with clear winner recommendations by use case.",
-    keywords:
-      "lemlist vs instantly vs smartlead vs woodpecker, cold email tool comparison 2026, best cold email software comparison, lemlist vs instantly, smartlead vs woodpecker, cold email platform comparison, which cold email tool should I use, cold email software comparison chart",
-    date: "2026-07-28",
-    readTime: "15 min read",
-    author: "LeadSnipper Team",
-    category: "Comparison",
-    cluster: "comparison",
-    clusterRole: "spoke",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
-      alt: "Cold email software comparison dashboard showing Lemlist Instantly Smartlead Woodpecker side by side",
-      credit: "Unsplash",
-    },
-    relatedSlugs: [
-      "best-cold-email-software-2026-comparison",
-      "lemlist-alternatives",
-      "smartlead-alternatives",
-    ],
-    faqs: [
-      {
-        question: "Which is cheaper: Lemlist, Instantly, Smartlead, or Woodpecker?",
-        answer: "For low-volume (<25K emails/month), Instantly at $37/month is cheapest. For mid-volume (25K-100K), Woodpecker and Smartlead are comparable at $39-$49/month. For high-volume (100K+), LeadSnipper BYO AWS SES wins — you pay AWS $0.10/1K emails plus platform fees. Lemlist is the most expensive at $55-$159/month regardless of volume.",
-      },
-      {
-        question: "Which tool has the best deliverability: Lemlist, Instantly, Smartlead, or Woodpecker?",
-        answer: "All four use shared sending infrastructure, so deliverability is similar — it depends more on your setup (DNS, warmup, list quality) than the tool. That said, Woodpecker and Instantly have cleaner reputations historically. If deliverability is your #1 priority, BYO AWS SES (via LeadSnipper or custom setup) isolates your reputation from shared pools.",
-      },
-      {
-        question: "Do any of these tools include email verification?",
-        answer: "No — Lemlist, Instantly, Smartlead, and Woodpecker all require third-party verification tools (NeverBounce, ZeroBounce, Reoon, MillionVerifier). This adds $20-$50/month to your stack. LeadSnipper includes Reoon verification built-in.",
-      },
-      {
-        question: "Which is easiest to use: Lemlist, Instantly, Smartlead, or Woodpecker?",
-        answer: "Instantly has the cleanest, most beginner-friendly UI. Woodpecker is straightforward but dated. Lemlist has more features but steeper learning curve (video personalization, dynamic images). Smartlead is powerful but complex — best for technical users comfortable with multi-inbox rotation and advanced settings.",
-      },
     ],
   },
   {
@@ -840,46 +802,6 @@ export const blogPosts: BlogPost[] = [
       "lemlist-alternatives",
       "best-cold-email-software-2026-comparison",
       "email-list-cleaning-why-verification-prevents-bounce-disasters",
-    ],
-  },
-  {
-    slug: "mailslurp-alternatives-cold-email",
-    title: "Mailslurp Alternatives for Cold Email: Better Options for Outbound (2026)",
-    excerpt:
-      "Mailslurp is built for email testing and temporary inboxes — not cold email campaigns. Here are the best Mailslurp alternatives when you need a cold email platform with warmup, verification, and deliverability built in.",
-    description:
-      "Best Mailslurp alternatives for cold email in 2026. Mailslurp is an email testing tool, not for outbound. Compare LeadSnipper, Instantly, and Smartlead for cold email campaigns with warmup, verification, and infrastructure control.",
-    keywords:
-      "mailslurp alternatives, mailslurp cold email, mailslurp vs cold email tools, cold email platform instead of mailslurp, mailslurp alternative for outbound, best cold email tool 2026, mailslurp not for cold email",
-    date: "2026-07-28",
-    readTime: "8 min read",
-    author: "LeadSnipper Team",
-    category: "Comparison",
-    cluster: "comparison",
-    clusterRole: "spoke",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
-      alt: "Cold email software alternatives to Mailslurp for outbound campaigns",
-      credit: "Unsplash",
-    },
-    relatedSlugs: [
-      "best-cold-email-software-2026-comparison",
-      "lemlist-alternatives",
-      "smartlead-alternatives",
-    ],
-    faqs: [
-      {
-        question: "Can I use Mailslurp for cold email campaigns?",
-        answer: "No. Mailslurp is an email testing API for developers — it creates temporary inboxes for QA, end-to-end tests, and automation workflows. It's not designed for cold email outreach, doesn't include warmup, has no verification, and lacks the deliverability infrastructure needed for cold campaigns. Use dedicated cold email platforms instead.",
-      },
-      {
-        question: "What is Mailslurp actually used for?",
-        answer: "Mailslurp is for developers running automated tests. Use cases: testing email verification flows, QA on registration emails, integration testing for apps that send transactional emails. It creates disposable inboxes programmatically via API. It's excellent for testing — terrible for cold outreach.",
-      },
-      {
-        question: "What's the best Mailslurp alternative for cold email?",
-        answer: "LeadSnipper (BYO AWS SES, built-in verification), Instantly (easiest UI, $37/mo), or Smartlead (high-volume, technical teams). All three are purpose-built for cold email with warmup, verification options, and deliverability controls. Mailslurp isn't comparable — it's in a different product category.",
-      },
     ],
   },
   {

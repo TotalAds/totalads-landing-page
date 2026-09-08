@@ -56,8 +56,9 @@ LeadSnipper helps teams send cold outbound email at scale without damaging sende
 - [Why Cold Emails Land in Spam](https://leadsnipper.com/blog/why-cold-emails-land-in-spam-fix-today): 5 real reasons and actionable fixes.
 - [Cold Email vs Newsletter Tools](https://leadsnipper.com/blog/cold-email-vs-newsletter-tools-why-mailchimp-wont-work): Why Mailchimp and Mailerlite fail for outbound.
 - [Apollo.io Data Quality & Bounce Rate](https://leadsnipper.com/blog/apollo-io-data-quality-bounce-rate-2026): Real user reports of 8-15% bounce rates.
-- [Email Warmup Tools Compared 2026](https://leadsnipper.com/blog/email-warmup-tools-compared-2026): Warmbox vs Instantly vs Mailreach vs LeadSnipper.
-- [Lemlist vs Instantly vs Smartlead vs Woodpecker](https://leadsnipper.com/blog/lemlist-vs-instantly-vs-smartlead-vs-woodpecker-2026): Head-to-head comparison of the four most popular platforms.
+- [Inbox Placement Testing / Seed Lists](https://leadsnipper.com/blog/inbox-placement-testing-seed-list-cold-email-2026): How to run seed-list inbox placement tests without mistaking them for ground truth.
+- [Google Postmaster Tools for Cold Email](https://leadsnipper.com/blog/google-postmaster-tools-cold-email-setup-guide): Setup guide and Gmail metrics that matter.
+- [Microsoft SNDS for Outlook Deliverability](https://leadsnipper.com/blog/microsoft-snds-cold-email-outlook-deliverability-2026): Claim IPs, read Outlook reputation, use JMRP.
 
 ## Services
 
