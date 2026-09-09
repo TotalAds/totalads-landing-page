@@ -29,6 +29,56 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "list-unsubscribe-one-click-cold-email-2026",
+    title:
+      "List-Unsubscribe & One-Click Opt-Out for Cold Email (2026 Guide)",
+    excerpt:
+      "Gmail and Yahoo expect easy unsubscribe on bulk mail. Here is how cold email teams implement List-Unsubscribe + RFC 8058 one-click headers, honor opt-outs fast, and keep spam rates down without killing reply rates.",
+    description:
+      "List-Unsubscribe and one-click unsubscribe for cold email in 2026: RFC 8058 headers, Gmail bulk sender rules, how to verify the Gmail Unsubscribe button, common mistakes, and how opt-outs protect domain reputation.",
+    keywords:
+      "list unsubscribe cold email, one-click unsubscribe cold email, RFC 8058 cold email, List-Unsubscribe header, List-Unsubscribe-Post, Gmail bulk sender unsubscribe, cold email unsubscribe header, one click opt out email, Gmail unsubscribe button cold email, Yahoo list unsubscribe 2026",
+    date: "2026-09-09",
+    readTime: "14 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80",
+      alt: "Email client unsubscribe control representing List-Unsubscribe one-click opt-out for cold email",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "google-postmaster-tools-cold-email-setup-guide",
+      "cold-email-deliverability-checklist",
+      "domain-reputation-management-protect-sender-score",
+      "inbox-placement-testing-seed-list-cold-email-2026",
+    ],
+    faqs: [
+      {
+        question: "Do cold emails need a List-Unsubscribe header in 2026?",
+        answer:
+          "If you send more than about 5,000 messages per day to personal Gmail accounts, Google requires marketing/promotional mail to support one-click unsubscribe via List-Unsubscribe headers (and a visible body link). Even below that threshold, the headers are a positive deliverability signal and reduce spam complaints — there is little upside to omitting them.",
+      },
+      {
+        question: "What is the difference between a footer unsubscribe link and one-click unsubscribe?",
+        answer:
+          "A footer link is a human-visible URL in the body. One-click unsubscribe (RFC 8058) uses List-Unsubscribe plus List-Unsubscribe-Post headers so Gmail/Yahoo can show an Unsubscribe control and POST to your endpoint without forcing the recipient through a login or confirmation maze. Bulk senders need both the headers and an easy body link.",
+      },
+      {
+        question: "How fast must I honor an unsubscribe request?",
+        answer:
+          "Google's sender guidelines expect unsubscribe requests to be honored within about 48 hours for bulk senders. Best practice for cold email is immediate suppression across all sequences and mailboxes for that contact — not 'next campaign cycle.'",
+      },
+      {
+        question: "Will one-click unsubscribe hurt my cold email reply rates?",
+        answer:
+          "It usually helps the domains that stay alive. People who would have hit Report spam now have a quieter exit. Lower spam rates in Postmaster Tools matter more than clinging to unwilling recipients who will never book a meeting.",
+      },
+    ],
+  },
+  {
     slug: "inbox-placement-testing-seed-list-cold-email-2026",
     title:
       "Inbox Placement Testing for Cold Email: Seed Lists That Actually Help (2026)",
@@ -54,7 +104,8 @@ export const blogPosts: BlogPost[] = [
       "microsoft-snds-cold-email-outlook-deliverability-2026",
       "cold-email-deliverability-checklist",
       "domain-reputation-management-protect-sender-score",
-    ],
+    
+    "list-unsubscribe-one-click-cold-email-2026",],
     faqs: [
       {
         question: "What is inbox placement testing for cold email?",
@@ -154,7 +205,8 @@ export const blogPosts: BlogPost[] = [
       "microsoft-snds-cold-email-outlook-deliverability-2026",
       "domain-reputation-management-protect-sender-score",
       "cold-email-deliverability-checklist",
-    ],
+    
+    "list-unsubscribe-one-click-cold-email-2026",],
   },
   {
     slug: "instantly-vs-leadsnipper-indian-agencies-comparison",
@@ -581,7 +633,8 @@ export const blogPosts: BlogPost[] = [
       "how-to-avoid-spam-folder-cold-email",
       "email-warmup-verification-domain-health-complete-guide",
       "domain-reputation-management-protect-sender-score",
-    ],
+    
+    "list-unsubscribe-one-click-cold-email-2026",],
   },
   {
     slug: "how-many-emails-per-day-cold-outreach",
