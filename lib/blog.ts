@@ -29,6 +29,56 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "aws-ses-bounce-complaint-configuration-sets-cold-email-2026",
+    title:
+      "Amazon SES Bounce & Complaint Handling with Configuration Sets for Cold Email (2026)",
+    excerpt:
+      "Bounces and spam complaints can pause your SES account. Here is how cold email teams use configuration sets, SNS/CloudWatch event destinations, and suppression options to catch hard bounces, complaints, and reputation spikes before AWS does.",
+    description:
+      "Amazon SES bounce & complaint handling for cold email (2026): configuration sets, SNS events, suppression options, and what to do when rates spike.",
+    keywords:
+      "Amazon SES bounce and complaint handling with configuration sets for cold email (2026), SES configuration sets cold email, SES bounce complaint notifications, PutConfigurationSetSuppressionOptions, SES SNS bounce complaint, AWS SES suppression list cold email, X-SES-CONFIGURATION-SET, SES reputation metrics bounce rate, SES event destinations cold email, BYO SES bounce handling",
+    date: "2026-09-10",
+    readTime: "14 min read",
+    author: "LeadSnipper Team",
+    category: "Infrastructure",
+    cluster: "infrastructure",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80",
+      alt: "Operations dashboard representing Amazon SES bounce complaint monitoring with configuration sets for cold email",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+      "amazon-ses-pricing-2026",
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+    ],
+    faqs: [
+      {
+        question: "What is an Amazon SES configuration set for cold email?",
+        answer:
+          "A configuration set is a named group of SES rules — event destinations, optional IP pools, and suppression preferences — that you attach to outbound mail. Cold email teams use separate sets for outbound vs transactional traffic so bounce and complaint metrics stay isolated and easier to alarm on.",
+      },
+      {
+        question: "How do I get bounce and complaint notifications from SES?",
+        answer:
+          "Create a configuration set, add an event destination with MatchingEventTypes that include BOUNCE and COMPLAINT, and point it at Amazon SNS (for near-real-time alerts), CloudWatch (for metrics/alarms), or Firehose (for long-term storage). Then pass ConfigurationSetName on every send — or set X-SES-CONFIGURATION-SET — so events actually publish.",
+      },
+      {
+        question: "Should I enable account-level or configuration-set suppression?",
+        answer:
+          "Most cold email accounts should keep account-level suppression on for both BOUNCE and COMPLAINT so bad addresses are never retried account-wide. Use PutConfigurationSetSuppressionOptions when a specific stream needs tighter or different reasons — not to disable suppression for outbound.",
+      },
+      {
+        question: "What bounce and complaint rates trigger SES review?",
+        answer:
+          "AWS recommends keeping bounce rate under ~2% and complaint rate under ~0.1%. At about 5% bounce or 0.1% complaint your account can go under review; near 10% bounce or 0.5% complaint SES may pause sending. Alarm earlier than those floors so you can pause campaigns yourself.",
+      },
+    ],
+  },
+  {
     slug: "list-unsubscribe-one-click-cold-email-2026",
     title:
       "List-Unsubscribe & One-Click Opt-Out for Cold Email (2026 Guide)",
@@ -370,6 +420,7 @@ export const blogPosts: BlogPost[] = [
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
+      "aws-ses-bounce-complaint-configuration-sets-cold-email-2026",
       "domain-reputation-management-protect-sender-score",
     ],
   },
@@ -527,6 +578,7 @@ export const blogPosts: BlogPost[] = [
     relatedSlugs: [
       "how-to-send-cold-emails-at-scale-without-getting-blacklisted",
       "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+      "aws-ses-bounce-complaint-configuration-sets-cold-email-2026",
       "cold-email-vs-newsletter-tools-why-mailchimp-wont-work",
     ],
   },

@@ -60,6 +60,7 @@ LeadSnipper helps teams send cold outbound email at scale without damaging sende
 - [Google Postmaster Tools for Cold Email](https://leadsnipper.com/blog/google-postmaster-tools-cold-email-setup-guide): Setup guide and Gmail metrics that matter.
 - [Microsoft SNDS for Outlook Deliverability](https://leadsnipper.com/blog/microsoft-snds-cold-email-outlook-deliverability-2026): Claim IPs, read Outlook reputation, use JMRP.
 - [List-Unsubscribe & One-Click Opt-Out for Cold Email](https://leadsnipper.com/blog/list-unsubscribe-one-click-cold-email-2026): RFC 8058 headers, Gmail bulk rules, and how opt-outs protect spam rate.
+- [Amazon SES Bounce & Complaint Configuration Sets](https://leadsnipper.com/blog/aws-ses-bounce-complaint-configuration-sets-cold-email-2026): Handle SES bounces, complaints, event destinations, and suppression for cold email.
 
 ## Services
 
