@@ -6,86 +6,86 @@ export default function EmailWarmupPage() {
   return (
     <FeatureLandingPage
       pageKey="emailWarmup"
-      eyebrow="Email Warmup Tool"
-      headline="Email warmup tool that improves inbox placement in days"
-      subheadline="New domains need gradual sending volume before cold outreach. LeadSnipper's email warmup tool ramps daily sends, mirrors human patterns, and pauses automatically when domain health drops."
-      problemTitle="Sending cold email from a cold domain guarantees spam folder"
-      problemDescription="Mailbox providers flag domains that suddenly start blasting unsolicited email. Without warmup, even perfect copy lands in spam. Most teams skip warmup or use shared warmup pools that don't build reputation on their own domain."
+      eyebrow="Domain Reputation & Pacing"
+      headline="Protect inbox placement without artificial warmup pools"
+      subheadline="Mailbox providers increasingly detect and penalize shared warmup networks. LeadSnipper focuses on what actually protects reputation: DNS authentication, Reoon verification, daily caps, paced sending, and auto-pause when bounce or complaint rates spike."
+      problemTitle="Shared warmup pools are a fragile shortcut"
+      problemDescription="Many tools sell artificial engagement networks that look like activity to filters — until providers catch the pattern. That can burn domains and create a false sense of readiness. LeadSnipper does not sell a warmup-pool product. We ship deliverability fundamentals instead."
       outcomes={[
-        "Gradual daily volume ramp from 10 to 500+ emails over 2-4 weeks",
-        "Warmup tied to your actual domain — not a shared pool",
+        "SPF, DKIM, and DMARC setup before you send",
+        "Built-in Reoon verification so bad lists never hit your reputation",
+        "Per-mailbox and per-domain daily caps with multi-day pacing",
         "Automatic pause when bounce or complaint rates spike",
-        "Integrated with domain health dashboard for full visibility",
-        "Works with BYO AWS SES and managed sending",
+        "Domain health dashboard for DNS, bounces, and complaints",
       ]}
       features={[
         {
-          title: "AI-Paced Volume Ramp",
+          title: "Deliverability Pacing",
           description:
-            "Daily send limits increase by 10-20% based on engagement signals and domain age. No manual scheduling required.",
+            "Spread volume across days and mailboxes with granular daily caps — so new domains ramp safely instead of blasting on day one.",
           badge: "Core",
         },
         {
-          title: "Human-Like Sending Patterns",
+          title: "Bounce & Complaint Auto-Pause",
           description:
-            "Randomized send times, varied recipients, and natural reply simulation to build authentic sender reputation.",
-          badge: "Deliverability",
-        },
-        {
-          title: "Health-Triggered Pause",
-          description:
-            "Warmup automatically pauses if bounce rate exceeds thresholds or DNS records fail validation.",
+            "Campaigns halt when hard bounces or complaints spike, so a bad batch cannot burn your domain overnight.",
           badge: "Safety",
         },
         {
-          title: "Multi-Domain Warmup",
+          title: "Built-In Email Verification",
           description:
-            "Warm up multiple sending domains simultaneously — essential for agencies and multi-ICP outbound.",
-          badge: "Scale",
+            "Reoon verification runs in the campaign flow. Invalid and risky addresses are removed before they touch sender reputation.",
+          badge: "Deliverability",
+        },
+        {
+          title: "Domain Health Dashboard",
+          description:
+            "Monitor DNS authentication, bounce rates, and complaint signals in one place — next to the campaigns that use those domains.",
+          badge: "Visibility",
         },
       ]}
       faqs={[
         {
-          question: "How long does email warmup take?",
+          question: "Does LeadSnipper include an automated email warmup tool?",
           answer:
-            "Most domains need 2-4 weeks of warmup before cold outreach. Start at 10-20 emails/day and ramp to 200-500/day. LeadSnipper automates this schedule based on your domain health signals.",
+            "Not today. We do not sell an artificial warmup-pool product. LeadSnipper includes verification, daily caps, paced sending, domain health monitoring, and deliverability auto-pause — the controls that protect reputation when you ramp real outreach.",
         },
         {
-          question: "Do I need a separate warmup tool?",
+          question: "How should I ramp a new domain?",
           answer:
-            "No. LeadSnipper includes email warmup on all plans. It's integrated with verification, domain health monitoring, and campaign sending — no separate billing or tool switching.",
+            "Start low (often 10–30 emails/day), verify every list, keep bounce rates under control, and increase gradually over 2–4 weeks. Use our sending-limit calculator and domain health dashboard to stay within safe limits.",
         },
         {
-          question: "Can I warmup multiple domains at once?",
+          question: "Why avoid shared warmup networks?",
           answer:
-            "Yes. Business and BYO SES plans support unlimited domains with independent warmup schedules per domain.",
+            "Google and Microsoft increasingly detect artificial engagement pools. Reputation built that way can collapse when the network is flagged. Own your DNS, verify lists, pace volume, and pause on bad signals instead.",
         },
       ]}
       relatedLinks={[
         {
-          href: "/cold-email-software",
-          label: "Cold email software",
-          description: "Full cold email platform with warmup, verification, and campaigns.",
-        },
-        {
           href: "/email-deliverability",
           label: "Email deliverability tool",
-          description: "Monitor domain health alongside warmup progress.",
+          description: "Monitor DNS, bounce, and complaint signals in one dashboard.",
+        },
+        {
+          href: "/cold-email-software",
+          label: "Cold email software",
+          description: "Full cold email platform with verification, pacing, and campaigns.",
         },
         {
           href: "/tools/cold-email-sending-limit-calculator",
           label: "Sending limit calculator",
-          description: "Calculate your safe daily send limit and week-by-week ramp schedule.",
+          description: "Calculate a safe daily send limit and week-by-week ramp schedule.",
         },
         {
           href: "/blog/email-warmup-verification-domain-health-complete-guide",
-          label: "Email warmup complete guide",
-          description: "In-depth guide to warmup, verification, and domain health.",
+          label: "Warmup, verification & domain health guide",
+          description: "Educational guide to reputation fundamentals for cold email.",
         },
         {
           href: "/blog/how-many-emails-per-day-cold-outreach",
           label: "Daily send volume guide",
-          description: "How many emails to send per day during and after warmup.",
+          description: "How many emails to send per day as domains mature.",
         },
       ]}
     />

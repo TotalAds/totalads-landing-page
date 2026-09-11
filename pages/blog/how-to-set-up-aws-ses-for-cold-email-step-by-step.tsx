@@ -284,9 +284,9 @@ export default function AwsSesSetupGuide() {
         </ol>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        Once connected, LeadSnipper handles campaign sending, warmup, and
-        analytics on top of your SES infrastructure. You own the sending layer;
-        LeadSnipper provides the campaign management layer.
+        Once connected, LeadSnipper handles campaign sending, verification,
+        pacing, and analytics on top of your SES infrastructure. You own the
+        sending layer; LeadSnipper provides the campaign management layer.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

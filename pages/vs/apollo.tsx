@@ -9,7 +9,7 @@ export default function ApolloAlternativePage() {
       competitor="Apollo"
       eyebrow="Apollo alternative"
       headline="An Apollo alternative for teams that need cold email deliverability, not just a database"
-      subheadline="Apollo excels at contact data, but cold email deliverability requires dedicated infrastructure. LeadSnipper gives you BYO AWS SES, built-in verification, domain warmup, and campaign analytics focused on inbox placement."
+      subheadline="Apollo excels at contact data, but cold email deliverability requires dedicated infrastructure. LeadSnipper gives you BYO AWS SES, built-in verification, domain health monitoring, and campaign analytics focused on inbox placement."
       competitorSummary="Apollo is a powerful sales intelligence platform with contact data and basic sequencing. Teams that outgrow Apollo's email sending often need dedicated deliverability infrastructure."
       competitorBestFor={[
         "Teams that need contact data and basic email sequences in one tool",
@@ -68,7 +68,7 @@ export default function ApolloAlternativePage() {
         {
           question: "Does LeadSnipper have a contact database like Apollo?",
           answer:
-            "No. LeadSnipper focuses on sending infrastructure, verification, warmup, and campaigns. Import contacts from Apollo, LinkedIn, CSV, or any other source.",
+            "No. LeadSnipper focuses on sending infrastructure, verification, domain health, and campaigns. Import contacts from Apollo, LinkedIn, CSV, or any other source.",
         },
       ]}
     />

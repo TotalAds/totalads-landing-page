@@ -41,8 +41,8 @@ export default function ColdEmailsInSpam() {
           Every new domain needs 2-4 weeks of warmup before cold outreach.
           Start with 10-20 emails per day to engaged recipients (colleagues,
           partners, existing contacts). Gradually increase volume by 10-20%
-          daily. LeadSnipper&apos;s warmup tool automates this with daily pacing
-          tied to your actual domain.
+          daily. LeadSnipper helps you do this safely with daily caps, paced
+          sending, and auto-pause when bounce rates spike.
         </p>
         <div className="text-xs font-mono text-[#92400e] bg-white/50 rounded p-2">
           Week 1: 10-20 emails/day → Week 2: 30-50 emails/day → Week 3: 80-150

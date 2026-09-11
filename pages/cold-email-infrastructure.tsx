@@ -16,7 +16,7 @@ export default function ColdEmailInfrastructurePage() {
         "Send as AWS allows — no artificial monthly caps below SES limits",
         "Own your sender reputation completely — no shared pool risk",
         "Pay AWS directly (~$0.10 per 1,000 emails) plus low platform fee",
-        "Full campaign builder, verification, warmup, and analytics on top",
+        "Full campaign builder, verification, pacing, and analytics on top",
       ]}
       features={[
         {
@@ -34,7 +34,7 @@ export default function ColdEmailInfrastructurePage() {
         {
           title: "Unlimited Domains on BYO SES Pro",
           description:
-            "Add as many sending domains as your AWS account supports. Each domain gets independent warmup and health monitoring.",
+            "Add as many sending domains as your AWS account supports. Each domain gets independent health monitoring and send pacing.",
           badge: "Scale",
         },
         {
@@ -75,7 +75,7 @@ export default function ColdEmailInfrastructurePage() {
         {
           question: "Why use BYO AWS SES for cold email?",
           answer:
-            "BYO SES gives you direct control over sending reputation, lower per-email costs, and no shared pool risk. You pay AWS for sending and LeadSnipper for the platform layer (verification, warmup, campaigns, analytics).",
+            "BYO SES gives you direct control over sending reputation, lower per-email costs, and no shared pool risk. You pay AWS for sending and LeadSnipper for the platform layer (verification, pacing, campaigns, analytics).",
         },
         {
           question: "Do I need AWS experience to use BYO SES?",

@@ -5,7 +5,7 @@ import React from "react";
 
 const beforeItems = [
   "Multiple tools stitched together",
-  "Separate warmup tool",
+  "Separate deliverability tool",
   "Separate verification tool",
   "Separate sending tool",
   "Separate analytics dashboard",
@@ -131,7 +131,7 @@ export default function PainSection() {
           viewport={{ once: true }}
           className="text-center text-[#727785] mt-12 max-w-xl mx-auto"
         >
-          One platform replaces your warmup tool, verification tool, sending tool,
+          One platform replaces your verification tool, sending tool,
           analytics dashboard, and the spreadsheet holding it all together.
         </motion.p>
       </div>

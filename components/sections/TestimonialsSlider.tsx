@@ -12,7 +12,7 @@ export default function TestimonialsSlider() {
 		},
 		{
 			quote:
-				"We were doing ₹15k/mo across a sender, warmup, verifier, and spreadsheets. We switched to LeadSnipper, now one stack at ₹4.2k for the same 35k sends/month.",
+				"We were doing ₹15k/mo across a sender, verifier, deliverability checks, and spreadsheets. We switched to LeadSnipper, now one stack at ₹4.2k for the same 35k sends/month.",
 			author: "Priya Sharma",
 			role: "SDR Team Lead, 200-person SaaS",
 			metric: "₹15k → ₹4.2k/mo",
@@ -33,7 +33,7 @@ export default function TestimonialsSlider() {
 		},
 		{
 			quote:
-				"We were doing 2k emails/month safely but couldn't scale without risking the domain. Now we're at 25k/month with AI warmup and zero blacklist events.",
+				"We were doing 2k emails/month safely but couldn't scale without risking the domain. Now we're at 25k/month with verification, pacing, and zero blacklist events.",
 			author: "Rahul Kapoor",
 			role: "VP Sales, Revenue Agency",
 			metric: "2k → 25k emails/mo",

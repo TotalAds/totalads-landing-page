@@ -20,9 +20,9 @@ export default function HowItWorks() {
     },
     {
       number: "03",
-      title: "Warm Up with AI Conversations",
+      title: "Protect Reputation Before You Scale",
       description:
-        "Our AI warmup engine generates human-like email threads across Gmail, Outlook, Yahoo, and SES — building trust with mailbox providers before you scale.",
+        "Set daily caps per mailbox, pace sends across days, and let bounce/complaint auto-pause stop a bad batch before it burns your domain.",
       icon: <Shield className="w-6 h-6 text-[#3b82f6]" />,
     },
     {
@@ -68,7 +68,7 @@ export default function HowItWorks() {
           </h2>
           <p className="text-[#475569] text-lg max-w-2xl mx-auto">
             No duct-taping 4 different tools. One platform handles domains,
-            verification, warmup, and campaigns.
+            verification, pacing, and campaigns.
           </p>
         </motion.div>
 

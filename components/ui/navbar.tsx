@@ -8,7 +8,6 @@ import {
   ChevronDown,
   Code2,
   Cog,
-  Flame,
   Globe,
   Linkedin,
   Mail,
@@ -56,15 +55,9 @@ const productItems: Array<{
 const coldEmailItems = [
   {
     label: "Cold Email Software",
-    desc: "Full platform with verification & warmup",
+    desc: "Full platform with verification & pacing",
     href: "/cold-email-software",
     icon: <Mail className="w-4.5 h-4.5" />,
-  },
-  {
-    label: "Email Warmup Tool",
-    desc: "Improve inbox placement in days",
-    href: "/email-warmup",
-    icon: <Flame className="w-4.5 h-4.5" />,
   },
   {
     label: "Email Deliverability",

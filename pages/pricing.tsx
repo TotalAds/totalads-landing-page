@@ -11,6 +11,7 @@ import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 import {
   displayPlanPrice,
+  displayPlanSecondaryPrice,
   formatAmount,
   formatInr,
   formatUsd,
@@ -168,23 +169,6 @@ const NOT_FOR = [
   "Teams looking for the cheapest tool regardless of reputation risk",
 ];
 
-const productSecondaryPrice = (
-  planId: ProductPlan["id"],
-  currency: DisplayCurrency,
-) => {
-  if (currency === "INR") return formatUsd(inrToUsd(displayPlanPriceNumber(planId, "INR")));
-  return formatInr(displayPlanPriceNumber(planId, "USD"));
-};
-
-const displayPlanPriceNumber = (
-  planId: ProductPlan["id"],
-  currency: DisplayCurrency,
-): number => {
-  const value = displayPlanPrice(planId, currency);
-  const numeric = Number(value.replace(/[^0-9.]/g, ""));
-  return Number.isFinite(numeric) ? numeric : 0;
-};
-
 export default function PricingPage() {
   const [mode, setMode] = useState<"product" | "service">("product");
   const { isIndia } = useUserRegion();
@@ -253,7 +237,7 @@ export default function PricingPage() {
             >
               {PRODUCT_PLANS.map((plan) => {
                 const primary = displayPlanPrice(plan.id, displayCurrency);
-                const secondary = productSecondaryPrice(plan.id, displayCurrency);
+                const secondary = displayPlanSecondaryPrice(plan.id, displayCurrency);
                 return (
                   <div
                     key={plan.id}

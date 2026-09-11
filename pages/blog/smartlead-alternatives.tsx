@@ -239,7 +239,7 @@ export default function SmartleadAlternatives() {
             {[
               ["BYO AWS SES", "✗", "✓"],
               ["Built-in email verification", "✗", "✓"],
-              ["Email warmup", "✓", "✓"],
+              ["Deliverability pacing & auto-pause", "Partial", "✓"],
               ["Domain health monitoring", "Partial", "✓"],
               ["Multi-inbox rotation", "✓ Advanced", "✓"],
               ["Agency client workspaces", "Partial", "✓"],

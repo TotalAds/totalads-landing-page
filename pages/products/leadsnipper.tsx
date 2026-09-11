@@ -20,9 +20,7 @@ import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
 import {
   displayPlanPrice,
-  formatInr,
-  formatUsd,
-  inrToUsd,
+  displayPlanSecondaryPrice,
   type DisplayCurrency,
 } from "@/lib/currency";
 import { useUserRegion } from "@/hooks/useUserRegion";
@@ -45,8 +43,8 @@ const features = [
   {
     icon: <Flame className="w-5 h-5" />,
     color: "#8b5cf6",
-    title: "AI Smart Warmup",
-    desc: "Gradual daily volume ramp that mirrors human sending patterns. Tied to your domain health — automatically pauses if issues are detected.",
+    title: "Deliverability Pacing",
+    desc: "Daily caps and multi-day volume pacing tied to domain health — automatically pauses if bounce or complaint rates spike.",
     badge: "Deliverability",
   },
   {
@@ -83,7 +81,7 @@ const comparisonData = [
   { feature: "Infrastructure", leadsnipper: "Your AWS SES", instantly: "Shared pools", smartlead: "Shared pools" },
   { feature: "Domain reputation", leadsnipper: "Yours forever", instantly: "Pooled risk", smartlead: "Pooled risk" },
   { feature: "Email verification", leadsnipper: "Built-in (Reoon)", instantly: "Third-party", smartlead: "Third-party" },
-  { feature: "Warmup", leadsnipper: "AI-paced", instantly: "Basic", smartlead: "Included" },
+  { feature: "Deliverability pacing", leadsnipper: "Daily caps + auto-pause", instantly: "Basic", smartlead: "Included" },
   { feature: "Domain health", leadsnipper: "Real-time dashboard", instantly: "None", smartlead: "None" },
   { feature: "PDF reports", leadsnipper: "Yes", instantly: "No", smartlead: "No" },
   { feature: "Pricing (India)", leadsnipper: "From ₹999 / $19", instantly: "From $30", smartlead: "From $39" },
@@ -168,23 +166,6 @@ const PRODUCT_PLANS: ProductPlan[] = [
   },
 ];
 
-const productSecondaryPrice = (
-  planId: ProductPlan["id"],
-  currency: DisplayCurrency,
-) => {
-  if (currency === "INR") return formatUsd(inrToUsd(displayPlanPriceNumber(planId, "INR")));
-  return formatInr(displayPlanPriceNumber(planId, "USD"));
-};
-
-const displayPlanPriceNumber = (
-  planId: ProductPlan["id"],
-  currency: DisplayCurrency,
-): number => {
-  const value = displayPlanPrice(planId, currency);
-  const numeric = Number(value.replace(/[^0-9.]/g, ""));
-  return Number.isFinite(numeric) ? numeric : 0;
-};
-
 function LeadSnipperPricing() {
   const { isIndia } = useUserRegion();
   const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
@@ -217,7 +198,7 @@ function LeadSnipperPricing() {
         >
           {PRODUCT_PLANS.map((plan) => {
             const primary = displayPlanPrice(plan.id, displayCurrency);
-            const secondary = productSecondaryPrice(plan.id, displayCurrency);
+            const secondary = displayPlanSecondaryPrice(plan.id, displayCurrency);
             return (
               <motion.div
                 key={plan.id}
@@ -329,7 +310,7 @@ export default function LeadSnipperProduct() {
             </h1>
             <p className="text-body-lg text-[#424754] mt-6 max-w-2xl mx-auto leading-relaxed">
               Send 10,000+ cold emails without killing your domain reputation.
-              Domain health, warmup, verification, and campaigns — one platform,
+              Domain health, verification, pacing, and campaigns — one platform,
               your AWS SES.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">

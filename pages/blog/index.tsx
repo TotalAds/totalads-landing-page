@@ -199,18 +199,7 @@ export default function BlogIndex() {
                     Cold Email Software
                   </span>
                   <span className="text-xs text-[#727785]">
-                    Full platform with verification & warmup
-                  </span>
-                </Link>
-                <Link
-                  href="/email-warmup"
-                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
-                >
-                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
-                    Email Warmup Tool
-                  </span>
-                  <span className="text-xs text-[#727785]">
-                    Improve inbox placement in days
+                    Full platform with verification & pacing
                   </span>
                 </Link>
                 <Link
@@ -221,7 +210,18 @@ export default function BlogIndex() {
                     Email Deliverability
                   </span>
                   <span className="text-xs text-[#727785]">
-                    Monitor SPF, DKIM, DMARC & health
+                    Monitor SPF, DKIM, DMARC & domain health
+                  </span>
+                </Link>
+                <Link
+                  href="/email-warmup"
+                  className="block p-4 rounded-xl border border-[#c2c6d6]/15 bg-white hover:border-[#0058be]/25 hover:shadow-sm transition-all"
+                >
+                  <span className="text-sm font-heading font-semibold text-[#131b2e] block mb-1">
+                    Domain Reputation & Pacing
+                  </span>
+                  <span className="text-xs text-[#727785]">
+                    Protect reputation without warmup pools
                   </span>
                 </Link>
                 <Link
@@ -272,7 +272,7 @@ export default function BlogIndex() {
                 </h2>
                 <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
                   LeadSnipper gives you BYO AWS SES, built-in verification, domain
-                  health monitoring, and intelligent warmup — all in one platform.
+                  health monitoring, and deliverability pacing — all in one platform.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link

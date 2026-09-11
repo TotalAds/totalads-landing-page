@@ -9,8 +9,8 @@ export default function InstantlyAlternativePage() {
       competitor="Instantly"
       eyebrow="Instantly alternative"
       headline="An Instantly alternative for teams that want to own deliverability"
-      subheadline="Instantly is easy to start with, but serious cold email teams eventually need more control over infrastructure, verification, and domain health. LeadSnipper gives you BYO AWS SES, built-in Reoon verification, warmup, and campaign pacing in one platform."
-      competitorSummary="Instantly helps many teams launch cold email quickly. The trade-off is that infrastructure, warmup pools, verification, and domain-health visibility can become separate concerns as volume grows."
+      subheadline="Instantly is easy to start with, but serious cold email teams eventually need more control over infrastructure, verification, and domain health. LeadSnipper gives you BYO AWS SES, built-in Reoon verification, deliverability pacing, and campaign analytics in one platform."
+      competitorSummary="Instantly helps many teams launch cold email quickly. The trade-off is that infrastructure, shared warmup pools, verification, and domain-health visibility can become separate concerns as volume grows."
       competitorBestFor={[
         "Solo operators testing cold email for the first time",
         "Teams that value a beginner-friendly workflow over infrastructure control",
@@ -39,9 +39,9 @@ export default function InstantlyAlternativePage() {
           leadsnipper: "Domain health dashboard with DNS, bounce, complaint, and pacing signals",
         },
         {
-          feature: "Warmup",
+          feature: "Reputation approach",
           competitor: "Shared warmup network",
-          leadsnipper: "Warmup and pacing tied to your sending setup",
+          leadsnipper: "Verification, daily caps, pacing, and auto-pause — no artificial warmup pool",
         },
         {
           feature: "Cost model",

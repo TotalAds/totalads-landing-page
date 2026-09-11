@@ -1,8 +1,8 @@
 # LeadSnipper
 
-> LeadSnipper is a cold email and outbound infrastructure platform for SaaS teams and agencies, built on AWS SES, with tools for deliverability, email warmup, campaign automation, and lead sourcing.
+> LeadSnipper is a cold email and outbound infrastructure platform for SaaS teams and agencies, built on AWS SES, with tools for deliverability, campaign automation, and lead sourcing.
 
-LeadSnipper helps teams send cold outbound email at scale without damaging sender reputation, by combining managed AWS SES infrastructure, automated email warmup, domain/DNS setup (SPF, DKIM, DMARC), and campaign tooling in one platform. It is built for SaaS founders, growth teams, and outbound agencies who want lower per-email cost than tools like Smartlead, Instantly, Lemlist, Mailshake, or Apollo, without sacrificing deliverability.
+LeadSnipper helps teams send cold outbound email at scale without damaging sender reputation, by combining managed AWS SES infrastructure, email verification, domain/DNS setup (SPF, DKIM, DMARC), deliverability pacing, and campaign tooling in one platform. It is built for SaaS founders, growth teams, and outbound agencies who want lower per-email cost than tools like Smartlead, Instantly, Lemlist, Mailshake, or Apollo, without sacrificing deliverability.
 
 ## Product
 
@@ -10,7 +10,7 @@ LeadSnipper helps teams send cold outbound email at scale without damaging sende
 - [Pricing](https://leadsnipper.com/pricing): Current LeadSnipper pricing tiers — Starter ₹999/$19, Growth ₹2,499/$49, Scale ₹5,999/$119 per month.
 - [Cold Email Software](https://leadsnipper.com/cold-email-software): Overview of the cold email sending and campaign product.
 - [Cold Email Infrastructure](https://leadsnipper.com/cold-email-infrastructure): Managed AWS SES-based sending infrastructure, setup, and scaling.
-- [Email Warmup](https://leadsnipper.com/email-warmup): Automated inbox warmup tool to protect sender reputation before scaling outreach.
+- [Domain Reputation & Pacing](https://leadsnipper.com/email-warmup): How LeadSnipper protects reputation without artificial warmup pools.
 - [Email Deliverability](https://leadsnipper.com/email-deliverability): Deliverability monitoring and domain reputation tools.
 - [AI Cold Email Generator](https://leadsnipper.com/ai-cold-email-generator): AI-assisted cold email copywriting tool.
 - [Savings Calculator](https://leadsnipper.com/savings-calculator): Calculator comparing LeadSnipper cost vs AWS SES direct and other cold email tools.

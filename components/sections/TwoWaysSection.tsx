@@ -58,7 +58,7 @@ const groups = [
       { icon: <Pause className="w-4 h-4" />, label: "Auto pause" },
       { icon: <RefreshCw className="w-4 h-4" />, label: "Bounce monitoring" },
       { icon: <ShieldCheck className="w-4 h-4" />, label: "Domain health" },
-      { icon: <Flame className="w-4 h-4" />, label: "Warmup" },
+      { icon: <Flame className="w-4 h-4" />, label: "Deliverability pacing" },
     ],
     color: "#10b981",
   },
@@ -69,8 +69,8 @@ const groups = [
       { icon: <KeyRound className="w-4 h-4" />, label: "Admin / Editor / Viewer roles" },
       { icon: <BarChart3 className="w-4 h-4" />, label: "Analytics" },
       { icon: <FileDown className="w-4 h-4" />, label: "CSV export" },
-      { icon: <Code2 className="w-4 h-4" />, label: "API", comingSoon: true },
-      { icon: <Webhook className="w-4 h-4" />, label: "Webhooks", comingSoon: true },
+      { icon: <Code2 className="w-4 h-4" />, label: "API" },
+      { icon: <Webhook className="w-4 h-4" />, label: "Webhooks" },
     ],
     color: "#b75b00",
   },
@@ -137,11 +137,6 @@ export default function FeaturesGrid() {
                       {item.icon}
                     </span>
                     <span>{item.label}</span>
-                    {item.comingSoon && (
-                      <span className="ml-2 text-[9px] font-mono uppercase tracking-widest px-1.5 py-0.5 rounded-full bg-[#c2c6d6]/30 text-[#475569]">
-                        Coming Soon
-                      </span>
-                    )}
                   </li>
                 ))}
               </ul>

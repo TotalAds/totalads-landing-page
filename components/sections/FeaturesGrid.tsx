@@ -10,9 +10,9 @@ export default function FeaturesGrid() {
       icon: "📧",
     },
     {
-      title: "Email Warmups",
+      title: "Deliverability Guardrails",
       description:
-        "Automated warmup sequences to build sender reputation and improve deliverability.",
+        "Daily caps, bounce auto-pause, and paced sending to protect sender reputation.",
       icon: "🔥",
     },
     {

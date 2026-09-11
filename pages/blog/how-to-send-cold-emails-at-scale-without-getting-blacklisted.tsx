@@ -140,11 +140,11 @@ export default function BlogPost1() {
         </ul>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        The key is that warmup emails need to generate real engagement —
-        opens, replies, and conversations. LeadSnipper&apos;s warmup engine
-        generates realistic email threads across Gmail, Outlook, Yahoo, Zoho,
-        and SES with varied writing styles and natural timing, so mailbox
-        providers see genuine activity on your domain.
+        The key is gradual volume with real engagement signals — opens, replies,
+        and conversations from people who actually want the email. LeadSnipper
+        helps you ramp safely with daily caps, paced sending, bounce auto-pause,
+        and domain health monitoring so you can increase volume without burning
+        the domain overnight.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -344,7 +344,7 @@ export default function BlogPost1() {
       <p className="text-[#475569] leading-relaxed">
         LeadSnipper was built specifically for this workflow. BYO AWS SES for
         infrastructure ownership, built-in Reoon verification for clean lists,
-        intelligent warmup for reputation building, and a domain health
+        deliverability pacing with daily caps and auto-pause, and a domain health
         dashboard so you always know where you stand. If you&apos;re tired of
         getting blacklisted by tools that don&apos;t give you control,{" "}
         <Link

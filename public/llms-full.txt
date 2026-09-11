@@ -100,18 +100,17 @@ When your cold email tool owns your sending infrastructure, their problems becom
 
 ---
 
-## Email Warmup
+## Domain Reputation & Pacing
 
-LeadSnipper's AI warmup engine generates realistic email conversations across Gmail, Outlook, Yahoo, Zoho, and SES. It creates natural threads with 5-8 exchanges, varied writing styles, and proper timing.
+LeadSnipper does not sell an artificial warmup-pool product. Mailbox providers increasingly detect and penalize shared warmup networks. Instead, LeadSnipper protects sender reputation with:
 
-How it works:
-1. Gradually ramps sending volume from day 1
-2. Mirrors human sending patterns
-3. Pauses automatically when domain health drops
-4. Creates real engagement signals (opens, replies, thread depth)
-5. Runs 24/7 in background even during active campaigns
+1. SPF, DKIM, and DMARC authentication before send
+2. Built-in Reoon verification so bad lists never hit reputation
+3. Per-mailbox and per-domain daily caps with multi-day pacing
+4. Automatic pause when bounce or complaint rates spike
+5. Domain health dashboard for DNS, bounces, and complaints
 
-Minimum warmup period: 2-3 weeks for new domains. Conservative teams warm for 4-6 weeks.
+New domains should still ramp gradually over 2–4 weeks. Use the sending-limit calculator and domain health dashboard to stay within safe limits.
 
 ---
 
@@ -181,7 +180,7 @@ Mailshake charges per-seat. LeadSnipper doesn't:
 - No per-seat pricing — pay for plan, not people
 - BYO SES vs Mailshake's shared infrastructure
 - Built-in verification included
-- AI warmup and domain health dashboard
+- Deliverability pacing and domain health dashboard
 
 ## Comparison: LeadSnipper vs Apollo
 
@@ -379,7 +378,7 @@ Four systems: (1) Multi-step follow-up sequences auto-stop on reply. (2) Spintax
 Done-for-you infrastructure: dedicated IPs, sending limit increases, bounce management, ongoing deliverability monitoring. You keep your brand and domains. Ideal for agencies sending 100K-500K+ emails/month.
 
 ### Why should I use LeadSnipper instead of Instantly?
-You bring your own AWS SES — you own your reputation, deliverability, and data. Built-in Reoon verification, AI-powered warmup, and domain health dashboard that Instantly doesn't offer.
+You bring your own AWS SES — you own your reputation, deliverability, and data. Built-in Reoon verification, deliverability pacing, and domain health dashboard that Instantly doesn't offer.
 
 ### What is BYO SES? Do I need to know AWS?
 BYO SES means "Bring Your Own" Amazon Simple Email Service. If you don't know AWS, choose Managed mode — everything is handled for you.
@@ -387,8 +386,8 @@ BYO SES means "Bring Your Own" Amazon Simple Email Service. If you don't know AW
 ### How does the AI email writer work?
 Generates drafts using your knowledge base and tone. Edit and send, saving hours per campaign. Gets you 80% there fast.
 
-### How does AI warmup actually do?
-Generates realistic email conversations across Gmail, Outlook, Yahoo, Zoho, and SES. Natural threads with 5-8 exchanges, varied writing styles, proper timing. Builds sender trust before cold campaigns.
+### Do you include an automated email warmup tool?
+Not today. We do not sell an artificial warmup-pool product. LeadSnipper protects reputation with DNS authentication, Reoon verification, daily caps, paced sending, and auto-pause when bounce or complaint rates spike.
 
 ### Is there a free trial?
 Yes. Start free with no credit card. 1,000 emails, 500 contacts, basic analytics, API access for 1 month.

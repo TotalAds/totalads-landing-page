@@ -27,9 +27,8 @@ export default function CTASection() {
               <span className="font-display italic text-[#0058be]">Start owning it.</span>
             </h2>
             <p className="text-body-md text-[#727785] max-w-xl mx-auto mb-10">
-              Join 200+ B2B teams who switched to LeadSnipper for complete control
-              over their outbound — domain reputation, warmup, verification, and
-              sending in one place.
+              Get complete control over your outbound — domain reputation,
+              verification, pacing, and sending in one place.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -46,10 +45,6 @@ export default function CTASection() {
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-3 mt-6">
-              <Link href="/email-warmup" className="text-xs text-[#727785] hover:text-[#0058be] transition-colors">
-                Email warmup tool
-              </Link>
-              <span className="text-[#c2c6d6]">·</span>
               <Link href="/email-deliverability" className="text-xs text-[#727785] hover:text-[#0058be] transition-colors">
                 Email deliverability
               </Link>

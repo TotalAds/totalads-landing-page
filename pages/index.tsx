@@ -5,7 +5,6 @@ import ChecklistLeadCaptureSystem from "@/components/sections/ChecklistLeadCaptu
 import CTASection from "@/components/sections/CTASection";
 import DeliverabilityStack from "@/components/sections/DeliverabilityStack";
 import FAQSection from "@/components/sections/FAQSection";
-import FeaturedInBar from "@/components/sections/FeaturedInBar";
 import Footer from "@/components/sections/Footer";
 import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
 import InboxIntegrationsSection from "@/components/sections/InboxIntegrationsSection";
@@ -32,11 +31,8 @@ export default function Home() {
         <HeroScrollAnimation />
       </section>
 
-      {/* Trust Strip — real company logos */}
+      {/* Trust Strip — integration logos */}
       <TrustStrip />
-
-      {/* Featured In — wordmarks + segment pills */}
-      <FeaturedInBar />
 
       {/* Problem — Before / After */}
       <PainSection />

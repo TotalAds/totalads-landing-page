@@ -165,7 +165,7 @@ export default function ColdEmailOpenRateDropping() {
           Download the deliverability checklist before your next campaign
         </h2>
         <p className="text-[#475569] leading-relaxed mb-5">
-          Use the LeadSnipper checklist to review DNS, verification, warmup,
+          Use the LeadSnipper checklist to review DNS, verification, pacing,
           pacing, and list quality before you send. It is built for teams that
           want fewer surprises after launch.
         </p>

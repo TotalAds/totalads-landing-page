@@ -33,7 +33,7 @@ const whatWeBuild = [
     icon: <Mail className="w-5 h-5" />,
     color: "#0058be",
     title: "Email Deliverability",
-    desc: "LeadSnipper — cold email on infrastructure you own. BYO AWS SES, warmup, verification, and domain health in one platform.",
+    desc: "LeadSnipper — cold email on infrastructure you own. BYO AWS SES, verification, pacing, and domain health in one platform.",
   },
   {
     icon: <Bot className="w-5 h-5" />,
@@ -240,7 +240,7 @@ export default function AboutPage() {
                   LeadSnipper is a deliverability-first cold email platform for
                   B2B teams. Our mission is simple: help companies send from
                   infrastructure they control — Google Workspace, Microsoft 365,
-                  SMTP, or BYO AWS SES — with warmup, verification, and
+                  SMTP, or BYO AWS SES — with verification, pacing, and
                   reputation guardrails that keep domains healthy.
                 </p>
                 <p>

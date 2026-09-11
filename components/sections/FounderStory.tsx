@@ -62,7 +62,7 @@ export default function FounderStory() {
                 </p>
                 <p className="mt-2">
                   We&apos;re building a system where founders don&apos;t have to
-                  fight their tools just to get customers. AI-powered warmup,
+                  fight their tools just to get customers. Deliverability pacing,
                   AI writing, multi-channel outreach — one platform that handles
                   the hard parts so you can focus on closing deals.
                 </p>

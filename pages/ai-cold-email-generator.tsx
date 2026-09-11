@@ -8,13 +8,13 @@ export default function AiColdEmailGeneratorPage() {
       pageKey="aiColdEmailGenerator"
       eyebrow="AI Cold Email Software"
       headline="AI cold email software that writes and sends at scale"
-      subheadline="Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and warmup — so AI-powered copy actually reaches the inbox."
+      subheadline="Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and deliverability pacing — so AI-powered copy actually reaches the inbox."
       problemTitle="AI-generated emails fail when deliverability is an afterthought"
-      problemDescription="AI can write great cold email copy, but if your domain isn't warmed up, your list isn't verified, and your DNS isn't configured — the best AI copy lands in spam. Most AI email tools ignore the infrastructure layer entirely."
+      problemDescription="AI can write great cold email copy, but if your domain isn't authenticated, your list isn't verified, and your DNS isn't configured — the best AI copy lands in spam. Most AI email tools ignore the infrastructure layer entirely."
       outcomes={[
         "AI email writer generates drafts from your ICP, offer, and tone preferences",
         "A/B test subject lines and body variations before scaling",
-        "Send AI-generated emails through verified, warmed infrastructure",
+        "Send AI-generated emails through verified, paced infrastructure",
         "Personalization variables merged at send time for each recipient",
         "Track which AI-generated variants get the best reply rates",
       ]}
@@ -34,7 +34,7 @@ export default function AiColdEmailGeneratorPage() {
         {
           title: "Deliverability-First Sending",
           description:
-            "AI copy sends through BYO AWS SES with verification and warmup — not through shared pools that ignore reputation.",
+            "AI copy sends through BYO AWS SES with verification and pacing — not through shared pools that ignore reputation.",
           badge: "Infrastructure",
         },
         {
@@ -68,9 +68,9 @@ export default function AiColdEmailGeneratorPage() {
           description: "Full platform with AI writer, verification, and campaigns.",
         },
         {
-          href: "/email-warmup",
-          label: "Email warmup tool",
-          description: "Ensure AI-generated emails reach the inbox.",
+          href: "/email-deliverability",
+          label: "Email deliverability tool",
+          description: "Monitor DNS and reputation so AI-generated emails reach the inbox.",
         },
         {
           href: "/blog/best-cold-email-software-2026-comparison",

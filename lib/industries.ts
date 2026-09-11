@@ -206,7 +206,7 @@ export const industries: IndustryConfig[] = [
       {
         question: "What's the best cold email tool for solo consultants?",
         answer:
-          "LeadSnipper's free trial and Starter plan (₹499/mo) give consultants BYO AWS SES, verification, and warmup without enterprise pricing. Most consultants send 50-200 emails/week.",
+          "LeadSnipper's free trial and Starter plan (₹999/mo or $19/mo) give consultants BYO AWS SES, verification, and deliverability pacing without enterprise pricing. Most consultants send 50-200 emails/week.",
       },
     ]
   ),

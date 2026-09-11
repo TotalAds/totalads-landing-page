@@ -36,12 +36,13 @@ export default function HowToAvoidSpamFolder() {
         2. Warm Up New Domains Before Cold Outreach
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
-        Never send cold email from a brand-new domain on day one. Use an{" "}
+        Never send cold email from a brand-new domain on day one. Ramp from
+        10-20 emails/day to 200-500/day over 2-4 weeks using daily caps and
+        pacing — see{" "}
         <Link href="/email-warmup" className="text-[#0058be] font-medium hover:underline">
-          email warmup tool
-        </Link>{" "}
-        to ramp from 10-20 emails/day to 200-500/day over 2-4 weeks. Warmup
-        builds sender reputation that mailbox providers trust.
+          how LeadSnipper approaches domain reputation
+        </Link>
+        . Gradual volume builds sender reputation that mailbox providers trust.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

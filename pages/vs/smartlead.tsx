@@ -9,7 +9,7 @@ export default function SmartleadAlternativePage() {
       competitor="Smartlead"
       eyebrow="Smartlead alternative"
       headline="A Smartlead alternative for cold email teams that want less complexity and more control"
-      subheadline="Smartlead is feature-rich, especially for advanced outbound workflows. LeadSnipper focuses on the parts that decide whether campaigns reach the inbox: AWS SES control, built-in verification, domain health, warmup, and safer pacing."
+      subheadline="Smartlead is feature-rich, especially for advanced outbound workflows. LeadSnipper focuses on the parts that decide whether campaigns reach the inbox: AWS SES control, built-in verification, domain health, and safer pacing."
       competitorSummary="Smartlead works for teams that need a broad outbound suite. The trade-off is complexity, add-ons, and less emphasis on owning the sending layer from the start."
       competitorBestFor={[
         "Agencies that need broad multi-channel outbound workflows",
@@ -63,7 +63,7 @@ export default function SmartleadAlternativePage() {
         {
           question: "Why choose LeadSnipper over Smartlead?",
           answer:
-            "Choose LeadSnipper if you want a simpler deliverability-first stack: BYO AWS SES, managed sending when needed, Reoon verification, domain health, warmup, and campaign analytics without stitching together multiple tools.",
+            "Choose LeadSnipper if you want a simpler deliverability-first stack: BYO AWS SES, managed sending when needed, Reoon verification, domain health, paced sending, and campaign analytics without stitching together multiple tools.",
         },
         {
           question: "Can agencies use LeadSnipper?",

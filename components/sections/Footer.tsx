@@ -27,7 +27,6 @@ export default function Footer() {
     ],
     "Cold Email": [
       { label: "Cold Email Software", href: "/cold-email-software" },
-      { label: "Email Warmup Tool", href: "/email-warmup" },
       { label: "Email Deliverability", href: "/email-deliverability" },
       { label: "BYO AWS SES", href: "/cold-email-infrastructure" },
       { label: "AI Email Generator", href: "/ai-cold-email-generator" },

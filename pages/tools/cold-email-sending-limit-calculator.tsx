@@ -602,7 +602,7 @@ export default function ColdEmailSendingLimitCalculatorPage() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/email-warmup" className="btn-ghost rounded-full text-sm">
-                Email warmup tool →
+                Domain reputation & pacing →
               </Link>
               <Link
                 href="/tools/email-deliverability-checker"

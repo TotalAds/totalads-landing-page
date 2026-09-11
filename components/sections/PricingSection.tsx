@@ -3,13 +3,11 @@
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 import {
   displayPlanPrice,
-  formatInr,
-  formatUsd,
-  inrToUsd,
+  displayPlanSecondaryPrice,
   type DisplayCurrency,
 } from "@/lib/currency";
 import { useUserRegion } from "@/hooks/useUserRegion";
@@ -86,24 +84,6 @@ const PRODUCT_PLANS: ProductPlan[] = [
   },
 ];
 
-const productSecondaryPrice = (
-  planId: ProductPlan["id"],
-  currency: DisplayCurrency,
-) => {
-  if (currency === "INR")
-    return formatUsd(inrToUsd(displayPlanPriceNumber(planId, "INR")));
-  return formatInr(displayPlanPriceNumber(planId, "USD"));
-};
-
-const displayPlanPriceNumber = (
-  planId: ProductPlan["id"],
-  currency: DisplayCurrency,
-): number => {
-  const value = displayPlanPrice(planId, currency);
-  const numeric = Number(value.replace(/[^0-9.]/g, ""));
-  return Number.isFinite(numeric) ? numeric : 0;
-};
-
 export default function PricingSection() {
   const { isIndia } = useUserRegion();
   const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
@@ -163,7 +143,7 @@ export default function PricingSection() {
         >
           {PRODUCT_PLANS.map((plan) => {
             const primary = displayPlanPrice(plan.id, displayCurrency);
-            const secondary = productSecondaryPrice(plan.id, displayCurrency);
+            const secondary = displayPlanSecondaryPrice(plan.id, displayCurrency);
             return (
               <motion.div
                 key={plan.id}

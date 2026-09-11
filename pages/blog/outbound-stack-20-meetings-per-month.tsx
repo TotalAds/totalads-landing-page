@@ -109,12 +109,11 @@ export default function OutboundStack20Meetings() {
         to get started.
       </p>
       <p className="text-[#475569] leading-relaxed mb-6">
-        Domains need 2-4 weeks of{" "}
-        <Link href="/blog/email-warmup-verification-domain-health-complete-guide" className="text-[#3b82f6] font-medium hover:underline">email warmup</Link>{" "}
-        before they can send campaign volume. Start with 10-20
-        emails/day, gradually increase to 200-500/day. LeadSnipper&apos;s
-        warmup engine generates realistic threads across Gmail, Outlook, Yahoo,
-        Zoho, and SES to build genuine engagement signals.
+        Domains need 2-4 weeks of gradual volume ramp before they can send
+        campaign volume. Start with 10-20 emails/day, gradually increase to
+        200-500/day. LeadSnipper helps you stay safe with daily caps, paced
+        sending, bounce auto-pause, and{" "}
+        <Link href="/blog/email-warmup-verification-domain-health-complete-guide" className="text-[#3b82f6] font-medium hover:underline">domain health monitoring</Link>.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">

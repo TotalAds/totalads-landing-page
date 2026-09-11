@@ -27,7 +27,7 @@ export const homepageFaqs: FAQItem[] = [
   {
     question: "Why should I use LeadSnipper instead of Instantly?",
     answer:
-      "Instantly is solid for getting started. But they own your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper, you bring your own AWS SES. You own your reputation, your deliverability, your data. Plus, we have built-in Reoon email verification, AI-powered warmup, and a domain health dashboard that Instantly doesn't offer.",
+      "Instantly is solid for getting started. But they own your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper, you bring your own AWS SES. You own your reputation, your deliverability, your data. Plus, we have built-in Reoon email verification, deliverability pacing, and a domain health dashboard that Instantly doesn't offer.",
   },
   {
     question: "I already use Smartlead. Why switch?",
@@ -42,7 +42,7 @@ export const homepageFaqs: FAQItem[] = [
   {
     question: "How does LeadSnipper handle deliverability?",
     answer:
-      "Deliverability isn't a feature we bolt on — it's the architecture. Verified domains with proper DNS (DKIM, SPF), AI-powered warmup with daily pacing, automatic bounce suppression, complaint tracking, and built-in Reoon verification. Every layer is designed so your emails land in the inbox, not spam.",
+      "Deliverability isn't a feature we bolt on — it's the architecture. Verified domains with proper DNS (DKIM, SPF), daily caps and multi-day pacing, automatic bounce suppression, complaint tracking, and built-in Reoon verification. Every layer is designed so your emails land in the inbox, not spam.",
   },
   {
     question: "How does the AI email writer work?",
@@ -50,14 +50,14 @@ export const homepageFaqs: FAQItem[] = [
       "The AI writer generates campaign drafts using your knowledge base and tone — so it writes like you, not like a generic template. You get a strong first draft that sounds like a real person. Edit and send, saving hours per campaign. It doesn't write perfect cold email by itself (nobody's AI does), but it gets you 80% there fast.",
   },
   {
-    question: "What does AI warmup actually do?",
+    question: "Do you include an automated email warmup tool?",
     answer:
-      "Our AI warmup engine generates realistic email conversations across Gmail, Outlook, Yahoo, Zoho, and SES. It creates natural threads with 5-8 exchanges, varied writing styles, and proper timing. Mailbox providers see real engagement on your account, which builds sender trust before you run cold campaigns at scale.",
+      "Not today. We do not sell an artificial warmup-pool product. LeadSnipper protects reputation with DNS authentication, Reoon verification, daily caps, paced sending, and auto-pause when bounce or complaint rates spike — the controls that matter when you ramp real outreach.",
   },
   {
     question: "Can I really send cold email on this?",
     answer:
-      "That's literally what it's built for. We're not a newsletter tool pretending to do outbound. Cold email is the entire product — warmup, verification, domain health, sending, analytics. Every feature is designed for cold outbound at scale.",
+      "That's literally what it's built for. We're not a newsletter tool pretending to do outbound. Cold email is the entire product — verification, domain health, paced sending, analytics. Every feature is designed for cold outbound at scale.",
   },
   {
     question: "The pricing seems low. What's the catch?",

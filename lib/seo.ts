@@ -105,9 +105,9 @@ export const pageConfigs: Record<string, PageConfig> = {
     title:
       "LeadSnipper — Deliverability-First Cold Email Platform (Instantly Alternative)",
     description:
-      "Deliverability-first cold email on your Google, Microsoft, or AWS SES. Warmup, verification, and auto reputation guardrails. From ₹999/mo. 14-day trial.",
+      "Deliverability-first cold email on your Google, Microsoft, or AWS SES. Verification, pacing, and auto reputation guardrails. From ₹999/mo. 14-day trial.",
     keywords:
-      "deliverability-first cold email platform, cold email software, Instantly alternative, Smartlead alternative, email outreach tool, email deliverability, sender reputation, domain reputation, inbox placement, email warmup, email verification, AI personalization, BYO SES, AWS SES cold email, cold email infrastructure, bulk cold email, cold outreach platform, cold email at scale",
+      "deliverability-first cold email platform, cold email software, Instantly alternative, Smartlead alternative, email outreach tool, email deliverability, sender reputation, domain reputation, inbox placement, email verification, AI personalization, BYO SES, AWS SES cold email, cold email infrastructure, bulk cold email, cold outreach platform, cold email at scale",
     canonical: "https://leadsnipper.com",
     openGraph: {
       title:
@@ -317,14 +317,14 @@ export const pageConfigs: Record<string, PageConfig> = {
   leadsnipper: {
     title: "Cold Email Infrastructure Built on AWS SES",
     description:
-      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES with domain health, warmup, verification, and campaigns in one platform. Start a 14-day trial.",
+      "Send 10,000+ cold emails without killing your domain reputation. Built on AWS SES with domain health, verification, pacing, and campaigns in one platform. Start a 14-day trial.",
     keywords:
-      "LeadSnipper product, cold email platform, AWS SES email, BYO SES, email warmup, domain health, email verification, cold email campaigns",
+      "LeadSnipper product, cold email platform, AWS SES email, BYO SES, domain health, email verification, cold email campaigns, deliverability pacing",
     canonical: "https://leadsnipper.com/products/leadsnipper",
     openGraph: {
       title: "LeadSnipper — Cold Email on Infrastructure You Own",
       description:
-        "AWS SES cold email with domain health monitoring, built-in verification, intelligent warmup, and campaign analytics.",
+        "AWS SES cold email with domain health monitoring, built-in verification, deliverability pacing, and campaign analytics.",
       url: "https://leadsnipper.com/products/leadsnipper",
     },
   },
@@ -354,22 +354,22 @@ export const pageConfigs: Record<string, PageConfig> = {
     openGraph: {
       title: "Cold Email Software — Send at Scale Without Hitting Spam",
       description:
-        "Automate cold email outreach with BYO AWS SES, built-in verification, domain warmup, and deliverability monitoring.",
+        "Automate cold email outreach with BYO AWS SES, built-in verification, deliverability pacing, and domain health monitoring.",
       url: "https://leadsnipper.com/cold-email-software",
     },
   },
 
   emailWarmup: {
-    title: "Email Warmup Tool That Improves Inbox Placement in Days",
+    title: "Domain Reputation & Pacing — Without Artificial Warmup Pools",
     description:
-      "LeadSnipper's email warmup tool gradually ramps sending volume, mirrors human patterns, and pauses automatically when domain health drops. Improve inbox placement — start free.",
+      "LeadSnipper protects inbox placement with DNS authentication, Reoon verification, daily caps, paced sending, and auto-pause — not shared warmup networks. Start a 14-day trial.",
     keywords:
-      "email warmup tool, domain warmup software, email warmup service, cold email warmup, sender reputation warmup, inbox warmup tool, email deliverability warmup",
+      "email deliverability pacing, domain reputation cold email, sender reputation protection, cold email daily caps, inbox placement, email bounce auto-pause, domain health monitoring",
     canonical: "https://leadsnipper.com/email-warmup",
     openGraph: {
-      title: "Email Warmup Tool — Improve Inbox Placement in Days",
+      title: "Domain Reputation & Pacing — Without Artificial Warmup Pools",
       description:
-        "AI-paced email warmup tied to your domain health. Gradual volume ramp that protects sender reputation.",
+        "Protect sender reputation with verification, pacing, and deliverability guardrails — not shared warmup pools.",
       url: "https://leadsnipper.com/email-warmup",
     },
   },
@@ -392,14 +392,14 @@ export const pageConfigs: Record<string, PageConfig> = {
   coldEmailInfrastructure: {
     title: "Cold Email Infrastructure Built on AWS SES You Control",
     description:
-      "Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification and warmup. Start a 14-day trial.",
+      "Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification and domain health. Start a 14-day trial.",
     keywords:
       "cold email infrastructure, BYO SES cold email, AWS SES cold email, cold email sending infrastructure, dedicated email infrastructure, cold email platform infrastructure",
     canonical: "https://leadsnipper.com/cold-email-infrastructure",
     openGraph: {
       title: "Cold Email Infrastructure — BYO AWS SES Control",
       description:
-        "Build cold email on infrastructure you own. BYO AWS SES with verification, warmup, and domain health built in.",
+        "Build cold email on infrastructure you own. BYO AWS SES with verification, pacing, and domain health built in.",
       url: "https://leadsnipper.com/cold-email-infrastructure",
     },
   },
@@ -407,7 +407,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   aiColdEmailGenerator: {
     title: "AI Cold Email Software That Writes & Sends at Scale",
     description:
-      "Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and warmup. Start a 14-day trial.",
+      "Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and deliverability pacing. Start a 14-day trial.",
     keywords:
       "AI cold email software, AI cold email generator, AI email writer cold outreach, AI cold email tool, automated cold email AI, AI email copywriting cold outreach",
     canonical: "https://leadsnipper.com/ai-cold-email-generator",
@@ -422,7 +422,7 @@ export const pageConfigs: Record<string, PageConfig> = {
   apolloAlternative: {
     title: "Best Apollo Alternative for Cold Email in 2026",
     description:
-      "Looking for an Apollo alternative focused on cold email deliverability? LeadSnipper offers BYO AWS SES, built-in verification, domain warmup, and campaign analytics without shared infrastructure. Start a 14-day trial.",
+      "Looking for an Apollo alternative focused on cold email deliverability? LeadSnipper offers BYO AWS SES, built-in verification, domain health, and campaign analytics without shared infrastructure. Start a 14-day trial.",
     keywords:
       "Apollo alternative, Apollo.io alternative, Apollo competitor cold email, LeadSnipper vs Apollo, cold email software alternative, Apollo pricing alternative",
     canonical: "https://leadsnipper.com/vs/apollo",
@@ -498,7 +498,7 @@ export const structuredData = {
     name: "LeadSnipper",
     url: "https://leadsnipper.com",
     description:
-      "Cold email outreach platform built on AWS SES with built-in email verification, domain health monitoring, and intelligent warmup.",
+      "Cold email outreach platform built on AWS SES with built-in email verification, domain health monitoring, and deliverability pacing.",
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -519,7 +519,7 @@ export const structuredData = {
     applicationSubCategory: "Cold Email Software",
     operatingSystem: "Web Browser",
     description:
-      "Cold email platform with BYO AWS SES, built-in Reoon email verification, domain health dashboard, AI warmup, and campaign analytics.",
+      "Cold email platform with BYO AWS SES, built-in Reoon email verification, domain health dashboard, deliverability pacing, and campaign analytics.",
     url: "https://leadsnipper.com",
     downloadUrl: "https://app.leadsnipper.com/signup?product=leadsnipper",
     softwareVersion: "1.0",
@@ -529,7 +529,7 @@ export const structuredData = {
       "Managed SES sending option",
       "Reoon email verification",
       "Domain health monitoring",
-      "AI-powered email warmup",
+      "Deliverability pacing and auto-pause",
       "Cold email campaign builder",
       "Sender rotation and daily pacing",
       "Campaign analytics and reporting",
@@ -596,7 +596,7 @@ export const structuredData = {
     name: "LeadSnipper",
     image: "https://leadsnipper.com/og-image.jpg",
     description:
-      "LeadSnipper is a cold email platform built around AWS SES, email verification, domain warmup, campaign management, and deliverability safeguards.",
+      "LeadSnipper is a cold email platform built around AWS SES, email verification, domain health, campaign management, and deliverability safeguards.",
     brand: {
       "@type": "Brand",
       name: "LeadSnipper",

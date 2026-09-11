@@ -107,6 +107,21 @@ export function displayPlanPrice(
 }
 
 /**
+ * Alternate-currency label under the primary price.
+ *   displayPlanSecondaryPrice('starter', 'INR') => '$19'
+ *   displayPlanSecondaryPrice('starter', 'USD') => '₹999'
+ *
+ * Always uses the explicit dual values from PLANS — never FX-converts the
+ * opposite currency amount (that produced the broken "₹19" secondary label).
+ */
+export function displayPlanSecondaryPrice(
+  plan: PlanName | string,
+  currency: DisplayCurrency
+): string {
+  return displayPlanPrice(plan, currency === "INR" ? "USD" : "INR");
+}
+
+/**
  * Short dual-currency label suitable for "starting from" copy.
  *   displayPlanPriceShort('starter', 'INR') => '₹999 / $19'
  *   displayPlanPriceShort('starter', 'USD') => '$19 / ₹999'

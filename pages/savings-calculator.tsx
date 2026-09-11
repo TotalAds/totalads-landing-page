@@ -48,7 +48,7 @@ const calculatorFaqs = [
   {
     question: "How is the LeadSnipper cost calculated?",
     answer:
-      "LeadSnipper costs combine a flat platform fee (Starter ₹999/$19, Growth ₹2,499/$49, or Scale ₹5,999/$119 per month) plus AWS SES usage at $0.10 per 1,000 emails. The platform fee covers campaigns, warmup, verification, and domain health. You pay AWS directly for sending.",
+      "LeadSnipper costs combine a flat platform fee (Starter ₹999/$19, Growth ₹2,499/$49, or Scale ₹5,999/$119 per month) plus AWS SES usage at $0.10 per 1,000 emails. The platform fee covers campaigns, verification, domain health, and deliverability pacing. You pay AWS directly for sending.",
   },
   {
     question: "What AWS SES pricing is used in this calculator?",

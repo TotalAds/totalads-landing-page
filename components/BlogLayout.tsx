@@ -320,7 +320,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                   href="/email-warmup"
                   className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
                 >
-                  Email warmup tool
+                  Domain reputation & pacing
                 </Link>
                 <span className="text-[#c2c6d6]">·</span>
                 <Link
@@ -349,7 +349,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                   </h3>
                   <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
                     LeadSnipper gives you BYO AWS SES, built-in verification,
-                    domain health monitoring, and intelligent warmup — all in one
+                    domain health monitoring, and deliverability pacing — all in one
                     platform. Explore our{" "}
                     <Link href="/cold-email-software" className="text-[#0058be] hover:underline">
                       cold email software
@@ -366,7 +366,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                       href="/email-warmup"
                       className="btn-ghost rounded-full text-sm"
                     >
-                      Email warmup tool
+                      Domain reputation & pacing
                     </Link>
                   </div>
                 </div>

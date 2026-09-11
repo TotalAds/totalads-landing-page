@@ -162,7 +162,7 @@ export const sitemapConfig = {
     {
       path: "/email-warmup",
       changefreq: "monthly" as const,
-      priority: 0.9,
+      priority: 0.6,
     },
     {
       path: "/email-deliverability",

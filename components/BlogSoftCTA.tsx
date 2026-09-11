@@ -11,7 +11,7 @@ export default function BlogSoftCTA() {
         </div>
         <div className="flex-1">
           <p className="text-sm text-[#475569] leading-relaxed mb-3">
-            <strong className="text-[#131b2e]">Skip the manual setup</strong> — LeadSnipper handles infrastructure, warmup, and verification so you can focus on outreach.
+            <strong className="text-[#131b2e]">Skip the manual setup</strong> — LeadSnipper handles infrastructure, verification, and deliverability pacing so you can focus on outreach.
           </p>
           <Link
             href="/cold-email-software"

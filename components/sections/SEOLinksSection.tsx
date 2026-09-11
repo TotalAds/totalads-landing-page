@@ -1,26 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Flame, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Building2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 const seoLinks = [
   {
     title: "Cold Email Software",
-    description: "Send 10,000+ emails without hitting spam. Built-in verification, warmup, and AWS SES infrastructure.",
+    description: "Send 10,000+ emails without hitting spam. Built-in verification, pacing, and AWS SES infrastructure.",
     href: "/cold-email-software",
     icon: <Mail className="w-5 h-5" />,
     color: "#0058be",
     keywords: ["cold email software", "cold email automation", "bulk cold email"],
-  },
-  {
-    title: "Email Warmup Tool",
-    description: "Gradual volume ramp that improves inbox placement. AI-paced warmup tied to domain health.",
-    href: "/email-warmup",
-    icon: <Flame className="w-5 h-5" />,
-    color: "#10b981",
-    keywords: ["email warmup tool", "domain warmup software", "sender reputation warmup"],
   },
   {
     title: "Email Deliverability Tool",

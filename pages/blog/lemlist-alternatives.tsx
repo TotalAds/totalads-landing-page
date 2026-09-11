@@ -267,7 +267,7 @@ export default function LemlistAlternatives() {
           <tbody className="text-[#475569] text-center">
             {[
               ["BYO AWS SES", "✗", "✗", "✗", "✗", "✓"],
-              ["Email warmup included", "✓", "✓", "✓", "Partial", "✓"],
+              ["Deliverability pacing & auto-pause", "Partial", "✓", "✓", "Partial", "✓"],
               ["Built-in verification", "✗", "✗", "✗", "✗", "✓"],
               ["Domain health monitoring", "✗", "Partial", "✗", "✗", "✓"],
               ["Shared infrastructure", "✓", "✓", "✓", "✓", "✗"],
@@ -349,7 +349,7 @@ export default function LemlistAlternatives() {
           },
           {
             scenario: "You want the best deliverability with built-in verification",
-            answer: "LeadSnipper (only tool with verification + warmup + BYO SES + health monitoring)",
+            answer: "LeadSnipper (only tool with verification + BYO SES + health monitoring + pacing)",
           },
         ].map((item) => (
           <div

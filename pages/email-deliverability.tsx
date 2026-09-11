@@ -75,13 +75,13 @@ export default function EmailDeliverabilityPage() {
         },
         {
           href: "/email-warmup",
-          label: "Email warmup tool",
-          description: "Build sender reputation before cold outreach.",
+          label: "Domain reputation & pacing",
+          description: "How we protect reputation without artificial warmup pools.",
         },
         {
           href: "/tools/cold-email-sending-limit-calculator",
           label: "Sending limit calculator",
-          description: "Calculate safe daily send limits by domain age and warmup status.",
+          description: "Calculate safe daily send limits by domain age and ramp stage.",
         },
         {
           href: "/blog/how-many-emails-per-day-cold-outreach",

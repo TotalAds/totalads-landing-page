@@ -81,16 +81,15 @@ export default function BlogPost3() {
       </div>
 
       <h3 className="text-xl font-bold text-[#1e293b] mt-8 mb-3">
-        How LeadSnipper&apos;s Warmup Works
+        How LeadSnipper Approaches Domain Reputation
       </h3>
       <p className="text-[#475569] leading-relaxed mb-6">
-        LeadSnipper&apos;s warmup engine generates realistic email conversations
-        across major mailbox providers. Each thread includes 5-8 exchanges with
-        varied writing styles, natural timing gaps, and proper reply chains. The
-        system ties warmup directly to your domains with daily pacing limits —
-        you set the pace, and the engine handles the rest. Importantly, warmup
-        runs on your actual infrastructure (AWS SES or managed), not on a
-        separate shared warmup pool.
+        LeadSnipper does not sell an artificial warmup-pool product. Instead it
+        protects reputation with DNS authentication checks, built-in Reoon
+        verification, daily caps, multi-day send pacing, and auto-pause when
+        bounce or complaint rates spike — all tied to your own domains and
+        sending infrastructure (AWS SES or managed), not a shared engagement
+        network.
       </p>
 
       {/* === PART 2: EMAIL VERIFICATION === */}

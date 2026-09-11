@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import LeadsnipperSc from "@/asset/leadsnipper_dash_sc.png";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export function HeroScrollAnimation() {
@@ -72,33 +70,6 @@ export function HeroScrollAnimation() {
                 <svg className="w-3.5 h-3.5 text-[#10b981]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                 No card required
               </span>
-            </div>
-
-            {/* Social Proof */}
-            <div className="flex items-center justify-center gap-3 mt-8">
-              <div className="flex -space-x-2">
-                {["AK", "SP", "MR", "JS", "PD"].map((initials, i) => (
-                  <div
-                    key={initials}
-                    className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-heading font-bold text-white"
-                    style={{
-                      background: [
-                        "linear-gradient(135deg, #0058be, #2170e4)",
-                        "linear-gradient(135deg, #10b981, #34d399)",
-                        "linear-gradient(135deg, #8b5cf6, #a78bfa)",
-                        "linear-gradient(135deg, #b75b00, #e57c1a)",
-                        "linear-gradient(135deg, #0058be, #2170e4)",
-                      ][i],
-                      zIndex: 5 - i,
-                    }}
-                  >
-                    {initials}
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-[#727785]">
-                Trusted by <span className="font-semibold text-[#131b2e]">200+</span> B2B teams
-              </p>
             </div>
           </>
         }

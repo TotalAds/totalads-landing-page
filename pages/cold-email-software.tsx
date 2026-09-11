@@ -8,13 +8,13 @@ export default function ColdEmailSoftwarePage() {
       pageKey="coldEmailSoftware"
       eyebrow="Cold Email Software"
       headline="Cold email software that sends 10,000+ emails without hitting spam"
-      subheadline="LeadSnipper is cold email software built on AWS SES. Automate outreach, verify every lead, warm up domains, and monitor deliverability — all in one platform designed for teams that care about inbox placement."
+      subheadline="LeadSnipper is cold email software built on AWS SES. Automate outreach, verify every lead, pace sending safely, and monitor deliverability — all in one platform designed for teams that care about inbox placement."
       problemTitle="Generic cold email tools share your reputation with everyone else"
       problemDescription="Most cold email software runs on shared infrastructure. When another sender on the same pool gets blacklisted, your campaigns suffer. Add-on verification tools, separate warmup services, and opaque pricing make the stack expensive and fragile."
       outcomes={[
         "Send cold email on AWS SES infrastructure you own and control",
         "Verify every lead with built-in Reoon checks before campaigns launch",
-        "Warm up domains with AI-paced daily volume tied to domain health",
+        "Pace volume with daily caps and auto-pause when bounce rates spike",
         "Monitor SPF, DKIM, DMARC, bounces, and complaints in one dashboard",
         "Start free with 1,000 emails — scale to 10,000+ without burning domains",
       ]}
@@ -32,10 +32,10 @@ export default function ColdEmailSoftwarePage() {
           badge: "Deliverability",
         },
         {
-          title: "AI Smart Warmup",
+          title: "Deliverability Pacing",
           description:
-            "Gradual daily volume ramp that mirrors human sending. Automatically pauses when domain health signals drop.",
-          badge: "Warmup",
+            "Daily caps and multi-day volume pacing protect new domains. Campaigns auto-pause when bounce or complaint signals spike.",
+          badge: "Safety",
         },
         {
           title: "Campaign Builder & Sequences",
@@ -75,7 +75,7 @@ export default function ColdEmailSoftwarePage() {
         {
           feature: "Cost at 10K emails/mo",
           traditional: "$30-97+/month + verification",
-          leadsnipper: "From ₹499/mo + AWS SES usage",
+          leadsnipper: "From ₹999/mo + AWS SES usage",
         },
       ]}
       faqs={[
@@ -87,24 +87,19 @@ export default function ColdEmailSoftwarePage() {
         {
           question: "Can I send bulk cold email without getting blacklisted?",
           answer:
-            "Yes, with proper warmup, list verification, and pacing. LeadSnipper enforces verification before send, provides AI warmup, and monitors domain health to prevent blacklist issues.",
+            "Yes, with proper list verification, gradual volume ramp, and pacing. LeadSnipper enforces verification before send, daily caps, bounce auto-pause, and domain health monitoring to reduce blacklist risk.",
         },
         {
-          question: "Does LeadSnipper include email warmup?",
+          question: "Does LeadSnipper include an automated email warmup tool?",
           answer:
-            "Yes. AI smart warmup is included on all paid plans and available during the free trial. Warmup is tied to your domain health dashboard and pauses automatically if issues are detected.",
+            "Not today. We do not sell an artificial warmup-pool product. LeadSnipper includes Reoon verification, daily caps, paced sending, domain health monitoring, and deliverability auto-pause — the controls that protect reputation when you ramp real outreach.",
         },
       ]}
       relatedLinks={[
         {
-          href: "/email-warmup",
-          label: "Email warmup tool",
-          description: "Improve inbox placement with AI-paced domain warmup.",
-        },
-        {
           href: "/email-deliverability",
           label: "Email deliverability tool",
-          description: "Monitor DNS, bounces, and complaint signals in real time.",
+          description: "Monitor DNS, bounce, and complaint signals in one dashboard.",
         },
         {
           href: "/blog/best-cold-email-software-2026-comparison",

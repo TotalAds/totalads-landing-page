@@ -294,7 +294,7 @@ export default function MailshakeAlternatives() {
                 "✗",
               ],
               ["Built-in verification", "✗", "✓", "✗", "✗", "✗"],
-              ["Email warmup", "Partial", "✓", "✓", "✓", "✓"],
+              ["Deliverability pacing", "Partial", "✓", "Partial", "✓", "✓"],
               ["Domain health monitoring", "✗", "✓", "Partial", "✗", "✗"],
               ["Phone dialer", "✓ (add-on)", "✗", "✗", "✗", "✗"],
               ["CRM integration", "✓ Deep", "Partial", "Partial", "Partial", "✓"],

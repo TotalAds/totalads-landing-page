@@ -9,7 +9,7 @@ export default function MailshakeAlternativePage() {
       competitor="Mailshake"
       eyebrow="Mailshake alternative"
       headline="A Mailshake alternative for scaling cold email without shared infrastructure risk"
-      subheadline="Mailshake is a straightforward cold email tool, but scaling outbound requires more than sequences. LeadSnipper adds BYO AWS SES, built-in verification, domain health monitoring, and AI warmup for teams sending at volume."
+      subheadline="Mailshake is a straightforward cold email tool, but scaling outbound requires more than sequences. LeadSnipper adds BYO AWS SES, built-in verification, and domain health monitoring for teams sending at volume."
       competitorSummary="Mailshake works for teams that want simple email sequences and phone dialer integration. As volume grows, shared infrastructure and limited deliverability controls become limiting factors."
       competitorBestFor={[
         "Teams that want simple email + phone outreach in one tool",
@@ -63,7 +63,7 @@ export default function MailshakeAlternativePage() {
         {
           question: "Does LeadSnipper have a phone dialer like Mailshake?",
           answer:
-            "No. LeadSnipper focuses exclusively on cold email infrastructure, verification, warmup, and campaigns. Use a separate dialer if phone outreach is part of your stack.",
+            "No. LeadSnipper focuses exclusively on cold email infrastructure, verification, domain health, and campaigns. Use a separate dialer if phone outreach is part of your stack.",
         },
         {
           question: "How does pricing compare to Mailshake?",

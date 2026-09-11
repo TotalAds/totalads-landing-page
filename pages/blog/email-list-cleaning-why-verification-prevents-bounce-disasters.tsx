@@ -407,7 +407,7 @@ export default function EmailListCleaning() {
         LeadSnipper makes verification non-negotiable by building Reoon
         verification directly into the lead upload flow. Combined with BYO
         AWS SES for infrastructure ownership, domain health monitoring, and
-        intelligent warmup, it&apos;s the deliverability stack that protects
+        deliverability pacing, it&apos;s the deliverability stack that protects
         your campaigns from bounce disasters.{" "}
         <Link
           href="https://app.leadsnipper.com/signup?product=leadsnipper"

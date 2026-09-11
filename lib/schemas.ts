@@ -227,7 +227,7 @@ export const competitorData: Record<
 export const leadsnipperProduct: ComparisonProduct = {
   name: "LeadSnipper",
   description:
-    "Deliverability-first cold email platform with BYO AWS SES, built-in Reoon verification, AI warmup, and domain health monitoring.",
+    "Deliverability-first cold email platform with BYO AWS SES, built-in Reoon verification, deliverability pacing, and domain health monitoring.",
   url: BASE_URL,
   priceRange: "19-119",
   features: [

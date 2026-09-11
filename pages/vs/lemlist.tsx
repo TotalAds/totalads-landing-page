@@ -9,7 +9,7 @@ export default function LemlistAlternativePage() {
       competitor="Lemlist"
       eyebrow="Lemlist alternative"
       headline="A Lemlist alternative for cold email teams that prioritize deliverability over personalization gimmicks"
-      subheadline="Lemlist is known for personalized images and multi-channel sequences. LeadSnipper focuses on what actually determines inbox placement: AWS SES control, built-in verification, domain health, and intelligent warmup."
+      subheadline="Lemlist is known for personalized images and multi-channel sequences. LeadSnipper focuses on what actually determines inbox placement: AWS SES control, built-in verification, domain health, and deliverability pacing."
       competitorSummary="Lemlist works for teams that want creative personalization and multi-channel outreach. The trade-off is less emphasis on owning the sending infrastructure and monitoring domain health."
       competitorBestFor={[
         "Teams that want image personalization and LinkedIn integration",
@@ -44,9 +44,9 @@ export default function LemlistAlternativePage() {
           leadsnipper: "Full domain health dashboard",
         },
         {
-          feature: "Warmup",
+          feature: "Reputation approach",
           competitor: "Included warmup network",
-          leadsnipper: "AI-paced warmup on your domains",
+          leadsnipper: "Verification, daily caps, pacing, and auto-pause",
         },
         {
           feature: "Best fit",
@@ -68,7 +68,7 @@ export default function LemlistAlternativePage() {
         {
           question: "Can I migrate from Lemlist to LeadSnipper?",
           answer:
-            "Yes. Export your contact lists, import into LeadSnipper with built-in verification, connect your AWS SES account, and rebuild sequences in the campaign builder. Warmup new domains before sending.",
+            "Yes. Export your contact lists, import into LeadSnipper with built-in verification, connect your AWS SES account, and rebuild sequences in the campaign builder. Ramp new domains gradually with daily caps before full volume.",
         },
       ]}
     />

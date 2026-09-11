@@ -25,9 +25,9 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconBrain />,
     },
     {
-      title: "AI-Powered Warmup",
+      title: "Deliverability Pacing",
       description:
-        "Stop new domains from hitting spam. AI generates real conversations across Gmail, Outlook, Yahoo, and SES — building trust automatically.",
+        "Stop new domains from hitting spam. Daily caps, multi-day volume ramp, and auto-pause when bounce or complaint rates spike.",
       icon: <IconFlame />,
     },
     {
@@ -73,7 +73,7 @@ export function FeaturesSectionWithHoverEffects() {
             Everything You Need. Nothing You Don&apos;t.
           </h2>
           <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-            Domains, verification, warmup, AI writing, campaigns, analytics —
+            Domains, verification, pacing, AI writing, campaigns, analytics —
             one platform, not 4 tools duct-taped together.
           </p>
         </div>
