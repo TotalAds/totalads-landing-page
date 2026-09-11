@@ -29,6 +29,56 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "custom-tracking-domain-cold-email-2026",
+    title:
+      "Custom Tracking Domain for Cold Email: CNAME Setup & Deliverability (2026)",
+    excerpt:
+      "Shared tracking domains can hitch your links to other senders' reputation. Here is how cold email teams set a branded CNAME, when open tracking hurts more than it helps, and how custom tracking fits AWS SES and BYO infrastructure.",
+    description:
+      "Custom tracking domain for cold email (2026): branded CNAME setup, shared vs custom trackers, open-tracking risks after Apple MPP, and deliverability tips for SES and agency stacks.",
+    keywords:
+      "custom tracking domain cold email, branded tracking domain cold email, CNAME tracking domain Instantly, custom tracking domain deliverability, open tracking pixel cold email, Apple Mail Privacy Protection open rates, SES click tracking custom domain, cold email link branding, shared tracking domain risks, custom tracking domain Cloudflare DNS only",
+    date: "2026-09-11",
+    readTime: "14 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+      alt: "Network links representing a branded custom tracking domain CNAME for cold email deliverability",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "cold-email-deliverability-checklist",
+      "google-postmaster-tools-cold-email-setup-guide",
+      "how-to-avoid-spam-folder-cold-email",
+      "byo-aws-ses-vs-shared-email-infrastructure-cold-outreach",
+    ],
+    faqs: [
+      {
+        question: "What is a custom tracking domain for cold email?",
+        answer:
+          "A custom tracking domain is a subdomain you control (for example track.yourdomain.com or inst.yourdomain.com) that hosts open/click tracking redirects instead of the ESP's shared tracker. You usually point it with a CNAME to the vendor's tracking host so links in your mail stay on your brand's domain tree.",
+      },
+      {
+        question: "Does a custom tracking domain fix spam folder issues by itself?",
+        answer:
+          "No. It removes shared-tracker reputation risk and improves domain alignment between From-domain and links, but list quality, authentication, complaint rate, and send volume still dominate inbox placement. Treat CTD as hygiene, not a silver bullet.",
+      },
+      {
+        question: "Should I keep open tracking enabled on first cold touches?",
+        answer:
+          "Often no. Apple Mail Privacy Protection and image proxies inflate opens, and tracking pixels add another remote resource filters evaluate. Many teams disable open tracking on first touches, keep click tracking only when the CTA needs it, and judge campaigns on replies and meetings.",
+      },
+      {
+        question: "Do I need a custom tracking domain on Amazon SES?",
+        answer:
+          "SES open/click tracking uses SES-managed links unless you design around it. Many BYO SES cold stacks skip ESP-style open pixels entirely and use plain HTTPS links on a property you own. If your sequencer wraps links, give each sending domain its own branded tracker CNAME and keep Cloudflare proxy off (DNS only).",
+      },
+    ],
+  },
+  {
     slug: "aws-ses-bounce-complaint-configuration-sets-cold-email-2026",
     title:
       "Amazon SES Bounce & Complaint Handling with Configuration Sets for Cold Email (2026)",
@@ -256,7 +306,9 @@ export const blogPosts: BlogPost[] = [
       "domain-reputation-management-protect-sender-score",
       "cold-email-deliverability-checklist",
     
-    "list-unsubscribe-one-click-cold-email-2026",],
+    "list-unsubscribe-one-click-cold-email-2026",
+      "custom-tracking-domain-cold-email-2026",
+    ],
   },
   {
     slug: "instantly-vs-leadsnipper-indian-agencies-comparison",
@@ -633,6 +685,7 @@ export const blogPosts: BlogPost[] = [
       "why-cold-emails-land-in-spam-fix-today",
       "spf-dkim-dmarc-cold-email-guide",
       "cold-email-deliverability-checklist",
+      "custom-tracking-domain-cold-email-2026",
     ],
   },
   {
@@ -686,7 +739,9 @@ export const blogPosts: BlogPost[] = [
       "email-warmup-verification-domain-health-complete-guide",
       "domain-reputation-management-protect-sender-score",
     
-    "list-unsubscribe-one-click-cold-email-2026",],
+    "list-unsubscribe-one-click-cold-email-2026",
+      "custom-tracking-domain-cold-email-2026",
+    ],
   },
   {
     slug: "how-many-emails-per-day-cold-outreach",
