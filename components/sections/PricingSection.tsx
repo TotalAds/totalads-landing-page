@@ -10,6 +10,7 @@ import {
   displayPlanSecondaryPrice,
   type DisplayCurrency,
 } from "@/lib/currency";
+import { APPSUMO_DEAL_URL } from "@/lib/launchLinks";
 import { useUserRegion } from "@/hooks/useUserRegion";
 
 type ProductPlan = {
@@ -110,6 +111,22 @@ export default function PricingSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
             Pay Less Than Instantly. Own More Than Smartlead.
           </h2>
+
+          <Link
+            href={APPSUMO_DEAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-auto mb-2 inline-flex max-w-xl flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-[#ffcc00]/50 bg-[#fff8d6] px-4 py-3 text-sm text-[#131b2e] transition hover:border-[#ffcc00] hover:bg-[#ffef9a]"
+          >
+            <span className="rounded bg-[#131b2e] px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-[#ffcc00]">
+              AppSumo
+            </span>
+            <span className="font-heading font-semibold">
+              Skip monthly pricing — get lifetime access from{" "}
+              <span className="text-[#b45309]">$39</span>
+            </span>
+            <span className="font-medium text-[#b45309]">View deal →</span>
+          </Link>
 
           {/* Anchoring psychology */}
           {/* <div className="max-w-2xl mx-auto mb-4 p-4 bg-[#f8fafc] border border-[#e2e8f0] rounded-xl">

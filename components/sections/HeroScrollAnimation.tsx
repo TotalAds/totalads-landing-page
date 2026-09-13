@@ -2,7 +2,9 @@
 import Link from "next/link";
 import React from "react";
 
+import ProductHuntChip from "@/components/sections/ProductHuntChip";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { APPSUMO_DEAL_URL } from "@/lib/launchLinks";
 
 export function HeroScrollAnimation() {
   return (
@@ -10,6 +12,11 @@ export function HeroScrollAnimation() {
       <ContainerScroll
         titleComponent={
           <>
+            {/* Product Hunt launch chip — short button in hero, not navbar */}
+            <div className="flex justify-center mb-5">
+              <ProductHuntChip />
+            </div>
+
             {/* Hero Badge */}
             <div className="flex justify-center mb-8">
               <span className="badge-hero">
@@ -47,8 +54,13 @@ export function HeroScrollAnimation() {
               >
                 Start Free 14-Day Trial
               </Link>
-              <Link href="/pricing" className="btn-ghost btn-hero">
-                Book a Demo
+              <Link
+                href={APPSUMO_DEAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#ffcc00] px-6 py-3 font-heading text-[15px] font-bold text-[#131b2e] transition hover:-translate-y-0.5 hover:bg-[#ffe066] hover:shadow-[0_8px_24px_rgba(255,204,0,0.35)] btn-hero"
+              >
+                Get lifetime deal — $39
               </Link>
             </div>
 
@@ -64,7 +76,7 @@ export function HeroScrollAnimation() {
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-3.5 h-3.5 text-[#10b981]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                Campaigns easy to manage
+                Lifetime deal from $39
               </span>
               <span className="flex items-center gap-1.5">
                 <svg className="w-3.5 h-3.5 text-[#10b981]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>

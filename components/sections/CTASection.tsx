@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
+import { APPSUMO_DEAL_URL } from "@/lib/launchLinks";
+
 export default function CTASection() {
   return (
     <section className="py-18 relative bg-[#f2f3ff]/50 border-t border-[#c2c6d6]/20">
@@ -24,24 +26,26 @@ export default function CTASection() {
             <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-8 mb-4">
               Stop renting infrastructure.
               <br />
-              <span className="font-display italic text-[#0058be]">Start owning it.</span>
+              <span className="font-display italic text-[#0058be]">Own it for $39 forever.</span>
             </h2>
             <p className="text-body-md text-[#727785] max-w-xl mx-auto mb-10">
-              Get complete control over your outbound — domain reputation,
-              verification, pacing, and sending in one place.
+              Grab the AppSumo lifetime deal — verification, deliverability
+              guardrails, and multi-inbox sending. Pay once. Keep LeadSnipper for life.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="https://app.leadsnipper.com/signup?product=leadsnipper"
-                className="btn-primary btn-hero rounded-full"
+                href={APPSUMO_DEAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ffcc00] px-6 py-3 font-heading text-[15px] font-bold text-[#131b2e] transition hover:-translate-y-0.5 hover:bg-[#ffe066] hover:shadow-[0_8px_24px_rgba(255,204,0,0.35)] btn-hero"
               >
-                Start a 14-day trial
+                Get LeadSnipper for $39
               </Link>
               <Link
-                href="/cold-email-software"
+                href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="btn-ghost btn-hero rounded-full"
               >
-                Explore cold email software →
+                Or start a 14-day trial
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-3 mt-6">
@@ -58,7 +62,7 @@ export default function CTASection() {
               </Link>
             </div>
             <p className="text-xs text-[#727785] mt-6">
-              No credit card required · Setup in 15 minutes · Cancel anytime
+              AppSumo exclusive · Lifetime access from $39 · 60-day refund
             </p>
           </div>
         </motion.div>

@@ -1,5 +1,6 @@
 import React from "react";
 
+import AppSumoDealSection from "@/components/sections/AppSumoDealSection";
 import CampaignHealthScore from "@/components/sections/CampaignHealthScore";
 import ChecklistLeadCaptureSystem from "@/components/sections/ChecklistLeadCaptureSystem";
 import CTASection from "@/components/sections/CTASection";
@@ -33,6 +34,9 @@ export default function Home() {
 
       {/* Trust Strip — integration logos */}
       <TrustStrip />
+
+      {/* AppSumo lifetime deal — $39 LTD */}
+      <AppSumoDealSection />
 
       {/* Problem — Before / After */}
       <PainSection />
