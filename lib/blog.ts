@@ -253,6 +253,7 @@ export const blogPosts: BlogPost[] = [
     relatedSlugs: [
       "inbox-placement-testing-seed-list-cold-email-2026",
       "google-postmaster-tools-cold-email-setup-guide",
+      "yahoo-sender-hub-cold-email-cfl-insights-2026",
       "domain-reputation-management-protect-sender-score",
       "cold-email-deliverability-checklist",
     ],
@@ -280,6 +281,56 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: "yahoo-sender-hub-cold-email-cfl-insights-2026",
+    title:
+      "Yahoo Sender Hub for Cold Email: CFL & Insights Setup Guide (2026)",
+    excerpt:
+      "Google Postmaster covers Gmail. Microsoft SNDS covers Outlook IPs. Yahoo Sender Hub is how you watch Yahoo/AOL complaint rate — Insights for aggregates, Complaint Feedback Loop for ARF suppression.",
+    description:
+      "Yahoo Sender Hub for cold email in 2026: set up Insights and Complaint Feedback Loop (CFL), keep spam rate under 0.3%, and suppress ARF complainers on Yahoo/AOL.",
+    keywords:
+      "Yahoo Sender Hub cold email, Yahoo Complaint Feedback Loop, Yahoo CFL ARF, Yahoo Sender Hub Insights, Yahoo postmaster tools 2026, AOL spam complaint rate, cold email Yahoo deliverability, DKIM domain CFL enrollment, Yahoo spam rate 0.3%, email feedback loop cold outreach",
+    date: "2026-09-14",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
+      alt: "Email operations dashboard representing Yahoo Sender Hub Insights and complaint feedback for cold email",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "google-postmaster-tools-cold-email-setup-guide",
+      "microsoft-snds-cold-email-outlook-deliverability-2026",
+      "cold-email-deliverability-checklist",
+      "list-unsubscribe-one-click-cold-email-2026",
+    ],
+    faqs: [
+      {
+        question: "What is Yahoo Sender Hub?",
+        answer:
+          "Yahoo Sender Hub is Yahoo's sender portal for domains that mail Yahoo and AOL users. It is the current home for Insights (aggregate delivery and complaint trends by DKIM signing domain) and the Complaint Feedback Loop that returns ARF reports when someone marks mail as spam.",
+      },
+      {
+        question: "Do I need Yahoo Sender Hub if I already use Google Postmaster and Microsoft SNDS?",
+        answer:
+          "Yes if you send to Yahoo or AOL at meaningful volume. Those mailboxes are a real slice of many B2B and consumer lists. Postmaster only reflects personal Gmail; SNDS is Microsoft IP-centric. Yahoo fills the third major consumer path.",
+      },
+      {
+        question: "Is Complaint Feedback Loop the same as Insights?",
+        answer:
+          "No. Insights shows aggregate delivered volume and spam complaint rate for a verified DKIM domain. CFL sends individual Abuse Reporting Format (ARF) reports so you can suppress that recipient. Yahoo's docs treat them as separate services — you can use Insights without CFL, but bulk senders should enroll both.",
+      },
+      {
+        question: "What spam complaint rate does Yahoo recommend?",
+        answer:
+          "Yahoo's sender best practices ask bulk senders to keep spam complaint rates below 0.3%. Yahoo calculates that rate against mail delivered to the inbox — keep that definition in mind when you compare CFL counts to your own ESP dashboards.",
+      },
+    ],
+  },
+  {
     slug: "google-postmaster-tools-cold-email-setup-guide",
     title:
       "Google Postmaster Tools for Cold Email: Setup Guide & Metrics That Matter (2026)",
@@ -303,10 +354,10 @@ export const blogPosts: BlogPost[] = [
     relatedSlugs: [
       "inbox-placement-testing-seed-list-cold-email-2026",
       "microsoft-snds-cold-email-outlook-deliverability-2026",
+      "yahoo-sender-hub-cold-email-cfl-insights-2026",
       "domain-reputation-management-protect-sender-score",
       "cold-email-deliverability-checklist",
-    
-    "list-unsubscribe-one-click-cold-email-2026",
+      "list-unsubscribe-one-click-cold-email-2026",
       "custom-tracking-domain-cold-email-2026",
     ],
   },
