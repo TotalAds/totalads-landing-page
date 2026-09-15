@@ -60,6 +60,7 @@ LeadSnipper helps teams send cold outbound email at scale without damaging sende
 - [Google Postmaster Tools for Cold Email](https://leadsnipper.com/blog/google-postmaster-tools-cold-email-setup-guide): Setup guide and Gmail metrics that matter.
 - [Microsoft SNDS for Outlook Deliverability](https://leadsnipper.com/blog/microsoft-snds-cold-email-outlook-deliverability-2026): Claim IPs, read Outlook reputation, use JMRP.
 - [Yahoo Sender Hub for Cold Email](https://leadsnipper.com/blog/yahoo-sender-hub-cold-email-cfl-insights-2026): Insights + Complaint Feedback Loop for Yahoo/AOL.
+- [Catch-All / Accept-All Emails for Cold Outreach](https://leadsnipper.com/blog/catch-all-accept-all-email-cold-email-2026): Segment, risk-score, and send without torching bounce rate.
 - [List-Unsubscribe & One-Click Opt-Out for Cold Email](https://leadsnipper.com/blog/list-unsubscribe-one-click-cold-email-2026): RFC 8058 headers, Gmail bulk rules, and how opt-outs protect spam rate.
 - [Amazon SES Bounce & Complaint Configuration Sets](https://leadsnipper.com/blog/aws-ses-bounce-complaint-configuration-sets-cold-email-2026): Handle SES bounces, complaints, event destinations, and suppression for cold email.
 - [Custom Tracking Domain for Cold Email](https://leadsnipper.com/blog/custom-tracking-domain-cold-email-2026): Branded CNAME trackers, shared-domain risks, and when to disable open pixels.

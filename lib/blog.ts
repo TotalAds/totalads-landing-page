@@ -281,6 +281,56 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: "catch-all-accept-all-email-cold-email-2026",
+    title:
+      "Catch-All (Accept-All) Emails in Cold Outreach: How to Handle Them (2026)",
+    excerpt:
+      "Catch-all domains say yes to every address — so verification cannot prove the mailbox exists. Here is how cold email teams detect, segment, and send to accept-all contacts without torching bounce rate.",
+    description:
+      "Catch-all / accept-all emails for cold outreach in 2026: what they are, why SMTP verification fails, how to segment and risk-score, and how to send without blowing bounce rate.",
+    keywords:
+      "catch-all email cold outreach, accept-all email verification, catch-all domain bounce risk, how to handle catch-all emails, accept-all SMTP verification, catch-all email list cleaning, cold email catch-all strategy 2026, risky email addresses cold email, email verification catch-all, Reoon catch-all",
+    date: "2026-09-15",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80",
+      alt: "Operator reviewing email list risk segments including catch-all accept-all addresses for cold outreach",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "email-list-cleaning-why-verification-prevents-bounce-disasters",
+      "aws-ses-bounce-complaint-configuration-sets-cold-email-2026",
+      "cold-email-deliverability-checklist",
+      "google-postmaster-tools-cold-email-setup-guide",
+    ],
+    faqs: [
+      {
+        question: "What is a catch-all (accept-all) email domain?",
+        answer:
+          "A catch-all or accept-all domain is configured so the mail server accepts messages for any local-part at that domain — whether or not a real mailbox exists. SMTP verification therefore cannot confirm the individual address; the server answers as if everything is deliverable.",
+      },
+      {
+        question: "Should I delete all catch-all addresses from my cold list?",
+        answer:
+          "Usually no. Some catch-all addresses belong to real people. Deleting the whole bucket throws away pipeline. Blasting it unsegmented is worse: vendor tests have shown accept-all segments bouncing many times harder than verified controls. Segment, risk-score, and test in a capped batch instead.",
+      },
+      {
+        question: "Why do verifiers disagree on catch-all results?",
+        answer:
+          "Because the SMTP answer is uninformative. Tools may label the same address risky, unknown, catch-all, or (badly) valid. Prefer verifiers that explicitly flag catch-all / accept-all instead of rounding them up to valid, then treat that flag as a separate send policy.",
+      },
+      {
+        question: "How should I send to catch-all contacts safely?",
+        answer:
+          "Keep catch-alls in their own campaign or mailbox pool, prioritize contacts corroborated by LinkedIn, company sites, or known email patterns, send a small capped test first, watch hard bounces for 24–72 hours, and suppress anything that hard-bounces. Pause the segment if bounce rate spikes past your safe threshold.",
+      },
+    ],
+  },
+  {
     slug: "yahoo-sender-hub-cold-email-cfl-insights-2026",
     title:
       "Yahoo Sender Hub for Cold Email: CFL & Insights Setup Guide (2026)",
@@ -710,6 +760,8 @@ export const blogPosts: BlogPost[] = [
       "domain-reputation-management-protect-sender-score",
       "email-warmup-verification-domain-health-complete-guide",
       "cold-email-open-rate-dropping-fix-domain-reputation",
+    
+      "catch-all-accept-all-email-cold-email-2026",
     ],
   },
   {
