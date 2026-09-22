@@ -205,7 +205,8 @@ export const blogPosts: BlogPost[] = [
       "cold-email-deliverability-checklist",
       "domain-reputation-management-protect-sender-score",
     
-    "list-unsubscribe-one-click-cold-email-2026",],
+    "list-unsubscribe-one-click-cold-email-2026",
+    ],
     faqs: [
       {
         question: "What is inbox placement testing for cold email?",
@@ -277,6 +278,56 @@ export const blogPosts: BlogPost[] = [
         question: "Can I use SNDS with AWS SES for cold email?",
         answer:
           "Yes — but SNDS is IP-based. On shared SES IP pools you may not control or claim the IPs Microsoft sees. Dedicated IPs (or a provider that lets you claim them) make SNDS actionable. With BYO SES plus careful IP strategy, agencies can monitor reputation per sending path instead of flying blind on Outlook.",
+      },
+    ],
+  },
+  {
+    slug: "bimi-cold-email-dmarc-logo-worth-it-2026",
+    title:
+      "BIMI for Cold Email in 2026: Is the Logo Worth It? (Honest ROI)",
+    excerpt:
+      "BIMI puts a brand logo next to authenticated mail in some inboxes — but only after DMARC enforcement. For most cold outbound stacks, the logo is optional polish; the DMARC work is the real win. Here is the honest ROI.",
+    description:
+      "BIMI for cold email in 2026: DMARC enforcement first, VMC vs CMC cost, Outlook gaps, and when a logo is worth it vs when you should skip the certificate.",
+    keywords:
+      "BIMI cold email, BIMI worth it 2026, BIMI DMARC enforcement, VMC vs CMC BIMI, BIMI Outlook support, brand indicators cold email, BIMI logo Gmail Yahoo, cold email DMARC quarantine reject, BIMI ROI outbound",
+    date: "2026-09-22",
+    readTime: "12 min read",
+    author: "LeadSnipper Team",
+    category: "Deliverability",
+    cluster: "deliverability",
+    clusterRole: "spoke",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&q=80",
+      alt: "Brand logo and email inbox illustrating BIMI brand indicators for authenticated cold email",
+      credit: "Unsplash",
+    },
+    relatedSlugs: [
+      "spf-dkim-dmarc-cold-email-guide",
+      "google-postmaster-tools-cold-email-setup-guide",
+      "cold-email-deliverability-checklist",
+      "microsoft-snds-cold-email-outlook-deliverability-2026",
+    ],
+    faqs: [
+      {
+        question: "Does BIMI improve cold email deliverability?",
+        answer:
+          "Not directly. BIMI is a brand-indicator feature that can display a logo after your message already authenticates. The hard prerequisite — DMARC at p=quarantine or p=reject with aligned SPF/DKIM — is what protects spoofing and supports deliverability. You can (and should) enforce DMARC without buying a mark certificate.",
+      },
+      {
+        question: "Does Outlook show BIMI logos?",
+        answer:
+          "As of mid-2026, Microsoft Outlook / Microsoft 365 generally does not render the open BIMI logo the way Gmail and Yahoo do. Many B2B cold lists are Outlook-heavy, so the visual payoff of a certificate is often invisible for most recipients.",
+      },
+      {
+        question: "What is the difference between a VMC and a CMC?",
+        answer:
+          "A Verified Mark Certificate (VMC) typically requires a registered trademark and costs more (often roughly high hundreds to low thousands USD per year, depending on CA). A Common Mark Certificate (CMC) is a cheaper path without the same trademark bar and is accepted in more places than before (including Gmail in many setups), but client coverage still varies. Neither replaces DMARC enforcement.",
+      },
+      {
+        question: "Should cold email teams buy BIMI?",
+        answer:
+          "Usually only after authentication, warmup, list quality, and complaint rate are solid — and mainly if you send meaningful volume to Gmail/Yahoo from a stable, recognizable brand domain. Rotating burner outbound domains are a poor fit. For most agency cold stacks, do DMARC enforcement and skip the certificate until brand + audience justify it.",
       },
     ],
   },
@@ -815,6 +866,7 @@ export const blogPosts: BlogPost[] = [
       "how-to-avoid-spam-folder-cold-email",
       "how-to-set-up-aws-ses-for-cold-email-step-by-step",
       "cold-email-deliverability-checklist",
+      "bimi-cold-email-dmarc-logo-worth-it-2026",
     ],
   },
   {
