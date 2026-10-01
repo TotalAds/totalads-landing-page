@@ -26,20 +26,28 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 import LeadsnipperRounded from "@/asset/leadsnipper.svg";
+import { LEADHUB_SIGNUP_URL } from "@/lib/launchLinks";
 
 const productItems: Array<{
   label: string;
   desc: string;
   href: string;
-  badge: "live" | "soon";
+  badge: "live" | "soon" | "beta";
   icon: React.ReactNode;
 }> = [
   {
     label: "LeadSnipper",
-    desc: "Email Deliverability Platform",
-    href: "/products/leadsnipper",
+    desc: "Cold email platform. Send, rotate, protect your inbox.",
+    href: "/LeadSnipper",
     badge: "live" as const,
     icon: <Mail className="w-4.5 h-4.5" />,
+  },
+  {
+    label: "LeadHub",
+    desc: "Lead research. Find who to email and why now.",
+    href: "/leadhub",
+    badge: "beta" as const,
+    icon: <Search className="w-4.5 h-4.5" />,
   },
   /*
   {
@@ -94,6 +102,7 @@ const serviceItems = [
 const moreItems = [
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
+  { label: "LeadHub", href: "/leadhub" },
   { label: "Services", href: "/services" },
   { label: "Cost Calculator", href: "/savings-calculator" },
   { label: "About", href: "/about" },
@@ -198,6 +207,11 @@ const Navbar = () => {
                                 COMING SOON
                               </span>
                             )}
+                            {item.badge === "beta" && (
+                              <span className="badge-beta text-[9px] py-0.5 px-2">
+                                BETA
+                              </span>
+                            )}
                           </div>
                           <p className="text-xs text-[#727785] mt-0.5">
                             {item.desc}
@@ -205,6 +219,14 @@ const Navbar = () => {
                         </div>
                       </Link>
                     ))}
+                    <div className="mt-1 border-t border-[#c2c6d6]/30 pt-1">
+                      <Link
+                        href="/#leadhub"
+                        className="block rounded-xl px-3 py-3 text-sm font-heading font-semibold text-[#0058be] hover:bg-[#f2f3ff]"
+                      >
+                        Better together: research to inbox →
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -329,7 +351,7 @@ const Navbar = () => {
             <AnimatePresence>
               {tryNowOpen && (
                 <motion.div
-                  className="absolute top-full right-0 pt-2 w-[200px] z-50"
+                  className="absolute top-full right-0 pt-2 w-[240px] z-50"
                   initial={{ opacity: 0, y: -4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -4 }}
@@ -343,10 +365,19 @@ const Navbar = () => {
                     >
                       <Mail className="w-3.5 h-3.5 text-[#0058be]" />
                       <span className="text-[13px] font-heading font-semibold text-[#131b2e]">
-                        LeadSnipper
+                        Try LeadSnipper
                       </span>
                       <span className="badge-live text-[6px] py-0.5 px-1.5 ml-auto">
                         LIVE
+                      </span>
+                    </Link>
+                    <Link
+                      href={LEADHUB_SIGNUP_URL}
+                      className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-[#f2f3ff] transition-colors"
+                    >
+                      <Search className="w-3.5 h-3.5 text-[#0058be]" />
+                      <span className="text-[13px] font-heading font-semibold text-[#131b2e]">
+                        Try LeadHub (beta)
                       </span>
                     </Link>
                     {/*
@@ -421,8 +452,16 @@ const Navbar = () => {
                   </span>
                   {item.badge === "live" && <span className="badge-live text-[9px] py-0.5 px-2">LIVE</span>}
                   {item.badge === "soon" && <span className="badge-coming-soon text-[9px] py-0.5 px-2">SOON</span>}
+                  {item.badge === "beta" && <span className="badge-beta text-[9px] py-0.5 px-2">BETA</span>}
                 </Link>
               ))}
+              <Link
+                href="/#leadhub"
+                className="px-3 py-3 text-sm font-heading font-semibold text-[#0058be]"
+                onClick={() => setIsOpen(false)}
+              >
+                Better together: research to inbox →
+              </Link>
 
               {/* Cold Email Section */}
               <p className="text-[10px] font-mono font-medium text-[#727785] uppercase tracking-widest px-3 pt-6 pb-2">
@@ -481,6 +520,13 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                 >
                   Try LeadSnipper free →
+                </Link>
+                <Link
+                  href={LEADHUB_SIGNUP_URL}
+                  className="btn-ghost w-full text-center rounded-full"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Try LeadHub (beta) →
                 </Link>
                 <Link
                   href="https://cal.com/heyrehan/30min"

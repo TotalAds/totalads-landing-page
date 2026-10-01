@@ -87,6 +87,8 @@ const PRODUCT_PLANS: ProductPlan[] = [
       "Unlimited sending mailboxes",
       "500,000 emails / month",
       "Everything in Growth",
+      "Developer REST API + custom webhooks",
+      "Continuous Google Sheets sync",
       "Dedicated SES setup",
       "Dedicated CSM + onboarding",
       "SLA-backed deliverability",
@@ -150,8 +152,8 @@ const SERVICE_TIERS: ServiceTier[] = [
   },
 ];
 
-const MANAGED_SCS = {
-  name: "Managed SCS",
+const MANAGED_SES = {
+  name: "Managed SES",
   inr: 4999,
   desc: "We configure, warm, and monitor your sending infrastructure end-to-end. Add to any paid plan.",
   features: [
@@ -304,7 +306,7 @@ export default function PricingPage() {
               })}
             </motion.div>
 
-            {/* Managed SCS Add-on */}
+            {/* Managed SES Add-on */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -316,32 +318,32 @@ export default function PricingPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="font-heading font-bold text-lg text-[#131b2e]">
-                      {MANAGED_SCS.name}
+                      {MANAGED_SES.name}
                     </h3>
                     <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-[#0058be]/10 text-[#0058be]">
                       Add-on
                     </span>
                   </div>
                   <p className="text-xs text-[#727785] max-w-2xl">
-                    {MANAGED_SCS.desc}
+                    {MANAGED_SES.desc}
                   </p>
                 </div>
                 <div className="md:text-right shrink-0">
                   <div className="flex items-baseline gap-2 md:justify-end">
                     <span className="font-heading font-bold text-2xl text-[#0058be]">
-                      {formatAmount(MANAGED_SCS.inr, displayCurrency)}
+                      {formatAmount(MANAGED_SES.inr, displayCurrency)}
                     </span>
                     <span className="text-sm text-[#727785]">/mo</span>
                   </div>
                   <div className="text-xs text-[#727785] mt-1">
                     {displayCurrency === "INR"
-                      ? `USD: ${formatUsd(inrToUsd(MANAGED_SCS.inr))}`
-                      : `INR: ${formatInr(MANAGED_SCS.inr)}`}
+                      ? `USD: ${formatUsd(inrToUsd(MANAGED_SES.inr))}`
+                      : `INR: ${formatInr(MANAGED_SES.inr)}`}
                   </div>
                 </div>
               </div>
               <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 mt-5">
-                {MANAGED_SCS.features.map((f) => (
+                {MANAGED_SES.features.map((f) => (
                   <li
                     key={f}
                     className="flex items-start gap-2 text-xs text-[#424754]"

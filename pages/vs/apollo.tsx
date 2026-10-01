@@ -68,7 +68,7 @@ export default function ApolloAlternativePage() {
         {
           question: "Does LeadSnipper have a contact database like Apollo?",
           answer:
-            "No. LeadSnipper focuses on sending infrastructure, verification, domain health, and campaigns. Import contacts from Apollo, LinkedIn, CSV, or any other source.",
+            "LeadSnipper sends. LeadHub researches companies, finds the right person, and writes the reason to reach out. Use them together, or bring contacts from Apollo, LinkedIn, or CSV.",
         },
       ]}
     />

@@ -16,8 +16,15 @@ export default function App({ Component, pageProps }: AppProps) {
       window.history.scrollRestoration = "manual";
     }
 
-    const handleDone = () => {
-      // Force scroll to top on route/hash change complete
+    const handleDone = (url: string) => {
+      const hash = url.includes("#") ? url.split("#")[1] : "";
+      if (hash) {
+        const target = document.getElementById(decodeURIComponent(hash));
+        if (target) {
+          target.scrollIntoView({ behavior: "auto", block: "start" });
+          return;
+        }
+      }
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     };
 

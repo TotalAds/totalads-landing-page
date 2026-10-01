@@ -74,6 +74,8 @@ const PRODUCT_PLANS: ProductPlan[] = [
       "Unlimited sending mailboxes",
       "500,000 emails / month",
       "Everything in Growth",
+      "Developer REST API + custom webhooks",
+      "Continuous Google Sheets sync",
       "Dedicated SES setup",
       "Dedicated CSM + onboarding",
       "SLA-backed deliverability",

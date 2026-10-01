@@ -9,6 +9,8 @@ const beforeItems = [
   "Separate verification tool",
   "Separate sending tool",
   "Separate analytics dashboard",
+  "Separate lead research tool",
+  "Manual LinkedIn stalking",
   "Manual blacklist checking",
   "Spreadsheets to track campaigns",
 ];
@@ -21,6 +23,7 @@ const afterItems = [
   "Reply detection",
   "Real-time analytics",
   "Domain health in one view",
+  "Research with LeadHub",
 ];
 
 export default function PainSection() {

@@ -314,6 +314,23 @@ export const pageConfigs: Record<string, PageConfig> = {
     },
   },
 
+  leadhub: {
+    title:
+      "LeadHub by LeadSnipper — Lead Research and Enrichment for Cold Outreach",
+    description:
+      "Find the right person and the real reason to write. LeadHub researches companies, verifies emails, and only charges when it finds what you asked for.",
+    keywords:
+      "lead enrichment, B2B lead research, find hiring manager, sales intelligence India, AI lead research",
+    canonical: "https://leadhub.leadsnipper.com",
+    openGraph: {
+      title:
+        "LeadHub by LeadSnipper — Lead Research and Enrichment for Cold Outreach",
+      description:
+        "Find the right person and the real reason to write. LeadHub researches companies, verifies emails, and only charges when it finds what you asked for.",
+      url: "https://leadhub.leadsnipper.com",
+    },
+  },
+
   leadsnipper: {
     title: "Cold Email Infrastructure Built on AWS SES",
     description:

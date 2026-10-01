@@ -20,7 +20,8 @@ export default function Footer() {
 
   const footerLinks = {
     Products: [
-      { label: "LeadSnipper", href: "/products/leadsnipper" },
+      { label: "LeadSnipper", href: "/LeadSnipper" },
+      { label: "LeadHub", href: "/leadhub" },
       // { label: "SocialSnipper", href: "/products/socialsnipper" },
       { label: "Pricing", href: "/pricing" },
       { label: "Cost Calculator", href: "/savings-calculator" },

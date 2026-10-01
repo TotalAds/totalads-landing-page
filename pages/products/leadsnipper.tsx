@@ -7,11 +7,13 @@ import {
   CheckCircle2,
   Flame,
   Globe,
+  Inbox,
+  Send,
   PenLine,
   ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import CTASection from "@/components/sections/CTASection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -77,15 +79,28 @@ const features = [
   },
 ];
 
-const comparisonData = [
-  { feature: "Infrastructure", leadsnipper: "Your AWS SES", instantly: "Shared pools", smartlead: "Shared pools" },
-  { feature: "Domain reputation", leadsnipper: "Yours forever", instantly: "Pooled risk", smartlead: "Pooled risk" },
-  { feature: "Email verification", leadsnipper: "Built-in (Reoon)", instantly: "Third-party", smartlead: "Third-party" },
-  { feature: "Deliverability pacing", leadsnipper: "Daily caps + auto-pause", instantly: "Basic", smartlead: "Included" },
-  { feature: "Domain health", leadsnipper: "Real-time dashboard", instantly: "None", smartlead: "None" },
-  { feature: "PDF reports", leadsnipper: "Yes", instantly: "No", smartlead: "No" },
-  { feature: "Pricing (India)", leadsnipper: "From ₹999 / $19", instantly: "From $30", smartlead: "From $39" },
-  { feature: "Trial", leadsnipper: "14 days", instantly: "None", smartlead: "None" },
+const outcomes = [
+  {
+    icon: <Send className="w-5 h-5" />,
+    title: "Campaigns ready to scale",
+    desc: "Build sequences, set sending caps, and keep every mailbox working toward the same campaign goal.",
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: "A clear health signal",
+    desc: "See authentication, bounces, complaints, and reputation signals before a small problem becomes a blocked domain.",
+  },
+  {
+    icon: <Inbox className="w-5 h-5" />,
+    title: "Replies you can act on",
+    desc: "Track replies and campaign performance in one place, so the next decision is obvious instead of buried in a spreadsheet.",
+  },
+];
+
+const reasons = [
+  ["Your sending identity", "Connect your own Google Workspace, Microsoft 365, SMTP, or AWS SES setup. Your sending reputation stays under your control."],
+  ["Guardrails before damage", "Verification, daily caps, inbox rotation, and auto-pause work together to protect the domains your business depends on."],
+  ["One operational view", "Campaign activity and domain health live alongside each other, so you can spot risk and adjust before you lose momentum."],
 ];
 
 const Check = () => (
@@ -324,6 +339,15 @@ export default function LeadSnipperProduct() {
                 See pricing →
               </Link>
             </div>
+            <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 text-left sm:grid-cols-3 sm:text-center mx-auto">
+              {outcomes.map((outcome) => (
+                <div key={outcome.title} className="rounded-2xl border border-[#0058be]/10 bg-white/70 p-4 shadow-sm">
+                  <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-xl bg-[#0058be]/[0.08] text-[#0058be] sm:mb-3">{outcome.icon}</span>
+                  <h2 className="font-heading text-sm font-bold text-[#131b2e]">{outcome.title}</h2>
+                  <p className="mt-1.5 text-xs leading-relaxed text-[#727785]">{outcome.desc}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -378,9 +402,9 @@ export default function LeadSnipperProduct() {
         </div>
       </section>
 
-      {/* Comparison Table */}
+      {/* Why LeadSnipper */}
       <section className="py-24 bg-[#faf8ff] border-t border-[#c2c6d6]/20">
-        <div className="max-w-[900px] mx-auto px-5 sm:px-6 lg:px-16">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -388,11 +412,14 @@ export default function LeadSnipperProduct() {
             viewport={{ once: true }}
             className="text-center mb-14"
           >
-            <span className="section-tag justify-center mb-6">Compare</span>
+            <span className="section-tag justify-center mb-6">Why LeadSnipper</span>
             <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
-              LeadSnipper vs.{" "}
-              <span className="font-display italic text-[#0058be]">the rest.</span>
+              More sends, with more{" "}
+              <span className="font-display italic text-[#0058be]">control.</span>
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-body-md leading-relaxed text-[#727785]">
+              Cold email works when your infrastructure, sending behavior, and list quality work together. LeadSnipper keeps those decisions in one place.
+            </p>
           </motion.div>
 
           <motion.div
@@ -400,44 +427,36 @@ export default function LeadSnipperProduct() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl overflow-hidden border border-[#c2c6d6]/20"
+            className="grid overflow-hidden rounded-3xl border border-[#c2c6d6]/20 bg-white md:grid-cols-[.9fr_1.1fr]"
           >
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-[#c2c6d6]/20 bg-[#f2f3ff]">
-                    <th className="text-left p-4 font-heading font-semibold text-[#727785] text-xs uppercase tracking-wider">
-                      Feature
-                    </th>
-                    <th className="text-left p-4 font-heading font-bold text-[#0058be] text-xs uppercase tracking-wider">
-                      LeadSnipper
-                    </th>
-                    <th className="text-left p-4 font-heading font-semibold text-[#727785] text-xs uppercase tracking-wider">
-                      Instantly
-                    </th>
-                    <th className="text-left p-4 font-heading font-semibold text-[#727785] text-xs uppercase tracking-wider">
-                      Smartlead
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, i) => (
-                    <tr
-                      key={row.feature}
-                      className={`border-b border-[#c2c6d6]/10 ${i % 2 === 0 ? "" : "bg-[#f2f3ff]/30"}`}
-                    >
-                      <td className="p-4 font-heading font-medium text-[#131b2e]">
-                        {row.feature}
-                      </td>
-                      <td className="p-4 font-body font-medium text-[#0058be]">
-                        {row.leadsnipper}
-                      </td>
-                      <td className="p-4 text-[#727785]">{row.instantly}</td>
-                      <td className="p-4 text-[#727785]">{row.smartlead}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="bg-[#131b2e] p-7 text-white md:p-9">
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#9eb6e0]">The sending loop</p>
+              <div className="mt-7 space-y-3">
+                {[
+                  ["Verify", "Check list quality before the send"],
+                  ["Launch", "Sequence with caps and timing rules"],
+                  ["Protect", "Pause and adjust when risk rises"],
+                  ["Learn", "Turn replies and health signals into the next move"],
+                ].map(([step, label], index) => (
+                  <div key={step} className="flex items-center gap-4">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#9eb6e0]/30 font-mono text-xs text-[#9eb6e0]">0{index + 1}</span>
+                    <div>
+                      <p className="font-heading font-bold">{step}</p>
+                      <p className="text-sm text-white/65">{label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-8 border-t border-white/10 pt-5 text-sm leading-relaxed text-white/75">A better send is not a single setting. It is a repeatable system you can see, control, and improve.</p>
+            </div>
+            <div className="divide-y divide-[#c2c6d6]/25">
+              {reasons.map(([title, description], index) => (
+                <div key={title} className="p-6 md:p-7">
+                  <span className="font-mono text-[11px] text-[#0058be]">0{index + 1}</span>
+                  <h3 className="mt-2 font-heading text-lg font-bold text-[#131b2e]">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#727785]">{description}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

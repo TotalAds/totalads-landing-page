@@ -15,6 +15,7 @@ import PricingSection from "@/components/sections/PricingSection";
 import SimplicitySection from "@/components/sections/SimplicitySection";
 import TestimonialsSlider from "@/components/sections/TestimonialsSlider";
 import TrustStrip from "@/components/sections/TrustStrip";
+import LeadHubPreview from "@/components/sections/LeadHubPreview";
 import FeaturesGrid from "@/components/sections/TwoWaysSection";
 import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
@@ -34,6 +35,9 @@ export default function Home() {
 
       {/* Trust Strip — integration logos */}
       <TrustStrip />
+
+      {/* A focused LeadHub introduction; the homepage remains LeadSnipper-first. */}
+      <LeadHubPreview />
 
       {/* AppSumo lifetime deal — $39 LTD */}
       <AppSumoDealSection />

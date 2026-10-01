@@ -226,7 +226,14 @@ export function generateSitemapUrls(): SitemapUrl[] {
     priority: 0.8,
   }));
 
-  return [...staticUrls, ...blogUrls, ...industryUrls];
+  const leadhubUrl: SitemapUrl = {
+    loc: "https://leadhub.leadsnipper.com",
+    lastmod: currentDate,
+    changefreq: "weekly",
+    priority: 0.9,
+  };
+
+  return [...staticUrls, ...blogUrls, ...industryUrls, leadhubUrl];
 }
 
 export function generateSitemapXml(urls: SitemapUrl[]): string {
