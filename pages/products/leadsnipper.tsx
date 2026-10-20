@@ -39,7 +39,7 @@ const features = [
     icon: <ShieldCheck className="w-5 h-5" />,
     color: "#2170e4",
     title: "Domain Health Dashboard",
-    desc: "SPF, DKIM, DMARC status in one view. Real-time blacklist monitoring. Google Postmaster data synced. Know before you send.",
+    desc: "SPF, DKIM, DMARC, MX, and blocklist checks beside bounce, complaint, and provider signals. Results say when data is missing. This is not an inbox-placement score.",
     badge: "Core",
   },
   {
