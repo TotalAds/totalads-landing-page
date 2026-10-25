@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/hero.css";
 
 import { useRouter } from "next/router";
 import { useEffect } from "react";

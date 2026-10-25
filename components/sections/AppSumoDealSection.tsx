@@ -7,11 +7,62 @@ import React from "react";
 
 import { APPSUMO_DEAL_URL } from "@/lib/launchLinks";
 
-const PERKS = [
-  "Lifetime access — pay once, own forever",
-  "Built-in Reoon verification + deliverability guardrails",
-  "Refundable up to 60 days on AppSumo",
-  "Plans from $39 · Growth $79 · Scale $159",
+const SHARED_FEATURES = [
+  "Continuous Google Sheets sync",
+  "Multi-sender volume split",
+  "PDF export reporting",
+  "Custom webhooks",
+  "Reoon verification (BYO account)",
+  "Multi-step sequences + Spintax",
+  "InboxGuardrail + deliverability auto-pause",
+  "Real-time analytics",
+];
+
+type AppsumoPlan = {
+  id: "starter" | "growth" | "scale";
+  name: string;
+  price: number;
+  highlighted: boolean;
+  quotas: string[];
+};
+
+const PLANS: AppsumoPlan[] = [
+  {
+    id: "starter",
+    name: "Starter",
+    price: 39,
+    highlighted: false,
+    quotas: [
+      "10,000 emails/month",
+      "5 connected senders",
+      "5 connected domains",
+      "1 workspace",
+    ],
+  },
+  {
+    id: "growth",
+    name: "Growth",
+    price: 79,
+    highlighted: true,
+    quotas: [
+      "50,000 emails/month",
+      "20 connected senders",
+      "15 connected domains",
+      "3 workspaces",
+    ],
+  },
+  {
+    id: "scale",
+    name: "Scale",
+    price: 159,
+    highlighted: false,
+    quotas: [
+      "150,000 emails/month",
+      "Unlimited senders",
+      "Unlimited domains",
+      "10 workspaces",
+    ],
+  },
 ];
 
 export default function AppSumoDealSection() {
@@ -21,7 +72,6 @@ export default function AppSumoDealSection() {
       className="relative overflow-hidden border-y border-[#1a1a1a]/10 bg-[#131b2e] py-16 sm:py-20"
       aria-labelledby="appsumo-deal-heading"
     >
-      {/* Atmosphere — warm deal glow, not flat black */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -39,107 +89,115 @@ export default function AppSumoDealSection() {
       />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
-            viewport={{ once: true }}
-          >
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ffcc00]/35 bg-[#ffcc00]/10 px-3 py-1">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#ffcc00]">
-                AppSumo exclusive
-              </span>
-              <span className="rounded bg-[#ffcc00] px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-[#131b2e]">
-                −91%
-              </span>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ffcc00]/35 bg-[#ffcc00]/10 px-3 py-1">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#ffcc00]">
+              AppSumo exclusive
+            </span>
+            <span className="rounded bg-[#ffcc00] px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-[#131b2e]">
+              Lifetime
+            </span>
+          </div>
 
-            <h2
-              id="appsumo-deal-heading"
-              className="font-heading text-3xl font-extrabold leading-[1.15] tracking-tight text-white sm:text-4xl md:text-5xl"
+          <h2
+            id="appsumo-deal-heading"
+            className="font-heading text-3xl font-extrabold leading-[1.15] tracking-tight text-white sm:text-4xl md:text-5xl"
+          >
+            Choose the plan that&apos;s right for you
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+            Feel secure in your purchase with AppSumo&apos;s 60-day money-back
+            guarantee. Pay once — own LeadSnipper forever.
+          </p>
+        </motion.div>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {PLANS.map((plan, index) => (
+            <motion.div
+              key={plan.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.06 * index }}
+              viewport={{ once: true }}
+              className={`relative flex flex-col rounded-2xl border p-6 backdrop-blur-md sm:p-7 ${
+                plan.highlighted
+                  ? "border-[#ffcc00]/55 bg-[#ffcc00]/[0.08] shadow-[0_0_0_1px_rgba(255,204,0,0.2)]"
+                  : "border-white/10 bg-white/[0.06]"
+              }`}
             >
-              Lock in LeadSnipper for{" "}
-              <span className="font-display italic text-[#ffcc00]">$39</span>
-              <span className="block mt-2 text-white/90">
-                Lifetime deal. Zero monthly rent.
-              </span>
-            </h2>
-
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              Own your outbound stack forever — verification, guarded
-              deliverability, and multi-inbox sending — for less than one month
-              of most cold email tools.{" "}
-              <span className="font-medium text-white">
-                One payment. Lifetime access. From $39.
-              </span>
-            </p>
-
-            <ul className="mt-7 space-y-3">
-              {PERKS.map((perk) => (
-                <li
-                  key={perk}
-                  className="flex items-start gap-2.5 text-sm text-white/80 sm:text-[15px]"
-                >
-                  <Check
-                    className="mt-0.5 h-4 w-4 shrink-0 text-[#ffcc00]"
-                    strokeWidth={2.5}
-                  />
-                  {perk}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.08 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-md sm:p-8">
-              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-[#ffcc00]">
-                Limited lifetime offer
-              </p>
-              <p className="mt-3 font-heading text-sm font-medium text-white/60">
-                Starter plan · normally $456/yr
-              </p>
-              <div className="mt-2 flex items-end gap-3">
-                <span className="font-heading text-6xl font-extrabold leading-none tracking-tight text-white sm:text-7xl">
-                  $39
+              {plan.highlighted && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#ffcc00] px-3 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-[#131b2e]">
+                  Best value
                 </span>
-                <div className="mb-1.5 space-y-0.5">
-                  <span className="block text-lg text-white/40 line-through">
-                    $456
-                  </span>
-                  <span className="block text-sm font-semibold text-[#ffcc00]">
-                    Pay once. Own forever.
-                  </span>
-                </div>
+              )}
+
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-[#ffcc00]">
+                {plan.name}
+              </p>
+              <div className="mt-3 flex items-end gap-2">
+                <span className="font-heading text-5xl font-extrabold leading-none tracking-tight text-white">
+                  ${plan.price}
+                </span>
+                <span className="mb-1 text-sm font-medium text-white/50">
+                  Lifetime access
+                </span>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-white/65">
-                Stop bleeding $37–$97 every month on rented sending tools. Grab
-                the LeadSnipper lifetime deal on AppSumo and keep inbox access
-                for good.
-              </p>
+              <ul className="mt-6 space-y-2.5 border-b border-white/10 pb-6">
+                {plan.quotas.map((quota) => (
+                  <li
+                    key={quota}
+                    className="flex items-start gap-2 text-sm text-white/85"
+                  >
+                    <Check
+                      className="mt-0.5 h-4 w-4 shrink-0 text-[#ffcc00]"
+                      strokeWidth={2.5}
+                    />
+                    {quota}
+                  </li>
+                ))}
+              </ul>
+
+              <ul className="mt-5 flex-1 space-y-2">
+                {SHARED_FEATURES.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 text-[13px] leading-snug text-white/60"
+                  >
+                    <Check
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-white/35"
+                      strokeWidth={2.5}
+                    />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
 
               <Link
                 href={APPSUMO_DEAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex w-full items-center justify-center gap-2 rounded-xl bg-[#ffcc00] px-6 py-3.5 font-heading text-[15px] font-bold text-[#131b2e] transition hover:-translate-y-0.5 hover:bg-[#ffe066] hover:shadow-[0_12px_32px_rgba(255,204,0,0.35)]"
+                className={`mt-7 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 font-heading text-[14px] font-bold transition hover:-translate-y-0.5 ${
+                  plan.highlighted
+                    ? "bg-[#ffcc00] text-[#131b2e] hover:bg-[#ffe066] hover:shadow-[0_12px_32px_rgba(255,204,0,0.35)]"
+                    : "border border-white/20 bg-white/5 text-white hover:border-[#ffcc00]/50 hover:bg-white/10"
+                }`}
               >
-                Get lifetime access — $39
+                Buy now — ${plan.price}
               </Link>
-
-              <p className="mt-3 text-center text-[11px] text-white/45">
-                AppSumo Radar · 60-day refund · Plans up to Scale at $159
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
+
+        <p className="mt-8 text-center text-[12px] text-white/45">
+          AppSumo Radar · 60-day refund · Plans from $39 to Scale at $159
+        </p>
       </div>
     </section>
   );

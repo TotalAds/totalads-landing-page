@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -29,17 +28,14 @@ const PRODUCT_PLANS: ProductPlan[] = [
   {
     id: "starter",
     name: "Starter",
-    description: "For founders and small teams doing outbound",
+    description: "For small teams getting started with outbound",
     mailboxesLabel: "10 sending mailboxes",
     volumeLabel: "10,000 emails / month",
     features: [
-      "10 sending mailboxes",
-      "10,000 emails / month",
-      "Custom domain sending",
       "3 custom domains",
-      "Built-in AI email writer",
-      "Use your Reoon account for verification",
+      "Custom domain sending",
       "Campaign analytics",
+      "Core cold-email workflows",
     ],
     cta: "Get Started",
     highlighted: false,
@@ -48,38 +44,31 @@ const PRODUCT_PLANS: ProductPlan[] = [
   {
     id: "growth",
     name: "Growth",
-    description: "For agencies and growing sales teams scaling outbound",
+    description: "For agencies managing more campaigns",
     mailboxesLabel: "50 sending mailboxes",
     volumeLabel: "100,000 emails / month",
     features: [
-      "50 sending mailboxes",
-      "100,000 emails / month",
+      "10 custom domains",
       "Everything in Starter",
-      "Unlimited custom domains",
-      "Advanced analytics + PDF export",
-      "Smart send-time scheduling",
+      "Multi-sender volume allocation",
       "Priority support",
     ],
-    cta: "Get Started",
+    cta: "Choose Growth",
     highlighted: true,
-    badge: "Most Popular",
+    badge: "For agencies",
   },
   {
     id: "scale",
     name: "Scale",
-    description: "For high-volume teams that need dedicated infrastructure",
+    description: "For high-volume outbound operations",
     mailboxesLabel: "Unlimited sending mailboxes",
     volumeLabel: "500,000 emails / month",
     features: [
-      "Unlimited sending mailboxes",
-      "500,000 emails / month",
+      "Unlimited custom domains",
       "Everything in Growth",
-      "Developer REST API + custom webhooks",
+      "PDF campaign export",
+      "Developer REST API and custom webhooks",
       "Continuous Google Sheets sync",
-      "Dedicated SES setup",
-      "Dedicated CSM + onboarding",
-      "SLA-backed deliverability",
-      "Quarterly strategy review",
     ],
     cta: "Talk to Sales",
     highlighted: false,
@@ -90,12 +79,6 @@ const PRODUCT_PLANS: ProductPlan[] = [
 export default function PricingSection() {
   const { isIndia } = useUserRegion();
   const displayCurrency: DisplayCurrency = isIndia ? "INR" : "USD";
-
-  const notFor = [
-    "Beginners sending 50 emails/day who don't care about deliverability",
-    "Newsletter marketing teams (use Mailchimp for that)",
-    "Teams looking for the cheapest tool regardless of reputation risk",
-  ];
 
   return (
     <section
@@ -110,44 +93,13 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4">
-            Pay Less Than Instantly. Own More Than Smartlead.
+          <span className="section-tag justify-center mb-6">Pricing</span>
+          <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6 mb-4">
+            Start small. Scale when you need to.
           </h2>
-
-          <Link
-            href={APPSUMO_DEAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-auto mb-2 inline-flex max-w-xl flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-2xl border border-[#ffcc00]/50 bg-[#fff8d6] px-4 py-3 text-sm text-[#131b2e] transition hover:border-[#ffcc00] hover:bg-[#ffef9a]"
-          >
-            <span className="rounded bg-[#131b2e] px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-[#ffcc00]">
-              AppSumo
-            </span>
-            <span className="font-heading font-semibold">
-              Skip monthly pricing — get lifetime access from{" "}
-              <span className="text-[#b45309]">$39</span>
-            </span>
-            <span className="font-medium text-[#b45309]">View deal →</span>
-          </Link>
-
-          {/* Anchoring psychology */}
-          {/* <div className="max-w-2xl mx-auto mb-4 p-4 bg-[#f8fafc] border border-[#e2e8f0] rounded-xl">
-            <p className="text-[#475569] text-base">
-              Most tools charge{" "}
-              <span className="font-bold text-[#1e293b]">$37–$97/month</span>{" "}
-              ({formatInr(3000)} to {formatInr(8000)}) and you{" "}
-              <span className="font-bold text-[#ef4444]">
-                don&apos;t own your infrastructure
-              </span>
-              . AWS SES costs{" "}
-              <span className="font-bold text-[#22c55e]">
-                {displayCurrency === "INR"
-                  ? `${formatInr(0.84)} per 1,000 emails`
-                  : `${formatUsd(inrToUsd(0.84))} per 1,000 emails`}
-              </span>
-              . The math speaks for itself.
-            </p>
-          </div> */}
+          <p className="text-body-md text-[#727785] max-w-2xl mx-auto">
+            Choose the plan that fits your sending volume and workflow.
+          </p>
         </motion.div>
 
         <motion.div
@@ -241,59 +193,26 @@ export default function PricingSection() {
           })}
         </motion.div>
 
-        {/* AWS SES — included note */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12 max-w-3xl mx-auto"
-        >
-          <div className="rounded-2xl p-6 bg-white border border-[#e2e8f0] shadow-sm">
-            <h3 className="text-lg font-bold text-[#1e293b] mb-2">
-              All plans include AWS SES
-            </h3>
-            <p className="text-sm text-[#475569] leading-relaxed">
-              You bring your own AWS SES (or let us provision one for you). You
-              pay AWS directly for email sending — about{" "}
-              <strong>$0.10 per 1,000 emails</strong>. LeadSnipper only charges
-              for the platform. Sending reputation, compliance, and
-              deliverability limits are fully managed by your AWS SES account
-              and AWS policies.
-            </p>
-          </div>
-        </motion.div> */}
+        <p className="text-center text-sm text-[#727785] mt-10 max-w-2xl mx-auto">
+          Feature availability and limits depend on the selected plan. Review the current pricing page for full details.
+        </p>
 
-        {/* Who This Is NOT For */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-14 max-w-2xl mx-auto"
-        >
-          <div className="p-6 bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl">
-            <h4 className="text-lg font-bold text-[#1e293b] mb-3">
-              LeadSnipper is <span className="text-[#ef4444]">not</span> for
-              everyone
-            </h4>
-            <ul className="space-y-2">
-              {notFor.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2 text-[#475569] text-sm"
-                >
-                  <X className="w-4 h-4 text-[#ef4444] mt-0.5 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-[#1e293b] text-sm font-medium mt-4">
-              If you&apos;re serious about cold outbound at scale — and you want
-              to own your infrastructure — this is built for you.
-            </p>
-          </div>
-        </motion.div>
+        <div className="mt-12 max-w-2xl mx-auto text-center rounded-2xl border border-[#c2c6d6]/30 bg-white px-6 py-8">
+          <h3 className="font-heading font-bold text-xl text-[#131b2e]">
+            Prefer lifetime access?
+          </h3>
+          <p className="text-sm text-[#424754] mt-3 leading-relaxed">
+            LeadSnipper lifetime licenses are also available through AppSumo, with sending limits and features based on the selected tier.
+          </p>
+          <Link
+            href={APPSUMO_DEAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost rounded-full text-sm mt-6 inline-flex"
+          >
+            Explore Lifetime Plans
+          </Link>
+        </div>
       </div>
     </section>
   );

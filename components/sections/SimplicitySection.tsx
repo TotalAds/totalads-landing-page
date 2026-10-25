@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Mail, Send, ShieldCheck, Users } from "lucide-react";
+import { Mail, Send, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -10,29 +10,29 @@ const steps = [
     number: 1,
     icon: Mail,
     iconColor: "#0058be",
-    title: "Connect your mailbox",
-    body: "Link Google Workspace, Microsoft 365, or any SMTP. OAuth in one click.",
+    title: "Connect your inboxes",
+    body: "Connect a supported sending account and review its authentication and sender health.",
   },
   {
     number: 2,
-    icon: ShieldCheck,
+    icon: Users,
     iconColor: "#10b981",
-    title: "Verify your domain",
-    body: "Auto SPF, DKIM, and DMARC records — copy-paste, done. Live DNS checks until you pass.",
+    title: "Import and verify your leads",
+    body: "Upload a CSV, organize your contacts, and complete the required verification steps for your campaign.",
   },
   {
     number: 3,
-    icon: Users,
+    icon: Send,
     iconColor: "#b75b00",
-    title: "Import your leads",
-    body: "Upload a CSV, sync from CRM, or pull from Clay. Auto-clean and dedupe as you go.",
+    title: "Build your sequence",
+    body: "Write your initial email, add follow-ups, set delays, and configure campaign schedules and sending controls.",
   },
   {
     number: 4,
-    icon: Send,
-    iconColor: "#10b981",
-    title: "Launch your sequence",
-    body: "Pick a cadence, set send windows, and go. LeadSnipper paces sends to protect reputation.",
+    icon: ShieldCheck,
+    iconColor: "#0058be",
+    title: "Monitor and improve",
+    body: "Track campaign performance, review bounce and complaint signals, and use the available safeguards when sending risks arise.",
   },
 ];
 
@@ -40,7 +40,6 @@ export default function SimplicitySection() {
   return (
     <section className="py-24 section-mesh border-t border-[#c2c6d6]/20 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-16">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,18 +47,13 @@ export default function SimplicitySection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <span className="section-tag justify-center mb-6">From Zero to Sending</span>
+          <span className="section-tag justify-center mb-6">A simpler outbound workflow</span>
           <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
-            From zero to sending in{" "}
-            <span className="font-display italic text-[#0058be]">minutes — not weeks.</span>
+            From lead list to{" "}
+            <span className="font-display italic text-[#0058be]">campaign reporting.</span>
           </h2>
-          <p className="text-body-md text-[#727785] max-w-2xl mx-auto mt-4">
-            No DNS gymnastics. No deliverability detective work. Connect a mailbox, verify your
-            domain, import your leads, and hit send. That&apos;s it.
-          </p>
         </motion.div>
 
-        {/* Steps grid */}
         <div className="mt-14 max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, i) => {
             const Icon = step.icon;
@@ -87,33 +81,16 @@ export default function SimplicitySection() {
           })}
         </div>
 
-        {/* Closing reassurance line */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-14 text-center"
-        >
-          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass-card border border-[#10b981]/30 bg-[#10b981]/[0.06]">
-            <CheckCircle2 className="w-4 h-4 text-[#10b981]" />
-            <p className="text-sm font-medium text-[#131b2e]">
-              No DNS expertise required. No deliverability experience required.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* CTA row */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-12 flex flex-col items-center justify-center gap-3">
           <Link
             href="https://app.leadsnipper.com/signup?product=leadsnipper"
             className="btn-primary rounded-full text-sm"
           >
-            Start Free 14-Day Trial →
+            Start Your 14-Day Trial
           </Link>
-          <Link href="/pricing" className="btn-ghost rounded-full text-sm">
-            See pricing
-          </Link>
+          <p className="text-sm text-[#727785] text-center">
+            You can start with the sending accounts you already use.
+          </p>
         </div>
       </div>
     </section>

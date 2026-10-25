@@ -84,17 +84,33 @@ export default function ManagedServicesSection() {
         >
           <span className="section-tag justify-center mb-6">
             <LifeBuoy className="w-3.5 h-3.5" />
-            Hands-On Workspace Support
+            Hands-on setup support
           </span>
           <h2 className="font-heading font-bold text-headline-lg text-[#131b2e] mt-6">
-            Don&apos;t get stuck on setup.{" "}
-            <span className="font-display italic text-[#0058be]">We fix it.</span>
+            Need help getting your outbound setup right?
           </h2>
-          <p className="text-body-md text-[#727785] mt-4 max-w-2xl mx-auto">
-            From creating brand-new Google Workspace accounts to unblocking frozen Microsoft 365
-            inboxes, our team handles the painful technical groundwork so you can focus on
-            running campaigns — not fighting your email provider.
+          <p className="text-body-md text-[#424754] mt-4 max-w-2xl mx-auto">
+            Software is only one part of running a successful outbound operation.
           </p>
+          <p className="text-body-md text-[#727785] mt-3 max-w-2xl mx-auto">
+            If you need help configuring your outbound system or managing campaigns, LeadSnipper also offers setup and campaign management services.
+          </p>
+          <p className="text-body-md text-[#727785] mt-3 max-w-2xl mx-auto">
+            Get help with the practical work involved in getting your outbound workflow running, so your team can focus on serving clients.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+            <a
+              href="https://cal.com/heyrehan/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary rounded-full text-sm"
+            >
+              Talk About Your Setup
+            </a>
+            <Link href="#platform" className="btn-ghost rounded-full text-sm">
+              Explore the Platform
+            </Link>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-5 mb-24">
@@ -172,10 +188,10 @@ export default function ManagedServicesSection() {
                   rel="noopener noreferrer"
                   className="btn-primary rounded-full text-sm"
                 >
-                  Book a managed SES call →
+                  Talk About Your Setup
                 </a>
-                <Link href="/contact" className="btn-ghost rounded-full text-sm">
-                  Get a quote
+                <Link href="#platform" className="btn-ghost rounded-full text-sm">
+                  Explore the Platform
                 </Link>
               </div>
             </div>

@@ -5,84 +5,44 @@ export interface FAQItem {
 
 export const homepageFaqs: FAQItem[] = [
   {
-    question: "Can I use my existing Gmail or Microsoft 365 account?",
+    question: "Can I use the inboxes I already have?",
     answer:
-      "Absolutely — that's the primary way most teams use LeadSnipper. Connect any Google Workspace inbox or Microsoft 365 / Outlook account via OAuth in one click. No passwords stored. You're authenticated and sending in under 5 minutes. Custom SMTP / IMAP (Zoho, Fastmail, GoDaddy, corporate mail servers) is also fully supported and takes about 10 minutes to configure.",
+      "Yes. LeadSnipper supports Google Workspace, Microsoft 365/Outlook, Zoho, and custom SMTP/IMAP sending accounts.",
   },
   {
-    question: "What email guardrails protect my sender reputation?",
+    question: "Does LeadSnipper guarantee inbox placement?",
     answer:
-      "Four systems run automatically on every campaign. (1) Sequencing: multi-step follow-ups fire only when prospects haven't replied — zero manual work. (2) Spintax: randomizes subject lines and copy with {Hey|Hello|Hi} syntax so each recipient gets a unique variant, defeating spam filters that catch identical templates. (3) Bounce auto-pause: the moment a hard bounce is detected, the campaign halts and you're alerted — no overnight domain burning. (4) Granular daily caps: set per-mailbox and per-domain daily send limits, spread intelligently across all connected inboxes via inbox rotation.",
+      "No. Inbox placement depends on many factors, including sender configuration, list quality, email content, sending practices, and receiving-provider decisions. LeadSnipper provides verification, sending controls, monitoring, and safeguards to help you manage your outbound process.",
   },
   {
-    question: "Do you offer help setting up Google Workspace or Microsoft 365?",
+    question: "How does LeadSnipper help protect sender reputation?",
     answer:
-      "Yes — we offer hands-on workspace support as an add-on. This includes creating brand-new Google Workspace accounts, configuring DNS (MX, SPF, DKIM, DMARC), and having inboxes ready to connect in LeadSnipper. We also troubleshoot existing connection issues (OAuth failures, SMTP auth errors, Cloudflare conflicts) and handle Microsoft 365 account blocks and Outlook sending restrictions — including the appeal, remediation, and re-connection.",
+      "It offers email verification, sender health checks, mailbox-level sending controls, pacing, bounce and complaint monitoring, and automatic campaign pauses when risk thresholds are reached. A paused campaign stays paused until you acknowledge it.",
   },
   {
-    question: "What is the Premium Managed AWS SES service?",
+    question: "Does LeadSnipper include automatic email warm-up?",
     answer:
-      "This is our done-for-you infrastructure tier. We connect your sending domains to our enterprise AWS SES setup — dedicated IPs, sending limit increases, bounce management, and ongoing deliverability monitoring all included. You keep your brand and domains; we own the infrastructure. Ideal for agencies and high-volume teams sending 100,000–500,000+ emails/month who don't want an in-house DevOps team managing AWS. Priced as a flat monthly retainer with no per-email markup. Book a call to get a quote.",
+      "LeadSnipper does not use artificial warm-up pools. It focuses on sender health checks, verification, controlled sending, monitoring, and campaign safeguards.",
   },
   {
-    question: "Why should I use LeadSnipper instead of Instantly?",
+    question: "Does LeadSnipper find leads for me?",
     answer:
-      "Instantly is solid for getting started. But they own your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper, you bring your own AWS SES. You own your reputation, your deliverability, your data. Plus, we have built-in Reoon email verification, deliverability pacing, and a domain health dashboard that Instantly doesn't offer.",
+      "No. LeadSnipper focuses on managing and executing outbound campaigns. You bring your own leads.",
   },
   {
-    question: "I already use Smartlead. Why switch?",
+    question: "Can I share campaign reports with clients?",
     answer:
-      "If Smartlead is working, great. But if the UI frustrates you, you want built-in verification instead of a separate tool, or you want to use your own SES instead of their infrastructure — that's exactly what we built. Teams that switch tell us the domain health dashboard alone was worth it.",
+      "Campaign analytics are available, and PDF campaign exports are included on eligible plans. Check your selected plan's feature list before subscribing.",
   },
   {
-    question: "What is BYO SES? Do I need to know AWS?",
+    question: "Can you help us set up our outbound system?",
     answer:
-      'BYO SES means "Bring Your Own" Amazon Simple Email Service. It gives you full control over your sending infrastructure and reputation. But if you don\'t know AWS or don\'t want to deal with it, choose our Managed mode — we handle everything for you. The BYO option is there when you\'re ready for full control.',
-  },
-  {
-    question: "How does LeadSnipper handle deliverability?",
-    answer:
-      "Deliverability isn't a feature we bolt on — it's the architecture. Verified domains with proper DNS (DKIM, SPF), daily caps and multi-day pacing, automatic bounce suppression, complaint tracking, and built-in Reoon verification. Every layer is designed so your emails land in the inbox, not spam.",
-  },
-  {
-    question: "How does the AI email writer work?",
-    answer:
-      "The AI writer generates campaign drafts using your knowledge base and tone — so it writes like you, not like a generic template. You get a strong first draft that sounds like a real person. Edit and send, saving hours per campaign. It doesn't write perfect cold email by itself (nobody's AI does), but it gets you 80% there fast.",
-  },
-  {
-    question: "Do you include an automated email warmup tool?",
-    answer:
-      "Not today. We do not sell an artificial warmup-pool product. LeadSnipper protects reputation with DNS authentication, Reoon verification, daily caps, paced sending, and auto-pause when bounce or complaint rates spike — the controls that matter when you ramp real outreach.",
-  },
-  {
-    question: "Can I really send cold email on this?",
-    answer:
-      "That's literally what it's built for. We're not a newsletter tool pretending to do outbound. Cold email is the entire product — verification, domain health, paced sending, analytics. Every feature is designed for cold outbound at scale.",
-  },
-  {
-    question: "The pricing seems low. What's the catch?",
-    answer:
-      "We're in early-bird pricing because we're growing. The product is production-ready — real teams are sending real campaigns on it today. We're pricing aggressively now because we want early users who give us feedback and stick around. Prices will go up. AWS SES costs $0.10 per 1,000 emails — the math works because we're not marking up infrastructure 100x.",
+      "Yes. LeadSnipper also offers outbound setup and campaign management services. Contact us to discuss the scope of support you need.",
   },
   {
     question: "Is there a free trial?",
     answer:
-      "Yes. Start free with no credit card. You get 1,000 emails, 500 contacts, basic analytics, and API access for 1 month. Enough to run a real campaign and see if LeadSnipper is the right fit for your outbound.",
-  },
-  {
-    question: "Is LeadSnipper the same as Leads-Sniper / Leads Sniper?",
-    answer:
-      "No. LeadSnipper (one word) is a deliverability-first cold email platform at leadsnipper.com — Google Workspace, Microsoft 365, SMTP, and BYO AWS SES. We are not affiliated with Leads-Sniper / Leads Sniper, a Google Maps scraping tool. If you found us while searching that name, you're in the wrong place for Maps scrapers; you're in the right place for cold email deliverability.",
-  },
-  {
-    question: "Does LeadSnipper find leads?",
-    answer:
-      "LeadSnipper sends. LeadHub finds and researches leads. They work together or separately.",
-  },
-  {
-    question: "Do you have integrations with my CRM?",
-    answer:
-      "We integrate with the tools outbound teams actually use — HubSpot, Salesforce, Zapier, Make, Clay, Zoho, and Google Sheets. We also have a full REST API for custom workflows. More integrations are shipping regularly.",
+      "Yes. LeadSnipper offers a 14-day trial with 1,000 emails, 2 sending mailboxes, and 1 custom domain. The trial does not include the developer API, Google Sheets sync, PDF export, or webhooks. Check the current trial terms before starting.",
   },
 ];
 

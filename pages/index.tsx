@@ -1,21 +1,16 @@
 import React from "react";
 
 import AppSumoDealSection from "@/components/sections/AppSumoDealSection";
-import CampaignHealthScore from "@/components/sections/CampaignHealthScore";
+import AgencyOperationsSection from "@/components/sections/AgencyOperationsSection";
 import ChecklistLeadCaptureSystem from "@/components/sections/ChecklistLeadCaptureSystem";
 import CTASection from "@/components/sections/CTASection";
-import DeliverabilityStack from "@/components/sections/DeliverabilityStack";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/sections/Footer";
-import { HeroScrollAnimation } from "@/components/sections/HeroScrollAnimation";
-import InboxIntegrationsSection from "@/components/sections/InboxIntegrationsSection";
+import { HomeHero } from "@/components/sections/LandingHero";
 import ManagedServicesSection from "@/components/sections/ManagedServicesSection";
 import PainSection from "@/components/sections/PainSection";
 import PricingSection from "@/components/sections/PricingSection";
 import SimplicitySection from "@/components/sections/SimplicitySection";
-import TestimonialsSlider from "@/components/sections/TestimonialsSlider";
-import TrustStrip from "@/components/sections/TrustStrip";
-import LeadHubPreview from "@/components/sections/LeadHubPreview";
 import FeaturesGrid from "@/components/sections/TwoWaysSection";
 import SEO from "@/components/SEO";
 import { Navbar } from "@/components/ui/navbar";
@@ -25,60 +20,39 @@ export default function Home() {
     <>
       <SEO pageKey="home" />
 
-      {/* Navbar */}
       <Navbar />
 
-      {/* Hero — Own Your Email Infrastructure */}
-      <section className="hero-bg dot-grid pt-24 md:pt-32">
-        <HeroScrollAnimation />
+      <section className="hero-bg dot-grid">
+        <div className="pt-24">
+          <div className="border-y border-[#c2c6d6]/40 bg-white/80">
+            <p className="mx-auto max-w-4xl px-5 py-2.5 text-center text-[13px] font-medium tracking-wide text-[#131b2e]">
+              Cold email operations for B2B agencies managing multiple client campaigns.
+            </p>
+          </div>
+        </div>
+        <HomeHero />
       </section>
 
-      {/* Trust Strip — integration logos */}
-      <TrustStrip />
-
-      {/* A focused LeadHub introduction; the homepage remains LeadSnipper-first. */}
-      <LeadHubPreview />
-
-      {/* AppSumo lifetime deal — $39 LTD */}
-      <AppSumoDealSection />
-
-      {/* Problem — Before / After */}
       <PainSection />
 
-      {/* Solution — Flagship: Intelligent Deliverability Protection */}
-      <DeliverabilityStack />
-
-      {/* Campaign Health Score — live deliverability dashboard */}
-      <CampaignHealthScore />
-
-      {/* Features — Connect / Send / Protect / Measure */}
       <FeaturesGrid />
 
-      {/* Inbox Integrations — Gmail / Outlook / SMTP + Campaign Guardrails */}
-      <InboxIntegrationsSection />
-
-      {/* From Zero to Sending — 4-step onboarding */}
       <SimplicitySection />
 
-      {/* Add-on Support Services + Premium Managed AWS SES */}
+      <AgencyOperationsSection />
+
       <ManagedServicesSection />
 
-      {/* Pricing — Starter / Growth / Scale */}
       <PricingSection />
 
-      {/* Testimonials */}
-      <TestimonialsSlider />
+      <AppSumoDealSection />
 
-      {/* FAQ */}
       <FAQSection />
 
-      {/* Final CTA */}
       <CTASection />
 
-      {/* Footer */}
       <Footer />
 
-      {/* Lead capture system — preserved (scroll bar + exit intent) */}
       <ChecklistLeadCaptureSystem />
     </>
   );

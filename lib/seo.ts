@@ -7,11 +7,10 @@ export const seoConfig = {
       ? "https://leadsnipper.com"
       : "http://localhost:3001",
 
-  defaultTitle:
-    "LeadSnipper — Cold Email at Scale Without Burning Your Domain",
+  defaultTitle: "LeadSnipper — Cold Email Software for Agencies",
   titleTemplate: "%s | LeadSnipper",
   defaultDescription:
-    "LeadSnipper is the cold email platform built on AWS SES. Verify leads with Reoon, warm up domains, and send campaigns that land in the inbox — not spam. Start a 14-day trial.",
+    "LeadSnipper helps outbound agencies manage client cold email. Connect sending accounts, verify leads, and monitor bounce and complaint signals. Start a 14-day trial.",
 
   defaultOpenGraph: {
     type: "website",
@@ -23,7 +22,7 @@ export const seoConfig = {
         url: "https://leadsnipper.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "LeadSnipper — Cold email at scale without burning your domain",
+        alt: "LeadSnipper — cold email software for agencies managing client campaigns",
       },
     ],
   },
@@ -102,25 +101,23 @@ export interface PageConfig {
 
 export const pageConfigs: Record<string, PageConfig> = {
   home: {
-    title:
-      "LeadSnipper — Deliverability-First Cold Email Platform (Instantly Alternative)",
+    title: "LeadSnipper — Cold Email Software for Agencies",
     description:
-      "Deliverability-first cold email on your Google, Microsoft, or AWS SES. Verification, pacing, and auto reputation guardrails. From ₹999/mo. 14-day trial.",
+      "Run client cold email with more control. Connect sending accounts, verify leads, set mailbox limits, and monitor bounce and complaint signals. Start a 14-day trial.",
     keywords:
-      "deliverability-first cold email platform, cold email software, Instantly alternative, Smartlead alternative, email outreach tool, email deliverability, sender reputation, domain reputation, inbox placement, email verification, AI personalization, BYO SES, AWS SES cold email, cold email infrastructure, bulk cold email, cold outreach platform, cold email at scale",
+      "cold email software for agencies, client cold email, outbound agency software, mailbox sending limits, email verification, campaign safeguards, bounce monitoring, cold email sequences, Google Workspace cold email, Microsoft 365 cold email",
     canonical: "https://leadsnipper.com",
     openGraph: {
-      title:
-        "LeadSnipper — Deliverability-First Cold Email Platform",
+      title: "LeadSnipper — Cold Email Software for Agencies",
       description:
-        "Own your email infrastructure. Send from Google Workspace, Microsoft 365, SMTP, or AWS SES — with intelligent reputation protection, AI personalization, and advanced analytics.",
+        "Manage client cold email from one place. Connect the inboxes you already use, verify leads, and monitor bounce and complaint signals.",
       url: "https://leadsnipper.com",
       images: [
         {
           url: "https://leadsnipper.com/og-home.jpg",
           width: 1200,
           height: 630,
-          alt: "LeadSnipper — Deliverability-first cold email platform that protects your domains automatically",
+          alt: "LeadSnipper — cold email software for agencies managing client campaigns",
         },
       ],
     },
@@ -491,7 +488,7 @@ export const structuredData = {
     url: "https://leadsnipper.com",
     logo: "https://leadsnipper.com/logo.png",
     description:
-      "Cold email outreach platform built on AWS SES. Own your sending infrastructure, verify leads, warm up domains, and send campaigns that land in the inbox.",
+      "Cold email software for B2B agencies. Connect sending accounts, verify leads, and monitor bounce and complaint signals from one workspace.",
     foundingDate: "2024",
     sameAs: [
       "https://www.linkedin.com/company/leadsnipper",
@@ -536,7 +533,7 @@ export const structuredData = {
     applicationSubCategory: "Cold Email Software",
     operatingSystem: "Web Browser",
     description:
-      "Cold email platform with BYO AWS SES, built-in Reoon email verification, domain health dashboard, deliverability pacing, and campaign analytics.",
+      "Cold email software for agencies. Connect sending accounts, verify leads with Reoon, set mailbox limits, and monitor bounce and complaint signals.",
     url: "https://leadsnipper.com",
     downloadUrl: "https://app.leadsnipper.com/signup?product=leadsnipper",
     softwareVersion: "1.0",
@@ -590,7 +587,7 @@ export const structuredData = {
           url: "https://app.leadsnipper.com/signup?product=leadsnipper",
           availability: "https://schema.org/InStock",
           description:
-            "Growth cold email plan with 50 sending mailboxes, 100,000 emails per month, unlimited custom domains, smart scheduling, advanced analytics, and priority support.",
+            "Growth plan for agencies: 50 sending mailboxes, 100,000 emails per month, 10 custom domains, multi-sender volume allocation, and priority support.",
         },
         {
           "@type": "Offer",
@@ -600,7 +597,7 @@ export const structuredData = {
           url: "https://leadsnipper.com/contact",
           availability: "https://schema.org/InStock",
           description:
-            "Scale cold email plan with unlimited sending mailboxes, 500,000 emails per month, dedicated SES setup, dedicated CSM, and SLA-backed deliverability.",
+            "Scale plan with unlimited sending mailboxes, 500,000 emails per month, PDF campaign export, developer REST API, custom webhooks, and Google Sheets sync.",
         },
       ],
     },
@@ -613,7 +610,7 @@ export const structuredData = {
     name: "LeadSnipper",
     image: "https://leadsnipper.com/og-image.jpg",
     description:
-      "LeadSnipper is a cold email platform built around AWS SES, email verification, domain health, campaign management, and deliverability safeguards.",
+      "LeadSnipper helps agencies manage client cold email: sending accounts, lead verification, mailbox controls, and campaign monitoring.",
     brand: {
       "@type": "Brand",
       name: "LeadSnipper",

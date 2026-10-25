@@ -80,6 +80,12 @@ body {
   font-family: 'Instrument Serif', Georgia, serif;
 }
 
+.text-headline-lg {
+  font-size: clamp(36px, 4.5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
 .font-heading {
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
