@@ -71,30 +71,37 @@ export default function BestColdEmailSoftware() {
             <li>Clean, beginner-friendly interface</li>
             <li>Large community and learning resources</li>
             <li>Unlimited email accounts on higher plans</li>
-            <li>Built-in warmup (on shared pools)</li>
+            <li>Warm-up included on every plan</li>
           </ul>
         </div>
         <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-5">
           <h3 className="font-bold text-[#ef4444] mb-2 text-sm">Limitations</h3>
           <ul className="space-y-1.5 text-[#475569] text-sm">
-            <li>Shared sending infrastructure — your reputation depends on others</li>
-            <li>No built-in email verification</li>
+            <li>Each client workspace needs its own subscription</li>
+            <li>Growth plan capped at 5,000 emails a month</li>
             <li>No BYO SES option — you can&apos;t bring your own infrastructure</li>
-            <li>Warmup runs on shared pools, not your actual domains</li>
             <li>Limited domain health visibility</li>
           </ul>
         </div>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        <strong>Pricing:</strong> $37/month (Growth) to $97/month (Hypergrowth).
-        Plus you&apos;ll likely need a separate email verification service
-        ($20-50/month), bringing real costs to $57-147/month — all on shared
-        infrastructure. For a deeper decision page, read our{" "}
+        {/* instantly.ai/pricing, checked 2026-10-26. Re-verify before publish. */}
+        <strong>Pricing:</strong> $47/month Growth ($37.60/month billed yearly)
+        to $97/month Hypergrowth. If you add a separate email verification
+        service ($20-50/month), real costs run about $67-147/month. Agencies
+        should also compare{" "}
+        <Link
+          href="/blog/instantly-alternatives"
+          className="text-[#3b82f6] font-semibold hover:underline"
+        >
+          Instantly alternatives for agencies
+        </Link>
+        . For a deeper decision page, read our{" "}
         <Link
           href="/vs/instantly"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
-          Instantly alternative comparison
+          Instantly vs LeadSnipper comparison
         </Link>
         .
       </p>
@@ -121,17 +128,24 @@ export default function BestColdEmailSoftware() {
           <h3 className="font-bold text-[#ef4444] mb-2 text-sm">Limitations</h3>
           <ul className="space-y-1.5 text-[#475569] text-sm">
             <li>Complex UI — steep learning curve for new users</li>
-            <li>No native email verification</li>
+            <li>Email verification is a paid add-on</li>
             <li>Limited analytics without add-ons</li>
-            <li>Shared infrastructure — same IP pool risks as Instantly</li>
             <li>API feels bolted on rather than built in</li>
           </ul>
         </div>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        <strong>Pricing:</strong> $39/month (Basic) to $94/month (Pro). Add
-        verification and the real cost is $59-144/month. Still shared
-        infrastructure. See the dedicated{" "}
+        {/* smartlead.ai/pricing, checked 2026-10-26. Re-verify before publish. */}
+        <strong>Pricing:</strong> $39/month (Base) to $94/month (Pro), with
+        white-label client workspaces at $29 each from Pro. Add verification and
+        the real cost is about $59-144/month. Agencies can also compare{" "}
+        <Link
+          href="/blog/smartlead-alternatives"
+          className="text-[#3b82f6] font-semibold hover:underline"
+        >
+          Smartlead alternatives for agencies
+        </Link>
+        . See the dedicated{" "}
         <Link
           href="/vs/smartlead"
           className="text-[#3b82f6] font-semibold hover:underline"
@@ -145,19 +159,19 @@ export default function BestColdEmailSoftware() {
         LeadSnipper: Own Your Infrastructure, Own Your Results
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
-        LeadSnipper takes a different approach. Instead of renting you shared
-        infrastructure, it lets you bring your own AWS SES — or use managed
-        sending. Built-in Reoon verification, domain health monitoring, and
-        warmup tied to your actual domains.
+        LeadSnipper takes a different approach. It lets you bring your own AWS
+        SES, or use managed sending. Reoon verification before send (bring your
+        own Reoon key), domain health monitoring, and mailbox-level daily caps,
+        pacing and bounce/complaint auto-pause instead of a warm-up pool.
       </p>
       <div className="grid md:grid-cols-2 gap-4 mb-6">
         <div className="bg-gradient-to-br from-[#3b82f6]/5 to-[#22c55e]/5 border border-[#3b82f6]/20 rounded-xl p-5">
           <h3 className="font-bold text-[#3b82f6] mb-2 text-sm">Strengths</h3>
           <ul className="space-y-1.5 text-[#475569] text-sm">
             <li>BYO AWS SES — you own your sending reputation</li>
-            <li>Built-in Reoon email verification (no separate tool)</li>
+            <li>Reoon verification before send (bring your own Reoon key)</li>
             <li>Domain health dashboard — one screen for everything</li>
-            <li>Warmup tied to your actual domains with daily pacing</li>
+            <li>Daily caps, pacing and bounce/complaint auto-pause (no warm-up pool)</li>
             <li>AI email writer trained on your knowledge base</li>
             <li>Campaign analytics with PDF export</li>
             <li>Multi-day sending with automatic queue management</li>
@@ -176,7 +190,7 @@ export default function BestColdEmailSoftware() {
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
         <strong>Pricing:</strong> 14-day trial (1,000 emails). Starter at
-        ₹999/month (~$20). Growth at ₹2,499/month (~$50). AWS SES adds ~$0.10
+        ₹999/month ($19). Growth at ₹2,499/month (~$50). AWS SES adds ~$0.10
         per 1,000 emails. Total cost for 15,000 emails/month on Starter:{" "}
         <strong>~$21.50</strong> with dedicated infrastructure and built-in
         verification.
@@ -206,14 +220,14 @@ export default function BestColdEmailSoftware() {
           <tbody>
             {[
               ["BYO AWS SES", "No", "No", "Yes"],
-              ["Built-in verification", "No", "No", "Yes (Reoon)"],
+              ["Pre-send verification", "Check vendor", "Paid add-on", "Yes (Reoon, BYO key)"],
               ["Domain health dashboard", "Limited", "Limited", "Full dashboard"],
-              ["Email warmup", "Shared pool", "Shared pool", "Your domains"],
+              ["Email warm-up", "Included", "Included", "No warm-up pool (caps, pacing, auto-pause)"],
               ["AI email writer", "Basic", "Basic", "Knowledge-base trained"],
               ["Multi-day pacing", "Manual", "Manual", "Automatic"],
               ["PDF reports", "No", "Add-on", "Built-in"],
-              ["Starting price", "$37/mo", "$39/mo", "14-day trial (then ₹999/mo)"],
-              ["Infrastructure", "Shared", "Shared", "Dedicated (BYO SES)"],
+              ["Starting price", "$47/mo ($37.60 yearly)", "$39/mo", "14-day trial, then $19 (₹999)/mo"],
+              ["Infrastructure", "Managed", "Managed", "BYO SES or managed"],
             ].map(([feature, instantly, smartlead, leadsnipper], i) => (
               <tr
                 key={feature}
@@ -261,10 +275,9 @@ export default function BestColdEmailSoftware() {
           </h3>
           <p className="text-[#475569] text-sm">
             You send at scale (5,000+ emails/month), want to own your sending
-            infrastructure, need built-in verification, and care about
-            deliverability controls. If you&apos;ve been burned by shared
-            infrastructure or are tired of paying $100+/month for tools that
-            don&apos;t give you control — LeadSnipper is built for you.
+            infrastructure, want verification before send, and care about
+            deliverability controls. If you&apos;re tired of paying
+            $100+/month for tools that don&apos;t give you control — LeadSnipper is built for you.
           </p>
         </div>
       </div>
@@ -282,7 +295,7 @@ export default function BestColdEmailSoftware() {
         <Link href="/blog/how-to-send-cold-emails-at-scale-without-getting-blacklisted" className="text-[#3b82f6] font-medium hover:underline">cold email at scale guide</Link>.
       </p>
       <p className="text-[#475569] leading-relaxed">
-        The free trial gives you 1,000 emails with no credit card.{" "}
+        The 14-day trial gives you 1,000 emails with no credit card.{" "}
         <Link
           href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"

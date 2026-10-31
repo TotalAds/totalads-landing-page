@@ -466,12 +466,12 @@ export default function AwsSesBounceComplaintConfigurationSetsColdEmail2026() {
         bounce plumbing; on SES you either wire it or inherit the risk.
       </p>
       <p className="text-[#475569] leading-relaxed mb-4">
-        Compared with tools that rent shared sending (see{" "}
+        Compared with managed sending platforms (see{" "}
         <Link
           href="/vs/instantly"
           className="text-[#0058be] font-medium hover:underline"
         >
-          LeadSnipper vs Instantly
+          Instantly vs LeadSnipper
         </Link>
         ), BYO SES plus configuration sets gives you explicit bounce/complaint
         destinations and account-level suppression you can audit.{" "}
@@ -529,7 +529,7 @@ export default function AwsSesBounceComplaintConfigurationSetsColdEmail2026() {
           href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#0058be] font-semibold hover:underline"
         >
-          start free
+          start a 14-day trial
         </Link>{" "}
         and wire the next domain with bounce plumbing you can actually see.
       </p>

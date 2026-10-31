@@ -26,7 +26,7 @@ export default function BenefitsRow() {
         "Stop staring at blank screens. Our AI drafts campaigns that sound human, not templated — using your tone, your data, your context.",
       outcomes: [
         "Send campaigns that sound like a real person wrote them",
-        "Built-in Reoon verification before every send",
+        "Reoon verification before every send (bring your own key)",
         "Stop guessing send times — AI optimizes per recipient",
       ],
     },

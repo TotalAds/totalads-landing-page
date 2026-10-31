@@ -8,7 +8,7 @@ import React from "react";
 const seoLinks = [
   {
     title: "Cold Email Software",
-    description: "Send 10,000+ emails without hitting spam. Built-in verification, pacing, and AWS SES infrastructure.",
+    description: "Send 10,000+ emails without hitting spam. Verification before send, pacing, and AWS SES infrastructure.",
     href: "/cold-email-software",
     icon: <Mail className="w-5 h-5" />,
     color: "#0058be",

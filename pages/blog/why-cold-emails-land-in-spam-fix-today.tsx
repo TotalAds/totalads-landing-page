@@ -97,9 +97,9 @@ export default function ColdEmailsInSpam() {
           <li>• Known spam traps</li>
         </ul>
         <p className="text-[#92400e] text-sm">
-          LeadSnipper has Reoon verification built in. Upload,{" "}
+          LeadSnipper runs Reoon verification before send with your own Reoon key. Upload,{" "}
           <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#92400e] font-medium underline">verify your email list</Link>,
-          {" "}send only to valid addresses. Your bounce rate stays under 1%.
+          {" "}and send only to valid addresses to keep your bounce rate low.
         </p>
       </div>
 

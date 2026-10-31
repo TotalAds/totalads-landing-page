@@ -515,7 +515,7 @@ List-Unsubscribe-Post: List-Unsubscribe=One-Click`}
           href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#0058be] font-semibold hover:underline"
         >
-          start free
+          start a 14-day trial
         </Link>{" "}
         and put the next domain on a stack you can actually audit.
       </p>

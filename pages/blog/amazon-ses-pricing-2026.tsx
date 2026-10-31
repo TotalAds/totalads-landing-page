@@ -94,7 +94,7 @@ export default function AmazonSesPricing2026() {
           href="/savings-calculator?tool=instantly&emails=100000"
           className="text-[#0058be] font-medium hover:underline"
         >
-          Instantly ($97–$358/mo for shared infrastructure)
+          Instantly ($47–$358/mo)
         </Link>{" "}
         or{" "}
         <Link
@@ -290,28 +290,29 @@ export default function AmazonSesPricing2026() {
           </thead>
           <tbody className="text-[#475569]">
             {[
-              ["Solo founder", "10,000 emails", "$1", "₹999 (~$12)", "~$13"],
-              ["Small team", "50,000 emails", "$5", "₹999 (~$12)", "~$17"],
+              ["Solo founder", "10,000 emails", "$1", "₹999 ($19)", "~$20"],
+              ["Small team", "50,000 emails", "$5", "₹999 ($19)", "~$24"],
               [
                 "Agency (5 clients)",
                 "300,000 emails",
                 "$30",
-                "₹999 (~$12)",
-                "~$42",
+                "₹999 ($19)",
+                "~$49",
               ],
               [
-                "vs. Instantly Growth",
+                // instantly.ai and lemlist.com pricing, checked Oct 2026. Re-verify before publish.
+                "vs. Instantly Hypergrowth",
                 "50,000 emails",
                 "N/A",
                 "$97/mo",
                 "$97",
               ],
               [
-                "vs. Lemlist Standard",
+                "vs. Lemlist Email plan",
                 "50,000 emails",
                 "N/A",
-                "$55/mo",
-                "$55",
+                "$69/mo",
+                "$69",
               ],
             ].map(([scenario, vol, ses, tool, total], i) => (
               <tr key={scenario} className={i % 2 === 1 ? "bg-[#f8fafc]" : ""}>

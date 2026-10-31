@@ -616,7 +616,7 @@ export default function CustomTrackingDomainColdEmail2026() {
           href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#0058be] font-semibold hover:underline"
         >
-          start free
+          start a 14-day trial
         </Link>{" "}
         and set the next domain up with authentication, bounce plumbing, and
         tracking choices that match how you actually measure success.

@@ -10,13 +10,13 @@ export default function ColdEmailSoftwarePage() {
       headline="Cold email software that sends 10,000+ emails without hitting spam"
       subheadline="LeadSnipper is cold email software built on AWS SES. Automate outreach, verify every lead, pace sending safely, and monitor deliverability — all in one platform designed for teams that care about inbox placement."
       problemTitle="Generic cold email tools share your reputation with everyone else"
-      problemDescription="Most cold email software runs on shared infrastructure. When another sender on the same pool gets blacklisted, your campaigns suffer. Add-on verification tools, separate warmup services, and opaque pricing make the stack expensive and fragile."
+      problemDescription="When your cold email tool owns the sending layer, you have little control over the reputation underneath. Add-on verification tools, separate warmup services, and opaque pricing make the stack expensive and fragile."
       outcomes={[
         "Send cold email on AWS SES infrastructure you own and control",
-        "Verify every lead with built-in Reoon checks before campaigns launch",
+        "Verify every lead with Reoon checks before campaigns launch (bring your own Reoon key)",
         "Pace volume with daily caps and auto-pause when bounce rates spike",
         "Monitor SPF, DKIM, DMARC, bounces, and complaints in one dashboard",
-        "Start free with 1,000 emails — scale to 10,000+ without burning domains",
+        "Start a 14-day trial with 1,000 emails — scale to 10,000+ without burning domains",
       ]}
       features={[
         {
@@ -26,9 +26,9 @@ export default function ColdEmailSoftwarePage() {
           badge: "Infrastructure",
         },
         {
-          title: "Built-in Email Verification",
+          title: "Email Verification Before Send",
           description:
-            "Reoon verification catches invalid, catch-all, and disposable emails before upload. No third-party verification bills.",
+            "Reoon verification catches invalid, catch-all, and disposable emails before they are sent. Connect your own Reoon API key; Reoon bills you for credits.",
           badge: "Deliverability",
         },
         {
@@ -59,13 +59,13 @@ export default function ColdEmailSoftwarePage() {
       comparisonRows={[
         {
           feature: "Sending infrastructure",
-          traditional: "Shared pools (Instantly, Smartlead)",
+          traditional: "Platform-managed sending",
           leadsnipper: "BYO AWS SES or managed SES",
         },
         {
           feature: "Email verification",
           traditional: "Third-party add-on ($$$)",
-          leadsnipper: "Built-in Reoon verification",
+          leadsnipper: "Reoon verification before send (BYO key)",
         },
         {
           feature: "Domain health",
@@ -82,7 +82,7 @@ export default function ColdEmailSoftwarePage() {
         {
           question: "What is the best cold email software in 2026?",
           answer:
-            "The best cold email software depends on your priority. If deliverability and infrastructure ownership matter, LeadSnipper with BYO AWS SES is a strong choice. If you need the simplest possible start, shared-pool tools like Instantly work for low volume.",
+            "The best cold email software depends on your priority. If deliverability and infrastructure ownership matter, LeadSnipper with BYO AWS SES is a strong choice. If you need the simplest possible start, managed tools like Instantly work for low volume.",
         },
         {
           question: "Can I send bulk cold email without getting blacklisted?",

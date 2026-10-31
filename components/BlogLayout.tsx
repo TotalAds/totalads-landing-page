@@ -21,29 +21,37 @@ import { Navbar } from "./ui/navbar";
 interface BlogLayoutProps {
   post: BlogPost;
   children: React.ReactNode;
+  /** Extra JSON-LD objects (e.g. ItemList) rendered alongside BlogPosting/FAQPage. */
+  additionalSchemas?: Array<Record<string, unknown>>;
 }
 
-export default function BlogLayout({ post, children }: BlogLayoutProps) {
+export default function BlogLayout({ post, children, additionalSchemas }: BlogLayoutProps) {
   const canonical = `https://leadsnipper.com/blog/${post.slug}`;
+  const pageTitle = post.seoTitle ?? `${post.title} | LeadSnipper Blog`;
+  const socialTitle = post.seoTitle ?? post.title;
+  const heading = post.h1 ?? post.title;
   const blogSchema = generateBlogPostSchema(post);
   const relatedPosts = getRelatedPosts(post);
   const clusterHub = getClusterHub(post.cluster);
   const cluster = clusterMeta[post.cluster];
   // Use the post's own hero image for social sharing if available
-  const ogImage = post.heroImage?.src ?? seoConfig.defaultOpenGraph.images[0].url;
+  const rawOgImage = post.heroImage?.src ?? seoConfig.defaultOpenGraph.images[0].url;
+  const ogImage = rawOgImage.startsWith("http")
+    ? rawOgImage
+    : `https://leadsnipper.com${rawOgImage}`;
   const ogImageAlt = post.heroImage?.alt ?? post.title;
 
   return (
     <>
       <Head>
-        <title>{`${post.title} | LeadSnipper Blog`}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={post.description} />
         <meta name="keywords" content={post.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
         <link rel="canonical" href={canonical} />
 
-        <meta property="og:title" content={post.title} />
+        <meta property="og:title" content={socialTitle} />
         <meta property="og:description" content={post.description} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonical} />
@@ -58,14 +66,17 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
         <meta property="og:image:alt" content={ogImageAlt} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time" content={post.lastUpdated || post.date} />
-        <meta property="article:author" content="LeadSnipper" />
+        <meta
+          property="article:author"
+          content={post.authorPerson?.url ?? "LeadSnipper"}
+        />
         <meta property="article:section" content={post.category} />
         <meta property="article:tag" content={post.keywords} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@leadsnipper_" />
         <meta name="twitter:creator" content="@leadsnipper_" />
-        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:title" content={socialTitle} />
         <meta name="twitter:description" content={post.description} />
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:image:alt" content={ogImageAlt} />
@@ -117,6 +128,13 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
             }),
           }}
         />
+        {additionalSchemas?.map((schema, i) => (
+          <script
+            key={`extra-schema-${i}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         {post.faqs && post.faqs.length > 0 && (
           <script
             type="application/ld+json"
@@ -176,7 +194,7 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 )}
               </div>
               <h1 className="font-heading font-bold text-[28px] md:text-[36px] lg:text-[42px] text-[#131b2e] leading-tight mb-5">
-                {post.title}
+                {heading}
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-xs text-[#727785]">
                 <div className="flex items-center gap-2">
@@ -191,7 +209,13 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                       .map((n: string) => n[0])
                       .join("")}
                   </div>
-                  <span>{post.author}</span>
+                  {post.authorPerson ? (
+                    <Link href={post.authorPerson.url} className="hover:text-[#0058be]">
+                      {post.author}
+                    </Link>
+                  ) : (
+                    <span>{post.author}</span>
+                  )}
                 </div>
                 <span className="w-1 h-1 rounded-full bg-[#c2c6d6]" />
                 <time dateTime={post.date}>
@@ -317,10 +341,10 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                 </Link>
                 <span className="text-[#c2c6d6]">·</span>
                 <Link
-                  href="/email-warmup"
+                  href="/pricing"
                   className="text-sm font-heading font-semibold text-[#0058be] hover:underline"
                 >
-                  Domain reputation & pacing
+                  Pricing
                 </Link>
                 <span className="text-[#c2c6d6]">·</span>
                 <Link
@@ -348,9 +372,9 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                     Ready to own your cold email deliverability?
                   </h3>
                   <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
-                    LeadSnipper gives you BYO AWS SES, built-in verification,
-                    domain health monitoring, and deliverability pacing — all in one
-                    platform. Explore our{" "}
+                    LeadSnipper gives you mailbox-level daily caps, pacing, Reoon
+                    verification before send (bring your own Reoon key), and
+                    bounce and complaint auto-pause — all in one platform. Explore our{" "}
                     <Link href="/cold-email-software" className="text-[#0058be] hover:underline">
                       cold email software
                     </Link>.
@@ -360,13 +384,13 @@ export default function BlogLayout({ post, children }: BlogLayoutProps) {
                       href="https://app.leadsnipper.com/signup?product=leadsnipper"
                       className="btn-primary rounded-full text-sm"
                     >
-                      Start free — 1,000 emails, no card
+                      Start 14-day trial — 1,000 emails, no card
                     </Link>
                     <Link
-                      href="/email-warmup"
+                      href="/pricing"
                       className="btn-ghost rounded-full text-sm"
                     >
-                      Domain reputation & pacing
+                      See pricing
                     </Link>
                   </div>
                 </div>

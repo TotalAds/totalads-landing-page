@@ -49,7 +49,7 @@ export default function FounderStory() {
               </p>
 
               <p>
-                We added built-in email verification after watching an agency
+                We added Reoon verification before send after watching an agency
                 client upload 10,000 leads and watch bounce rates hit 15% in the
                 first hour. We built the domain health dashboard because we were
                 tired of checking MXToolbox, Google Postmaster, and our sending
@@ -78,7 +78,7 @@ export default function FounderStory() {
                 href="https://app.leadsnipper.com/signup?product=leadsnipper"
                 className="inline-flex items-center gap-2 text-[#3b82f6] font-semibold text-sm hover:text-[#2563eb] transition"
               >
-                Try it yourself — start free
+                Try it yourself — start a 14-day trial
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

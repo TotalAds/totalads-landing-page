@@ -31,7 +31,7 @@ function createIndustry(
     slug,
     name,
     title: `Cold Email for ${name} | LeadSnipper`,
-    description: `Learn how ${name.toLowerCase()} teams use cold email to book meetings. Industry-specific sequences, deliverability tips, and LeadSnipper's cold email infrastructure built on AWS SES. Start free.`,
+    description: `Learn how ${name.toLowerCase()} teams use cold email to book meetings. Industry-specific sequences, deliverability tips, and LeadSnipper's cold email infrastructure built on AWS SES. Start a 14-day trial.`,
     keywords: `cold email for ${slug}, cold email ${name.toLowerCase()}, ${name.toLowerCase()} outbound email, cold outreach ${slug}, B2B cold email ${slug}`,
     canonical: `${baseUrl}/cold-email-for/${slug}`,
     headline,
@@ -41,7 +41,7 @@ function createIndustry(
     deliverabilityTips,
     faqs,
     ctaHeadline: `Launch cold email for ${name} with deliverability built in`,
-    ctaDescription: `Start with 1,000 free emails, verify leads before sending, and monitor domain health from day one.`,
+    ctaDescription: `Start a 14-day trial with 1,000 emails, verify leads before sending, and monitor domain health from day one.`,
   };
 }
 
@@ -50,7 +50,7 @@ export const industries: IndustryConfig[] = [
     "saas",
     "SaaS",
     "Cold email for SaaS companies that need pipeline without burning domains",
-    "SaaS founders and SDR teams need predictable outbound. LeadSnipper helps you send cold email at scale with BYO AWS SES, built-in verification, and domain health monitoring.",
+    "SaaS founders and SDR teams need predictable outbound. LeadSnipper helps you send cold email at scale with BYO AWS SES, Reoon verification before send, and domain health monitoring.",
     [
       "Long sales cycles require consistent follow-up without spam folder risk",
       "Multiple ICPs mean you need separate domains and sender rotation",
@@ -90,7 +90,7 @@ export const industries: IndustryConfig[] = [
     "recruiters",
     "Recruiters",
     "Cold email for recruiters who need replies, not spam folder trips",
-    "Recruitment outreach lives or dies on inbox placement. LeadSnipper gives recruiters verified lists, domain warmup, and AWS SES infrastructure to reach candidates and hiring managers reliably.",
+    "Recruitment outreach lives or dies on inbox placement. LeadSnipper gives recruiters verified lists, daily caps and pacing, and AWS SES infrastructure to reach candidates and hiring managers reliably.",
     [
       "High-volume candidate outreach triggers spam filters quickly",
       "Recruiting emails often look templated, hurting engagement",
@@ -175,7 +175,7 @@ export const industries: IndustryConfig[] = [
       {
         question: "Can agencies use LeadSnipper for multiple clients?",
         answer:
-          "Yes. LeadSnipper supports unlimited domains on Business and BYO SES plans. Each client gets their own domain, warmup schedule, and analytics dashboard with PDF export.",
+          "Yes. LeadSnipper supports unlimited domains on Business and BYO SES plans. Each client can use its own domains with daily caps, pacing, and campaign analytics with PDF export.",
       },
     ]
   ),
@@ -183,7 +183,7 @@ export const industries: IndustryConfig[] = [
     "consultants",
     "Consultants",
     "Cold email for consultants and fractional executives",
-    "Independent consultants need a reliable outbound channel without enterprise tool costs. LeadSnipper offers affordable cold email with AWS SES, verification, and warmup starting free.",
+    "Independent consultants need a reliable outbound channel without enterprise tool costs. LeadSnipper offers affordable cold email with AWS SES, verification, and pacing from $19 (₹999) a month after a 14-day trial.",
     [
       "Limited budget for expensive outbound tools",
       "Personal brand depends on inbox placement, not spam folder",
@@ -206,7 +206,7 @@ export const industries: IndustryConfig[] = [
       {
         question: "What's the best cold email tool for solo consultants?",
         answer:
-          "LeadSnipper's free trial and Starter plan (₹999/mo or $19/mo) give consultants BYO AWS SES, verification, and deliverability pacing without enterprise pricing. Most consultants send 50-200 emails/week.",
+          "LeadSnipper's 14-day trial and Starter plan (₹999/mo or $19/mo) give consultants BYO AWS SES, verification, and deliverability pacing without enterprise pricing. Most consultants send 50-200 emails/week.",
       },
     ]
   ),
@@ -214,7 +214,7 @@ export const industries: IndustryConfig[] = [
     "b2b-startups",
     "B2B Startups",
     "Cold email for B2B startups building their first outbound motion",
-    "Early-stage B2B startups need cold email that works without burning their only domain. LeadSnipper helps founders launch outbound safely with warmup, verification, and AWS SES from day one.",
+    "Early-stage B2B startups need cold email that works without burning their only domain. LeadSnipper helps founders launch outbound safely with daily caps, pacing, verification, and AWS SES from day one.",
     [
       "One domain reputation mistake can kill all company email",
       "Founders wear multiple hats — need simple, focused tooling",
@@ -237,7 +237,7 @@ export const industries: IndustryConfig[] = [
       {
         question: "When should a B2B startup start cold email?",
         answer:
-          "Once you have a clear ICP and offer. Start with 50-100 verified contacts, test messaging, then scale volume gradually. LeadSnipper's free trial lets you validate outbound before committing.",
+          "Once you have a clear ICP and offer. Start with 50-100 verified contacts, test messaging, then scale volume gradually. LeadSnipper's 14-day trial lets you validate outbound before committing.",
       },
     ]
   ),

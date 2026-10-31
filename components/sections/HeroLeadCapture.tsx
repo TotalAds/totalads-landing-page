@@ -86,11 +86,11 @@ export function HeroLeadCapture() {
 				>
 					{status === "loading"
 						? "Sending…"
-						: "Get started free →"}
+						: "Start 14-day trial →"}
 				</button>
 			</form>
 			<p className="mt-2 text-center text-xs text-[#64748b]">
-				1,000 emails free · No credit card · Then continue to full signup
+				14-day trial · 1,000 emails · No credit card · Then continue to full signup
 			</p>
 			{status === "success" && (
 				<p className="mt-3 text-center text-sm font-medium text-[#16a34a]">

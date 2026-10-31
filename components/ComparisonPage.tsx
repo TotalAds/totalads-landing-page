@@ -39,6 +39,10 @@ interface ComparisonPageProps {
   headline: string;
   subheadline: string;
   competitorSummary: string;
+  /** Short price label for the hero card, e.g. "From $39/mo". */
+  competitorPrice?: string;
+  /** Above-the-fold link to the matching /blog/*-alternatives list page. */
+  alternativesLink?: { href: string; label: string };
   competitorBestFor: string[];
   competitorLimits: string[];
   comparisonRows: ComparisonPoint[];
@@ -49,11 +53,19 @@ interface ComparisonPageProps {
 }
 
 const leadsnipperWins = [
-  "Bring your own AWS SES or use managed sending — your choice",
-  "Verify leads with built-in Reoon checks before any campaign fires",
-  "Monitor domain health, DNS, bounces, complaints, and pacing in one view",
-  "Run cold campaigns with full infrastructure ownership and transparent costs",
+  "Mailbox-level daily limits, sending delays, sender rotation and ESP matching",
+  "Verify leads with Reoon before any campaign fires (bring your own Reoon key)",
+  "Bounce and complaint monitoring with automatic campaign pause",
+  "Published plans from $19 (₹999) a month, plus a 14-day trial",
 ];
+
+/** Matching list-intent posts (/blog/*-alternatives) and how many tools each compares. */
+const alternativesPosts: Partial<Record<ComparisonPageProps["competitor"], number>> = {
+  Instantly: 8,
+  Smartlead: 8,
+  Lemlist: 8,
+  Mailshake: 5,
+};
 
 export default function ComparisonPage({
   pageKey,
@@ -62,6 +74,8 @@ export default function ComparisonPage({
   headline,
   subheadline,
   competitorSummary,
+  competitorPrice,
+  alternativesLink,
   competitorBestFor,
   competitorLimits,
   comparisonRows,
@@ -94,7 +108,7 @@ export default function ComparisonPage({
         {
           "@type": "ListItem",
           position: 2,
-          name: `${competitor} alternative`,
+          name: `${competitor} vs LeadSnipper`,
           item: canonical,
         },
       ],
@@ -108,6 +122,7 @@ export default function ComparisonPage({
         pageKey={pageKey}
         structuredDataTypes={["product", "softwareApplication"]}
         additionalStructuredData={additionalStructuredData}
+        skipTitleTemplate={pageConfig.title.includes("LeadSnipper")}
       />
       <Navbar />
 
@@ -118,7 +133,7 @@ export default function ComparisonPage({
           <nav className="mb-8 text-xs text-[#727785]" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#0058be] transition-colors">Home</Link>
             <span className="mx-2">/</span>
-            <span className="text-[#131b2e]">{competitor} alternative</span>
+            <span className="text-[#131b2e]">{competitor} vs LeadSnipper</span>
           </nav>
 
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
@@ -134,12 +149,22 @@ export default function ComparisonPage({
               <p className="text-body-lg text-[#424754] mt-5 max-w-xl leading-relaxed">
                 {subheadline}
               </p>
+              {alternativesLink && (
+                <p className="mt-4 text-sm">
+                  <Link
+                    href={alternativesLink.href}
+                    className="font-heading font-semibold text-[#0058be] hover:underline"
+                  >
+                    {alternativesLink.label} →
+                  </Link>
+                </p>
+              )}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="https://app.leadsnipper.com/signup?product=leadsnipper"
                   className="btn-primary rounded-full inline-flex items-center justify-center gap-2"
                 >
-                  Start free trial
+                  Start 14-day trial
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
@@ -162,9 +187,11 @@ export default function ComparisonPage({
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="rounded-xl bg-[#f2f3ff] p-4 border border-[#c2c6d6]/20">
                   <p className="text-xs font-heading font-semibold text-[#727785] mb-2">{competitor}</p>
-                  <p className="text-2xl font-heading font-extrabold text-[#131b2e]">Shared</p>
+                  <p className="text-2xl font-heading font-extrabold text-[#131b2e]">
+                    {competitorPrice ?? "Compare"}
+                  </p>
                   <p className="text-xs text-[#727785] mt-1.5 leading-relaxed">
-                    Easier to start, less control over your sending infrastructure.
+                    Check plan limits, add-ons and per-client costs on the vendor&apos;s pricing page.
                   </p>
                 </div>
                 <div
@@ -172,9 +199,9 @@ export default function ComparisonPage({
                   style={{ background: "linear-gradient(135deg, #eff6ff, #f0fdf4)" }}
                 >
                   <p className="text-xs font-heading font-semibold text-[#0058be] mb-2">LeadSnipper</p>
-                  <p className="text-2xl font-heading font-extrabold text-[#131b2e]">Owned</p>
+                  <p className="text-2xl font-heading font-extrabold text-[#131b2e]">From $19/mo</p>
                   <p className="text-xs text-[#424754] mt-1.5 leading-relaxed">
-                    SES control, built-in verification, and domain health.
+                    Mailbox caps, pre-send verification (BYO Reoon) and auto-pause.
                   </p>
                 </div>
               </div>
@@ -403,7 +430,7 @@ export default function ComparisonPage({
       </section>
 
       {/* ─── Blog alternatives cross-link ─── */}
-      {(competitor === "Mailshake" || competitor === "Lemlist" || competitor === "Smartlead") && (
+      {alternativesPosts[competitor] && (
         <section className="py-12 border-t border-[#c2c6d6]/20">
           <div className="max-w-[700px] mx-auto px-5 sm:px-6 lg:px-16">
             <motion.div
@@ -422,13 +449,13 @@ export default function ComparisonPage({
                     Want a deeper comparison?
                   </h3>
                   <p className="text-sm text-[#727785] leading-relaxed mb-3">
-                    Read our full guide comparing the top 5 {competitor} alternatives — including pricing, features, and which one fits your use case.
+                    Read our guide comparing {alternativesPosts[competitor]} {competitor} alternatives — including pricing, features, and which one fits your use case.
                   </p>
                   <Link
                     href={`/blog/${competitor.toLowerCase()}-alternatives`}
                     className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[#0058be] hover:text-[#2170e4] transition-colors"
                   >
-                    Read: Best {competitor} Alternatives in 2026 →
+                    Compare more {competitor} alternatives →
                   </Link>
                 </div>
               </div>
@@ -457,22 +484,29 @@ export default function ComparisonPage({
                 <span className="font-display italic text-[#0058be]">you control.</span>
               </h2>
               <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
-                Start with 1,000 emails free, verify leads before launch, and
-                see whether BYO AWS SES makes your outbound stack cheaper and safer.
+                Start a 14-day trial with 1,000 emails, 2 mailboxes and 1 custom
+                domain. Verify leads before launch and see whether LeadSnipper&apos;s
+                safeguards fit your outbound stack.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href="https://app.leadsnipper.com/signup?product=leadsnipper"
                   className="btn-primary rounded-full inline-flex items-center justify-center gap-2"
                 >
-                  Start free trial
+                  Start 14-day trial
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/blog/best-cold-email-software-2026-comparison"
+                  href={
+                    alternativesPosts[competitor]
+                      ? `/blog/${competitor.toLowerCase()}-alternatives`
+                      : "/blog/best-cold-email-software-2026-comparison"
+                  }
                   className="btn-ghost rounded-full"
                 >
-                  Read full comparison →
+                  {alternativesPosts[competitor]
+                    ? `See ${alternativesPosts[competitor]} ${competitor} alternatives${competitor === "Mailshake" ? "" : " for agencies"} →`
+                    : "Read full comparison →"}
                 </Link>
               </div>
             </div>
@@ -484,17 +518,20 @@ export default function ComparisonPage({
       <section className="py-12 border-t border-[#c2c6d6]/20">
         <div className="max-w-[800px] mx-auto px-5 sm:px-6 lg:px-16 text-center">
           <p className="text-xs font-mono text-[#727785] mb-4 uppercase tracking-widest">
-            Compare other alternatives
+            Compare other tools
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { href: "/vs/instantly", label: "Instantly alternative" },
-              { href: "/vs/smartlead", label: "Smartlead alternative" },
-              { href: "/vs/apollo", label: "Apollo alternative" },
-              { href: "/vs/lemlist", label: "Lemlist alternative" },
-              { href: "/vs/mailshake", label: "Mailshake alternative" },
+              { href: "/vs/instantly", label: "Instantly vs LeadSnipper" },
+              { href: "/vs/smartlead", label: "Smartlead vs LeadSnipper" },
+              { href: "/vs/apollo", label: "Apollo vs LeadSnipper" },
+              { href: "/vs/lemlist", label: "Lemlist vs LeadSnipper" },
+              { href: "/vs/mailshake", label: "Mailshake vs LeadSnipper" },
+              { href: "/blog/instantly-alternatives", label: "Instantly alternatives for agencies" },
+              { href: "/blog/smartlead-alternatives", label: "Smartlead alternatives for agencies" },
+              { href: "/blog/lemlist-alternatives", label: "Lemlist alternatives for agencies" },
             ]
-              .filter((link) => !link.href.includes(competitor.toLowerCase()))
+              .filter((link) => link.href !== canonical.replace("https://leadsnipper.com", ""))
               .map((link) => (
                 <Link
                   key={link.href}

@@ -8,16 +8,16 @@ export default function MailshakeAlternativePage() {
       pageKey="mailshakeAlternative"
       competitor="Mailshake"
       eyebrow="Mailshake alternative"
-      headline="A Mailshake alternative for scaling cold email without shared infrastructure risk"
-      subheadline="Mailshake is a straightforward cold email tool, but scaling outbound requires more than sequences. LeadSnipper adds BYO AWS SES, built-in verification, and domain health monitoring for teams sending at volume."
-      competitorSummary="Mailshake works for teams that want simple email sequences and phone dialer integration. As volume grows, shared infrastructure and limited deliverability controls become limiting factors."
+      headline="A Mailshake alternative for scaling cold email with your own sending infrastructure"
+      subheadline="Mailshake is a straightforward cold email tool, but scaling outbound requires more than sequences. LeadSnipper adds BYO AWS SES, Reoon verification before send, and domain health monitoring for teams sending at volume."
+      competitorSummary="Mailshake works for teams that want simple email sequences and phone dialer integration. As volume grows, per-seat pricing and limited deliverability controls become limiting factors."
       competitorBestFor={[
         "Teams that want simple email + phone outreach in one tool",
         "Small sales teams sending under 1,000 emails/month",
         "Operators who prioritize ease of use over infrastructure control",
       ]}
       competitorLimits={[
-        "Shared sending infrastructure with no BYO SES option.",
+        "No BYO AWS SES option.",
         "Email verification is not built into the core workflow.",
         "Limited domain health monitoring for scaling teams.",
         "Per-user pricing adds up as teams grow.",
@@ -30,13 +30,13 @@ export default function MailshakeAlternativePage() {
         },
         {
           feature: "Sending infrastructure",
-          competitor: "Mailshake-managed/shared",
+          competitor: "Mailshake-managed",
           leadsnipper: "BYO AWS SES or managed SES",
         },
         {
           feature: "Email verification",
           competitor: "Not native",
-          leadsnipper: "Built-in Reoon verification",
+          leadsnipper: "Reoon verification before send (BYO key)",
         },
         {
           feature: "Domain health",
@@ -45,7 +45,7 @@ export default function MailshakeAlternativePage() {
         },
         {
           feature: "Scaling",
-          competitor: "Shared pool limits",
+          competitor: "Plan and per-seat limits",
           leadsnipper: "AWS SES quotas (scalable)",
         },
         {
@@ -58,7 +58,7 @@ export default function MailshakeAlternativePage() {
         {
           question: "Is LeadSnipper a good Mailshake alternative for agencies?",
           answer:
-            "Yes. Agencies benefit from multi-domain management, PDF analytics reports, BYO SES per client, and built-in verification — features Mailshake doesn't offer at the infrastructure level.",
+            "Yes. Agencies benefit from multi-domain management, PDF analytics reports, BYO SES, and Reoon verification before send (with your own Reoon key). Mailshake doesn't offer a BYO SES option.",
         },
         {
           question: "Does LeadSnipper have a phone dialer like Mailshake?",

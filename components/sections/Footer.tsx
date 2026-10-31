@@ -37,6 +37,9 @@ export default function Footer() {
       { label: "vs Apollo", href: "/vs/apollo" },
       { label: "vs Lemlist", href: "/vs/lemlist" },
       { label: "vs Mailshake", href: "/vs/mailshake" },
+      { label: "Instantly alternatives", href: "/blog/instantly-alternatives" },
+      { label: "Smartlead alternatives", href: "/blog/smartlead-alternatives" },
+      { label: "Lemlist alternatives", href: "/blog/lemlist-alternatives" },
     ],
     Resources: [
       { label: "Blog", href: "/blog" },

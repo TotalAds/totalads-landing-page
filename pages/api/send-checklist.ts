@@ -32,7 +32,7 @@ function emailHtml(name: string) {
     </h3>
     <ul style="font-family:system-ui,Segoe UI,Roboto,sans-serif;color:#334155;padding-left:18px;line-height:1.8;margin:8px 0 18px;">
       <li>Own your AWS SES sending infrastructure - no shared IPs</li>
-      <li>Built-in warmup pools with human-like activity</li>
+      <li>Daily caps, pacing, and bounce/complaint auto-pause (no warm-up pool)</li>
       <li>Bounce & complaint alerts before AWS suspends you</li>
       <li>Pay for what you send - not a per-seat subscription</li>
     </ul>
@@ -60,7 +60,7 @@ function emailText(name: string) {
 		"",
 		"While you're here - see what LeadSnipper does",
 		"- Own your AWS SES sending infrastructure - no shared IPs",
-		"- Built-in warmup pools with human-like activity",
+		"- Daily caps, pacing, and bounce/complaint auto-pause (no warm-up pool)",
 		"- Bounce & complaint alerts before AWS suspends you",
 		"- Pay for what you send - not a per-seat subscription",
 		"",

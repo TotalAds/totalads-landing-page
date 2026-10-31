@@ -52,8 +52,8 @@ export default function ApolloAlternativeColdEmail() {
             body: 'Apollo marks catch-all domain emails as "verified" in many cases. Catch-all servers accept all email regardless of whether the specific address exists. Sending to catch-alls without secondary verification causes hard bounces.',
           },
           {
-            title: "Apollo's own cold email tool has shared infrastructure",
-            body: "Apollo recently added native cold email sequences. But like most all-in-one tools, it uses shared sending infrastructure — your reputation depends on thousands of other Apollo users. There's no BYO AWS SES option.",
+            title: "Apollo's sequences aren't built around your own SES",
+            body: "Apollo has native cold email sequences, but it is a data-first, all-in-one tool. There's no BYO AWS SES option, so you get fewer controls over the sending layer than a dedicated sending platform gives you.",
           },
         ].map((item) => (
           <div
@@ -117,8 +117,8 @@ export default function ApolloAlternativeColdEmail() {
         </li>
       </ol>
       <p className="text-[#475569] leading-relaxed mb-4">
-        LeadSnipper has built-in verification powered by Reoon that runs on
-        import — so you don&apos;t need a separate verification workflow. See
+        LeadSnipper runs Reoon verification before send (you bring your own
+        Reoon API key), so verification sits inside the sending workflow. See
         why list cleaning is non-optional:{" "}
         <Link
           href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters"
@@ -216,11 +216,12 @@ export default function ApolloAlternativeColdEmail() {
           </thead>
           <tbody className="text-[#475569]">
             {[
-              ["LeadSnipper", "BYO AWS SES", "✓ Built-in", "✓ Built-in", "Free/₹999"],
-              ["Instantly", "Shared", "✗ Separate", "✓ Built-in", "$37–$358"],
-              ["Smartlead", "Shared", "✗ Separate", "✓ Built-in", "$39–$174"],
-              ["Mailshake", "Shared", "✗ Separate", "Partial", "$58–$83/seat"],
-              ["Apollo Sequences", "Shared", "Partial", "✗ None", "Included w/ Apollo"],
+              // Third-party prices checked Oct 2026. Re-verify before publish.
+              ["LeadSnipper", "BYO AWS SES or managed", "✓ Reoon (BYO key)", "✗ No warm-up pool (caps, pacing, auto-pause)", "14-day trial, then $19 (₹999)/mo"],
+              ["Instantly", "Managed", "Check vendor", "✓ Included", "$47–$358/mo"],
+              ["Smartlead", "Managed", "Paid add-on", "✓ Included", "$39–$379/mo"],
+              ["Mailshake", "Managed", "✗ Separate", "Partial", "~$29–$99/user"],
+              ["Apollo Sequences", "Managed", "Partial", "✗ None", "Included w/ Apollo"],
             ].map(([tool, infra, ver, warm, price], i) => (
               <tr key={tool} className={i % 2 === 1 ? "bg-[#f8fafc]" : ""}>
                 <td className="px-4 py-2 border border-[#e2e8f0] font-medium text-[#1e293b]">
@@ -254,7 +255,7 @@ export default function ApolloAlternativeColdEmail() {
           <strong>Apollo or Clay</strong> for prospecting and enrichment
         </li>
         <li>
-          <strong>Built-in verification</strong> on the sending platform to
+          <strong>Pre-send verification</strong> on the sending platform to
           clean the list before any email goes out
         </li>
         <li>

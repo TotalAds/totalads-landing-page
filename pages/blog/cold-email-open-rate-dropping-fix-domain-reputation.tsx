@@ -108,7 +108,7 @@ export default function ColdEmailOpenRateDropping() {
         </div>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        LeadSnipper uses built-in Reoon verification so list quality is not a
+        LeadSnipper runs Reoon verification before send (bring your own key) so list quality is not a
         separate afterthought. That matters because unverified leads should never
         be treated as send-ready. Learn more in our guide to{" "}
         <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">email list cleaning and verification</Link>.

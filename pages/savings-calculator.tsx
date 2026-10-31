@@ -63,7 +63,7 @@ const calculatorFaqs = [
   {
     question: "Is there a free trial of LeadSnipper?",
     answer:
-      "Yes. Start free with no credit card. You get 1,000 emails, 500 contacts, basic analytics, and API access for 14 days. Enough to run a real campaign and see if LeadSnipper fits your outbound workflow.",
+      "Yes. You get a 14-day trial with 1,000 emails and no credit card. There is no free plan; paid plans start at $19 (₹999) a month after the trial.",
   },
   {
     question: "What does 'number of sending domains' affect?",

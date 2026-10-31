@@ -8,7 +8,7 @@ export default function AiColdEmailGeneratorPage() {
       pageKey="aiColdEmailGenerator"
       eyebrow="AI Cold Email Software"
       headline="AI cold email software that writes and sends at scale"
-      subheadline="Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with built-in verification and deliverability pacing — so AI-powered copy actually reaches the inbox."
+      subheadline="Generate personalized cold email drafts with AI, A/B test subject lines, and send through AWS SES infrastructure with Reoon verification before send and deliverability pacing — so AI-powered copy actually reaches the inbox."
       problemTitle="AI-generated emails fail when deliverability is an afterthought"
       problemDescription="AI can write great cold email copy, but if your domain isn't authenticated, your list isn't verified, and your DNS isn't configured — the best AI copy lands in spam. Most AI email tools ignore the infrastructure layer entirely."
       outcomes={[
@@ -34,7 +34,7 @@ export default function AiColdEmailGeneratorPage() {
         {
           title: "Deliverability-First Sending",
           description:
-            "AI copy sends through BYO AWS SES with verification and pacing — not through shared pools that ignore reputation.",
+            "AI copy sends through BYO AWS SES with verification and pacing, so reputation is protected on every send.",
           badge: "Infrastructure",
         },
         {

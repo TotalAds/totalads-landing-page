@@ -14,7 +14,7 @@ export default function BlogCalculatorCTA() {
             Calculate your exact SES costs
           </h3>
           <p className="text-sm text-[#475569] leading-relaxed mb-3">
-            See how much you&apos;ll actually pay with AWS SES vs shared infrastructure tools like Instantly and Smartlead — based on your monthly volume.
+            See how much you&apos;ll actually pay with BYO AWS SES vs tools like Instantly and Smartlead — based on your monthly volume.
           </p>
           <Link
             href="/savings-calculator"

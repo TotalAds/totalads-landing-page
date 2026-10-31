@@ -37,8 +37,8 @@ export default function WhyBYOSES() {
             Why Shared Infrastructure Destroys Your Deliverability
           </h2>
           <p className="text-[#475569] text-lg max-w-2xl mx-auto">
-            Every major cold email tool puts you on shared sending pools.
-            Here&apos;s what that actually means for your domain.
+            When you send through shared sending pools, other senders affect
+            you. Here&apos;s what that actually means for your domain.
           </p>
         </motion.div>
 

@@ -31,9 +31,9 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconFlame />,
     },
     {
-      title: "Built-In Email Verification",
+      title: "Email Verification Before Send",
       description:
-        "Never upload 10k leads and watch half bounce. Reoon verification removes bad addresses before they touch your sender reputation.",
+        "Never upload 10k leads and watch half bounce. Reoon verification (with your own Reoon key) removes bad addresses before they touch your sender reputation.",
       icon: <IconShieldCheck />,
     },
     {

@@ -22,22 +22,25 @@ export default function InstantlyVsLeadSnipperIndia() {
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
         The Pricing Reality: USD vs INR Adds Up Fast
       </h2>
+      {/* Instantly prices: instantly.ai/pricing, checked 2026-10-26. Re-verify before publish.
+          INR estimates use ₹95.25 per US$ (FBIL reference rate, 30 Oct 2026). */}
       <p className="text-[#475569] leading-relaxed mb-4">
-        Instantly charges in USD. Their Growth plan is $37/month, which at
-        current exchange rates is roughly ₹3,100/month. Add the 2% foreign
-        transaction fee most Indian business cards charge, plus GST complications
-        if you need a proper invoice — and you&apos;re looking at ₹3,500+ for a
-        single seat.
+        Instantly charges in USD. Its Growth plan is $47/month billed monthly
+        ($37.60/month if you pay yearly) and includes 5,000 emails a month. That
+        is roughly ₹4,500/month at ₹95.25 per dollar. Add the foreign
+        transaction fee many Indian business cards charge (often around 2%, check
+        your bank) and the bill moves further. If you send more than 5,000
+        emails a month, you need Hypergrowth at $97/month (about ₹9,240).
       </p>
       <p className="text-[#475569] leading-relaxed mb-4">
-        LeadSnipper charges in INR. Starter plan is ₹999/month, Growth is ₹2,499/month. No forex fees.
-        Clean GST invoices. And you get BYO AWS SES on top — meaning your actual
-        sending costs drop to roughly $0.10 per 1,000 emails instead of
-        whatever margin Instantly builds into their shared infrastructure.
+        LeadSnipper charges in INR. Starter is ₹999/month ($19) and Growth is
+        ₹2,499/month. There is no forex conversion on an INR plan. You can also
+        connect your own AWS SES (BYO SES), where Amazon bills sending at about
+        $0.10 per 1,000 emails.
       </p>
       <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-5 mb-6">
         <h3 className="font-bold text-[#1e293b] mb-3">
-          Cost Comparison for 50,000 Emails/Month
+          Cost Comparison for 50,000 Emails/Month (estimate)
         </h3>
         <table className="w-full text-sm">
           <thead>
@@ -49,84 +52,82 @@ export default function InstantlyVsLeadSnipperIndia() {
           </thead>
           <tbody className="text-[#475569]">
             <tr className="border-b border-[#f0f0f0]">
-              <td className="py-2">Platform Fee</td>
-              <td>₹3,100/month</td>
-              <td className="font-medium text-[#3b82f6]">₹2,499/month</td>
+              <td className="py-2">Platform fee</td>
+              <td>Hypergrowth $97 (~₹9,240/month)</td>
+              <td className="font-medium text-[#3b82f6]">Growth ₹2,499/month</td>
             </tr>
             <tr className="border-b border-[#f0f0f0]">
-              <td className="py-2">Forex + Bank Fees</td>
-              <td>₹62/month (2%)</td>
+              <td className="py-2">Forex + bank fees (assumes 2%)</td>
+              <td>~₹185/month</td>
               <td className="font-medium text-[#3b82f6]">₹0</td>
             </tr>
             <tr className="border-b border-[#f0f0f0]">
-              <td className="py-2">Email Verification</td>
-              <td>₹1,650/month (external)</td>
-              <td className="font-medium text-[#3b82f6]">Included</td>
+              <td className="py-2">Email verification (assumed verifier cost)</td>
+              <td>~₹1,650/month (separate tool)</td>
+              <td className="font-medium text-[#3b82f6]">Your own Reoon plan (~₹1,650 assumed)</td>
             </tr>
             <tr className="border-b border-[#f0f0f0]">
-              <td className="py-2">Sending Costs (50K emails)</td>
-              <td>Built into platform</td>
-              <td className="font-medium text-[#3b82f6]">~₹42 (AWS SES)</td>
+              <td className="py-2">Sending costs (50K emails)</td>
+              <td>Included in plan</td>
+              <td className="font-medium text-[#3b82f6]">~₹480 if you use BYO AWS SES ($5)</td>
             </tr>
             <tr className="font-bold text-[#1e293b]">
-              <td className="py-3">Total Monthly Cost</td>
-              <td>~₹4,812</td>
-              <td className="text-[#3b82f6]">~₹1,041</td>
+              <td className="py-3">Estimated monthly total</td>
+              <td>~₹11,075</td>
+              <td className="text-[#3b82f6]">~₹4,630</td>
             </tr>
           </tbody>
         </table>
+        <p className="text-xs text-[#64748b] mt-3">
+          Assumptions: ₹95.25 per US$, a 2% card forex fee, the same verifier
+          spend on both sides, and AWS SES at $0.10 per 1,000 emails. Your bank
+          fee, verifier plan and AWS bill will differ. Prices checked October
+          2026; confirm on each vendor&apos;s pricing page.
+        </p>
       </div>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
-        The Infrastructure Problem: Shared vs Owned
+        Sending Infrastructure: Managed vs Your Own SES
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
-        Instantly runs on shared infrastructure. Your emails go out through the
-        same IP pools as thousands of other users. If one sender on that pool
-        gets flagged for spam, your deliverability suffers too. This is the
-        hidden cost of &quot;easy&quot; cold email tools.
+        Instantly is a managed platform: you connect mailboxes and it handles
+        sending and warm-up for you. That is convenient, but you have less
+        control over the sending account itself.
       </p>
       <p className="text-[#475569] leading-relaxed mb-4">
-        LeadSnipper is built around BYO AWS SES. You bring your own Amazon
-        account, your own verified domains, your own sending reputation. No other
-        sender can damage your deliverability because you don&apos;t share
-        infrastructure with anyone. Follow our{" "}
-        <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">AWS SES setup guide</Link>{" "}
-        to get started. For agencies managing multiple client
-        campaigns, this is the difference between sleeping soundly and waking up
-        to a blacklist notification.
+        LeadSnipper supports BYO AWS SES. You bring your own Amazon account,
+        your own verified domains and your own sending reputation. Follow our 
+        <Link href="/blog/how-to-set-up-aws-ses-for-cold-email-step-by-step" className="text-[#3b82f6] font-medium hover:underline">AWS SES setup guide</Link> 
+        to get started. LeadSnipper does not run a warm-up pool; it relies on
+        mailbox-level daily caps, pacing, and bounce and complaint auto-pause.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
-        Email Verification: Built-in vs Bolted-on
+        Email Verification Before Send
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
-        Instantly has no built-in email verification. You&apos;ll need to export
-        your lists, run them through a separate tool like ZeroBounce or
-        NeverBounce, clean them, and re-import. This adds friction, cost
-        (roughly ₹1,500-3,000/month for an agency), and another integration to
-        manage.
+        Check what verification your Instantly plan includes. Many agencies run
+        lists through a separate tool like ZeroBounce or NeverBounce, which adds
+        cost (roughly ₹1,500–3,000/month at agency volume) and an export and
+        re-import step.
       </p>
       <p className="text-[#475569] leading-relaxed mb-6">
-        LeadSnipper has Reoon verification built into every plan. Upload your
-        list, verify in-platform, send only to valid addresses. No export, no
-        separate subscription, no per-email verification fees. At agency
-        volume, this alone saves ₹1,500+ per month.
+        LeadSnipper runs Reoon verification before send. You bring your own
+        Reoon API key, so you still pay Reoon for credits, but the check happens
+        inside the sending workflow instead of in a separate export step.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
-        Support When You Actually Need It
+        Support in IST Hours
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
-        Instantly&apos;s support is primarily async and US-timezone focused. If
-        your client campaign breaks at 2 PM IST and you need it fixed before end
-        of day, you&apos;re often waiting until their morning.
+        Instantly&apos;s team works mostly in other time zones, so an issue at
+        2 PM IST may not be answered until their morning.
       </p>
       <p className="text-[#475569] leading-relaxed mb-6">
-        LeadSnipper is built by an Indian team for the Indian market. Support
-        understands the local context — from GST invoicing questions to AWS
-        region recommendations for SES. Response times during IST business hours
-        are measured in minutes, not hours.
+        LeadSnipper is built by an Indian team. Support understands the local
+        context, from INR billing questions to AWS region choices for SES, and
+        is available during IST business hours.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -134,29 +135,27 @@ export default function InstantlyVsLeadSnipperIndia() {
       </h2>
       <div className="space-y-4 mb-6">
         <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-5">
-          <h3 className="font-bold text-[#1e293b] mb-2">Multi-client management</h3>
+          <h3 className="font-bold text-[#1e293b] mb-2">Per-client cost at scale</h3>
           <p className="text-[#475569] text-sm">
-            LeadSnipper&apos;s workspace structure lets you isolate client domains,
-            keep campaigns separate, and generate per-client analytics. Instantly
-            requires workarounds or higher-tier plans for proper client
-            separation.
+            Instantly bills per workspace, so each client workspace is its own
+            subscription. Before you add clients, price the plan you need for
+            each one. For a full agency breakdown, see 
+            <Link href="/blog/instantly-alternatives" className="text-[#3b82f6] font-medium hover:underline">8 Instantly alternatives for agencies</Link>.
           </p>
         </div>
         <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-5">
-          <h3 className="font-bold text-[#1e293b] mb-2">White-label reporting</h3>
+          <h3 className="font-bold text-[#1e293b] mb-2">Safeguards on every mailbox</h3>
           <p className="text-[#475569] text-sm">
-            LeadSnipper generates PDF campaign reports you can share directly
-            with clients. No screenshots, no manual Excel exports. Instantly
-            lacks built-in PDF reporting without third-party integrations.
+            Mailbox-level daily caps, pacing between sends, and auto-pause when
+            bounces or complaints rise protect each client&apos;s domain. Ask any
+            tool you test whether it pauses automatically.
           </p>
         </div>
         <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-5">
           <h3 className="font-bold text-[#1e293b] mb-2">Domain health at a glance</h3>
           <p className="text-[#475569] text-sm">
             Managing 10+ client domains? LeadSnipper&apos;s domain health
-            dashboard shows DNS, bounce rates, and warmup status for all
-            domains in one screen. Instantly requires checking each account
-            separately.
+            dashboard shows DNS and bounce rates for your domains in one place.
           </p>
         </div>
       </div>
@@ -165,15 +164,15 @@ export default function InstantlyVsLeadSnipperIndia() {
         The Honest Verdict
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
-        Instantly is a solid tool. If you&apos;re a solo founder sending under
-        1,000 emails a week and you want something that &quot;just works&quot;
-        without thinking about infrastructure, it&apos;s a reasonable choice.
+        Instantly is a solid tool. If you want a managed platform with warm-up
+        included and you don&apos;t want to think about infrastructure,
+        it&apos;s a reasonable choice. Compare it side by side in 
+        <Link href="/vs/instantly" className="text-[#3b82f6] font-medium hover:underline">Instantly vs LeadSnipper</Link>.
       </p>
       <p className="text-[#475569] leading-relaxed mb-4">
-        But if you&apos;re an Indian agency sending at scale, managing multiple
-        clients, and watching every rupee of margin — LeadSnipper is purpose-built
-        for your situation. Lower cost in INR, owned infrastructure, built-in
-        verification, and local support.
+        If you&apos;re an Indian agency watching every rupee of margin,
+        LeadSnipper&apos;s INR pricing, BYO SES option, Reoon verification
+        before send (with your own key) and IST support are worth testing.
       </p>
 
       <div className="bg-gradient-to-br from-[#3b82f6]/5 to-[#22c55e]/5 border border-[#3b82f6]/20 rounded-xl p-6 my-8">
@@ -181,12 +180,12 @@ export default function InstantlyVsLeadSnipperIndia() {
           Bottom Line for Indian Agencies
         </h3>
         <ul className="space-y-2 text-[#475569] text-sm">
-          <li>✓ Save ~75% on monthly software costs</li>
-          <li>✓ No forex fees or USD conversion headaches</li>
+          <li>✓ INR plans from ₹999/month ($19)</li>
+          <li>✓ No forex conversion on INR billing</li>
           <li>✓ Own your sending reputation with BYO SES</li>
-          <li>✓ Built-in verification saves separate tool costs</li>
-          <li>✓ INR pricing with proper GST invoicing</li>
-          <li>✓ IST-timezone support that understands Indian market</li>
+          <li>✓ Reoon verification before send (bring your own Reoon key)</li>
+          <li>✓ Daily caps, pacing and bounce/complaint auto-pause</li>
+          <li>✓ Support during IST business hours</li>
         </ul>
       </div>
 
@@ -194,10 +193,9 @@ export default function InstantlyVsLeadSnipperIndia() {
         Try the Comparison Yourself
       </h2>
       <p className="text-[#475569] leading-relaxed">
-        LeadSnipper offers a free trial with 1,000 emails — no credit card
-        required. Run the same campaign through both platforms, compare
-        deliverability, support response times, and total cost. Most agencies
-        switch after seeing the difference in their first week. For a broader
+        LeadSnipper offers a 14-day trial with 1,000 emails and no credit card
+        required. Run the same campaign through both platforms and compare
+        deliverability, support response times and total cost. For a broader
         view, see our{" "}
         <Link href="/blog/best-cold-email-software-2026-comparison" className="text-[#3b82f6] font-medium hover:underline">cold email software comparison</Link>{" "}
         and{" "}
@@ -206,9 +204,8 @@ export default function InstantlyVsLeadSnipperIndia() {
           href="https://app.leadsnipper.com/signup?product=leadsnipper"
           className="text-[#3b82f6] font-semibold hover:underline"
         >
-          Start your free trial
-        </Link>{" "}
-        and see why Indian agencies are making the move.
+          Start your 14-day trial
+        </Link>.
       </p>
     </BlogLayout>
   );

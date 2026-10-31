@@ -50,7 +50,7 @@ export default function HowToAvoidSpamFolder() {
       </h2>
       <p className="text-[#475569] leading-relaxed mb-4">
         High bounce rates trigger spam filters instantly. Verify every contact
-        with built-in Reoon checks in{" "}
+        with Reoon checks before send (bring your own Reoon key) in{" "}
         <Link href="/cold-email-software" className="text-[#0058be] font-medium hover:underline">
           LeadSnipper&apos;s cold email software
         </Link>{" "}

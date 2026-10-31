@@ -228,8 +228,8 @@ export default function ApolloDataQualityBounceRate() {
           },
           {
             name: "LeadSnipper (with Reoon verification)",
-            bounce: "<2% with built-in verification",
-            note: "Not a prospecting database — but built-in verification prevents bounce disasters from any source.",
+            bounce: "Depends on your list; Reoon checks run before send",
+            note: "Not a prospecting database — but Reoon verification before send (bring your own key) helps prevent bounce disasters from any source.",
           },
         ].map((item) => (
           <div
@@ -264,7 +264,7 @@ export default function ApolloDataQualityBounceRate() {
       <p className="text-[#475569] leading-relaxed mb-8">
         <strong>If you&apos;re tired of cleaning Apollo lists:</strong> Consider
         switching to Cognism, ZoomInfo, or Lusha for better data quality out of
-        the box. Or use a cold email platform with built-in verification so you
+        the box. Or use a cold email platform that verifies before send so you
         catch bad emails before they bounce.
       </p>
 

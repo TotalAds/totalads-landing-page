@@ -80,7 +80,7 @@ export default function BlogPost2() {
         </h3>
         <ul className="space-y-2 text-[#475569]">
           <li>
-            <strong>$0.10 per 1,000 emails</strong> — compared to $37-97/month
+            <strong>$0.10 per 1,000 emails</strong> — compared to $47-97/month (Instantly, billed monthly)
             for platforms that own your infrastructure
           </li>
           <li>
@@ -302,26 +302,27 @@ export default function BlogPost2() {
       <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-6 mb-6">
         <ul className="space-y-3 text-[#475569]">
           <li>
-            <strong>Instantly Growth Plan:</strong> $97/month + separate
-            verification tool ($30/month) = <strong>$127/month</strong>. Shared
-            infrastructure.
+            {/* instantly.ai/pricing, checked 2026-10-26. Re-verify before publish. */}
+            <strong>Instantly Hypergrowth:</strong> $97/month (Growth is capped
+            at 5,000 emails) + separate verification tool ($30/month) ={" "}
+            <strong>$127/month</strong>.
           </li>
           <li>
             <strong>Smartlead Pro:</strong> $94/month + verification add-on =
-            ~<strong>$120/month</strong>. Shared infrastructure.
+            ~<strong>$120/month</strong>.
           </li>
           <li>
             <strong>LeadSnipper Growth (BYO SES included):</strong> ₹2,499/month
             (~$50/month) + AWS SES costs (~$1.50 for 15k emails) ={" "}
             <strong>~$51.50/month</strong>. Your SES, your quotas; platform
-            tools + verification on top. For lower volume, Starter is ₹999/month
-            (~$20/month) and includes 10,000 emails.
+            tools on top, plus your own Reoon plan for verification. For lower volume, Starter is ₹999/month
+            ($19/month) and includes 10,000 emails.
           </li>
         </ul>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        That&apos;s not a small difference. It&apos;s a 10x cost reduction with
-        better deliverability and full infrastructure ownership.
+        That&apos;s a meaningful difference before you add your verifier, plus
+        full ownership of the sending account.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -344,12 +345,12 @@ export default function BlogPost2() {
           rates, and reputation signals in one screen
         </li>
         <li>
-          <strong>Built-in Reoon verification</strong> — clean your lists before
+          <strong>Reoon verification before send</strong> (bring your own Reoon key) — clean your lists before
           sending, protecting your infrastructure
         </li>
         <li>
-          <strong>Warmup with daily pacing</strong> — build your domain
-          reputation gradually and safely
+          <strong>Daily caps and pacing</strong> — build your domain
+          reputation gradually and safely, without a warm-up pool
         </li>
         <li>
           <strong>Multi-day campaign spreading</strong> — automatically paces

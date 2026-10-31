@@ -528,7 +528,7 @@ export default function GooglePostmasterToolsColdEmailSetupGuide() {
       </ul>
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper fits this operating rhythm: BYO AWS SES so reputation is
-        yours, built-in verification so bounce spikes are rarer, and INR-friendly{" "}
+        yours, Reoon verification before send (your own Reoon key) so bounce spikes are rarer, and INR-friendly{" "}
         <Link
           href="/pricing"
           className="text-[#0058be] font-medium hover:underline"

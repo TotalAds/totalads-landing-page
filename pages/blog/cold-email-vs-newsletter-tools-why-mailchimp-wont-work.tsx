@@ -268,7 +268,7 @@ export default function ColdEmailVsNewsletter() {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#22c55e] mt-0.5">&#10003;</span>
-            <strong>Built-in email verification</strong> — clean lists before
+            <strong>Pre-send email verification</strong> — clean lists before
             every send
           </li>
           <li className="flex items-start gap-2">
@@ -293,8 +293,8 @@ export default function ColdEmailVsNewsletter() {
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper has all of these. BYO AWS SES for infrastructure ownership,
-        Reoon verification built into the lead flow, warmup tied to your
-        domains, domain health monitoring in one screen, and multi-day campaign
+        Reoon verification before send (bring your own Reoon key), daily caps
+        and auto-pause instead of a warm-up pool, domain health monitoring in one screen, and multi-day campaign
         pacing. It&apos;s what a cold email tool should be — built entirely for
         outbound.
       </p>

@@ -15,7 +15,7 @@ export default function HowItWorks() {
       number: "02",
       title: "Upload Leads & Verify with AI",
       description:
-        "Import via CSV or connect your CRM. Built-in Reoon verification removes invalid and risky addresses automatically — so bad data never touches your sender reputation.",
+        "Import via CSV or connect your CRM. Reoon verification (with your own Reoon key) removes invalid and risky addresses before send — so bad data never touches your sender reputation.",
       icon: <Upload className="w-6 h-6 text-[#3b82f6]" />,
     },
     {

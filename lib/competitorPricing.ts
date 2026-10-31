@@ -64,7 +64,7 @@ export const competitors: Record<CompetitorSlug, CompetitorProfile> = {
     meta: {
       slug: "instantly",
       label: "Instantly",
-      note: "Shared infrastructure, separate warmup network",
+      note: "Per-workspace pricing, warm-up included",
     },
     tiers: [
       { name: "Growth", monthlyUsd: 47, monthlyEmails: 5_000, contacts: 1_000 },
@@ -77,13 +77,14 @@ export const competitors: Record<CompetitorSlug, CompetitorProfile> = {
     meta: {
       slug: "smartlead",
       label: "Smartlead",
-      note: "Shared infrastructure, unlimited contacts on higher tiers",
+      note: "Unlimited mailboxes, $29 per white-label client workspace from Pro",
     },
+    // smartlead.ai/pricing monthly-billing prices, checked 2026-10-31.
     tiers: [
-      { name: "Base", monthlyUsd: 32, monthlyEmails: 6_000, contacts: 2_000 },
-      { name: "Pro", monthlyUsd: 78, monthlyEmails: 90_000, contacts: 30_000 },
-      { name: "Unlimited Smart", monthlyUsd: 144, monthlyEmails: 150_000, contacts: Infinity },
-      { name: "Unlimited Prime", monthlyUsd: 315, monthlyEmails: 5_694_000, contacts: Infinity },
+      { name: "Base", monthlyUsd: 39, monthlyEmails: 6_000, contacts: 2_000 },
+      { name: "Pro", monthlyUsd: 94, monthlyEmails: 90_000, contacts: 30_000 },
+      { name: "Unlimited Smart", monthlyUsd: 174, monthlyEmails: 150_000, contacts: Infinity },
+      { name: "Unlimited Prime", monthlyUsd: 379, monthlyEmails: 500_000, contacts: Infinity },
     ],
   },
 
@@ -91,13 +92,15 @@ export const competitors: Record<CompetitorSlug, CompetitorProfile> = {
     meta: {
       slug: "lemlist",
       label: "Lemlist",
-      note: "Image personalization focus, shared sending",
+      note: "Email volume tiers; Multichannel is per-user",
     },
+    // lemlist.com/pricing + help center (Email volume ladder), checked 2026-10-31.
+    // Multichannel ($109/user/mo) is seat-based and omitted from volume matching.
     tiers: [
-      { name: "Email Starter", monthlyUsd: 39, monthlyEmails: 3_000, contacts: Infinity },
-      { name: "Email Pro", monthlyUsd: 69, monthlyEmails: 7_500, contacts: Infinity },
-      { name: "Multichannel Expert", monthlyUsd: 99, monthlyEmails: 15_000, contacts: Infinity },
-      { name: "Outreach Scale", monthlyUsd: 159, monthlyEmails: 45_000, contacts: Infinity },
+      { name: "Email 50k", monthlyUsd: 69, monthlyEmails: 50_000, contacts: Infinity },
+      { name: "Email 100k", monthlyUsd: 89, monthlyEmails: 100_000, contacts: Infinity },
+      { name: "Email 200k", monthlyUsd: 159, monthlyEmails: 200_000, contacts: Infinity },
+      { name: "Email 500k", monthlyUsd: 359, monthlyEmails: 500_000, contacts: Infinity },
     ],
   },
 
@@ -105,11 +108,14 @@ export const competitors: Record<CompetitorSlug, CompetitorProfile> = {
     meta: {
       slug: "mailshake",
       label: "Mailshake",
-      note: "Per-seat pricing, separate phone dialer",
+      note: "Per-seat pricing; Starter capped at 1,500 sends",
     },
+    // mailshake.com/pricing, checked 2026-10-31. Contacts are unlimited on published plans.
+    // Email Outreach+ have unlimited sends — use a high cap so volume matching selects them.
     tiers: [
-      { name: "Email Outreach", monthlyUsd: 45, monthlyEmails: 1_500, contacts: 1_500 },
-      { name: "Sales Engagement", monthlyUsd: 85, monthlyEmails: 2_500, contacts: 2_500 },
+      { name: "Starter", monthlyUsd: 29, monthlyEmails: 1_500, contacts: Infinity },
+      { name: "Email Outreach", monthlyUsd: 49, monthlyEmails: 10_000_000, contacts: Infinity },
+      { name: "Sales Engagement", monthlyUsd: 99, monthlyEmails: 10_000_000, contacts: Infinity },
     ],
   },
 
@@ -117,8 +123,10 @@ export const competitors: Record<CompetitorSlug, CompetitorProfile> = {
     meta: {
       slug: "apollo",
       label: "Apollo",
-      note: "CRM + outreach combo, shared infrastructure",
+      note: "CRM + outreach combo, data-first",
     },
+    // apollo.io/pricing annual per-seat list prices, checked via Oct 2026 vendor reads.
+    // Email caps below are planning estimates (Apollo meters credits, not a hard send tier).
     tiers: [
       { name: "Free", monthlyUsd: 0, monthlyEmails: 250, contacts: Infinity },
       { name: "Basic", monthlyUsd: 49, monthlyEmails: 10_000, contacts: Infinity },

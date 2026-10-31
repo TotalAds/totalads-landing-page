@@ -13,7 +13,7 @@ export default function EmailWarmupPage() {
       problemDescription="Many tools sell artificial engagement networks that look like activity to filters — until providers catch the pattern. That can burn domains and create a false sense of readiness. LeadSnipper does not sell a warmup-pool product. We ship deliverability fundamentals instead."
       outcomes={[
         "SPF, DKIM, and DMARC setup before you send",
-        "Built-in Reoon verification so bad lists never hit your reputation",
+        "Reoon verification before send (bring your own Reoon key) so bad lists never hit your reputation",
         "Per-mailbox and per-domain daily caps with multi-day pacing",
         "Automatic pause when bounce or complaint rates spike",
         "Domain health dashboard for DNS, bounces, and complaints",
@@ -32,7 +32,7 @@ export default function EmailWarmupPage() {
           badge: "Safety",
         },
         {
-          title: "Built-In Email Verification",
+          title: "Email Verification Before Send",
           description:
             "Reoon verification runs in the campaign flow. Invalid and risky addresses are removed before they touch sender reputation.",
           badge: "Deliverability",

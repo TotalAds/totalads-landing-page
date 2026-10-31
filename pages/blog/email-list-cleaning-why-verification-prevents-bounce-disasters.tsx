@@ -283,11 +283,11 @@ export default function EmailListCleaning() {
         <li>No enforcement — you can always &quot;forget&quot; to verify</li>
       </ul>
       <p className="text-[#475569] leading-relaxed mb-6">
-        LeadSnipper has <strong>Reoon email verification built directly
-        into the lead upload flow</strong>. When you upload a CSV or add leads,
-        verification runs as part of the process. Unverified leads are flagged
-        and can&apos;t be sent to until they pass. There&apos;s no separate
-        tool, no extra subscription, and no way to accidentally skip it.
+        LeadSnipper runs <strong>Reoon email verification before send</strong>.
+        You connect your own Reoon API key (you pay Reoon for credits), and
+        verification runs as part of the campaign workflow. Unverified leads are
+        flagged and can&apos;t be sent to until they pass, so there&apos;s no
+        way to accidentally skip it.
       </p>
 
       <h2 className="text-2xl font-bold text-[#1e293b] mt-10 mb-4">
@@ -386,7 +386,7 @@ export default function EmailListCleaning() {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#22c55e] mt-0.5">&#10003;</span>
-            Use a tool with built-in verification to prevent human error
+            Use a tool that verifies before send to prevent human error
           </li>
         </ul>
       </div>

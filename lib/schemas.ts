@@ -80,8 +80,8 @@ export function generateComparisonSchema(
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `${leadsnipper.name} vs ${competitor} Comparison`,
-    description: `Feature and pricing comparison between ${leadsnipper.name} and ${competitor} for cold email.`,
+    name: `${competitor} vs ${leadsnipper.name} comparison`,
+    description: `Pricing and feature comparison between ${competitor} and ${leadsnipper.name} for cold email.`,
     numberOfItems: 2,
     itemListElement: [
       {
@@ -138,6 +138,8 @@ export function generateComparisonSchema(
 
 // ─── Pre-built comparison data for each competitor ───
 
+// Competitor facts. Prices re-checked on vendor pricing pages on 2026-10-31 (Mailshake, Apollo,
+// Instantly, Smartlead, lemlist). Apollo Basic is the annual per-seat list price.
 export const competitorData: Record<
   string,
   { product: ComparisonProduct; priceNote: string }
@@ -146,30 +148,30 @@ export const competitorData: Record<
     product: {
       name: "Instantly",
       description:
-        "Cold email outreach tool with shared sending infrastructure and built-in warmup.",
+        "Cold email outreach tool that sends through connected mailboxes, with unlimited email accounts and warm-up on every plan.",
       url: "https://instantly.ai",
-      priceRange: "37",
+      priceRange: "47",
       features: [
-        "Shared sending infrastructure",
-        "Built-in warmup",
         "Unlimited email accounts",
-        "Campaign analytics",
+        "Built-in warm-up",
+        "One plan subscription per workspace",
+        "Dedicated IPs (SISR) on Light Speed",
       ],
     },
-    priceNote: "Starts at $37/month",
+    priceNote: "Starts at $47/month ($37.60/month billed yearly)",
   },
   Smartlead: {
     product: {
       name: "Smartlead",
       description:
-        "Cold email platform for agencies with multi-inbox rotation and shared infrastructure.",
+        "Cold email platform for agencies with unlimited email accounts and white-label client workspaces.",
       url: "https://smartlead.ai",
       priceRange: "39",
       features: [
+        "Unlimited email accounts",
         "Multi-inbox rotation",
-        "Shared infrastructure",
-        "Agency features",
-        "API access",
+        "White-label client workspaces ($29/client from Pro)",
+        "API access (from Pro)",
       ],
     },
     priceNote: "Starts at $39/month",
@@ -180,15 +182,15 @@ export const competitorData: Record<
       description:
         "Cold email and outreach platform with multichannel sequences and personalization.",
       url: "https://lemlist.com",
-      priceRange: "55",
+      priceRange: "69",
       features: [
         "Multichannel sequences",
-        "Video personalization",
-        "Shared infrastructure",
-        "LinkedIn automation",
+        "Image and video personalization",
+        "LinkedIn steps",
+        "Email plan with unlimited users and senders",
       ],
     },
-    priceNote: "Starts at $55/month",
+    priceNote: "Email plan from $69/month ($55/month billed yearly)",
   },
   Mailshake: {
     product: {
@@ -196,15 +198,15 @@ export const competitorData: Record<
       description:
         "Sales engagement platform with cold email, phone dialer, and social selling.",
       url: "https://mailshake.com",
-      priceRange: "59",
+      priceRange: "29",
       features: [
         "Per-seat pricing",
         "Phone dialer",
         "Social selling",
-        "Shared infrastructure",
+        "CRM integrations",
       ],
     },
-    priceNote: "Starts at $59/month per seat",
+    priceNote: "Starts at $29/month per user ($25 billed yearly)",
   },
   Apollo: {
     product: {
@@ -220,25 +222,27 @@ export const competitorData: Record<
         "CRM integration",
       ],
     },
-    priceNote: "Starts at $49/month",
+    priceNote: "Basic from $49/seat/month billed annually ($65 monthly)",
   },
 };
 
+// LeadSnipper facts only from leadsnipper.com (pricing page, FAQ). No warm-up, free plan,
+// built-in Reoon, lead database, white-label or client-workspace claims.
 export const leadsnipperProduct: ComparisonProduct = {
   name: "LeadSnipper",
   description:
-    "Deliverability-first cold email platform with BYO AWS SES, built-in Reoon verification, deliverability pacing, and domain health monitoring.",
+    "Cold email software for B2B agencies with mailbox-level daily limits, Reoon verification before send (bring your own Reoon account), and bounce and complaint auto-pause.",
   url: BASE_URL,
   priceRange: "19-119",
   features: [
-    "BYO AWS SES infrastructure",
-    "Built-in Reoon email verification",
-    "AI-powered email warmup",
-    "Domain health dashboard",
+    "Google Workspace, Microsoft 365, Zoho and SMTP/IMAP mailbox connections",
+    "Mailbox-level daily limits and sending delays",
+    "Sender rotation and ESP matching",
+    "Reoon email verification before send (bring your own Reoon account)",
+    "Bounce and complaint monitoring with automatic campaign pause",
     "Campaign builder with spintax",
-    "Sender rotation and daily pacing",
-    "Bounce auto-pause",
     "Campaign analytics",
+    "Managed AWS SES add-on",
   ],
 };
 

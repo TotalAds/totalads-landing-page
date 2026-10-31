@@ -15,7 +15,15 @@ export interface SitemapUrl {
   priority?: number;
 }
 
-export const sitemapConfig = {
+interface StaticPage {
+  path: string;
+  changefreq: NonNullable<SitemapUrl["changefreq"]>;
+  priority: number;
+  /** ISO date of the last meaningful content change. Defaults to the build/request date. */
+  lastmod?: string;
+}
+
+export const sitemapConfig: { baseUrl: string; staticPages: StaticPage[] } = {
   baseUrl:
     process.env.NODE_ENV === "production"
       ? "https://leadsnipper.com"
@@ -56,11 +64,13 @@ export const sitemapConfig = {
       path: "/vs/instantly",
       changefreq: "monthly" as const,
       priority: 0.9,
+      lastmod: "2026-10-31",
     },
     {
       path: "/vs/smartlead",
       changefreq: "monthly" as const,
       priority: 0.9,
+      lastmod: "2026-10-31",
     },
     {
       path: "/privacy-policy",
@@ -183,16 +193,19 @@ export const sitemapConfig = {
       path: "/vs/apollo",
       changefreq: "monthly" as const,
       priority: 0.9,
+      lastmod: "2026-10-31",
     },
     {
       path: "/vs/lemlist",
       changefreq: "monthly" as const,
       priority: 0.9,
+      lastmod: "2026-10-31",
     },
     {
       path: "/vs/mailshake",
       changefreq: "monthly" as const,
       priority: 0.9,
+      lastmod: "2026-10-31",
     },
     {
       path: "/services/web-apps",
@@ -207,14 +220,14 @@ export function generateSitemapUrls(): SitemapUrl[] {
 
   const staticUrls = sitemapConfig.staticPages.map((page) => ({
     loc: `${sitemapConfig.baseUrl}${page.path}`,
-    lastmod: currentDate,
+    lastmod: page.lastmod ? new Date(page.lastmod).toISOString() : currentDate,
     changefreq: page.changefreq,
     priority: page.priority,
   }));
 
   const blogUrls: SitemapUrl[] = blogPosts.map((post) => ({
     loc: `${sitemapConfig.baseUrl}/blog/${post.slug}`,
-    lastmod: new Date(post.date).toISOString(),
+    lastmod: new Date(post.lastUpdated || post.date).toISOString(),
     changefreq: "monthly" as const,
     priority: post.clusterRole === "hub" ? 0.9 : 0.8,
   }));

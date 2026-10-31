@@ -15,8 +15,8 @@ LeadSnipper is a deliverability-first cold email platform that helps businesses 
 - Bring Your Own AWS SES sending infrastructure or use managed sending
 - Google Workspace and Microsoft 365 OAuth connection (one-click)
 - Custom SMTP/IMAP support (Zoho, Fastmail, GoDaddy, corporate mail servers)
-- Built-in Reoon email verification (BYO Reoon account)
-- AI-powered email warmup with realistic conversation threads
+- Reoon email verification before send (bring your own Reoon API key)
+- No warm-up pool: mailbox-level daily caps, pacing, and bounce/complaint auto-pause instead
 - Domain health dashboard (SPF, DKIM, DMARC, bounce rates, complaints)
 - Campaign builder with personalization, variables, spintax, attachments
 - Sender rotation across multiple mailboxes
@@ -86,7 +86,7 @@ Key features:
 
 ## Cold Email Infrastructure
 
-Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification and warmup.
+Own your cold email infrastructure with BYO AWS SES. No shared pools, no reputation risk from other senders. LeadSnipper gives you full sending control plus verification before send and domain health monitoring.
 
 BYO SES means "Bring Your Own" Amazon Simple Email Service. You own your sending reputation, IP pools, and domain setup. If you don't know AWS, use Managed mode — everything is handled for you.
 
@@ -105,7 +105,7 @@ When your cold email tool owns your sending infrastructure, their problems becom
 LeadSnipper does not sell an artificial warmup-pool product. Mailbox providers increasingly detect and penalize shared warmup networks. Instead, LeadSnipper protects sender reputation with:
 
 1. SPF, DKIM, and DMARC authentication before send
-2. Built-in Reoon verification so bad lists never hit reputation
+2. Reoon verification before send (bring your own Reoon key) so bad lists never hit reputation
 3. Per-mailbox and per-domain daily caps with multi-day pacing
 4. Automatic pause when bounce or complaint rates spike
 5. Domain health dashboard for DNS, bounces, and complaints
@@ -151,42 +151,45 @@ LinkedIn content scheduler and AI writing assistant for B2B founders and sales t
 
 ## Comparison: LeadSnipper vs Instantly
 
-Instantly is solid for getting started. But they own your sending infrastructure — when they have issues, your domains get hit. With LeadSnipper:
-- You bring your own AWS SES — you own your reputation
-- Built-in Reoon email verification (Instantly doesn't offer this)
+Instantly is solid for getting started and includes warm-up on every plan, but it bills per workspace. With LeadSnipper:
+- You can bring your own AWS SES — you own your reputation
+- Reoon email verification before send (bring your own Reoon key)
 - Domain health dashboard with DNS checks
-- AI-powered warmup with automatic pause on health drops
-- ₹999/mo ($19) vs Instantly's $37/mo starting price
+- Mailbox-level daily caps, pacing, and automatic pause on bounce or complaint spikes (no warm-up pool)
+- ₹999/mo ($19) Starter vs Instantly Growth at $47/mo billed monthly ($37.60 billed yearly)
+- Agencies: see https://leadsnipper.com/blog/instantly-alternatives
 
 ## Comparison: LeadSnipper vs Smartlead
 
-Smartlead is powerful but complex. If the UI frustrates you, you want built-in verification instead of a separate tool, or you want your own SES:
-- LeadSnipper offers BYO SES vs Smartlead's shared infrastructure
-- Built-in verification vs external tools
+Smartlead is powerful but complex. If the UI frustrates you, you want verification inside the send workflow instead of a paid add-on, or you want your own SES:
+- LeadSnipper offers a BYO AWS SES option
+- Reoon verification before send (bring your own key) vs Smartlead's paid verification add-on
+- Agencies: see https://leadsnipper.com/blog/smartlead-alternatives
 - Domain health dashboard included
 - Simpler UI with same core capabilities
 
 ## Comparison: LeadSnipper vs Lemlist
 
-Lemlist is the most expensive option ($55-$159/month). LeadSnipper offers:
-- BYO SES infrastructure ownership vs Lemlist's shared sending
-- Built-in Reoon verification (Lemlist requires third-party)
-- Lower price: ₹999 ($19) vs Lemlist's $55 entry
+Lemlist's Email plan is $69/month ($55 billed yearly) and Multichannel is $109 per user/month (lemlist.com, Oct 2026). LeadSnipper offers:
+- BYO AWS SES option for infrastructure ownership
+- Reoon verification before send (bring your own Reoon key)
+- Lower price: ₹999 ($19) Starter
+- Agencies: see https://leadsnipper.com/blog/lemlist-alternatives
 - Domain health monitoring included
 
 ## Comparison: LeadSnipper vs Mailshake
 
 Mailshake charges per-seat. LeadSnipper doesn't:
 - No per-seat pricing — pay for plan, not people
-- BYO SES vs Mailshake's shared infrastructure
-- Built-in verification included
+- BYO AWS SES option (Mailshake has none)
+- Reoon verification before send (bring your own Reoon key)
 - Deliverability pacing and domain health dashboard
 
 ## Comparison: LeadSnipper vs Apollo
 
 Apollo.io is primarily a prospecting database, not a sending platform. Users report 8-15% bounce rates from "verified" Apollo emails. LeadSnipper:
 - Purpose-built for cold email sending
-- Built-in Reoon verification before sending
+- Reoon verification before sending (bring your own Reoon key)
 - BYO SES infrastructure control
 - Domain health monitoring and bounce auto-pause
 
@@ -279,7 +282,7 @@ Best practices:
 - Verify every email before importing to campaigns
 - Remove all "risky" and "invalid" results
 - Re-verify lists older than 90 days
-- Use built-in Reoon verification for convenience
+- Use verification inside your sending tool (LeadSnipper runs Reoon with your own key) for convenience
 - Target <2% bounce rate on every campaign
 
 ## Guide: BYO AWS SES vs Shared Infrastructure
@@ -378,7 +381,7 @@ Four systems: (1) Multi-step follow-up sequences auto-stop on reply. (2) Spintax
 Done-for-you infrastructure: dedicated IPs, sending limit increases, bounce management, ongoing deliverability monitoring. You keep your brand and domains. Ideal for agencies sending 100K-500K+ emails/month.
 
 ### Why should I use LeadSnipper instead of Instantly?
-You bring your own AWS SES — you own your reputation, deliverability, and data. Built-in Reoon verification, deliverability pacing, and domain health dashboard that Instantly doesn't offer.
+You bring your own AWS SES — you own your reputation, deliverability, and data. Reoon verification before send (with your own Reoon key), deliverability pacing with auto-pause, and a domain health dashboard. Instantly is simpler to start and includes warm-up; LeadSnipper does not run a warm-up pool.
 
 ### What is BYO SES? Do I need to know AWS?
 BYO SES means "Bring Your Own" Amazon Simple Email Service. If you don't know AWS, choose Managed mode — everything is handled for you.
@@ -390,7 +393,7 @@ Generates drafts using your knowledge base and tone. Edit and send, saving hours
 Not today. We do not sell an artificial warmup-pool product. LeadSnipper protects reputation with DNS authentication, Reoon verification, daily caps, paced sending, and auto-pause when bounce or complaint rates spike.
 
 ### Is there a free trial?
-Yes. Start free with no credit card. 1,000 emails, 500 contacts, basic analytics, API access for 1 month.
+Yes. A 14-day trial with 1,000 emails and no credit card. There is no free plan; paid plans start at ₹999 ($19) a month.
 
 ### Do you have CRM integrations?
 HubSpot, Salesforce, Zapier, Make, Clay, Zoho, and Google Sheets. Full REST API for custom workflows.

@@ -189,9 +189,9 @@ export default function BlogPost1() {
         </ul>
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
-        LeadSnipper has Reoon email verification built directly into the lead
-        upload flow. You don&apos;t need a separate tool or a separate tab — your
-        list gets cleaned as part of the campaign creation process. Learn more
+        LeadSnipper runs Reoon email verification before send. You connect your
+        own Reoon API key once, and your list gets checked as part of the
+        campaign workflow instead of in a separate tab. Learn more
         in our guide to{" "}
         <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">why verification prevents bounce disasters</Link>.
       </p>
@@ -343,7 +343,7 @@ export default function BlogPost1() {
       </p>
       <p className="text-[#475569] leading-relaxed">
         LeadSnipper was built specifically for this workflow. BYO AWS SES for
-        infrastructure ownership, built-in Reoon verification for clean lists,
+        infrastructure ownership, Reoon verification before send (bring your own key),
         deliverability pacing with daily caps and auto-pause, and a domain health
         dashboard so you always know where you stand. If you&apos;re tired of
         getting blacklisted by tools that don&apos;t give you control,{" "}

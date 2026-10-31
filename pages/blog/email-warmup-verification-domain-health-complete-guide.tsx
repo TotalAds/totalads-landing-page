@@ -85,8 +85,8 @@ export default function BlogPost3() {
       </h3>
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper does not sell an artificial warmup-pool product. Instead it
-        protects reputation with DNS authentication checks, built-in Reoon
-        verification, daily caps, multi-day send pacing, and auto-pause when
+        protects reputation with DNS authentication checks, Reoon
+        verification before send (bring your own Reoon key), daily caps, multi-day send pacing, and auto-pause when
         bounce or complaint rates spike — all tied to your own domains and
         sending infrastructure (AWS SES or managed), not a shared engagement
         network.
@@ -178,9 +178,9 @@ export default function BlogPost3() {
       </div>
       <p className="text-[#475569] leading-relaxed mb-6">
         This is why LeadSnipper has{" "}
-        <strong>Reoon email verification built directly into the lead upload
-        flow</strong>. You don&apos;t need a separate tool, a separate tab, or
-        a separate subscription. Verification happens as part of campaign
+        <strong>Reoon email verification before send</strong>. You bring your
+        own Reoon API key, so you still pay Reoon for credits, but you don&apos;t
+        need a separate tab or export step. Verification happens as part of campaign
         creation — unverified leads are flagged and can&apos;t be sent to
         until they pass verification. For a deeper dive, read our guide on{" "}
         <Link href="/blog/email-list-cleaning-why-verification-prevents-bounce-disasters" className="text-[#3b82f6] font-medium hover:underline">email list cleaning best practices</Link>.
@@ -340,8 +340,9 @@ export default function BlogPost3() {
       </p>
       <p className="text-[#475569] leading-relaxed mb-6">
         LeadSnipper was built because all three pillars belong in one product.
-        Warmup tied to your actual domains. Reoon verification built into the
-        lead upload flow. Domain health monitoring in one screen. Plus BYO AWS
+        Daily caps, pacing and bounce/complaint auto-pause instead of a warm-up
+        pool. Reoon verification before send with your own Reoon key. Domain
+        health monitoring in one screen. Plus BYO AWS
         SES so you own the infrastructure underneath it all.
       </p>
 

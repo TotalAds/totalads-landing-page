@@ -271,7 +271,7 @@ export default function BlogIndex() {
                   </span>
                 </h2>
                 <p className="text-sm text-[#727785] mb-6 max-w-lg mx-auto">
-                  LeadSnipper gives you BYO AWS SES, built-in verification, domain
+                  LeadSnipper gives you BYO AWS SES, Reoon verification before send, domain
                   health monitoring, and deliverability pacing — all in one platform.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -279,7 +279,7 @@ export default function BlogIndex() {
                     href="https://app.leadsnipper.com/signup?product=leadsnipper"
                     className="btn-primary rounded-full"
                   >
-                    Start free — 1,000 emails, no card →
+                    Start 14-day trial — 1,000 emails, no card →
                   </Link>
                   <Link
                     href="/cold-email-software"

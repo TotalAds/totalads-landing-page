@@ -431,7 +431,7 @@ export default function OutboundStack20Meetings() {
       </p>
       <p className="text-[#475569] leading-relaxed">
         LeadSnipper is the infrastructure layer we built to run this stack. BYO
-        SES for cost control. Built-in verification for list quality. Domain
+        SES for cost control. Reoon verification before send (bring your own key) for list quality. Domain
         health monitoring for deliverability. Multi-day sending for sustainable
         volume.{" "}
         <Link
